@@ -1,5 +1,5 @@
-#ifndef RAYLIB_WINDOW_HPP_
-#define RAYLIB_WINDOW_HPP_
+#ifndef RAYLIB_CPP_WINDOW_HPP_
+#define RAYLIB_CPP_WINDOW_HPP_
 
 #include <string>
 #include "raylib.h"
@@ -29,9 +29,10 @@ namespace raylib {
 			CloseWindow();
 		};
 
-		bool IsReady() {
+		static bool IsReady() {
 			return IsWindowReady();
 		};
+
 	};
 }
 

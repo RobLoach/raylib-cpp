@@ -1,16 +1,17 @@
-#ifndef RAYLIB_TEXTURE2D_HPP_
-#define RAYLIB_TEXTURE2D_HPP_
+#ifndef RAYLIB_CPP_TEXTURE2D_HPP_
+#define RAYLIB_CPP_TEXTURE2D_HPP_
 
 #include <string>
 #include "raylib.h"
+#include "utils.hpp"
 
 namespace raylib {
-	class Texture2D {
+	class Texture2D : public ::Texture2D {
 	public:
 		Texture2D() {};
 
 		Texture2D(Image image) {
-			Load(image);
+			LoadFromImage(image);
 		}
 
 		Texture2D(const std::string& fileName) {
@@ -21,30 +22,36 @@ namespace raylib {
 			Unload();
 		};
 
-		bool Load(Image image) {
-			texture = LoadTextureFromImage(image.image);
+		void set(::Texture2D texture) {
+			id = texture.id;
+			width = texture.width;
+			height = texture.height;
+			mipmaps = texture.mipmaps;
+			format = texture.format;
+		}
+
+		bool LoadFromImage(Image image) {
+			set(LoadTextureFromImage(image));
 		}
 		bool Load(const std::string fileName) {
-			texture = LoadTexture(fileName.c_str());
+			set(LoadTexture(fileName.c_str()));
 		}
 
 		void Draw(int posX, int posY, Color tint) {
-			DrawTexture(texture, posX, posY, tint);
+			DrawTexture(*this, posX, posY, tint);
 		}
 
 		void Unload() {
-			UnloadTexture(texture);
+			UnloadTexture(*this);
 		};
 
-		int width() {
-			return texture.width;
-		}
-		int height() {
-			return texture.height;
-		}
-	private:
-		::Texture2D texture;
+		GETTERSETTER(unsigned int,Id,id)
+		GETTERSETTER(int,Width,width)
+		GETTERSETTER(int,Height,height)
+		GETTERSETTER(int,Mipmaps,mipmaps)
+		GETTERSETTER(int,Format,format)
 	};
+	typedef Texture2D Texture;
 }
 
 #endif

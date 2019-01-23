@@ -27,6 +27,8 @@ int main(int argc, char* argv[])
 	//--------------------------------------------------------------------------------------
 	int screenWidth = 800;
 	int screenHeight = 450;
+	raylib::Color background;
+	background.set(RAYWHITE);
 
 	raylib::Window w(screenWidth, screenHeight, "raylib [core] example - basic window");
 
@@ -45,7 +47,7 @@ int main(int argc, char* argv[])
 		//----------------------------------------------------------------------------------
 		BeginDrawing();
 
-		ClearBackground(RAYWHITE);
+		ClearBackground(background);
 
 		DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 

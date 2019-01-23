@@ -1,11 +1,12 @@
-#ifndef RAYLIB_IMAGE_HPP_
-#define RAYLIB_IMAGE_HPP_
+#ifndef RAYLIB_CPP_IMAGE_HPP_
+#define RAYLIB_CPP_IMAGE_HPP_
 
 #include <string>
 #include "raylib.h"
+#include "utils.hpp"
 
 namespace raylib {
-	class Image {
+	class Image : public ::Image {
 	public:
 		Image() {};
 		Image(const std::string& fileName) {
@@ -16,14 +17,27 @@ namespace raylib {
 			Unload();
 		};
 
+		void set(::Image image) {
+			data = image.data;
+			width = image.width;
+			height = image.height;
+			mipmaps = image.mipmaps;
+			format = image.format;
+		}
+
 		bool Load(const std::string& fileName) {
-			image = LoadImage(fileName.c_str());
+			set(LoadImage(fileName.c_str()));
 		}
 
 		void Unload() {
-			UnloadImage(image);
+			UnloadImage(*this);
 		};
-		::Image image;
+		
+		GETTERSETTER(void*,Data,data)
+		GETTERSETTER(int,Width,width)
+		GETTERSETTER(int,Height,height)
+		GETTERSETTER(int,Mipmaps,mipmaps)
+		GETTERSETTER(int,Format,format)
 	};
 }
 

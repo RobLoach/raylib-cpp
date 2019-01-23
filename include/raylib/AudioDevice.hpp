@@ -1,5 +1,5 @@
-#ifndef RAYLIB_AUDIODEVICE_HPP_
-#define RAYLIB_AUDIODEVICE_HPP_
+#ifndef RAYLIB_CPP_AUDIODEVICE_HPP_
+#define RAYLIB_CPP_AUDIODEVICE_HPP_
 
 #include <string>
 #include "raylib.h"
@@ -23,6 +23,10 @@ namespace raylib {
 
 		void Close() {
 			CloseAudioDevice();
+		}
+
+		static bool IsReady() {
+			return IsAudioDeviceReady();
 		}
 	};
 }

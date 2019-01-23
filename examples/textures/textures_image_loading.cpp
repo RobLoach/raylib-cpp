@@ -22,7 +22,7 @@ int main()
 
     raylib::Window w(screenWidth, screenHeight, "raylib [textures] example - image loading");
 
-    raylib::Texture2D texture("resources/raylib_logo.png");
+    raylib::Texture texture("resources/raylib_logo.png");
 
     // Main game loop
     while (!w.ShouldClose())    // Detect window close button or ESC key
@@ -38,7 +38,7 @@ int main()
 
             ClearBackground(RAYWHITE);
 
-            texture.Draw(screenWidth/2 - texture.width()/2, screenHeight/2 - texture.height()/2, WHITE);
+            texture.Draw(screenWidth/2 - texture.getWidth()/2, screenHeight/2 - texture.getHeight()/2, WHITE);
 
             DrawText("this IS a texture loaded from an image!", 300, 370, 10, GRAY);
 
