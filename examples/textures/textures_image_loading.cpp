@@ -21,7 +21,6 @@ int main()
     int screenHeight = 450;
 
     raylib::Window w(screenWidth, screenHeight, "raylib [textures] example - image loading");
-
     raylib::Texture texture("resources/raylib_logo.png");
 
     // Main game loop
@@ -38,7 +37,7 @@ int main()
 
             ClearBackground(RAYWHITE);
 
-            texture.Draw(screenWidth/2 - texture.getWidth()/2, screenHeight/2 - texture.getHeight()/2, WHITE);
+            texture.Draw(screenWidth / 2 - texture.getWidth() / 2, screenHeight / 2 - texture.getHeight() / 2, WHITE);
 
             DrawText("this IS a texture loaded from an image!", 300, 370, 10, GRAY);
 

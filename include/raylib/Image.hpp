@@ -9,15 +9,27 @@ namespace raylib {
 	class Image : public ::Image {
 	public:
 		Image() {};
+		Image(::Image image) {
+			set(image);
+		};
 		Image(const std::string& fileName) {
 			Load(fileName);
+		};
+		Image(::Color *pixels, int width, int height) {
+			LoadEx(pixels, width, height);
+		};
+		Image(void *data, int width, int height, int format) {
+			LoadPro(data, width, height, format);
+		};
+		Image(const char *fileName, int width, int height, int format, int headerSize) {
+			LoadRaw(fileName, width, height, format, headerSize);
 		};
 
 		~Image() {
 			Unload();
 		};
 
-		void set(::Image image) {
+		inline void set(::Image image) {
 			data = image.data;
 			width = image.width;
 			height = image.height;
@@ -27,6 +39,18 @@ namespace raylib {
 
 		bool Load(const std::string& fileName) {
 			set(LoadImage(fileName.c_str()));
+		}
+
+		bool LoadEx(::Color *pixels, int width, int height) {
+			set(LoadImageEx(pixels, width, height));
+		}
+
+		bool LoadPro(void *data, int width, int height, int format) {
+			set(LoadImagePro(data, width, height, format));
+		}
+
+		bool LoadRaw(const char *fileName, int width, int height, int format, int headerSize) {
+			set(LoadImageRaw(fileName, width, height, format, headerSize));
 		}
 
 		void Unload() {

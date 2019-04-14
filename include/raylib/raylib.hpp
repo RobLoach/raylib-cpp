@@ -4,6 +4,7 @@
 #include "AudioDevice.hpp"
 #include "Color.hpp"
 #include "Image.hpp"
+#include "Font.hpp"
 #include "Texture2D.hpp"
 #include "Vector2.hpp"
 #include "Vector3.hpp"

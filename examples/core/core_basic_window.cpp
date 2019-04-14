@@ -27,9 +27,7 @@ int main(int argc, char* argv[])
 	//--------------------------------------------------------------------------------------
 	int screenWidth = 800;
 	int screenHeight = 450;
-	raylib::Color background;
-	background.set(RAYWHITE);
-
+	raylib::Color background(RAYWHITE);
 	raylib::Window w(screenWidth, screenHeight, "raylib [core] example - basic window");
 
 	SetTargetFPS(60);

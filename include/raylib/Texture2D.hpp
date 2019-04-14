@@ -22,7 +22,7 @@ namespace raylib {
 			Unload();
 		};
 
-		void set(::Texture2D texture) {
+		inline void set(::Texture2D texture) {
 			id = texture.id;
 			width = texture.width;
 			height = texture.height;

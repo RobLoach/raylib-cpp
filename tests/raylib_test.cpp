@@ -9,4 +9,8 @@ TEST_CASE("raylib_test functions work", "[raylib_test]" ) {
 	CHECK(vec.getX() == 50.0f);
 
 	CHECK(raylib::Window::IsReady() == false);
+
+	raylib::Color c(RED);
+	int redInt = c.ToInt();
+	CHECK(redInt == ColorToInt(RED));
 }
