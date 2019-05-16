@@ -21,7 +21,7 @@
 
 #include "raylib/raylib.hpp"
 
-int main(int argc, char* argv[])
+int main()
 {
 	// Initialization
 	//--------------------------------------------------------------------------------------
