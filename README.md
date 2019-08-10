@@ -28,6 +28,8 @@ int main(int argc, char* argv[])
 		EndDrawing();
 	}
 
+	// No need to call CloseWindow()!
+
 	return 0;
 }
 ```
