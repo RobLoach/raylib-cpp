@@ -3,6 +3,9 @@ find_package(Raylib)
 add_executable(core_basic_window core/core_basic_window.cpp)
 target_link_libraries(core_basic_window raylib)
 
+add_executable(core_input_mouse core/core_input_mouse.cpp)
+target_link_libraries(core_input_mouse raylib)
+
 add_executable(textures_image_loading textures/textures_image_loading.cpp)
 configure_file(textures/resources/raylib_logo.png resources/raylib_logo.png COPYONLY)
 target_link_libraries(textures_image_loading raylib)

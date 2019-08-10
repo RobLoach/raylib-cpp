@@ -41,6 +41,10 @@ namespace raylib {
 			DrawTexture(*this, posX, posY, tint);
 		}
 
+		void Draw(::Vector2D position, Color tint) {
+			DrawTexture(*this, position, tint);
+		}
+
 		void Unload() {
 			UnloadTexture(*this);
 		};
