@@ -29,13 +29,16 @@ namespace raylib {
 		GETTERSETTER(Texture2D,Depth,depth)
 		GETTERSETTER(bool,DepthTexture,depthTexture)
 
-
 		~RenderTexture2D() {
 			Unload();
 		};
 
 		void Unload() {
 			UnloadRenderTexture(*this);
+		}
+
+		void BeginTextureMode() {
+			::BeginTextureMode(*this);
 		}
 	};
 }

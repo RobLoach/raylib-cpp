@@ -49,6 +49,10 @@ namespace raylib {
 		void EndShaderMode() {
 			EndShaderMode();
 		}
+
+		int GetLocation(const std::string& uniformName) {
+			return ::GetShaderLocation(*this, uniformName.c_str());
+		}
 	};
 }
 

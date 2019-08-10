@@ -44,7 +44,6 @@ namespace raylib {
 			::DrawCubeV(*this, size, color);
 		}
 
-
 		void DrawCubeWires(float width, float height, float length, ::Color color) {
 			::DrawCubeWires(*this, width, height, length, color);
 		}

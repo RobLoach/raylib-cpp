@@ -1,5 +1,5 @@
-#ifndef RAYLIB_CPP_CAMERA_HPP_
-#define RAYLIB_CPP_CAMERA_HPP_
+#ifndef RAYLIB_CPP_CAMERA3D_HPP_
+#define RAYLIB_CPP_CAMERA3D_HPP_
 
 #include "raylib.h"
 #include "Vector3.hpp"

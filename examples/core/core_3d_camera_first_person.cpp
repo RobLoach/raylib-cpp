@@ -9,7 +9,7 @@
 *
 ********************************************************************************************/
 
-#include "raylib/raylib.h"
+#include "raylib/raylib.hpp"
 
 #define MAX_COLUMNS 20
 
@@ -24,12 +24,12 @@ int main(void)
     raylib::Color background(RAYWHITE);
 
     // Define the camera to look into our 3d world (position, target, up vector)
-    raylib::Camera camera();
-    camera.position = raylib::Vector3(4.0f, 2.0f, 4.0f);
-    camera.target = raylib::Vector3(0.0f, 1.8f, 0.0f);
-    camera.up = raylib::Vector3(0.0f, 1.0f, 0.0f);
-    camera.fovy = 60.0f;
-    camera.type = CAMERA_PERSPECTIVE;
+    raylib::Camera camera(
+        raylib::Vector3(4.0f, 2.0f, 4.0f),
+        raylib::Vector3(0.0f, 1.8f, 0.0f),
+        raylib::Vector3(0.0f, 1.0f, 0.0f),
+        60.0f,
+        CAMERA_PERSPECTIVE);
 
     // Generates some random columns
     float heights[MAX_COLUMNS] = { 0.0f };

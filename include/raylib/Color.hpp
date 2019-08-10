@@ -96,6 +96,22 @@ namespace raylib {
 			::DrawPixelV(pos, *this);
 		}
 
+		void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY) {
+			::DrawLine(startPosX, startPosY, endPosX, endPosY, *this);
+		}
+		void DrawLine(::Vector2 startPos, ::Vector2 endPos) {
+			::DrawLineV(startPos, endPos, *this);
+		}
+		void DrawLine(::Vector2 startPos, ::Vector2 endPos, float thick) {
+			::DrawLineEx(startPos, endPos, thick, *this);
+		}
+		void DrawLineBezier(::Vector2 startPos, Vector2 endPos, float thick) {
+			::DrawLineBezier(startPos, endPos, thick, *this);
+		}
+		void DrawLineStrip(::Vector2 *points, int numPoints) {
+			::DrawLineStrip(points, numPoints, *this);
+		}
+
 		void DrawText(const std::string& text, int posX, int posY, int fontSize) {
 			::DrawText(text.c_str(), posX, posY, fontSize, *this);
 		}
