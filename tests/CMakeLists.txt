@@ -30,14 +30,8 @@ endmacro()
 
 find_package(Raylib)
 list(APPEND SOURCES catch.hpp raylib_test.cpp)
-list(APPEND LIBS raylib)
-
+list(APPEND LIBS raylib-cpp raylib)
 add_executable(raylib_test ${SOURCES})
-
-target_include_directories(raylib_test PUBLIC
-    ${raylib_SOURCE_DIR}/src
-)
-
 target_link_libraries(raylib_test ${LIBS})
 
 ADD_CATCH_TESTS(raylib_test)

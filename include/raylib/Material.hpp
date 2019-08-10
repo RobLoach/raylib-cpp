@@ -27,6 +27,16 @@ namespace raylib {
 
 		GETTERSETTER(::Shader,Shader,shader)
 
+        Material& operator=(const ::Material& material) {
+            set(material);
+            return *this;
+        }
+
+        Material& operator=(const Material& material) {
+            set(material);
+            return *this;
+        }
+
 
 		void Unload() {
 			UnloadMaterial(*this);

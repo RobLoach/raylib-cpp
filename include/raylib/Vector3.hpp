@@ -15,6 +15,10 @@ namespace raylib {
 			y = Y;
 			z = Z;
 		};
+
+		Vector3(::Color color) {
+			set(ColorToHSV(color));
+		}
 		inline void set(::Vector3 vec) {
 			x = vec.x;
 			y = vec.y;
@@ -24,6 +28,10 @@ namespace raylib {
 		GETTERSETTER(float,X,x)
 		GETTERSETTER(float,Y,y)
 		GETTERSETTER(float,Z,z)
+
+		void DrawGizmo() {
+			::DrawGizmo(*this);
+		}
 	};
 }
 

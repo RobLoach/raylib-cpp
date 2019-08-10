@@ -1,6 +1,6 @@
 /*******************************************************************************************
 *
-*   raylib [core] example - Mouse input
+*   raylib [audio] example - Sound loading and playing
 *
 *   This example has been created using raylib 1.0 (www.raylib.com)
 *   raylib is licensed under an unmodified zlib/libpng license (View raylib.h for details)
@@ -11,44 +11,40 @@
 
 #include "raylib/raylib.hpp"
 
-int main()
+int main(void)
 {
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [core] example - mouse input");
+    raylib::Window w(screenWidth, screenHeight, "raylib [audio] example - sound loading and playing");
 
-    raylib::Vector2 ballPosition(-100.0f, -100.0f);
-    raylib::Color background(RAYWHITE);
-    raylib::Color ballColor(DARKBLUE);
-    raylib::Color textColor(DARKGRAY);
+    raylib::AudioDevice audiodevice();      // Initialize audio device
+
+    raylib::Sound fxWav("resources/sound.wav");         // Load WAV audio file
+    raylib::Sound fxOgg("resources/tanatana.ogg");      // Load OGG audio file
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
-    //---------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------
 
     // Main game loop
     while (!w.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------
-        ballPosition = GetMousePosition();
-
-        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) ballColor = MAROON;
-        else if (IsMouseButtonPressed(MOUSE_MIDDLE_BUTTON)) ballColor = LIME;
-        else if (IsMouseButtonPressed(MOUSE_RIGHT_BUTTON)) ballColor = DARKBLUE;
+        if (IsKeyPressed(KEY_SPACE)) fxWav.Play();      // Play WAV sound
+        if (IsKeyPressed(KEY_ENTER)) fxOgg.Play();      // Play OGG sound
         //----------------------------------------------------------------------------------
 
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-            background.ClearBackground();
+            ClearBackground(RAYWHITE);
 
-            ballPosition.DrawCircle(40, ballColor);
-
-            textColor.DrawText("move ball with mouse and click mouse button to change color", 10, 10, 20);
+            DrawText("Press SPACE to PLAY the WAV sound!", 200, 180, 20, LIGHTGRAY);
+            DrawText("Press ENTER to PLAY the OGG sound!", 200, 220, 20, LIGHTGRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------

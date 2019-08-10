@@ -1,7 +1,7 @@
 root = true
 
 [*]
-indent_style = space
+indent_style = tabs
 charset = utf-8
 end_of_line = lf
 indent_size = 4

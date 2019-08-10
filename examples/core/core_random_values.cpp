@@ -1,8 +1,8 @@
 /*******************************************************************************************
 *
-*   raylib [core] example - Mouse input
+*   raylib [core] example - Generate random values
 *
-*   This example has been created using raylib 1.0 (www.raylib.com)
+*   This example has been created using raylib 1.1 (www.raylib.com)
 *   raylib is licensed under an unmodified zlib/libpng license (View raylib.h for details)
 *
 *   Copyright (c) 2014 Ramon Santamaria (@raysan5)
@@ -18,37 +18,39 @@ int main()
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [core] example - mouse input");
+    raylib::Window w(screenWidth, screenHeight, "raylib [core] example - generate random values");
 
-    raylib::Vector2 ballPosition(-100.0f, -100.0f);
-    raylib::Color background(RAYWHITE);
-    raylib::Color ballColor(DARKBLUE);
-    raylib::Color textColor(DARKGRAY);
+    int framesCounter = 0;          // Variable used to count frames
+
+    int randValue = GetRandomValue(-8, 5);   // Get a random integer number between -8 and 5 (both included)
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
-    //---------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------
 
     // Main game loop
     while (!w.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------
-        ballPosition = GetMousePosition();
+        framesCounter++;
 
-        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) ballColor = MAROON;
-        else if (IsMouseButtonPressed(MOUSE_MIDDLE_BUTTON)) ballColor = LIME;
-        else if (IsMouseButtonPressed(MOUSE_RIGHT_BUTTON)) ballColor = DARKBLUE;
+        // Every two seconds (120 frames) a new random value is generated
+        if (((framesCounter/120)%2) == 1)
+        {
+            randValue = GetRandomValue(-8, 5);
+            framesCounter = 0;
+        }
         //----------------------------------------------------------------------------------
 
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-            background.ClearBackground();
+            ClearBackground(RAYWHITE);
 
-            ballPosition.DrawCircle(40, ballColor);
+            DrawText("Every 2 seconds a new random value is generated:", 130, 100, 20, MAROON);
 
-            textColor.DrawText("move ball with mouse and click mouse button to change color", 10, 10, 20);
+            DrawText(FormatText("%i", randValue), 360, 180, 80, LIGHTGRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------

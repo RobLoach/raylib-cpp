@@ -20,6 +20,11 @@ namespace raylib {
 
 		GETTERSETTER(int,Number,number)
 
+        Gamepad& operator=(const Gamepad& gamepad) {
+            set(gamepad);
+            return *this;
+        }
+
 		operator int() const { return number; }
 
 		bool IsAvailable() {

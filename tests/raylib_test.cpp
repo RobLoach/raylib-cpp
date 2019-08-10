@@ -4,13 +4,18 @@
 #include "raylib/raylib.hpp"
 #include "catch.hpp"
 
-TEST_CASE("raylib_test functions work", "[raylib_test]" ) {
-	raylib::Vector2 vec(50, 100);
-	CHECK(vec.getX() == 50.0f);
+TEST_CASE("raylib_test", "[raylib_test]" ) {
+	SECTION("Vector2") {
+		raylib::Vector2 vec(50, 100);
+		CHECK(vec.getX() == vec.x);
+	}
 
-	CHECK(raylib::Window::IsReady() == false);
+	SECTION("Window") {
+		CHECK(raylib::Window::IsReady() == false);
+	}
 
-	raylib::Color c(RED);
-	int redInt = c.ToInt();
-	CHECK(redInt == ColorToInt(RED));
+	SECTION("Color") {
+		raylib::Color c(RED);
+		CHECK(c.ToInt() == ColorToInt(RED));
+	}
 }

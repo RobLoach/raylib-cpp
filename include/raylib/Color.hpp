@@ -51,6 +51,8 @@ namespace raylib {
 			return ::ColorToInt(*this);
 		}
 
+		operator int() const { return ::ColorToInt(*this); }
+
 		Color Fade(float alpha) {
 			Color a;
 			a.set(::Fade(*this, alpha));
@@ -78,6 +80,22 @@ namespace raylib {
         Color& operator=(const Color& color) {
             set(color);
             return *this;
+        }
+
+        void ClearBackground() {
+        	::ClearBackground(*this);
+        }
+
+        void DrawPixel(int x, int y) {
+        	::DrawPixel(x, y, *this);
+        }
+
+        void DrawPixel(::Vector2 pos) {
+        	::DrawPixelV(pos, *this);
+        }
+
+        void DrawText(const std::string& text, int posX, int posY, int fontSize) {
+        	::DrawText(text.c_str(), posX, posY, fontSize, *this);
         }
 
 	};

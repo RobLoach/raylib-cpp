@@ -54,7 +54,7 @@ namespace raylib {
 		BoundingBox GetBoundingBox() {
 			return BoundingBox(MeshBoundingBox(*this));
 		}
-		
+
 		void Tangents() {
 			MeshTangents(this);
 		}
@@ -62,12 +62,6 @@ namespace raylib {
 		void Binormals() {
 			MeshBinormals(this);
 		}
-		
-		
-		
-		
-		
-		
 	};
 }
 

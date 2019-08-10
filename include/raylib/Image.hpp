@@ -30,6 +30,16 @@ namespace raylib {
 			Unload();
 		};
 
+        Image& operator=(const ::Image& image) {
+            set(image);
+            return *this;
+        }
+
+        Image& operator=(const Image& image) {
+            set(image);
+            return *this;
+        }
+
 		inline void set(::Image image) {
 			data = image.data;
 			width = image.width;
@@ -92,11 +102,36 @@ namespace raylib {
 		void DrawTextEx(::Vector2 position, ::Font font, const std::string& text, float fontSize, float spacing, ::Color color){
 			ImageDrawTextEx(this, position, font, text.c_str(), fontSize, spacing, color);
 		}
-		void FlipVertical(){
+		void FlipVertical() {
 			ImageFlipVertical(this);
 		}
-		void FlipHorizontal(){
+		void FlipHorizontal() {
 			ImageFlipHorizontal(this);
+		}
+
+		void RotateCW() {
+			ImageRotateCW(this);
+		}
+		void RotateCCW() {
+			ImageRotateCCW(this);
+		}
+		void ColorTint(::Color color) {
+			ImageColorTint(this, color);
+		}
+		void ColorInvert() {
+			ImageColorInvert(this);
+		}
+		void ColorGrayscale() {
+			ImageColorGrayscale(this);
+		}
+		void ColorContrast(float contrast) {
+			ImageColorContrast(this, contrast);
+		}
+		void ColorBrightness(int brightness) {
+			ImageColorBrightness(this, brightness);
+		}
+		void ColorReplace(::Color color, ::Color replace) {
+			ImageColorReplace(this, color, replace);
 		}
 
 	};

@@ -42,7 +42,7 @@ namespace raylib {
 		GETTERSETTER(float,Zoom,zoom)
 
         Camera2D& operator=(const ::Camera2D& camera) {
-            set(color);
+            set(camera);
             return *this;
         }
 

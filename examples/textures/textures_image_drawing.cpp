@@ -23,6 +23,8 @@ int main(void)
     const int screenHeight = 450;
 
     raylib::Window w(screenWidth, screenHeight, "raylib [textures] example - image drawing");
+    raylib::Color background(RAYWHITE);
+    raylib::Color darkGray(DARKGRAY);
 
     // NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
     raylib::Image cat("resources/cat.png");             // Load image in CPU memory (RAM)
@@ -63,13 +65,13 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-            ClearBackground(RAYWHITE);
+            background.ClearBackground();
 
             texture.Draw(screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2 - 40, WHITE);
-            DrawRectangleLines(screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2 - 40, texture.width, texture.height, DARKGRAY);
+            darkGray.DrawRectangleLines(screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2 - 40, texture.width, texture.height);
 
-            DrawText("We are drawing only one texture from various images composed!", 240, 350, 10, DARKGRAY);
-            DrawText("Source images have been cropped, scaled, flipped and copied one over the other.", 190, 370, 10, DARKGRAY);
+            darkGray.DrawText("We are drawing only one texture from various images composed!", 240, 350, 10);
+            darkGray.DrawText("Source images have been cropped, scaled, flipped and copied one over the other.", 190, 370, 10);
 
         EndDrawing();
         //----------------------------------------------------------------------------------

@@ -33,6 +33,13 @@ namespace raylib {
 			return IsWindowReady();
 		};
 
+		void BeginDrawing() {
+			::BeginDrawing();
+		}
+		void EndDrawing() {
+			::EndDrawing();
+		}
+
 	};
 }
 

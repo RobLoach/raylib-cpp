@@ -28,6 +28,10 @@ namespace raylib {
 		static bool IsReady() {
 			return IsAudioDeviceReady();
 		}
+
+		void SetVolume(float volume) {
+			SetMasterVolume(volume);
+		}
 	};
 }
 

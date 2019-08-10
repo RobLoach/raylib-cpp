@@ -70,10 +70,15 @@ namespace raylib {
 			return *this;
 		}
 
-		void DrawTextEx(const std::string& text, ::Vector2 position, float fontSize, float spacing, ::Color color) {
-			::DrawTextEx(*this, text.c_str(), position, fontSize, spacing, color);
+		void DrawText(const std::string& text, ::Vector2 position, float fontSize, float spacing, ::Color tint) {
+			DrawTextEx(*this, text.c_str(), position,  fontSize,  spacing,  tint);
 		}
-
+		void DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap, ::Color tint) {
+			DrawTextRec(*this, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint);
+		}
+		void DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint, int selectStart, int selectLength, ::Color selectText, Color selectBack) {
+			DrawTextRecEx(*this, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint,  selectStart,  selectLength, selectText, selectBack);
+		}
 	};
 }
 

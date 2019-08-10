@@ -1,27 +1,34 @@
 find_package(Raylib)
 
-add_executable(core_basic_window core/core_basic_window.cpp)
-target_link_libraries(core_basic_window raylib)
+# Get the sources together
+set(example_dirs audio core text textures)
+set(example_sources)
+set(example_resources)
 
-add_executable(core_input_mouse core/core_input_mouse.cpp)
-target_link_libraries(core_input_mouse raylib)
+foreach(example_dir ${example_dirs})
+  file(GLOB sources ${example_dir}/*.cpp)
+  list(APPEND example_sources ${sources})
 
-add_executable(textures_image_loading textures/textures_image_loading.cpp)
-target_link_libraries(textures_image_loading raylib)
-add_executable(textures_image_drawing textures/textures_image_drawing.cpp)
-target_link_libraries(textures_image_drawing raylib)
-configure_file(textures/resources/raylib_logo.png resources/cat.png COPYONLY)
-configure_file(textures/resources/raylib_logo.png resources/custom_jupiter_crash.png COPYONLY)
-configure_file(textures/resources/raylib_logo.png resources/parrots.png COPYONLY)
-configure_file(textures/resources/raylib_logo.png resources/raylib_logo.png COPYONLY)
+  # Any any resources
+  file(GLOB resources ${example_dir}/resources/*)
+  list(APPEND example_resources ${resources})
+endforeach()
 
-add_executable(text_raylib_fonts text/text_raylib_fonts.cpp)
-configure_file(text/resources/fonts/alagard.png resources/fonts/alagard.png COPYONLY)
-configure_file(text/resources/fonts/alpha_beta.png resources/fonts/alpha_beta.png COPYONLY)
-configure_file(text/resources/fonts/jupiter_crash.png resources/fonts/jupiter_crash.png COPYONLY)
-configure_file(text/resources/fonts/mecha.png resources/fonts/mecha.png COPYONLY)
-configure_file(text/resources/fonts/pixantiqua.png resources/fonts/pixantiqua.png COPYONLY)
-configure_file(text/resources/fonts/pixelplay.png resources/fonts/pixelplay.png COPYONLY)
-configure_file(text/resources/fonts/romulus.png resources/fonts/romulus.png COPYONLY)
-configure_file(text/resources/fonts/setback.png resources/fonts/setback.png COPYONLY)
-target_link_libraries(text_raylib_fonts raylib)
+
+# Do each example
+foreach(example_source ${example_sources})
+  # Create the basename for the example
+  get_filename_component(example_name ${example_source} NAME)
+  string(REPLACE ".cpp" "${OUTPUT_EXT}" example_name ${example_name})
+
+  # Setup the example
+  add_executable(${example_name} ${example_source})
+
+  target_link_libraries(${example_name} PUBLIC raylib-cpp raylib)
+
+  string(REGEX MATCH ".*/.*/" resources_dir ${example_source})
+  string(APPEND resources_dir "resources")
+
+endforeach()
+
+file(COPY ${example_resources} DESTINATION "resources/")

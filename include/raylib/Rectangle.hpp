@@ -29,6 +29,17 @@ namespace raylib {
 		GETTERSETTER(float,Width,width)
 		GETTERSETTER(float,Height,height)
 
+
+        Rectangle& operator=(const ::Rectangle& rect) {
+            set(rect);
+            return *this;
+        }
+
+        Rectangle& operator=(const Rectangle& rect) {
+            set(rect);
+            return *this;
+        }
+
 		void Draw(::Color color) {
 			DrawRectangle(x, y, width, height, color);
 		}
