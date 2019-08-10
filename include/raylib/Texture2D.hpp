@@ -5,7 +5,6 @@
 #include "raylib.h"
 #include "utils.hpp"
 #include "Vector2.hpp"
-#include <iostream>
 
 namespace raylib {
 	class Texture2D : public ::Texture2D {
@@ -31,6 +30,22 @@ namespace raylib {
 			mipmaps = texture.mipmaps;
 			format = texture.format;
 		}
+
+		GETTERSETTER(unsigned int,Id,id)
+		GETTERSETTER(int,Width,width)
+		GETTERSETTER(int,Height,height)
+		GETTERSETTER(int,Mipmaps,mipmaps)
+		GETTERSETTER(int,Format,format)
+
+        Texture2D& operator=(const ::Texture2D& texture) {
+            set(texture);
+            return *this;
+        }
+
+        Texture2D& operator=(const Texture2D& texture) {
+            set(texture);
+            return *this;
+        }
 
 		bool LoadFromImage(::Image& image) {
 			set(LoadTextureFromImage(image));
@@ -64,15 +79,8 @@ namespace raylib {
 		}
 
 		void Unload() {
-			std::cout << "UnloadTexture()" << std::endl;
 			UnloadTexture(*this);
 		};
-
-		GETTERSETTER(unsigned int,Id,id)
-		GETTERSETTER(int,Width,width)
-		GETTERSETTER(int,Height,height)
-		GETTERSETTER(int,Mipmaps,mipmaps)
-		GETTERSETTER(int,Format,format)
 	};
 	typedef Texture2D Texture;
 }

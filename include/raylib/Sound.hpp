@@ -33,6 +33,16 @@ namespace raylib {
 		GETTERSETTER(unsigned int,SampleCount,sampleCount)
 		GETTERSETTER(::AudioStream,Stream,stream)
 
+        Sound& operator=(const ::Sound& sound) {
+            set(sound);
+            return *this;
+        }
+
+        Sound& operator=(const Sound& sound) {
+            set(sound);
+            return *this;
+        }
+
 		void Update(const void *data, int sampleCount) {
 			UpdateSound(*this, data, sampleCount);
 		}

@@ -22,24 +22,38 @@ namespace raylib {
 		GETTERSETTER(float,X,x)
 		GETTERSETTER(float,Y,y)
 
+        Vector2& operator=(const ::Vector2& vector2) {
+            set(vector2);
+            return *this;
+        }
+
+        Vector2& operator=(const Vector2& vector2) {
+            set(vector2);
+            return *this;
+        }
+
 		void DrawPixel(::Color color) {
-			DrawPixelV(*this, color);
+			::DrawPixelV(*this, color);
 		}
 
 		void DrawLine(::Vector2 endPos, ::Color color) {
-			DrawLineV(*this, endPos, color);
+			::DrawLineV(*this, endPos, color);
 		}
 
 		void DrawLine(::Vector2 endPos, float thick, ::Color color) {
-			DrawLineEx(*this, endPos, thick, color);
+			::DrawLineEx(*this, endPos, thick, color);
+		}
+
+		void DrawLineBezier(::Vector2 endPos, float thick, ::Color color) {
+			::DrawLineBezier(*this, endPos, thick, color);
 		}
 
 		void DrawCircle(float radius, ::Color color) {
-			DrawCircleV(*this, radius, color);
+			::DrawCircleV(*this, radius, color);
 		}
 
 		void DrawRectangle(::Vector2 size, ::Color color) {
-			DrawRectangleV(*this, size, color);
+			::DrawRectangleV(*this, size, color);
 		}
 
 		void DrawPoly(int sides, float radius, float rotation, ::Color color) {

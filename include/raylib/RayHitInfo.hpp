@@ -18,6 +18,16 @@ namespace raylib {
 			normal = Normal;
 		};
 
+        RayHitInfo& operator=(const ::RayHitInfo& ray) {
+            set(ray);
+            return *this;
+        }
+
+        RayHitInfo& operator=(const RayHitInfo& ray) {
+            set(ray);
+            return *this;
+        }
+
 		inline void set(::RayHitInfo ray) {
 			hit = ray.hit;
 			distance = ray.distance;

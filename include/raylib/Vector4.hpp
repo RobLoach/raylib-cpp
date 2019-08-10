@@ -33,6 +33,16 @@ namespace raylib {
 		GETTERSETTER(float,Y,y)
 		GETTERSETTER(float,Z,z)
 		GETTERSETTER(float,W,w)
+
+        Vector4& operator=(const ::Vector4& vector4) {
+            set(vector4);
+            return *this;
+        }
+
+        Vector4& operator=(const Vector4& vector4) {
+            set(vector4);
+            return *this;
+        }
 	};
 }
 

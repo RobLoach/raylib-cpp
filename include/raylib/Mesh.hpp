@@ -39,6 +39,16 @@ namespace raylib {
 		GETTERSETTER(float,VertexCount,vertexCount)
 		GETTERSETTER(float,TriangleCount,triangleCount)
 
+        Mesh& operator=(const ::Mesh& mesh) {
+            set(mesh);
+            return *this;
+        }
+
+        Mesh& operator=(const Mesh& mesh) {
+            set(mesh);
+            return *this;
+        }
+
 		~Mesh() {
 			Unload();
 		}

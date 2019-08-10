@@ -18,6 +18,22 @@ namespace raylib {
 
 		Camera3D() {}
 
+		GETTERSETTER(Vector3,Position,position)
+		GETTERSETTER(Vector3,Target,target)
+		GETTERSETTER(Vector3,Up,up)
+		GETTERSETTER(float,Fovy,fovy)
+		GETTERSETTER(int,Type,type)
+
+        Camera3D& operator=(const ::Camera3D& camera) {
+            set(camera);
+            return *this;
+        }
+
+        Camera3D& operator=(const Camera3D& camera) {
+            set(camera);
+            return *this;
+        }
+
 		inline void set(const ::Camera3D& camera) {
 			position = camera.position;
 			target = camera.target;
@@ -57,22 +73,13 @@ namespace raylib {
 			::UpdateVrTracking(this);
 		}
 
-		GETTERSETTER(Vector3,Position,position)
-		GETTERSETTER(Vector3,Target,target)
-		GETTERSETTER(Vector3,Up,up)
-		GETTERSETTER(float,Fovy,fovy)
-		GETTERSETTER(int,Type,type)
+		Ray GetMouseRay(::Vector2 mousePosition) {
+			return ::GetMouseRay(mousePosition, *this);
+		}
 
-        Camera3D& operator=(const ::Camera3D& camera) {
-            set(camera);
-            return *this;
-        }
-
-        Camera3D& operator=(const Camera3D& camera) {
-            set(camera);
-            return *this;
-        }
-
+		Vector2 GetWorldToScreen(::Vector3 position) {
+			return ::GetWorldToScreen(position, *this);
+		}
 	};
 
 	typedef Camera3D Camera;

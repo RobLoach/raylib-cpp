@@ -27,6 +27,16 @@ namespace raylib {
 			direction = ray.direction;
 		}
 
+        Ray& operator=(const ::Ray& ray) {
+            set(ray);
+            return *this;
+        }
+
+        Ray& operator=(const Ray& ray) {
+            set(ray);
+            return *this;
+        }
+
 		GETTERSETTER(::Vector3,Position,position)
 		GETTERSETTER(::Vector3,Direction,direction)
 

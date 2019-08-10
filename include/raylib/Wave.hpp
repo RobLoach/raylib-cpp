@@ -40,6 +40,16 @@ namespace raylib {
 		GETTERSETTER(unsigned int,W,channels)
 		GETTERSETTER(void*,Data,data)
 
+        Wave& operator=(const ::Wave& wave) {
+            set(wave);
+            return *this;
+        }
+
+        Wave& operator=(const Wave& wave) {
+            set(wave);
+            return *this;
+        }
+
 		void Format(int SampleRate = 0, int SampleSize = 0, int Channels = 2) {
 			WaveFormat(this, SampleRate, SampleSize, Channels);
 		}

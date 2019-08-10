@@ -17,5 +17,8 @@ TEST_CASE("raylib_test", "[raylib_test]" ) {
 	SECTION("Color") {
 		raylib::Color c(RED);
 		CHECK(c.ToInt() == ColorToInt(RED));
+
+		c = RAYWHITE;
+		CHECK(c.r == RAYWHITE.r);
 	}
 }

@@ -4,7 +4,6 @@
 #include <string>
 #include "raylib.h"
 #include "utils.hpp"
-#include <iostream>
 
 namespace raylib {
 	class Image : public ::Image {
@@ -65,7 +64,6 @@ namespace raylib {
 		}
 
 		void Unload() {
-			std::cout << "UnloadImage()" << std::endl;
 			UnloadImage(*this);
 		};
 
@@ -134,6 +132,9 @@ namespace raylib {
 			ImageColorReplace(this, color, replace);
 		}
 
+		::Color* GetData() {
+			return ::GetImageData(*this);
+		}
 	};
 }
 

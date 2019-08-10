@@ -17,6 +17,7 @@ namespace raylib {
 			width = Width;
 			height = Height;
 		};
+
 		inline void set(::Rectangle rect) {
 			x = rect.x;
 			y = rect.y;
@@ -68,6 +69,15 @@ namespace raylib {
 			::DrawRectangleRoundedLines(*this, roundness, segments, lineThick, color);
 		}
 
+		bool CheckCollision(::Rectangle rec2) {
+			return ::CheckCollisionRecs(*this, rec2);
+		}
+		Rectangle GetCollisionRec(::Rectangle rec2) {
+			return ::GetCollisionRec(*this, rec2);
+		}
+		bool CheckCollisionPointRec(::Vector2 point) {
+			return ::CheckCollisionPointRec(point, *this);
+		}
 	};
 }
 

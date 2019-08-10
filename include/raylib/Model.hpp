@@ -42,6 +42,16 @@ namespace raylib {
 		GETTERSETTER(int,MeshCount,meshCount)
 		GETTERSETTER(int,MaterialCount,materialCount)
 
+        Model& operator=(const ::Model& model) {
+            set(model);
+            return *this;
+        }
+
+        Model& operator=(const Model& model) {
+            set(model);
+            return *this;
+        }
+
 		void Unload() {
 			UnloadModel(*this);
 		}

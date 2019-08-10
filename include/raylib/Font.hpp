@@ -2,7 +2,6 @@
 #define RAYLIB_CPP_FONT_HPP_
 
 #include <string>
-#include <iostream>
 
 #include "raylib.h"
 #include "utils.hpp"
@@ -15,9 +14,7 @@ namespace raylib {
 		}
 
 		Font(const std::string& fileName) {
-            std::cout << "std" << fileName << std::endl;
 			set(LoadFont(fileName.c_str()));
-            std::cout << "asdsadds()" << std::endl;
 		}
 
 		Font(const std::string& fileName, int fontSize, int* fontChars, int charCount)  {
@@ -33,7 +30,6 @@ namespace raylib {
 		}
 
 		void Unload() {
-            std::cout << "UnloadFont()" << std::endl;
 			UnloadFont(*this);
 		}
 
@@ -46,7 +42,6 @@ namespace raylib {
 		}
 
 		void set(const Font& font) {
-            std::cout << "set()" << std::endl;
 			baseSize = font.baseSize;
 			charsCount = font.charsCount;
 			texture = font.texture;
@@ -78,6 +73,14 @@ namespace raylib {
 		}
 		void DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint, int selectStart, int selectLength, ::Color selectText, Color selectBack) {
 			DrawTextRecEx(*this, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint,  selectStart,  selectLength, selectText, selectBack);
+		}
+
+		Vector2 MeasureText(const std::string& text, float fontSize, float spacing) {
+			return ::MeasureTextEx(*this, text.c_str(), fontSize, spacing);
+		}
+
+		int GetGlyphIndex(int character) {
+			return ::GetGlyphIndex(*this, character);
 		}
 	};
 }

@@ -37,7 +37,6 @@ namespace raylib {
             return *this;
         }
 
-
 		void Unload() {
 			UnloadMaterial(*this);
 		}

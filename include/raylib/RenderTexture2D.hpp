@@ -29,6 +29,16 @@ namespace raylib {
 		GETTERSETTER(Texture2D,Depth,depth)
 		GETTERSETTER(bool,DepthTexture,depthTexture)
 
+        RenderTexture2D& operator=(const ::RenderTexture2D& texture) {
+            set(texture);
+            return *this;
+        }
+
+        RenderTexture2D& operator=(const RenderTexture2D& texture) {
+            set(texture);
+            return *this;
+        }
+
 		~RenderTexture2D() {
 			Unload();
 		};
@@ -41,6 +51,7 @@ namespace raylib {
 			::BeginTextureMode(*this);
 		}
 	};
+	typedef RenderTexture2D RenderTexture;
 }
 
 #endif

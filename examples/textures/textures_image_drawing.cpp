@@ -13,8 +13,6 @@
 
 #include "raylib/raylib.hpp"
 
-#include <iostream>
-
 int main(void)
 {
     // Initialization
