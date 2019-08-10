@@ -54,7 +54,7 @@ namespace raylib {
 			set(LoadTexture(fileName.c_str()));
 		}
 
-		void Draw(int posX, int posY, ::Color tint) {
+		void Draw(int posX, int posY, ::Color tint = WHITE) {
 			DrawTexture(*this, posX, posY, tint);
 		}
 

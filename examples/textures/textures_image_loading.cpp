@@ -37,7 +37,7 @@ int main()
 
             ClearBackground(RAYWHITE);
 
-            texture.Draw(screenWidth / 2 - texture.getWidth() / 2, screenHeight / 2 - texture.getHeight() / 2, WHITE);
+            texture.Draw(screenWidth / 2 - texture.getWidth() / 2, screenHeight / 2 - texture.getHeight() / 2);
 
             DrawText("this IS a texture loaded from an image!", 300, 370, 10, GRAY);
 
