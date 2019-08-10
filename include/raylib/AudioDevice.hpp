@@ -1,8 +1,8 @@
 #ifndef RAYLIB_CPP_AUDIODEVICE_HPP_
 #define RAYLIB_CPP_AUDIODEVICE_HPP_
 
-#include <string>
 #include "raylib.h"
+#include "utils.hpp"
 
 namespace raylib {
 	class AudioDevice {

@@ -33,10 +33,6 @@ namespace raylib {
 			return IsWindowReady();
 		};
 
-		bool IsReady() {
-			return IsWindowReady();
-		}
-
 	};
 }
 

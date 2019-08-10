@@ -14,14 +14,14 @@ namespace raylib {
 		RayHitInfo(bool Hit, float Distance, ::Vector3 Position, ::Vector3 Normal) {
 			hit = Hit;
 			distance = Distance;
-			postion = Position;
+			position = Position;
 			normal = Normal;
 		};
 
 		inline void set(::RayHitInfo ray) {
 			hit = ray.hit;
 			distance = ray.distance;
-			postion = ray.position;
+			position = ray.position;
 			normal = ray.normal;
 		}
 

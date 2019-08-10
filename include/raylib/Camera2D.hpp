@@ -8,7 +8,7 @@
 namespace raylib {
 	class Camera2D : public ::Camera2D {
 	public:
-		Camera2D(Vector2 offsetValue, Vector2 targetValue, float rotationValue = 0, float zoomValue = 1) {
+		Camera2D(::Vector2 offsetValue, ::Vector2 targetValue, float rotationValue = 0, float zoomValue = 1) {
 			offset = offsetValue;
 			target = targetValue;
 			rotation = rotationValue;

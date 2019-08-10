@@ -51,7 +51,7 @@ namespace raylib {
 			UnloadMesh(*this);
 		}
 
-		BoundingBox BoundingBox() {
+		BoundingBox GetBoundingBox() {
 			return BoundingBox(MeshBoundingBox(*this));
 		}
 		

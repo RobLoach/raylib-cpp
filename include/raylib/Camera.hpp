@@ -8,7 +8,7 @@
 namespace raylib {
 	class Camera : public ::Camera {
 	public:
-		Camera(Vector3 positionValue, Vector3 targetValue, Vector3 upValue, float fovyValue = 0, int typeValue = 0) {
+		Camera(::Vector3 positionValue, ::Vector3 targetValue, ::Vector3 upValue, float fovyValue = 0, int typeValue = 0) {
 			position = positionValue;
 			target = targetValue;
 			up = upValue;
@@ -48,7 +48,7 @@ namespace raylib {
 		}
 
 		void UpdateCamera() {
-			::UpdateCamera(*this);
+			::UpdateCamera(this);
 		}
 
 		void UpdateVrTracking() {
@@ -62,7 +62,7 @@ namespace raylib {
 		GETTERSETTER(int,Type,type)
 
         Camera& operator=(const ::Camera& camera) {
-            set(color);
+            set(camera);
             return *this;
         }
 

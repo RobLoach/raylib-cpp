@@ -31,14 +31,14 @@ namespace raylib {
 		GETTERSETTER(::Vector3,Direction,direction)
 
 		void Draw(::Color color) {
-			DrawRaw(*this, color);
+			DrawRay(*this, color);
 		}
 
 		bool CheckCollisionSphere(::Vector3 center, float radius) {
 			return CheckCollisionRaySphere(*this, center, radius);
 		}
 
-		bool CheckCollisionSphereEx(::Vetor3 center, float radius, ::Vector3 *collisionPoint) {
+		bool CheckCollisionSphereEx(::Vector3 center, float radius, ::Vector3 *collisionPoint) {
 			return CheckCollisionRaySphereEx(*this, center, radius, collisionPoint);
 		}
 

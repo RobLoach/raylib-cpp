@@ -14,13 +14,19 @@ namespace raylib {
 			b = 0;
 			a = 255;
 		}
+		Color(::Color color) {
+			r = color.r;
+			g = color.g;
+			b = color.b;
+			a = color.a;
+		}
 		Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha = 255) {
 			r = red;
 			g = green;
 			b = blue;
 			a = alpha;
 		};
-		Color(Vector3 hsv) {
+		Color(::Vector3 hsv) {
 			set(::ColorFromHSV(hsv));
 		};
 		Color(int hexValue) {

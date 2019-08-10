@@ -14,8 +14,8 @@ namespace raylib {
 		};
 		int number;
 
-		inline vonumber set(int gamepadNumber) {
-			number = gamepadNumber
+		inline void set(int gamepadNumber) {
+			number = gamepadNumber;
 		}
 
 		GETTERSETTER(int,Number,number)
@@ -26,7 +26,7 @@ namespace raylib {
 			return IsGamepadAvailable(number);
 		}
 		bool IsName(const std::string& name) {
-			return IsGamePadName(number, name.c_str());
+			return IsGamepadName(number, name.c_str());
 		}
 		std::string GetName() {
 			return std::string(GetGamepadName(number));

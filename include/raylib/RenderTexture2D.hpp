@@ -11,7 +11,7 @@ namespace raylib {
 			set(renderTexture);
 		};
 		RenderTexture2D(unsigned int Id) {
-			id = Id
+			id = Id;
 		};
 		RenderTexture2D(int width, int height) {
 			set(LoadRenderTexture(width, height));

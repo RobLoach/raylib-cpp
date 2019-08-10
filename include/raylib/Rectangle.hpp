@@ -21,7 +21,7 @@ namespace raylib {
 			x = rect.x;
 			y = rect.y;
 			width = rect.width;
-			height = rect.height
+			height = rect.height;
 		}
 
 		GETTERSETTER(float,X,x)
@@ -29,10 +29,10 @@ namespace raylib {
 		GETTERSETTER(float,Width,width)
 		GETTERSETTER(float,Height,height)
 
-		void Draw(Color color) {
+		void Draw(::Color color) {
 			DrawRectangle(x, y, width, height, color);
 		}
-		void DrawLines(Color color) {
+		void DrawLines(::Color color) {
 			DrawRectangleLines(x, y, width, height, color);
 		}
 	};
