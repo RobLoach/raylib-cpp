@@ -16,6 +16,8 @@ namespace raylib {
 			type = typeValue;
 		};
 
+		Camera3D() {}
+
 		inline void set(const ::Camera3D& camera) {
 			position = camera.position;
 			target = camera.target;
@@ -39,15 +41,15 @@ namespace raylib {
 			::EndMode3D();
 		}
 
-		Matrix GetCameraMatrix() {
+		Matrix GetMatrix() {
 			return ::GetCameraMatrix(*this);
 		}
 
-		void SetCameraMode(int mode) {
+		void SetMode(int mode) {
 			::SetCameraMode(*this, mode);
 		}
 
-		void UpdateCamera() {
+		void Update() {
 			::UpdateCamera(this);
 		}
 

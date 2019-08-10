@@ -32,6 +32,33 @@ namespace raylib {
 		void DrawGizmo() {
 			::DrawGizmo(*this);
 		}
+
+		void DrawLine3D(::Vector3 endPos, ::Color color) {
+			::DrawLine3D(*this, endPos, color);
+		}
+
+		void DrawCube(float width, float height, float length, ::Color color) {
+			::DrawCube(*this, width, height, length, color);
+		}
+		void DrawCube(::Vector3 size, ::Color color) {
+			::DrawCubeV(*this, size, color);
+		}
+
+
+		void DrawCubeWires(float width, float height, float length, ::Color color) {
+			::DrawCubeWires(*this, width, height, length, color);
+		}
+		void DrawCubeWires(::Vector3 size, ::Color color) {
+			::DrawCubeWiresV(*this, size, color);
+		}
+
+		void DrawCubeTexture(::Texture2D texture, float width, float height, float length, ::Color color) {
+			::DrawCubeTexture(texture, *this, width, height, length, color);
+		}
+
+		void DrawPlane(::Vector2 size, ::Color color) {
+			::DrawPlane(*this, size, color);
+		}
 	};
 }
 

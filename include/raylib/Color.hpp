@@ -1,6 +1,8 @@
 #ifndef RAYLIB_CPP_COLOR_HPP_
 #define RAYLIB_CPP_COLOR_HPP_
 
+#include <string>
+
 #include "raylib.h"
 #include "Vector4.hpp"
 #include "utils.hpp"
@@ -72,31 +74,46 @@ namespace raylib {
 		GETTERSETTER(unsigned char,B,b)
 		GETTERSETTER(unsigned char,A,a)
 
-        Color& operator=(const ::Color& color) {
-            set(color);
-            return *this;
-        }
+		Color& operator=(const ::Color& color) {
+			set(color);
+			return *this;
+		}
 
-        Color& operator=(const Color& color) {
-            set(color);
-            return *this;
-        }
+		Color& operator=(const Color& color) {
+			set(color);
+			return *this;
+		}
 
-        void ClearBackground() {
-        	::ClearBackground(*this);
-        }
+		void ClearBackground() {
+			::ClearBackground(*this);
+		}
 
-        void DrawPixel(int x, int y) {
-        	::DrawPixel(x, y, *this);
-        }
+		void DrawPixel(int x, int y) {
+			::DrawPixel(x, y, *this);
+		}
 
-        void DrawPixel(::Vector2 pos) {
-        	::DrawPixelV(pos, *this);
-        }
+		void DrawPixel(::Vector2 pos) {
+			::DrawPixelV(pos, *this);
+		}
 
-        void DrawText(const std::string& text, int posX, int posY, int fontSize) {
-        	::DrawText(text.c_str(), posX, posY, fontSize, *this);
-        }
+		void DrawText(const std::string& text, int posX, int posY, int fontSize) {
+			::DrawText(text.c_str(), posX, posY, fontSize, *this);
+		}
+		void DrawText(::Font font, const std::string& text, ::Vector2 position, float fontSize, float spacing) {
+			::DrawTextEx(font, text.c_str(), position, fontSize, spacing, *this);
+		}
+
+		void DrawText(::Font font, const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap = false) {
+			::DrawTextRec(font, text.c_str(), rec, fontSize, spacing, wordWrap, *this);
+		}
+
+		void DrawRectangleLines(int posX, int posY, int width, int height) {
+			::DrawRectangleLines(posX, posY, width, height, *this);
+		}
+
+		void DrawRectangleLines(Rectangle rec, int lineThick) {
+			::DrawRectangleLinesEx(rec, lineThick, *this);
+		}
 
 	};
 }
