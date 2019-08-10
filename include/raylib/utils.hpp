@@ -3,8 +3,8 @@
 
 #ifndef GETTERSETTER
 #define GETTERSETTER(type, method, name) \
-	type get##method() { return name;} \
-	void set##method(type value) { name = value; }
+	inline type get##method() { return name;} \
+	inline void set##method(type value) { name = value; }
 #endif
 
 #endif

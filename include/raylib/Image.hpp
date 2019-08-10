@@ -85,19 +85,19 @@ namespace raylib {
 		void Resize(int newWidth, int newHeight){
 			ImageResize(this, newWidth, newHeight);
 		}
-		void Draw(::Image& src, ::Rectangle srcRec, ::Rectangle dstRec, ::Color tint){
+		void Draw(::Image& src, ::Rectangle srcRec, ::Rectangle dstRec, ::Color tint = WHITE){
 			ImageDraw(this, src, srcRec, dstRec, tint);
 		}
-		void DrawRectangle(::Rectangle rec, ::Color color){
+		void DrawRectangle(::Rectangle rec, ::Color color = WHITE){
 			ImageDrawRectangle(this, rec, color);
 		}
-		void DrawRectangleLines(::Rectangle rec, int thick, ::Color color){
+		void DrawRectangleLines(::Rectangle rec, int thick, ::Color color = WHITE){
 			ImageDrawRectangleLines(this, rec, thick, color);
 		}
-		void DrawText(::Vector2 position, const std::string& text, int fontSize, ::Color color){
+		void DrawText(::Vector2 position, const std::string& text, int fontSize, ::Color color = WHITE){
 			ImageDrawText(this, position, text.c_str(), fontSize, color);
 		}
-		void DrawTextEx(::Vector2 position, ::Font font, const std::string& text, float fontSize, float spacing, ::Color color){
+		void DrawText(::Vector2 position, ::Font font, const std::string& text, float fontSize, float spacing, ::Color color = WHITE){
 			ImageDrawTextEx(this, position, font, text.c_str(), fontSize, spacing, color);
 		}
 		void FlipVertical() {

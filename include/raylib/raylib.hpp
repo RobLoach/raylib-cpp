@@ -12,6 +12,7 @@
 #include "Image.hpp"
 #include "Material.hpp"
 #include "Mesh.hpp"
+#include "Model.hpp"
 #include "Music.hpp"
 #include "Ray.hpp"
 #include "RayHitInfo.hpp"

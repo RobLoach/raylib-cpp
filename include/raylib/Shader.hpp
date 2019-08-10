@@ -1,5 +1,5 @@
-#ifndef RAYLIB_CPP_VECTOR4_HPP_
-#define RAYLIB_CPP_VECTOR4_HPP_
+#ifndef RAYLIB_CPP_SHADER_HPP_
+#define RAYLIB_CPP_SHADER_HPP_
 
 #include "raylib.h"
 #include "utils.hpp"
@@ -25,7 +25,7 @@ namespace raylib {
 			locs = shader.locs;
 		}
 
-		GETTERSETTER(unsigned int,Id,i)
+		GETTERSETTER(unsigned int,Id,id)
 
         Shader& operator=(const ::Shader& shader) {
             set(shader);
@@ -42,22 +42,24 @@ namespace raylib {
 		}
 
 		void Unload() {
-			UnloadShader(*this);
+			::UnloadShader(*this);
 		}
 
 		static Shader Load(const std::string& vsFileName, const std::string& fsFileName) {
-			return LoadShader(vsFileName.c_str(), fsFileName.c_str());
+			return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());
 		}
 		static Shader LoadCode(const std::string& vsCode, const std::string& fsCode) {
-			return LoadShaderCode(vsCode.c_str(), fsCode.c_str());
+			char* param1 = (char*)vsCode.c_str();
+			char* param2 = (char*)fsCode.c_str();
+			return ::LoadShaderCode(param1, param2);
 		}
 
 		void BeginShaderMode() {
-			BeginShaderMode(*this);
+			::BeginShaderMode(*this);
 		}
 
 		void EndShaderMode() {
-			EndShaderMode();
+			::EndShaderMode();
 		}
 
 		int GetLocation(const std::string& uniformName) {

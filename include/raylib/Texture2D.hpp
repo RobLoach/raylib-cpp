@@ -58,23 +58,23 @@ namespace raylib {
 			DrawTexture(*this, posX, posY, tint);
 		}
 
-		void Draw(::Vector2 position, ::Color tint) {
+		void Draw(::Vector2 position, ::Color tint = WHITE) {
 			DrawTextureV(*this, position, tint);
 		}
-		void Draw(::Vector2 position, float rotation, float scale, ::Color tint) {
+		void Draw(::Vector2 position, float rotation, float scale = 1.0f, ::Color tint = WHITE) {
 			DrawTextureEx(*this, position, rotation, scale, tint);
 		}
 
-		void Draw(::Rectangle sourceRec, ::Vector2 position, ::Color tint) {
+		void Draw(::Rectangle sourceRec, ::Vector2 position, ::Color tint = WHITE) {
 			DrawTextureRec(*this, sourceRec, position, tint);
 		}
-		void Draw(::Vector2 tiling, ::Vector2 offset, ::Rectangle quad, ::Color tint) {
+		void Draw(::Vector2 tiling, ::Vector2 offset, ::Rectangle quad, ::Color tint = WHITE) {
 			DrawTextureQuad(*this, tiling, offset, quad, tint);
 		}
-		void Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin, float rotation, ::Color tint) {
+		void Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin, float rotation = 0, ::Color tint = WHITE) {
 			DrawTexturePro(*this, sourceRec, destRec, origin, rotation, tint);
 		}
-		void Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin, float rotation, ::Color tint) {
+		void Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin, float rotation = 0, ::Color tint = WHITE) {
 			DrawTextureNPatch(*this, nPatchInfo, destRec, origin, rotation, tint);
 		}
 

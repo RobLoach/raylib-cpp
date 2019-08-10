@@ -2,7 +2,7 @@
 
 C++ wrapper library around [raylib](https://www.raylib.com/), a simple and easy-to-use library to enjoy videogames programming.
 
-Provides object oriented wrappers around some of the struct interfaces, which saves you from having to worry about unloading the objects yourself.
+Provides object-oriented wrappers around some of the struct interfaces.
 
 ## Example
 
@@ -13,7 +13,9 @@ int main(int argc, char* argv[])
 {
 	int screenWidth = 800;
 	int screenHeight = 450;
-	raylib::Window w(screenWidth, screenHeight, "raylib [core] example - basic window");
+
+	raylib::Window w(screenWidth, screenHeight, "raylib-cpp - basic window");
+	raylib::Texture logo("raylib_logo.png");
 
 	SetTargetFPS(60);
 
@@ -25,10 +27,12 @@ int main(int argc, char* argv[])
 
 		DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 
+		logo.Draw(screenWidth / 2 - texture.getWidth() / 2, screenHeight / 2 - texture.getHeight() / 2);
+
 		EndDrawing();
 	}
 
-	// No need to call CloseWindow().
+	// UnloadTexture() and CloseWindow() are called automatically.
 
 	return 0;
 }

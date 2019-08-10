@@ -14,7 +14,6 @@ foreach(example_dir ${example_dirs})
   list(APPEND example_resources ${resources})
 endforeach()
 
-
 # Do each example
 foreach(example_source ${example_sources})
   # Create the basename for the example

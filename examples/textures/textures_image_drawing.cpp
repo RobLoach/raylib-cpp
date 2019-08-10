@@ -35,8 +35,7 @@ int main(void)
     // Draw one image over the other with a scaling of 1.5f
     parrots.Draw(cat,
             raylib::Rectangle(0, 0, cat.width, cat.height),
-            raylib::Rectangle(30, 40, cat.width*1.5f, cat.height*1.5f),
-            WHITE);
+            raylib::Rectangle(30, 40, cat.width*1.5f, cat.height*1.5f));
 
     parrots.Crop(raylib::Rectangle(0, 50, parrots.width, parrots.height - 100)); // Crop resulting image
 
@@ -44,7 +43,7 @@ int main(void)
     raylib::Font font("resources/custom_jupiter_crash.png");
 
     // Draw over image using custom font
-    parrots.DrawTextEx(raylib::Vector2(300, 230), font, "PARROTS & CAT", font.baseSize, -2, WHITE);
+    parrots.DrawText(raylib::Vector2(300, 230), font, "PARROTS & CAT", font.baseSize, -2);
 
     raylib::Texture2D texture(parrots);      // Image converted to texture, uploaded to GPU memory (VRAM)
 
@@ -65,7 +64,7 @@ int main(void)
 
             background.ClearBackground();
 
-            texture.Draw(screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2 - 40, WHITE);
+            texture.Draw(screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2 - 40);
             darkGray.DrawRectangleLines(screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2 - 40, texture.width, texture.height);
 
             darkGray.DrawText("We are drawing only one texture from various images composed!", 240, 350, 10);
