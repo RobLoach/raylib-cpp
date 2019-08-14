@@ -39,10 +39,6 @@ namespace raylib {
             return *this;
         }
 
-		void DrawGizmo() {
-			::DrawGizmo(*this);
-		}
-
 		void DrawLine3D(::Vector3 endPos, ::Color color) {
 			::DrawLine3D(*this, endPos, color);
 		}
@@ -67,6 +63,14 @@ namespace raylib {
 
 		void DrawPlane(::Vector2 size, ::Color color) {
 			::DrawPlane(*this, size, color);
+		}
+
+		void DrawGizmo() {
+			::DrawGizmo(*this);
+		}
+
+		bool CheckCollision(float radiusA, Vector3 centerB, float radiusB) {
+			return CheckCollisionSpheres(*this, radiusA, centerB, radiusB);
 		}
 	};
 }

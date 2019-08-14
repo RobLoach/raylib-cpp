@@ -75,15 +75,15 @@ int main(void)
             {
                 if (bunnies.size() < MAX_BUNNIES)
                 {
-                	bunnies.push_back(Bunny());
+                	bunnies.emplace_back();
                 }
             }
         }
 
         // Update bunnies
 
-        for (std::vector<Bunny>::iterator bunny = bunnies.begin() ; bunny != bunnies.end(); ++bunny) {
-            (*bunny).Update(texBunny);
+        for (Bunny& bunny: bunnies) {
+            bunny.Update(texBunny);
         }
         //----------------------------------------------------------------------------------
 
@@ -93,14 +93,14 @@ int main(void)
 
             ClearBackground(RAYWHITE);
 
-        	for (std::vector<Bunny>::iterator bunny = bunnies.begin() ; bunny != bunnies.end(); ++bunny) {
+            for (Bunny& bunny: bunnies) {
                 // NOTE: When internal batch buffer limit is reached (MAX_BATCH_ELEMENTS),
                 // a draw call is launched and buffer starts being filled again;
                 // before issuing a draw call, updated vertex data from internal CPU buffer is send to GPU...
                 // Process of sending data is costly and it could happen that GPU data has not been completely
                 // processed for drawing while new data is tried to be sent (updating current in-use buffers)
                 // it could generates a stall and consequently a frame drop, limiting the number of drawn bunnies
-                DrawTexture(texBunny, (*bunny).position.x, (*bunny).position.y, (*bunny).color);
+                DrawTexture(texBunny, bunny.position.x, bunny.position.y, bunny.color);
             }
 
             DrawRectangle(0, 0, screenWidth, 40, BLACK);

@@ -9,7 +9,9 @@
 namespace raylib {
 	class Texture2D : public ::Texture2D {
 	public:
-		Texture2D() {};
+		Texture2D() {
+			set(GetTextureDefault());
+		};
 
 		Texture2D(::Image& image) {
 			LoadFromImage(image);

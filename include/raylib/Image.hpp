@@ -24,6 +24,13 @@ namespace raylib {
 		Image(const std::string& fileName, int width, int height, int format, int headerSize) {
 			LoadRaw(fileName, width, height, format, headerSize);
 		};
+		Image(::Texture2D texture) {
+			set(GetTextureData(texture));
+		}
+
+		static Image GetScreenData() {
+			return Image(::GetScreenData());
+		}
 
 		~Image() {
 			Unload();

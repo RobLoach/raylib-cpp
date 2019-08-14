@@ -2,14 +2,14 @@
 
 C++ wrapper library around [raylib](https://www.raylib.com/), a simple and easy-to-use library to enjoy videogames programming.
 
-Provides object-oriented wrappers around some of the struct interfaces.
+Provides object-oriented wrappers around the struct interfaces.
 
 ## Example
 
 ``` cpp
 #include "raylib/raylib.hpp"
 
-int main(int argc, char* argv[])
+int main()
 {
 	int screenWidth = 800;
 	int screenHeight = 450;
@@ -27,6 +27,7 @@ int main(int argc, char* argv[])
 
 		DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 
+		// Object methods.
 		logo.Draw(screenWidth / 2 - texture.getWidth() / 2, screenHeight / 2 - texture.getHeight() / 2);
 
 		EndDrawing();

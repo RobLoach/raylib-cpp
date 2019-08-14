@@ -40,11 +40,15 @@ namespace raylib {
 		}
 
 		bool CheckCollision(::BoundingBox box2) {
-			CheckCollisionBoxes(*this, box2);
+			return CheckCollisionBoxes(*this, box2);
 		}
 
 		bool CheckCollision(::Vector3 center, float radius) {
-			CheckCollisionBoxSphere(*this, center, radius);
+			return CheckCollisionBoxSphere(*this, center, radius);
+		}
+
+		bool CheckCollision(::Ray ray) {
+			return CheckCollisionRayBox(ray, *this);
 		}
 	};
 }

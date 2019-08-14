@@ -11,7 +11,7 @@ namespace raylib {
 			set(vec);
 		};
 		Rectangle() {};
-		Rectangle(float X = 0, float Y = 0, float Width = 0, float Height = 0) {
+		Rectangle(float X, float Y = 0, float Width = 0, float Height = 0) {
 			x = X;
 			y = Y;
 			width = Width;
@@ -72,10 +72,10 @@ namespace raylib {
 		bool CheckCollision(::Rectangle rec2) {
 			return ::CheckCollisionRecs(*this, rec2);
 		}
-		Rectangle GetCollisionRec(::Rectangle rec2) {
+		Rectangle GetCollision(::Rectangle rec2) {
 			return ::GetCollisionRec(*this, rec2);
 		}
-		bool CheckCollisionPointRec(::Vector2 point) {
+		bool CheckCollision(::Vector2 point) {
 			return ::CheckCollisionPointRec(point, *this);
 		}
 	};
