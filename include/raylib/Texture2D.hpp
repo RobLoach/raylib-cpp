@@ -80,6 +80,10 @@ namespace raylib {
 			DrawTextureNPatch(*this, nPatchInfo, destRec, origin, rotation, tint);
 		}
 
+		void Draw(::Vector3 position, float width, float height, float length, ::Color color = WHITE) {
+			DrawCubeTexture(*this, position, width, height, length, color);
+		}
+
 		void Unload() {
 			UnloadTexture(*this);
 		};

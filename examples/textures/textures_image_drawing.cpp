@@ -60,7 +60,7 @@ int main(void)
 
         // Draw
         //----------------------------------------------------------------------------------
-        BeginDrawing();
+        w.BeginDrawing();
 
             background.ClearBackground();
 
@@ -70,7 +70,7 @@ int main(void)
             darkGray.DrawText("We are drawing only one texture from various images composed!", 240, 350, 10);
             darkGray.DrawText("Source images have been cropped, scaled, flipped and copied one over the other.", 190, 370, 10);
 
-        EndDrawing();
+        w.EndDrawing();
         //----------------------------------------------------------------------------------
     }
 

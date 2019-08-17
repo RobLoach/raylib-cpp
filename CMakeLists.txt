@@ -4,7 +4,6 @@ project (raylib-cpp)
 option(BUILD_EXAMPLES "Examples" TRUE)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-configure_file(${CMAKE_SOURCE_DIR}/cmake/CTestCustom.cmake ${CMAKE_BINARY_DIR})
 
 add_subdirectory(include)
 

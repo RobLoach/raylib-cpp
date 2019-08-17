@@ -56,7 +56,7 @@ int main(void)
     raylib::Window w(screenWidth, screenHeight, "raylib [textures] example - bunnymark");
 
     // Load bunny texture
-    const raylib::Texture2D texBunny("resources/wabbit_alpha.png");
+    raylib::Texture2D texBunny("resources/wabbit_alpha.png");
 
     std::vector<Bunny> bunnies;
 
