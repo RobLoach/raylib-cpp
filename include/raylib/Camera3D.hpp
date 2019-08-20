@@ -80,6 +80,14 @@ namespace raylib {
 		Vector2 GetWorldToScreen(::Vector3 position) {
 			return ::GetWorldToScreen(position, *this);
 		}
+
+		void DrawBillboard(::Texture2D texture, ::Vector3 center, float size, ::Color tint = WHITE) {
+			::DrawBillboard(*this, texture, center, size, tint);
+		}
+
+		void DrawBillboard(Texture2D texture, Rectangle sourceRec, Vector3 center, float size, ::Color tint = WHITE) {
+			::DrawBillboardRec(*this, texture, sourceRec, center, size, tint);
+		}
 	};
 
 	typedef Camera3D Camera;

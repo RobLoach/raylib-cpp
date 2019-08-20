@@ -29,11 +29,16 @@ macro(ADD_CATCH_TESTS executable)
 endmacro()
 
 find_package(Raylib)
+
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CTEST_CUSTOM_TESTS_IGNORE pkg-config--static)
+
 list(APPEND SOURCES catch.hpp raylib_test.cpp)
 list(APPEND LIBS raylib-cpp raylib)
+
 add_executable(raylib_test ${SOURCES})
+
 target_link_libraries(raylib_test ${LIBS})
 
 ADD_CATCH_TESTS(raylib_test)

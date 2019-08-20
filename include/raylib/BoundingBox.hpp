@@ -35,7 +35,7 @@ namespace raylib {
             return *this;
         }
 
-		void Draw(::Color color) {
+		void Draw(::Color color = WHITE) {
 			DrawBoundingBox(*this, color);
 		}
 

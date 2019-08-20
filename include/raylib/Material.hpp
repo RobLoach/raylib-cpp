@@ -42,7 +42,7 @@ namespace raylib {
 		}
 
 		void SetTexture(int mapType, ::Texture2D texture) {
-			SetMaterialTexture(this, mapType, texture);
+			::SetMaterialTexture(this, mapType, texture);
 		}
 
 	};

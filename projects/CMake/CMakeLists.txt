@@ -20,13 +20,13 @@ if (NOT raylib_FOUND)
   endif()
 endif()
 
-find_package(raylib-cpp 2.0 QUIET)
+find_package(raylib-cpp 0.1 QUIET)
 if (NOT raylib-cpp_FOUND)
   include(FetchContent)
   FetchContent_Declare(
     raylib-cpp
     GIT_REPOSITORY https://github.com/RobLoach/raylib-cpp.git
-    GIT_TAG de5e6184d043e9ae3e5a16836bc810b7485e95f2
+    GIT_TAG cfa1c3715c0fbf20d9a7d7f66fc4f128216b57e4
   )
   FetchContent_GetProperties(raylib-cpp)
   if (NOT raylib-cpp_POPULATED) # Have we downloaded raylib yet?
