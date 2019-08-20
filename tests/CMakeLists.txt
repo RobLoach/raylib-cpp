@@ -29,6 +29,8 @@ macro(ADD_CATCH_TESTS executable)
 endmacro()
 
 find_package(Raylib)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 list(APPEND SOURCES catch.hpp raylib_test.cpp)
 list(APPEND LIBS raylib-cpp raylib)
 add_executable(raylib_test ${SOURCES})

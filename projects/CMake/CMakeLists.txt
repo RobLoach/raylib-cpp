@@ -39,9 +39,6 @@ if (NOT raylib-cpp_FOUND)
   endif()
 endif()
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 # This is the main part:
 set(PROJECT_NAME core_basic_window)
 set(PROJECT_SOURCES core_basic_window.cpp)
