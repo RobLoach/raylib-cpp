@@ -26,6 +26,7 @@ namespace raylib {
 		}
 
 		GETTERSETTER(unsigned int,Id,id)
+		GETTERSETTER(int*,Locs,locs)
 
         Shader& operator=(const ::Shader& shader) {
             set(shader);

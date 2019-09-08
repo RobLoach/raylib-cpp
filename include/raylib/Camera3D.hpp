@@ -77,6 +77,10 @@ namespace raylib {
 			return ::GetMouseRay(mousePosition, *this);
 		}
 
+		Matrix GetCameraMatrix() {
+			return ::GetCameraMatrix(*this);
+		}
+
 		Vector2 GetWorldToScreen(::Vector3 position) {
 			return ::GetWorldToScreen(position, *this);
 		}
@@ -88,6 +92,9 @@ namespace raylib {
 		void DrawBillboard(Texture2D texture, Rectangle sourceRec, Vector3 center, float size, ::Color tint = WHITE) {
 			::DrawBillboardRec(*this, texture, sourceRec, center, size, tint);
 		}
+
+
+
 	};
 
 	typedef Camera3D Camera;

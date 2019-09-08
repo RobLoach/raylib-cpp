@@ -41,16 +41,25 @@ namespace raylib {
 		GETTERSETTER(float,Rotation,rotation)
 		GETTERSETTER(float,Zoom,zoom)
 
-        Camera2D& operator=(const ::Camera2D& camera) {
-            set(camera);
-            return *this;
-        }
+		Camera2D& operator=(const ::Camera2D& camera) {
+			set(camera);
+			return *this;
+		}
 
-        Camera2D& operator=(const Camera2D& camera) {
-            set(camera);
-            return *this;
-        }
+		Camera2D& operator=(const Camera2D& camera) {
+			set(camera);
+			return *this;
+		}
 
+		Matrix GetCameraMatrix2D() {
+			return ::GetCameraMatrix2D(*this);
+		}
+		Vector2 GetWorldToScreen2D(Vector2 position) {
+			return ::GetWorldToScreen2D(position, *this);
+		}
+		Vector2 GetScreenToWorld2D(Vector2 position) {
+			return ::GetScreenToWorld2D(position, *this);
+		}
 	};
 }
 

@@ -23,14 +23,12 @@ namespace raylib {
 			ctxType = music.ctxType;
 			ctxData = music.ctxData;
 			sampleCount = music.sampleCount;
-			sampleLeft = music.sampleLeft;
 			loopCount = music.loopCount;
 			stream = music.stream;
 		}
 
 		GETTERSETTER(int,CtxType,ctxType)
 		GETTERSETTER(unsigned int,SampleCount,sampleCount)
-		GETTERSETTER(unsigned int,SampleLeft,sampleLeft)
 		GETTERSETTER(unsigned int,LoopCount,loopCount)
 
         Music& operator=(const ::Music& music) {

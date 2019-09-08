@@ -47,8 +47,8 @@ namespace raylib {
         void Close() {
         	CloseAudioStream(*this);
         }
-        bool IsAudioBufferProcessed() {
-        	return ::IsAudioBufferProcessed(*this);
+        bool IsProcessed() {
+        	return ::IsAudioStreamProcessed(*this);
         }
 		void Play() {
 			PlayAudioStream(*this);
