@@ -42,6 +42,12 @@ namespace raylib {
 		void DrawLine3D(::Vector3 endPos, ::Color color) {
 			::DrawLine3D(*this, endPos, color);
 		}
+		void DrawPoint3D(::Color color) {
+			::DrawPoint3D(*this, color);
+		}
+		void DrawCircle3D(float radius, Vector3 rotationAxis, float rotationAngle, Color color) {
+			::DrawCircle3D(*this, radius, rotationAxis, rotationAngle, color);
+		}
 
 		void DrawCube(float width, float height, float length, ::Color color) {
 			::DrawCube(*this, width, height, length, color);
@@ -59,6 +65,30 @@ namespace raylib {
 
 		void DrawCubeTexture(::Texture2D texture, float width, float height, float length, ::Color color) {
 			::DrawCubeTexture(texture, *this, width, height, length, color);
+		}
+
+		void DrawSphere(float radius, Color color) {
+			::DrawSphere(*this, radius, color);
+		}
+
+		void DrawSphere(float radius, int rings, int slices, Color color) {
+			::DrawSphereEx(*this, radius, rings, slices, color);
+		}
+
+		void DrawSphereWires(float radius, int rings, int slices, Color color) {
+			::DrawSphereWires(*this, radius, rings, slices, color);
+		}
+
+		void DrawCylinder(float radius, int rings, int slices, Color color) {
+			::DrawCylinder(*this, radius, rings, slices, color);
+		}
+
+		void DrawCylinder(float radiusTop, float radiusBottom, float height, int slices, Color color) {
+			::DrawCylinder(*this, radiusTop, radiusBottom, height, slices, color);
+		}
+
+		void DrawCylinderWires(float radiusTop, float radiusBottom, float height, int slices, Color color) {
+			::DrawCylinderWires(*this, position, radiusTop, radiusBottom, height, slices, color);
 		}
 
 		void DrawPlane(::Vector2 size, ::Color color) {
