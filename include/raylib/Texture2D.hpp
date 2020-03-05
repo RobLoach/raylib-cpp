@@ -87,6 +87,10 @@ namespace raylib {
 		void Unload() {
 			UnloadTexture(*this);
 		};
+
+		void SetMaterialTexture(Material *material, int mapType) {
+			::SetMaterialTexture(material, mapType, *this);
+		}
 	};
 	typedef Texture2D Texture;
 }
