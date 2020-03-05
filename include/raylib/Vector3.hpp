@@ -79,16 +79,12 @@ namespace raylib {
 			::DrawSphereWires(*this, radius, rings, slices, color);
 		}
 
-		void DrawCylinder(float radius, int rings, int slices, Color color) {
-			::DrawCylinder(*this, radius, rings, slices, color);
-		}
-
 		void DrawCylinder(float radiusTop, float radiusBottom, float height, int slices, Color color) {
 			::DrawCylinder(*this, radiusTop, radiusBottom, height, slices, color);
 		}
 
 		void DrawCylinderWires(float radiusTop, float radiusBottom, float height, int slices, Color color) {
-			::DrawCylinderWires(*this, position, radiusTop, radiusBottom, height, slices, color);
+			::DrawCylinderWires(*this, radiusTop, radiusBottom, height, slices, color);
 		}
 
 		void DrawPlane(::Vector2 size, ::Color color) {
