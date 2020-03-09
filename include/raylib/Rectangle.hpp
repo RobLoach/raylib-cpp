@@ -41,7 +41,7 @@ namespace raylib {
         }
 
 		void Draw(::Color color) {
-			DrawRectangle(x, y, width, height, color);
+			::DrawRectangle(x, y, width, height, color);
 		}
 		void Draw(::Vector2 origin, float rotation, ::Color color) {
 			::DrawRectanglePro(*this, origin, rotation, color);

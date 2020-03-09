@@ -13,7 +13,7 @@ namespace raylib {
 			set(mesh);
 		};
 
-		Mesh(float VertexCount = 0, float TriangleCount = 0) {
+		Mesh(int VertexCount = 0, int TriangleCount = 0) {
 			vertexCount = VertexCount;
 			triangleCount = TriangleCount;
 		};
@@ -36,8 +36,8 @@ namespace raylib {
 			vboId = mesh.vboId;
 		}
 
-		GETTERSETTER(float,VertexCount,vertexCount)
-		GETTERSETTER(float,TriangleCount,triangleCount)
+		GETTERSETTER(int,VertexCount,vertexCount)
+		GETTERSETTER(int,TriangleCount,triangleCount)
 
         Mesh& operator=(const ::Mesh& mesh) {
             set(mesh);

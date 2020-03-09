@@ -24,7 +24,7 @@ namespace raylib {
 			depthTexture = renderTexture.depthTexture;
 		}
 
-		GETTERSETTER(float,Id,id)
+		GETTERSETTER(unsigned int,Id,id)
 		GETTERSETTER(Texture2D,Texture,texture)
 		GETTERSETTER(Texture2D,Depth,depth)
 		GETTERSETTER(bool,DepthTexture,depthTexture)

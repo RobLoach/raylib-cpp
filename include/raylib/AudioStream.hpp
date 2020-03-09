@@ -60,7 +60,7 @@ namespace raylib {
 			ResumeAudioStream(*this);
 		}
 		bool IsPlaying() {
-			IsAudioStreamPlaying(*this);
+			return IsAudioStreamPlaying(*this);
 		}
 		void Stop() {
 			StopAudioStream(*this);

@@ -49,10 +49,11 @@ namespace raylib {
             return *this;
         }
 
-		bool LoadFromImage(::Image& image) {
+		void LoadFromImage(::Image& image) {
 			set(LoadTextureFromImage(image));
 		}
-		bool Load(const std::string& fileName) {
+
+		void Load(const std::string& fileName) {
 			set(LoadTexture(fileName.c_str()));
 		}
 
@@ -86,7 +87,7 @@ namespace raylib {
 
 		void Unload() {
 			UnloadTexture(*this);
-		};
+		}
 
 		void SetMaterialTexture(Material *material, int mapType) {
 			::SetMaterialTexture(material, mapType, *this);

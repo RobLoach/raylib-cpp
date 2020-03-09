@@ -54,19 +54,19 @@ namespace raylib {
 			format = image.format;
 		}
 
-		bool Load(const std::string& fileName) {
+		void Load(const std::string& fileName) {
 			set(LoadImage(fileName.c_str()));
 		}
 
-		bool LoadEx(::Color *pixels, int width, int height) {
+		void LoadEx(::Color *pixels, int width, int height) {
 			set(LoadImageEx(pixels, width, height));
 		}
 
-		bool LoadPro(void *data, int width, int height, int format) {
+		void LoadPro(void *data, int width, int height, int format) {
 			set(LoadImagePro(data, width, height, format));
 		}
 
-		bool LoadRaw(const std::string& fileName, int width, int height, int format, int headerSize) {
+		void LoadRaw(const std::string& fileName, int width, int height, int format, int headerSize) {
 			set(LoadImageRaw(fileName.c_str(), width, height, format, headerSize));
 		}
 
