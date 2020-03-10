@@ -34,6 +34,9 @@ namespace raylib {
 		Color(int hexValue) {
 			set(::GetColor(hexValue));
 		};
+		Color(Vector4 normalized) {
+			set(::ColorFromNormalized(normalized));
+		}
 
 		inline void set(const ::Color& color) {
 			r = color.r;
@@ -48,6 +51,33 @@ namespace raylib {
 			b = color.b;
 			a = color.a;
 		}
+
+		static Color LightGray;
+		static Color Gray;
+		static Color DarkGray;
+		static Color Yellow;
+		static Color Gold;
+		static Color Orange;
+		static Color Pink;
+		static Color Red;
+		static Color Maroon;
+		static Color Green;
+		static Color Lime;
+		static Color DarkGreen;
+		static Color SkyBlue;
+		static Color Blue;
+		static Color DarkBlue;
+		static Color Purple;
+		static Color Violet;
+		static Color DarkPurple;
+		static Color Beige;
+		static Color Brown;
+		static Color DarkBrown;
+		static Color White;
+		static Color Black;
+		static Color Blank;
+		static Color Magenta;
+		static Color RayWhite;
 
 		int ToInt() {
 			return ::ColorToInt(*this);
@@ -132,6 +162,33 @@ namespace raylib {
 		}
 
 	};
+
+	Color Color::LightGray = ::LIGHTGRAY;
+	Color Color::Gray = ::GRAY;
+	Color Color::DarkGray = ::DARKGRAY;
+	Color Color::Yellow = ::YELLOW;
+	Color Color::Gold = ::GOLD;
+	Color Color::Orange = ::ORANGE;
+	Color Color::Pink = ::PINK;
+	Color Color::Red = ::RED;
+	Color Color::Maroon = ::MAROON;
+	Color Color::Green = ::GREEN;
+	Color Color::Lime = ::LIME;
+	Color Color::DarkGreen = ::DARKGREEN;
+	Color Color::SkyBlue = ::SKYBLUE;
+	Color Color::Blue = ::BLUE;
+	Color Color::DarkBlue = ::DARKBLUE;
+	Color Color::Purple = ::PURPLE;
+	Color Color::Violet = ::VIOLET;
+	Color Color::DarkPurple = ::DARKPURPLE;
+	Color Color::Beige = ::BEIGE;
+	Color Color::Brown = ::BROWN;
+	Color Color::DarkBrown = ::DARKBROWN;
+	Color Color::White = ::WHITE;
+	Color Color::Black = ::BLACK;
+	Color Color::Blank = ::BLANK;
+	Color Color::Magenta = ::MAGENTA;
+	Color Color::RayWhite = ::RAYWHITE;
 }
 
 #endif

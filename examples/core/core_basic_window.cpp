@@ -27,7 +27,6 @@ int main()
 	//--------------------------------------------------------------------------------------
 	int screenWidth = 800;
 	int screenHeight = 450;
-	raylib::Color background(RAYWHITE);
 	raylib::Color textColor(LIGHTGRAY);
 	raylib::Window w(screenWidth, screenHeight, "raylib [core] example - basic window");
 
@@ -46,7 +45,7 @@ int main()
 		//----------------------------------------------------------------------------------
 		BeginDrawing();
 
-		background.ClearBackground();
+		raylib::Color::RayWhite.ClearBackground();
 
 		textColor.DrawText("Congrats! You created your first window!", 190, 200, 20);
 

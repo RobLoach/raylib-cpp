@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.11)
 project (raylib-cpp)
 
-option(BUILD_EXAMPLES "Examples" TRUE)
+option(BUILD_EXAMPLES "Examples" ON)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 configure_file(${CMAKE_SOURCE_DIR}/cmake/CTestCustom.cmake ${CMAKE_BINARY_DIR})

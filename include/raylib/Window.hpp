@@ -21,60 +21,63 @@ namespace raylib {
 			InitWindow(width, height, title.c_str());
 		}
 
-		bool ShouldClose() {
-			return WindowShouldClose();
+		inline bool ShouldClose() {
+			return ::WindowShouldClose();
 		};
 
-		void Close() {
-			CloseWindow();
+		inline void Close() {
+			::CloseWindow();
 		};
 
 		static bool IsReady() {
-			return IsWindowReady();
+			return ::IsWindowReady();
 		};
 
-		void BeginDrawing() {
+		inline void BeginDrawing() {
 			::BeginDrawing();
 		}
-		void EndDrawing() {
+		inline void EndDrawing() {
 			::EndDrawing();
 		}
 
-		bool IsMinimized() {
+		inline bool IsMinimized() {
 			return ::IsWindowMinimized();
 		}
-		bool IsResized() {
+		inline bool IsResized() {
 			return ::IsWindowResized();
 		}
-		bool IsHidden() {
+		inline bool IsHidden() {
 			return ::IsWindowHidden();
 		}
-		void ToggleFullscreen() {
+		inline void ToggleFullscreen() {
 			return ::ToggleFullscreen();
 		}
-		void Unhide() {
+		inline void Unhide() {
 			return ::UnhideWindow();
 		}
-		void Hide() {
+		inline void Hide() {
 			return ::HideWindow();
 		}
-		void SetIcon(Image image) {
+		inline void SetIcon(Image image) {
 			SetWindowIcon(image);
 		}
-		void SetTitle(const std::string& title) {
+		inline void SetTitle(const std::string& title) {
 			::SetWindowTitle(title.c_str());
 		}
-		void SetPosition(int x, int y) {
+		inline void SetPosition(int x, int y) {
 			::SetWindowPosition(x, y);
 		}
-		void SetMonitor(int monitor) {
+		inline void SetMonitor(int monitor) {
 			::SetWindowMonitor(monitor);
 		}
-		void SetMinSize(int width, int height) {
+		inline void SetMinSize(int width, int height) {
 			::SetWindowMinSize(width, height);
 		}
-		void SetSize(int width, int height) {
+		inline void SetSize(int width, int height) {
 			::SetWindowSize(width, height);
+		}
+		inline void* GetHandle() {
+			return ::GetWindowHandle();
 		}
 	};
 }

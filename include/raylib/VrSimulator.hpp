@@ -15,32 +15,35 @@ namespace raylib {
 			Set(info, distortion);
 		};
 
-		void Init() {
+		inline void Init() {
 			InitVrSimulator();
 		}
 
 		~VrSimulator() {
-			CloseVrSimulator();
+			Close();
 		}
 
-		bool IsReady() {
+		inline bool IsReady() {
 			return IsVrSimulatorReady();
 		}
 
-		void Update(Camera *camera) {
+		inline void Update(Camera *camera) {
 			UpdateVrTracking(camera);
 		}
-		void Set(VrDeviceInfo info, Shader distortion) {
+		inline void Set(VrDeviceInfo info, Shader distortion) {
 			SetVrConfiguration(info, distortion);
 		}
-		void Toggle(void) {
+		inline void Toggle() {
 			ToggleVrMode();
 		}
-		void Begin(void) {
+		inline void Begin() {
 			BeginVrDrawing();
 		}
-		void End() {
+		inline void End() {
 			EndVrDrawing();
+		}
+		inline void Close() {
+			CloseVrSimulator();
 		}
 	};
 }

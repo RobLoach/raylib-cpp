@@ -50,6 +50,9 @@ namespace raylib {
 			return ::IsModelAnimationValid(model, *this);
 		}
 
+		bool IsModelAnimationValid(::Model model) {
+			return ::IsModelAnimationValid(model, *this);
+		}
 	};
 }
 

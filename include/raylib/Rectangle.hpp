@@ -41,23 +41,23 @@ namespace raylib {
         }
 
 		void Draw(::Color color) {
-			::DrawRectangle(x, y, width, height, color);
+			::DrawRectangle(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width), static_cast<int>(height), color);
 		}
 		void Draw(::Vector2 origin, float rotation, ::Color color) {
 			::DrawRectanglePro(*this, origin, rotation, color);
 		}
 
 		void DrawGradientV(::Color color1, ::Color color2){
-			::DrawRectangleGradientH(x, y, width, height, color1, color2);
+			::DrawRectangleGradientH(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width), static_cast<int>(height), color1, color2);
 		}
 		void DrawGradientH(::Color color1, ::Color color2) {
-			::DrawRectangleGradientH(x, y, width, height, color1, color2);
+			::DrawRectangleGradientH(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width), static_cast<int>(height), color1, color2);
 		}
 		void DrawGradient(::Color col1, ::Color col2, ::Color col3, ::Color col4) {
 			::DrawRectangleGradientEx(*this, col1, col2, col3, col4);
 		}
 		void DrawLines(::Color color){
-			::DrawRectangleLines(x, y, width, height, color);
+			::DrawRectangleLines(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width), static_cast<int>(height), color);
 		}
 		void DrawLinesEx(int lineThick, ::Color color){
 			::DrawRectangleLinesEx(*this, lineThick, color);

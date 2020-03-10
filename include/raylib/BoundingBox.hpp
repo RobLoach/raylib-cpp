@@ -35,19 +35,19 @@ namespace raylib {
             return *this;
         }
 
-		void Draw(::Color color = WHITE) {
+		inline void Draw(::Color color = WHITE) {
 			DrawBoundingBox(*this, color);
 		}
 
-		bool CheckCollision(::BoundingBox box2) {
+		inline bool CheckCollision(::BoundingBox box2) {
 			return CheckCollisionBoxes(*this, box2);
 		}
 
-		bool CheckCollision(::Vector3 center, float radius) {
+		inline bool CheckCollision(::Vector3 center, float radius) {
 			return CheckCollisionBoxSphere(*this, center, radius);
 		}
 
-		bool CheckCollision(::Ray ray) {
+		inline bool CheckCollision(::Ray ray) {
 			return CheckCollisionRayBox(ray, *this);
 		}
 	};

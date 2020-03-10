@@ -40,36 +40,39 @@ namespace raylib {
             return *this;
         }
 
-        void Update(const void *data, int samplesCount) {
+        inline void Update(const void *data, int samplesCount) {
         	UpdateAudioStream(*this, data, samplesCount);
         }
 
-        void Close() {
+        inline void Close() {
         	CloseAudioStream(*this);
         }
-        bool IsProcessed() {
+        inline bool IsProcessed() {
         	return ::IsAudioStreamProcessed(*this);
         }
-		void Play() {
+		inline void Play() {
 			PlayAudioStream(*this);
 		}
-		void Pause() {
+		inline void Pause() {
 			PauseAudioStream(*this);
 		}
-		void Resume() {
+		inline void Resume() {
 			ResumeAudioStream(*this);
 		}
-		bool IsPlaying() {
+		inline bool IsPlaying() {
 			return IsAudioStreamPlaying(*this);
 		}
-		void Stop() {
+		inline void Stop() {
 			StopAudioStream(*this);
 		}
-		void SetVolume(float volume) {
+		inline void SetVolume(float volume) {
 			SetAudioStreamVolume(*this, volume);
 		}
-		void SetPitch(float pitch) {
+		inline void SetPitch(float pitch) {
 			SetAudioStreamPitch(*this, pitch);
+		}
+		inline void SetBufferSizeDefault(int size) {
+			SetAudioStreamBufferSizeDefault(size);
 		}
 
 	};

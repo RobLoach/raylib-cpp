@@ -20,5 +20,7 @@ TEST_CASE("raylib_test", "[raylib_test]" ) {
 
 		c = RAYWHITE;
 		CHECK(c.r == RAYWHITE.r);
+
+		CHECK(raylib::Color::LightGray.r == LIGHTGRAY.r);
 	}
 }

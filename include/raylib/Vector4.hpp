@@ -43,6 +43,10 @@ namespace raylib {
             set(vector4);
             return *this;
         }
+
+        inline Color ColorFromNormalized() {
+        	return ::ColorFromNormalized(*this);
+        }
 	};
 }
 

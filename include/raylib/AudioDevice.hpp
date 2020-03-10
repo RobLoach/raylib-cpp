@@ -17,19 +17,19 @@ namespace raylib {
 			Close();
 		};
 
-		void Init() {
+		inline void Init() {
 			InitAudioDevice();
 		}
 
-		void Close() {
+		inline void Close() {
 			CloseAudioDevice();
 		}
 
-		static bool IsReady() {
+		inline bool IsReady() {
 			return IsAudioDeviceReady();
 		}
 
-		void SetVolume(float volume) {
+		inline void SetVolume(float volume) {
 			SetMasterVolume(volume);
 		}
 	};

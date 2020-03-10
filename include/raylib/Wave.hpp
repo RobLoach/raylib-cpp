@@ -50,22 +50,22 @@ namespace raylib {
             return *this;
         }
 
-		void Format(int SampleRate = 0, int SampleSize = 0, int Channels = 2) {
+		inline void Format(int SampleRate = 0, int SampleSize = 0, int Channels = 2) {
 			WaveFormat(this, SampleRate, SampleSize, Channels);
 		}
 
-		Wave Copy() {
+		inline Wave Copy() {
 			return WaveCopy(*this);
 		}
 
-		void Crop(int initSample, int finalSample) {
+		inline void Crop(int initSample, int finalSample) {
 			WaveCrop(this, initSample, finalSample);
 		}
 
-		void Export(const std::string& fileName) {
+		inline void Export(const std::string& fileName) {
 			ExportWave(*this, fileName.c_str());
 		}
-		void ExportAsCode(const std::string& fileName) {
+		inline void ExportAsCode(const std::string& fileName) {
 			ExportWaveAsCode(*this, fileName.c_str());
 		}
 
@@ -76,11 +76,11 @@ namespace raylib {
 			}
 		}
 
-		Sound LoadSound() {
+		inline Sound LoadSound() {
 			return LoadSoundFromWave(*this);
 		}
 
-		float* GetData() {
+		inline float* GetData() {
 			return GetWaveData(*this);
 		}
 	};

@@ -43,43 +43,43 @@ namespace raylib {
             return *this;
         }
 
-		void Update(const void *data, int sampleCount) {
+		inline void Update(const void *data, int sampleCount) {
 			UpdateSound(*this, data, sampleCount);
 		}
 
-		void Unload() {
+		inline void Unload() {
 			UnloadSound(*this);
 		}
 
-		void Play() {
+		inline void Play() {
 			PlaySound(*this);
 		}
 
-		void Stop() {
+		inline void Stop() {
 			StopSound(*this);
 		}
-		void Pause() {
+		inline void Pause() {
 			PauseSound(*this);
 		}
-		void Resume() {
+		inline void Resume() {
 			ResumeSound(*this);
 		}
 
-		void PlayMulti() {
+		inline void PlayMulti() {
 			PlaySoundMulti(*this);
 		}
 
-		void StopMulti() {
+		inline void StopMulti() {
 			StopSoundMulti();
 		}
 
-		bool IsPlaying() {
+		inline bool IsPlaying() {
 			return IsSoundPlaying(*this);
 		}
-		void SetVolume(float volume) {
+		inline void SetVolume(float volume) {
 			SetSoundVolume(*this, volume);
 		}
-		void SetPitch(float pitch) {
+		inline void SetPitch(float pitch) {
 			SetSoundPitch(*this, pitch);
 		}
 
