@@ -52,7 +52,7 @@ Object constructors load raylib objects.
 Texture2D texture = LoadTexture("texture.png");
 
 // raylib-cpp
-Texture2D texture("texture.png");
+raylib::Texture2D texture("texture.png");
 ```
 
 ### Method Names
