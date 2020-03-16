@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_SHADER_HPP_
 #define RAYLIB_CPP_SHADER_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {
@@ -55,15 +62,15 @@ namespace raylib {
 			return ::LoadShaderCode(param1, param2);
 		}
 
-		void BeginShaderMode() {
+		inline void BeginShaderMode() {
 			::BeginShaderMode(*this);
 		}
 
-		void EndShaderMode() {
+		inline void EndShaderMode() {
 			::EndShaderMode();
 		}
 
-		int GetLocation(const std::string& uniformName) {
+		inline int GetLocation(const std::string& uniformName) {
 			return ::GetShaderLocation(*this, uniformName.c_str());
 		}
 	};

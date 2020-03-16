@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_MUSIC_HPP_
 #define RAYLIB_CPP_MUSIC_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {
@@ -12,7 +19,7 @@ namespace raylib {
 		};
 
 		Music(const std::string& fileName) {
-			set(LoadMusicStream(fileName.c_str()));
+			set(::LoadMusicStream(fileName.c_str()));
 		}
 
 		~Music() {
@@ -41,45 +48,45 @@ namespace raylib {
             return *this;
         }
 
-        void Unload() {
-        	UnloadMusicStream(*this);
+        inline void Unload() {
+        	::UnloadMusicStream(*this);
         }
 
-        void Play() {
-        	PlayMusicStream(*this);
+        inline void Play() {
+        	::PlayMusicStream(*this);
         }
 
-		void Update() {
-			UpdateMusicStream(*this);
+		inline void Update() {
+			::UpdateMusicStream(*this);
 		}
 
-		void Stop() {
-			StopMusicStream(*this);
+		inline void Stop() {
+			::StopMusicStream(*this);
 		}
 
-		void Pause() {
-			PauseMusicStream(*this);
+		inline void Pause() {
+			::PauseMusicStream(*this);
 		}
-		void Resume() {
-			ResumeMusicStream(*this);
+		inline void Resume() {
+			::ResumeMusicStream(*this);
 		}
-		bool IsPlaying() {
-			return IsMusicPlaying(*this);
+		inline bool IsPlaying() {
+			return ::IsMusicPlaying(*this);
 		}
-		void SetVolume(float volume) {
-			SetMusicVolume(*this, volume);
+		inline void SetVolume(float volume) {
+			::SetMusicVolume(*this, volume);
 		}
-		void SetPitch(float pitch) {
-			SetMusicPitch(*this, pitch);
+		inline void SetPitch(float pitch) {
+			::SetMusicPitch(*this, pitch);
 		}
-		void SetLoopCount(int count)  {
-			SetMusicLoopCount(*this, count);
+		inline void SetLoopCount(int count)  {
+			::SetMusicLoopCount(*this, count);
 		}
-		float GetTimeLength() {
-			return GetMusicTimeLength(*this);
+		inline float GetTimeLength() {
+			return ::GetMusicTimeLength(*this);
 		}
-		float GetTimePlayed() {
-			return GetMusicTimePlayed(*this);
+		inline float GetTimePlayed() {
+			return ::GetMusicTimePlayed(*this);
 		}
 
 

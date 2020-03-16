@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_VECTOR4_HPP_
 #define RAYLIB_CPP_VECTOR4_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {
@@ -48,6 +55,9 @@ namespace raylib {
         	return ::ColorFromNormalized(*this);
         }
 	};
+
+	// Alias the Vector4 as Quaternion.
+	typedef Vector4 Quaternion;
 }
 
 #endif

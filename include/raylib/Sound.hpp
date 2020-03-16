@@ -3,7 +3,14 @@
 
 #include <string>
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {

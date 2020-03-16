@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_MODEL_HPP_
 #define RAYLIB_CPP_MODEL_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 #include "Mesh.hpp"
 
@@ -38,19 +45,19 @@ namespace raylib {
             return *this;
         }
 
-		void Unload() {
-			UnloadModelAnimation(*this);
+		inline void Unload() {
+			::UnloadModelAnimation(*this);
 		}
 
-		void UpdateAnimation(::Model model, int frame) {
-			UpdateModelAnimation(model, *this, frame);
+		inline void UpdateAnimation(::Model model, int frame) {
+			::UpdateModelAnimation(model, *this, frame);
 		}
 
-		bool IsValid(::Model model) {
+		inline bool IsValid(::Model model) {
 			return ::IsModelAnimationValid(model, *this);
 		}
 
-		bool IsModelAnimationValid(::Model model) {
+		inline bool IsModelAnimationValid(::Model model) {
 			return ::IsModelAnimationValid(model, *this);
 		}
 	};

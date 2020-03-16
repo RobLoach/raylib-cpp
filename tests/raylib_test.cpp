@@ -8,6 +8,8 @@ TEST_CASE("raylib_test", "[raylib_test]" ) {
 	SECTION("Vector2") {
 		raylib::Vector2 vec(50, 100);
 		CHECK(vec.getX() == vec.x);
+		vec.x = 150;
+		CHECK(vec.getX() == 150);
 	}
 
 	SECTION("Window") {

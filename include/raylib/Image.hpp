@@ -2,7 +2,14 @@
 #define RAYLIB_CPP_IMAGE_HPP_
 
 #include <string>
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {
@@ -70,7 +77,7 @@ namespace raylib {
 			set(LoadImageRaw(fileName.c_str(), width, height, format, headerSize));
 		}
 
-		void Unload() {
+		inline void Unload() {
 			UnloadImage(*this);
 		};
 
@@ -80,66 +87,66 @@ namespace raylib {
 		GETTERSETTER(int,Mipmaps,mipmaps)
 		GETTERSETTER(int,Format,format)
 
-		Image Copy() {
+		inline Image Copy() {
 			return ImageCopy(*this);
 		}
-		Image FromImage(::Rectangle rec) {
+		inline Image FromImage(::Rectangle rec) {
 			return ImageFromImage(*this, rec);
 		}
-		void Crop(::Rectangle crop){
+		inline void Crop(::Rectangle crop){
 			ImageCrop(this, crop);
 		}
-		void Resize(int newWidth, int newHeight){
+		inline void Resize(int newWidth, int newHeight){
 			ImageResize(this, newWidth, newHeight);
 		}
-		void Draw(::Image& src, ::Rectangle srcRec, ::Rectangle dstRec, ::Color tint = WHITE){
+		inline void Draw(::Image& src, ::Rectangle srcRec, ::Rectangle dstRec, ::Color tint = WHITE){
 			ImageDraw(this, src, srcRec, dstRec, tint);
 		}
-		void DrawRectangle(::Rectangle rec, ::Color color = WHITE){
+		inline void DrawRectangle(::Rectangle rec, ::Color color = WHITE){
 			ImageDrawRectangle(this, rec, color);
 		}
-		void DrawRectangleLines(::Rectangle rec, int thick, ::Color color = WHITE){
+		inline void DrawRectangleLines(::Rectangle rec, int thick, ::Color color = WHITE){
 			ImageDrawRectangleLines(this, rec, thick, color);
 		}
-		void DrawText(::Vector2 position, const std::string& text, int fontSize, ::Color color = WHITE){
+		inline void DrawText(::Vector2 position, const std::string& text, int fontSize, ::Color color = WHITE){
 			ImageDrawText(this, position, text.c_str(), fontSize, color);
 		}
-		void DrawText(::Vector2 position, ::Font font, const std::string& text, float fontSize, float spacing, ::Color color = WHITE){
+		inline void DrawText(::Vector2 position, ::Font font, const std::string& text, float fontSize, float spacing, ::Color color = WHITE){
 			ImageDrawTextEx(this, position, font, text.c_str(), fontSize, spacing, color);
 		}
-		void FlipVertical() {
+		inline void FlipVertical() {
 			ImageFlipVertical(this);
 		}
-		void FlipHorizontal() {
+		inline void FlipHorizontal() {
 			ImageFlipHorizontal(this);
 		}
 
-		void RotateCW() {
+		inline void RotateCW() {
 			ImageRotateCW(this);
 		}
-		void RotateCCW() {
+		inline void RotateCCW() {
 			ImageRotateCCW(this);
 		}
-		void ColorTint(::Color color) {
+		inline void ColorTint(::Color color) {
 			ImageColorTint(this, color);
 		}
-		void ColorInvert() {
+		inline void ColorInvert() {
 			ImageColorInvert(this);
 		}
-		void ColorGrayscale() {
+		inline void ColorGrayscale() {
 			ImageColorGrayscale(this);
 		}
-		void ColorContrast(float contrast) {
+		inline void ColorContrast(float contrast) {
 			ImageColorContrast(this, contrast);
 		}
-		void ColorBrightness(int brightness) {
+		inline void ColorBrightness(int brightness) {
 			ImageColorBrightness(this, brightness);
 		}
-		void ColorReplace(::Color color, ::Color replace) {
+		inline void ColorReplace(::Color color, ::Color replace) {
 			ImageColorReplace(this, color, replace);
 		}
 
-		::Color* GetData() {
+		inline ::Color* GetData() {
 			return ::GetImageData(*this);
 		}
 	};

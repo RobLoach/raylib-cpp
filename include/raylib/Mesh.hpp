@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_MESH_HPP_
 #define RAYLIB_CPP_MESH_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 #include "BoundingBox.hpp"
@@ -53,23 +60,23 @@ namespace raylib {
 			Unload();
 		}
 
-		void Export(const std::string& fileName) {
+		inline void Export(const std::string& fileName) {
 			ExportMesh(*this, fileName.c_str());
 		}
 
-		void Unload() {
+		inline void Unload() {
 			UnloadMesh(*this);
 		}
 
-		BoundingBox GetBoundingBox() {
+		inline BoundingBox GetBoundingBox() {
 			return BoundingBox(MeshBoundingBox(*this));
 		}
 
-		void Tangents() {
+		inline void Tangents() {
 			MeshTangents(this);
 		}
 
-		void Binormals() {
+		inline void Binormals() {
 			MeshBinormals(this);
 		}
 	};

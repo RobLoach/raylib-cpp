@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_VRSIMULATOR_HPP_
 #define RAYLIB_CPP_VRSIMULATOR_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {
@@ -24,26 +31,26 @@ namespace raylib {
 		}
 
 		inline bool IsReady() {
-			return IsVrSimulatorReady();
+			return ::IsVrSimulatorReady();
 		}
 
 		inline void Update(Camera *camera) {
-			UpdateVrTracking(camera);
+			::UpdateVrTracking(camera);
 		}
 		inline void Set(VrDeviceInfo info, Shader distortion) {
-			SetVrConfiguration(info, distortion);
+			::SetVrConfiguration(info, distortion);
 		}
 		inline void Toggle() {
-			ToggleVrMode();
+			::ToggleVrMode();
 		}
 		inline void Begin() {
-			BeginVrDrawing();
+			::BeginVrDrawing();
 		}
 		inline void End() {
-			EndVrDrawing();
+			::EndVrDrawing();
 		}
 		inline void Close() {
-			CloseVrSimulator();
+			::CloseVrSimulator();
 		}
 	};
 }

@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_RAY_HPP_
 #define RAYLIB_CPP_RAY_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 #include "RayHitInfo.hpp"
@@ -40,31 +47,31 @@ namespace raylib {
 		GETTERSETTER(::Vector3,Position,position)
 		GETTERSETTER(::Vector3,Direction,direction)
 
-		void Draw(::Color color) {
+		inline void Draw(::Color color) {
 			DrawRay(*this, color);
 		}
 
-		bool CheckCollisionSphere(::Vector3 center, float radius) {
+		inline bool CheckCollisionSphere(::Vector3 center, float radius) {
 			return CheckCollisionRaySphere(*this, center, radius);
 		}
 
-		bool CheckCollisionSphereEx(::Vector3 center, float radius, ::Vector3 *collisionPoint) {
+		inline bool CheckCollisionSphereEx(::Vector3 center, float radius, ::Vector3 *collisionPoint) {
 			return CheckCollisionRaySphereEx(*this, center, radius, collisionPoint);
 		}
 
-		bool CheckCollisionBox(::BoundingBox box) {
+		inline bool CheckCollisionBox(::BoundingBox box) {
 			return CheckCollisionRayBox(*this, box);
 		}
 
-		RayHitInfo GetCollisionModel(::Model model) {
+		inline RayHitInfo GetCollisionModel(::Model model) {
 			return GetCollisionRayModel(*this, model);
 		}
 
-		RayHitInfo GetCollisionTriangle(::Vector3 p1, ::Vector3 p2, ::Vector3 p3) {
+		inline RayHitInfo GetCollisionTriangle(::Vector3 p1, ::Vector3 p2, ::Vector3 p3) {
 			return GetCollisionRayTriangle(*this, p1, p2, p3);
 		}
 
-		RayHitInfo GetCollisionGround(float groundHeight) {
+		inline RayHitInfo GetCollisionGround(float groundHeight) {
 			return GetCollisionRayGround(*this, groundHeight);
 		}
 	};

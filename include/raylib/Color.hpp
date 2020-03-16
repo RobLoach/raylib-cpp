@@ -3,7 +3,14 @@
 
 #include <string>
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "Vector4.hpp"
 #include "utils.hpp"
 
@@ -114,50 +121,50 @@ namespace raylib {
 			return *this;
 		}
 
-		void ClearBackground() {
+		inline void ClearBackground() {
 			::ClearBackground(*this);
 		}
 
-		void DrawPixel(int x, int y) {
+		inline void DrawPixel(int x, int y) {
 			::DrawPixel(x, y, *this);
 		}
 
-		void DrawPixel(::Vector2 pos) {
+		inline void DrawPixel(::Vector2 pos) {
 			::DrawPixelV(pos, *this);
 		}
 
-		void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY) {
+		inline void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY) {
 			::DrawLine(startPosX, startPosY, endPosX, endPosY, *this);
 		}
-		void DrawLine(::Vector2 startPos, ::Vector2 endPos) {
+		inline void DrawLine(::Vector2 startPos, ::Vector2 endPos) {
 			::DrawLineV(startPos, endPos, *this);
 		}
-		void DrawLine(::Vector2 startPos, ::Vector2 endPos, float thick) {
+		inline void DrawLine(::Vector2 startPos, ::Vector2 endPos, float thick) {
 			::DrawLineEx(startPos, endPos, thick, *this);
 		}
-		void DrawLineBezier(::Vector2 startPos, Vector2 endPos, float thick) {
+		inline void DrawLineBezier(::Vector2 startPos, Vector2 endPos, float thick) {
 			::DrawLineBezier(startPos, endPos, thick, *this);
 		}
-		void DrawLineStrip(::Vector2 *points, int numPoints) {
+		inline void DrawLineStrip(::Vector2 *points, int numPoints) {
 			::DrawLineStrip(points, numPoints, *this);
 		}
 
-		void DrawText(const std::string& text, int posX, int posY, int fontSize) {
+		inline void DrawText(const std::string& text, int posX, int posY, int fontSize) {
 			::DrawText(text.c_str(), posX, posY, fontSize, *this);
 		}
-		void DrawText(::Font font, const std::string& text, ::Vector2 position, float fontSize, float spacing) {
+		inline void DrawText(::Font font, const std::string& text, ::Vector2 position, float fontSize, float spacing) {
 			::DrawTextEx(font, text.c_str(), position, fontSize, spacing, *this);
 		}
 
-		void DrawText(::Font font, const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap = false) {
+		inline void DrawText(::Font font, const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap = false) {
 			::DrawTextRec(font, text.c_str(), rec, fontSize, spacing, wordWrap, *this);
 		}
 
-		void DrawRectangleLines(int posX, int posY, int width, int height) {
+		inline void DrawRectangleLines(int posX, int posY, int width, int height) {
 			::DrawRectangleLines(posX, posY, width, height, *this);
 		}
 
-		void DrawRectangleLines(Rectangle rec, int lineThick) {
+		inline void DrawRectangleLines(Rectangle rec, int lineThick) {
 			::DrawRectangleLinesEx(rec, lineThick, *this);
 		}
 

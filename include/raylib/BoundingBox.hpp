@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_BOUNDINGBOX_HPP_
 #define RAYLIB_CPP_BOUNDINGBOX_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {

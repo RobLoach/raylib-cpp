@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_CAMERA_HPP_
 #define RAYLIB_CPP_CAMERA_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "Vector2.hpp"
 #include "utils.hpp"
 
@@ -29,10 +36,10 @@ namespace raylib {
 			zoom = camera.zoom;
 		}
 
-		void BeginMode2D() {
+		inline void BeginMode2D() {
 			::BeginMode2D(*this);
 		}
-		void EndMode2D() {
+		inline void EndMode2D() {
 			::EndMode2D();
 		}
 
@@ -51,13 +58,13 @@ namespace raylib {
 			return *this;
 		}
 
-		Matrix GetCameraMatrix2D() {
+		inline Matrix GetMatrix() {
 			return ::GetCameraMatrix2D(*this);
 		}
-		Vector2 GetWorldToScreen2D(Vector2 position) {
+		inline Vector2 GetWorldToScreen2D(Vector2 position) {
 			return ::GetWorldToScreen2D(position, *this);
 		}
-		Vector2 GetScreenToWorld2D(Vector2 position) {
+		inline Vector2 GetScreenToWorld2D(Vector2 position) {
 			return ::GetScreenToWorld2D(position, *this);
 		}
 	};

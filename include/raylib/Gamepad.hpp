@@ -3,7 +3,14 @@
 
 #include <string>
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {
@@ -27,39 +34,39 @@ namespace raylib {
 
 		operator int() const { return number; }
 
-		bool IsAvailable() {
-			return IsGamepadAvailable(number);
+		inline bool IsAvailable() {
+			return ::IsGamepadAvailable(number);
 		}
-		bool IsName(const std::string& name) {
-			return IsGamepadName(number, name.c_str());
+		inline bool IsName(const std::string& name) {
+			return ::IsGamepadName(number, name.c_str());
 		}
 		std::string GetName() {
 			return std::string(GetGamepadName(number));
 		}
-		bool IsButtonPressed(int button) {
+		inline bool IsButtonPressed(int button) {
 			return IsGamepadButtonPressed(number, button);
 		}
 
-		bool IsButtonDown(int button) {
+		inline bool IsButtonDown(int button) {
 			return IsGamepadButtonDown(number, button);
 		}
 
-		bool IsButtonReleased(int button) {
+		inline bool IsButtonReleased(int button) {
 			return IsGamepadButtonReleased(number, button);
 		}
-		bool IsButtonUp(int button) {
+		inline bool IsButtonUp(int button) {
 			return IsGamepadButtonUp(number, button);
 		}
 
-		int GetButtonPressed() {
+		inline int GetButtonPressed() {
 			return GetGamepadButtonPressed();
 		}
 
-		int GetAxisCount() {
+		inline int GetAxisCount() {
 			return GetGamepadAxisCount(number);
 		}
 
-		float GetAxisMovement(int axis) {
+		inline float GetAxisMovement(int axis) {
 			return GetGamepadAxisMovement(number, axis);
 		}
 	};

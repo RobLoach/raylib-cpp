@@ -2,7 +2,15 @@
 #define RAYLIB_CPP_TEXTURE2D_HPP_
 
 #include <string>
+
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 #include "Vector2.hpp"
 
@@ -57,42 +65,44 @@ namespace raylib {
 			set(LoadTexture(fileName.c_str()));
 		}
 
-		void Draw(int posX, int posY, ::Color tint = WHITE) {
-			DrawTexture(*this, posX, posY, tint);
+		inline void Draw(int posX, int posY, ::Color tint = WHITE) {
+			::DrawTexture(*this, posX, posY, tint);
 		}
 
-		void Draw(::Vector2 position, ::Color tint = WHITE) {
-			DrawTextureV(*this, position, tint);
+		inline void Draw(::Vector2 position, ::Color tint = WHITE) {
+			::DrawTextureV(*this, position, tint);
 		}
-		void Draw(::Vector2 position, float rotation, float scale = 1.0f, ::Color tint = WHITE) {
-			DrawTextureEx(*this, position, rotation, scale, tint);
-		}
-
-		void Draw(::Rectangle sourceRec, ::Vector2 position, ::Color tint = WHITE) {
-			DrawTextureRec(*this, sourceRec, position, tint);
-		}
-		void Draw(::Vector2 tiling, ::Vector2 offset, ::Rectangle quad, ::Color tint = WHITE) {
-			DrawTextureQuad(*this, tiling, offset, quad, tint);
-		}
-		void Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin, float rotation = 0, ::Color tint = WHITE) {
-			DrawTexturePro(*this, sourceRec, destRec, origin, rotation, tint);
-		}
-		void Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin, float rotation = 0, ::Color tint = WHITE) {
-			DrawTextureNPatch(*this, nPatchInfo, destRec, origin, rotation, tint);
+		inline void Draw(::Vector2 position, float rotation, float scale = 1.0f, ::Color tint = WHITE) {
+			::DrawTextureEx(*this, position, rotation, scale, tint);
 		}
 
-		void Draw(::Vector3 position, float width, float height, float length, ::Color color = WHITE) {
-			DrawCubeTexture(*this, position, width, height, length, color);
+		inline void Draw(::Rectangle sourceRec, ::Vector2 position, ::Color tint = WHITE) {
+			::DrawTextureRec(*this, sourceRec, position, tint);
+		}
+		inline void Draw(::Vector2 tiling, ::Vector2 offset, ::Rectangle quad, ::Color tint = WHITE) {
+			::DrawTextureQuad(*this, tiling, offset, quad, tint);
+		}
+		inline void Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin, float rotation = 0, ::Color tint = WHITE) {
+			::DrawTexturePro(*this, sourceRec, destRec, origin, rotation, tint);
+		}
+		inline void Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin, float rotation = 0, ::Color tint = WHITE) {
+			::DrawTextureNPatch(*this, nPatchInfo, destRec, origin, rotation, tint);
 		}
 
-		void Unload() {
-			UnloadTexture(*this);
+		inline void Draw(::Vector3 position, float width, float height, float length, ::Color color = WHITE) {
+			::DrawCubeTexture(*this, position, width, height, length, color);
 		}
 
-		void SetMaterialTexture(Material *material, int mapType) {
+		inline void Unload() {
+			::UnloadTexture(*this);
+		}
+
+		inline void SetMaterialTexture(Material *material, int mapType) {
 			::SetMaterialTexture(material, mapType, *this);
 		}
 	};
+
+	// Alias the Texture2D as Texture.
 	typedef Texture2D Texture;
 }
 

@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_AUDIODEVICE_HPP_
 #define RAYLIB_CPP_AUDIODEVICE_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {
@@ -18,19 +25,19 @@ namespace raylib {
 		};
 
 		inline void Init() {
-			InitAudioDevice();
+			::InitAudioDevice();
 		}
 
 		inline void Close() {
-			CloseAudioDevice();
+			::CloseAudioDevice();
 		}
 
 		inline bool IsReady() {
-			return IsAudioDeviceReady();
+			return ::IsAudioDeviceReady();
 		}
 
 		inline void SetVolume(float volume) {
-			SetMasterVolume(volume);
+			::SetMasterVolume(volume);
 		}
 	};
 }

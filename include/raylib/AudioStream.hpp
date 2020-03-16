@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_AUDIOSTREAM_HPP_
 #define RAYLIB_CPP_AUDIOSTREAM_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {
@@ -41,38 +48,38 @@ namespace raylib {
         }
 
         inline void Update(const void *data, int samplesCount) {
-        	UpdateAudioStream(*this, data, samplesCount);
+        	::UpdateAudioStream(*this, data, samplesCount);
         }
 
         inline void Close() {
-        	CloseAudioStream(*this);
+        	::CloseAudioStream(*this);
         }
         inline bool IsProcessed() {
         	return ::IsAudioStreamProcessed(*this);
         }
 		inline void Play() {
-			PlayAudioStream(*this);
+			::PlayAudioStream(*this);
 		}
 		inline void Pause() {
-			PauseAudioStream(*this);
+			::PauseAudioStream(*this);
 		}
 		inline void Resume() {
-			ResumeAudioStream(*this);
+			::ResumeAudioStream(*this);
 		}
 		inline bool IsPlaying() {
-			return IsAudioStreamPlaying(*this);
+			return ::IsAudioStreamPlaying(*this);
 		}
 		inline void Stop() {
-			StopAudioStream(*this);
+			::StopAudioStream(*this);
 		}
 		inline void SetVolume(float volume) {
-			SetAudioStreamVolume(*this, volume);
+			::SetAudioStreamVolume(*this, volume);
 		}
 		inline void SetPitch(float pitch) {
-			SetAudioStreamPitch(*this, pitch);
+			::SetAudioStreamPitch(*this, pitch);
 		}
 		inline void SetBufferSizeDefault(int size) {
-			SetAudioStreamBufferSizeDefault(size);
+			::SetAudioStreamBufferSizeDefault(size);
 		}
 
 	};

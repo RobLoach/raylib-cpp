@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_WAVE_HPP_
 #define RAYLIB_CPP_WAVE_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {
@@ -59,29 +66,29 @@ namespace raylib {
 		}
 
 		inline void Crop(int initSample, int finalSample) {
-			WaveCrop(this, initSample, finalSample);
+			::WaveCrop(this, initSample, finalSample);
 		}
 
 		inline void Export(const std::string& fileName) {
-			ExportWave(*this, fileName.c_str());
+			::ExportWave(*this, fileName.c_str());
 		}
 		inline void ExportAsCode(const std::string& fileName) {
-			ExportWaveAsCode(*this, fileName.c_str());
+			::ExportWaveAsCode(*this, fileName.c_str());
 		}
 
 		void Unload() {
 			if (data != NULL) {
-				UnloadWave(*this);
+				::UnloadWave(*this);
 				data = NULL;
 			}
 		}
 
 		inline Sound LoadSound() {
-			return LoadSoundFromWave(*this);
+			return ::LoadSoundFromWave(*this);
 		}
 
 		inline float* GetData() {
-			return GetWaveData(*this);
+			return ::GetWaveData(*this);
 		}
 	};
 }

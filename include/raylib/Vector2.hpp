@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_VECTOR2_HPP_
 #define RAYLIB_CPP_VECTOR2_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {
@@ -32,31 +39,31 @@ namespace raylib {
             return *this;
         }
 
-		void DrawPixel(::Color color) {
+		inline void DrawPixel(::Color color) {
 			::DrawPixelV(*this, color);
 		}
 
-		void DrawLine(::Vector2 endPos, ::Color color) {
+		inline void DrawLine(::Vector2 endPos, ::Color color) {
 			::DrawLineV(*this, endPos, color);
 		}
 
-		void DrawLine(::Vector2 endPos, float thick, ::Color color) {
+		inline void DrawLine(::Vector2 endPos, float thick, ::Color color) {
 			::DrawLineEx(*this, endPos, thick, color);
 		}
 
-		void DrawLineBezier(::Vector2 endPos, float thick, ::Color color) {
+		inline void DrawLineBezier(::Vector2 endPos, float thick, ::Color color) {
 			::DrawLineBezier(*this, endPos, thick, color);
 		}
 
-		void DrawCircle(float radius, ::Color color) {
+		inline void DrawCircle(float radius, ::Color color) {
 			::DrawCircleV(*this, radius, color);
 		}
 
-		void DrawRectangle(::Vector2 size, ::Color color) {
+		inline void DrawRectangle(::Vector2 size, ::Color color) {
 			::DrawRectangleV(*this, size, color);
 		}
 
-		void DrawPoly(int sides, float radius, float rotation, ::Color color) {
+		inline void DrawPoly(int sides, float radius, float rotation, ::Color color) {
 			::DrawPoly(*this, sides, radius, rotation, color);
 		}
 	};

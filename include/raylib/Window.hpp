@@ -2,7 +2,14 @@
 #define RAYLIB_CPP_WINDOW_HPP_
 
 #include <string>
+
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
 
 namespace raylib {
 	class Window {

@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_CAMERA3D_HPP_
 #define RAYLIB_CPP_CAMERA3D_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "Vector3.hpp"
 #include "utils.hpp"
 
@@ -57,44 +64,49 @@ namespace raylib {
 			::EndMode3D();
 		}
 
-		Matrix GetMatrix() {
+		inline Matrix GetMatrix() {
 			return ::GetCameraMatrix(*this);
 		}
 
-		void SetMode(int mode) {
+		inline void SetMode(int mode) {
 			::SetCameraMode(*this, mode);
 		}
 
-		void Update() {
+		inline void SetAltControl(int altKey) {
+			::SetCameraAltControl(altKey);
+		}
+
+		inline void SetSmoothZoomControl(int szKey) {
+			::SetCameraSmoothZoomControl(szKey);
+		}
+
+		inline void SetMoveControls(int frontKey, int backKey, int rightKey, int leftKey, int upKey, int downKey) {
+			::SetCameraMoveControls(frontKey, backKey, rightKey, leftKey, upKey, downKey);
+		}
+
+		inline void Update() {
 			::UpdateCamera(this);
 		}
 
-		void UpdateVrTracking() {
+		inline void UpdateVrTracking() {
 			::UpdateVrTracking(this);
 		}
 
-		Ray GetMouseRay(::Vector2 mousePosition) {
+		inline Ray GetMouseRay(::Vector2 mousePosition) {
 			return ::GetMouseRay(mousePosition, *this);
 		}
 
-		Matrix GetCameraMatrix() {
-			return ::GetCameraMatrix(*this);
-		}
-
-		Vector2 GetWorldToScreen(::Vector3 position) {
+		inline Vector2 GetWorldToScreen(::Vector3 position) {
 			return ::GetWorldToScreen(position, *this);
 		}
 
-		void DrawBillboard(::Texture2D texture, ::Vector3 center, float size, ::Color tint = WHITE) {
+		inline void DrawBillboard(::Texture2D texture, ::Vector3 center, float size, ::Color tint = WHITE) {
 			::DrawBillboard(*this, texture, center, size, tint);
 		}
 
-		void DrawBillboard(Texture2D texture, Rectangle sourceRec, Vector3 center, float size, ::Color tint = WHITE) {
+		inline void DrawBillboard(Texture2D texture, Rectangle sourceRec, Vector3 center, float size, ::Color tint = WHITE) {
 			::DrawBillboardRec(*this, texture, sourceRec, center, size, tint);
 		}
-
-
-
 	};
 
 	typedef Camera3D Camera;

@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_MATERIAL_HPP_
 #define RAYLIB_CPP_MATERIAL_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {
@@ -37,11 +44,11 @@ namespace raylib {
             return *this;
         }
 
-		void Unload() {
+		inline void Unload() {
 			UnloadMaterial(*this);
 		}
 
-		void SetTexture(int mapType, ::Texture2D texture) {
+		inline void SetTexture(int mapType, ::Texture2D texture) {
 			::SetMaterialTexture(this, mapType, texture);
 		}
 

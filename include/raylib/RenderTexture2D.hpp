@@ -1,7 +1,14 @@
 #ifndef RAYLIB_CPP_RENDERTEXTURE2D_HPP_
 #define RAYLIB_CPP_RENDERTEXTURE2D_HPP_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {
@@ -43,11 +50,11 @@ namespace raylib {
 			Unload();
 		};
 
-		void Unload() {
+		inline void Unload() {
 			UnloadRenderTexture(*this);
 		}
 
-		void BeginTextureMode() {
+		inline void BeginTextureMode() {
 			::BeginTextureMode(*this);
 		}
 	};

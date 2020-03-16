@@ -3,7 +3,14 @@
 
 #include <string>
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include "raylib.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "utils.hpp"
 
 namespace raylib {
@@ -65,21 +72,21 @@ namespace raylib {
 			return *this;
 		}
 
-		void DrawText(const std::string& text, ::Vector2 position, float fontSize, float spacing, ::Color tint = WHITE) {
-			DrawTextEx(*this, text.c_str(), position,  fontSize,  spacing,  tint);
+		inline void DrawText(const std::string& text, ::Vector2 position, float fontSize, float spacing, ::Color tint = WHITE) {
+			::DrawTextEx(*this, text.c_str(), position,  fontSize,  spacing,  tint);
 		}
-		void DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap, ::Color tint = WHITE) {
-			DrawTextRec(*this, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint);
+		inline void DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap, ::Color tint = WHITE) {
+			::DrawTextRec(*this, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint);
 		}
-		void DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint, int selectStart, int selectLength, ::Color selectText, Color selectBack) {
-			DrawTextRecEx(*this, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint,  selectStart,  selectLength, selectText, selectBack);
+		inline void DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint, int selectStart, int selectLength, ::Color selectText, Color selectBack) {
+			::DrawTextRecEx(*this, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint,  selectStart,  selectLength, selectText, selectBack);
 		}
 
-		Vector2 MeasureText(const std::string& text, float fontSize, float spacing) {
+		inline Vector2 MeasureText(const std::string& text, float fontSize, float spacing) {
 			return ::MeasureTextEx(*this, text.c_str(), fontSize, spacing);
 		}
 
-		int GetGlyphIndex(int character) {
+		inline int GetGlyphIndex(int character) {
 			return ::GetGlyphIndex(*this, character);
 		}
 	};

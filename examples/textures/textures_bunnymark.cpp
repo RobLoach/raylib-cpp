@@ -91,7 +91,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-            ClearBackground(RAYWHITE);
+            raylib::Color::RayWhite.ClearBackground();
 
             for (Bunny& bunny: bunnies) {
                 // NOTE: When internal batch buffer limit is reached (MAX_BATCH_ELEMENTS),
@@ -100,7 +100,7 @@ int main(void)
                 // Process of sending data is costly and it could happen that GPU data has not been completely
                 // processed for drawing while new data is tried to be sent (updating current in-use buffers)
                 // it could generates a stall and consequently a frame drop, limiting the number of drawn bunnies
-                DrawTexture(texBunny, bunny.position.x, bunny.position.y, bunny.color);
+                texBunny.Draw(bunny.position.x, bunny.position.y, bunny.color);
             }
 
             DrawRectangle(0, 0, screenWidth, 40, BLACK);
