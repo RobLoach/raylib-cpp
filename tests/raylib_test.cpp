@@ -7,22 +7,22 @@
 TEST_CASE("raylib_test", "[raylib_test]" ) {
 	SECTION("Vector2") {
 		raylib::Vector2 vec(50, 100);
-		CHECK(vec.getX() == vec.x);
+		REQUIRE(vec.getX() == vec.x);
 		vec.x = 150;
-		CHECK(vec.getX() == 150);
+		REQUIRE(vec.getX() == 150);
 	}
 
 	SECTION("Window") {
-		CHECK(raylib::Window::IsReady() == false);
+		REQUIRE(raylib::Window::IsReady() == false);
 	}
 
 	SECTION("Color") {
 		raylib::Color c(RED);
-		CHECK(c.ToInt() == ColorToInt(RED));
+		REQUIRE(c.ToInt() == ColorToInt(RED));
 
 		c = RAYWHITE;
-		CHECK(c.r == RAYWHITE.r);
+		REQUIRE(c.r == RAYWHITE.r);
 
-		CHECK(raylib::Color::LightGray.r == LIGHTGRAY.r);
+		REQUIRE(raylib::Color::LightGray.r == LIGHTGRAY.r);
 	}
 }

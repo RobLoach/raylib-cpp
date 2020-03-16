@@ -4,6 +4,8 @@ C++ wrapper library around [raylib](https://www.raylib.com/), a simple and easy-
 
 Provides object-oriented wrappers around the struct interfaces.
 
+[![Tests](https://github.com/RobLoach/raylib-cpp/workflows/Tests/badge.svg)](https://github.com/robloach/raylib-cpp/actions)
+
 ## Example
 
 ``` cpp
