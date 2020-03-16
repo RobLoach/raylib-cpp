@@ -9,6 +9,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+    - name: Install Dependencies
+      run: sudo apt-get install xorg-dev libglu1-mesa-dev
     - name: Configure
       run: cmake -B build .
     - name: Build
