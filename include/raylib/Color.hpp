@@ -171,6 +171,26 @@ namespace raylib {
 			return *this;
 		}
 
+		inline Color& DrawRectangle(int posX, int posY, int width, int height) {
+			::DrawRectangle(posX, posY, width, height, *this);
+			return *this;
+		}
+
+		inline Color& DrawRectangle(Vector2 position, Vector2 size) {
+			::DrawRectangleV(position, size, *this);
+			return *this;
+		}
+
+		inline Color& DrawRectangle(Rectangle rec) {
+			::DrawRectangleRec(rec, *this);
+			return *this;
+		}
+
+		inline Color& DrawRectangle(Rectangle rec, Vector2 origin, float rotation) {
+			::DrawRectanglePro(rec, origin, rotation, *this);
+			return *this;
+		}
+
 		inline Color& DrawRectangleLines(int posX, int posY, int width, int height) {
 			::DrawRectangleLines(posX, posY, width, height, *this);
 			return *this;

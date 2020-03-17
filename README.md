@@ -100,7 +100,7 @@ position.DrawPixel(raylib::Color::Purple);
 raylib::Color::Purple.DrawPixel(position);
 ```
 
-### Protery Get/Set
+### Property Get/Set
 
 Properties can be assigned through getter and setter methods. You still have access to the internal properties, however.
 
@@ -118,6 +118,24 @@ position.setY(100);
 // ... or
 position.x = 50;
 position.y = 100;
+```
+
+### Method Overrides
+
+Many similar raylib method names have different name suffixes based on what arguments they take. With raylib-cpp, these cases use [method overriding](https://en.wikipedia.org/wiki/Method_overriding) to allow using the same method names.
+
+``` cpp
+// raylib
+Color color = GRAY;
+DrawPixel(50, 50, color);
+Vector2 position = {50.0f, 50.0f};
+DrawPixelV(position, color); // Extra V in method name.
+
+// raylib-cpp
+raylib::Color color = raylib::Color::Gray;
+color.DrawPixel(50, 50);
+Vector2 position(50.0f, 50.0f);
+color.DrawPixel(position); // No more V in method name.
 ```
 
 ### Method Chaining
