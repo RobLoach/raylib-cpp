@@ -1,10 +1,8 @@
-# raylib-cpp
+![raylib-cpp Logo](logo/raylib-cpp_256x256.png)
 
-C++ wrapper library around [raylib](https://www.raylib.com/), a simple and easy-to-use library to enjoy videogames programming.
+# raylib-cpp [![Tests](https://github.com/RobLoach/raylib-cpp/workflows/Tests/badge.svg)](https://github.com/RobLoach/raylib-cpp/actions?query=workflow%3ATests+branch%3Amaster)
 
-Provides object-oriented wrappers around the struct interfaces.
-
-[![Tests](https://github.com/RobLoach/raylib-cpp/workflows/Tests/badge.svg)](https://github.com/robloach/raylib-cpp/actions)
+*raylib-cpp* is a C++ wrapper library for [raylib](https://www.raylib.com/), a simple and easy-to-use library to enjoy videogames programming. This C++ header provides object-oriented wrappers around raylib's struct interfaces.
 
 ## Example
 
@@ -30,7 +28,9 @@ int main()
 		DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 
 		// Object methods.
-		logo.Draw(screenWidth / 2 - texture.getWidth() / 2, screenHeight / 2 - texture.getHeight() / 2);
+		logo.Draw(
+			screenWidth / 2 - texture.getWidth() / 2,
+			screenHeight / 2 - texture.getHeight() / 2);
 
 		EndDrawing();
 	}

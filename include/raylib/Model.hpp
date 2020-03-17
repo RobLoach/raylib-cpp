@@ -68,7 +68,7 @@ namespace raylib {
 		}
 
 		inline RayHitInfo GetCollision(::Ray ray) {
-			return GetCollisionRayModel(ray, *this);
+			return ::GetCollisionRayModel(ray, *this);
 		}
 
 		inline void UpdateModelAnimation(::ModelAnimation anim, int frame) {

@@ -25,7 +25,7 @@ namespace raylib {
 		};
 
 		void Init(int width, int height, const std::string& title) {
-			InitWindow(width, height, title.c_str());
+			::InitWindow(width, height, title.c_str());
 		}
 
 		inline bool ShouldClose() {
@@ -36,7 +36,7 @@ namespace raylib {
 			::CloseWindow();
 		};
 
-		static bool IsReady() {
+		inline static bool IsReady() {
 			return ::IsWindowReady();
 		};
 
@@ -66,7 +66,7 @@ namespace raylib {
 			return ::HideWindow();
 		}
 		inline void SetIcon(Image image) {
-			SetWindowIcon(image);
+			::SetWindowIcon(image);
 		}
 		inline void SetTitle(const std::string& title) {
 			::SetWindowTitle(title.c_str());

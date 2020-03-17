@@ -41,33 +41,33 @@ namespace raylib {
 			return ::IsGamepadName(number, name.c_str());
 		}
 		std::string GetName() {
-			return std::string(GetGamepadName(number));
+			return std::string(::GetGamepadName(number));
 		}
 		inline bool IsButtonPressed(int button) {
-			return IsGamepadButtonPressed(number, button);
+			return ::IsGamepadButtonPressed(number, button);
 		}
 
 		inline bool IsButtonDown(int button) {
-			return IsGamepadButtonDown(number, button);
+			return ::IsGamepadButtonDown(number, button);
 		}
 
 		inline bool IsButtonReleased(int button) {
-			return IsGamepadButtonReleased(number, button);
+			return ::IsGamepadButtonReleased(number, button);
 		}
 		inline bool IsButtonUp(int button) {
-			return IsGamepadButtonUp(number, button);
+			return ::IsGamepadButtonUp(number, button);
 		}
 
 		inline int GetButtonPressed() {
-			return GetGamepadButtonPressed();
+			return ::GetGamepadButtonPressed();
 		}
 
 		inline int GetAxisCount() {
-			return GetGamepadAxisCount(number);
+			return ::GetGamepadAxisCount(number);
 		}
 
 		inline float GetAxisMovement(int axis) {
-			return GetGamepadAxisMovement(number, axis);
+			return ::GetGamepadAxisMovement(number, axis);
 		}
 	};
 }

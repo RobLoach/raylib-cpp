@@ -65,7 +65,7 @@ namespace raylib {
 		}
 
 		inline void Unload() {
-			UnloadMesh(*this);
+			::UnloadMesh(*this);
 		}
 
 		inline BoundingBox GetBoundingBox() {
@@ -73,11 +73,11 @@ namespace raylib {
 		}
 
 		inline void Tangents() {
-			MeshTangents(this);
+			::MeshTangents(this);
 		}
 
 		inline void Binormals() {
-			MeshBinormals(this);
+			::MeshBinormals(this);
 		}
 	};
 }

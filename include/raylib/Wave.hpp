@@ -58,11 +58,11 @@ namespace raylib {
         }
 
 		inline void Format(int SampleRate = 0, int SampleSize = 0, int Channels = 2) {
-			WaveFormat(this, SampleRate, SampleSize, Channels);
+			::WaveFormat(this, SampleRate, SampleSize, Channels);
 		}
 
 		inline Wave Copy() {
-			return WaveCopy(*this);
+			return ::WaveCopy(*this);
 		}
 
 		inline void Crop(int initSample, int finalSample) {
