@@ -114,6 +114,10 @@ position.y = 100;
 raylib::Vector2 position;
 position.setX(50);
 position.setY(100);
+
+// ... or
+position.x = 50;
+position.y = 100;
 ```
 
 ### Method Chaining
