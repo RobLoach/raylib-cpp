@@ -46,60 +46,75 @@ namespace raylib {
             return *this;
         }
 
-		inline void DrawLine3D(::Vector3 endPos, ::Color color) {
+		inline Vector3& DrawLine3D(::Vector3 endPos, ::Color color) {
 			::DrawLine3D(*this, endPos, color);
+			return *this;
 		}
-		inline void DrawPoint3D(::Color color) {
+		inline Vector3& DrawPoint3D(::Color color) {
 			::DrawPoint3D(*this, color);
+			return *this;
 		}
-		inline void DrawCircle3D(float radius, Vector3 rotationAxis, float rotationAngle, Color color) {
+		inline Vector3& DrawCircle3D(float radius, Vector3 rotationAxis, float rotationAngle, Color color) {
 			::DrawCircle3D(*this, radius, rotationAxis, rotationAngle, color);
+			return *this;
 		}
 
-		inline void DrawCube(float width, float height, float length, ::Color color) {
+		inline Vector3& DrawCube(float width, float height, float length, ::Color color) {
 			::DrawCube(*this, width, height, length, color);
+			return *this;
 		}
-		inline void DrawCube(::Vector3 size, ::Color color) {
+		inline Vector3& DrawCube(::Vector3 size, ::Color color) {
 			::DrawCubeV(*this, size, color);
+			return *this;
 		}
 
-		inline void DrawCubeWires(float width, float height, float length, ::Color color) {
+		inline Vector3& DrawCubeWires(float width, float height, float length, ::Color color) {
 			::DrawCubeWires(*this, width, height, length, color);
+			return *this;
 		}
-		inline void DrawCubeWires(::Vector3 size, ::Color color) {
+		inline Vector3& DrawCubeWires(::Vector3 size, ::Color color) {
 			::DrawCubeWiresV(*this, size, color);
+			return *this;
 		}
 
-		inline void DrawCubeTexture(::Texture2D texture, float width, float height, float length, ::Color color) {
+		inline Vector3& DrawCubeTexture(::Texture2D texture, float width, float height, float length, ::Color color) {
 			::DrawCubeTexture(texture, *this, width, height, length, color);
+			return *this;
 		}
 
-		inline void DrawSphere(float radius, Color color) {
+		inline Vector3& DrawSphere(float radius, Color color) {
 			::DrawSphere(*this, radius, color);
+			return *this;
 		}
 
-		inline void DrawSphere(float radius, int rings, int slices, Color color) {
+		inline Vector3& DrawSphere(float radius, int rings, int slices, Color color) {
 			::DrawSphereEx(*this, radius, rings, slices, color);
+			return *this;
 		}
 
-		inline void DrawSphereWires(float radius, int rings, int slices, Color color) {
+		inline Vector3& DrawSphereWires(float radius, int rings, int slices, Color color) {
 			::DrawSphereWires(*this, radius, rings, slices, color);
+			return *this;
 		}
 
-		inline void DrawCylinder(float radiusTop, float radiusBottom, float height, int slices, Color color) {
+		inline Vector3& DrawCylinder(float radiusTop, float radiusBottom, float height, int slices, Color color) {
 			::DrawCylinder(*this, radiusTop, radiusBottom, height, slices, color);
+			return *this;
 		}
 
-		inline void DrawCylinderWires(float radiusTop, float radiusBottom, float height, int slices, Color color) {
+		inline Vector3& DrawCylinderWires(float radiusTop, float radiusBottom, float height, int slices, Color color) {
 			::DrawCylinderWires(*this, radiusTop, radiusBottom, height, slices, color);
+			return *this;
 		}
 
-		inline void DrawPlane(::Vector2 size, ::Color color) {
+		inline Vector3& DrawPlane(::Vector2 size, ::Color color) {
 			::DrawPlane(*this, size, color);
+			return *this;
 		}
 
-		inline void DrawGizmo() {
+		inline Vector3& DrawGizmo() {
 			::DrawGizmo(*this);
+			return *this;
 		}
 
 		inline bool CheckCollision(float radiusA, Vector3 centerB, float radiusB) {

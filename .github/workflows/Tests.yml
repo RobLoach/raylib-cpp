@@ -1,19 +1,23 @@
-name: Build and Test
+name: Tests
 
 on: [push]
 
 jobs:
-  build-ubuntu:
+  Test:
 
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v1
+
     - name: Install Dependencies
       run: sudo apt-get install xorg-dev libglu1-mesa-dev
+
     - name: Configure
       run: cmake -B build .
+
     - name: Build
       run: cmake --build build
+
     - name: Test
-      run: make -C build test
+      run: ./build/tests/raylib_test

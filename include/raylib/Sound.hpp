@@ -50,44 +50,53 @@ namespace raylib {
             return *this;
         }
 
-		inline void Update(const void *data, int sampleCount) {
-			UpdateSound(*this, data, sampleCount);
+		inline Sound& Update(const void *data, int sampleCount) {
+			::UpdateSound(*this, data, sampleCount);
+			return *this;
 		}
 
 		inline void Unload() {
-			UnloadSound(*this);
+			::UnloadSound(*this);
 		}
 
-		inline void Play() {
-			PlaySound(*this);
+		inline Sound& Play() {
+			::PlaySound(*this);
+			return *this;
 		}
 
-		inline void Stop() {
-			StopSound(*this);
+		inline Sound& Stop() {
+			::StopSound(*this);
+			return *this;
 		}
-		inline void Pause() {
-			PauseSound(*this);
+		inline Sound& Pause() {
+			::PauseSound(*this);
+			return *this;
 		}
-		inline void Resume() {
-			ResumeSound(*this);
+		inline Sound& Resume() {
+			::ResumeSound(*this);
+			return *this;
 		}
 
-		inline void PlayMulti() {
-			PlaySoundMulti(*this);
+		inline Sound& PlayMulti() {
+			::PlaySoundMulti(*this);
+			return *this;
 		}
 
-		inline void StopMulti() {
-			StopSoundMulti();
+		inline Sound& StopMulti() {
+			::StopSoundMulti();
+			return *this;
 		}
 
 		inline bool IsPlaying() {
-			return IsSoundPlaying(*this);
+			return ::IsSoundPlaying(*this);
 		}
-		inline void SetVolume(float volume) {
-			SetSoundVolume(*this, volume);
+		inline Sound& SetVolume(float volume) {
+			::SetSoundVolume(*this, volume);
+			return *this;
 		}
-		inline void SetPitch(float pitch) {
-			SetSoundPitch(*this, pitch);
+		inline Sound& SetPitch(float pitch) {
+			::SetSoundPitch(*this, pitch);
+			return *this;
 		}
 
 	};

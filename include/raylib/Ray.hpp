@@ -47,8 +47,9 @@ namespace raylib {
 		GETTERSETTER(::Vector3,Position,position)
 		GETTERSETTER(::Vector3,Direction,direction)
 
-		inline void Draw(::Color color) {
+		inline Ray& Draw(::Color color) {
 			DrawRay(*this, color);
+			return *this;
 		}
 
 		inline bool CheckCollisionSphere(::Vector3 center, float radius) {

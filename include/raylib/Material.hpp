@@ -45,11 +45,12 @@ namespace raylib {
         }
 
 		inline void Unload() {
-			UnloadMaterial(*this);
+			::UnloadMaterial(*this);
 		}
 
-		inline void SetTexture(int mapType, ::Texture2D texture) {
+		inline Material& SetTexture(int mapType, ::Texture2D texture) {
 			::SetMaterialTexture(this, mapType, texture);
+			return *this;
 		}
 
 	};

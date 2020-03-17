@@ -25,7 +25,7 @@ namespace raylib {
 		};
 
 		void Init(int width, int height, const std::string& title) {
-			InitWindow(width, height, title.c_str());
+			::InitWindow(width, height, title.c_str());
 		}
 
 		inline bool ShouldClose() {
@@ -36,15 +36,17 @@ namespace raylib {
 			::CloseWindow();
 		};
 
-		static bool IsReady() {
+		inline static bool IsReady() {
 			return ::IsWindowReady();
 		};
 
-		inline void BeginDrawing() {
+		inline Window& BeginDrawing() {
 			::BeginDrawing();
+			return *this;
 		}
-		inline void EndDrawing() {
+		inline Window& EndDrawing() {
 			::EndDrawing();
+			return *this;
 		}
 
 		inline bool IsMinimized() {
@@ -56,32 +58,41 @@ namespace raylib {
 		inline bool IsHidden() {
 			return ::IsWindowHidden();
 		}
-		inline void ToggleFullscreen() {
-			return ::ToggleFullscreen();
+		inline Window& ToggleFullscreen() {
+			::ToggleFullscreen();
+			return *this;
 		}
-		inline void Unhide() {
-			return ::UnhideWindow();
+		inline Window& Unhide() {
+			::UnhideWindow();
+			return *this;
 		}
-		inline void Hide() {
-			return ::HideWindow();
+		inline Window& Hide() {
+			::HideWindow();
+			return *this;
 		}
-		inline void SetIcon(Image image) {
-			SetWindowIcon(image);
+		inline Window& SetIcon(Image image) {
+			::SetWindowIcon(image);
+			return *this;
 		}
-		inline void SetTitle(const std::string& title) {
+		inline Window& SetTitle(const std::string& title) {
 			::SetWindowTitle(title.c_str());
+			return *this;
 		}
-		inline void SetPosition(int x, int y) {
+		inline Window& SetPosition(int x, int y) {
 			::SetWindowPosition(x, y);
+			return *this;
 		}
-		inline void SetMonitor(int monitor) {
+		inline Window& SetMonitor(int monitor) {
 			::SetWindowMonitor(monitor);
+			return *this;
 		}
-		inline void SetMinSize(int width, int height) {
+		inline Window& SetMinSize(int width, int height) {
 			::SetWindowMinSize(width, height);
+			return *this;
 		}
-		inline void SetSize(int width, int height) {
+		inline Window& SetSize(int width, int height) {
 			::SetWindowSize(width, height);
+			return *this;
 		}
 		inline void* GetHandle() {
 			return ::GetWindowHandle();

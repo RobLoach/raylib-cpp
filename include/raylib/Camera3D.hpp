@@ -57,39 +57,47 @@ namespace raylib {
 			type = camera.type;
 		}
 
-		void BeginMode3D() {
+		Camera3D& BeginMode3D() {
 			::BeginMode3D(*this);
+			return *this;
 		}
-		void EndMode3D() {
+		Camera3D& EndMode3D() {
 			::EndMode3D();
+			return *this;
 		}
 
 		inline Matrix GetMatrix() {
 			return ::GetCameraMatrix(*this);
 		}
 
-		inline void SetMode(int mode) {
+		inline Camera3D& SetMode(int mode) {
 			::SetCameraMode(*this, mode);
+			return *this;
 		}
 
-		inline void SetAltControl(int altKey) {
+		inline Camera3D& SetAltControl(int altKey) {
 			::SetCameraAltControl(altKey);
+			return *this;
 		}
 
-		inline void SetSmoothZoomControl(int szKey) {
+		inline Camera3D& SetSmoothZoomControl(int szKey) {
 			::SetCameraSmoothZoomControl(szKey);
+			return *this;
 		}
 
-		inline void SetMoveControls(int frontKey, int backKey, int rightKey, int leftKey, int upKey, int downKey) {
+		inline Camera3D& SetMoveControls(int frontKey, int backKey, int rightKey, int leftKey, int upKey, int downKey) {
 			::SetCameraMoveControls(frontKey, backKey, rightKey, leftKey, upKey, downKey);
+			return *this;
 		}
 
-		inline void Update() {
+		inline Camera3D& Update() {
 			::UpdateCamera(this);
+			return *this;
 		}
 
-		inline void UpdateVrTracking() {
+		inline Camera3D& UpdateVrTracking() {
 			::UpdateVrTracking(this);
+			return *this;
 		}
 
 		inline Ray GetMouseRay(::Vector2 mousePosition) {
@@ -100,12 +108,14 @@ namespace raylib {
 			return ::GetWorldToScreen(position, *this);
 		}
 
-		inline void DrawBillboard(::Texture2D texture, ::Vector3 center, float size, ::Color tint = WHITE) {
+		inline Camera3D& DrawBillboard(::Texture2D texture, ::Vector3 center, float size, ::Color tint = WHITE) {
 			::DrawBillboard(*this, texture, center, size, tint);
+			return *this;
 		}
 
-		inline void DrawBillboard(Texture2D texture, Rectangle sourceRec, Vector3 center, float size, ::Color tint = WHITE) {
+		inline Camera3D& DrawBillboard(Texture2D texture, Rectangle sourceRec, Vector3 center, float size, ::Color tint = WHITE) {
 			::DrawBillboardRec(*this, texture, sourceRec, center, size, tint);
+			return *this;
 		}
 	};
 

@@ -57,23 +57,27 @@ namespace raylib {
             return *this;
         }
 
-		inline void Format(int SampleRate = 0, int SampleSize = 0, int Channels = 2) {
-			WaveFormat(this, SampleRate, SampleSize, Channels);
+		inline Wave& Format(int SampleRate = 0, int SampleSize = 0, int Channels = 2) {
+			::WaveFormat(this, SampleRate, SampleSize, Channels);
+			return *this;
 		}
 
 		inline Wave Copy() {
-			return WaveCopy(*this);
+			return ::WaveCopy(*this);
 		}
 
-		inline void Crop(int initSample, int finalSample) {
+		inline Wave& Crop(int initSample, int finalSample) {
 			::WaveCrop(this, initSample, finalSample);
+			return *this;
 		}
 
-		inline void Export(const std::string& fileName) {
+		inline Wave& Export(const std::string& fileName) {
 			::ExportWave(*this, fileName.c_str());
+			return *this;
 		}
-		inline void ExportAsCode(const std::string& fileName) {
+		inline Wave& ExportAsCode(const std::string& fileName) {
 			::ExportWaveAsCode(*this, fileName.c_str());
+			return *this;
 		}
 
 		void Unload() {

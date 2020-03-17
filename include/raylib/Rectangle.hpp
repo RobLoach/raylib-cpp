@@ -46,33 +46,42 @@ namespace raylib {
             return *this;
         }
 
-		inline void Draw(::Color color) {
+		inline Rectangle& Draw(::Color color) {
 			::DrawRectangle(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width), static_cast<int>(height), color);
+			return *this;
 		}
-		inline void Draw(::Vector2 origin, float rotation, ::Color color) {
+		inline Rectangle& Draw(::Vector2 origin, float rotation, ::Color color) {
 			::DrawRectanglePro(*this, origin, rotation, color);
+			return *this;
 		}
 
-		inline void DrawGradientV(::Color color1, ::Color color2){
+		inline Rectangle& DrawGradientV(::Color color1, ::Color color2){
 			::DrawRectangleGradientH(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width), static_cast<int>(height), color1, color2);
+			return *this;
 		}
-		inline void DrawGradientH(::Color color1, ::Color color2) {
+		inline Rectangle& DrawGradientH(::Color color1, ::Color color2) {
 			::DrawRectangleGradientH(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width), static_cast<int>(height), color1, color2);
+			return *this;
 		}
-		inline void DrawGradient(::Color col1, ::Color col2, ::Color col3, ::Color col4) {
+		inline Rectangle& DrawGradient(::Color col1, ::Color col2, ::Color col3, ::Color col4) {
 			::DrawRectangleGradientEx(*this, col1, col2, col3, col4);
+			return *this;
 		}
-		inline void DrawLines(::Color color){
+		inline Rectangle& DrawLines(::Color color){
 			::DrawRectangleLines(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width), static_cast<int>(height), color);
+			return *this;
 		}
-		inline void DrawLinesEx(int lineThick, ::Color color){
+		inline Rectangle& DrawLinesEx(int lineThick, ::Color color){
 			::DrawRectangleLinesEx(*this, lineThick, color);
+			return *this;
 		}
-		inline void DrawRounded(float roundness, int segments, ::Color color){
+		inline Rectangle& DrawRounded(float roundness, int segments, ::Color color){
 			::DrawRectangleRounded(*this, roundness, segments, color);
+			return *this;
 		}
-		inline void DrawRoundedLines(float roundness, int segments, int lineThick, ::Color color) {
+		inline Rectangle& DrawRoundedLines(float roundness, int segments, int lineThick, ::Color color) {
 			::DrawRectangleRoundedLines(*this, roundness, segments, lineThick, color);
+			return *this;
 		}
 
 		inline bool CheckCollision(::Rectangle rec2) {

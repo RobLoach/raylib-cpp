@@ -54,8 +54,14 @@ namespace raylib {
 			UnloadRenderTexture(*this);
 		}
 
-		inline void BeginTextureMode() {
+		inline RenderTexture2D& BeginTextureMode() {
 			::BeginTextureMode(*this);
+			return *this;
+		}
+
+		inline RenderTexture2D& EndTextureMode() {
+			::EndTextureMode();
+			return *this;
 		}
 	};
 	typedef RenderTexture2D RenderTexture;

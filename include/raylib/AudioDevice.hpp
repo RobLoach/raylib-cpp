@@ -24,20 +24,23 @@ namespace raylib {
 			Close();
 		};
 
-		inline void Init() {
+		inline AudioDevice& Init() {
 			::InitAudioDevice();
+			return *this;
 		}
 
-		inline void Close() {
+		inline AudioDevice& Close() {
 			::CloseAudioDevice();
+			return *this;
 		}
 
 		inline bool IsReady() {
 			return ::IsAudioDeviceReady();
 		}
 
-		inline void SetVolume(float volume) {
+		inline AudioDevice& SetVolume(float volume) {
 			::SetMasterVolume(volume);
+			return *this;
 		}
 	};
 }

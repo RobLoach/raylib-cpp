@@ -65,40 +65,49 @@ namespace raylib {
 			set(LoadTexture(fileName.c_str()));
 		}
 
-		inline void Draw(int posX, int posY, ::Color tint = WHITE) {
+		inline Texture2D& Draw(int posX, int posY, ::Color tint = WHITE) {
 			::DrawTexture(*this, posX, posY, tint);
+			return *this;
 		}
 
-		inline void Draw(::Vector2 position, ::Color tint = WHITE) {
+		inline Texture2D& Draw(::Vector2 position, ::Color tint = WHITE) {
 			::DrawTextureV(*this, position, tint);
+			return *this;
 		}
-		inline void Draw(::Vector2 position, float rotation, float scale = 1.0f, ::Color tint = WHITE) {
+		inline Texture2D& Draw(::Vector2 position, float rotation, float scale = 1.0f, ::Color tint = WHITE) {
 			::DrawTextureEx(*this, position, rotation, scale, tint);
+			return *this;
 		}
 
-		inline void Draw(::Rectangle sourceRec, ::Vector2 position, ::Color tint = WHITE) {
+		inline Texture2D& Draw(::Rectangle sourceRec, ::Vector2 position, ::Color tint = WHITE) {
 			::DrawTextureRec(*this, sourceRec, position, tint);
+			return *this;
 		}
-		inline void Draw(::Vector2 tiling, ::Vector2 offset, ::Rectangle quad, ::Color tint = WHITE) {
+		inline Texture2D& Draw(::Vector2 tiling, ::Vector2 offset, ::Rectangle quad, ::Color tint = WHITE) {
 			::DrawTextureQuad(*this, tiling, offset, quad, tint);
+			return *this;
 		}
-		inline void Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin, float rotation = 0, ::Color tint = WHITE) {
+		inline Texture2D& Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin, float rotation = 0, ::Color tint = WHITE) {
 			::DrawTexturePro(*this, sourceRec, destRec, origin, rotation, tint);
+			return *this;
 		}
-		inline void Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin, float rotation = 0, ::Color tint = WHITE) {
+		inline Texture2D& Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin, float rotation = 0, ::Color tint = WHITE) {
 			::DrawTextureNPatch(*this, nPatchInfo, destRec, origin, rotation, tint);
+			return *this;
 		}
 
-		inline void Draw(::Vector3 position, float width, float height, float length, ::Color color = WHITE) {
+		inline Texture2D& Draw(::Vector3 position, float width, float height, float length, ::Color color = WHITE) {
 			::DrawCubeTexture(*this, position, width, height, length, color);
+			return *this;
 		}
 
 		inline void Unload() {
 			::UnloadTexture(*this);
 		}
 
-		inline void SetMaterialTexture(Material *material, int mapType) {
+		inline Texture2D& SetMaterialTexture(Material *material, int mapType) {
 			::SetMaterialTexture(material, mapType, *this);
+			return *this;
 		}
 	};
 

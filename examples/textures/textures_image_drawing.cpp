@@ -26,18 +26,18 @@ int main(void)
 
     // NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
     raylib::Image cat("resources/cat.png");             // Load image in CPU memory (RAM)
-    cat.Crop(raylib::Rectangle(100, 10, 280, 380));      // Crop an image piece
-    cat.FlipHorizontal();                              // Flip cropped image horizontally
-    cat.Resize(150, 200);                            // Resize flipped-cropped image
+    cat.Crop(raylib::Rectangle(100, 10, 280, 380))      // Crop an image piece
+        .FlipHorizontal()                              // Flip cropped image horizontally
+        .Resize(150, 200);                            // Resize flipped-cropped image
 
     raylib::Image parrots("resources/parrots.png");     // Load image in CPU memory (RAM)
 
     // Draw one image over the other with a scaling of 1.5f
-    parrots.Draw(cat,
+    parrots
+        .Draw(cat,
             raylib::Rectangle(0, 0, cat.width, cat.height),
-            raylib::Rectangle(30, 40, cat.width*1.5f, cat.height*1.5f));
-
-    parrots.Crop(raylib::Rectangle(0, 50, parrots.width, parrots.height - 100)); // Crop resulting image
+            raylib::Rectangle(30, 40, cat.width*1.5f, cat.height*1.5f))
+        .Crop(raylib::Rectangle(0, 50, parrots.width, parrots.height - 100)); // Crop resulting image
 
     // Load custom font for frawing on image
     raylib::Font font("resources/custom_jupiter_crash.png");

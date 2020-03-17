@@ -62,12 +62,14 @@ namespace raylib {
 			return ::LoadShaderCode(param1, param2);
 		}
 
-		inline void BeginShaderMode() {
+		inline Shader& BeginShaderMode() {
 			::BeginShaderMode(*this);
+			return *this;
 		}
 
-		inline void EndShaderMode() {
+		inline Shader& EndShaderMode() {
 			::EndShaderMode();
+			return *this;
 		}
 
 		inline int GetLocation(const std::string& uniformName) {
