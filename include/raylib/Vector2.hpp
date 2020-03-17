@@ -39,32 +39,39 @@ namespace raylib {
             return *this;
         }
 
-		inline void DrawPixel(::Color color) {
+		inline Vector2& DrawPixel(::Color color) {
 			::DrawPixelV(*this, color);
+			return *this;
 		}
 
-		inline void DrawLine(::Vector2 endPos, ::Color color) {
+		inline Vector2& DrawLine(::Vector2 endPos, ::Color color) {
 			::DrawLineV(*this, endPos, color);
+			return *this;
 		}
 
-		inline void DrawLine(::Vector2 endPos, float thick, ::Color color) {
+		inline Vector2& DrawLine(::Vector2 endPos, float thick, ::Color color) {
 			::DrawLineEx(*this, endPos, thick, color);
+			return *this;
 		}
 
-		inline void DrawLineBezier(::Vector2 endPos, float thick, ::Color color) {
+		inline Vector2& DrawLineBezier(::Vector2 endPos, float thick, ::Color color) {
 			::DrawLineBezier(*this, endPos, thick, color);
+			return *this;
 		}
 
-		inline void DrawCircle(float radius, ::Color color) {
+		inline Vector2& DrawCircle(float radius, ::Color color) {
 			::DrawCircleV(*this, radius, color);
+			return *this;
 		}
 
-		inline void DrawRectangle(::Vector2 size, ::Color color) {
+		inline Vector2& DrawRectangle(::Vector2 size, ::Color color) {
 			::DrawRectangleV(*this, size, color);
+			return *this;
 		}
 
-		inline void DrawPoly(int sides, float radius, float rotation, ::Color color) {
+		inline Vector2& DrawPoly(int sides, float radius, float rotation, ::Color color) {
 			::DrawPoly(*this, sides, radius, rotation, color);
+			return *this;
 		}
 	};
 }

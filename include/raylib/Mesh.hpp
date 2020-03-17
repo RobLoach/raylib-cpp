@@ -72,12 +72,14 @@ namespace raylib {
 			return BoundingBox(MeshBoundingBox(*this));
 		}
 
-		inline void Tangents() {
+		inline Mesh& Tangents() {
 			::MeshTangents(this);
+			return *this;
 		}
 
-		inline void Binormals() {
+		inline Mesh& Binormals() {
 			::MeshBinormals(this);
+			return *this;
 		}
 	};
 }

@@ -47,39 +47,48 @@ namespace raylib {
             return *this;
         }
 
-        inline void Update(const void *data, int samplesCount) {
+        inline AudioStream& Update(const void *data, int samplesCount) {
         	::UpdateAudioStream(*this, data, samplesCount);
+        	return *this;
         }
 
-        inline void Close() {
+        inline AudioStream& Close() {
         	::CloseAudioStream(*this);
+        	return *this;
         }
         inline bool IsProcessed() {
         	return ::IsAudioStreamProcessed(*this);
         }
-		inline void Play() {
+		inline AudioStream& Play() {
 			::PlayAudioStream(*this);
+        	return *this;
 		}
-		inline void Pause() {
+		inline AudioStream& Pause() {
 			::PauseAudioStream(*this);
+        	return *this;
 		}
-		inline void Resume() {
+		inline AudioStream& Resume() {
 			::ResumeAudioStream(*this);
+        	return *this;
 		}
 		inline bool IsPlaying() {
 			return ::IsAudioStreamPlaying(*this);
 		}
-		inline void Stop() {
+		inline AudioStream& Stop() {
 			::StopAudioStream(*this);
+        	return *this;
 		}
-		inline void SetVolume(float volume) {
+		inline AudioStream& SetVolume(float volume) {
 			::SetAudioStreamVolume(*this, volume);
+        	return *this;
 		}
-		inline void SetPitch(float pitch) {
+		inline AudioStream& SetPitch(float pitch) {
 			::SetAudioStreamPitch(*this, pitch);
+        	return *this;
 		}
-		inline void SetBufferSizeDefault(int size) {
+		inline AudioStream& SetBufferSizeDefault(int size) {
 			::SetAudioStreamBufferSizeDefault(size);
+        	return *this;
 		}
 
 	};

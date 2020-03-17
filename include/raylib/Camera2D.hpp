@@ -36,11 +36,13 @@ namespace raylib {
 			zoom = camera.zoom;
 		}
 
-		inline void BeginMode2D() {
+		inline Camera2D& BeginMode2D() {
 			::BeginMode2D(*this);
+			return *this;
 		}
-		inline void EndMode2D() {
+		inline Camera2D& EndMode2D() {
 			::EndMode2D();
+			return *this;
 		}
 
 		GETTERSETTER(Vector2,Offset,offset)

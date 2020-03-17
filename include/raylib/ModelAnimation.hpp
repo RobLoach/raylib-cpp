@@ -49,8 +49,9 @@ namespace raylib {
 			::UnloadModelAnimation(*this);
 		}
 
-		inline void UpdateAnimation(::Model model, int frame) {
+		inline ModelAnimation& UpdateAnimation(::Model model, int frame) {
 			::UpdateModelAnimation(model, *this, frame);
+			return *this;
 		}
 
 		inline bool IsValid(::Model model) {

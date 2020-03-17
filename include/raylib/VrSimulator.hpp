@@ -34,20 +34,25 @@ namespace raylib {
 			return ::IsVrSimulatorReady();
 		}
 
-		inline void Update(Camera *camera) {
+		inline VrSimulator& Update(Camera *camera) {
 			::UpdateVrTracking(camera);
+			return *this;
 		}
-		inline void Set(VrDeviceInfo info, Shader distortion) {
+		inline VrSimulator& Set(VrDeviceInfo info, Shader distortion) {
 			::SetVrConfiguration(info, distortion);
+			return *this;
 		}
-		inline void Toggle() {
+		inline VrSimulator& Toggle() {
 			::ToggleVrMode();
+			return *this;
 		}
-		inline void Begin() {
+		inline VrSimulator& Begin() {
 			::BeginVrDrawing();
+			return *this;
 		}
-		inline void End() {
+		inline VrSimulator& End() {
 			::EndVrDrawing();
+			return *this;
 		}
 		inline void Close() {
 			::CloseVrSimulator();

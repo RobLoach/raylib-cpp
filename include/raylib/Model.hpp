@@ -63,16 +63,18 @@ namespace raylib {
 			::UnloadModel(*this);
 		}
 
-		inline void SetMeshMaterial(int meshId, int materialId) {
+		inline Model& SetMeshMaterial(int meshId, int materialId) {
 			::SetModelMeshMaterial(this, meshId, materialId);
+			return *this;
 		}
 
 		inline RayHitInfo GetCollision(::Ray ray) {
 			return ::GetCollisionRayModel(ray, *this);
 		}
 
-		inline void UpdateModelAnimation(::ModelAnimation anim, int frame) {
+		inline Model& UpdateModelAnimation(::ModelAnimation anim, int frame) {
 			::UpdateModelAnimation(*this, anim, frame);
+			return *this;
 		}
 
 		inline bool IsModelAnimationValid(::ModelAnimation anim) {

@@ -52,35 +52,43 @@ namespace raylib {
         	::UnloadMusicStream(*this);
         }
 
-        inline void Play() {
+        inline Music& Play() {
         	::PlayMusicStream(*this);
+        	return *this;
         }
 
-		inline void Update() {
+		inline Music& Update() {
 			::UpdateMusicStream(*this);
+        	return *this;
 		}
 
-		inline void Stop() {
+		inline Music& Stop() {
 			::StopMusicStream(*this);
+        	return *this;
 		}
 
-		inline void Pause() {
+		inline Music& Pause() {
 			::PauseMusicStream(*this);
+        	return *this;
 		}
-		inline void Resume() {
+		inline Music& Resume() {
 			::ResumeMusicStream(*this);
+        	return *this;
 		}
 		inline bool IsPlaying() {
 			return ::IsMusicPlaying(*this);
 		}
-		inline void SetVolume(float volume) {
+		inline Music& SetVolume(float volume) {
 			::SetMusicVolume(*this, volume);
+        	return *this;
 		}
-		inline void SetPitch(float pitch) {
+		inline Music& SetPitch(float pitch) {
 			::SetMusicPitch(*this, pitch);
+        	return *this;
 		}
-		inline void SetLoopCount(int count)  {
+		inline Music& SetLoopCount(int count)  {
 			::SetMusicLoopCount(*this, count);
+        	return *this;
 		}
 		inline float GetTimeLength() {
 			return ::GetMusicTimeLength(*this);

@@ -22,10 +22,10 @@ namespace raylib {
 		Image(const std::string& fileName) {
 			Load(fileName);
 		};
-		Image(::Color *pixels, int width, int height) {
+		Image(::Color* pixels, int width, int height) {
 			LoadEx(pixels, width, height);
 		};
-		Image(void *data, int width, int height, int format) {
+		Image(void* data, int width, int height, int format) {
 			LoadPro(data, width, height, format);
 		};
 		Image(const std::string& fileName, int width, int height, int format, int headerSize) {
@@ -65,11 +65,11 @@ namespace raylib {
 			set(::LoadImage(fileName.c_str()));
 		}
 
-		void LoadEx(::Color *pixels, int width, int height) {
+		void LoadEx(::Color* pixels, int width, int height) {
 			set(::LoadImageEx(pixels, width, height));
 		}
 
-		void LoadPro(void *data, int width, int height, int format) {
+		void LoadPro(void* data, int width, int height, int format) {
 			set(::LoadImagePro(data, width, height, format));
 		}
 
@@ -93,57 +93,74 @@ namespace raylib {
 		inline Image FromImage(::Rectangle rec) {
 			return ::ImageFromImage(*this, rec);
 		}
-		inline void Crop(::Rectangle crop){
+		inline Image& Crop(::Rectangle crop){
 			::ImageCrop(this, crop);
+			return *this;
 		}
-		inline void Resize(int newWidth, int newHeight){
+		inline Image& Resize(int newWidth, int newHeight){
 			::ImageResize(this, newWidth, newHeight);
+			return *this;
 		}
-		inline void Draw(::Image& src, ::Rectangle srcRec, ::Rectangle dstRec, ::Color tint = WHITE){
+		inline Image& Draw(::Image& src, ::Rectangle srcRec, ::Rectangle dstRec, ::Color tint = WHITE){
 			::ImageDraw(this, src, srcRec, dstRec, tint);
+			return *this;
 		}
-		inline void DrawRectangle(::Rectangle rec, ::Color color = WHITE){
+		inline Image& DrawRectangle(::Rectangle rec, ::Color color = WHITE){
 			::ImageDrawRectangle(this, rec, color);
+			return *this;
 		}
-		inline void DrawRectangleLines(::Rectangle rec, int thick, ::Color color = WHITE){
+		inline Image& DrawRectangleLines(::Rectangle rec, int thick, ::Color color = WHITE){
 			::ImageDrawRectangleLines(this, rec, thick, color);
+			return *this;
 		}
-		inline void DrawText(::Vector2 position, const std::string& text, int fontSize, ::Color color = WHITE){
+		inline Image& DrawText(::Vector2 position, const std::string& text, int fontSize, ::Color color = WHITE){
 			::ImageDrawText(this, position, text.c_str(), fontSize, color);
+			return *this;
 		}
-		inline void DrawText(::Vector2 position, ::Font font, const std::string& text, float fontSize, float spacing, ::Color color = WHITE){
+		inline Image& DrawText(::Vector2 position, ::Font font, const std::string& text, float fontSize, float spacing, ::Color color = WHITE){
 			::ImageDrawTextEx(this, position, font, text.c_str(), fontSize, spacing, color);
+			return *this;
 		}
-		inline void FlipVertical() {
+		inline Image& FlipVertical() {
 			::ImageFlipVertical(this);
+			return *this;
 		}
-		inline void FlipHorizontal() {
+		inline Image& FlipHorizontal() {
 			::ImageFlipHorizontal(this);
+			return *this;
 		}
 
-		inline void RotateCW() {
+		inline Image& RotateCW() {
 			::ImageRotateCW(this);
+			return *this;
 		}
-		inline void RotateCCW() {
+		inline Image& RotateCCW() {
 			::ImageRotateCCW(this);
+			return *this;
 		}
-		inline void ColorTint(::Color color) {
+		inline Image& ColorTint(::Color color) {
 			::ImageColorTint(this, color);
+			return *this;
 		}
-		inline void ColorInvert() {
+		inline Image& ColorInvert() {
 			::ImageColorInvert(this);
+			return *this;
 		}
-		inline void ColorGrayscale() {
+		inline Image& ColorGrayscale() {
 			::ImageColorGrayscale(this);
+			return *this;
 		}
-		inline void ColorContrast(float contrast) {
+		inline Image& ColorContrast(float contrast) {
 			::ImageColorContrast(this, contrast);
+			return *this;
 		}
-		inline void ColorBrightness(int brightness) {
+		inline Image& ColorBrightness(int brightness) {
 			::ImageColorBrightness(this, brightness);
+			return *this;
 		}
-		inline void ColorReplace(::Color color, ::Color replace) {
+		inline Image& ColorReplace(::Color color, ::Color replace) {
 			::ImageColorReplace(this, color, replace);
+			return *this;
 		}
 
 		inline ::Color* GetData() {
