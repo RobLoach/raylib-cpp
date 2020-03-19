@@ -10,8 +10,8 @@
  * @param name The machine-readable name of the property.
  */
 #define GETTERSETTER(type, method, name) \
-	inline type get##method() { return name; } \
-	inline void set##method(type value) { name = value; }
+	inline type Get##method() { return name; } \
+	inline void Set##method(type value) { name = value; }
 #endif
 
 #endif

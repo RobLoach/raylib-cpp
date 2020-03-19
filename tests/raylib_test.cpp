@@ -7,9 +7,9 @@
 TEST_CASE("raylib_test", "[raylib_test]" ) {
 	SECTION("Vector2") {
 		raylib::Vector2 vec(50, 100);
-		REQUIRE(vec.getX() == vec.x);
+		REQUIRE(vec.GetX() == vec.x);
 		vec.x = 150;
-		REQUIRE(vec.getX() == 150);
+		REQUIRE(vec.GetX() == 150);
 	}
 
 	SECTION("Window") {

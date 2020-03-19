@@ -57,35 +57,9 @@ Texture2D texture = LoadTexture("texture.png");
 raylib::Texture2D texture("texture.png");
 ```
 
-### Method Names
-
-If a method contains an object name, it is removed from its name in the class definition.
-
-``` cpp
-// raylib
-DrawTexture(texture, 50, 50, RAYWHITE);
-
-// raylib-cpp
-texture.Draw(50, 50, RAYWHITE);
-```
-
-### Object Destructors
-
-Objects will attempt to unload their respective raylib resources on destruction. This means no need to call Unload or Close methods.
-
-``` cpp
-// raylib
-InitWindow(640, 480, "Hello World");
-CloseWindow();
-
-// raylib-cpp
-raylib::Window w(640, 480, "Hello World");
-// CloseWindow(); // w.Close() is automatically called when the object is destructed.
-```
-
 ### Object Methods
 
-When a raylib method has an object as one of its arguments, it becomes part of the class definition.
+When a raylib method has an object as one of its arguments, you can call the method on the object itself.
 
 ``` cpp
 // raylib
@@ -100,6 +74,32 @@ position.DrawPixel(raylib::Color::Purple);
 raylib::Color::Purple.DrawPixel(position);
 ```
 
+### Method Names
+
+If a method's name contains an object's name, it is removed from its name to shorten it.
+
+``` cpp
+// raylib
+DrawTexture(texture, 50, 50, RAYWHITE);
+
+// raylib-cpp
+texture.Draw(50, 50, RAYWHITE);
+```
+
+### Object Destructors
+
+Objects will attempt to unload their respective raylib resources on destruction. This means no need to call Unload or Close methods. This applies to the window, textures, images, sounds, etc.
+
+``` cpp
+// raylib
+InitWindow(640, 480, "Hello World");
+CloseWindow();
+
+// raylib-cpp
+raylib::Window w(640, 480, "Hello World");
+// CloseWindow(); // w.Close() is automatically called when the object is destructed.
+```
+
 ### Property Get/Set
 
 Properties can be assigned through getter and setter methods. You still have access to the internal properties, however.
@@ -112,8 +112,8 @@ position.y = 100;
 
 // raylib-cpp
 raylib::Vector2 position;
-position.setX(50);
-position.setY(100);
+position.SetX(50);
+position.SetY(100);
 
 // ... or
 position.x = 50;

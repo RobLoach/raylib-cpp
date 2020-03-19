@@ -91,7 +91,7 @@ namespace raylib {
 			return ::LoadSoundFromWave(*this);
 		}
 
-		inline float* GetData() {
+		inline float* GetWaveData() {
 			return ::GetWaveData(*this);
 		}
 	};

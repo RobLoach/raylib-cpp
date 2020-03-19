@@ -163,7 +163,7 @@ namespace raylib {
 			return *this;
 		}
 
-		inline ::Color* GetData() {
+		inline ::Color* GetImageData() {
 			return ::GetImageData(*this);
 		}
 	};
