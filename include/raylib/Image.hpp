@@ -93,26 +93,46 @@ namespace raylib {
 		inline Image FromImage(::Rectangle rec) {
 			return ::ImageFromImage(*this, rec);
 		}
-		inline Image& Crop(::Rectangle crop){
+		inline Image& Crop(::Rectangle crop) {
 			::ImageCrop(this, crop);
 			return *this;
 		}
-		inline Image& Resize(int newWidth, int newHeight){
+		inline Image& Resize(int newWidth, int newHeight) {
 			::ImageResize(this, newWidth, newHeight);
 			return *this;
 		}
-		inline Image& Draw(::Image& src, ::Rectangle srcRec, ::Rectangle dstRec, ::Color tint = WHITE){
+		inline Image& Draw(::Image& src, ::Rectangle srcRec, ::Rectangle dstRec, ::Color tint = WHITE) {
 			::ImageDraw(this, src, srcRec, dstRec, tint);
 			return *this;
 		}
-		inline Image& DrawRectangle(::Rectangle rec, ::Color color = WHITE){
+		inline Image& DrawRectangle(::Rectangle rec, ::Color color = WHITE) {
 			::ImageDrawRectangle(this, rec, color);
 			return *this;
 		}
-		inline Image& DrawRectangleLines(::Rectangle rec, int thick, ::Color color = WHITE){
+		inline Image& DrawRectangleLines(::Rectangle rec, int thick, ::Color color) {
 			::ImageDrawRectangleLines(this, rec, thick, color);
 			return *this;
 		}
+		inline Image& ClearBackground(::Color color = WHITE) {
+			::ImageClearBackground(this, color);
+			return *this;
+		}
+
+		inline Image& DrawPixel(::Vector2 position, ::Color color) {
+			::ImageDrawPixel(this, position, color);
+			return *this;
+		}
+
+		inline Image& DrawCircle(::Vector2 center, int radius, ::Color color) {
+			::ImageDrawCircle(this, center, radius, color);
+			return *this;
+		}
+
+		inline Image& DrawLineEx(::Vector2 start, ::Vector2 end, ::Color color) {
+			::ImageDrawLineEx(this, start, end, color);
+			return *this;
+		}
+
 		inline Image& DrawText(::Vector2 position, const std::string& text, int fontSize, ::Color color = WHITE){
 			::ImageDrawText(this, position, text.c_str(), fontSize, color);
 			return *this;
@@ -138,7 +158,7 @@ namespace raylib {
 			::ImageRotateCCW(this);
 			return *this;
 		}
-		inline Image& ColorTint(::Color color) {
+		inline Image& ColorTint(::Color color = WHITE) {
 			::ImageColorTint(this, color);
 			return *this;
 		}
@@ -165,6 +185,10 @@ namespace raylib {
 
 		inline ::Color* GetImageData() {
 			return ::GetImageData(*this);
+		}
+
+		inline ::Vector4* GetImageDataNormalized() {
+			return ::GetImageDataNormalized(*this);
 		}
 	};
 }

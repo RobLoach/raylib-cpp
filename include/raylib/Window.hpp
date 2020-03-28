@@ -49,6 +49,9 @@ namespace raylib {
 			return *this;
 		}
 
+		inline bool IsFullscreen() {
+			return ::IsWindowFullscreen();
+		}
 		inline bool IsMinimized() {
 			return ::IsWindowMinimized();
 		}

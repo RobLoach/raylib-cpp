@@ -1,10 +1,10 @@
-find_package(raylib 2.0 QUIET)
+find_package(raylib 3.0 QUIET)
 if (NOT raylib_FOUND)
   include(FetchContent)
   FetchContent_Declare(
     raylib
     GIT_REPOSITORY https://github.com/raysan5/raylib.git
-    GIT_TAG 6f41b9594a3f107ad7332af197cdd3565b7d33fe
+    GIT_TAG 3c3dfde3f900378c47c12b2098f13ca3a1c75e9a
   )
   FetchContent_GetProperties(raylib)
   if (NOT raylib_POPULATED) # Have we downloaded raylib yet?
