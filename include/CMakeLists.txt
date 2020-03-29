@@ -1,6 +1,6 @@
 add_library(raylib-cpp INTERFACE)
 
-file(GLOB sources raylib/*.cpp)
+file(GLOB sources raylib/*.hpp)
 set(RAYLIBCPP_HEADERS, ${sources})
 
 install(FILES
