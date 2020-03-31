@@ -18,7 +18,7 @@ namespace raylib {
 	public:
 		Gamepad(int gamepadNumber = 0) {
 			set(gamepadNumber);
-		};
+		}
 		int number;
 
 		inline void set(int gamepadNumber) {

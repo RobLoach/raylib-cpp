@@ -58,11 +58,43 @@ namespace raylib {
         }
 
 		void LoadFromImage(::Image& image) {
-			set(LoadTextureFromImage(image));
+			set(::LoadTextureFromImage(image));
+		}
+
+		void LoadTextureCubemap(::Image& image, int layoutType) {
+			set(::LoadTextureCubemap(image, layoutType));
 		}
 
 		void Load(const std::string& fileName) {
-			set(LoadTexture(fileName.c_str()));
+			set(::LoadTexture(fileName.c_str()));
+		}
+
+		inline void Unload() {
+			::UnloadTexture(*this);
+		}
+
+		inline Texture2D& Update(const void *pixels) {
+			::UpdateTexture(*this, pixels);
+			return *this;
+		}
+
+		inline Image GetTextureData() {
+			return ::GetTextureData(*this);
+		}
+
+		inline Texture2D& GenMipmaps() {
+			::GenTextureMipmaps(this);
+			return *this;
+		}
+
+		inline Texture2D& SetFilter(int filterMode) {
+			::SetTextureFilter(*this, filterMode);
+			return *this;
+		}
+
+		inline Texture2D& SetWrap(int wrapMode) {
+			::SetTextureWrap(*this, wrapMode);
+			return *this;
 		}
 
 		inline Texture2D& Draw(int posX, int posY, ::Color tint = WHITE) {
@@ -101,13 +133,13 @@ namespace raylib {
 			return *this;
 		}
 
-		inline void Unload() {
-			::UnloadTexture(*this);
-		}
-
 		inline Texture2D& SetMaterialTexture(Material *material, int mapType) {
 			::SetMaterialTexture(material, mapType, *this);
 			return *this;
+		}
+
+		static int GetPixelDataSize(int width, int height, int format) {
+			return ::GetPixelDataSize(width, height, format);
 		}
 	};
 

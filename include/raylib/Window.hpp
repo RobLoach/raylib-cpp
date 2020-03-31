@@ -39,19 +39,6 @@ namespace raylib {
 		inline static bool IsReady() {
 			return ::IsWindowReady();
 		};
-
-		inline Window& BeginDrawing() {
-			::BeginDrawing();
-			return *this;
-		}
-		inline Window& EndDrawing() {
-			::EndDrawing();
-			return *this;
-		}
-
-		inline bool IsFullscreen() {
-			return ::IsWindowFullscreen();
-		}
 		inline bool IsMinimized() {
 			return ::IsWindowMinimized();
 		}
@@ -60,6 +47,10 @@ namespace raylib {
 		}
 		inline bool IsHidden() {
 			return ::IsWindowHidden();
+		}
+
+		inline bool IsFullscreen() {
+			return ::IsWindowFullscreen();
 		}
 		inline Window& ToggleFullscreen() {
 			::ToggleFullscreen();
@@ -99,6 +90,40 @@ namespace raylib {
 		}
 		inline void* GetHandle() {
 			return ::GetWindowHandle();
+		}
+
+		inline Window& BeginDrawing() {
+			::BeginDrawing();
+			return *this;
+		}
+		inline Window& EndDrawing() {
+			::EndDrawing();
+			return *this;
+		}
+
+		inline int GetScreenWidth() {
+			return ::GetScreenWidth();
+		}
+
+		inline int GetScreenHeight() {
+			return ::GetScreenHeight();
+		}
+
+		inline Vector2 GetWindowPosition() {
+			return ::GetWindowPosition();
+		}
+
+		std::string GetMonitorName(int monitor) {
+			return std::string(GetMonitorName(monitor));
+		}
+
+		std::string GetClipboardText() {
+			return std::string(GetClipboardText());
+		}
+
+		inline Window& SetClipboardText(const std::string& text) {
+			::SetClipboardText(text.c_str());
+			return *this;
 		}
 	};
 }

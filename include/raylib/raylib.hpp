@@ -13,6 +13,7 @@
 #include "Material.hpp"
 #include "Mesh.hpp"
 #include "ModelAnimation.hpp"
+#include "Mouse.hpp"
 #include "Model.hpp"
 #include "Music.hpp"
 #include "RayHitInfo.hpp"
