@@ -1,4 +1,4 @@
-find_package(raylib 3.0 QUIET)
+find_package(raylib 3.0.0 QUIET)
 if (NOT raylib_FOUND)
   include(FetchContent)
   FetchContent_Declare(

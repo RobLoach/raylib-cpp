@@ -125,6 +125,20 @@ namespace raylib {
 			::SetClipboardText(text.c_str());
 			return *this;
 		}
+
+		inline Window& SetTargetFPS(int fps) {
+			::SetTargetFPS(fps);
+			return *this;
+		}
+		inline int GetFPS() {
+			return ::GetFPS();
+		}
+		inline float GetFrameTime() {
+			return ::GetFrameTime();
+		}
+		inline double GetTime() {
+			return ::GetTime();
+		}
 	};
 }
 
