@@ -41,6 +41,8 @@ int main()
 }
 ```
 
+See the [examples folder](examples) for more of the raylib examples that have been ported over to *raylib-cpp*.
+
 ## Convention
 
 There are a few conventions that raylib-cpp takes on when adopting raylib...
@@ -157,7 +159,24 @@ cat
 	.Resize(150, 200);
 ```
 
+## Getting Started
+
+*raylib-cpp* is a header-only library. This means in order to use it, you must link your project to [raylib](https://www.raylib.com/), and then include [`raylib/raylib.hpp`](raylib-cpp/include/raylib/raylib.hpp).
+
+1. Set up a *raylib* project using the [build and install instructions](https://github.com/raysan5/raylib#build-and-installation)
+2. Download *raylib-cpp*
+3. Include [`raylib/raylib.hpp`](raylib-cpp/include/raylib/raylib.hpp)
+    ``` cpp
+    #include "raylib/raylib.hpp"
+    ```
+
+### Starter Projects
+
+There is a [CMake sample project template](projects/CMake) that you can use a starter template. If there's another build system or IDE that you use, feel free to [make an issue](https://github.com/RobLoach/raylib-cpp/issues) and we can add it in.
+
 ## Development
+
+*raylib-cpp* uses [CMake](https://cmake.org) as a primary target for development. To build it, and run the tests/examples, use...
 
 ``` bash
 mkdir build
