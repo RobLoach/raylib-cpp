@@ -157,6 +157,17 @@ cat
 	.Resize(150, 200);
 ```
 
+### Getting Started
+
+*raylib-cpp* is a header-only library. This means in order to use it, you must link your project to [raylib](https://www.raylib.com/), and then include [`raylib/raylib.hpp`](raylib-cpp/include/raylib/raylib.hpp).
+
+1. Set up a *raylib* project using the [build and install instructions](https://github.com/raysan5/raylib#build-and-installation)
+2. Download *raylib-cpp*
+3. Include [`raylib/raylib.hpp`](raylib-cpp/include/raylib/raylib.hpp)
+    ``` cpp
+    #include "raylib/raylib.hpp"
+    ```
+
 ## Development
 
 ``` bash
