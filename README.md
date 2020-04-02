@@ -170,7 +170,7 @@ cat
     #include "raylib/raylib.hpp"
     ```
 
-#### Starter Projects
+### Starter Projects
 
 There is a [CMake sample project template](projects/CMake) that you can use a starter template. If there's another build system or IDE that you use, feel free to [make an issue](https://github.com/RobLoach/raylib-cpp/issues) and we can add it in.
 
