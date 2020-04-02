@@ -41,6 +41,8 @@ int main()
 }
 ```
 
+See the [examples folder](examples) for more of the raylib examples that have been ported over to *raylib-cpp*.
+
 ## Convention
 
 There are a few conventions that raylib-cpp takes on when adopting raylib...
@@ -173,6 +175,8 @@ cat
 There is a [CMake sample project template](projects/CMake) that you can use a starter template. If there's another build system or IDE that you use, feel free to [make an issue](https://github.com/RobLoach/raylib-cpp/issues) and we can add it in.
 
 ## Development
+
+*raylib-cpp* uses [CMake](https://cmake.org) as a primary target for development. To build it, and run the tests/examples, use...
 
 ``` bash
 mkdir build
