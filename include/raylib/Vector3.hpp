@@ -5,11 +5,17 @@
 extern "C"{
 #endif
 #include "raylib.h"
+#ifndef RAYLIB_CPP_NO_MATH
+#include "raymath.h"
+#endif
 #ifdef __cplusplus
 }
 #endif
 
 #include "utils.hpp"
+#ifndef RAYLIB_CPP_NO_MATH
+#include <cmath>
+#endif
 
 namespace raylib {
 	class Vector3 : public ::Vector3 {
@@ -36,15 +42,174 @@ namespace raylib {
 		GETTERSETTER(float,Y,y)
 		GETTERSETTER(float,Z,z)
 
-        Vector3& operator=(const ::Vector3& vector3) {
-            set(vector3);
-            return *this;
-        }
+		Vector3& operator=(const ::Vector3& vector3) {
+			set(vector3);
+			return *this;
+		}
 
-        Vector3& operator=(const Vector3& vector3) {
-            set(vector3);
-            return *this;
-        }
+		Vector3& operator=(const Vector3& vector3) {
+			set(vector3);
+			return *this;
+		}
+
+#ifndef RAYLIB_CPP_NO_MATH
+		Vector3 Add(const Vector3& vector3) {
+			return Vector3Add(*this, vector3);
+		}
+
+		Vector3 operator+(const Vector3& vector3) {
+			return Vector3Add(*this, vector3);
+		}
+
+		Vector3 Subtract(const Vector3& vector3) {
+			return Vector3Subtract(*this, vector3);
+		}
+
+		Vector3 operator-(const Vector3& vector3) {
+			return Vector3Subtract(*this, vector3);
+		}
+
+		Vector3 Negate() {
+			return Vector3Negate(*this);
+		}
+
+		Vector3 operator-() {
+			return Vector3Negate(*this);
+		}
+
+		Vector3 Multiply(const Vector3& vector3) {
+			return Vector3Multiply(*this, vector3);
+		}
+
+		Vector3 operator*(const Vector3& vector3) {
+			return Vector3Multiply(*this, vector3);
+		}
+
+		Vector3 Scale(const float scale) {
+			return Vector3Scale(*this, scale);
+		}
+
+		Vector3 operator*(const float scale) {
+			return Vector3Scale(*this, scale);
+		}
+
+		Vector3 Divide(const Vector3& vector3) {
+			return Vector3DivideV(*this, vector3);
+		}
+
+		Vector3 operator/(const Vector3& vector3) {
+			return Vector3DivideV(*this, vector3);
+		}
+
+		Vector3 Divide(const float div) {
+			return Vector3Divide(*this, div);
+		}
+
+		Vector3 operator/(const float div) {
+			return Vector3Divide(*this, div);
+		}
+
+		Vector3& operator+=(const Vector3& vector3) {
+			set(Vector3Add(*this, vector3));
+
+			return *this;
+		}
+
+		Vector3& operator-=(const Vector3& vector3) {
+			set(Vector3Subtract(*this, vector3));
+
+			return *this;
+		}
+
+
+		Vector3& operator*=(const Vector3& vector3) {
+			set(Vector3Multiply(*this, vector3));
+
+			return *this;
+		}
+
+		Vector3& operator*=(const float scale) {
+			set(Vector3Scale(*this, scale));
+
+			return *this;
+		}
+
+		Vector3& operator/=(const Vector3& vector3) {
+			set(Vector3DivideV(*this, vector3));
+
+			return *this;
+		}
+
+		Vector3& operator/=(const float div) {
+			set(Vector3Divide(*this, div));
+
+			return *this;
+		}
+
+		float Length() {
+			return Vector3Length(*this);
+		}
+
+		Vector3 Normalize() {
+			return Vector3Normalize(*this);
+		}
+
+		float DotProduct(const Vector3& vector3) {
+			return Vector3DotProduct(*this, vector3);
+		}
+
+		float Distance(const Vector3& vector3) {
+			return Vector3Distance(*this, vector3);
+		}
+
+		Vector3 Lerp(const Vector3& vector3, const float amount) {
+			return Vector3Lerp(*this, vector3, amount);
+		}
+
+		Vector3 CrossProduct(const Vector3& vector3) {
+			return Vector3CrossProduct(*this, vector3);
+		}
+
+		Vector3 Perpendicular() {
+			return Vector3Perpendicular(*this);
+		}
+
+		void OrthoNormalize(Vector3* vector3) {
+			return Vector3OrthoNormalize(this, vector3);
+		}
+
+		Vector3 Transform(const ::Matrix& matrix) {
+			return Vector3Transform(*this, matrix);
+		}
+
+		Vector3 RotateByQuaternion(Quaternion quaternion) {
+			return Vector3RotateByQuaternion(*this, quaternion);
+		}
+
+		Vector3 Reflect(const Vector3& normal) {
+			return Vector3Reflect(*this, normal);
+		}
+
+		Vector3 Min(const Vector3& vector3) {
+			return Vector3Min(*this, vector3);
+		}
+
+		Vector3 Max(const Vector3& vector3) {
+			return Vector3Max(*this, vector3);
+		}
+
+		Vector3 Barycenter(const Vector3& a, const Vector3& b, const Vector3& c) {
+			return Vector3Barycenter(*this, a, b, c);
+		}
+
+		static Vector3 Zero() {
+			return Vector3Zero();
+		}
+
+		static Vector3 One() {
+			return Vector3One();
+		}
+#endif
 
 		inline Vector3& DrawLine3D(::Vector3 endPos, ::Color color) {
 			::DrawLine3D(*this, endPos, color);

@@ -5,11 +5,17 @@
 extern "C"{
 #endif
 #include "raylib.h"
+#ifndef RAYLIB_CPP_NO_MATH
+#include "raymath.h"
+#endif
 #ifdef __cplusplus
 }
 #endif
 
 #include "utils.hpp"
+#ifndef RAYLIB_CPP_NO_MATH
+#include <cmath>
+#endif
 
 namespace raylib {
 	class Vector2 : public ::Vector2 {
@@ -29,15 +35,146 @@ namespace raylib {
 		GETTERSETTER(float,X,x)
 		GETTERSETTER(float,Y,y)
 
-        Vector2& operator=(const ::Vector2& vector2) {
-            set(vector2);
-            return *this;
-        }
+		Vector2& operator=(const ::Vector2& vector2) {
+			set(vector2);
+			return *this;
+		}
 
-        Vector2& operator=(const Vector2& vector2) {
-            set(vector2);
-            return *this;
-        }
+		Vector2& operator=(const Vector2& vector2) {
+			set(vector2);
+			return *this;
+		}
+
+#ifndef RAYLIB_CPP_NO_MATH
+		Vector2 Add(const Vector2& vector2) {
+			return Vector2Add(*this, vector2);
+		}
+
+		Vector2 operator+(const Vector2& vector2) {
+			return Vector2Add(*this, vector2);
+		}
+
+		Vector2 Subtract(const Vector2& vector2) {
+			return Vector2Subtract(*this, vector2);
+		}
+
+		Vector2 operator-(const Vector2& vector2) {
+			return Vector2Subtract(*this, vector2);
+		}
+
+		Vector2 Negate() {
+			return Vector2Negate(*this);
+		}
+
+		Vector2 operator-() {
+			return Vector2Negate(*this);
+		}
+
+		Vector2 Multiply(const Vector2& vector2) {
+			return Vector2MultiplyV(*this, vector2);
+		}
+
+		Vector2 operator*(const Vector2& vector2) {
+			return Vector2MultiplyV(*this, vector2);
+		}
+
+		Vector2 Scale(const float scale) {
+			return Vector2Scale(*this, scale);
+		}
+
+		Vector2 operator*(const float scale) {
+			return Vector2Scale(*this, scale);
+		}
+
+		Vector2 Divide(const Vector2& vector2) {
+			return Vector2DivideV(*this, vector2);
+		}
+
+		Vector2 operator/(const Vector2& vector2) {
+			return Vector2DivideV(*this, vector2);
+		}
+
+		Vector2 Divide(const float div) {
+			return Vector2Divide(*this, div);
+		}
+
+		Vector2 operator/(const float div) {
+			return Vector2Divide(*this, div);
+		}
+
+		Vector2& operator+=(const Vector2& vector2) {
+			set(Vector2Add(*this, vector2));
+
+			return *this;
+		}
+
+		Vector2& operator-=(const Vector2& vector2) {
+			set(Vector2Subtract(*this, vector2));
+
+			return *this;
+		}
+
+
+		Vector2& operator*=(const Vector2& vector2) {
+			set(Vector2MultiplyV(*this, vector2));
+
+			return *this;
+		}
+
+		Vector2& operator*=(const float scale) {
+			set(Vector2Scale(*this, scale));
+
+			return *this;
+		}
+
+		Vector2& operator/=(const Vector2& vector2) {
+			set(Vector2DivideV(*this, vector2));
+
+			return *this;
+		}
+
+		Vector2& operator/=(const float div) {
+			set(Vector2Divide(*this, div));
+
+			return *this;
+		}
+
+		float Length() {
+			return Vector2Length(*this);
+		}
+
+		Vector2 Normalize() {
+			return Vector2Normalize(*this);
+		}
+
+		float DotProduct(const Vector2& vector2) {
+			return Vector2DotProduct(*this, vector2);
+		}
+
+		float Angle(const Vector2& vector2) {
+			return Vector2Angle(*this, vector2);
+		}
+
+		float Distance(const Vector2& vector2) {
+			return Vector2Distance(*this, vector2);
+		}
+
+		Vector2 Lerp(const Vector2& vector2, const float amount) {
+			return Vector2Lerp(*this, vector2, amount);
+		}
+
+		Vector2 Rotate(float degrees) {
+			return Vector2Rotate(*this, degrees);
+		}
+
+		static Vector2 Zero() {
+			return Vector2Zero();
+		}
+
+		static Vector2 One() {
+			return Vector2One();
+		}
+#endif
 
 		inline Vector2& DrawPixel(::Color color) {
 			::DrawPixelV(*this, color);
