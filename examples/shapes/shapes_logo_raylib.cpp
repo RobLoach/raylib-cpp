@@ -19,7 +19,7 @@ int main()
     const int screenHeight = 450;
 
     raylib::Window w(screenWidth, screenHeight, "raylib [shapes] example - raylib logo using shapes");
-    raylib::Color foreground = raylib::Color::Black;
+    raylib::Color foreground = raylib::Color(0, 68, 130);
     raylib::Color background = raylib::Color::RayWhite;
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
@@ -42,7 +42,7 @@ int main()
             foreground.DrawRectangle(screenWidth/2 - 128, screenHeight/2 - 128, 256, 256);
             background.DrawRectangle(screenWidth/2 - 112, screenHeight/2 - 112, 224, 224);
             foreground.DrawText("raylib", screenWidth/2 - 44, screenHeight/2 + 24, 50);
-            foreground.DrawText("cpp", screenWidth/2 - 44, screenHeight/2 + 54, 50);
+            foreground.DrawText("cpp", screenWidth/2 - 74, screenHeight/2 + 54, 50);
 
             DrawText("this is NOT a texture!", 350, 370, 10, GRAY);
 
