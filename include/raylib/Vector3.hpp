@@ -42,15 +42,15 @@ namespace raylib {
 		GETTERSETTER(float,Y,y)
 		GETTERSETTER(float,Z,z)
 
-        Vector3& operator=(const ::Vector3& vector3) {
-            set(vector3);
-            return *this;
-        }
+		Vector3& operator=(const ::Vector3& vector3) {
+			set(vector3);
+			return *this;
+		}
 
-        Vector3& operator=(const Vector3& vector3) {
-            set(vector3);
-            return *this;
-        }
+		Vector3& operator=(const Vector3& vector3) {
+			set(vector3);
+			return *this;
+		}
 
 #ifndef RAYLIB_CPP_NO_MATH
 		Vector3 Add(const Vector3& vector3) {

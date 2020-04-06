@@ -35,15 +35,15 @@ namespace raylib {
 		GETTERSETTER(float,X,x)
 		GETTERSETTER(float,Y,y)
 
-        Vector2& operator=(const ::Vector2& vector2) {
-            set(vector2);
-            return *this;
-        }
+		Vector2& operator=(const ::Vector2& vector2) {
+			set(vector2);
+			return *this;
+		}
 
-        Vector2& operator=(const Vector2& vector2) {
-            set(vector2);
-            return *this;
-        }
+		Vector2& operator=(const Vector2& vector2) {
+			set(vector2);
+			return *this;
+		}
 
 #ifndef RAYLIB_CPP_NO_MATH
 		Vector2 Add(const Vector2& vector2) {
