@@ -11,6 +11,7 @@
 #include "Gamepad.hpp"
 #include "Image.hpp"
 #include "Material.hpp"
+#include "Matrix.hpp"
 #include "Mesh.hpp"
 #include "ModelAnimation.hpp"
 #include "Mouse.hpp"

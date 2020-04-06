@@ -186,3 +186,7 @@ make
 make test
 ./examples/core_basic_window
 ```
+
+### Defines
+
+- `RAYLIB_CPP_NO_MATH` - When set, will not include `raymath.h`
