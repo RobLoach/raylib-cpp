@@ -68,8 +68,8 @@ namespace raylib {
 			::UnloadMesh(*this);
 		}
 
-		inline BoundingBox GetBoundingBox() {
-			return BoundingBox(MeshBoundingBox(*this));
+		inline BoundingBox BoundingBox() {
+			return ::MeshBoundingBox(*this);
 		}
 
 		inline Mesh& Tangents() {
