@@ -12,6 +12,7 @@ extern "C"{
 #include "utils.hpp"
 
 #include "BoundingBox.hpp"
+#include "Model.hpp"
 
 namespace raylib {
 	class Mesh : public ::Mesh {
@@ -60,16 +61,20 @@ namespace raylib {
 			Unload();
 		}
 
-		inline void Export(const std::string& fileName) {
+		inline Mesh& Export(const std::string& fileName) {
 			ExportMesh(*this, fileName.c_str());
+			return *this;
 		}
 
 		inline void Unload() {
 			::UnloadMesh(*this);
 		}
 
-		inline BoundingBox BoundingBox() {
+		inline raylib::BoundingBox BoundingBox() {
 			return ::MeshBoundingBox(*this);
+		}
+		operator raylib::BoundingBox() {
+			return BoundingBox();
 		}
 
 		inline Mesh& Tangents() {
@@ -80,6 +85,13 @@ namespace raylib {
 		inline Mesh& Binormals() {
 			::MeshBinormals(this);
 			return *this;
+		}
+
+		inline raylib::Model LoadModelFrom() {
+			return ::LoadModelFromMesh(*this);
+		}
+		operator raylib::Model() {
+			return LoadModelFrom();
 		}
 	};
 }

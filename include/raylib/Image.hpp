@@ -34,7 +34,7 @@ namespace raylib {
 		Image(::Texture2D texture) {
 			set(::GetTextureData(texture));
 		}
-		Image(int width, int height, Color color) {
+		Image(int width, int height, Color color = raylib::Color::RayWhite) {
 			set(::GenImageColor(width, height, color));
 		}
 

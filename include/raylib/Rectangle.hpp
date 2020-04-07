@@ -10,6 +10,7 @@ extern "C"{
 #endif
 
 #include "utils.hpp"
+#include "Vector2.hpp"
 
 namespace raylib {
 	class Rectangle : public ::Rectangle {
