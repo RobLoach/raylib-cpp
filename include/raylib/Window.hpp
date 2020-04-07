@@ -114,11 +114,11 @@ namespace raylib {
 		}
 
 		std::string GetMonitorName(int monitor) {
-			return std::string(GetMonitorName(monitor));
+			return std::string(::GetMonitorName(monitor));
 		}
 
 		std::string GetClipboardText() {
-			return std::string(GetClipboardText());
+			return std::string(::GetClipboardText());
 		}
 
 		inline Window& SetClipboardText(const std::string& text) {
