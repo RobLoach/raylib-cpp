@@ -81,6 +81,9 @@ namespace raylib {
 		inline Image GetTextureData() {
 			return ::GetTextureData(*this);
 		}
+		inline operator raylib::Image() {
+			return GetTextureData();
+		}
 
 		inline Texture2D& GenMipmaps() {
 			::GenTextureMipmaps(this);
