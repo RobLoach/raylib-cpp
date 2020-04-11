@@ -45,6 +45,11 @@ namespace raylib {
 			return *this;
 		}
 
+		bool operator==(const Vector2& other) {
+			return x == other.x
+				&& y == other.y;
+		}
+
 #ifndef RAYLIB_CPP_NO_MATH
 		Vector2 Add(const Vector2& vector2) {
 			return Vector2Add(*this, vector2);

@@ -52,6 +52,12 @@ namespace raylib {
 			return *this;
 		}
 
+		bool operator==(const Vector3& other) {
+			return x == other.x
+				&& y == other.y
+				&& z == other.z;
+		}
+
 #ifndef RAYLIB_CPP_NO_MATH
 		Vector3 Add(const Vector3& vector3) {
 			return Vector3Add(*this, vector3);
