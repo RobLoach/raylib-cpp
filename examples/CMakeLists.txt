@@ -23,7 +23,7 @@ foreach(example_source ${example_sources})
   # Setup the example
   add_executable(${example_name} ${example_source})
 
-  target_link_libraries(${example_name} PUBLIC raylib-cpp raylib)
+  target_link_libraries(${example_name} PUBLIC libraylib-cpp)
 
   string(REGEX MATCH ".*/.*/" resources_dir ${example_source})
   string(APPEND resources_dir "resources")

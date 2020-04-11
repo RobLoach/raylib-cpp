@@ -179,6 +179,7 @@ There is a [CMake sample project template](projects/CMake) that you can use a st
 *raylib-cpp* uses [CMake](https://cmake.org) as a primary target for development. To build it, and run the tests/examples, use...
 
 ``` bash
+git submodule update --init
 mkdir build
 cd build
 cmake ..
