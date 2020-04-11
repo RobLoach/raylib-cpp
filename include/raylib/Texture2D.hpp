@@ -13,12 +13,13 @@ extern "C"{
 
 #include "utils.hpp"
 #include "Vector2.hpp"
+#include "Material.hpp"
 
 namespace raylib {
 	class Texture2D : public ::Texture2D {
 	public:
 		Texture2D() {
-			set(GetTextureDefault());
+			set(::GetTextureDefault());
 		};
 
 		Texture2D(::Image& image) {

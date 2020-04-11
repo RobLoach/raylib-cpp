@@ -14,5 +14,5 @@ make
 ## Run
 
 ```
-./core_basic_window
+./raylib-cpp-example
 ```

@@ -317,6 +317,9 @@ namespace raylib {
 		inline ::Vector4* GetImageDataNormalized() {
 			return ::GetImageDataNormalized(*this);
 		}
+		inline operator Texture2D() {
+			return ::LoadTextureFromImage(*this);
+		}
 	};
 }
 

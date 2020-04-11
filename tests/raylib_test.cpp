@@ -18,11 +18,18 @@ TEST_CASE("raylib_test", "[raylib_test]" ) {
 
 	SECTION("Color") {
 		raylib::Color c(RED);
-		REQUIRE(c.ToInt() == ColorToInt(RED));
+		REQUIRE(c.ToInt() == ::ColorToInt(RED));
 
 		c = RAYWHITE;
 		REQUIRE(c.r == RAYWHITE.r);
 
 		REQUIRE(raylib::Color::LightGray.r == LIGHTGRAY.r);
+	}
+
+	SECTION("Vector2") {
+		raylib::Vector2 position(50, 50);
+		raylib::Vector2 speed(10, 10);
+		position += speed;
+		REQUIRE(position.x == 60);
 	}
 }

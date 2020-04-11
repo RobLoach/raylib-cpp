@@ -43,7 +43,7 @@ int main()
 
 See the [examples folder](examples) for more of the raylib examples that have been ported over to *raylib-cpp*.
 
-## Convention
+## Features
 
 There are a few conventions that raylib-cpp takes on when adopting raylib...
 
@@ -157,6 +157,26 @@ cat
 	.Crop((Rectangle){ 100, 10, 280, 380 })
 	.FlipHorizontal()
 	.Resize(150, 200);
+```
+
+### Operators
+
+There are operator overrides for objects.
+
+``` cpp
+// Addition assignment operator
+raylib::Vector2 position(50, 50);
+raylib::Vector2 speed(10, 10);
+position += speed;
+```
+
+### RayMath
+
+The [raymath.h](https://github.com/raysan5/raylib/blob/master/src/raymath.h) methods are included.
+
+``` cpp
+raylib::Vector2 direction(50, 50);
+raylib::Vector2 newDirection = direction.Rotate(30);
 ```
 
 ## Getting Started
