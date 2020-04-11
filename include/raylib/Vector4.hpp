@@ -116,36 +116,36 @@ namespace raylib {
 			return out;
 		}
 
-		Vector3 ToEuler() {
-			return QuaternionToEuler(*this);
-		}
-
 		Vector4 Transform(const ::Matrix& matrix) {
-			return QuaternionTransform(*this, matrix);
+			return ::QuaternionTransform(*this, matrix);
 		}
 
 		static Vector4 Identity() {
-			return QuaternionIdentity();
+			return ::QuaternionIdentity();
 		}
 
 		static Vector4 FromVector3ToVector3(const Vector3& from , const Vector3& to) {
-			return QuaternionFromVector3ToVector3(from , to);
+			return ::QuaternionFromVector3ToVector3(from , to);
 		}
 
 		static Vector4 FromMatrix(const ::Matrix& matrix) {
-			return QuaternionFromMatrix(matrix);
+			return ::QuaternionFromMatrix(matrix);
 		}
 
 		static Vector4 FromAxisAngle(const Vector3& axis, const float angle) {
-			return QuaternionFromAxisAngle(axis, angle);
+			return ::QuaternionFromAxisAngle(axis, angle);
 		}
 
 		static Vector4 FromEuler(const float roll, const float pitch, const float yaw) {
-			return QuaternionFromEuler(roll, pitch, yaw);
+			return ::QuaternionFromEuler(roll, pitch, yaw);
 		}
 
 		static Vector4 FromEuler(const Vector3& vector3) {
-			return QuaternionFromEuler(vector3.x, vector3.y, vector3.z);
+			return ::QuaternionFromEuler(vector3.x, vector3.y, vector3.z);
+		}
+
+		Vector3 ToEuler() {
+			return ::QuaternionToEuler(*this);
 		}
 #endif
 

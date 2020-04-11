@@ -155,36 +155,55 @@ namespace raylib {
 			return ::MatrixSubtract(*this, matrix);
 		}
 		static Matrix Translate(float x, float y, float z) {
-			return MatrixTranslate(x, y, z);
+			return ::MatrixTranslate(x, y, z);
 		}
 		static Matrix Rotate(Vector3 axis, float angle) {
-			return MatrixRotate(axis, angle);
+			return ::MatrixRotate(axis, angle);
 		}
 		static Matrix RotateXYZ(Vector3 angle) {
-			return MatrixRotateXYZ(angle);
+			return ::MatrixRotateXYZ(angle);
 		}
 		static Matrix RotateX(float angle) {
-			return MatrixRotateX(angle);
+			return ::MatrixRotateX(angle);
 		}
 		static Matrix RotateY(float angle) {
-			return MatrixRotateY(angle);
+			return ::MatrixRotateY(angle);
 		}
 		static Matrix RotateZ(float angle) {
-			return MatrixRotateZ(angle);
+			return ::MatrixRotateZ(angle);
 		}
 		static Matrix Scale(float x, float y, float z) {
-			return MatrixScale(x, y, z);
+			return ::MatrixScale(x, y, z);
 		}
 		Matrix Multiply(Matrix right) {
-			return MatrixMultiply(*this, right);
+			return ::MatrixMultiply(*this, right);
 		}
 		Matrix operator*(const Matrix& matrix) {
-			return MatrixMultiply(*this, matrix);
+			return ::MatrixMultiply(*this, matrix);
 		}
 
-		/**
-		 * TODO: Add more raymath.h functions. Starting with MatrixFrustum().
-		 */
+		static Matrix Frustum(double left, double right, double bottom, double top, double near, double far) {
+			return ::MatrixFrustum(left, right, bottom, top, near, far);
+		}
+
+		static Matrix Perspective(double fovy, double aspect, double near, double far) {
+			return ::MatrixPerspective(fovy, aspect, near, far);
+		}
+
+		static Matrix Ortho(double left, double right, double bottom, double top, double near, double far) {
+			return ::MatrixOrtho(left, right, bottom, top, near, far);
+		}
+
+		static Matrix LookAt(Vector3 eye, Vector3 target, Vector3 up) {
+			return ::MatrixLookAt(eye, target, up);
+		}
+
+		float16 ToFloatV() {
+			return ::MatrixToFloatV(*this);
+		}
+		operator float16() {
+			return ToFloatV();
+		}
 #endif
 	};
 }
