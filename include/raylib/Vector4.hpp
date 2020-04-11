@@ -57,6 +57,13 @@ namespace raylib {
 			return *this;
 		}
 
+		bool operator==(const Vector4& other) {
+			return x == other.x
+				&& y == other.y
+				&& z == other.z
+				&& w == other.w;
+		}
+
 #ifndef RAYLIB_CPP_NO_MATH
 		Vector4 Multiply(const Vector4& vector4) {
 			return QuaternionMultiply(*this, vector4);
