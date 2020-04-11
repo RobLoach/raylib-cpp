@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.11) # FetchContent is available in 3.11+
-project(example)
+project(raylib-cpp-example)
 
+# raylib
 find_package(raylib 3.0.0 QUIET)
 if (NOT raylib_FOUND)
   include(FetchContent)
@@ -20,6 +21,7 @@ if (NOT raylib_FOUND)
   endif()
 endif()
 
+# raylib-cpp
 find_package(raylib-cpp 0.3.0 QUIET)
 if (NOT raylib-cpp_FOUND)
   include(FetchContent)
@@ -40,8 +42,8 @@ if (NOT raylib-cpp_FOUND)
 endif()
 
 # This is the main part:
-set(PROJECT_NAME core_basic_window)
-set(PROJECT_SOURCES core_basic_window.cpp)
+set(PROJECT_NAME raylib-cpp-example)
+set(PROJECT_SOURCES main.cpp)
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} PUBLIC raylib raylib-cpp)
