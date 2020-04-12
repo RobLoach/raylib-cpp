@@ -6,9 +6,6 @@ project (raylib-cpp
 	HOMEPAGE_URL "https://github.com/robloach/raylib-cpp"
 	LANGUAGES C CXX)
 
-# CMake configuration
-configure_file(${CMAKE_SOURCE_DIR}/cmake/CTestCustom.cmake ${CMAKE_BINARY_DIR})
-
 # raylib
 find_package(raylib 3.0.0 QUIET)
 if (NOT raylib_FOUND)
@@ -38,5 +35,9 @@ endif()
 include(CTest)
 enable_testing()
 if(BUILD_TESTING)
+	set(CTEST_CUSTOM_TESTS_IGNORE
+		pkg-config--static
+	)
+
 	add_subdirectory(tests)
 endif()
