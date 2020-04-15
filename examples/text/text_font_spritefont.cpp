@@ -11,6 +11,7 @@
 
 #include <string>
 
+#define RAYLIB_CPP_IMPLEMENTATION
 #include "raylib/raylib.hpp"
 
 int main(void)

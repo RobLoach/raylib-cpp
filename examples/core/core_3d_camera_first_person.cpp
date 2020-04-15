@@ -9,6 +9,7 @@
 *
 ********************************************************************************************/
 
+#define RAYLIB_CPP_IMPLEMENTATION
 #include "raylib/raylib.hpp"
 
 #define MAX_COLUMNS 20

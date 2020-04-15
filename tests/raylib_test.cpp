@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include <string>
 #include <raylib.h>
+#define RAYLIB_CPP_IMPLEMENTATION
 #include "raylib/raylib.hpp"
 #include "catch.hpp"
 

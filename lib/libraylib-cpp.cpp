@@ -9,4 +9,5 @@
 ********************************************************************************************/
 
 // raylib-cpp
+#define RAYLIB_CPP_IMPLEMENTATION
 #include "raylib/raylib.hpp"

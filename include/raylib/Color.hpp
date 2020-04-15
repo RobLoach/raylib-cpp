@@ -203,6 +203,7 @@ namespace raylib {
 
 	};
 
+	#ifdef RAYLIB_CPP_IMPLEMENTATION
 	Color Color::LightGray = ::LIGHTGRAY;
 	Color Color::Gray = ::GRAY;
 	Color Color::DarkGray = ::DARKGRAY;
@@ -229,6 +230,7 @@ namespace raylib {
 	Color Color::Blank = ::BLANK;
 	Color Color::Magenta = ::MAGENTA;
 	Color Color::RayWhite = ::RAYWHITE;
+	#endif // RAYLIB_CPP_IMPLEMENTATION
 }
 
 #endif

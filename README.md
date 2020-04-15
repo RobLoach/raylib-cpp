@@ -7,6 +7,7 @@
 ## Example
 
 ``` cpp
+#define RAYLIB_CPP_IMPLEMENTATION
 #include "raylib/raylib.hpp"
 
 int main()
@@ -187,7 +188,8 @@ raylib::Vector2 newDirection = direction.Rotate(30);
 2. Download *raylib-cpp*
 3. Include [`raylib/raylib.hpp`](raylib-cpp/include/raylib/raylib.hpp)
     ``` cpp
-    #include "raylib/raylib.hpp"
+    #define RAYLIB_CPP_IMPLEMENTATION
+#include "raylib/raylib.hpp"
     ```
 
 ### Starter Projects
