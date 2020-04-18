@@ -203,32 +203,32 @@ namespace raylib {
 
 	};
 
-	Color Color::LightGray = ::LIGHTGRAY;
-	Color Color::Gray = ::GRAY;
-	Color Color::DarkGray = ::DARKGRAY;
-	Color Color::Yellow = ::YELLOW;
-	Color Color::Gold = ::GOLD;
-	Color Color::Orange = ::ORANGE;
-	Color Color::Pink = ::PINK;
-	Color Color::Red = ::RED;
-	Color Color::Maroon = ::MAROON;
-	Color Color::Green = ::GREEN;
-	Color Color::Lime = ::LIME;
-	Color Color::DarkGreen = ::DARKGREEN;
-	Color Color::SkyBlue = ::SKYBLUE;
-	Color Color::Blue = ::BLUE;
-	Color Color::DarkBlue = ::DARKBLUE;
-	Color Color::Purple = ::PURPLE;
-	Color Color::Violet = ::VIOLET;
-	Color Color::DarkPurple = ::DARKPURPLE;
-	Color Color::Beige = ::BEIGE;
-	Color Color::Brown = ::BROWN;
-	Color Color::DarkBrown = ::DARKBROWN;
-	Color Color::White = ::WHITE;
-	Color Color::Black = ::BLACK;
-	Color Color::Blank = ::BLANK;
-	Color Color::Magenta = ::MAGENTA;
-	Color Color::RayWhite = ::RAYWHITE;
+	inline Color Color::LightGray = ::LIGHTGRAY;
+	inline Color Color::Gray = ::GRAY;
+	inline Color Color::DarkGray = ::DARKGRAY;
+	inline Color Color::Yellow = ::YELLOW;
+	inline Color Color::Gold = ::GOLD;
+	inline Color Color::Orange = ::ORANGE;
+	inline Color Color::Pink = ::PINK;
+	inline Color Color::Red = ::RED;
+	inline Color Color::Maroon = ::MAROON;
+	inline Color Color::Green = ::GREEN;
+	inline Color Color::Lime = ::LIME;
+	inline Color Color::DarkGreen = ::DARKGREEN;
+	inline Color Color::SkyBlue = ::SKYBLUE;
+	inline Color Color::Blue = ::BLUE;
+	inline Color Color::DarkBlue = ::DARKBLUE;
+	inline Color Color::Purple = ::PURPLE;
+	inline Color Color::Violet = ::VIOLET;
+	inline Color Color::DarkPurple = ::DARKPURPLE;
+	inline Color Color::Beige = ::BEIGE;
+	inline Color Color::Brown = ::BROWN;
+	inline Color Color::DarkBrown = ::DARKBROWN;
+	inline Color Color::White = ::WHITE;
+	inline Color Color::Black = ::BLACK;
+	inline Color Color::Blank = ::BLANK;
+	inline Color Color::Magenta = ::MAGENTA;
+	inline Color Color::RayWhite = ::RAYWHITE;
 }
 
 #endif
