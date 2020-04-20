@@ -43,7 +43,7 @@ int main()
 
             ClearBackground(RAYWHITE);
 
-            if (droppedFiles.size() == 0) {
+            if (droppedFiles.empty()) {
             	DrawText("Drop your files to this window!", 100, 40, 20, DARKGRAY);
             }
             else {
