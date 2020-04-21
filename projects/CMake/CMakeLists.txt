@@ -28,7 +28,7 @@ if (NOT raylib-cpp_FOUND)
   FetchContent_Declare(
     raylib-cpp
     GIT_REPOSITORY https://github.com/RobLoach/raylib-cpp.git
-    GIT_TAG 27f7a59fd2e7fb2356d90e4f477e994475e8dbb8
+    GIT_TAG a6117d25e8a2102cfeee966e7c59f2d65479d042
   )
   FetchContent_GetProperties(raylib-cpp)
   if (NOT raylib-cpp_POPULATED) # Have we downloaded raylib yet?
