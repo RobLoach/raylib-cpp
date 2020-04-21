@@ -6,14 +6,6 @@ project (raylib-cpp
 	HOMEPAGE_URL "https://github.com/robloach/raylib-cpp"
 	LANGUAGES C CXX)
 
-# raylib
-find_package(raylib 3.0.0 QUIET)
-if (NOT raylib_FOUND)
-	set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE) # don't build the supplied examples
-	set(BUILD_GAMES    OFF CACHE BOOL "" FORCE) # or games
-	add_subdirectory(vendor/raylib)
-endif()
-
 # Options
 option(BUILD_RAYLIB_CPP_STATIC "Static Library" ON)
 option(BUILD_RAYLIB_CPP_EXAMPLES "Examples" ON)
@@ -21,14 +13,15 @@ option(BUILD_RAYLIB_CPP_EXAMPLES "Examples" ON)
 # Include Directory
 add_subdirectory(include)
 
-# Static Library
-if(BUILD_RAYLIB_CPP_STATIC)
-	add_subdirectory(lib)
-endif()
-
 # Examples
 if(BUILD_RAYLIB_CPP_EXAMPLES)
 	add_subdirectory(examples)
+	set(BUILD_RAYLIB_CPP_STATIC ON)
+endif()
+
+# Static Library
+if(BUILD_RAYLIB_CPP_STATIC)
+	add_subdirectory(lib)
 endif()
 
 # Testing

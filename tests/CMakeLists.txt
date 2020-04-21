@@ -28,8 +28,6 @@ macro(ADD_CATCH_TESTS executable)
   endforeach()
 endmacro()
 
-find_package(Raylib)
-
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CTEST_CUSTOM_TESTS_IGNORE pkg-config--static)

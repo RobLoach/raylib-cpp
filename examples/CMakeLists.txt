@@ -1,5 +1,3 @@
-find_package(Raylib)
-
 # Get the sources together
 set(example_dirs audio core models shapes text textures)
 set(example_sources)
@@ -23,6 +21,7 @@ foreach(example_source ${example_sources})
   # Setup the example
   add_executable(${example_name} ${example_source})
 
+  # Link against the static library.
   target_link_libraries(${example_name} PUBLIC libraylib-cpp)
 
   string(REGEX MATCH ".*/.*/" resources_dir ${example_source})
