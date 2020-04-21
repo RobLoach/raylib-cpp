@@ -164,17 +164,28 @@ cat
 There are operator overrides for objects.
 
 ``` cpp
-// Addition assignment operator
+// raylib
+Vector2 position = {50, 50};
+Vector2 speed = {10, 10};
+postion.x += speed.x;
+position.y += speed.y;
+
+// raylib-cpp
 raylib::Vector2 position(50, 50);
 raylib::Vector2 speed(10, 10);
-position += speed;
+position += speed; // Addition assignment operator override.
 ```
 
 ### RayMath
 
-The [raymath.h](https://github.com/raysan5/raylib/blob/master/src/raymath.h) methods are included.
+The [raymath](https://github.com/raysan5/raylib/blob/master/src/raymath.h) methods are included.
 
 ``` cpp
+// raylib
+Vector2 direction = {50, 50};
+Vector2 newDirection = Vector2Rotate(direction, 30);
+
+// raylib-cpp
 raylib::Vector2 direction(50, 50);
 raylib::Vector2 newDirection = direction.Rotate(30);
 ```
@@ -192,13 +203,19 @@ raylib::Vector2 newDirection = direction.Rotate(30);
 
 ### Starter Projects
 
-There is a [CMake sample project template](projects/CMake) that you can use a starter template. If there's another build system or IDE that you use, feel free to [make an issue](https://github.com/RobLoach/raylib-cpp/issues) and we can add it in.
+The [projects directory](projects) includes some starter templates...
+
+- [CMake template](projects/CMake)
+
+If there's a project template you would like to see added, feel free to [make an issue](https://github.com/RobLoach/raylib-cpp/issues) and we can add it in.
 
 ## Development
 
-*raylib-cpp* uses [CMake](https://cmake.org) as a primary target for development. To build it, and run the tests/examples, use...
+*raylib-cpp* uses [CMake](https://cmake.org) as a primary target for development. To build it, and run the tests or examples, use...
 
 ``` bash
+git clone https://github.com/RobLoach/raylib-cpp.git
+cd raylib-cpp
 git submodule update --init
 mkdir build
 cd build
@@ -210,4 +227,4 @@ make test
 
 ### Defines
 
-- `RAYLIB_CPP_NO_MATH` - When set, will not include `raymath.h`
+- `RAYLIB_CPP_NO_MATH` - When set, will skip adding the `raymath.h` integrations
