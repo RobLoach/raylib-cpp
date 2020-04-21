@@ -4,10 +4,10 @@
 *
 *   This example only works on platforms that support drag & drop (Windows, Linux, OSX, Html5?)
 *
-*   This example has been created using raylib 1.3 (www.raylib.com)
+*   This example has been created using raylib-cpp (www.raylib.com)
 *   raylib is licensed under an unmodified zlib/libpng license (View raylib.h for details)
 *
-*   Copyright (c) 2015 Ramon Santamaria (@raysan5)
+*   Copyright (c) 2020 Rob Loach (@RobLoach)
 *
 ********************************************************************************************/
 
@@ -22,6 +22,7 @@ int main()
 
     raylib::Window w(screenWidth, screenHeight, "raylib [core] example - drop files");
 
+    // Create the Dropped Files collection object.
     raylib::DroppedFiles droppedFiles;
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
@@ -43,18 +44,21 @@ int main()
 
             ClearBackground(RAYWHITE);
 
+            // Check if there are files to process.
             if (droppedFiles.empty()) {
             	DrawText("Drop your files to this window!", 100, 40, 20, DARKGRAY);
             }
             else {
                 DrawText("Dropped files:", 100, 40, 20, DARKGRAY);
 
+                // Iterate through all the dropped files.
                 for (int i = 0; i < droppedFiles.size(); i++) {
                     if (i%2 == 0)
                 		DrawRectangle(0, 85 + 40*i, screenWidth, 40, Fade(LIGHTGRAY, 0.5f));
                     else
                     	DrawRectangle(0, 85 + 40*i, screenWidth, 40, Fade(LIGHTGRAY, 0.3f));
 
+                    // Display the path to the dropped file.
                     DrawText(droppedFiles[i].c_str(), 120, 100 + 40*i, 10, GRAY);
                 }
 

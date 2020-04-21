@@ -21,15 +21,24 @@ namespace raylib {
 			Get();
 		}
 
+		/**
+		 * Get the dropped files names.
+		 */
 		DroppedFiles& Get() {
 			m_files = ::GetDroppedFiles(&m_count);
 			return *this;
 		}
 
+		/**
+		 * Check if a file has been dropped into window.
+		 */
 		inline bool IsFileDropped() {
 			return ::IsFileDropped();
 		}
 
+		/**
+		 * Clear dropped files paths buffer.
+		 */
 		inline DroppedFiles& Clear() {
 			::ClearDroppedFiles();
 			return *this;
