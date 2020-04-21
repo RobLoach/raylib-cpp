@@ -28,7 +28,7 @@ if (NOT raylib-cpp_FOUND)
   FetchContent_Declare(
     raylib-cpp
     GIT_REPOSITORY https://github.com/RobLoach/raylib-cpp.git
-    GIT_TAG 64c39d6d6b1ab2f68cb3669b0a3ff57857d5cdf7
+    GIT_TAG 27f7a59fd2e7fb2356d90e4f477e994475e8dbb8
   )
   FetchContent_GetProperties(raylib-cpp)
   if (NOT raylib-cpp_POPULATED) # Have we downloaded raylib yet?
@@ -45,7 +45,7 @@ endif()
 set(PROJECT_NAME raylib-cpp-example)
 set(PROJECT_SOURCES main.cpp)
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
-#set(raylib_VERBOSE 1)
+set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} PUBLIC raylib raylib-cpp)
 
 # That's it! You should have an example executable that you can run. Have fun!
