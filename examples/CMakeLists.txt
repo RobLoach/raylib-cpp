@@ -28,6 +28,25 @@ foreach(example_source ${example_sources})
   string(REGEX MATCH ".*/.*/" resources_dir ${example_source})
   string(APPEND resources_dir "resources")
 
+  if(${PLATFORM} MATCHES "Web" AND EXISTS ${resources_dir})
+    # The local resources path needs to be mapped to /resources virtual path
+    string(APPEND resources_dir "@resources")
+    set_target_properties(${example_name} PROPERTIES LINK_FLAGS "--preload-file ${resources_dir}")
+  endif()
+
 endforeach()
+
+if(${PLATFORM} MATCHES "Web")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Os -s USE_GLFW=3 -s ASSERTIONS=1 -s WASM=1 -s EMTERPRETIFY=1 -s EMTERPRETIFY_ASYNC=1")
+  # Since WASM is used, ALLOW_MEMORY_GROWTH has no extra overheads
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s ALLOW_MEMORY_GROWTH=1 --no-heap-copy")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --shell-file ${CMAKE_SOURCE_DIR}/examples/shell.html")
+  set(OUTPUT_EXT ".html")
+
+  # Remove the -rdynamic flag because otherwise emscripten
+  # does not generate HTML+JS+WASM files, only a non-working
+  # and fat HTML
+  string(REPLACE "-rdynamic" "" CMAKE_SHARED_LIBRARY_LINK_C_FLAGS ${CMAKE_SHARED_LIBRARY_LINK_C_FLAGS})
+endif()
 
 file(COPY ${example_resources} DESTINATION "resources/")
