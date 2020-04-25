@@ -44,6 +44,13 @@
 #ifndef RAYLIB_CPP_RAYLIB_CPP_HPP_
 #define RAYLIB_CPP_RAYLIB_CPP_HPP_
 
+/**
+ * Provides all the classes associated with raylib-cpp.
+ */
+namespace raylib {
+	// Nothing yet.
+}
+
 #include "AudioDevice.hpp"
 #include "AudioStream.hpp"
 #include "BoundingBox.hpp"

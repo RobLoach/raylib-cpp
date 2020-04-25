@@ -1,4 +1,4 @@
-![raylib-cpp Logo](docs/raylib-cpp_256x256.png)
+![raylib-cpp Logo](projects/Doxygen/raylib-cpp_256x256.png)
 
 # raylib-cpp [![Tests](https://github.com/RobLoach/raylib-cpp/workflows/Tests/badge.svg)](https://github.com/RobLoach/raylib-cpp/actions?query=workflow%3ATests+branch%3Amaster)
 
@@ -230,7 +230,7 @@ make test
 To build the document with [Doxygen](http://www.doxygen.nl/), use...
 
 ```
-doxygen docs/Doxyfile
+doxygen projects/Doxygen/Doxyfile
 ```
 
 ### Defines
