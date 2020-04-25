@@ -1,4 +1,4 @@
-![raylib-cpp Logo](logo/raylib-cpp_256x256.png)
+![raylib-cpp Logo](docs/raylib-cpp_256x256.png)
 
 # raylib-cpp [![Tests](https://github.com/RobLoach/raylib-cpp/workflows/Tests/badge.svg)](https://github.com/RobLoach/raylib-cpp/actions?query=workflow%3ATests+branch%3Amaster)
 
@@ -223,6 +223,14 @@ cmake ..
 make
 make test
 ./examples/core_basic_window
+```
+
+## Documentation
+
+To build the document with [Doxygen](http://www.doxygen.nl/), use...
+
+```
+doxygen docs/Doxyfile
 ```
 
 ### Defines

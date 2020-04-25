@@ -1,3 +1,46 @@
+/**
+ * \mainpage raylib-cpp
+ *
+ * [raylib-cpp](https://github.com/robloach/raylib-cpp) is a C++ wrapper library for raylib, a simple and easy-to-use library to enjoy videogames programming. This C++ header provides object-oriented wrappers around raylib's struct interfaces.
+ *
+ * See the ::raylib namespace for all available classes.
+ *
+ * @code
+ * #include "raylib/raylib.hpp"
+ *
+ * int main()
+ * {
+ * 	int screenWidth = 800;
+ * 	int screenHeight = 450;
+ *
+ * 	raylib::Window w(screenWidth, screenHeight, "raylib-cpp - basic window");
+ * 	raylib::Texture logo("raylib_logo.png");
+ *
+ * 	SetTargetFPS(60);
+ *
+ * 	while (!w.ShouldClose())
+ * 	{
+ * 		BeginDrawing();
+ *
+ * 		raylib::Color::RayWhite.ClearBackground();
+ *
+ * 		DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+ *
+ * 		// Object methods.
+ * 		logo.Draw(
+ * 			screenWidth / 2 - texture.getWidth() / 2,
+ * 			screenHeight / 2 - texture.getHeight() / 2);
+ *
+ * 		EndDrawing();
+ * 	}
+ *
+ * 	// UnloadTexture() and CloseWindow() are called automatically.
+ *
+ * 	return 0;
+ * }
+ * @endcode
+ */
+
 #ifndef RAYLIB_CPP_RAYLIB_CPP_HPP_
 #define RAYLIB_CPP_RAYLIB_CPP_HPP_
 

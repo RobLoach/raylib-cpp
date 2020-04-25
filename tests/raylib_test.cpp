@@ -6,10 +6,15 @@
 
 TEST_CASE("raylib_test", "[raylib_test]" ) {
 	SECTION("Vector2") {
-		raylib::Vector2 vec(50, 100);
-		REQUIRE(vec.GetX() == vec.x);
-		vec.x = 150;
-		REQUIRE(vec.GetX() == 150);
+		raylib::Vector2 position(50, 100);
+		REQUIRE(position.GetX() == position.x);
+		position.x = 150;
+		REQUIRE(position.GetX() == 150);
+
+		// Addition operator.
+		raylib::Vector2 speed(10, 10);
+		position += speed;
+		REQUIRE(position.x == 160);
 	}
 
 	SECTION("Window") {
@@ -24,12 +29,5 @@ TEST_CASE("raylib_test", "[raylib_test]" ) {
 		REQUIRE(c.r == RAYWHITE.r);
 
 		REQUIRE(raylib::Color::LightGray.r == LIGHTGRAY.r);
-	}
-
-	SECTION("Vector2") {
-		raylib::Vector2 position(50, 50);
-		raylib::Vector2 speed(10, 10);
-		position += speed;
-		REQUIRE(position.x == 60);
 	}
 }
