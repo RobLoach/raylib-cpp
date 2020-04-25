@@ -20,6 +20,7 @@ install(FILES
 	raylib/Model.hpp
 	raylib/Mouse.hpp
 	raylib/Music.hpp
+	raylib/Physics.hpp
 	raylib/RayHitInfo.hpp
 	raylib/Ray.hpp
 	raylib/raylib.hpp

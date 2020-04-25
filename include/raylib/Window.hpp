@@ -12,8 +12,14 @@ extern "C"{
 #endif
 
 namespace raylib {
+	/**
+	 * Window and Graphics Device Functions.
+	 */
 	class Window {
 	public:
+		/**
+		 * Initialize window and OpenGL context.
+		 */
 		Window(int width = 800, int height = 450, const std::string& title = "raylib", bool lateInit = false) {
 			if (!lateInit) {
 				Init(width, height, title);
@@ -28,14 +34,23 @@ namespace raylib {
 			::InitWindow(width, height, title.c_str());
 		}
 
+		/**
+		 * Check if KEY_ESCAPE pressed or Close icon pressed
+		 */
 		inline bool ShouldClose() {
 			return ::WindowShouldClose();
 		};
 
+		/**
+		 * Close window and unload OpenGL context
+		 */
 		inline void Close() {
 			::CloseWindow();
 		};
 
+		/**
+		 * Check if window has been initialized successfully
+		 */
 		inline static bool IsReady() {
 			return ::IsWindowReady();
 		};
