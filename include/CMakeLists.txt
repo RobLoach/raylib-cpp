@@ -36,5 +36,5 @@ install(FILES
 	VrSimulator.hpp
 	Wave.hpp
 	Window.hpp
-	DESTINATION include/raylib
+	DESTINATION include
 )
