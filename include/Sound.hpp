@@ -11,7 +11,7 @@ extern "C"{
 }
 #endif
 
-#include "utils.hpp"
+#include "./raylib-cpp-utils.hpp"
 
 namespace raylib {
 	class Sound : public ::Sound {

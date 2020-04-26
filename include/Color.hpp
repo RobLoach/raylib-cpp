@@ -11,8 +11,8 @@ extern "C"{
 }
 #endif
 
-#include "Vector4.hpp"
-#include "utils.hpp"
+#include "./Vector4.hpp"
+#include "./raylib-cpp-utils.hpp"
 
 namespace raylib {
 	class Color : public ::Color {

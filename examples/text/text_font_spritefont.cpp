@@ -11,7 +11,7 @@
 
 #include <string>
 
-#include "raylib/raylib.hpp"
+#include "raylib-cpp.hpp"
 
 int main(void)
 {

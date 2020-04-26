@@ -9,8 +9,8 @@ extern "C"{
 }
 #endif
 
-#include "utils.hpp"
-#include "Mesh.hpp"
+#include "./raylib-cpp-utils.hpp"
+#include "./Mesh.hpp"
 
 namespace raylib {
 	class Model : public ::Model {

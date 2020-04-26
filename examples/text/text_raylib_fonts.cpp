@@ -14,7 +14,7 @@
 
 #include <vector>
 
-#include "raylib/raylib.hpp"
+#include "raylib-cpp.hpp"
 
 #define MAX_FONTS   8
 
