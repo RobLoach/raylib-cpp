@@ -124,11 +124,11 @@ namespace raylib {
 			::UnloadImage(*this);
 		};
 
-		inline Image& Export(const std::string& fileName) {
+		inline const Image& Export(const std::string& fileName) const {
 			::ExportImage(*this, fileName.c_str());
 			return *this;
 		}
-		inline Image& ExportAsCode(const std::string& fileName) {
+		inline const Image& ExportAsCode(const std::string& fileName) const {
 			::ExportImageAsCode(*this, fileName.c_str());
 			return *this;
 		}

@@ -23,6 +23,7 @@ TEST_CASE("raylib_test", "[raylib_test]" ) {
 	SECTION("Color") {
 		raylib::Color c(RED);
 		REQUIRE(c.ToInt() == ::ColorToInt(RED));
+		REQUIRE((int)c == ::ColorToInt(RED));
 
 		c = RAYWHITE;
 		REQUIRE(c.r == RAYWHITE.r);

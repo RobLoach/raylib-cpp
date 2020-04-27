@@ -72,24 +72,24 @@ namespace raylib {
 			return *this;
 		}
 
-		inline Font& DrawText(const std::string& text, ::Vector2 position, float fontSize, float spacing, ::Color tint = WHITE) {
+		inline const Font& DrawText(const std::string& text, ::Vector2 position, float fontSize, float spacing, ::Color tint = WHITE) const {
 			::DrawTextEx(*this, text.c_str(), position,  fontSize,  spacing,  tint);
 			return *this;
 		}
-		inline Font& DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap, ::Color tint = WHITE) {
+		inline const Font& DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap, ::Color tint = WHITE) const {
 			::DrawTextRec(*this, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint);
 			return *this;
 		}
-		inline Font& DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint, int selectStart, int selectLength, ::Color selectText, Color selectBack) {
+		inline const Font& DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint, int selectStart, int selectLength, ::Color selectText, Color selectBack) const {
 			::DrawTextRecEx(*this, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint,  selectStart,  selectLength, selectText, selectBack);
 			return *this;
 		}
 
-		inline Vector2 MeasureText(const std::string& text, float fontSize, float spacing) {
+		inline const Vector2 MeasureText(const std::string& text, float fontSize, float spacing) const {
 			return ::MeasureTextEx(*this, text.c_str(), fontSize, spacing);
 		}
 
-		inline int GetGlyphIndex(int character) {
+		inline int GetGlyphIndex(int character) const {
 			return ::GetGlyphIndex(*this, character);
 		}
 	};
