@@ -9,7 +9,7 @@
 *
 ********************************************************************************************/
 
-#include "raylib/raylib.hpp"
+#include "raylib-cpp.hpp"
 
 #include <cmath>
 

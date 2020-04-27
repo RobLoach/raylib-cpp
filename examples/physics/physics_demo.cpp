@@ -15,11 +15,11 @@
 *
 ********************************************************************************************/
 
-#include "raylib/raylib.hpp"
+#include "raylib-cpp.hpp"
 
 #define PHYSAC_IMPLEMENTATION
 #define PHYSAC_NO_THREADS
-#include "raylib/Physics.hpp"
+#include "Physics.hpp"
 
 int main(void)
 {

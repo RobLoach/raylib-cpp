@@ -11,9 +11,9 @@ extern "C"{
 }
 #endif
 
-#include "utils.hpp"
-#include "Vector2.hpp"
-#include "Material.hpp"
+#include "./raylib-cpp-utils.hpp"
+#include "./Vector2.hpp"
+#include "./Material.hpp"
 
 namespace raylib {
 	class Texture2D : public ::Texture2D {

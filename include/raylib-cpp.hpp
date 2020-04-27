@@ -6,7 +6,7 @@
  * See the ::raylib namespace for all available classes.
  *
  * @code
- * #include "raylib/raylib.hpp"
+ * #include "raylib-cpp.hpp"
  *
  * int main()
  * {
@@ -41,8 +41,8 @@
  * @endcode
  */
 
-#ifndef RAYLIB_CPP_RAYLIB_CPP_HPP_
-#define RAYLIB_CPP_RAYLIB_CPP_HPP_
+#ifndef RAYLIB_CPP_HPP_
+#define RAYLIB_CPP_HPP_
 
 /**
  * Provides all the classes associated with raylib-cpp.
@@ -51,35 +51,35 @@ namespace raylib {
 	// Nothing yet.
 }
 
-#include "AudioDevice.hpp"
-#include "AudioStream.hpp"
-#include "BoundingBox.hpp"
-#include "Camera2D.hpp"
-#include "Camera3D.hpp"
-#include "Color.hpp"
-#include "DroppedFiles.hpp"
-#include "Font.hpp"
-#include "Gamepad.hpp"
-#include "Image.hpp"
-#include "Material.hpp"
-#include "Matrix.hpp"
-#include "Mesh.hpp"
-#include "ModelAnimation.hpp"
-#include "Mouse.hpp"
-#include "Model.hpp"
-#include "Music.hpp"
-#include "RayHitInfo.hpp"
-#include "Ray.hpp"
-#include "Rectangle.hpp"
-#include "RenderTexture2D.hpp"
-#include "Shader.hpp"
-#include "Sound.hpp"
-#include "Texture2D.hpp"
-#include "Vector2.hpp"
-#include "Vector3.hpp"
-#include "Vector4.hpp"
-#include "VrSimulator.hpp"
-#include "Wave.hpp"
-#include "Window.hpp"
+#include "./AudioDevice.hpp"
+#include "./AudioStream.hpp"
+#include "./BoundingBox.hpp"
+#include "./Camera2D.hpp"
+#include "./Camera3D.hpp"
+#include "./Color.hpp"
+#include "./DroppedFiles.hpp"
+#include "./Font.hpp"
+#include "./Gamepad.hpp"
+#include "./Image.hpp"
+#include "./Material.hpp"
+#include "./Matrix.hpp"
+#include "./Mesh.hpp"
+#include "./ModelAnimation.hpp"
+#include "./Mouse.hpp"
+#include "./Model.hpp"
+#include "./Music.hpp"
+#include "./RayHitInfo.hpp"
+#include "./Ray.hpp"
+#include "./Rectangle.hpp"
+#include "./RenderTexture2D.hpp"
+#include "./Shader.hpp"
+#include "./Sound.hpp"
+#include "./Texture2D.hpp"
+#include "./Vector2.hpp"
+#include "./Vector3.hpp"
+#include "./Vector4.hpp"
+#include "./VrSimulator.hpp"
+#include "./Wave.hpp"
+#include "./Window.hpp"
 
 #endif

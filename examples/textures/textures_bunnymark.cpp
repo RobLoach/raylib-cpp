@@ -9,7 +9,7 @@
 *
 ********************************************************************************************/
 
-#include "raylib/raylib.hpp"
+#include "raylib-cpp.hpp"
 
 #define MAX_BUNNIES       100000    // 100K bunnies limit
 

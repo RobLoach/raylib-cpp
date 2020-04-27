@@ -9,10 +9,10 @@ extern "C"{
 }
 #endif
 
-#include "utils.hpp"
+#include "./raylib-cpp-utils.hpp"
 
-#include "BoundingBox.hpp"
-#include "Model.hpp"
+#include "./BoundingBox.hpp"
+#include "./Model.hpp"
 
 namespace raylib {
 	class Mesh : public ::Mesh {

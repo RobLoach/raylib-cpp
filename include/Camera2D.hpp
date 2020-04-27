@@ -9,8 +9,8 @@ extern "C"{
 }
 #endif
 
-#include "Vector2.hpp"
-#include "utils.hpp"
+#include "./Vector2.hpp"
+#include "./raylib-cpp-utils.hpp"
 
 namespace raylib {
 	class Camera2D : public ::Camera2D {

@@ -12,7 +12,7 @@ extern "C"{
 }
 #endif
 
-#include "utils.hpp"
+#include "./raylib-cpp-utils.hpp"
 #ifndef RAYLIB_CPP_NO_MATH
 #include <cmath>
 #endif

@@ -9,9 +9,9 @@ extern "C"{
 }
 #endif
 
-#include "utils.hpp"
+#include "./raylib-cpp-utils.hpp"
 
-#include "RayHitInfo.hpp"
+#include "./RayHitInfo.hpp"
 
 namespace raylib {
 	class Ray : public ::Ray {
