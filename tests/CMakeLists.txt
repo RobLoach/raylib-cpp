@@ -36,7 +36,7 @@ list(APPEND SOURCES catch.hpp raylib_test.cpp)
 list(APPEND LIBS raylib-cpp raylib)
 
 add_executable(raylib_test ${SOURCES})
-target_compile_options(raylib_test PRIVATE -Wall -Wextra -Wconversion -Wsign-conversion)
+# target_compile_options(raylib_test PRIVATE -Wall -Wextra -Wconversion -Wsign-conversion)
 
 target_link_libraries(raylib_test ${LIBS})
 
