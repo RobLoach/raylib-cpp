@@ -3,6 +3,7 @@
 
 #include <string>
 
+namespace raylib{
 #ifdef __cplusplus
 extern "C"{
 #endif
@@ -10,8 +11,8 @@ extern "C"{
 #ifdef __cplusplus
 }
 #endif
-
-namespace raylib {
+}
+namespace raylibcpp {
 	/**
 	 * Window and Graphics Device Functions.
 	 */
@@ -31,101 +32,101 @@ namespace raylib {
 		};
 
 		void Init(int width, int height, const std::string& title) {
-			::InitWindow(width, height, title.c_str());
+			raylib::InitWindow(width, height, title.c_str());
 		}
 
 		/**
 		 * Check if KEY_ESCAPE pressed or Close icon pressed
 		 */
 		inline bool ShouldClose() {
-			return ::WindowShouldClose();
+			return raylib::WindowShouldClose();
 		};
 
 		/**
 		 * Close window and unload OpenGL context
 		 */
 		inline void Close() {
-			::CloseWindow();
+			raylib::CloseWindow();
 		};
 
 		/**
 		 * Check if window has been initialized successfully
 		 */
 		inline static bool IsReady() {
-			return ::IsWindowReady();
+			return raylib::IsWindowReady();
 		};
 		inline bool IsMinimized() {
-			return ::IsWindowMinimized();
+			return raylib::IsWindowMinimized();
 		}
 		inline bool IsResized() {
-			return ::IsWindowResized();
+			return raylib::IsWindowResized();
 		}
 		inline bool IsHidden() {
-			return ::IsWindowHidden();
+			return raylib::IsWindowHidden();
 		}
 
 		inline bool IsFullscreen() {
-			return ::IsWindowFullscreen();
+			return raylib::IsWindowFullscreen();
 		}
 		inline Window& ToggleFullscreen() {
-			::ToggleFullscreen();
+			raylib::ToggleFullscreen();
 			return *this;
 		}
 		inline Window& Unhide() {
-			::UnhideWindow();
+			raylib::UnhideWindow();
 			return *this;
 		}
 		inline Window& Hide() {
-			::HideWindow();
+			raylib::HideWindow();
 			return *this;
 		}
 		inline Window& SetIcon(Image image) {
-			::SetWindowIcon(image);
+			raylib::SetWindowIcon(image);
 			return *this;
 		}
 		inline Window& SetTitle(const std::string& title) {
-			::SetWindowTitle(title.c_str());
+			raylib::SetWindowTitle(title.c_str());
 			return *this;
 		}
 		inline Window& SetPosition(int x, int y) {
-			::SetWindowPosition(x, y);
+			raylib::SetWindowPosition(x, y);
 			return *this;
 		}
 		inline Window& SetMonitor(int monitor) {
-			::SetWindowMonitor(monitor);
+			raylib::SetWindowMonitor(monitor);
 			return *this;
 		}
 		inline Window& SetMinSize(int width, int height) {
-			::SetWindowMinSize(width, height);
+			raylib::SetWindowMinSize(width, height);
 			return *this;
 		}
 		inline Window& SetSize(int width, int height) {
-			::SetWindowSize(width, height);
+			raylib::SetWindowSize(width, height);
 			return *this;
 		}
 		inline void* GetHandle() {
-			return ::GetWindowHandle();
+			return raylib::GetWindowHandle();
 		}
 
 		inline Window& BeginDrawing() {
-			::BeginDrawing();
+			raylib::BeginDrawing();
 			return *this;
 		}
 		inline Window& EndDrawing() {
-			::EndDrawing();
+			raylib::EndDrawing();
 			return *this;
 		}
 
 		inline int GetScreenWidth() {
-			return ::GetScreenWidth();
+			return raylib::GetScreenWidth();
 		}
 
 		inline int GetScreenHeight() {
-			return ::GetScreenHeight();
+			return raylib::GetScreenHeight();
 		}
 
 		inline Vector2 GetWindowPosition() {
-			return ::GetWindowPosition();
+			return raylib::GetWindowPosition();
 		}
 
 		std::string GetMonitorName(int monitor) {
@@ -137,22 +138,22 @@ namespace raylib {
 		}
 
 		inline Window& SetClipboardText(const std::string& text) {
-			::SetClipboardText(text.c_str());
+			raylib::SetClipboardText(text.c_str());
 			return *this;
 		}
 
 		inline Window& SetTargetFPS(int fps) {
-			::SetTargetFPS(fps);
+			raylib::SetTargetFPS(fps);
 			return *this;
 		}
 		inline int GetFPS() {
-			return ::GetFPS();
+			return raylib::GetFPS();
 		}
 		inline float GetFrameTime() {
-			return ::GetFrameTime();
+			return raylib::GetFrameTime();
 		}
 		inline double GetTime() {
-			return ::GetTime();
+			return raylib::GetTime();
 		}
 	};
 }
