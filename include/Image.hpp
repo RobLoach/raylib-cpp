@@ -22,14 +22,11 @@ namespace raylib {
 		Image(const std::string& fileName) {
 			Load(fileName);
 		}
-		Image(::Color* pixels, int width, int height) {
-			LoadEx(pixels, width, height);
-		}
-		Image(void* data, int width, int height, int format) {
-			LoadPro(data, width, height, format);
-		}
 		Image(const std::string& fileName, int width, int height, int format, int headerSize) {
 			LoadRaw(fileName, width, height, format, headerSize);
+		}
+		Image(const std::string& fileName, int* frames) {
+			LoadAnim(fileName, frames);
 		}
 		Image(::Texture2D texture) {
 			set(::GetTextureData(texture));
@@ -108,16 +105,12 @@ namespace raylib {
 			set(::LoadImage(fileName.c_str()));
 		}
 
-		void LoadEx(::Color* pixels, int width, int height) {
-			set(::LoadImageEx(pixels, width, height));
-		}
-
-		void LoadPro(void* data, int width, int height, int format) {
-			set(::LoadImagePro(data, width, height, format));
-		}
-
 		void LoadRaw(const std::string& fileName, int width, int height, int format, int headerSize) {
 			set(::LoadImageRaw(fileName.c_str(), width, height, format, headerSize));
+		}
+
+		void LoadAnim(const std::string& fileName, int* frames) {
+			set(::LoadImageAnim(fileName.c_str(), frames));
 		}
 
 		inline void Unload() {
@@ -238,8 +231,8 @@ namespace raylib {
 			return *this;
 		}
 
-		inline ::Color* ExtractPalette(int maxPaletteSize, int *extractCount) {
-			return ::ImageExtractPalette(*this, maxPaletteSize, extractCount);
+		inline ::Color* GetPalette(int maxPaletteSize, int *extractCount) {
+			return ::GetImagePalette(*this, maxPaletteSize, extractCount);
 		}
 
 		inline Rectangle GetAlphaBorder(float threshold) {
@@ -301,12 +294,16 @@ namespace raylib {
 			return *this;
 		}
 
-		inline Image& DrawText(::Vector2 position, const std::string& text, int fontSize, ::Color color = WHITE){
-			::ImageDrawText(this, position, text.c_str(), fontSize, color);
+		inline Image& DrawText(const std::string& text, ::Vector2 position, int fontSize, ::Color color = WHITE){
+			::ImageDrawText(this, text.c_str(), position.x, position.y, fontSize, color);
 			return *this;
 		}
-		inline Image& DrawText(::Vector2 position, ::Font font, const std::string& text, float fontSize, float spacing, ::Color color = WHITE){
-			::ImageDrawTextEx(this, position, font, text.c_str(), fontSize, spacing, color);
+		inline Image& DrawText(const std::string& text, int x, int y, int fontSize, ::Color color = WHITE){
+			::ImageDrawText(this, text.c_str(), x, y, fontSize, color);
+			return *this;
+		}
+		inline Image& DrawText(::Font font, const std::string& text, ::Vector2 position, float fontSize, float spacing, ::Color tint = WHITE){
+			::ImageDrawTextEx(this, font, text.c_str(), position, fontSize, spacing, tint);
 			return *this;
 		}
 

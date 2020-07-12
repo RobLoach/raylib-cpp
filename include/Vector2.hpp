@@ -77,11 +77,11 @@ namespace raylib {
 		}
 
 		Vector2 Multiply(const Vector2& vector2) {
-			return Vector2MultiplyV(*this, vector2);
+			return Vector2Multiply(*this, vector2);
 		}
 
 		Vector2 operator*(const Vector2& vector2) {
-			return Vector2MultiplyV(*this, vector2);
+			return Vector2Multiply(*this, vector2);
 		}
 
 		Vector2 Scale(const float scale) {
@@ -93,19 +93,25 @@ namespace raylib {
 		}
 
 		Vector2 Divide(const Vector2& vector2) {
-			return Vector2DivideV(*this, vector2);
+			return Vector2Divide(*this, vector2);
 		}
 
 		Vector2 operator/(const Vector2& vector2) {
-			return Vector2DivideV(*this, vector2);
+			return Vector2Divide(*this, vector2);
 		}
 
 		Vector2 Divide(const float div) {
-			return Vector2Divide(*this, div);
+			this->x /= div;
+			this->y /= div;
+
+			return *this;
 		}
 
 		Vector2 operator/(const float div) {
-			return Vector2Divide(*this, div);
+			this->x /= div;
+			this->y /= div;
+
+			return *this;
 		}
 
 		Vector2& operator+=(const Vector2& vector2) {
@@ -122,7 +128,7 @@ namespace raylib {
 
 
 		Vector2& operator*=(const Vector2& vector2) {
-			set(Vector2MultiplyV(*this, vector2));
+			set(Vector2Multiply(*this, vector2));
 
 			return *this;
 		}
@@ -134,13 +140,14 @@ namespace raylib {
 		}
 
 		Vector2& operator/=(const Vector2& vector2) {
-			set(Vector2DivideV(*this, vector2));
+			set(Vector2Divide(*this, vector2));
 
 			return *this;
 		}
 
 		Vector2& operator/=(const float div) {
-			set(Vector2Divide(*this, div));
+			this->x /= div;
+			this->y /= div;
 
 			return *this;
 		}
