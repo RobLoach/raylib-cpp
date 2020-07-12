@@ -107,10 +107,10 @@ namespace raylib {
 			return Vector3Divide(*this, vector3);
 		}
 
-		Vector3 Divide(const float div) {
-			this->x /= div;
-			this->y /= div;
-			this->z /= div;
+		Vector3& Divide(const float div) {
+			x /= div;
+			y /= div;
+			z /= div;
 
 			return *this;
 		}

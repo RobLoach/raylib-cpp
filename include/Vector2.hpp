@@ -100,16 +100,16 @@ namespace raylib {
 			return Vector2Divide(*this, vector2);
 		}
 
-		Vector2 Divide(const float div) {
-			this->x /= div;
-			this->y /= div;
+		Vector2& Divide(const float div) {
+			x /= div;
+			y /= div;
 
 			return *this;
 		}
 
-		Vector2 operator/(const float div) {
-			this->x /= div;
-			this->y /= div;
+		Vector2& operator/(const float div) {
+			x /= div;
+			y /= div;
 
 			return *this;
 		}
