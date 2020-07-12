@@ -43,7 +43,7 @@ int main(void)
     raylib::Font font("resources/custom_jupiter_crash.png");
 
     // Draw over image using custom font
-    parrots.DrawText(raylib::Vector2(300, 230), font, "PARROTS & CAT", font.baseSize, -2);
+    parrots.DrawText(font, "PARROTS & CAT", raylib::Vector2(300, 230), font.baseSize, -2);
 
     raylib::Texture2D texture(parrots);      // Image converted to texture, uploaded to GPU memory (VRAM)
 

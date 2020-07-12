@@ -100,19 +100,23 @@ namespace raylib {
 		}
 
 		Vector3 Divide(const Vector3& vector3) {
-			return Vector3DivideV(*this, vector3);
+			return Vector3Divide(*this, vector3);
 		}
 
 		Vector3 operator/(const Vector3& vector3) {
-			return Vector3DivideV(*this, vector3);
+			return Vector3Divide(*this, vector3);
 		}
 
-		Vector3 Divide(const float div) {
-			return Vector3Divide(*this, div);
+		Vector3& Divide(const float div) {
+			x /= div;
+			y /= div;
+			z /= div;
+
+			return *this;
 		}
 
 		Vector3 operator/(const float div) {
-			return Vector3Divide(*this, div);
+			return Divide(div);
 		}
 
 		Vector3& operator+=(const Vector3& vector3) {
@@ -141,13 +145,17 @@ namespace raylib {
 		}
 
 		Vector3& operator/=(const Vector3& vector3) {
-			set(Vector3DivideV(*this, vector3));
+			x /= vector3.x;
+			y /= vector3.y;
+			z /= vector3.z;
 
 			return *this;
 		}
 
 		Vector3& operator/=(const float div) {
-			set(Vector3Divide(*this, div));
+			x /= div;
+			y /= div;
+			z /= div;
 
 			return *this;
 		}

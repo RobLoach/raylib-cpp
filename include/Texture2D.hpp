@@ -79,6 +79,11 @@ namespace raylib {
 			return *this;
 		}
 
+		inline Texture2D& UpdateRec(Rectangle rec, const void *pixels) {
+			UpdateTextureRec(*this, rec, pixels);
+			return *this;
+		}
+
 		inline Image GetTextureData() {
 			return ::GetTextureData(*this);
 		}
@@ -134,6 +139,11 @@ namespace raylib {
 
 		inline Texture2D& Draw(::Vector3 position, float width, float height, float length, ::Color color = WHITE) {
 			::DrawCubeTexture(*this, position, width, height, length, color);
+			return *this;
+		}
+
+		inline Texture2D& DrawTiled(Rectangle sourceRec, Rectangle destRec, Vector2 origin, float rotation, float scale, Color tint = WHITE) {
+			::DrawTextureTiled(*this, sourceRec, destRec, origin, rotation, scale, tint);
 			return *this;
 		}
 

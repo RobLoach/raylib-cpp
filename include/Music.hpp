@@ -29,14 +29,14 @@ namespace raylib {
 		inline void set(::Music music) {
 			ctxType = music.ctxType;
 			ctxData = music.ctxData;
+			looping = music.looping;
 			sampleCount = music.sampleCount;
-			loopCount = music.loopCount;
 			stream = music.stream;
 		}
 
 		GETTERSETTER(int,CtxType,ctxType)
+		GETTERSETTER(bool,Looping,looping)
 		GETTERSETTER(unsigned int,SampleCount,sampleCount)
-		GETTERSETTER(unsigned int,LoopCount,loopCount)
 
         Music& operator=(const ::Music& music) {
             set(music);
@@ -84,10 +84,6 @@ namespace raylib {
 		}
 		inline Music& SetPitch(float pitch) {
 			::SetMusicPitch(*this, pitch);
-        	return *this;
-		}
-		inline Music& SetLoopCount(int count)  {
-			::SetMusicLoopCount(*this, count);
         	return *this;
 		}
 		inline float GetTimeLength() {
