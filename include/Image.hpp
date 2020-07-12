@@ -295,7 +295,7 @@ namespace raylib {
 		}
 
 		inline Image& DrawText(const std::string& text, ::Vector2 position, int fontSize, ::Color color = WHITE){
-			::ImageDrawText(this, text.c_str(), position.x, position.y, fontSize, color);
+			::ImageDrawText(this, text.c_str(), (int)position.x, (int)position.y, fontSize, color);
 			return *this;
 		}
 		inline Image& DrawText(const std::string& text, int x, int y, int fontSize, ::Color color = WHITE){
