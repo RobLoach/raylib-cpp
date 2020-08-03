@@ -29,4 +29,10 @@ TEST_CASE("raylib_test", "[raylib_test]" ) {
 
 		REQUIRE(raylib::Color::LightGray.r == LIGHTGRAY.r);
 	}
+
+	SECTION("RayMath") {
+		raylib::Vector2 direction(50, 50);
+		raylib::Vector2 newDirection = direction.Rotate(30);
+		REQUIRE((int)newDirection.x == 18);
+	}
 }

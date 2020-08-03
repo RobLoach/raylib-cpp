@@ -87,6 +87,11 @@ namespace raylib {
 			return *this;
 		}
 
+		inline Mesh& NormalsSmooth() {
+			::MeshNormalsSmooth(this);
+			return *this;
+		}
+
 		inline raylib::Model LoadModelFrom() {
 			return ::LoadModelFromMesh(*this);
 		}

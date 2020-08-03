@@ -138,6 +138,7 @@ raylib::Color color = raylib::Color::Gray;
 color.DrawPixel(50, 50);
 Vector2 position(50.0f, 50.0f);
 color.DrawPixel(position); // No more V in method name.
+position.DrawPixel(color); // Alternatively
 ```
 
 ### Method Chaining
