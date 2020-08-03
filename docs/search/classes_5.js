@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gamepad',['Gamepad',['../classraylib_1_1_gamepad.html',1,'raylib']]]
+  ['gamepad_520',['Gamepad',['../classraylib_1_1_gamepad.html',1,'raylib']]]
 ];

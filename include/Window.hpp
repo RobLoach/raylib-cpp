@@ -14,6 +14,14 @@ extern "C"{
 namespace raylib {
 	/**
 	 * Window and Graphics Device Functions.
+	 *
+	 * @code
+	 *
+	 * raylib::Window w(640, 480, "raylib-cpp");
+	 * while (!w.ShouldClose()) {
+	 *     // Update
+	 * }
+	 * @endcode
 	 */
 	class Window {
 	public:

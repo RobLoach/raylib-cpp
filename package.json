@@ -1,6 +1,6 @@
 {
   "name": "raylib-cpp",
-  "version": "0.3.0",
+  "version": "3.0.0",
   "repo": "robloach/raylib-cpp",
   "description": "raylib-cpp: C++ Object-Oriented Wrapper for raylib",
   "keywords": ["raylib"],
