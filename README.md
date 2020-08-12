@@ -154,10 +154,9 @@ ImageResize(&cat, 150, 200);
 
 // raylib-cpp
 raylib::Image cat("cat.png");
-cat
-	.Crop((Rectangle){ 100, 10, 280, 380 })
-	.FlipHorizontal()
-	.Resize(150, 200);
+cat.Crop((Rectangle){ 100, 10, 280, 380 })
+   .FlipHorizontal()
+   .Resize(150, 200);
 ```
 
 ### Operators
