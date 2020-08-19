@@ -2,7 +2,7 @@
 add_library(libraylib-cpp STATIC libraylib-cpp)
 
 # raylib
-find_package(raylib 3.0.0 QUIET)
+find_package(raylib 3.0.1 QUIET)
 if (NOT raylib_FOUND)
 	set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE) # don't build the supplied examples
 	set(BUILD_GAMES    OFF CACHE BOOL "" FORCE) # or games
