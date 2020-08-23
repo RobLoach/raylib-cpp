@@ -20,7 +20,7 @@ int main(void)
 
     raylib::Window w(screenWidth, screenHeight, "raylib [audio] example - sound loading and playing");
 
-    raylib::AudioDevice audiodevice();      // Initialize audio device
+    raylib::AudioDevice audiodevice;      // Initialize audio device
 
     raylib::Sound fxWav("resources/sound.wav");         // Load WAV audio file
     raylib::Sound fxOgg("resources/tanatana.ogg");      // Load OGG audio file

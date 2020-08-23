@@ -20,7 +20,7 @@ int main(void)
 
     raylib::Window w(screenWidth, screenHeight, "raylib [audio] example - music playing (streaming)");
 
-    raylib::AudioDevice audio();              // Initialize audio device
+    raylib::AudioDevice audio;              // Initialize audio device
 
     raylib::Music music("resources/guitar_noodling.ogg");
 
