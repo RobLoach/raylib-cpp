@@ -9,7 +9,11 @@ project (raylib-cpp
 # Options
 option(BUILD_RAYLIB_CPP_STATIC "Static Library" ON)
 option(BUILD_RAYLIB_CPP_EXAMPLES "Examples" ON)
+
+# C++17
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Include Directory
 add_subdirectory(include)
