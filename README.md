@@ -29,8 +29,8 @@ int main()
 
 		// Object methods.
 		logo.Draw(
-			screenWidth / 2 - texture.getWidth() / 2,
-			screenHeight / 2 - texture.getHeight() / 2);
+			screenWidth / 2 - logo.getWidth() / 2,
+			screenHeight / 2 - logo.getHeight() / 2);
 
 		EndDrawing();
 	}
@@ -167,7 +167,7 @@ There are operator overrides for objects.
 // raylib
 Vector2 position = {50, 50};
 Vector2 speed = {10, 10};
-postion.x += speed.x;
+position.x += speed.x;
 position.y += speed.y;
 
 // raylib-cpp
