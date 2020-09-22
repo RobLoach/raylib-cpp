@@ -28,13 +28,11 @@ namespace raylib {
 			id = renderTexture.id;
 			texture = renderTexture.texture;
 			depth = renderTexture.depth;
-			depthTexture = renderTexture.depthTexture;
 		}
 
 		GETTERSETTER(unsigned int,Id,id)
 		GETTERSETTER(Texture2D,Texture,texture)
 		GETTERSETTER(Texture2D,Depth,depth)
-		GETTERSETTER(bool,DepthTexture,depthTexture)
 
         RenderTexture2D& operator=(const ::RenderTexture2D& texture) {
             set(texture);
