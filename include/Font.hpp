@@ -17,19 +17,23 @@ namespace raylib {
 	class Font : public ::Font {
 	public:
 		Font() {
-			set(GetFontDefault());
+			set(::GetFontDefault());
 		}
 
 		Font(const std::string& fileName) {
-			set(LoadFont(fileName.c_str()));
+			set(::LoadFont(fileName.c_str()));
 		}
 
 		Font(const std::string& fileName, int fontSize, int* fontChars, int charCount)  {
-			set(LoadFontEx(fileName.c_str(), fontSize, fontChars, charCount));
+			set(::LoadFontEx(fileName.c_str(), fontSize, fontChars, charCount));
 		}
 
 		Font(::Image& image, ::Color key, int firstChar)  {
-			set(LoadFontFromImage(image, key, firstChar));
+			set(::LoadFontFromImage(image, key, firstChar));
+		}
+
+		Font(const std::string& fileType, const unsigned char *fileData, int dataSize, int fontSize, int *fontChars, int charsCount)  {
+			set(::LoadFontFromMemory(fileType.c_str(), fileData, dataSize, fontSize, fontChars, charsCount));
 		}
 
 		~Font() {

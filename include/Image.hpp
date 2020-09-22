@@ -168,6 +168,11 @@ namespace raylib {
 			::ImageCrop(this, crop);
 			return *this;
 		}
+		inline Image& Crop(int offsetX, int offsetY, int newWidth, int newHeight) {
+			::ImageCrop(this, (Rectangle){ (float)offsetX, (float)offsetY, (float)newWidth, (float)newHeight });
+			return *this;
+		}
+
 		inline Image& Resize(int newWidth, int newHeight) {
 			::ImageResize(this, newWidth, newHeight);
 			return *this;
@@ -176,14 +181,17 @@ namespace raylib {
 			::ImageResizeNN(this, newWidth, newHeight);
 			return *this;
 		}
+
 		inline Image& ResizeCanvas(int newWidth, int newHeight, int offsetX, int offsetY, Color color) {
 			::ImageResizeCanvas(this, newWidth, newHeight, offsetX, offsetY, color);
 			return *this;
 		}
+
 		inline Image& Mipmaps() {
 			::ImageMipmaps(this);
 			return *this;
 		}
+
 		inline Image& Dither(int rBpp, int gBpp, int bBpp, int aBpp) {
 			::ImageDither(this, rBpp, gBpp, bBpp, aBpp);
 			return *this;
@@ -202,18 +210,22 @@ namespace raylib {
 			::ImageRotateCW(this);
 			return *this;
 		}
+
 		inline Image& RotateCCW() {
 			::ImageRotateCCW(this);
 			return *this;
 		}
+
 		inline Image& ColorTint(::Color color = WHITE) {
 			::ImageColorTint(this, color);
 			return *this;
 		}
+
 		inline Image& ColorInvert() {
 			::ImageColorInvert(this);
 			return *this;
 		}
+
 		inline Image& ColorGrayscale() {
 			::ImageColorGrayscale(this);
 			return *this;

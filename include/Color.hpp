@@ -36,7 +36,11 @@ namespace raylib {
 			a = alpha;
 		};
 		Color(::Vector3 hsv) {
-			set(::ColorFromHSV(hsv));
+			set(::ColorFromHSV(hsv.x, hsv.y, hsv.z));
+		};
+		static Color FromHSV(float hue, float saturation, float value) {
+			::Color color = ::ColorFromHSV(hue, saturation, value);
+			return color;
 		};
 		Color(int hexValue) {
 			set(::GetColor(hexValue));
