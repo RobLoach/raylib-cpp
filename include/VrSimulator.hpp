@@ -17,7 +17,7 @@ namespace raylib {
 		VrSimulator() {
 			Init();
 		};
-		VrSimulator(VrDeviceInfo info, Shader distortion) {
+		VrSimulator(::VrDeviceInfo info, ::Shader distortion) {
 			Init();
 			Set(info, distortion);
 		};
@@ -38,7 +38,7 @@ namespace raylib {
 			::UpdateVrTracking(camera);
 			return *this;
 		}
-		inline VrSimulator& Set(VrDeviceInfo info, Shader distortion) {
+		inline VrSimulator& Set(::VrDeviceInfo info, ::Shader distortion) {
 			::SetVrConfiguration(info, distortion);
 			return *this;
 		}

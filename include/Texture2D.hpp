@@ -157,8 +157,9 @@ namespace raylib {
 		}
 	};
 
-	// Alias the Texture2D as Texture.
+	// Create the Texture2D aliases.
 	typedef Texture2D Texture;
+	typedef Texture2D TextureCubemap;
 }
 
 #endif
