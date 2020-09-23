@@ -29,8 +29,8 @@ int main()
 
 		// Object methods.
 		logo.Draw(
-			screenWidth / 2 - logo.getWidth() / 2,
-			screenHeight / 2 - logo.getHeight() / 2);
+			screenWidth / 2 - logo.GetWidth() / 2,
+			screenHeight / 2 - logo.GetHeight() / 2);
 
 		EndDrawing();
 	}
