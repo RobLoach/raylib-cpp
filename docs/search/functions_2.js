@@ -22,6 +22,6 @@ var searchData=
   ['createbodycircle_583',['CreateBodyCircle',['../classraylib_1_1_physics.html#a436c99fb21784b33ed039a713b927023',1,'raylib::Physics']]],
   ['createbodypolygon_584',['CreateBodyPolygon',['../classraylib_1_1_physics.html#a9cbab4c8c8682f30924e4f7e85d37482',1,'raylib::Physics']]],
   ['createbodyrectangle_585',['CreateBodyRectangle',['../classraylib_1_1_physics.html#aca1bd6e53ddbf8c64a3225ce32f1c3cc',1,'raylib::Physics']]],
-  ['crop_586',['Crop',['../classraylib_1_1_image.html#a50a7394e9662bf4f587cd73c5d594cee',1,'raylib::Image::Crop()'],['../classraylib_1_1_wave.html#a25601c51a2f81c569b074620c6758e94',1,'raylib::Wave::Crop()']]],
+  ['crop_586',['Crop',['../classraylib_1_1_image.html#a50a7394e9662bf4f587cd73c5d594cee',1,'raylib::Image::Crop(::Rectangle crop)'],['../classraylib_1_1_image.html#a24323ef52da6113c3af4861ce0250ea0',1,'raylib::Image::Crop(int offsetX, int offsetY, int newWidth, int newHeight)'],['../classraylib_1_1_wave.html#a25601c51a2f81c569b074620c6758e94',1,'raylib::Wave::Crop()']]],
   ['crossproduct_587',['CrossProduct',['../classraylib_1_1_vector3.html#a557e7bb5c2a790f0ea925053e0b1f106',1,'raylib::Vector3']]]
 ];

@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['tangents_460',['Tangents',['../classraylib_1_1_mesh.html#a4873780eee85a182d90c25eb100199ae',1,'raylib::Mesh']]],
-  ['text_461',['Text',['../classraylib_1_1_image.html#a368482999097dd574dc0a69e51535998',1,'raylib::Image::Text(std::string text, int fontSize, Color color)'],['../classraylib_1_1_image.html#a8cd38c237e70e697480f6d8647f33dfc',1,'raylib::Image::Text(Font font, std::string text, float fontSize, float spacing, Color tint)']]],
-  ['texture_462',['Texture',['../namespaceraylib.html#a74d478d91feee987bf0d6b260ab34ae0',1,'raylib']]],
-  ['texture2d_463',['Texture2D',['../class_texture2_d.html',1,'Texture2D'],['../classraylib_1_1_texture2_d.html',1,'raylib::Texture2D'],['../classraylib_1_1_texture2_d.html#a51bc22f112d1df5169d19a0995e9d9c6',1,'raylib::Texture2D::Texture2D()'],['../classraylib_1_1_texture2_d.html#ab9aef51dc64d354fe360b32235c1f9f8',1,'raylib::Texture2D::Texture2D(::Image &amp;image)'],['../classraylib_1_1_texture2_d.html#ad8a6ec94aa0785ab2e4b638b8d2b3b8e',1,'raylib::Texture2D::Texture2D(const std::string &amp;fileName)']]],
+  ['tangents_459',['Tangents',['../classraylib_1_1_mesh.html#a4873780eee85a182d90c25eb100199ae',1,'raylib::Mesh']]],
+  ['text_460',['Text',['../classraylib_1_1_image.html#a368482999097dd574dc0a69e51535998',1,'raylib::Image::Text(std::string text, int fontSize, Color color)'],['../classraylib_1_1_image.html#a8cd38c237e70e697480f6d8647f33dfc',1,'raylib::Image::Text(Font font, std::string text, float fontSize, float spacing, Color tint)']]],
+  ['texture_461',['Texture',['../namespaceraylib.html#a74d478d91feee987bf0d6b260ab34ae0',1,'raylib']]],
+  ['texture2d_462',['Texture2D',['../class_texture2_d.html',1,'Texture2D'],['../classraylib_1_1_texture2_d.html',1,'raylib::Texture2D'],['../classraylib_1_1_texture2_d.html#a51bc22f112d1df5169d19a0995e9d9c6',1,'raylib::Texture2D::Texture2D()'],['../classraylib_1_1_texture2_d.html#ab9aef51dc64d354fe360b32235c1f9f8',1,'raylib::Texture2D::Texture2D(::Image &amp;image)'],['../classraylib_1_1_texture2_d.html#ad8a6ec94aa0785ab2e4b638b8d2b3b8e',1,'raylib::Texture2D::Texture2D(const std::string &amp;fileName)']]],
+  ['texturecubemap_463',['TextureCubemap',['../namespaceraylib.html#a8d470d0531199c46ff8892037663bb4b',1,'raylib']]],
   ['toaxisangle_464',['ToAxisAngle',['../classraylib_1_1_vector4.html#aec7dcc845e40735b6d70d34ceefc65c1',1,'raylib::Vector4::ToAxisAngle(Vector3 *outAxis, float *outAngle)'],['../classraylib_1_1_vector4.html#a9ba7c844c00e64543c10c3dfdbc6b868',1,'raylib::Vector4::ToAxisAngle()']]],
   ['toeuler_465',['ToEuler',['../classraylib_1_1_vector4.html#a65730cc70476be33eb1e4daf33a0fd8d',1,'raylib::Vector4']]],
   ['tofloatv_466',['ToFloatV',['../classraylib_1_1_matrix.html#ae667726f69f8e327cd45b149041726dc',1,'raylib::Matrix']]],
