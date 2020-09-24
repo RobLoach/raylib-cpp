@@ -68,7 +68,6 @@ namespace raylib {
 #include "./ModelAnimation.hpp"
 #include "./Mouse.hpp"
 #include "./Music.hpp"
-#include "./Physics.hpp"
 #include "./Ray.hpp"
 #include "./RayHitInfo.hpp"
 #include "./Rectangle.hpp"
