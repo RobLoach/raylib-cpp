@@ -3,6 +3,14 @@ set(example_dirs audio core models physics shapes text textures)
 set(example_sources)
 set(example_resources)
 
+# raylib
+find_package(raylib QUIET)
+if (NOT raylib_FOUND)
+  set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE) # don't build the supplied examples
+  set(BUILD_GAMES    OFF CACHE BOOL "" FORCE) # or games
+  add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../vendor/raylib ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/raylib)
+endif()
+
 foreach(example_dir ${example_dirs})
   file(GLOB sources ${example_dir}/*.cpp)
   list(APPEND example_sources ${sources})
@@ -21,8 +29,8 @@ foreach(example_source ${example_sources})
   # Setup the example
   add_executable(${example_name} ${example_source})
 
-  # Link against the static library.
-  target_link_libraries(${example_name} PUBLIC libraylib-cpp)
+  # Link raylib and raylib-cpp
+  target_link_libraries(${example_name} PUBLIC raylib-cpp raylib)
 
   string(REGEX MATCH ".*/.*/" resources_dir ${example_source})
   string(APPEND resources_dir "resources")

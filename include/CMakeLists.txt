@@ -1,7 +1,9 @@
 add_library(raylib-cpp INTERFACE)
 
+# Include Directory
 target_include_directories(raylib-cpp INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/)
 
+# Set the header files as install files.
 install(FILES
 	AudioDevice.hpp
 	AudioStream.hpp
