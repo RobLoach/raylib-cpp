@@ -41,11 +41,11 @@ namespace raylib {
 			data = wave.data;
 		}
 
-		GETTERSETTER(unsigned int,X,sampleCount)
-		GETTERSETTER(unsigned int,Y,sampleRate)
-		GETTERSETTER(unsigned int,Z,sampleSize)
-		GETTERSETTER(unsigned int,W,channels)
-		GETTERSETTER(void*,Data,data)
+		GETTERSETTER(unsigned int, SampleCount, sampleCount)
+		GETTERSETTER(unsigned int, SampleRate, sampleRate)
+		GETTERSETTER(unsigned int, SampleSize, sampleSize)
+		GETTERSETTER(unsigned int, Channels, channels)
+		GETTERSETTER(void *, Data, data)
 
         Wave& operator=(const ::Wave& wave) {
             set(wave);
