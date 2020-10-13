@@ -176,6 +176,10 @@ namespace raylib {
 			return Vector2Lerp(*this, vector2, amount);
 		}
 
+		Vector2 Reflect(const Vector2& normal) {
+			return Vector2Reflect(*this, normal);
+		}
+
 		Vector2 Rotate(float degrees) {
 			return Vector2Rotate(*this, degrees);
 		}

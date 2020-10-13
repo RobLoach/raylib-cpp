@@ -55,7 +55,7 @@ namespace raylib {
 			::SetMouseScale(scaleX, scaleY);
 			return *this;
 		}
-		inline int GetWheelMove() {
+		inline float GetWheelMove() {
 			return ::GetMouseWheelMove();
 		}
 		inline int GetTouchX() {
