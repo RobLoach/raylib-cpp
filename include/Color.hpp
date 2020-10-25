@@ -96,10 +96,8 @@ namespace raylib {
 
 		operator int() const { return ::ColorToInt(*this); }
 
-		Color Fade(float alpha) {
-			Color a;
-			a.set(::Fade(*this, alpha));
-			return a;
+		Color Fade(float alpha) const {
+			return ::Fade(*this, alpha);
 		}
 
 		Vector4 Normalize() const {
