@@ -11,8 +11,7 @@
 
 #include "raylib-cpp.hpp"
 
-int main()
-{
+int main() {
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;
@@ -22,11 +21,11 @@ int main()
 
     // Define the camera to look into our 3d world
     raylib::Camera camera(
-    	raylib::Vector3(5.0f, 4.0f, 5.0f),
-    	raylib::Vector3(0.0f, 2.0f, 0.0f),
-    	raylib::Vector3(0.0f, 1.0f, 0.0f),
-    	45.0f,
-    	CAMERA_PERSPECTIVE
+        raylib::Vector3(5.0f, 4.0f, 5.0f),
+        raylib::Vector3(0.0f, 2.0f, 0.0f),
+        raylib::Vector3(0.0f, 1.0f, 0.0f),
+        45.0f,
+        CAMERA_PERSPECTIVE
     );
 
     raylib::Texture2D bill("resources/billboard.png");     // Our texture billboard

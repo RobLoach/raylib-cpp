@@ -21,8 +21,7 @@
 #include <string>
 #include "raylib-cpp.hpp"
 
-int main()
-{
+int main() {
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;

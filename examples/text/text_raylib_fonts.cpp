@@ -18,27 +18,26 @@
 
 #define MAX_FONTS   8
 
-int main()
-{
+int main() {
     // Initialization
     //--------------------------------------------------------------------------------------
     int screenWidth = 800;
     int screenHeight = 450;
 
-	raylib::Window w(screenWidth, screenHeight, "raylib [text] example - raylib fonts");
+    raylib::Window w(screenWidth, screenHeight, "raylib [text] example - raylib fonts");
     raylib::Color background(RAYWHITE);
     raylib::Color textColor(DARKGRAY);
 
     // NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
     raylib::Font fonts[MAX_FONTS] = {
-    	raylib::Font("resources/fonts/alagard.png"),
-    	raylib::Font("resources/fonts/pixelplay.png"),
-    	raylib::Font("resources/fonts/mecha.png"),
-    	raylib::Font("resources/fonts/setback.png"),
-    	raylib::Font("resources/fonts/romulus.png"),
-    	raylib::Font("resources/fonts/pixantiqua.png"),
-    	raylib::Font("resources/fonts/alpha_beta.png"),
-    	raylib::Font("resources/fonts/jupiter_crash.png")
+        raylib::Font("resources/fonts/alagard.png"),
+        raylib::Font("resources/fonts/pixelplay.png"),
+        raylib::Font("resources/fonts/mecha.png"),
+        raylib::Font("resources/fonts/setback.png"),
+        raylib::Font("resources/fonts/romulus.png"),
+        raylib::Font("resources/fonts/pixantiqua.png"),
+        raylib::Font("resources/fonts/alpha_beta.png"),
+        raylib::Font("resources/fonts/jupiter_crash.png")
     };
 
     std::string messages[MAX_FONTS] = { "ALAGARD FONT designed by Hewett Tsoi",

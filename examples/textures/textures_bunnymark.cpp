@@ -21,29 +21,29 @@
 
 class Bunny {
 public:
-	Bunny() {
+    Bunny() {
         position = GetMousePosition();
         speed.x = (float)GetRandomValue(-250, 250)/60.0f;
         speed.y = (float)GetRandomValue(-250, 250)/60.0f;
         color = raylib::Color(
-        		GetRandomValue(50, 240),
+                GetRandomValue(50, 240),
                 GetRandomValue(80, 240),
                 GetRandomValue(100, 240), 255);
-	}
+    }
 
-	void Update(const raylib::Texture2D& texBunny) {
-		position.x += speed.x;
+    void Update(const raylib::Texture2D& texBunny) {
+        position.x += speed.x;
         position.y += speed.y;
 
         if (((position.x + texBunny.width/2) > GetScreenWidth()) ||
             ((position.x + texBunny.width/2) < 0)) speed.x *= -1;
         if (((position.y + texBunny.height/2) > GetScreenHeight()) ||
             ((position.y + texBunny.height/2 - 40) < 0)) speed.y *= -1;
-	}
+    }
 
-	Vector2 position;
-	Vector2 speed;
-	Color color;
+    Vector2 position;
+    Vector2 speed;
+    Color color;
 };
 
 int main(void)
@@ -75,7 +75,7 @@ int main(void)
             {
                 if (bunnies.size() < MAX_BUNNIES)
                 {
-                	bunnies.emplace_back();
+                    bunnies.emplace_back();
                 }
             }
         }

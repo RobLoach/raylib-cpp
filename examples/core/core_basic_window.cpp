@@ -21,37 +21,36 @@
 
 #include "raylib-cpp.hpp"
 
-int main()
-{
-	// Initialization
-	//--------------------------------------------------------------------------------------
-	int screenWidth = 800;
-	int screenHeight = 450;
-	raylib::Color textColor(LIGHTGRAY);
-	raylib::Window w(screenWidth, screenHeight, "raylib [core] example - basic window");
+int main() {
+    // Initialization
+    //--------------------------------------------------------------------------------------
+    int screenWidth = 800;
+    int screenHeight = 450;
+    raylib::Color textColor(LIGHTGRAY);
+    raylib::Window w(screenWidth, screenHeight, "raylib [core] example - basic window");
 
-	SetTargetFPS(60);
-	//--------------------------------------------------------------------------------------
+    SetTargetFPS(60);
+    //--------------------------------------------------------------------------------------
 
-	// Main game loop
-	while (!w.ShouldClose())    // Detect window close button or ESC key
-	{
-		// Update
-		//----------------------------------------------------------------------------------
-		// TODO: Update your variables here
-		//----------------------------------------------------------------------------------
+    // Main game loop
+    while (!w.ShouldClose())    // Detect window close button or ESC key
+    {
+        // Update
+        //----------------------------------------------------------------------------------
+        // TODO: Update your variables here
+        //----------------------------------------------------------------------------------
 
-		// Draw
-		//----------------------------------------------------------------------------------
-		BeginDrawing();
+        // Draw
+        //----------------------------------------------------------------------------------
+        BeginDrawing();
 
-		raylib::Color::RayWhite.ClearBackground();
+        raylib::Color::RayWhite.ClearBackground();
 
-		textColor.DrawText("Congrats! You created your first window!", 190, 200, 20);
+        textColor.DrawText("Congrats! You created your first window!", 190, 200, 20);
 
-		EndDrawing();
-		//----------------------------------------------------------------------------------
-	}
+        EndDrawing();
+        //----------------------------------------------------------------------------------
+    }
 
-	return 0;
+    return 0;
 }
