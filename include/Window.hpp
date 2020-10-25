@@ -66,20 +66,20 @@ namespace raylib {
 		inline static bool IsReady() {
 			return ::IsWindowReady();
 		};
-		inline bool IsMinimized() {
+		inline bool IsMinimized() const {
 			return ::IsWindowMinimized();
 		}
-		inline bool IsFocused() {
+		inline bool IsFocused() const {
 			return ::IsWindowFocused();
 		}
-		inline bool IsResized() {
+		inline bool IsResized() const {
 			return ::IsWindowResized();
 		}
-		inline bool IsHidden() {
+		inline bool IsHidden() const {
 			return ::IsWindowHidden();
 		}
 
-		inline bool IsFullscreen() {
+		inline bool IsFullscreen() const {
 			return ::IsWindowFullscreen();
 		}
 		inline Window& ToggleFullscreen() {
@@ -118,7 +118,7 @@ namespace raylib {
 			::SetWindowSize(width, height);
 			return *this;
 		}
-		inline void* GetHandle() {
+		inline void* GetHandle() const {
 			return ::GetWindowHandle();
 		}
 
@@ -131,27 +131,27 @@ namespace raylib {
 			return *this;
 		}
 
-		inline int GetScreenWidth() {
+		inline int GetScreenWidth() const {
 			return ::GetScreenWidth();
 		}
 
-		inline int GetScreenHeight() {
+		inline int GetScreenHeight() const {
 			return ::GetScreenHeight();
 		}
 
-		inline Vector2 GetPosition() {
+		inline Vector2 GetPosition() const {
 			return ::GetWindowPosition();
 		}
 
-		inline Vector2 GetScaleDPI() {
+		inline Vector2 GetScaleDPI() const {
 			return ::GetWindowScaleDPI();
 		}
 
-		std::string GetMonitorName(int monitor) {
+		std::string GetMonitorName(int monitor) const {
 			return std::string(::GetMonitorName(monitor));
 		}
 
-		std::string GetClipboardText() {
+		std::string GetClipboardText() const {
 			return std::string(::GetClipboardText());
 		}
 
@@ -164,13 +164,13 @@ namespace raylib {
 			::SetTargetFPS(fps);
 			return *this;
 		}
-		inline int GetFPS() {
+		inline int GetFPS() const {
 			return ::GetFPS();
 		}
-		inline float GetFrameTime() {
+		inline float GetFrameTime() const {
 			return ::GetFrameTime();
 		}
-		inline double GetTime() {
+		inline double GetTime() const {
 			return ::GetTime();
 		}
 	};

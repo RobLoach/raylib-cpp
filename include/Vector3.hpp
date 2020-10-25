@@ -160,7 +160,7 @@ namespace raylib {
 			return *this;
 		}
 
-		float Length() {
+		float Length() const {
 			return Vector3Length(*this);
 		}
 

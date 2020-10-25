@@ -30,7 +30,7 @@ namespace raylib {
 			Close();
 		}
 
-		inline bool IsReady() {
+		inline bool IsReady() const {
 			return ::IsVrSimulatorReady();
 		}
 

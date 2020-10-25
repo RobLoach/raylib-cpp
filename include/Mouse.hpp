@@ -14,22 +14,22 @@ extern "C"{
 namespace raylib {
 	class Mouse {
 	public:
-		inline bool IsButtonPressed(int button) {
+		inline bool IsButtonPressed(int button) const {
 			return ::IsMouseButtonPressed(button);
 		}
-		inline bool IsButtonDown(int button) {
+		inline bool IsButtonDown(int button) const {
 			return ::IsMouseButtonDown(button);
 		}
-		inline bool IsButtonReleased(int button) {
+		inline bool IsButtonReleased(int button) const {
 			return ::IsMouseButtonReleased(button);
 		}
-		inline bool IsButtonUp(int button) {
+		inline bool IsButtonUp(int button) const {
 			return ::IsMouseButtonUp(button);
 		}
-		inline int GetX() {
+		inline int GetX() const {
 			return ::GetMouseX();
 		}
-		inline int GetY() {
+		inline int GetY() const {
 			return ::GetMouseY();
 		}
 		inline Mouse& SetX(int x) {
@@ -40,7 +40,7 @@ namespace raylib {
 			::SetMouseOffset(GetX(), y);
 			return *this;
 		}
-		inline Vector2 GetPosition() {
+		inline Vector2 GetPosition() const {
 			return ::GetMousePosition();
 		}
 		inline Mouse& SetPosition(int x, int y) {
@@ -55,16 +55,16 @@ namespace raylib {
 			::SetMouseScale(scaleX, scaleY);
 			return *this;
 		}
-		inline float GetWheelMove() {
+		inline float GetWheelMove() const {
 			return ::GetMouseWheelMove();
 		}
-		inline int GetTouchX() {
+		inline int GetTouchX() const {
 			return ::GetTouchX();
 		}
-		inline int GetTouchY() {
+		inline int GetTouchY() const {
 			return ::GetTouchY();
 		}
-		inline Vector2 GetTouchPosition(int index) {
+		inline Vector2 GetTouchPosition(int index) const {
 			return ::GetTouchPosition(index);
 		}
 	};

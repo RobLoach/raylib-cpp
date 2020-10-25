@@ -198,7 +198,7 @@ namespace raylib {
 			return ::MatrixLookAt(eye, target, up);
 		}
 
-		float16 ToFloatV() {
+		inline float16 ToFloatV() {
 			return ::MatrixToFloatV(*this);
 		}
 		operator float16() {

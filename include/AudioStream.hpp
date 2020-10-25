@@ -72,7 +72,7 @@ namespace raylib {
         /**
          * Check if any audio stream buffers requires refill
          */
-        inline bool IsProcessed() {
+        inline bool IsProcessed() const {
         	return ::IsAudioStreamProcessed(*this);
         }
 
@@ -103,7 +103,7 @@ namespace raylib {
 		/**
 		 * Check if audio stream is playing
 		 */
-		inline bool IsPlaying() {
+		inline bool IsPlaying() const {
 			return ::IsAudioStreamPlaying(*this);
 		}
 

@@ -47,15 +47,15 @@ namespace raylib {
 			return *this;
 		}
 
-		inline bool CheckCollision(::BoundingBox box2) {
+		inline bool CheckCollision(::BoundingBox box2) const {
 			return CheckCollisionBoxes(*this, box2);
 		}
 
-		inline bool CheckCollision(::Vector3 center, float radius) {
+		inline bool CheckCollision(::Vector3 center, float radius) const {
 			return CheckCollisionBoxSphere(*this, center, radius);
 		}
 
-		inline bool CheckCollision(::Ray ray) {
+		inline bool CheckCollision(::Ray ray) const {
 			return CheckCollisionRayBox(ray, *this);
 		}
 	};

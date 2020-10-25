@@ -72,7 +72,7 @@ namespace raylib {
 			return *this;
 		}
 
-		inline int GetLocation(const std::string& uniformName) {
+		inline int GetLocation(const std::string& uniformName) const {
 			return ::GetShaderLocation(*this, uniformName.c_str());
 		}
 	};

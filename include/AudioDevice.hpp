@@ -51,7 +51,7 @@ namespace raylib {
 		/**
 		 * Check if audio device has been initialized successfully.
 		 */
-		inline bool IsReady() {
+		inline bool IsReady() const {
 			return ::IsAudioDeviceReady();
 		}
 
