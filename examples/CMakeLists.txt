@@ -6,34 +6,34 @@ set(example_resources)
 # raylib
 find_package(raylib QUIET)
 if (NOT raylib_FOUND)
-  set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE) # don't build the supplied examples
-  set(BUILD_GAMES    OFF CACHE BOOL "" FORCE) # or games
-  add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../vendor/raylib ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/raylib)
+    set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE) # don't build the supplied examples
+    set(BUILD_GAMES    OFF CACHE BOOL "" FORCE) # or games
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../vendor/raylib ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/raylib)
 endif()
 
 foreach(example_dir ${example_dirs})
-  file(GLOB sources ${example_dir}/*.cpp)
-  list(APPEND example_sources ${sources})
+    file(GLOB sources ${example_dir}/*.cpp)
+    list(APPEND example_sources ${sources})
 
-  # Any any resources
-  file(GLOB resources ${example_dir}/resources/*)
-  list(APPEND example_resources ${resources})
+    # Any any resources
+    file(GLOB resources ${example_dir}/resources/*)
+    list(APPEND example_resources ${resources})
 endforeach()
 
 # Do each example
 foreach(example_source ${example_sources})
-  # Create the basename for the example
-  get_filename_component(example_name ${example_source} NAME)
-  string(REPLACE ".cpp" "${OUTPUT_EXT}" example_name ${example_name})
+    # Create the basename for the example
+    get_filename_component(example_name ${example_source} NAME)
+    string(REPLACE ".cpp" "${OUTPUT_EXT}" example_name ${example_name})
 
-  # Setup the example
-  add_executable(${example_name} ${example_source})
+    # Setup the example
+    add_executable(${example_name} ${example_source})
 
-  # Link raylib and raylib-cpp
-  target_link_libraries(${example_name} PUBLIC raylib-cpp raylib)
+    # Link raylib and raylib-cpp
+    target_link_libraries(${example_name} PUBLIC raylib-cpp raylib)
 
-  string(REGEX MATCH ".*/.*/" resources_dir ${example_source})
-  string(APPEND resources_dir "resources")
+    string(REGEX MATCH ".*/.*/" resources_dir ${example_source})
+    string(APPEND resources_dir "resources")
 
 endforeach()
 

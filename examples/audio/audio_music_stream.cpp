@@ -11,8 +11,7 @@
 
 #include "raylib-cpp.hpp"
 
-int main(void)
-{
+int main() {
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;

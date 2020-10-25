@@ -11,8 +11,7 @@
 
 #include "raylib-cpp.hpp"
 
-int main()
-{
+int main() {
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;
@@ -22,11 +21,11 @@ int main()
 
     // Define the camera to look into our 3d world
     raylib::Camera camera(
-    	raylib::Vector3(10.0f, 10.0f, 10.0f),
-    	raylib::Vector3(),
-    	raylib::Vector3(0.0f, 1.0f, 0.0f),
-    	45.0f,
-    	CAMERA_PERSPECTIVE);
+        raylib::Vector3(10.0f, 10.0f, 10.0f),
+        raylib::Vector3(),
+        raylib::Vector3(0.0f, 1.0f, 0.0f),
+        45.0f,
+        CAMERA_PERSPECTIVE);
 
     Vector3 cubePosition;
     Vector2 cubeScreenPosition;

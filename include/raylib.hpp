@@ -22,49 +22,15 @@
 *     3. This notice may not be removed or altered from any source distribution.
 */
 
-#ifndef RAYLIB_CPP_INCLUDE_RAYHITINFO_HPP_
-#define RAYLIB_CPP_INCLUDE_RAYHITINFO_HPP_
+#ifndef RAYLIB_CPP_INCLUDE_RAYLIB_HPP_
+#define RAYLIB_CPP_INCLUDE_RAYLIB_HPP_
 
-#include "./raylib.hpp"
-#include "./raylib-cpp-utils.hpp"
+#ifdef __cplusplus
+extern "C" {
+#endif
+#include "raylib.h" // NOLINT
+#ifdef __cplusplus
+}
+#endif
 
-namespace raylib {
-class RayHitInfo : public ::RayHitInfo {
- public:
-    RayHitInfo(::RayHitInfo ray) {
-        set(ray);
-    }
-
-    RayHitInfo(bool Hit, float Distance, ::Vector3 Position, ::Vector3 Normal) {
-        hit = Hit;
-        distance = Distance;
-        position = Position;
-        normal = Normal;
-    }
-
-    RayHitInfo& operator=(const ::RayHitInfo& ray) {
-        set(ray);
-        return *this;
-    }
-
-    RayHitInfo& operator=(const RayHitInfo& ray) {
-        set(ray);
-        return *this;
-    }
-
-    GETTERSETTER(bool, Hit, hit)
-    GETTERSETTER(float, Distance, distance)
-    GETTERSETTER(::Vector3, Position, position)
-    GETTERSETTER(::Vector3, Normal, normal)
-
- protected:
-    inline void set(::RayHitInfo ray) {
-        hit = ray.hit;
-        distance = ray.distance;
-        position = ray.position;
-        normal = ray.normal;
-    }
-};
-}  // namespace raylib
-
-#endif  // RAYLIB_CPP_INCLUDE_RAYHITINFO_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_RAYLIB_HPP_

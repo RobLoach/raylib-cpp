@@ -13,8 +13,7 @@
 
 #define MAX_COLUMNS 20
 
-int main(void)
-{
+int main() {
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;

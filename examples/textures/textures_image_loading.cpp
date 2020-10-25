@@ -13,8 +13,7 @@
 
 #include "raylib-cpp.hpp"
 
-int main()
-{
+int main() {
     // Initialization
     //--------------------------------------------------------------------------------------
     int screenWidth = 800;

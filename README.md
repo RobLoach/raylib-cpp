@@ -9,8 +9,7 @@
 ``` cpp
 #include "raylib-cpp.hpp"
 
-int main()
-{
+int main() {
 	int screenWidth = 800;
 	int screenHeight = 450;
 
@@ -211,6 +210,10 @@ If there's a project template you would like to see added, feel free to [make an
 
 ## Development
 
+The following are some tools in order to build and contribute to raylib-cpp...
+
+### Compiling
+
 *raylib-cpp* uses [CMake](https://cmake.org) as a primary target for development. To build it, and run the tests or examples, use...
 
 ``` bash
@@ -225,12 +228,20 @@ make test
 ./examples/core_basic_window
 ```
 
-## Documentation
+### Documentation
 
 To build the document with [Doxygen](http://www.doxygen.nl/), use...
 
 ```
 doxygen projects/Doxygen/Doxyfile
+```
+
+### Coding Standards
+
+This uses cpplint to adopt coding standards.
+
+```
+cpplint --recursive include
 ```
 
 ### Defines
