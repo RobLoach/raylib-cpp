@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['texture_1051',['Texture',['../namespaceraylib.html#a74d478d91feee987bf0d6b260ab34ae0',1,'raylib']]],
-  ['texturecubemap_1052',['TextureCubemap',['../namespaceraylib.html#a8d470d0531199c46ff8892037663bb4b',1,'raylib']]]
+  ['texture2d_1067',['Texture2D',['../namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f',1,'raylib']]],
+  ['texturecubemap_1068',['TextureCubemap',['../namespaceraylib.html#a31a94f5d187fbad00d1231541a1fe445',1,'raylib']]]
 ];

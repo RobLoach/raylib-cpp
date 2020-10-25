@@ -70,6 +70,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classraylib_1_1_image-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">raylib::Image Class Reference</div>  </div>
@@ -82,7 +83,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab33b08319ff4294d932388ac2cb5f0fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d20a5ce4bb5bfb99d8fdf8d0289ad7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a3d20a5ce4bb5bfb99d8fdf8d0289ad7a">Image</a> (::<a class="el" href="classraylib_1_1_image.html">Image</a> image)</td></tr>
 <tr class="separator:a3d20a5ce4bb5bfb99d8fdf8d0289ad7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06dcdae1820ff1f8541615531625931b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a06dcdae1820ff1f8541615531625931b">Image</a> (::<a class="el" href="classraylib_1_1_texture2_d.html">Texture2D</a> texture)</td></tr>
+<tr class="memitem:a06dcdae1820ff1f8541615531625931b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a06dcdae1820ff1f8541615531625931b">Image</a> (::<a class="el" href="namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f">Texture2D</a> texture)</td></tr>
 <tr class="separator:a06dcdae1820ff1f8541615531625931b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81b1f8aa618c6302a03edcc8c03ddaef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a81b1f8aa618c6302a03edcc8c03ddaef">Image</a> (const std::string &amp;fileName)</td></tr>
 <tr class="separator:a81b1f8aa618c6302a03edcc8c03ddaef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,24 +163,24 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a01fcff59e33e044bd779202ea3473c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a591bf8db8064364c9da925c3f52c3881"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a591bf8db8064364c9da925c3f52c3881">FromImage</a> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> rec)</td></tr>
 <tr class="separator:a591bf8db8064364c9da925c3f52c3881"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe63f42b10859d102671be5996f78a5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#afe63f42b10859d102671be5996f78a5d">GetAlphaBorder</a> (float threshold)</td></tr>
-<tr class="separator:afe63f42b10859d102671be5996f78a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96827aeb422dbf25f2caa5e6d100b925"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a96827aeb422dbf25f2caa5e6d100b925">GetData</a> ()</td></tr>
-<tr class="separator:a96827aeb422dbf25f2caa5e6d100b925"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67c826ad7ddfa2ed651a44bfd3666be9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a67c826ad7ddfa2ed651a44bfd3666be9">GetFormat</a> ()</td></tr>
-<tr class="separator:a67c826ad7ddfa2ed651a44bfd3666be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcb5798469e9b23efc19e20ff2ff3605"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#abcb5798469e9b23efc19e20ff2ff3605">GetHeight</a> ()</td></tr>
-<tr class="separator:abcb5798469e9b23efc19e20ff2ff3605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eb64b4c59b8dee647b4aa66b6bbdf68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a3eb64b4c59b8dee647b4aa66b6bbdf68">GetAlphaBorder</a> (float threshold) const</td></tr>
+<tr class="separator:a3eb64b4c59b8dee647b4aa66b6bbdf68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3144e343f963e5b206e1050be54b4187"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a3144e343f963e5b206e1050be54b4187">GetData</a> () const</td></tr>
+<tr class="separator:a3144e343f963e5b206e1050be54b4187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afea44592a9dbcdad114be0c57ec179d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#afea44592a9dbcdad114be0c57ec179d6">GetFormat</a> () const</td></tr>
+<tr class="separator:afea44592a9dbcdad114be0c57ec179d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a3a94a5a21ce7578410c9c2e94d6805"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a4a3a94a5a21ce7578410c9c2e94d6805">GetHeight</a> () const</td></tr>
+<tr class="separator:a4a3a94a5a21ce7578410c9c2e94d6805"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace7549a9b1d3834a2cbdc18f578f17b3"><td class="memItemLeft" align="right" valign="top">inline ::<a class="el" href="classraylib_1_1_color.html">Color</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#ace7549a9b1d3834a2cbdc18f578f17b3">GetImageData</a> ()</td></tr>
 <tr class="separator:ace7549a9b1d3834a2cbdc18f578f17b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1529cefd9f568736adee10a006650e5"><td class="memItemLeft" align="right" valign="top">inline ::<a class="el" href="classraylib_1_1_vector4.html">Vector4</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#ab1529cefd9f568736adee10a006650e5">GetImageDataNormalized</a> ()</td></tr>
 <tr class="separator:ab1529cefd9f568736adee10a006650e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17a8cfece8fd2c991860cc972d14fe29"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a17a8cfece8fd2c991860cc972d14fe29">GetMipmaps</a> ()</td></tr>
-<tr class="separator:a17a8cfece8fd2c991860cc972d14fe29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0e7c5adcbaf91924c141a085ed2317a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#aa0e7c5adcbaf91924c141a085ed2317a">GetMipmaps</a> () const</td></tr>
+<tr class="separator:aa0e7c5adcbaf91924c141a085ed2317a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a207f417f51c44cd71802ea49a547e37e"><td class="memItemLeft" align="right" valign="top">inline ::<a class="el" href="classraylib_1_1_color.html">Color</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a207f417f51c44cd71802ea49a547e37e">GetPalette</a> (int maxPaletteSize, int *extractCount)</td></tr>
 <tr class="separator:a207f417f51c44cd71802ea49a547e37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e9e1bba9696a142841495248a285ed4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a6e9e1bba9696a142841495248a285ed4">GetWidth</a> ()</td></tr>
-<tr class="separator:a6e9e1bba9696a142841495248a285ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a686e411bd7dca746367039925e00ff0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a686e411bd7dca746367039925e00ff0c">GetWidth</a> () const</td></tr>
+<tr class="separator:a686e411bd7dca746367039925e00ff0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a399564cc57fbee6d5055c3adf0da6ac7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a399564cc57fbee6d5055c3adf0da6ac7">Load</a> (const std::string &amp;fileName)</td></tr>
 <tr class="separator:a399564cc57fbee6d5055c3adf0da6ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adda786a4dfe95e69e3594199f14f7e40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#adda786a4dfe95e69e3594199f14f7e40">LoadAnim</a> (const std::string &amp;fileName, int *frames)</td></tr>
@@ -204,8 +205,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa08513832d0ab58144f4418ba3b4b6d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed253e5dd980e63b7fd7a8ef43ef7cf6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_image.html">Image</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#aed253e5dd980e63b7fd7a8ef43ef7cf6">RotateCW</a> ()</td></tr>
 <tr class="separator:aed253e5dd980e63b7fd7a8ef43ef7cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed2b2a9f6ed57b37d268caa5e0a6ac5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#aed2b2a9f6ed57b37d268caa5e0a6ac5b">set</a> (::<a class="el" href="classraylib_1_1_image.html">Image</a> image)</td></tr>
-<tr class="separator:aed2b2a9f6ed57b37d268caa5e0a6ac5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b92f7424fc37e4fb97d274cdc3f13f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a3b92f7424fc37e4fb97d274cdc3f13f0">SetData</a> (void *value)</td></tr>
 <tr class="separator:a3b92f7424fc37e4fb97d274cdc3f13f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c32c43b8f88aa2ac4377dff8f16331b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a4c32c43b8f88aa2ac4377dff8f16331b">SetFormat</a> (int value)</td></tr>
@@ -245,6 +244,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a8cd38c237e70e697480f6d8647f33dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a368482999097dd574dc0a69e51535998"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classraylib_1_1_image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a368482999097dd574dc0a69e51535998">Text</a> (std::string text, int fontSize, <a class="el" href="classraylib_1_1_color.html">Color</a> color)</td></tr>
 <tr class="separator:a368482999097dd574dc0a69e51535998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aed2b2a9f6ed57b37d268caa5e0a6ac5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#aed2b2a9f6ed57b37d268caa5e0a6ac5b">set</a> (::<a class="el" href="classraylib_1_1_image.html">Image</a> image)</td></tr>
+<tr class="separator:aed2b2a9f6ed57b37d268caa5e0a6ac5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -305,7 +309,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00019">19</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00096">set()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00326">set()</a>.</p>
 
 </div>
 </div>
@@ -335,7 +339,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00022">22</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00104">Load()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00096">Load()</a>.</p>
 
 </div>
 </div>
@@ -393,7 +397,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00025">25</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00108">LoadRaw()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00100">LoadRaw()</a>.</p>
 
 </div>
 </div>
@@ -433,7 +437,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00028">28</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00112">LoadAnim()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00104">LoadAnim()</a>.</p>
 
 </div>
 </div>
@@ -449,7 +453,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">raylib::Image::Image </td>
           <td>(</td>
-          <td class="paramtype">::<a class="el" href="classraylib_1_1_texture2_d.html">Texture2D</a>&#160;</td>
+          <td class="paramtype">::<a class="el" href="namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f">Texture2D</a>&#160;</td>
           <td class="paramname"><em>texture</em></td><td>)</td>
           <td></td>
         </tr>
@@ -463,7 +467,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00031">31</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00096">set()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00326">set()</a>.</p>
 
 </div>
 </div>
@@ -509,7 +513,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00034">34</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00096">set()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00326">set()</a>.</p>
 
 </div>
 </div>
@@ -538,7 +542,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00082">82</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00116">Unload()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00108">Unload()</a>.</p>
 
 </div>
 </div>
@@ -567,7 +571,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00157">157</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00149">149</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -595,7 +599,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00152">152</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00144">144</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -622,7 +626,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00162">162</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00154">154</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -650,7 +654,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00254">254</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00246">246</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -678,7 +682,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00237">237</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00229">229</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -706,7 +710,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00233">233</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00225">225</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -733,7 +737,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00229">229</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00221">221</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -760,7 +764,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00224">224</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00216">216</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -798,7 +802,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00241">241</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00233">233</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -826,7 +830,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00219">219</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00211">211</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -853,7 +857,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00135">135</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00127">127</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -881,7 +885,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00167">167</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00159">159</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -931,7 +935,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00171">171</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00163">163</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -981,7 +985,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00195">195</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00187">187</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1031,7 +1035,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00304">304</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00296">296</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1075,7 +1079,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00284">284</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00276">276</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1125,7 +1129,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00279">279</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00271">271</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1169,7 +1173,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00274">274</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00266">266</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1225,7 +1229,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00269">269</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00261">261</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1263,7 +1267,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00264">264</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00256">256</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1307,7 +1311,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00259">259</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00251">251</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1345,7 +1349,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00296">296</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00288">288</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1401,7 +1405,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00288">288</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00280">280</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1445,7 +1449,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00292">292</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00284">284</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1489,7 +1493,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00300">300</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00292">292</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1551,7 +1555,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00317">317</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00309">309</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1601,7 +1605,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00309">309</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00301">301</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1657,7 +1661,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00313">313</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00305">305</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1685,7 +1689,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00120">120</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00112">112</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1713,7 +1717,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00124">124</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00116">116</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1740,7 +1744,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00204">204</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00196">196</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1767,7 +1771,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00200">200</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00192">192</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1795,7 +1799,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00147">147</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00139">139</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1823,7 +1827,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00138">138</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00130">130</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -2233,8 +2237,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afe63f42b10859d102671be5996f78a5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe63f42b10859d102671be5996f78a5d">&#9670;&nbsp;</a></span>GetAlphaBorder()</h2>
+<a id="a3eb64b4c59b8dee647b4aa66b6bbdf68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eb64b4c59b8dee647b4aa66b6bbdf68">&#9670;&nbsp;</a></span>GetAlphaBorder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2247,7 +2251,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>threshold</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -2257,12 +2261,12 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00250">250</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00242">242</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a96827aeb422dbf25f2caa5e6d100b925"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96827aeb422dbf25f2caa5e6d100b925">&#9670;&nbsp;</a></span>GetData()</h2>
+<a id="a3144e343f963e5b206e1050be54b4187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3144e343f963e5b206e1050be54b4187">&#9670;&nbsp;</a></span>GetData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2274,7 +2278,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void* raylib::Image::GetData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -2284,12 +2288,12 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00129">129</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00121">121</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a67c826ad7ddfa2ed651a44bfd3666be9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67c826ad7ddfa2ed651a44bfd3666be9">&#9670;&nbsp;</a></span>GetFormat()</h2>
+<a id="afea44592a9dbcdad114be0c57ec179d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afea44592a9dbcdad114be0c57ec179d6">&#9670;&nbsp;</a></span>GetFormat()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2301,7 +2305,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">int raylib::Image::GetFormat </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -2311,12 +2315,12 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00133">133</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00125">125</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
-<a id="abcb5798469e9b23efc19e20ff2ff3605"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcb5798469e9b23efc19e20ff2ff3605">&#9670;&nbsp;</a></span>GetHeight()</h2>
+<a id="a4a3a94a5a21ce7578410c9c2e94d6805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a3a94a5a21ce7578410c9c2e94d6805">&#9670;&nbsp;</a></span>GetHeight()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2328,7 +2332,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">int raylib::Image::GetHeight </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -2338,7 +2342,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00131">131</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00123">123</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -2365,7 +2369,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00322">322</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00314">314</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -2392,12 +2396,12 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00326">326</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00318">318</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a17a8cfece8fd2c991860cc972d14fe29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17a8cfece8fd2c991860cc972d14fe29">&#9670;&nbsp;</a></span>GetMipmaps()</h2>
+<a id="aa0e7c5adcbaf91924c141a085ed2317a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0e7c5adcbaf91924c141a085ed2317a">&#9670;&nbsp;</a></span>GetMipmaps()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2409,7 +2413,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">int raylib::Image::GetMipmaps </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -2419,7 +2423,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00132">132</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00124">124</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -2457,7 +2461,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00246">246</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00238">238</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -2490,8 +2494,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6e9e1bba9696a142841495248a285ed4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e9e1bba9696a142841495248a285ed4">&#9670;&nbsp;</a></span>GetWidth()</h2>
+<a id="a686e411bd7dca746367039925e00ff0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a686e411bd7dca746367039925e00ff0c">&#9670;&nbsp;</a></span>GetWidth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2503,7 +2507,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">int raylib::Image::GetWidth </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -2513,7 +2517,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00130">130</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00122">122</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -2541,9 +2545,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00104">104</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00096">96</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00096">set()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00326">set()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_image_8hpp_source.html#l00022">Image()</a>.</p>
 
@@ -2583,9 +2587,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00112">112</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00104">104</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00096">set()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00326">set()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_image_8hpp_source.html#l00028">Image()</a>.</p>
 
@@ -2643,9 +2647,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00108">108</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00100">100</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00096">set()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00326">set()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_image_8hpp_source.html#l00025">Image()</a>.</p>
 
@@ -2674,7 +2678,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00190">190</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00182">182</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -2688,7 +2692,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">raylib::Image::operator <a class="el" href="classraylib_1_1_texture2_d.html">Texture2D</a> </td>
+          <td class="memname">raylib::Image::operator <a class="el" href="namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f">Texture2D</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2701,7 +2705,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00329">329</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00321">321</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -2731,7 +2735,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00086">86</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00096">set()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00326">set()</a>.</p>
 
 </div>
 </div>
@@ -2761,7 +2765,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00091">91</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00096">set()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00326">set()</a>.</p>
 
 </div>
 </div>
@@ -2799,7 +2803,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00176">176</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00168">168</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -2855,7 +2859,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00185">185</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00177">177</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -2893,7 +2897,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00180">180</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00172">172</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -2920,7 +2924,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00214">214</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00206">206</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -2947,7 +2951,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00209">209</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00201">201</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -2970,14 +2974,14 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00096">96</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00326">326</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_image_8hpp_source.html#l00019">Image()</a>, <a class="el" href="_image_8hpp_source.html#l00104">Load()</a>, <a class="el" href="_image_8hpp_source.html#l00112">LoadAnim()</a>, <a class="el" href="_image_8hpp_source.html#l00108">LoadRaw()</a>, and <a class="el" href="_image_8hpp_source.html#l00086">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_image_8hpp_source.html#l00019">Image()</a>, <a class="el" href="_image_8hpp_source.html#l00096">Load()</a>, <a class="el" href="_image_8hpp_source.html#l00104">LoadAnim()</a>, <a class="el" href="_image_8hpp_source.html#l00100">LoadRaw()</a>, and <a class="el" href="_image_8hpp_source.html#l00086">operator=()</a>.</p>
 
 </div>
 </div>
@@ -3005,7 +3009,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00129">129</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00121">121</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -3033,7 +3037,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00133">133</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00125">125</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -3061,7 +3065,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00131">131</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00123">123</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -3089,7 +3093,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00132">132</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00124">124</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -3117,7 +3121,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00130">130</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00122">122</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -3245,7 +3249,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00142">142</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00134">134</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -3272,7 +3276,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00116">116</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00108">108</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_image_8hpp_source.html#l00082">~Image()</a>.</p>
 
@@ -3281,7 +3285,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 24 2020 12:21:28 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 25 2020 14:07:42 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

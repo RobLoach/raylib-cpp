@@ -70,6 +70,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classraylib_1_1_shader-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">raylib::Shader Class Reference</div>  </div>
@@ -90,22 +91,38 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad35cd666bbb929f5885f11dffd2152a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bab4522de5cde68a5de506f7d209fad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a1bab4522de5cde68a5de506f7d209fad">EndShaderMode</a> ()</td></tr>
 <tr class="separator:a1bab4522de5cde68a5de506f7d209fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f46419cde438739c004d53560cf1788"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a5f46419cde438739c004d53560cf1788">GetId</a> ()</td></tr>
-<tr class="separator:a5f46419cde438739c004d53560cf1788"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b10829b1896e059259452e98ae80319"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a1b10829b1896e059259452e98ae80319">GetLocation</a> (const std::string &amp;uniformName)</td></tr>
-<tr class="separator:a1b10829b1896e059259452e98ae80319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bfc972aebe64372ed62213061a762c7"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a0bfc972aebe64372ed62213061a762c7">GetLocs</a> ()</td></tr>
-<tr class="separator:a0bfc972aebe64372ed62213061a762c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53c0837294acd6ad30abe71506912ce"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#ab53c0837294acd6ad30abe71506912ce">GenTextureBRDF</a> (int size)</td></tr>
+<tr class="separator:ab53c0837294acd6ad30abe71506912ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa99a0803343412dfde888eb749f7e481"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="namespaceraylib.html#a31a94f5d187fbad00d1231541a1fe445">TextureCubemap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#aa99a0803343412dfde888eb749f7e481">GenTextureCubemap</a> (<a class="el" href="namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f">Texture2D</a> panorama, int size, int format)</td></tr>
+<tr class="separator:aa99a0803343412dfde888eb749f7e481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81090a336593d3face114e5ff86f4292"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="namespaceraylib.html#a31a94f5d187fbad00d1231541a1fe445">TextureCubemap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a81090a336593d3face114e5ff86f4292">GenTextureIrradiance</a> (<a class="el" href="namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f">Texture2D</a> panorama, int size)</td></tr>
+<tr class="separator:a81090a336593d3face114e5ff86f4292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0607c8e29a40bb29942d0ad730848e15"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="namespaceraylib.html#a31a94f5d187fbad00d1231541a1fe445">TextureCubemap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a0607c8e29a40bb29942d0ad730848e15">GenTexturePrefilter</a> (<a class="el" href="namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f">Texture2D</a> panorama, int size)</td></tr>
+<tr class="separator:a0607c8e29a40bb29942d0ad730848e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72ec5358fed89076afbd8edfa83e9779"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a72ec5358fed89076afbd8edfa83e9779">GetId</a> () const</td></tr>
+<tr class="separator:a72ec5358fed89076afbd8edfa83e9779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95634f8def8f234a84113d80fd8e521a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a95634f8def8f234a84113d80fd8e521a">GetLocation</a> (const std::string &amp;uniformName) const</td></tr>
+<tr class="separator:a95634f8def8f234a84113d80fd8e521a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c6eed0a0addfc76110bcec7cc8c3daf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a9c6eed0a0addfc76110bcec7cc8c3daf">GetLocationAttrib</a> (const std::string &amp;attribName) const</td></tr>
+<tr class="separator:a9c6eed0a0addfc76110bcec7cc8c3daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a552106b906d353d97538e43ed2265bd0"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a552106b906d353d97538e43ed2265bd0">GetLocs</a> () const</td></tr>
+<tr class="separator:a552106b906d353d97538e43ed2265bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab07558a53f1dc63b21db8d4c3fcb1c1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#ab07558a53f1dc63b21db8d4c3fcb1c1a">operator=</a> (const ::<a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;shader)</td></tr>
 <tr class="separator:ab07558a53f1dc63b21db8d4c3fcb1c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a326cfd56a2758a6c0833d08cecad7ce6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a326cfd56a2758a6c0833d08cecad7ce6">operator=</a> (const <a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;shader)</td></tr>
 <tr class="separator:a326cfd56a2758a6c0833d08cecad7ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a439df82876fb4d63743cd9bfa62bf906"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a439df82876fb4d63743cd9bfa62bf906">set</a> (::<a class="el" href="classraylib_1_1_shader.html">Shader</a> shader)</td></tr>
-<tr class="separator:a439df82876fb4d63743cd9bfa62bf906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad989f72fce0403b1b01d88e1709de512"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#ad989f72fce0403b1b01d88e1709de512">SetId</a> (unsigned int value)</td></tr>
 <tr class="separator:ad989f72fce0403b1b01d88e1709de512"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1ed2a53fbb669eb877c9f80ada02174"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#ac1ed2a53fbb669eb877c9f80ada02174">SetLocs</a> (int *value)</td></tr>
 <tr class="separator:ac1ed2a53fbb669eb877c9f80ada02174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac06aca8c81dc9dcc50d27c3b46a26712"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#ac06aca8c81dc9dcc50d27c3b46a26712">SetValue</a> (int uniformLoc, const std::string &amp;value, int uniformType)</td></tr>
+<tr class="separator:ac06aca8c81dc9dcc50d27c3b46a26712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdbe29251bd12788759b3c4978fb68d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#afdbe29251bd12788759b3c4978fb68d3">SetValue</a> (int uniformLoc, const std::string &amp;value, int uniformType, int count)</td></tr>
+<tr class="separator:afdbe29251bd12788759b3c4978fb68d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04b172524de9ad6def15b8f1795d9f90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a04b172524de9ad6def15b8f1795d9f90">SetValue</a> (int uniformLoc, <a class="el" href="classraylib_1_1_matrix.html">Matrix</a> mat)</td></tr>
+<tr class="separator:a04b172524de9ad6def15b8f1795d9f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3355f80a955f8892c395871872fbf023"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a3355f80a955f8892c395871872fbf023">SetValue</a> (int uniformLoc, <a class="el" href="namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f">Texture2D</a> texture)</td></tr>
+<tr class="separator:a3355f80a955f8892c395871872fbf023"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d56815b3531966cee3e2bee8ecfa5a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a5d56815b3531966cee3e2bee8ecfa5a4">Unload</a> ()</td></tr>
 <tr class="separator:a5d56815b3531966cee3e2bee8ecfa5a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -115,10 +132,15 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ad59310e7d1246bc1597506065f8ce2be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04ebfdebe0939bb809f6d07ff1de8cd6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classraylib_1_1_shader.html">Shader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a04ebfdebe0939bb809f6d07ff1de8cd6">LoadCode</a> (const std::string &amp;vsCode, const std::string &amp;fsCode)</td></tr>
 <tr class="separator:a04ebfdebe0939bb809f6d07ff1de8cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a439df82876fb4d63743cd9bfa62bf906"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a439df82876fb4d63743cd9bfa62bf906">set</a> (::<a class="el" href="classraylib_1_1_shader.html">Shader</a> shader)</td></tr>
+<tr class="separator:a439df82876fb4d63743cd9bfa62bf906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00015">15</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00016">16</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9edb4fb1be4d38663c71d59da85bd8af"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9edb4fb1be4d38663c71d59da85bd8af">&#9670;&nbsp;</a></span>Shader() <span class="overload">[1/3]</span></h2>
@@ -144,9 +166,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00017">17</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00018">18</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_8hpp_source.html#l00030">set()</a>.</p>
+<p class="reference">References <a class="el" href="_shader_8hpp_source.html#l00125">set()</a>.</p>
 
 </div>
 </div>
@@ -184,7 +206,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00021">21</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00022">22</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -211,9 +233,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00026">26</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00027">27</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_8hpp_source.html#l00030">set()</a>.</p>
+<p class="reference">References <a class="el" href="_shader_8hpp_source.html#l00125">set()</a>.</p>
 
 </div>
 </div>
@@ -240,9 +262,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00048">48</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00044">44</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_8hpp_source.html#l00052">Unload()</a>.</p>
+<p class="reference">References <a class="el" href="_shader_8hpp_source.html#l00048">Unload()</a>.</p>
 
 </div>
 </div>
@@ -270,7 +292,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00065">65</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00061">61</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -297,12 +319,160 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00070">70</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00066">66</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a5f46419cde438739c004d53560cf1788"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f46419cde438739c004d53560cf1788">&#9670;&nbsp;</a></span>GetId()</h2>
+<a id="ab53c0837294acd6ad30abe71506912ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab53c0837294acd6ad30abe71506912ce">&#9670;&nbsp;</a></span>GenTextureBRDF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">::<a class="el" href="namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f">Texture2D</a> raylib::Shader::GenTextureBRDF </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00120">120</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa99a0803343412dfde888eb749f7e481"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa99a0803343412dfde888eb749f7e481">&#9670;&nbsp;</a></span>GenTextureCubemap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">::<a class="el" href="namespaceraylib.html#a31a94f5d187fbad00d1231541a1fe445">TextureCubemap</a> raylib::Shader::GenTextureCubemap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f">Texture2D</a>&#160;</td>
+          <td class="paramname"><em>panorama</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>format</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00108">108</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a81090a336593d3face114e5ff86f4292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81090a336593d3face114e5ff86f4292">&#9670;&nbsp;</a></span>GenTextureIrradiance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">::<a class="el" href="namespaceraylib.html#a31a94f5d187fbad00d1231541a1fe445">TextureCubemap</a> raylib::Shader::GenTextureIrradiance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f">Texture2D</a>&#160;</td>
+          <td class="paramname"><em>panorama</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00112">112</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0607c8e29a40bb29942d0ad730848e15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0607c8e29a40bb29942d0ad730848e15">&#9670;&nbsp;</a></span>GenTexturePrefilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">::<a class="el" href="namespaceraylib.html#a31a94f5d187fbad00d1231541a1fe445">TextureCubemap</a> raylib::Shader::GenTexturePrefilter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f">Texture2D</a>&#160;</td>
+          <td class="paramname"><em>panorama</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00116">116</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a72ec5358fed89076afbd8edfa83e9779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72ec5358fed89076afbd8edfa83e9779">&#9670;&nbsp;</a></span>GetId()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,7 +484,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">unsigned int raylib::Shader::GetId </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -324,12 +494,12 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00035">35</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00031">31</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a1b10829b1896e059259452e98ae80319"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b10829b1896e059259452e98ae80319">&#9670;&nbsp;</a></span>GetLocation()</h2>
+<a id="a95634f8def8f234a84113d80fd8e521a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95634f8def8f234a84113d80fd8e521a">&#9670;&nbsp;</a></span>GetLocation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -342,7 +512,35 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>uniformName</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00071">71</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9c6eed0a0addfc76110bcec7cc8c3daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c6eed0a0addfc76110bcec7cc8c3daf">&#9670;&nbsp;</a></span>GetLocationAttrib()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int raylib::Shader::GetLocationAttrib </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>attribName</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -356,8 +554,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0bfc972aebe64372ed62213061a762c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bfc972aebe64372ed62213061a762c7">&#9670;&nbsp;</a></span>GetLocs()</h2>
+<a id="a552106b906d353d97538e43ed2265bd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a552106b906d353d97538e43ed2265bd0">&#9670;&nbsp;</a></span>GetLocs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -369,7 +567,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">int* raylib::Shader::GetLocs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -379,7 +577,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00036">36</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00032">32</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -417,7 +615,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00056">56</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00052">52</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -455,7 +653,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00059">59</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00055">55</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -483,9 +681,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00038">38</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00034">34</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_8hpp_source.html#l00030">set()</a>.</p>
+<p class="reference">References <a class="el" href="_shader_8hpp_source.html#l00125">set()</a>.</p>
 
 </div>
 </div>
@@ -513,9 +711,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00043">43</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00039">39</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_8hpp_source.html#l00030">set()</a>.</p>
+<p class="reference">References <a class="el" href="_shader_8hpp_source.html#l00125">set()</a>.</p>
 
 </div>
 </div>
@@ -538,14 +736,14 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00030">30</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00125">125</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_shader_8hpp_source.html#l00038">operator=()</a>, and <a class="el" href="_shader_8hpp_source.html#l00017">Shader()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_shader_8hpp_source.html#l00034">operator=()</a>, and <a class="el" href="_shader_8hpp_source.html#l00018">Shader()</a>.</p>
 
 </div>
 </div>
@@ -573,7 +771,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00035">35</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00031">31</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -601,7 +799,180 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00036">36</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00032">32</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac06aca8c81dc9dcc50d27c3b46a26712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac06aca8c81dc9dcc50d27c3b46a26712">&#9670;&nbsp;</a></span>SetValue() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classraylib_1_1_shader.html">Shader</a>&amp; raylib::Shader::SetValue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>uniformLoc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>uniformType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00079">79</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+
+</div>
+</div>
+<a id="afdbe29251bd12788759b3c4978fb68d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdbe29251bd12788759b3c4978fb68d3">&#9670;&nbsp;</a></span>SetValue() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classraylib_1_1_shader.html">Shader</a>&amp; raylib::Shader::SetValue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>uniformLoc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>uniformType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd>SetShaderValueV </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00087">87</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a04b172524de9ad6def15b8f1795d9f90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04b172524de9ad6def15b8f1795d9f90">&#9670;&nbsp;</a></span>SetValue() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classraylib_1_1_shader.html">Shader</a>&amp; raylib::Shader::SetValue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>uniformLoc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classraylib_1_1_matrix.html">Matrix</a>&#160;</td>
+          <td class="paramname"><em>mat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd>::SetShaderValueMatrix </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00095">95</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a3355f80a955f8892c395871872fbf023"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3355f80a955f8892c395871872fbf023">&#9670;&nbsp;</a></span>SetValue() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classraylib_1_1_shader.html">Shader</a>&amp; raylib::Shader::SetValue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>uniformLoc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f">Texture2D</a>&#160;</td>
+          <td class="paramname"><em>texture</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd>::SetShaderValueTexture </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00103">103</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -628,16 +999,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00052">52</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00048">48</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_shader_8hpp_source.html#l00048">~Shader()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_shader_8hpp_source.html#l00044">~Shader()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 24 2020 12:21:28 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 25 2020 14:07:42 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
