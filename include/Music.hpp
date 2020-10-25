@@ -75,7 +75,7 @@ namespace raylib {
 			::ResumeMusicStream(*this);
         	return *this;
 		}
-		inline bool IsPlaying() {
+		inline bool IsPlaying() const {
 			return ::IsMusicPlaying(*this);
 		}
 		inline Music& SetVolume(float volume) {
@@ -86,10 +86,10 @@ namespace raylib {
 			::SetMusicPitch(*this, pitch);
         	return *this;
 		}
-		inline float GetTimeLength() {
+		inline float GetTimeLength() const {
 			return ::GetMusicTimeLength(*this);
 		}
-		inline float GetTimePlayed() {
+		inline float GetTimePlayed() const {
 			return ::GetMusicTimePlayed(*this);
 		}
 

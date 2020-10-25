@@ -90,15 +90,15 @@ namespace raylib {
 			return *this;
 		}
 
-		inline bool CheckCollision(::Rectangle rec2) {
+		inline bool CheckCollision(::Rectangle rec2) const {
 			return ::CheckCollisionRecs(*this, rec2);
 		}
 
-		inline Rectangle GetCollision(::Rectangle rec2) {
+		inline Rectangle GetCollision(::Rectangle rec2) const {
 			return ::GetCollisionRec(*this, rec2);
 		}
 
-		inline bool CheckCollision(::Vector2 point) {
+		inline bool CheckCollision(::Vector2 point) const {
 			return ::CheckCollisionPointRec(point, *this);
 		}
 	};

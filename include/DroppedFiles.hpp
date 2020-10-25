@@ -32,7 +32,7 @@ namespace raylib {
 		/**
 		 * Check if a file has been dropped into window.
 		 */
-		inline bool IsFileDropped() {
+		inline bool IsFileDropped() const {
 			return ::IsFileDropped();
 		}
 
@@ -52,15 +52,15 @@ namespace raylib {
 			return at(pos);
 		}
 
-		inline int Count() {
+		inline int Count() const {
 			return m_count;
 		}
 
-		inline int size() {
+		inline int size() const {
 			return m_count;
 		}
 
-		inline bool empty() {
+		inline bool empty() const {
 			return m_count == 0;
 		}
 
@@ -68,15 +68,15 @@ namespace raylib {
 			Clear();
 		}
 
-		inline std::string front() {
+		inline std::string front() const {
 			return at(0);
 		}
 
-		inline std::string back() {
+		inline std::string back() const {
 			return at(m_count - 1);
 		}
 
-		std::string at(int pos) {
+		std::string at(int pos) const {
 			if (m_files != NULL && pos < m_count && pos >= 0) {
 				return std::string(m_files[pos]);
 			}

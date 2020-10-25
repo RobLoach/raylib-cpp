@@ -77,19 +77,19 @@ namespace raylib {
 			::PhysicsShatter(body, position, force);
 			return *this;
 		}
-		inline int GetBodiesCount() {
+		inline int GetBodiesCount() const {
 			return ::GetPhysicsBodiesCount();
 		}
-		inline PhysicsBody GetBody(int index) {
+		inline PhysicsBody GetBody(int index) const {
 			return ::GetPhysicsBody(index);
 		}
-		inline int GetShapeType(int index) {
+		inline int GetShapeType(int index) const {
 			return ::GetPhysicsShapeType(index);
 		}
-		inline int GetShapeVerticesCount(int index) {
+		inline int GetShapeVerticesCount(int index) const {
 			return ::GetPhysicsShapeVerticesCount(index);
 		}
-		inline Vector2 GetShapeVertex(PhysicsBody body, int vertex) {
+		inline Vector2 GetShapeVertex(PhysicsBody body, int vertex) const {
 			return ::GetPhysicsShapeVertex(body, vertex);
 		}
 		inline Physics& SetBodyRotation(PhysicsBody body, float radians) {

@@ -54,11 +54,11 @@ namespace raylib {
 			return *this;
 		}
 
-		inline bool IsValid(::Model model) {
+		inline bool IsValid(::Model model) const {
 			return ::IsModelAnimationValid(model, *this);
 		}
 
-		inline bool IsModelAnimationValid(::Model model) {
+		inline bool IsModelAnimationValid(::Model model) const {
 			return ::IsModelAnimationValid(model, *this);
 		}
 	};

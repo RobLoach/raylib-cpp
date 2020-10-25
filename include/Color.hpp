@@ -90,7 +90,7 @@ namespace raylib {
 		static Color Magenta;
 		static Color RayWhite;
 
-		int ToInt() {
+		int ToInt() const {
 			return ::ColorToInt(*this);
 		}
 
@@ -102,11 +102,11 @@ namespace raylib {
 			return a;
 		}
 
-		Vector4 Normalize() {
+		Vector4 Normalize() const {
 			return ::ColorNormalize(*this);
 		}
 
-		Vector3 ToHSV() {
+		Vector3 ToHSV() const {
 			return ::ColorToHSV(*this);
 		}
 

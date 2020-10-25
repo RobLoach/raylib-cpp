@@ -84,7 +84,7 @@ namespace raylib {
 			return *this;
 		}
 
-		inline Image GetTextureData() {
+		inline Image GetTextureData() const {
 			return ::GetTextureData(*this);
 		}
 		inline operator raylib::Image() {

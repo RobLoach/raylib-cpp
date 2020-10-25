@@ -89,7 +89,7 @@ namespace raylib {
 			return QuaternionToMatrix(*this);
 		}
 
-		float Length() {
+		float Length() const {
 			return QuaternionLength(*this);
 		}
 

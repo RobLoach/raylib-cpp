@@ -247,7 +247,7 @@ namespace raylib {
 			return ::GetImagePalette(*this, maxPaletteSize, extractCount);
 		}
 
-		inline Rectangle GetAlphaBorder(float threshold) {
+		inline Rectangle GetAlphaBorder(float threshold) const {
 			return ::GetImageAlphaBorder(*this, threshold);
 		}
 

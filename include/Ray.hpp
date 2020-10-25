@@ -52,15 +52,15 @@ namespace raylib {
 			return *this;
 		}
 
-		inline bool CheckCollisionSphere(::Vector3 center, float radius) {
+		inline bool CheckCollisionSphere(::Vector3 center, float radius) const {
 			return CheckCollisionRaySphere(*this, center, radius);
 		}
 
-		inline bool CheckCollisionSphereEx(::Vector3 center, float radius, ::Vector3 *collisionPoint) {
+		inline bool CheckCollisionSphereEx(::Vector3 center, float radius, ::Vector3 *collisionPoint) const {
 			return CheckCollisionRaySphereEx(*this, center, radius, collisionPoint);
 		}
 
-		inline bool CheckCollisionBox(::BoundingBox box) {
+		inline bool CheckCollisionBox(::BoundingBox box) const {
 			return CheckCollisionRayBox(*this, box);
 		}
 

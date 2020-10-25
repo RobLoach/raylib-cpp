@@ -68,7 +68,7 @@ namespace raylib {
 			return *this;
 		}
 
-		inline RayHitInfo GetCollision(::Ray ray) {
+		inline RayHitInfo GetCollision(::Ray ray) const {
 			return ::GetCollisionRayModel(ray, *this);
 		}
 
@@ -77,7 +77,7 @@ namespace raylib {
 			return *this;
 		}
 
-		inline bool IsModelAnimationValid(::ModelAnimation anim) {
+		inline bool IsModelAnimationValid(::ModelAnimation anim) const {
 			return ::IsModelAnimationValid(*this, anim);
 		}
 	};

@@ -93,7 +93,7 @@ namespace raylib {
 			return ::MeasureTextEx(*this, text.c_str(), fontSize, spacing);
 		}
 
-		inline int GetGlyphIndex(int character) {
+		inline int GetGlyphIndex(int character) const {
 			return ::GetGlyphIndex(*this, character);
 		}
 	};

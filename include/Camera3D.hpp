@@ -66,7 +66,7 @@ namespace raylib {
 			return *this;
 		}
 
-		inline Matrix GetMatrix() {
+		inline Matrix GetMatrix() const {
 			return ::GetCameraMatrix(*this);
 		}
 
@@ -100,11 +100,11 @@ namespace raylib {
 			return *this;
 		}
 
-		inline Ray GetMouseRay(::Vector2 mousePosition) {
+		inline Ray GetMouseRay(::Vector2 mousePosition) const {
 			return ::GetMouseRay(mousePosition, *this);
 		}
 
-		inline Vector2 GetWorldToScreen(::Vector3 position) {
+		inline Vector2 GetWorldToScreen(::Vector3 position) const {
 			return ::GetWorldToScreen(position, *this);
 		}
 

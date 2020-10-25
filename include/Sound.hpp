@@ -87,7 +87,7 @@ namespace raylib {
 			return *this;
 		}
 
-		inline bool IsPlaying() {
+		inline bool IsPlaying() const {
 			return ::IsSoundPlaying(*this);
 		}
 		inline Sound& SetVolume(float volume) {
