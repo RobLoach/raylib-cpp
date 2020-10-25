@@ -10,6 +10,7 @@ extern "C"{
 #endif
 
 #include "./raylib-cpp-utils.hpp"
+#include "Texture.hpp"
 
 namespace raylib {
 	class Shader : public ::Shader {
@@ -69,6 +70,55 @@ namespace raylib {
 
 		inline int GetLocation(const std::string& uniformName) const {
 			return ::GetShaderLocation(*this, uniformName.c_str());
+		}
+
+		inline int GetLocationAttrib(const std::string& attribName) const {
+			return ::GetShaderLocationAttrib(*this, attribName.c_str());
+		}
+
+		inline Shader& SetValue(int uniformLoc, const std::string& value, int uniformType) {
+			::SetShaderValue(*this, uniformLoc, value.c_str(), uniformType);
+			return *this;
+		}
+
+		/**
+		 * @see SetShaderValueV
+		 */
+		inline Shader& SetValue(int uniformLoc, const std::string& value, int uniformType, int count) {
+			::SetShaderValueV(*this, uniformLoc, value.c_str(), uniformType, count);
+			return *this;
+		}
+
+		/**
+		 * @see ::SetShaderValueMatrix
+		 */
+		inline Shader& SetValue(int uniformLoc, Matrix mat) {
+			::SetShaderValueMatrix(*this, uniformLoc, mat);
+			return *this;
+		}
+
+		/**
+		 * @see ::SetShaderValueTexture
+		 */
+		inline Shader& SetValue(int uniformLoc, Texture2D texture) {
+			::SetShaderValueTexture(*this, uniformLoc, texture);
+			return *this;
+		}
+
+		::TextureCubemap GenTextureCubemap(Texture2D panorama, int size, int format) {
+			return ::GenTextureCubemap(*this, panorama, size, format);
+		}
+
+		::TextureCubemap GenTextureIrradiance(Texture2D panorama, int size) {
+			return ::GenTextureIrradiance(*this, panorama, size);
+		}
+
+		::TextureCubemap GenTexturePrefilter(Texture2D panorama, int size) {
+			return ::GenTexturePrefilter(*this, panorama, size);
+		}
+
+		::Texture2D GenTextureBRDF(int size) {
+			return ::GenTextureBRDF(*this, size);
 		}
 
 	protected:

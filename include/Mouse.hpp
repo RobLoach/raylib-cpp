@@ -58,6 +58,15 @@ namespace raylib {
 		inline float GetWheelMove() const {
 			return ::GetMouseWheelMove();
 		}
+
+		inline int GetCursor() const {
+			return ::GetMouseCursor();
+		}
+		inline Mouse& SetCursor(int cursor) {
+			::SetMouseCursor(cursor);
+			return *this;
+		}
+
 		inline int GetTouchX() const {
 			return ::GetTouchX();
 		}

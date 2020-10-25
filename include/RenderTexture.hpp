@@ -1,5 +1,5 @@
-#ifndef RAYLIB_CPP_RENDERTEXTURE2D_HPP_
-#define RAYLIB_CPP_RENDERTEXTURE2D_HPP_
+#ifndef RAYLIB_CPP_RenderTexture_HPP_
+#define RAYLIB_CPP_RenderTexture_HPP_
 
 #ifdef __cplusplus
 extern "C"{
@@ -12,15 +12,15 @@ extern "C"{
 #include "./raylib-cpp-utils.hpp"
 
 namespace raylib {
-	class RenderTexture2D : public ::RenderTexture2D {
+	class RenderTexture : public ::RenderTexture {
 	public:
-		RenderTexture2D(::RenderTexture2D renderTexture) {
+		RenderTexture(::RenderTexture renderTexture) {
 			set(renderTexture);
 		};
-		RenderTexture2D(unsigned int Id) {
+		RenderTexture(unsigned int Id) {
 			id = Id;
 		};
-		RenderTexture2D(int width, int height) {
+		RenderTexture(int width, int height) {
 			set(LoadRenderTexture(width, height));
 		}
 
@@ -28,17 +28,17 @@ namespace raylib {
 		GETTERSETTER(Texture2D,Texture,texture)
 		GETTERSETTER(Texture2D,Depth,depth)
 
-        RenderTexture2D& operator=(const ::RenderTexture2D& texture) {
+        RenderTexture& operator=(const ::RenderTexture& texture) {
             set(texture);
             return *this;
         }
 
-        RenderTexture2D& operator=(const RenderTexture2D& texture) {
+        RenderTexture& operator=(const RenderTexture& texture) {
             set(texture);
             return *this;
         }
 
-		~RenderTexture2D() {
+		~RenderTexture() {
 			Unload();
 		};
 
@@ -46,24 +46,24 @@ namespace raylib {
 			UnloadRenderTexture(*this);
 		}
 
-		inline RenderTexture2D& BeginTextureMode() {
+		inline RenderTexture& BeginTextureMode() {
 			::BeginTextureMode(*this);
 			return *this;
 		}
 
-		inline RenderTexture2D& EndTextureMode() {
+		inline RenderTexture& EndTextureMode() {
 			::EndTextureMode();
 			return *this;
 		}
 
 	protected:
-		inline void set(::RenderTexture2D renderTexture) {
+		inline void set(::RenderTexture renderTexture) {
 			id = renderTexture.id;
 			texture = renderTexture.texture;
 			depth = renderTexture.depth;
 		}
 	};
-	typedef RenderTexture2D RenderTexture;
+	typedef RenderTexture RenderTexture2D;
 }
 
 #endif
