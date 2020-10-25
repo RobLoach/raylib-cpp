@@ -49,20 +49,6 @@ namespace raylib {
 			set(::ColorFromNormalized(normalized));
 		}
 
-		inline void set(const ::Color& color) {
-			r = color.r;
-			g = color.g;
-			b = color.b;
-			a = color.a;
-		}
-
-		inline void set(const Color& color) {
-			r = color.r;
-			g = color.g;
-			b = color.b;
-			a = color.a;
-		}
-
 		static Color LightGray;
 		static Color Gray;
 		static Color DarkGray;
@@ -201,6 +187,21 @@ namespace raylib {
 		inline Color& DrawRectangleLines(Rectangle rec, int lineThick) {
 			::DrawRectangleLinesEx(rec, lineThick, *this);
 			return *this;
+		}
+
+	protected:
+		inline void set(const ::Color& color) {
+			r = color.r;
+			g = color.g;
+			b = color.b;
+			a = color.a;
+		}
+
+		inline void set(const Color& color) {
+			r = color.r;
+			g = color.g;
+			b = color.b;
+			a = color.a;
 		}
 
 	};

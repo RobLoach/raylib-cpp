@@ -29,11 +29,6 @@ namespace raylib {
 			set(GetMouseRay(mousePosition, camera));
 		}
 
-		inline void set(::Ray ray) {
-			position = ray.position;
-			direction = ray.direction;
-		}
-
         Ray& operator=(const ::Ray& ray) {
             set(ray);
             return *this;
@@ -74,6 +69,12 @@ namespace raylib {
 
 		inline RayHitInfo GetCollisionGround(float groundHeight) {
 			return GetCollisionRayGround(*this, groundHeight);
+		}
+
+	protected:
+		inline void set(::Ray ray) {
+			position = ray.position;
+			direction = ray.direction;
 		}
 	};
 }

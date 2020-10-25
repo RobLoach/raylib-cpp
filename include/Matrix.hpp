@@ -43,25 +43,6 @@ namespace raylib {
 			m15 = M15;
 		};
 
-		inline void set(::Matrix mat) {
-			m0 = mat.m0;
-			m1 = mat.m1;
-			m2 = mat.m2;
-			m3 = mat.m3;
-			m4 = mat.m4;
-			m5 = mat.m5;
-			m6 = mat.m6;
-			m7 = mat.m7;
-			m8 = mat.m8;
-			m9 = mat.m9;
-			m10 = mat.m10;
-			m11 = mat.m11;
-			m12 = mat.m12;
-			m13 = mat.m13;
-			m14 = mat.m14;
-			m15 = mat.m15;
-		}
-
 		GETTERSETTER(float,M0,m0)
 		GETTERSETTER(float,M1,m1)
 		GETTERSETTER(float,M2,m2)
@@ -205,6 +186,27 @@ namespace raylib {
 			return ToFloatV();
 		}
 #endif
+	protected:
+
+
+		inline void set(::Matrix mat) {
+			m0 = mat.m0;
+			m1 = mat.m1;
+			m2 = mat.m2;
+			m3 = mat.m3;
+			m4 = mat.m4;
+			m5 = mat.m5;
+			m6 = mat.m6;
+			m7 = mat.m7;
+			m8 = mat.m8;
+			m9 = mat.m9;
+			m10 = mat.m10;
+			m11 = mat.m11;
+			m12 = mat.m12;
+			m13 = mat.m13;
+			m14 = mat.m14;
+			m15 = mat.m15;
+		}
 	};
 }
 

@@ -26,24 +26,6 @@ namespace raylib {
 			triangleCount = TriangleCount;
 		};
 
-		inline void set(::Mesh mesh) {
-			vertexCount = mesh.vertexCount;
-			triangleCount = mesh.triangleCount;
-			vertices = mesh.vertices;
-			texcoords = mesh.texcoords;
-			texcoords2 = mesh.texcoords2;
-			normals = mesh.normals;
-			tangents = mesh.tangents;
-			colors = mesh.colors;
-			indices = mesh.indices;
-			animVertices = mesh.animVertices;
-			animNormals = mesh.animNormals;
-			boneIds = mesh.boneIds;
-			boneWeights = mesh.boneWeights;
-			vaoId = mesh.vaoId;
-			vboId = mesh.vboId;
-		}
-
 		GETTERSETTER(int,VertexCount,vertexCount)
 		GETTERSETTER(int,TriangleCount,triangleCount)
 
@@ -97,6 +79,25 @@ namespace raylib {
 		}
 		operator raylib::Model() {
 			return LoadModelFrom();
+		}
+
+	protected:
+		inline void set(::Mesh mesh) {
+			vertexCount = mesh.vertexCount;
+			triangleCount = mesh.triangleCount;
+			vertices = mesh.vertices;
+			texcoords = mesh.texcoords;
+			texcoords2 = mesh.texcoords2;
+			normals = mesh.normals;
+			tangents = mesh.tangents;
+			colors = mesh.colors;
+			indices = mesh.indices;
+			animVertices = mesh.animVertices;
+			animNormals = mesh.animNormals;
+			boneIds = mesh.boneIds;
+			boneWeights = mesh.boneWeights;
+			vaoId = mesh.vaoId;
+			vboId = mesh.vboId;
 		}
 	};
 }

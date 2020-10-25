@@ -35,13 +35,6 @@ namespace raylib {
 			set(ColorNormalize(color));
 		}
 
-		inline void set(::Vector4 vec4) {
-			x = vec4.x;
-			y = vec4.y;
-			z = vec4.z;
-			w = vec4.w;
-		}
-
 		GETTERSETTER(float,X,x)
 		GETTERSETTER(float,Y,y)
 		GETTERSETTER(float,Z,z)
@@ -151,6 +144,14 @@ namespace raylib {
 
 		inline Color ColorFromNormalized() {
 			return ::ColorFromNormalized(*this);
+		}
+
+	protected:
+		inline void set(::Vector4 vec4) {
+			x = vec4.x;
+			y = vec4.y;
+			z = vec4.z;
+			w = vec4.w;
 		}
 	};
 

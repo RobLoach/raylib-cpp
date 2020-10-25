@@ -34,14 +34,6 @@ namespace raylib {
 			Unload();
 		};
 
-		inline void set(::Texture2D texture) {
-			id = texture.id;
-			width = texture.width;
-			height = texture.height;
-			mipmaps = texture.mipmaps;
-			format = texture.format;
-		}
-
 		GETTERSETTER(unsigned int,Id,id)
 		GETTERSETTER(int,Width,width)
 		GETTERSETTER(int,Height,height)
@@ -154,6 +146,15 @@ namespace raylib {
 
 		static int GetPixelDataSize(int width, int height, int format) {
 			return ::GetPixelDataSize(width, height, format);
+		}
+
+	protected:
+		inline void set(::Texture2D texture) {
+			id = texture.id;
+			width = texture.width;
+			height = texture.height;
+			mipmaps = texture.mipmaps;
+			format = texture.format;
 		}
 	};
 

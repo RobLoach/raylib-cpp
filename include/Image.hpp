@@ -93,14 +93,6 @@ namespace raylib {
             return *this;
         }
 
-		inline void set(::Image image) {
-			data = image.data;
-			width = image.width;
-			height = image.height;
-			mipmaps = image.mipmaps;
-			format = image.format;
-		}
-
 		void Load(const std::string& fileName) {
 			set(::LoadImage(fileName.c_str()));
 		}
@@ -328,6 +320,15 @@ namespace raylib {
 		}
 		inline operator Texture2D() {
 			return ::LoadTextureFromImage(*this);
+		}
+
+	protected:
+		inline void set(::Image image) {
+			data = image.data;
+			width = image.width;
+			height = image.height;
+			mipmaps = image.mipmaps;
+			format = image.format;
 		}
 	};
 }

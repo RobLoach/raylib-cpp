@@ -28,10 +28,6 @@ namespace raylib {
 			x = X;
 			y = Y;
 		};
-		inline void set(::Vector2 vec) {
-			x = vec.x;
-			y = vec.y;
-		}
 
 		GETTERSETTER(float,X,x)
 		GETTERSETTER(float,Y,y)
@@ -226,6 +222,12 @@ namespace raylib {
 		inline Vector2& DrawPoly(int sides, float radius, float rotation, ::Color color) {
 			::DrawPoly(*this, sides, radius, rotation, color);
 			return *this;
+		}
+
+	protected:
+		inline void set(::Vector2 vec) {
+			x = vec.x;
+			y = vec.y;
 		}
 	};
 }

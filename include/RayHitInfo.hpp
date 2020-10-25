@@ -35,17 +35,18 @@ namespace raylib {
             return *this;
         }
 
+		GETTERSETTER(bool,Hit,hit)
+		GETTERSETTER(float,Distance,distance)
+		GETTERSETTER(::Vector3,Position,position)
+		GETTERSETTER(::Vector3,Normal,normal)
+
+	protected:
 		inline void set(::RayHitInfo ray) {
 			hit = ray.hit;
 			distance = ray.distance;
 			position = ray.position;
 			normal = ray.normal;
 		}
-
-		GETTERSETTER(bool,Hit,hit)
-		GETTERSETTER(float,Distance,distance)
-		GETTERSETTER(::Vector3,Position,position)
-		GETTERSETTER(::Vector3,Normal,normal)
 	};
 }
 

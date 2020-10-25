@@ -23,13 +23,6 @@ namespace raylib {
 			Unload();
 		}
 
-		inline void set(::ModelAnimation model) {
-			boneCount = model.boneCount;
-			bones = model.bones;
-			frameCount = model.frameCount;
-			framePoses = model.framePoses;
-		}
-
 		GETTERSETTER(int,BoneCount,boneCount)
 		GETTERSETTER(::BoneInfo*,Bones,bones)
 		GETTERSETTER(int,FrameCount,frameCount)
@@ -60,6 +53,14 @@ namespace raylib {
 
 		inline bool IsModelAnimationValid(::Model model) const {
 			return ::IsModelAnimationValid(model, *this);
+		}
+
+	protected:
+		inline void set(::ModelAnimation model) {
+			boneCount = model.boneCount;
+			bones = model.bones;
+			frameCount = model.frameCount;
+			framePoses = model.framePoses;
 		}
 	};
 }

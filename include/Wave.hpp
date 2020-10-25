@@ -33,14 +33,6 @@ namespace raylib {
 			Unload();
 		}
 
-		inline void set(::Wave wave) {
-			sampleCount = wave.sampleCount;
-			sampleRate = wave.sampleRate;
-			sampleSize = wave.sampleSize;
-			channels = wave.channels;
-			data = wave.data;
-		}
-
 		GETTERSETTER(unsigned int, SampleCount, sampleCount)
 		GETTERSETTER(unsigned int, SampleRate, sampleRate)
 		GETTERSETTER(unsigned int, SampleSize, sampleSize)
@@ -93,6 +85,15 @@ namespace raylib {
 
 		inline float* GetWaveData() {
 			return ::GetWaveData(*this);
+		}
+
+	protected:
+		inline void set(::Wave wave) {
+			sampleCount = wave.sampleCount;
+			sampleRate = wave.sampleRate;
+			sampleSize = wave.sampleSize;
+			channels = wave.channels;
+			data = wave.data;
 		}
 	};
 }

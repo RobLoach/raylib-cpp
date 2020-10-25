@@ -24,12 +24,6 @@ namespace raylib {
 			set(LoadRenderTexture(width, height));
 		}
 
-		inline void set(::RenderTexture2D renderTexture) {
-			id = renderTexture.id;
-			texture = renderTexture.texture;
-			depth = renderTexture.depth;
-		}
-
 		GETTERSETTER(unsigned int,Id,id)
 		GETTERSETTER(Texture2D,Texture,texture)
 		GETTERSETTER(Texture2D,Depth,depth)
@@ -60,6 +54,13 @@ namespace raylib {
 		inline RenderTexture2D& EndTextureMode() {
 			::EndTextureMode();
 			return *this;
+		}
+
+	protected:
+		inline void set(::RenderTexture2D renderTexture) {
+			id = renderTexture.id;
+			texture = renderTexture.texture;
+			depth = renderTexture.depth;
 		}
 	};
 	typedef RenderTexture2D RenderTexture;

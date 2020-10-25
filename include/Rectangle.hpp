@@ -25,13 +25,6 @@ namespace raylib {
 			height = Height;
 		};
 
-		inline void set(::Rectangle rect) {
-			x = rect.x;
-			y = rect.y;
-			width = rect.width;
-			height = rect.height;
-		}
-
 		GETTERSETTER(float,X,x)
 		GETTERSETTER(float,Y,y)
 		GETTERSETTER(float,Width,width)
@@ -100,6 +93,14 @@ namespace raylib {
 
 		inline bool CheckCollision(::Vector2 point) const {
 			return ::CheckCollisionPointRec(point, *this);
+		}
+
+	protected:
+		inline void set(::Rectangle rect) {
+			x = rect.x;
+			y = rect.y;
+			width = rect.width;
+			height = rect.height;
 		}
 	};
 }

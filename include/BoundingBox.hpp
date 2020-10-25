@@ -24,10 +24,6 @@ namespace raylib {
 			min = Min;
 			max = Max;
 		};
-		inline void set(::BoundingBox box) {
-			min = box.min;
-			max = box.max;
-		}
 
 		GETTERSETTER(::Vector3,Min,min)
 		GETTERSETTER(::Vector3,Max,max)
@@ -57,6 +53,12 @@ namespace raylib {
 
 		inline bool CheckCollision(::Ray ray) const {
 			return CheckCollisionRayBox(ray, *this);
+		}
+
+	protected:
+		inline void set(::BoundingBox box) {
+			min = box.min;
+			max = box.max;
 		}
 	};
 }
