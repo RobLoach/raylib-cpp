@@ -32,13 +32,6 @@ namespace raylib {
 			Close();
 		}
 
-		inline void set(::AudioStream stream) {
-			sampleRate = stream.sampleRate;
-			sampleSize = stream.sampleSize;
-			channels = stream.channels;
-			buffer = stream.buffer;
-		}
-
 		GETTERSETTER(unsigned int,SampleRate,sampleRate)
 		GETTERSETTER(unsigned int,SampleSize,sampleSize)
 		GETTERSETTER(unsigned int,Channels,channels)
@@ -137,6 +130,14 @@ namespace raylib {
 		inline AudioStream& SetBufferSizeDefault(int size) {
 			::SetAudioStreamBufferSizeDefault(size);
         	return *this;
+		}
+
+	protected:
+		inline void set(::AudioStream stream) {
+			sampleRate = stream.sampleRate;
+			sampleSize = stream.sampleSize;
+			channels = stream.channels;
+			buffer = stream.buffer;
 		}
 
 	};

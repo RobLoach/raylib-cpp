@@ -31,20 +31,6 @@ namespace raylib {
 			Unload();
 		}
 
-		inline void set(::Model model) {
-			transform = model.transform;
-
-			meshCount = model.meshCount;
-			meshes = model.meshes;
-
-			materialCount = model.materialCount;
-			materials = model.materials;
-			meshMaterial = model.meshMaterial;
-			boneCount = model.boneCount;
-			bones = model.bones;
-			bindPose = model.bindPose;
-		}
-
 		GETTERSETTER(::Matrix,Transform,transform)
 		GETTERSETTER(int,MeshCount,meshCount)
 		GETTERSETTER(int,MaterialCount,materialCount)
@@ -79,6 +65,21 @@ namespace raylib {
 
 		inline bool IsModelAnimationValid(::ModelAnimation anim) {
 			return ::IsModelAnimationValid(*this, anim);
+		}
+
+	protected:
+		inline void set(::Model model) {
+			transform = model.transform;
+
+			meshCount = model.meshCount;
+			meshes = model.meshes;
+
+			materialCount = model.materialCount;
+			materials = model.materials;
+			meshMaterial = model.meshMaterial;
+			boneCount = model.boneCount;
+			bones = model.bones;
+			bindPose = model.bindPose;
 		}
 	};
 }

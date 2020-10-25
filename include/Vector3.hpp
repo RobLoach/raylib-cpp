@@ -32,11 +32,6 @@ namespace raylib {
 		Vector3(::Color color) {
 			set(ColorToHSV(color));
 		}
-		inline void set(::Vector3 vec) {
-			x = vec.x;
-			y = vec.y;
-			z = vec.z;
-		}
 
 		GETTERSETTER(float,X,x)
 		GETTERSETTER(float,Y,y)
@@ -298,6 +293,13 @@ namespace raylib {
 
 		inline bool CheckCollision(float radiusA, Vector3 centerB, float radiusB) {
 			return CheckCollisionSpheres(*this, radiusA, centerB, radiusB);
+		}
+
+	protected:
+		inline void set(::Vector3 vec) {
+			x = vec.x;
+			y = vec.y;
+			z = vec.z;
 		}
 	};
 }

@@ -21,14 +21,15 @@ namespace raylib {
 		}
 		int number;
 
-		inline void set(int gamepadNumber) {
-			number = gamepadNumber;
-		}
-
 		GETTERSETTER(int,Number,number)
 
         Gamepad& operator=(const Gamepad& gamepad) {
             set(gamepad);
+            return *this;
+        }
+
+        Gamepad& operator=(int gamepadNumber) {
+            set(gamepadNumber);
             return *this;
         }
 
@@ -68,6 +69,11 @@ namespace raylib {
 
 		inline float GetAxisMovement(int axis) {
 			return ::GetGamepadAxisMovement(number, axis);
+		}
+
+	protected:
+		inline void set(int gamepadNumber) {
+			number = gamepadNumber;
 		}
 	};
 }

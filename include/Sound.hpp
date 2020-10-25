@@ -32,11 +32,6 @@ namespace raylib {
 			Unload();
 		}
 
-		inline void set(::Sound sound) {
-			sampleCount = sound.sampleCount;
-			stream = sound.stream;
-		}
-
 		GETTERSETTER(unsigned int,SampleCount,sampleCount)
 		GETTERSETTER(::AudioStream,Stream,stream)
 
@@ -99,6 +94,11 @@ namespace raylib {
 			return *this;
 		}
 
+	protected:
+		inline void set(::Sound sound) {
+			sampleCount = sound.sampleCount;
+			stream = sound.stream;
+		}
 	};
 }
 

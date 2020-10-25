@@ -26,14 +26,6 @@ namespace raylib {
 			Unload();
 		}
 
-		inline void set(::Music music) {
-			ctxType = music.ctxType;
-			ctxData = music.ctxData;
-			looping = music.looping;
-			sampleCount = music.sampleCount;
-			stream = music.stream;
-		}
-
 		GETTERSETTER(int,CtxType,ctxType)
 		GETTERSETTER(bool,Looping,looping)
 		GETTERSETTER(unsigned int,SampleCount,sampleCount)
@@ -93,7 +85,14 @@ namespace raylib {
 			return ::GetMusicTimePlayed(*this);
 		}
 
-
+	protected:
+		inline void set(::Music music) {
+			ctxType = music.ctxType;
+			ctxData = music.ctxData;
+			looping = music.looping;
+			sampleCount = music.sampleCount;
+			stream = music.stream;
+		}
 	};
 }
 

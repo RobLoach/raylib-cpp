@@ -41,22 +41,6 @@ namespace raylib {
             return *this;
         }
 
-		inline void set(const ::Camera3D& camera) {
-			position = camera.position;
-			target = camera.target;
-			up = camera.up;
-			fovy = camera.fovy;
-			type = camera.type;
-		}
-
-		inline void set(const Camera3D& camera) {
-			position = camera.position;
-			target = camera.target;
-			up = camera.up;
-			fovy = camera.fovy;
-			type = camera.type;
-		}
-
 		Camera3D& BeginMode3D() {
 			::BeginMode3D(*this);
 			return *this;
@@ -116,6 +100,23 @@ namespace raylib {
 		inline Camera3D& DrawBillboard(Texture2D texture, Rectangle sourceRec, Vector3 center, float size, ::Color tint = WHITE) {
 			::DrawBillboardRec(*this, texture, sourceRec, center, size, tint);
 			return *this;
+		}
+
+	protected:
+		inline void set(const ::Camera3D& camera) {
+			position = camera.position;
+			target = camera.target;
+			up = camera.up;
+			fovy = camera.fovy;
+			type = camera.type;
+		}
+
+		inline void set(const Camera3D& camera) {
+			position = camera.position;
+			target = camera.target;
+			up = camera.up;
+			fovy = camera.fovy;
+			type = camera.type;
 		}
 	};
 

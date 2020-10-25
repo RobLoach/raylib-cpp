@@ -26,12 +26,6 @@ namespace raylib {
 			Unload();
 		}
 
-		inline void set(::Material material) {
-			shader = material.shader;
-			maps = material.maps;
-			params = material.params;
-		}
-
 		GETTERSETTER(::Shader,Shader,shader)
 
         Material& operator=(const ::Material& material) {
@@ -51,6 +45,13 @@ namespace raylib {
 		inline Material& SetTexture(int mapType, ::Texture2D texture) {
 			::SetMaterialTexture(this, mapType, texture);
 			return *this;
+		}
+
+	protected:
+		inline void set(::Material material) {
+			shader = material.shader;
+			maps = material.maps;
+			params = material.params;
 		}
 
 	};

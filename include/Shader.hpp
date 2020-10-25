@@ -27,11 +27,6 @@ namespace raylib {
 			set(GetShaderDefault());
 		}
 
-		inline void set(::Shader shader) {
-			id = shader.id;
-			locs = shader.locs;
-		}
-
 		GETTERSETTER(unsigned int,Id,id)
 		GETTERSETTER(int*,Locs,locs)
 
@@ -74,6 +69,12 @@ namespace raylib {
 
 		inline int GetLocation(const std::string& uniformName) {
 			return ::GetShaderLocation(*this, uniformName.c_str());
+		}
+
+	protected:
+		inline void set(::Shader shader) {
+			id = shader.id;
+			locs = shader.locs;
 		}
 	};
 }

@@ -44,22 +44,6 @@ namespace raylib {
 			UnloadFont(*this);
 		}
 
-		void set(const ::Font font) {
-			baseSize = font.baseSize;
-			charsCount = font.charsCount;
-			texture = font.texture;
-			recs = font.recs;
-			chars = font.chars;
-		}
-
-		void set(const Font& font) {
-			baseSize = font.baseSize;
-			charsCount = font.charsCount;
-			texture = font.texture;
-			recs = font.recs;
-			chars = font.chars;
-		}
-
 		GETTERSETTER(int,BaseSize,baseSize)
 		GETTERSETTER(int,CharsCount,charsCount)
 		GETTERSETTER(Texture2D,Texture,texture)
@@ -95,6 +79,23 @@ namespace raylib {
 
 		inline int GetGlyphIndex(int character) {
 			return ::GetGlyphIndex(*this, character);
+		}
+
+	protected:
+		void set(const ::Font font) {
+			baseSize = font.baseSize;
+			charsCount = font.charsCount;
+			texture = font.texture;
+			recs = font.recs;
+			chars = font.chars;
+		}
+
+		void set(const Font& font) {
+			baseSize = font.baseSize;
+			charsCount = font.charsCount;
+			texture = font.texture;
+			recs = font.recs;
+			chars = font.chars;
 		}
 	};
 }

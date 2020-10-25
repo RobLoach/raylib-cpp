@@ -22,20 +22,6 @@ namespace raylib {
 			zoom = zoomValue;
 		};
 
-		inline void set(const ::Camera2D& camera) {
-			offset = camera.offset;
-			target = camera.target;
-			rotation = camera.rotation;
-			zoom = camera.zoom;
-		}
-
-		inline void set(const Camera2D& camera) {
-			offset = camera.offset;
-			target = camera.target;
-			rotation = camera.rotation;
-			zoom = camera.zoom;
-		}
-
 		inline Camera2D& BeginMode2D() {
 			::BeginMode2D(*this);
 			return *this;
@@ -68,6 +54,20 @@ namespace raylib {
 		}
 		inline Vector2 GetScreenToWorld2D(Vector2 position) {
 			return ::GetScreenToWorld2D(position, *this);
+		}
+	protected:
+		inline void set(const ::Camera2D& camera) {
+			offset = camera.offset;
+			target = camera.target;
+			rotation = camera.rotation;
+			zoom = camera.zoom;
+		}
+
+		inline void set(const Camera2D& camera) {
+			offset = camera.offset;
+			target = camera.target;
+			rotation = camera.rotation;
+			zoom = camera.zoom;
 		}
 	};
 }
