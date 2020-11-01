@@ -85,15 +85,19 @@ class Window {
     inline static bool IsReady() {
         return ::IsWindowReady();
     }
+
     inline bool IsMinimized() const {
         return ::IsWindowMinimized();
     }
+
     inline bool IsFocused() const {
         return ::IsWindowFocused();
     }
+
     inline bool IsResized() const {
         return ::IsWindowResized();
     }
+
     inline bool IsHidden() const {
         return ::IsWindowHidden();
     }
@@ -101,42 +105,52 @@ class Window {
     inline bool IsFullscreen() const {
         return ::IsWindowFullscreen();
     }
+
     inline Window& ToggleFullscreen() {
         ::ToggleFullscreen();
         return *this;
     }
+
     inline Window& Unhide() {
         ::UnhideWindow();
         return *this;
     }
+
     inline Window& Hide() {
         ::HideWindow();
         return *this;
     }
+
     inline Window& SetIcon(Image image) {
         ::SetWindowIcon(image);
         return *this;
     }
+
     inline Window& SetTitle(const std::string& title) {
         ::SetWindowTitle(title.c_str());
         return *this;
     }
+
     inline Window& SetPosition(int x, int y) {
         ::SetWindowPosition(x, y);
         return *this;
     }
+
     inline Window& SetMonitor(int monitor) {
         ::SetWindowMonitor(monitor);
         return *this;
     }
+
     inline Window& SetMinSize(int width, int height) {
         ::SetWindowMinSize(width, height);
         return *this;
     }
+
     inline Window& SetSize(int width, int height) {
         ::SetWindowSize(width, height);
         return *this;
     }
+
     inline void* GetHandle() const {
         return ::GetWindowHandle();
     }

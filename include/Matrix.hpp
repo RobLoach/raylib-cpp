@@ -135,57 +135,74 @@ class Matrix : public ::Matrix {
     }
 
 #ifndef RAYLIB_CPP_NO_MATH
-    float Trace() {
+    inline float Trace() {
         return ::MatrixTrace(*this);
     }
-    Matrix Transpose() {
+
+    inline Matrix Transpose() {
         return ::MatrixTranspose(*this);
     }
-    Matrix Invert() {
+
+    inline Matrix Invert() {
         return ::MatrixInvert(*this);
     }
-    Matrix Normalize() {
+
+    inline Matrix Normalize() {
         return ::MatrixNormalize(*this);
     }
+
     static Matrix Identity() {
         return ::MatrixIdentity();
     }
+
     Matrix Add(::Matrix right) {
         return ::MatrixAdd(*this, right);
     }
+
     Matrix operator+(const Matrix& matrix) {
             return ::MatrixAdd(*this, matrix);
     }
+
     Matrix Subtract(::Matrix right) {
         return ::MatrixSubtract(*this, right);
     }
+
     Matrix operator-(const Matrix& matrix) {
         return ::MatrixSubtract(*this, matrix);
     }
+
     static Matrix Translate(float x, float y, float z) {
         return ::MatrixTranslate(x, y, z);
     }
+
     static Matrix Rotate(Vector3 axis, float angle) {
         return ::MatrixRotate(axis, angle);
     }
+
     static Matrix RotateXYZ(Vector3 angle) {
         return ::MatrixRotateXYZ(angle);
     }
+
     static Matrix RotateX(float angle) {
         return ::MatrixRotateX(angle);
     }
+
     static Matrix RotateY(float angle) {
         return ::MatrixRotateY(angle);
     }
+
     static Matrix RotateZ(float angle) {
         return ::MatrixRotateZ(angle);
     }
+
     static Matrix Scale(float x, float y, float z) {
         return ::MatrixScale(x, y, z);
     }
+
     Matrix Multiply(Matrix right) {
         return ::MatrixMultiply(*this, right);
     }
+
     Matrix operator*(const Matrix& matrix) {
         return ::MatrixMultiply(*this, matrix);
     }
@@ -211,6 +228,7 @@ class Matrix : public ::Matrix {
     inline float16 ToFloatV() {
         return ::MatrixToFloatV(*this);
     }
+
     operator float16() {
         return ToFloatV();
     }

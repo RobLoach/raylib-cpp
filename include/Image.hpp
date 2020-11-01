@@ -195,6 +195,7 @@ class Image : public ::Image {
         ::ImageResize(this, newWidth, newHeight);
         return *this;
     }
+
     inline Image& ResizeNN(int newWidth, int newHeight) {
         ::ImageResizeNN(this, newWidth, newHeight);
         return *this;
@@ -303,22 +304,27 @@ class Image : public ::Image {
         ::ImageDrawCircleV(this, center, radius, color);
         return *this;
     }
+
     inline Image& DrawRectangle(int posX, int posY, int width, int height, ::Color color = WHITE) {
         ::ImageDrawRectangle(this, posX, posY, width, height, color);
         return *this;
     }
+
     inline Image& DrawRectangle(Vector2 position, Vector2 size, ::Color color = WHITE) {
         ::ImageDrawRectangleV(this, position, size, color);
         return *this;
     }
+
     inline Image& DrawRectangle(::Rectangle rec, ::Color color = WHITE) {
         ::ImageDrawRectangleRec(this, rec, color);
         return *this;
     }
+
     inline Image& DrawRectangleLines(::Rectangle rec, int thick, ::Color color) {
         ::ImageDrawRectangleLines(this, rec, thick, color);
         return *this;
     }
+
     inline Image& Draw(const ::Image& src, ::Rectangle srcRec, ::Rectangle dstRec,
             ::Color tint = WHITE) {
         ::ImageDraw(this, src, srcRec, dstRec, tint);
@@ -340,6 +346,7 @@ class Image : public ::Image {
         ::ImageDrawText(this, text.c_str(), x, y, fontSize, color);
         return *this;
     }
+
     inline Image& DrawText(::Font font, const std::string& text, ::Vector2 position,
             float fontSize, float spacing, ::Color tint = WHITE) {
         ::ImageDrawTextEx(this, font, text.c_str(), position, fontSize, spacing, tint);
@@ -353,6 +360,7 @@ class Image : public ::Image {
     inline ::Vector4* GetImageDataNormalized() {
         return ::GetImageDataNormalized(*this);
     }
+
     inline operator Texture2D() {
         return ::LoadTextureFromImage(*this);
     }

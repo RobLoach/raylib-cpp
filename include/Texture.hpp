@@ -96,6 +96,7 @@ class Texture : public ::Texture {
     inline Image GetTextureData() const {
         return ::GetTextureData(*this);
     }
+
     inline operator raylib::Image() {
         return GetTextureData();
     }
@@ -124,6 +125,7 @@ class Texture : public ::Texture {
         ::DrawTextureV(*this, position, tint);
         return *this;
     }
+
     inline Texture& Draw(::Vector2 position, float rotation, float scale = 1.0f,
             ::Color tint = WHITE) {
         ::DrawTextureEx(*this, position, rotation, scale, tint);

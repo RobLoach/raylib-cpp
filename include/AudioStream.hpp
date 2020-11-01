@@ -144,9 +144,8 @@ class AudioStream : public ::AudioStream {
     /**
      * Default size for new audio streams
      */
-    inline AudioStream& SetBufferSizeDefault(int size) {
+    inline static void SetBufferSizeDefault(int size) {
         ::SetAudioStreamBufferSizeDefault(size);
-        return *this;
     }
 
  protected:

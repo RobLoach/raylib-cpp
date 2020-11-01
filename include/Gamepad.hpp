@@ -72,6 +72,7 @@ class Gamepad {
     inline bool IsButtonReleased(int button) const {
         return ::IsGamepadButtonReleased(number, button);
     }
+
     inline bool IsButtonUp(int button) const {
         return ::IsGamepadButtonUp(number, button);
     }

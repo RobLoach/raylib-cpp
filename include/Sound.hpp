@@ -80,6 +80,7 @@ class Sound : public ::Sound {
         ::StopSound(*this);
         return *this;
     }
+
     inline Sound& Pause() {
         ::PauseSound(*this);
         return *this;
@@ -102,10 +103,12 @@ class Sound : public ::Sound {
     inline bool IsPlaying() const {
         return ::IsSoundPlaying(*this);
     }
+
     inline Sound& SetVolume(float volume) {
         ::SetSoundVolume(*this, volume);
         return *this;
     }
+
     inline Sound& SetPitch(float pitch) {
         ::SetSoundPitch(*this, pitch);
         return *this;

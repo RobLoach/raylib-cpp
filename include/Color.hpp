@@ -145,18 +145,22 @@ class Color : public ::Color {
         ::DrawLine(startPosX, startPosY, endPosX, endPosY, *this);
         return *this;
     }
+
     inline Color& DrawLine(::Vector2 startPos, ::Vector2 endPos) {
         ::DrawLineV(startPos, endPos, *this);
         return *this;
     }
+
     inline Color& DrawLine(::Vector2 startPos, ::Vector2 endPos, float thick) {
         ::DrawLineEx(startPos, endPos, thick, *this);
         return *this;
     }
+
     inline Color& DrawLineBezier(::Vector2 startPos, Vector2 endPos, float thick) {
         ::DrawLineBezier(startPos, endPos, thick, *this);
         return *this;
     }
+
     inline Color& DrawLineStrip(::Vector2 *points, int numPoints) {
         ::DrawLineStrip(points, numPoints, *this);
         return *this;
@@ -166,6 +170,7 @@ class Color : public ::Color {
         ::DrawText(text.c_str(), posX, posY, fontSize, *this);
         return *this;
     }
+
     inline Color& DrawText(::Font font, const std::string& text, ::Vector2 position,
             float fontSize, float spacing) {
         ::DrawTextEx(font, text.c_str(), position, fontSize, spacing, *this);

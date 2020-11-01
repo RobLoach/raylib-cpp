@@ -67,9 +67,11 @@ class Camera2D : public ::Camera2D {
     inline Matrix GetMatrix() const {
         return ::GetCameraMatrix2D(*this);
     }
+
     inline Vector2 GetWorldToScreen2D(Vector2 position) const {
         return ::GetWorldToScreen2D(position, *this);
     }
+
     inline Vector2 GetScreenToWorld2D(Vector2 position) const {
         return ::GetScreenToWorld2D(position, *this);
     }

@@ -34,6 +34,7 @@ class VrSimulator {
     VrSimulator() {
         Init();
     }
+
     VrSimulator(::VrDeviceInfo info, ::Shader distortion) {
         Init();
         Set(info, distortion);
@@ -55,18 +56,22 @@ class VrSimulator {
         ::UpdateVrTracking(camera);
         return *this;
     }
+
     inline VrSimulator& Set(::VrDeviceInfo info, ::Shader distortion) {
         ::SetVrConfiguration(info, distortion);
         return *this;
     }
+
     inline VrSimulator& Toggle() {
         ::ToggleVrMode();
         return *this;
     }
+
     inline VrSimulator& Begin() {
         ::BeginVrDrawing();
         return *this;
     }
+
     inline VrSimulator& End() {
         ::EndVrDrawing();
         return *this;

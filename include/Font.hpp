@@ -84,11 +84,13 @@ class Font : public ::Font {
         ::DrawTextEx(*this, text.c_str(), position,  fontSize,  spacing,  tint);
         return *this;
     }
+
     inline Font& DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing,
             bool wordWrap, ::Color tint = WHITE) {
         ::DrawTextRec(*this, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint);
         return *this;
     }
+
     inline Font& DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing,
             bool wordWrap, Color tint, int selectStart, int selectLength, ::Color selectText,
             Color selectBack) {

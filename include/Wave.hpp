@@ -106,7 +106,7 @@ class Wave : public ::Wave {
         return ::LoadSoundFromWave(*this);
     }
 
-    inline float* GetWaveData() {
+    inline float* GetData() {
         return ::GetWaveData(*this);
     }
 
