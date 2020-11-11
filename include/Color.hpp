@@ -66,33 +66,6 @@ class Color : public ::Color {
         set(::ColorFromNormalized(normalized));
     }
 
-    static Color LightGray;
-    static Color Gray;
-    static Color DarkGray;
-    static Color Yellow;
-    static Color Gold;
-    static Color Orange;
-    static Color Pink;
-    static Color Red;
-    static Color Maroon;
-    static Color Green;
-    static Color Lime;
-    static Color DarkGreen;
-    static Color SkyBlue;
-    static Color Blue;
-    static Color DarkBlue;
-    static Color Purple;
-    static Color Violet;
-    static Color DarkPurple;
-    static Color Beige;
-    static Color Brown;
-    static Color DarkBrown;
-    static Color White;
-    static Color Black;
-    static Color Blank;
-    static Color Magenta;
-    static Color RayWhite;
-
     int ToInt() const {
         return ::ColorToInt(*this);
     }
@@ -229,32 +202,6 @@ class Color : public ::Color {
     }
 };
 
-inline Color Color::LightGray = ::LIGHTGRAY;
-inline Color Color::Gray = ::GRAY;
-inline Color Color::DarkGray = ::DARKGRAY;
-inline Color Color::Yellow = ::YELLOW;
-inline Color Color::Gold = ::GOLD;
-inline Color Color::Orange = ::ORANGE;
-inline Color Color::Pink = ::PINK;
-inline Color Color::Red = ::RED;
-inline Color Color::Maroon = ::MAROON;
-inline Color Color::Green = ::GREEN;
-inline Color Color::Lime = ::LIME;
-inline Color Color::DarkGreen = ::DARKGREEN;
-inline Color Color::SkyBlue = ::SKYBLUE;
-inline Color Color::Blue = ::BLUE;
-inline Color Color::DarkBlue = ::DARKBLUE;
-inline Color Color::Purple = ::PURPLE;
-inline Color Color::Violet = ::VIOLET;
-inline Color Color::DarkPurple = ::DARKPURPLE;
-inline Color Color::Beige = ::BEIGE;
-inline Color Color::Brown = ::BROWN;
-inline Color Color::DarkBrown = ::DARKBROWN;
-inline Color Color::White = ::WHITE;
-inline Color Color::Black = ::BLACK;
-inline Color Color::Blank = ::BLANK;
-inline Color Color::Magenta = ::MAGENTA;
-inline Color Color::RayWhite = ::RAYWHITE;
 }  // namespace raylib
 
 #endif  // RAYLIB_CPP_INCLUDE_COLOR_HPP_

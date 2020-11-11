@@ -22,7 +22,7 @@ int main() {
 	{
 		BeginDrawing();
 
-		raylib::Color::RayWhite.ClearBackground();
+		ClearBackground(RAYWHITE);
 
 		DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 
@@ -69,10 +69,7 @@ DrawPixelV(position, PURPLE);
 
 // raylib-cpp
 raylib::Vector2 position(50, 50);
-position.DrawPixel(raylib::Color::Purple);
-
-// ... or
-raylib::Color::Purple.DrawPixel(position);
+position.DrawPixel(PURPLE);
 ```
 
 ### Method Names
@@ -133,7 +130,7 @@ Vector2 position = {50.0f, 50.0f};
 DrawPixelV(position, color); // Extra V in method name.
 
 // raylib-cpp
-raylib::Color color = raylib::Color::Gray;
+raylib::Color color = GRAY;
 color.DrawPixel(50, 50);
 Vector2 position(50.0f, 50.0f);
 color.DrawPixel(position); // No more V in method name.

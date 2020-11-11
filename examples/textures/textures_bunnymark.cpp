@@ -91,7 +91,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-            raylib::Color::RayWhite.ClearBackground();
+            ClearBackground(RAYWHITE);
 
             for (Bunny& bunny: bunnies) {
                 // NOTE: When internal batch buffer limit is reached (MAX_BATCH_ELEMENTS),
