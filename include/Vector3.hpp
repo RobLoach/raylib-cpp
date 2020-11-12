@@ -25,21 +25,13 @@
 #ifndef RAYLIB_CPP_INCLUDE_VECTOR3_HPP_
 #define RAYLIB_CPP_INCLUDE_VECTOR3_HPP_
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-#include "raylib.h" // NOLINT
-#ifndef RAYLIB_CPP_NO_MATH
-#include "raymath.h" // NOLINT
-#endif
-#ifdef __cplusplus
-}
-#endif
-
-#include "./raylib-cpp-utils.hpp"
 #ifndef RAYLIB_CPP_NO_MATH
 #include <cmath>
 #endif
+
+#include "./raylib.hpp"
+#include "./raymath.hpp"
+#include "./raylib-cpp-utils.hpp"
 
 namespace raylib {
 class Vector3 : public ::Vector3 {

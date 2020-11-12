@@ -140,6 +140,7 @@ class Image : public ::Image {
         ::ExportImage(*this, fileName.c_str());
         return *this;
     }
+
     inline Image& ExportAsCode(const std::string& fileName) {
         ::ExportImageAsCode(*this, fileName.c_str());
         return *this;
@@ -368,8 +369,12 @@ class Image : public ::Image {
         return ::GetImageDataNormalized(*this);
     }
 
-    inline operator Texture2D() {
+    ::Texture2D LoadTexture() {
         return ::LoadTextureFromImage(*this);
+    }
+
+    inline operator ::Texture2D() {
+        return LoadTexture();
     }
 
  protected:
