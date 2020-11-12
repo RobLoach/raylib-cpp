@@ -47,11 +47,11 @@ class Vector3 : public ::Vector3 {
     Vector3(::Vector3 vec) {
         set(vec);
     }
-    Vector3(float X = 0, float Y = 0, float Z = 0) {
-        x = X;
-        y = Y;
-        z = Z;
-    }
+
+    Vector3(float x, float y, float z) : ::Vector3{x, y, z} {};
+    Vector3(float x, float y) : ::Vector3{x, y, 0} {};
+    Vector3(float x) : ::Vector3{x, 0, 0} {};
+    Vector3() {};
 
     Vector3(::Color color) {
         set(ColorToHSV(color));

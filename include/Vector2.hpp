@@ -49,10 +49,9 @@ class Vector2 : public ::Vector2 {
         set(vec);
     }
 
-    Vector2(float X = 0, float Y = 0) {
-        x = X;
-        y = Y;
-    }
+    Vector2(float x, float y) : ::Vector2{x, y} {};
+    Vector2(float x) : ::Vector2{x, 0} {};
+    Vector2() : ::Vector2{0, 0} {};
 
     GETTERSETTER(float, X, x)
     GETTERSETTER(float, Y, y)
@@ -255,6 +254,7 @@ class Vector2 : public ::Vector2 {
         y = vec.y;
     }
 };
+
 }  // namespace raylib
 
 #endif  // RAYLIB_CPP_INCLUDE_VECTOR2_HPP_

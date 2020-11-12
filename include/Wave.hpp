@@ -94,6 +94,7 @@ class Wave : public ::Wave {
         ::ExportWave(*this, fileName.c_str());
         return *this;
     }
+
     inline Wave& ExportAsCode(const std::string& fileName) {
         ::ExportWaveAsCode(*this, fileName.c_str());
         return *this;
