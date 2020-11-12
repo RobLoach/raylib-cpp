@@ -26,8 +26,6 @@ TEST_CASE("raylib_test", "[raylib_test]" ) {
 
         c = RAYWHITE;
         REQUIRE(c.r == RAYWHITE.r);
-
-        REQUIRE(raylib::Color::LightGray.r == LIGHTGRAY.r);
     }
 
     SECTION("RayMath") {

@@ -48,7 +48,7 @@ int main() {
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-            raylib::Color::RayWhite.ClearBackground();
+            ClearBackground(RAYWHITE);
 
             camera.BeginMode3D();
 

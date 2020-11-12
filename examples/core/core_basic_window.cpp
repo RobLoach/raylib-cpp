@@ -44,7 +44,7 @@ int main() {
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-        raylib::Color::RayWhite.ClearBackground();
+        ClearBackground(RAYWHITE);
 
         textColor.DrawText("Congrats! You created your first window!", 190, 200, 20);
 
