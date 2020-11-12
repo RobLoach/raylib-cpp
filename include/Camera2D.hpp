@@ -50,8 +50,8 @@ class Camera2D : public ::Camera2D {
         return *this;
     }
 
-    GETTERSETTER(Vector2, Offset, offset)
-    GETTERSETTER(Vector2, Target, target)
+    GETTERSETTER(::Vector2, Offset, offset)
+    GETTERSETTER(::Vector2, Target, target)
     GETTERSETTER(float, Rotation, rotation)
     GETTERSETTER(float, Zoom, zoom)
 

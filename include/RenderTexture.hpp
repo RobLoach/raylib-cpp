@@ -44,8 +44,8 @@ class RenderTexture : public ::RenderTexture {
     }
 
     GETTERSETTER(unsigned int, Id, id)
-    GETTERSETTER(Texture2D, Texture, texture)
-    GETTERSETTER(Texture2D, Depth, depth)
+    GETTERSETTER(::Texture2D, Texture, texture)
+    GETTERSETTER(::Texture2D, Depth, depth)
 
     RenderTexture& operator=(const ::RenderTexture& texture) {
         set(texture);

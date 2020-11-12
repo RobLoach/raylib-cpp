@@ -136,16 +136,19 @@ class Texture : public ::Texture {
         ::DrawTextureRec(*this, sourceRec, position, tint);
         return *this;
     }
+
     inline Texture& Draw(::Vector2 tiling, ::Vector2 offset, ::Rectangle quad,
             ::Color tint = WHITE) {
         ::DrawTextureQuad(*this, tiling, offset, quad, tint);
         return *this;
     }
+
     inline Texture& Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin,
             float rotation = 0, ::Color tint = WHITE) {
         ::DrawTexturePro(*this, sourceRec, destRec, origin, rotation, tint);
         return *this;
     }
+
     inline Texture& Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin,
             float rotation = 0, ::Color tint = WHITE) {
         ::DrawTextureNPatch(*this, nPatchInfo, destRec, origin, rotation, tint);

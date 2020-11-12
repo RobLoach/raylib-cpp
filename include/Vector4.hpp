@@ -25,22 +25,14 @@
 #ifndef RAYLIB_CPP_INCLUDE_VECTOR4_HPP_
 #define RAYLIB_CPP_INCLUDE_VECTOR4_HPP_
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-#include "raylib.h" // NOLINT
-#ifndef RAYLIB_CPP_NO_MATH
-#include "raymath.h" // NOLINT
-#endif
-#ifdef __cplusplus
-}
-#endif
-
-#include "./raylib-cpp-utils.hpp"
 #ifndef RAYLIB_CPP_NO_MATH
 #include <cmath>
 #include <utility>
 #endif
+
+#include "./raylib.hpp"
+#include "./raymath.hpp"
+#include "./raylib-cpp-utils.hpp"
 
 namespace raylib {
 class Vector4 : public ::Vector4 {
@@ -168,6 +160,10 @@ class Vector4 : public ::Vector4 {
 
     inline Color ColorFromNormalized() {
         return ::ColorFromNormalized(*this);
+    }
+
+    operator Color() {
+        return ColorFromNormalized();
     }
 
  protected:

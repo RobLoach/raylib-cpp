@@ -53,6 +53,7 @@ class Model : public ::Model {
     GETTERSETTER(::Matrix, Transform, transform)
     GETTERSETTER(int, MeshCount, meshCount)
     GETTERSETTER(int, MaterialCount, materialCount)
+    GETTERSETTER(int, BoneCount, boneCount)
 
     Model& operator=(const ::Model& model) {
         set(model);
@@ -91,11 +92,11 @@ class Model : public ::Model {
         transform = model.transform;
 
         meshCount = model.meshCount;
-        meshes = model.meshes;
-
         materialCount = model.materialCount;
+        meshes = model.meshes;
         materials = model.materials;
         meshMaterial = model.meshMaterial;
+
         boneCount = model.boneCount;
         bones = model.bones;
         bindPose = model.bindPose;

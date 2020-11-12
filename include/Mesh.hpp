@@ -73,6 +73,7 @@ class Mesh : public ::Mesh {
     inline raylib::BoundingBox BoundingBox() {
         return ::MeshBoundingBox(*this);
     }
+
     operator raylib::BoundingBox() {
         return BoundingBox();
     }
@@ -95,6 +96,7 @@ class Mesh : public ::Mesh {
     inline raylib::Model LoadModelFrom() {
         return ::LoadModelFromMesh(*this);
     }
+
     operator raylib::Model() {
         return LoadModelFrom();
     }

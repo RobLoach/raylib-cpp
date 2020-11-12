@@ -65,9 +65,9 @@ class Font : public ::Font {
 
     GETTERSETTER(int, BaseSize, baseSize)
     GETTERSETTER(int, CharsCount, charsCount)
-    GETTERSETTER(Texture2D, Texture, texture)
-    GETTERSETTER(Rectangle*, Recs, recs)
-    GETTERSETTER(CharInfo*, Chars, chars)
+    GETTERSETTER(::Texture2D, Texture, texture)
+    GETTERSETTER(::Rectangle*, Recs, recs)
+    GETTERSETTER(::CharInfo*, Chars, chars)
 
     Font& operator=(const ::Font& font) {
         set(font);

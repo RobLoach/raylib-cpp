@@ -43,7 +43,7 @@ class ModelAnimation : public ::ModelAnimation {
     GETTERSETTER(int, BoneCount, boneCount)
     GETTERSETTER(::BoneInfo*, Bones, bones)
     GETTERSETTER(int, FrameCount, frameCount)
-    GETTERSETTER(Transform**, FramePoses, framePoses)
+    GETTERSETTER(::Transform**, FramePoses, framePoses)
 
     ModelAnimation& operator=(const ::ModelAnimation& model) {
         set(model);

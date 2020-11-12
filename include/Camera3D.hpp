@@ -43,9 +43,9 @@ class Camera3D : public ::Camera3D {
 
     Camera3D() {}
 
-    GETTERSETTER(Vector3, Position, position)
-    GETTERSETTER(Vector3, Target, target)
-    GETTERSETTER(Vector3, Up, up)
+    GETTERSETTER(::Vector3, Position, position)
+    GETTERSETTER(::Vector3, Target, target)
+    GETTERSETTER(::Vector3, Up, up)
     GETTERSETTER(float, Fovy, fovy)
     GETTERSETTER(int, Type, type)
 

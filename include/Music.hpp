@@ -82,24 +82,30 @@ class Music : public ::Music {
         ::PauseMusicStream(*this);
         return *this;
     }
+
     inline Music& Resume() {
         ::ResumeMusicStream(*this);
         return *this;
     }
+
     inline bool IsPlaying() const {
         return ::IsMusicPlaying(*this);
     }
+
     inline Music& SetVolume(float volume) {
         ::SetMusicVolume(*this, volume);
         return *this;
     }
+
     inline Music& SetPitch(float pitch) {
         ::SetMusicPitch(*this, pitch);
         return *this;
     }
+
     inline float GetTimeLength() const {
         return ::GetMusicTimeLength(*this);
     }
+
     inline float GetTimePlayed() const {
         return ::GetMusicTimePlayed(*this);
     }
