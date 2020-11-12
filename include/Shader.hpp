@@ -71,6 +71,7 @@ class Shader : public ::Shader {
     static Shader Load(const std::string& vsFileName, const std::string& fsFileName) {
         return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());
     }
+
     static Shader LoadCode(const std::string& vsCode, const std::string& fsCode) {
         return ::LoadShaderCode(vsCode.c_str(), fsCode.c_str());
     }

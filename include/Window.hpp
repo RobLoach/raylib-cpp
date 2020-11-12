@@ -159,6 +159,7 @@ class Window {
         ::BeginDrawing();
         return *this;
     }
+
     inline Window& EndDrawing() {
         ::EndDrawing();
         return *this;
@@ -197,12 +198,15 @@ class Window {
         ::SetTargetFPS(fps);
         return *this;
     }
+
     inline int GetFPS() const {
         return ::GetFPS();
     }
+
     inline float GetFrameTime() const {
         return ::GetFrameTime();
     }
+
     inline double GetTime() const {
         return ::GetTime();
     }

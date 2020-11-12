@@ -35,6 +35,7 @@ class Rectangle : public ::Rectangle {
     Rectangle(::Rectangle vec) {
         set(vec);
     }
+
     Rectangle(float X = 0, float Y = 0, float Width = 0, float Height = 0) {
         x = X;
         y = Y;

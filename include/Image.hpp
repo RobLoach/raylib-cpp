@@ -46,6 +46,9 @@ class Image : public ::Image {
     Image(const std::string& fileName, int* frames) {
         LoadAnim(fileName, frames);
     }
+    Image(const std::string& fileType, const unsigned char* fileData, int dataSize) {
+        LoadFromMemory(fileType, fileData, dataSize);
+    }
     Image(::Texture2D texture) {
         set(::GetTextureData(texture));
     }
@@ -123,6 +126,10 @@ class Image : public ::Image {
 
     void LoadAnim(const std::string& fileName, int* frames) {
         set(::LoadImageAnim(fileName.c_str(), frames));
+    }
+
+    void LoadFromMemory(const std::string& fileType, const unsigned char *fileData, int dataSize) {
+        set(::LoadImageFromMemory(fileType.c_str(), fileData, dataSize));
     }
 
     inline void Unload() {

@@ -52,6 +52,10 @@ class Wave : public ::Wave {
         set(LoadWave(fileName.c_str()));
     }
 
+    Wave(const std::string& fileType, const unsigned char *fileData, int dataSize) {
+        set(LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
+    }
+
     ~Wave() {
         Unload();
     }

@@ -34,9 +34,11 @@ class BoundingBox : public ::BoundingBox {
     BoundingBox(::BoundingBox box) {
         set(box);
     }
+
     BoundingBox(::Mesh mesh) {
         set(MeshBoundingBox(mesh));
     }
+
     BoundingBox(::Vector3 Min, ::Vector3 Max) {
         min = Min;
         max = Max;

@@ -34,9 +34,11 @@ class RenderTexture : public ::RenderTexture {
     RenderTexture(::RenderTexture renderTexture) {
         set(renderTexture);
     }
+
     RenderTexture(unsigned int Id) {
         id = Id;
     }
+
     RenderTexture(int width, int height) {
         set(LoadRenderTexture(width, height));
     }

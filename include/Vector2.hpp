@@ -48,6 +48,7 @@ class Vector2 : public ::Vector2 {
     Vector2(::Vector2 vec) {
         set(vec);
     }
+
     Vector2(float X = 0, float Y = 0) {
         x = X;
         y = Y;

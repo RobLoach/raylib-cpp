@@ -66,12 +66,7 @@ class Vector3 : public ::Vector3 {
         return *this;
     }
 
-    Vector3& operator=(const Vector3& vector3) {
-        set(vector3);
-        return *this;
-    }
-
-    bool operator==(const Vector3& other) {
+    bool operator==(const ::Vector3& other) {
         return x == other.x
             && y == other.y
             && z == other.z;

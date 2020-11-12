@@ -40,28 +40,34 @@ class Color : public ::Color {
         b = 0;
         a = 255;
     }
+
     Color(::Color color) {
         r = color.r;
         g = color.g;
         b = color.b;
         a = color.a;
     }
+
     Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha = 255) {
         r = red;
         g = green;
         b = blue;
         a = alpha;
     }
+
     Color(::Vector3 hsv) {
         set(::ColorFromHSV(hsv.x, hsv.y, hsv.z));
     }
+
     static Color FromHSV(float hue, float saturation, float value) {
         ::Color color = ::ColorFromHSV(hue, saturation, value);
         return color;
     }
+
     Color(int hexValue) {
         set(::GetColor(hexValue));
     }
+
     Color(Vector4 normalized) {
         set(::ColorFromNormalized(normalized));
     }

@@ -44,6 +44,7 @@ class Camera2D : public ::Camera2D {
         ::BeginMode2D(*this);
         return *this;
     }
+
     inline Camera2D& EndMode2D() {
         ::EndMode2D();
         return *this;
