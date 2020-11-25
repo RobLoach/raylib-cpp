@@ -93,7 +93,7 @@ class Font : public ::Font {
 
     inline Font& DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing,
             bool wordWrap, Color tint, int selectStart, int selectLength, ::Color selectText,
-            Color selectBack) {
+            ::Color selectBack) {
         ::DrawTextRecEx(*this, text.c_str(), rec, fontSize, spacing, wordWrap, tint,
             selectStart,  selectLength, selectText, selectBack);
         return *this;
