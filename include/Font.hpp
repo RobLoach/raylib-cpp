@@ -34,7 +34,7 @@ namespace raylib {
 class Font : public ::Font {
  public:
     Font() {
-        set(::GetFontDefault());
+        set(raylibc::GetFontDefault());
     }
 
     Font(const std::string& fileName) {

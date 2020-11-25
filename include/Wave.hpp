@@ -31,9 +31,9 @@
 #include "./raylib-cpp-utils.hpp"
 
 namespace raylib {
-class Wave : public ::Wave {
+class Wave : public raylibc::Wave {
  public:
-    Wave(::Wave wave) {
+    Wave(raylibc::Wave wave) {
         set(wave);
     }
 
@@ -49,11 +49,11 @@ class Wave : public ::Wave {
     }
 
     Wave(const std::string& fileName) {
-        set(LoadWave(fileName.c_str()));
+        set(raylibc::LoadWave(fileName.c_str()));
     }
 
     Wave(const std::string& fileType, const unsigned char *fileData, int dataSize) {
-        set(LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
+        set(raylibc::LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
     }
 
     ~Wave() {
@@ -66,7 +66,7 @@ class Wave : public ::Wave {
     GETTERSETTER(unsigned int, Channels, channels)
     GETTERSETTER(void *, Data, data)
 
-    Wave& operator=(const ::Wave& wave) {
+    Wave& operator=(const raylibc::Wave& wave) {
         set(wave);
         return *this;
     }
@@ -77,38 +77,38 @@ class Wave : public ::Wave {
     }
 
     inline Wave& Format(int SampleRate = 0, int SampleSize = 0, int Channels = 2) {
-        ::WaveFormat(this, SampleRate, SampleSize, Channels);
+        raylibc::WaveFormat(this, SampleRate, SampleSize, Channels);
         return *this;
     }
 
     inline Wave Copy() {
-        return ::WaveCopy(*this);
+        return raylibc::WaveCopy(*this);
     }
 
     inline Wave& Crop(int initSample, int finalSample) {
-        ::WaveCrop(this, initSample, finalSample);
+        raylibc::WaveCrop(this, initSample, finalSample);
         return *this;
     }
 
     inline Wave& Export(const std::string& fileName) {
-        ::ExportWave(*this, fileName.c_str());
+        raylibc::ExportWave(*this, fileName.c_str());
         return *this;
     }
 
     inline Wave& ExportAsCode(const std::string& fileName) {
-        ::ExportWaveAsCode(*this, fileName.c_str());
+        raylibc::ExportWaveAsCode(*this, fileName.c_str());
         return *this;
     }
 
     void Unload() {
         if (data != NULL) {
-            ::UnloadWave(*this);
+            raylibc::UnloadWave(*this);
             data = NULL;
         }
     }
 
     inline Sound LoadSound() {
-        return ::LoadSoundFromWave(*this);
+        return raylibc::LoadSoundFromWave(*this);
     }
 
     inline operator Sound() {
@@ -116,11 +116,11 @@ class Wave : public ::Wave {
     }
 
     inline float* GetData() {
-        return ::GetWaveData(*this);
+        return raylibc::GetWaveData(*this);
     }
 
  protected:
-    inline void set(::Wave wave) {
+    inline void set(raylibc::Wave wave) {
         sampleCount = wave.sampleCount;
         sampleRate = wave.sampleRate;
         sampleSize = wave.sampleSize;

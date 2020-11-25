@@ -25,6 +25,7 @@
 #ifndef RAYLIB_CPP_INCLUDE_RAYMATH_HPP_
 #define RAYLIB_CPP_INCLUDE_RAYMATH_HPP_
 
+namespace raylibc {
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -34,5 +35,6 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+}
 
 #endif  // RAYLIB_CPP_INCLUDE_RAYMATH_HPP_

@@ -35,7 +35,7 @@ class VrSimulator {
         Init();
     }
 
-    VrSimulator(::VrDeviceInfo info, ::Shader distortion) {
+    VrSimulator(raylibc::VrDeviceInfo info, raylibc::Shader distortion) {
         Init();
         Set(info, distortion);
     }
@@ -49,35 +49,35 @@ class VrSimulator {
     }
 
     inline bool IsReady() const {
-        return ::IsVrSimulatorReady();
+        return raylibc::IsVrSimulatorReady();
     }
 
     inline VrSimulator& Update(Camera *camera) {
-        ::UpdateVrTracking(camera);
+        raylibc::UpdateVrTracking(camera);
         return *this;
     }
 
-    inline VrSimulator& Set(::VrDeviceInfo info, ::Shader distortion) {
-        ::SetVrConfiguration(info, distortion);
+    inline VrSimulator& Set(raylibc::VrDeviceInfo info, raylibc::Shader distortion) {
+        raylibc::SetVrConfiguration(info, distortion);
         return *this;
     }
 
     inline VrSimulator& Toggle() {
-        ::ToggleVrMode();
+        raylibc::ToggleVrMode();
         return *this;
     }
 
     inline VrSimulator& Begin() {
-        ::BeginVrDrawing();
+        raylibc::BeginVrDrawing();
         return *this;
     }
 
     inline VrSimulator& End() {
-        ::EndVrDrawing();
+        raylibc::EndVrDrawing();
         return *this;
     }
     inline void Close() {
-        ::CloseVrSimulator();
+        raylibc::CloseVrSimulator();
     }
 };
 }  // namespace raylib
