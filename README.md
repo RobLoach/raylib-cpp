@@ -186,6 +186,10 @@ raylib::Vector2 direction(50, 50);
 raylib::Vector2 newDirection = direction.Rotate(30);
 ```
 
+## Sample Applications
+
+- (Ian Pan's Raylib Games](https://github.com/ianpan870102/raylib-practices)
+
 ## Getting Started
 
 *raylib-cpp* is a header-only library. This means in order to use it, you must link your project to [raylib](https://www.raylib.com/), and then include [`include/raylib-cpp.hpp`](raylib-cpp/include/raylib-cpp.hpp).
