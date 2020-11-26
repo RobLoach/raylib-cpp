@@ -88,7 +88,7 @@ class Texture : public ::Texture {
         return *this;
     }
 
-    inline Texture& UpdateRec(Rectangle rec, const void *pixels) {
+    inline Texture& UpdateRec(::Rectangle rec, const void *pixels) {
         UpdateTextureRec(*this, rec, pixels);
         return *this;
     }

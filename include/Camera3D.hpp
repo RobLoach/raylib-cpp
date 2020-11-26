@@ -117,7 +117,7 @@ class Camera3D : public ::Camera3D {
         return *this;
     }
 
-    inline Camera3D& DrawBillboard(Texture2D texture, Rectangle sourceRec, Vector3 center,
+    inline Camera3D& DrawBillboard(::Texture2D texture, ::Rectangle sourceRec, ::Vector3 center,
             float size, ::Color tint = WHITE) {
         ::DrawBillboardRec(*this, texture, sourceRec, center, size, tint);
         return *this;

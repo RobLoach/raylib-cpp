@@ -167,17 +167,17 @@ class Color : public ::Color {
         return *this;
     }
 
-    inline Color& DrawRectangle(Vector2 position, Vector2 size) {
+    inline Color& DrawRectangle(::Vector2 position, ::Vector2 size) {
         ::DrawRectangleV(position, size, *this);
         return *this;
     }
 
-    inline Color& DrawRectangle(Rectangle rec) {
+    inline Color& DrawRectangle(::Rectangle rec) {
         ::DrawRectangleRec(rec, *this);
         return *this;
     }
 
-    inline Color& DrawRectangle(Rectangle rec, Vector2 origin, float rotation) {
+    inline Color& DrawRectangle(::Rectangle rec, ::Vector2 origin, float rotation) {
         ::DrawRectanglePro(rec, origin, rotation, *this);
         return *this;
     }
@@ -187,7 +187,7 @@ class Color : public ::Color {
         return *this;
     }
 
-    inline Color& DrawRectangleLines(Rectangle rec, int lineThick) {
+    inline Color& DrawRectangleLines(::Rectangle rec, int lineThick) {
         ::DrawRectangleLinesEx(rec, lineThick, *this);
         return *this;
     }
