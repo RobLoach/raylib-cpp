@@ -188,7 +188,7 @@ raylib::Vector2 newDirection = direction.Rotate(30);
 
 ## Sample Applications
 
-- (Ian Pan's Raylib Games](https://github.com/ianpan870102/raylib-practices)
+- [Ian Pan's Raylib Games](https://github.com/ianpan870102/raylib-practices)
 
 ## Getting Started
 
