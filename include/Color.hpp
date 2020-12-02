@@ -43,7 +43,11 @@ class Color : public ::Color {
 
     Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) : ::Color{red, green, blue, alpha} {};
     Color(unsigned char red, unsigned char green, unsigned char blue) : ::Color{red, green, blue, 255} {};
-    Color() {};
+
+    /**
+     * Black.
+     */
+    Color() : ::Color{0, 0, 0, 255} {};
 
     Color(::Vector3 hsv) {
         set(::ColorFromHSV(hsv.x, hsv.y, hsv.z));
