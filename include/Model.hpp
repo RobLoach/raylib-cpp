@@ -65,24 +65,46 @@ class Model : public ::Model {
         return *this;
     }
 
+    /**
+     * Unload model (including meshes) from memory (RAM and/or VRAM)
+     */
     inline void Unload() {
         ::UnloadModel(*this);
     }
 
+    /**
+     * Unload model (but not meshes) from memory (RAM and/or VRAM)
+     */
+    inline void UnloadKeepMeshes() {
+        ::UnloadModelKeepMeshes(*this);
+    }
+
+    /**
+     * Set material for a mesh
+     */
     inline Model& SetMeshMaterial(int meshId, int materialId) {
         ::SetModelMeshMaterial(this, meshId, materialId);
         return *this;
     }
 
+    /**
+     * Get collision info between ray and model
+     */
     inline RayHitInfo GetCollision(::Ray ray) const {
         return ::GetCollisionRayModel(ray, *this);
     }
 
+    /**
+     * Update model animation pose
+     */
     inline Model& UpdateModelAnimation(::ModelAnimation anim, int frame) {
         ::UpdateModelAnimation(*this, anim, frame);
         return *this;
     }
 
+    /**
+     * Check model animation skeleton match
+     */
     inline bool IsModelAnimationValid(::ModelAnimation anim) const {
         return ::IsModelAnimationValid(*this, anim);
     }

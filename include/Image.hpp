@@ -365,10 +365,6 @@ class Image : public ::Image {
         return ::GetImageData(*this);
     }
 
-    inline ::Vector4* GetImageDataNormalized() {
-        return ::GetImageDataNormalized(*this);
-    }
-
     ::Texture2D LoadTexture() {
         return ::LoadTextureFromImage(*this);
     }

@@ -67,50 +67,83 @@ class Texture : public ::Texture {
         return *this;
     }
 
+    /**
+     * Load texture from image data
+     */
     void LoadFromImage(const ::Image& image) {
         set(::LoadTextureFromImage(image));
     }
 
+    /**
+     * Load cubemap from image, multiple image cubemap layouts supported
+     */
     void LoadTextureCubemap(const ::Image& image, int layoutType) {
         set(::LoadTextureCubemap(image, layoutType));
     }
 
+    /**
+     * Load texture from file into GPU memory (VRAM)
+     */
     void Load(const std::string& fileName) {
         set(::LoadTexture(fileName.c_str()));
     }
 
+    /**
+     * Unload texture from GPU memory (VRAM)
+     */
     inline void Unload() {
         ::UnloadTexture(*this);
     }
 
+    /**
+     * Update GPU texture with new data
+     */
     inline Texture& Update(const void *pixels) {
         ::UpdateTexture(*this, pixels);
         return *this;
     }
 
+    /**
+     * Update GPU texture rectangle with new data
+     */
     inline Texture& UpdateRec(::Rectangle rec, const void *pixels) {
         UpdateTextureRec(*this, rec, pixels);
         return *this;
     }
 
+    /**
+     * Get pixel data from GPU texture and return an Image
+     */
     inline Image GetTextureData() const {
         return ::GetTextureData(*this);
     }
 
+    /**
+     * Get pixel data from GPU texture and return an Image
+     */
     inline operator raylib::Image() {
         return GetTextureData();
     }
 
+    /**
+     * Generate GPU mipmaps for a texture
+     */
     inline Texture& GenMipmaps() {
         ::GenTextureMipmaps(this);
         return *this;
     }
 
+    /**
+     * Set texture scaling filter mode
+     */
     inline Texture& SetFilter(int filterMode) {
         ::SetTextureFilter(*this, filterMode);
         return *this;
     }
 
+    /**
+     * Set texture wrapping mode
+     */
     inline Texture& SetWrap(int wrapMode) {
         ::SetTextureWrap(*this, wrapMode);
         return *this;
@@ -161,7 +194,7 @@ class Texture : public ::Texture {
         return *this;
     }
 
-    inline Texture& DrawTiled(Rectangle sourceRec, Rectangle destRec, Vector2 origin,
+    inline Texture& DrawTiled(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin,
             float rotation, float scale, Color tint = WHITE) {
         ::DrawTextureTiled(*this, sourceRec, destRec, origin, rotation, scale, tint);
         return *this;

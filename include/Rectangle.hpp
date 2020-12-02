@@ -36,12 +36,11 @@ class Rectangle : public ::Rectangle {
         set(vec);
     }
 
-    Rectangle(float X = 0, float Y = 0, float Width = 0, float Height = 0) {
-        x = X;
-        y = Y;
-        width = Width;
-        height = Height;
-    }
+    Rectangle(float x, float y, float width, float height) : ::Rectangle{x, y, width, height} {};
+    Rectangle(float x, float y, float width) : ::Rectangle{x, y, width, height} {};
+    Rectangle(float x, float y) : ::Rectangle{x, y, 0, 0} {};
+    Rectangle(float x) : ::Rectangle{x, 0, 0, 0} {};
+    Rectangle() {};
 
     GETTERSETTER(float, X, x)
     GETTERSETTER(float, Y, y)
