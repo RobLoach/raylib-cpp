@@ -34,13 +34,6 @@
 namespace raylib {
 class Color : public ::Color {
  public:
-    Color() {
-        r = 0;
-        g = 0;
-        b = 0;
-        a = 255;
-    }
-
     Color(::Color color) {
         r = color.r;
         g = color.g;
@@ -48,12 +41,13 @@ class Color : public ::Color {
         a = color.a;
     }
 
-    Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha = 255) {
-        r = red;
-        g = green;
-        b = blue;
-        a = alpha;
-    }
+    Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) : ::Color{red, green, blue, alpha} {};
+    Color(unsigned char red, unsigned char green, unsigned char blue) : ::Color{red, green, blue, 255} {};
+
+    /**
+     * Black.
+     */
+    Color() : ::Color{0, 0, 0, 255} {};
 
     Color(::Vector3 hsv) {
         set(::ColorFromHSV(hsv.x, hsv.y, hsv.z));

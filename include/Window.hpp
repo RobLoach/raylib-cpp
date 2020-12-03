@@ -90,10 +90,31 @@ class Window {
     }
 
     /**
+     * Check if window is currently fullscreen
+     */
+    inline bool IsFullscreen() const {
+        return ::IsWindowFullscreen();
+    }
+
+    /**
+     * Check if window is currently hidden
+     */
+    inline bool IsHidden() const {
+        return ::IsWindowHidden();
+    }
+
+    /**
      * Check if window is currently minimized
      */
     inline bool IsMinimized() const {
         return ::IsWindowMinimized();
+    }
+
+    /**
+     * Check if window is currently minimized
+     */
+    inline bool IsMaximized() const {
+        return ::IsWindowMaximized();
     }
 
     /**
@@ -110,18 +131,18 @@ class Window {
         return ::IsWindowResized();
     }
 
-    /**
-     * Check if window is currently hidden
-     */
-    inline bool IsHidden() const {
-        return ::IsWindowHidden();
+    inline bool IsState(unsigned int flag) {
+        return ::IsWindowState(flag);
     }
 
-    /**
-     * Check if window is currently fullscreen
-     */
-    inline bool IsFullscreen() const {
-        return ::IsWindowFullscreen();
+    inline Window& SetState(unsigned int flag) {
+        ::SetWindowState(flag);
+        return *this;
+    }
+
+    inline Window& ClearState(unsigned int flag) {
+        ::ClearWindowState(flag);
+        return *this;
     }
 
     /**
@@ -132,20 +153,25 @@ class Window {
         return *this;
     }
 
-    inline Window& Unhide() {
-        ::UnhideWindow();
+    inline Window& Maximize() {
+        ::MaximizeWindow();
         return *this;
     }
 
-    inline Window& Hide() {
-        ::HideWindow();
+    inline Window& Minimize() {
+        ::MinimizeWindow();
+        return *this;
+    }
+
+    inline Window& Restore() {
+        ::RestoreWindow();
         return *this;
     }
 
     /**
      * Set icon for window
      */
-    inline Window& SetIcon(Image image) {
+    inline Window& SetIcon(::Image image) {
         ::SetWindowIcon(image);
         return *this;
     }
