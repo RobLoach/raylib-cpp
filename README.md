@@ -42,6 +42,10 @@ int main() {
 
 See the [examples folder](examples) for more of the raylib examples that have been ported over to *raylib-cpp*.
 
+## Sample Applications
+
+- [Ian Pan's Raylib Games](https://github.com/ianpan870102/raylib-practices)
+
 ## Features
 
 There are a few conventions that raylib-cpp takes on when adopting raylib...
