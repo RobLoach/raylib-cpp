@@ -54,15 +54,14 @@ class Color : public ::Color {
     }
 
     static Color FromHSV(float hue, float saturation, float value) {
-        ::Color color = ::ColorFromHSV(hue, saturation, value);
-        return color;
+        return ::ColorFromHSV(hue, saturation, value);
     }
 
     Color(int hexValue) {
         set(::GetColor(hexValue));
     }
 
-    Color(Vector4 normalized) {
+    Color(::Vector4 normalized) {
         set(::ColorFromNormalized(normalized));
     }
 
@@ -99,6 +98,9 @@ class Color : public ::Color {
         return *this;
     }
 
+    /**
+     * Set background color (framebuffer clear color)
+     */
     inline Color& ClearBackground() {
         ::ClearBackground(*this);
         return *this;
@@ -109,6 +111,9 @@ class Color : public ::Color {
         return *this;
     }
 
+    /**
+     * Draw a pixel
+     */
     inline Color& DrawPixel(::Vector2 pos) {
         ::DrawPixelV(pos, *this);
         return *this;
@@ -184,6 +189,20 @@ class Color : public ::Color {
     inline Color& DrawRectangleLines(::Rectangle rec, int lineThick) {
         ::DrawRectangleLinesEx(rec, lineThick, *this);
         return *this;
+    }
+
+    /**
+     * Returns color with alpha applied, alpha goes from 0.0f to 1.0f
+     */
+    Color Alpha(float alpha) {
+        return ::ColorAlpha(*this, alpha);
+    }
+
+    /**
+     * Returns src alpha-blended into dst color with tint
+     */
+    Color AlphaBlend(::Color dst, ::Color tint) {
+        return ::ColorAlphaBlend(dst, *this, tint);
     }
 
  protected:
