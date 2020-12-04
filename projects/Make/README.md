@@ -13,7 +13,7 @@ The [Raylib C++ Starter Kit](https://github.com/CapsCollective/raylib-cpp-starte
     ```
     cd raylib-cpp-starter
 
-    # Linux
+    # Linux & macOS
     make setup
     make
 
