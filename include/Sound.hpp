@@ -62,53 +62,87 @@ class Sound : public ::Sound {
         return *this;
     }
 
+    /**
+     * Update sound buffer with new data
+     */
     inline Sound& Update(const void *data, int sampleCount) {
         ::UpdateSound(*this, data, sampleCount);
         return *this;
     }
 
+    /**
+     * Unload sound
+     */
     inline void Unload() {
         ::UnloadSound(*this);
     }
 
+    /**
+     * Play a sound
+     */
     inline Sound& Play() {
         ::PlaySound(*this);
         return *this;
     }
 
+    /**
+     * Stop playing a sound
+     */
     inline Sound& Stop() {
         ::StopSound(*this);
         return *this;
     }
 
+    /**
+     * Pause a sound
+     */
     inline Sound& Pause() {
         ::PauseSound(*this);
         return *this;
     }
+
+    /**
+     * Resume a paused sound
+     */
     inline Sound& Resume() {
         ::ResumeSound(*this);
         return *this;
     }
 
+    /**
+     * Play a sound (using multichannel buffer pool)
+     */
     inline Sound& PlayMulti() {
         ::PlaySoundMulti(*this);
         return *this;
     }
 
+    /**
+     * Stop any sound playing (using multichannel buffer pool)
+     */
     inline Sound& StopMulti() {
         ::StopSoundMulti();
         return *this;
     }
 
+    /**
+     * Check if a sound is currently playing
+     */
     inline bool IsPlaying() const {
         return ::IsSoundPlaying(*this);
     }
 
+    /**
+     * Set volume for a sound (1.0 is max level)
+     */
     inline Sound& SetVolume(float volume) {
         ::SetSoundVolume(*this, volume);
         return *this;
     }
 
+    /**
+     * Set pitch for a sound (1.0 is base level)
+     */
     inline Sound& SetPitch(float pitch) {
         ::SetSoundPitch(*this, pitch);
         return *this;

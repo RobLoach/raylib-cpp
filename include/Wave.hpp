@@ -76,30 +76,48 @@ class Wave : public ::Wave {
         return *this;
     }
 
+    /**
+     * Convert wave data to desired format
+     */
     inline Wave& Format(int SampleRate = 0, int SampleSize = 0, int Channels = 2) {
         ::WaveFormat(this, SampleRate, SampleSize, Channels);
         return *this;
     }
 
+    /**
+     * Copy a wave to a new wave
+     */
     inline Wave Copy() {
         return ::WaveCopy(*this);
     }
 
+    /**
+     * Crop a wave to defined samples range
+     */
     inline Wave& Crop(int initSample, int finalSample) {
         ::WaveCrop(this, initSample, finalSample);
         return *this;
     }
 
-    inline Wave& Export(const std::string& fileName) {
-        ::ExportWave(*this, fileName.c_str());
-        return *this;
+    /**
+     * Export wave data to file, returns true on success
+     */
+    inline bool Export(const std::string& fileName) {
+        // TODO: Throw exception on error.
+        return ::ExportWave(*this, fileName.c_str());
     }
 
-    inline Wave& ExportAsCode(const std::string& fileName) {
-        ::ExportWaveAsCode(*this, fileName.c_str());
-        return *this;
+    /**
+     * Export wave sample data to code (.h), returns true on success
+     */
+    inline bool ExportAsCode(const std::string& fileName) {
+        // TODO: Throw exception on error.
+        return ::ExportWaveAsCode(*this, fileName.c_str());
     }
 
+    /**
+     * Unload wave data
+     */
     void Unload() {
         if (data != NULL) {
             ::UnloadWave(*this);
@@ -107,14 +125,23 @@ class Wave : public ::Wave {
         }
     }
 
+    /**
+     * Load sound from wave data
+     */
     inline Sound LoadSound() {
         return ::LoadSoundFromWave(*this);
     }
 
+    /**
+     * Load sound from wave data
+     */
     inline operator Sound() {
         return LoadSound();
     }
 
+    /**
+     * Get samples data from wave as a floats array
+     */
     inline float* GetData() {
         return ::GetWaveData(*this);
     }
