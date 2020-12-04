@@ -206,6 +206,7 @@ raylib::Vector2 newDirection = direction.Rotate(30);
 The [projects directory](projects) includes some starter templates...
 
 - [CMake template](projects/CMake)
+- [Make template](projects/Make)
 
 If there's a project template you would like to see added, feel free to [make an issue](https://github.com/RobLoach/raylib-cpp/issues) and we can add it in.
 
