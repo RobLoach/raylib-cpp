@@ -47,6 +47,18 @@ class Shader : public ::Shader {
         set(GetShaderDefault());
     }
 
+    Shader(const std::string& vsFileName, const std::string& fsFileName) {
+        set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));
+    }
+
+    static Shader Load(const std::string& vsFileName, const std::string& fsFileName) {
+        return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());
+    }
+
+    static Shader LoadCode(const std::string& vsCode, const std::string& fsCode) {
+        return ::LoadShaderCode(vsCode.c_str(), fsCode.c_str());
+    }
+
     GETTERSETTER(unsigned int, Id, id)
     GETTERSETTER(int*, Locs, locs)
 
@@ -66,14 +78,6 @@ class Shader : public ::Shader {
 
     void Unload() {
         ::UnloadShader(*this);
-    }
-
-    static Shader Load(const std::string& vsFileName, const std::string& fsFileName) {
-        return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());
-    }
-
-    static Shader LoadCode(const std::string& vsCode, const std::string& fsCode) {
-        return ::LoadShaderCode(vsCode.c_str(), fsCode.c_str());
     }
 
     inline Shader& BeginShaderMode() {
@@ -116,7 +120,7 @@ class Shader : public ::Shader {
     }
 
     /**
-     * @see ::SetShaderValueTexture
+     * Set shader uniform value for texture
      */
     inline Shader& SetValue(int uniformLoc, Texture2D texture) {
         ::SetShaderValueTexture(*this, uniformLoc, texture);

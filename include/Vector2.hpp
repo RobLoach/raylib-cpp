@@ -40,9 +40,9 @@ class Vector2 : public ::Vector2 {
         set(vec);
     }
 
-    Vector2(float x, float y) : ::Vector2{x, y} {};
-    Vector2(float x) : ::Vector2{x, 0} {};
-    Vector2() : ::Vector2{0, 0} {};
+    Vector2(float x, float y) : ::Vector2{x, y} {}
+    Vector2(float x) : ::Vector2{x, 0} {}
+    Vector2() : ::Vector2{0, 0} {}
 
     GETTERSETTER(float, X, x)
     GETTERSETTER(float, Y, y)

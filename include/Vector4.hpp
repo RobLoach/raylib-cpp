@@ -41,11 +41,11 @@ class Vector4 : public ::Vector4 {
         set(vec);
     }
 
-    Vector4(float x, float y, float z, float w) : ::Vector4{x, y, z, w} {};
-    Vector4(float x, float y, float z) : ::Vector4{x, y, z, 0} {};
-    Vector4(float x, float y) : ::Vector4{x, y, 0, 0} {};
-    Vector4(float x) : ::Vector4{x, 0, 0, 0} {};
-    Vector4() {};
+    Vector4(float x, float y, float z, float w) : ::Vector4{x, y, z, w} {}
+    Vector4(float x, float y, float z) : ::Vector4{x, y, z, 0} {}
+    Vector4(float x, float y) : ::Vector4{x, y, 0, 0} {}
+    Vector4(float x) : ::Vector4{x, 0, 0, 0} {}
+    Vector4() {}
 
     Vector4(::Color color) {
         set(ColorNormalize(color));

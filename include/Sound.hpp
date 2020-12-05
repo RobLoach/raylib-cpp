@@ -62,15 +62,24 @@ class Sound : public ::Sound {
         return *this;
     }
 
+    /**
+     * Update sound buffer with new data
+     */
     inline Sound& Update(const void *data, int sampleCount) {
         ::UpdateSound(*this, data, sampleCount);
         return *this;
     }
 
+    /**
+     * Unload sound
+     */
     inline void Unload() {
         ::UnloadSound(*this);
     }
 
+    /**
+     * Play a sound
+     */
     inline Sound& Play() {
         ::PlaySound(*this);
         return *this;

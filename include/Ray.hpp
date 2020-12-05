@@ -65,27 +65,45 @@ class Ray : public ::Ray {
         return *this;
     }
 
+    /**
+     * Detect collision between ray and sphere
+     */
     inline bool CheckCollisionSphere(::Vector3 center, float radius) const {
         return CheckCollisionRaySphere(*this, center, radius);
     }
 
+    /**
+     * Detect collision between ray and sphere, returns collision point
+     */
     inline bool CheckCollisionSphereEx(::Vector3 center, float radius,
             ::Vector3 *collisionPoint) const {
         return CheckCollisionRaySphereEx(*this, center, radius, collisionPoint);
     }
 
+    /**
+     * Detect collision between ray and box
+     */
     inline bool CheckCollisionBox(::BoundingBox box) const {
         return CheckCollisionRayBox(*this, box);
     }
 
+    /**
+     * Get collision info between ray and model
+     */
     inline RayHitInfo GetCollisionModel(::Model model) {
         return GetCollisionRayModel(*this, model);
     }
 
+    /**
+     * Get collision info between ray and triangle
+     */
     inline RayHitInfo GetCollisionTriangle(::Vector3 p1, ::Vector3 p2, ::Vector3 p3) {
         return GetCollisionRayTriangle(*this, p1, p2, p3);
     }
 
+    /**
+     * Get collision info between ray and ground plane (Y-normal plane)
+     */
     inline RayHitInfo GetCollisionGround(float groundHeight) {
         return GetCollisionRayGround(*this, groundHeight);
     }

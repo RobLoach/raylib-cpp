@@ -36,11 +36,11 @@ class Rectangle : public ::Rectangle {
         set(vec);
     }
 
-    Rectangle(float x, float y, float width, float height) : ::Rectangle{x, y, width, height} {};
-    Rectangle(float x, float y, float width) : ::Rectangle{x, y, width, height} {};
-    Rectangle(float x, float y) : ::Rectangle{x, y, 0, 0} {};
-    Rectangle(float x) : ::Rectangle{x, 0, 0, 0} {};
-    Rectangle() {};
+    Rectangle(float x, float y, float width, float height) : ::Rectangle{x, y, width, height} {}
+    Rectangle(float x, float y, float width) : ::Rectangle{x, y, width, height} {}
+    Rectangle(float x, float y) : ::Rectangle{x, y, 0, 0} {}
+    Rectangle(float x) : ::Rectangle{x, 0, 0, 0} {}
+    Rectangle() : ::Rectangle{0, 0, 0, 0} {}
 
     GETTERSETTER(float, X, x)
     GETTERSETTER(float, Y, y)
@@ -105,16 +105,32 @@ class Rectangle : public ::Rectangle {
         return *this;
     }
 
+    /**
+     * Check collision between two rectangles
+     */
     inline bool CheckCollision(::Rectangle rec2) const {
         return ::CheckCollisionRecs(*this, rec2);
     }
 
+    /**
+     * Get collision rectangle for two rectangles collision
+     */
     inline Rectangle GetCollision(::Rectangle rec2) const {
         return ::GetCollisionRec(*this, rec2);
     }
 
+    /**
+     * Check if point is inside rectangle
+     */
     inline bool CheckCollision(::Vector2 point) const {
         return ::CheckCollisionPointRec(point, *this);
+    }
+
+    /**
+     * Check collision between circle and rectangle
+     */
+    inline bool CheckCollision(::Vector2 center, float radius) {
+        return CheckCollisionCircleRec(center, radius, *this);
     }
 
  protected:

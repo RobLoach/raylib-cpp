@@ -99,12 +99,25 @@ class Font : public ::Font {
         return *this;
     }
 
+    /**
+     * Measure string size for Font
+     */
     inline Vector2 MeasureText(const std::string& text, float fontSize, float spacing) {
         return ::MeasureTextEx(*this, text.c_str(), fontSize, spacing);
     }
 
+    /**
+     * Get index position for a unicode character on font
+     */
     inline int GetGlyphIndex(int character) const {
         return ::GetGlyphIndex(*this, character);
+    }
+
+    /**
+     * Create an image from text (custom sprite font)
+     */
+    inline Image ImageText(const std::string& text, float fontSize, float spacing, ::Color tint) {
+        return ::ImageTextEx(*this, text.c_str(), fontSize, spacing, tint);
     }
 
  protected:

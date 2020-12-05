@@ -39,11 +39,11 @@ class Model : public ::Model {
     }
 
     Model(const std::string& fileName) {
-        set(LoadModel(fileName.c_str()));
+        set(::LoadModel(fileName.c_str()));
     }
 
     Model(::Mesh mesh) {
-        set(LoadModelFromMesh(mesh));
+        set(::LoadModelFromMesh(mesh));
     }
 
     ~Model() {

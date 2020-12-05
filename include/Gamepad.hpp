@@ -55,12 +55,15 @@ class Gamepad {
     inline bool IsAvailable() const {
         return ::IsGamepadAvailable(number);
     }
+
     inline bool IsName(const std::string& name) const {
         return ::IsGamepadName(number, name.c_str());
     }
+
     std::string GetName() const {
         return std::string(::GetGamepadName(number));
     }
+
     inline bool IsButtonPressed(int button) const {
         return ::IsGamepadButtonPressed(number, button);
     }

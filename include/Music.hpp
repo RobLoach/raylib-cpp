@@ -63,6 +63,9 @@ class Music : public ::Music {
         ::UnloadMusicStream(*this);
     }
 
+    /**
+     * Start music playing
+     */
     inline Music& Play() {
         ::PlayMusicStream(*this);
         return *this;

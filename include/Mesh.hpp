@@ -26,6 +26,7 @@
 #define RAYLIB_CPP_INCLUDE_MESH_HPP_
 
 #include <string>
+#include <vector>
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
@@ -42,6 +43,15 @@ class Mesh : public ::Mesh {
     Mesh(int VertexCount = 0, int TriangleCount = 0) {
         vertexCount = VertexCount;
         triangleCount = TriangleCount;
+    }
+
+    /**
+     * Load meshes from model file
+     */
+    static std::vector<Mesh> Load(const std::string fileName) {
+        int count = 0;
+        ::Mesh* meshes = LoadMeshes(fileName.c_str(), &count);
+        return std::vector<Mesh>(meshes, meshes + count);
     }
 
     GETTERSETTER(int, VertexCount, vertexCount)
@@ -61,9 +71,12 @@ class Mesh : public ::Mesh {
         Unload();
     }
 
-    inline Mesh& Export(const std::string& fileName) {
-        ExportMesh(*this, fileName.c_str());
-        return *this;
+    /**
+     * Export mesh data to file
+     */
+    inline bool Export(const std::string& fileName) {
+        // TODO(RobLoach): Switch to an exception when failed.
+        return ExportMesh(*this, fileName.c_str());
     }
 
     inline void Unload() {
@@ -98,7 +111,7 @@ class Mesh : public ::Mesh {
     }
 
     operator raylib::Model() {
-        return LoadModelFrom();
+        return ::LoadModelFromMesh(*this);
     }
 
  protected:

@@ -56,6 +56,8 @@ class DroppedFiles {
      */
     inline DroppedFiles& Clear() {
         ::ClearDroppedFiles();
+        m_count = 0;
+        m_files = NULL;
         return *this;
     }
 

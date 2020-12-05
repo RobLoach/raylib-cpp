@@ -76,6 +76,7 @@ class VrSimulator {
         ::EndVrDrawing();
         return *this;
     }
+
     inline void Close() {
         ::CloseVrSimulator();
     }

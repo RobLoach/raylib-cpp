@@ -43,6 +43,9 @@ class Texture : public ::Texture {
         LoadFromImage(image);
     }
 
+    /**
+     * Load texture from file into GPU memory (VRAM)
+     */
     Texture(const std::string& fileName) {
         Load(fileName);
     }

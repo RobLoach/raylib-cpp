@@ -48,12 +48,18 @@ class Wave : public ::Wave {
         channels = Channels;
     }
 
+    /**
+     * Load wave data from file
+     */
     Wave(const std::string& fileName) {
-        set(LoadWave(fileName.c_str()));
+        set(::LoadWave(fileName.c_str()));
     }
 
+    /**
+     * Load wave from memory buffer, fileType refers to extension: i.e. "wav"
+     */
     Wave(const std::string& fileType, const unsigned char *fileData, int dataSize) {
-        set(LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
+        set(::LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
     }
 
     ~Wave() {

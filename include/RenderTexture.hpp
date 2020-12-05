@@ -65,11 +65,17 @@ class RenderTexture : public ::RenderTexture {
         UnloadRenderTexture(*this);
     }
 
+    /**
+     * Initializes render texture for drawing
+     */
     inline RenderTexture& BeginTextureMode() {
         ::BeginTextureMode(*this);
         return *this;
     }
 
+    /**
+     * Ends drawing to render texture
+     */
     inline RenderTexture& EndTextureMode() {
         ::EndTextureMode();
         return *this;

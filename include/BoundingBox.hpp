@@ -57,19 +57,31 @@ class BoundingBox : public ::BoundingBox {
         return *this;
     }
 
+    /**
+     * Draw a bounding box with wires
+     */
     inline BoundingBox& Draw(::Color color = WHITE) {
         DrawBoundingBox(*this, color);
         return *this;
     }
 
+    /**
+     * Detect collision between two boxes
+     */
     inline bool CheckCollision(::BoundingBox box2) const {
         return CheckCollisionBoxes(*this, box2);
     }
 
+    /**
+     * Detect collision between box and sphere
+     */
     inline bool CheckCollision(::Vector3 center, float radius) const {
         return CheckCollisionBoxSphere(*this, center, radius);
     }
 
+    /**
+     * Detect collision between ray and bounding box
+     */
     inline bool CheckCollision(::Ray ray) const {
         return CheckCollisionRayBox(ray, *this);
     }
