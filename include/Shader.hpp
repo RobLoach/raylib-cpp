@@ -90,21 +90,30 @@ class Shader : public ::Shader {
         return *this;
     }
 
+    /**
+     * Get shader uniform location
+     */
     inline int GetLocation(const std::string& uniformName) const {
         return ::GetShaderLocation(*this, uniformName.c_str());
     }
 
+    /**
+     * Get shader attribute location
+     */
     inline int GetLocationAttrib(const std::string& attribName) const {
         return ::GetShaderLocationAttrib(*this, attribName.c_str());
     }
 
+    /**
+     * Set shader uniform value
+     */
     inline Shader& SetValue(int uniformLoc, const std::string& value, int uniformType) {
         ::SetShaderValue(*this, uniformLoc, value.c_str(), uniformType);
         return *this;
     }
 
     /**
-     * @see SetShaderValueV
+     * @see ::SetShaderValueV
      */
     inline Shader& SetValue(int uniformLoc, const std::string& value, int uniformType, int count) {
         ::SetShaderValueV(*this, uniformLoc, value.c_str(), uniformType, count);

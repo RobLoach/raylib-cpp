@@ -57,11 +57,15 @@ class Rectangle : public ::Rectangle {
         return *this;
     }
 
+    /**
+     * Draw a color-filled rectangle
+     */
     inline Rectangle& Draw(::Color color) {
         ::DrawRectangle(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width),
             static_cast<int>(height), color);
         return *this;
     }
+
     inline Rectangle& Draw(::Vector2 origin, float rotation, ::Color color) {
         ::DrawRectanglePro(*this, origin, rotation, color);
         return *this;
@@ -89,6 +93,7 @@ class Rectangle : public ::Rectangle {
             static_cast<int>(height), color);
         return *this;
     }
+
     inline Rectangle& DrawLinesEx(int lineThick, ::Color color) {
         ::DrawRectangleLinesEx(*this, lineThick, color);
         return *this;
@@ -130,7 +135,7 @@ class Rectangle : public ::Rectangle {
      * Check collision between circle and rectangle
      */
     inline bool CheckCollision(::Vector2 center, float radius) {
-        return CheckCollisionCircleRec(center, radius, *this);
+        return ::CheckCollisionCircleRec(center, radius, *this);
     }
 
  protected:

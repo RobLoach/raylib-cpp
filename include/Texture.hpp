@@ -212,6 +212,14 @@ class Texture : public ::Texture {
         return ::GetPixelDataSize(width, height, format);
     }
 
+    /**
+     * Define default texture used to draw shapes
+     */
+    inline Texture& SetShapesTexture(Rectangle source) {
+        ::SetShapesTexture(*this, source);
+        return *this;
+    }
+
  protected:
     inline void set(::Texture texture) {
         id = texture.id;
