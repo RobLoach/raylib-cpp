@@ -25,6 +25,9 @@
 #ifndef RAYLIB_CPP_INCLUDE_MATERIAL_HPP_
 #define RAYLIB_CPP_INCLUDE_MATERIAL_HPP_
 
+#include <string>
+#include <vector>
+
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
 
@@ -43,6 +46,15 @@ class Material : public ::Material {
         Unload();
     }
 
+    /**
+     * Load materials from model file
+     */
+    static std::vector<Material> Load(const std::string& fileName) {
+        int count = 0;
+        ::Material* materials = ::LoadMaterials(fileName.c_str(), &count);
+        return std::vector<Material>(materials, materials + count);
+    }
+
     GETTERSETTER(::Shader, Shader, shader)
 
     Material& operator=(const ::Material& material) {
@@ -59,6 +71,9 @@ class Material : public ::Material {
         ::UnloadMaterial(*this);
     }
 
+    /**
+     * Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)
+     */
     inline Material& SetTexture(int mapType, ::Texture2D texture) {
         ::SetMaterialTexture(this, mapType, texture);
         return *this;

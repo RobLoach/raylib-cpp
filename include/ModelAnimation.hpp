@@ -25,6 +25,9 @@
 #ifndef RAYLIB_CPP_INCLUDE_MODELANIMATION_HPP_
 #define RAYLIB_CPP_INCLUDE_MODELANIMATION_HPP_
 
+#include <vector>
+#include <string>
+
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./Mesh.hpp"
@@ -38,6 +41,15 @@ class ModelAnimation : public ::ModelAnimation {
 
     ~ModelAnimation() {
         Unload();
+    }
+
+    /**
+     * Load model animations from file
+     */
+    static std::vector<ModelAnimation> Load(const std::string& fileName) {
+        int count = 0;
+        ::ModelAnimation* modelAnimations = ::LoadModelAnimations(fileName.c_str(), &count);
+        return std::vector<ModelAnimation>(modelAnimations, modelAnimations + count);
     }
 
     GETTERSETTER(int, BoneCount, boneCount)
@@ -55,20 +67,25 @@ class ModelAnimation : public ::ModelAnimation {
         return *this;
     }
 
+    /**
+     * Unload animation data
+     */
     inline void Unload() {
         ::UnloadModelAnimation(*this);
     }
 
-    inline ModelAnimation& UpdateAnimation(::Model model, int frame) {
+    /**
+     * Update model animation pose
+     */
+    inline ModelAnimation& Update(::Model model, int frame) {
         ::UpdateModelAnimation(model, *this, frame);
         return *this;
     }
 
+    /**
+     * Check model animation skeleton match
+     */
     inline bool IsValid(::Model model) const {
-        return ::IsModelAnimationValid(model, *this);
-    }
-
-    inline bool IsModelAnimationValid(::Model model) const {
         return ::IsModelAnimationValid(model, *this);
     }
 

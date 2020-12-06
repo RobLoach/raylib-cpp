@@ -116,20 +116,32 @@ class Matrix : public ::Matrix {
             && m15 == other.m15;
     }
 
+    /**
+     * Set a custom projection matrix (replaces internal projection matrix)
+     */
     inline Matrix& SetProjection() {
         ::SetMatrixProjection(*this);
         return *this;
     }
 
+    /**
+     * Set a custom modelview matrix (replaces internal modelview matrix)
+     */
     inline Matrix& SetModelview() {
         ::SetMatrixModelview(*this);
         return *this;
     }
 
+    /**
+     * Get internal modelview matrix
+     */
     static Matrix GetModelview() {
         return ::GetMatrixModelview();
     }
 
+    /**
+     * Get internal projection matrix
+     */
     static Matrix GetProjection() {
         return ::GetMatrixProjection();
     }
@@ -232,6 +244,15 @@ class Matrix : public ::Matrix {
     operator float16() {
         return ToFloatV();
     }
+
+    /**
+     * Set shader uniform value (matrix 4x4)
+     */
+    inline Matrix& SetShaderValue(::Shader shader, int uniformLoc) {
+        ::SetShaderValueMatrix(shader, uniformLoc, *this);
+        return *this;
+    }
+
 #endif
 
  protected:

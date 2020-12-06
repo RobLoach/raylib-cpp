@@ -131,15 +131,24 @@ class Window {
         return ::IsWindowResized();
     }
 
+    /**
+     * Check if one specific window flag is enabled
+     */
     inline bool IsState(unsigned int flag) {
         return ::IsWindowState(flag);
     }
 
+    /**
+     * Set window configuration state using flags
+     */
     inline Window& SetState(unsigned int flag) {
         ::SetWindowState(flag);
         return *this;
     }
 
+    /**
+     * Clear window configuration state flags
+     */
     inline Window& ClearState(unsigned int flag) {
         ::ClearWindowState(flag);
         return *this;
@@ -153,16 +162,25 @@ class Window {
         return *this;
     }
 
+    /**
+     * Set window state: maximized, if resizable (only PLATFORM_DESKTOP)
+     */
     inline Window& Maximize() {
         ::MaximizeWindow();
         return *this;
     }
 
+    /**
+     * Set window state: minimized, if resizable (only PLATFORM_DESKTOP)
+     */
     inline Window& Minimize() {
         ::MinimizeWindow();
         return *this;
     }
 
+    /**
+     * Set window state: not minimized/maximized (only PLATFORM_DESKTOP)
+     */
     inline Window& Restore() {
         ::RestoreWindow();
         return *this;
@@ -304,10 +322,16 @@ class Window {
         return ::GetFPS();
     }
 
+    /**
+     * Returns time in seconds for last frame drawn
+     */
     inline float GetFrameTime() const {
         return ::GetFrameTime();
     }
 
+    /**
+     * Returns elapsed time in seconds since InitWindow()
+     */
     inline double GetTime() const {
         return ::GetTime();
     }

@@ -25,13 +25,15 @@ install(FILES
     Physics.hpp
     RayHitInfo.hpp
     Ray.hpp
+    raylib.hpp
     raylib-cpp.hpp
     raylib-cpp-utils.hpp
+    raymath.hpp
     Rectangle.hpp
-    RenderTexture2D.hpp
+    RenderTexture.hpp
     Shader.hpp
     Sound.hpp
-    Texture2D.hpp
+    Texture.hpp
     Vector2.hpp
     Vector3.hpp
     Vector4.hpp

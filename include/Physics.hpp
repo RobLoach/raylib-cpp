@@ -43,10 +43,12 @@ class Physics {
     Physics() {
         Init();
     }
+
     Physics(float gravityY) {
         Init();
         SetGravity(0, gravityY);
     }
+
     Physics(float gravityX, float gravityY) {
         Init();
         SetGravity(gravityX, gravityY);

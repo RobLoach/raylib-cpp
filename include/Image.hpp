@@ -55,27 +55,42 @@ class Image : public ::Image {
     Image(int width, int height, Color color = WHITE) {
         set(::GenImageColor(width, height, color));
     }
+    Image(::Font font, const std::string& text, float fontSize, float spacing, ::Color tint) {
+        set(::ImageTextEx(font, text.c_str(), fontSize, spacing, tint));
+    }
 
     static Image Text(std::string text, int fontSize, Color color) {
         return ::ImageText(text.c_str(), fontSize, color);
     }
 
-    static Image Text(Font font, std::string text, float fontSize, float spacing, Color tint) {
+    static Image Text(::Font font, std::string text, float fontSize, float spacing, ::Color tint) {
         return ::ImageTextEx(font, text.c_str(), fontSize, spacing, tint);
     }
 
+    /**
+     * Get pixel data from screen buffer and return an Image (screenshot)
+     */
     static Image GetScreenData() {
         return Image(::GetScreenData());
     }
 
+    /**
+     * Generate image: plain color
+     */
     static Image GenColor(int width, int height, Color color) {
         return ::GenImageColor(width, height, color);
     }
 
+    /**
+     * Generate image: vertical gradient
+     */
     static Image GenGradientV(int width, int height, Color top, Color bottom) {
         return ::GenImageGradientV(width, height, top, bottom);
     }
 
+    /**
+     * Generate image: horizontal gradient
+     */
     static Image GenGradientH(int width, int height, Color left, Color right) {
         return ::GenImageGradientH(width, height, left, right);
     }
@@ -136,14 +151,19 @@ class Image : public ::Image {
         ::UnloadImage(*this);
     }
 
-    inline Image& Export(const std::string& fileName) {
-        ::ExportImage(*this, fileName.c_str());
-        return *this;
+    /**
+     * Export image data to file, returns true on success
+     */
+    inline bool Export(const std::string& fileName) {
+        // TODO(RobLoach): Switch to an invalid loading exception on false.
+        return ::ExportImage(*this, fileName.c_str());
     }
 
-    inline Image& ExportAsCode(const std::string& fileName) {
-        ::ExportImageAsCode(*this, fileName.c_str());
-        return *this;
+    /**
+     * Export image as code file defining an array of bytes, returns true on success
+     */
+    inline bool ExportAsCode(const std::string& fileName) {
+        return ::ExportImageAsCode(*this, fileName.c_str());
     }
 
     GETTERSETTER(void*, Data, data)
@@ -152,42 +172,71 @@ class Image : public ::Image {
     GETTERSETTER(int, Mipmaps, mipmaps)
     GETTERSETTER(int, Format, format)
 
+    /**
+     * Create an image duplicate (useful for transformations)
+     */
     inline Image Copy() {
         return ::ImageCopy(*this);
     }
+
+    /**
+     * Create an image from another image piece
+     */
     inline Image FromImage(::Rectangle rec) {
         return ::ImageFromImage(*this, rec);
     }
 
+    /**
+     * Convert image to POT (power-of-two)
+     */
     inline Image& ToPOT(Color fillColor) {
         ::ImageToPOT(this, fillColor);
         return *this;
     }
 
+    /**
+     * Convert image data to desired format
+     */
     inline Image& Format(int newFormat) {
         ::ImageFormat(this, newFormat);
         return *this;
     }
 
+    /**
+     * Apply alpha mask to image
+     */
     inline Image& AlphaMask(Image alphaMask) {
         ::ImageAlphaMask(this, alphaMask);
         return *this;
     }
 
+    /**
+     * Crop image depending on alpha value
+     */
     inline Image& AlphaCrop(float threshold) {
         ::ImageAlphaCrop(this, threshold);
         return *this;
     }
 
+    /**
+     * Premultiply alpha channel
+     */
     inline Image& AlphaPremultiply() {
         ::ImageAlphaPremultiply(this);
         return *this;
     }
 
+    /**
+     * Crop an image to area defined by a rectangle
+     */
     inline Image& Crop(::Rectangle crop) {
         ::ImageCrop(this, crop);
         return *this;
     }
+
+    /**
+     * Crop an image to area defined by a rectangle
+     */
     inline Image& Crop(int offsetX, int offsetY, int newWidth, int newHeight) {
         ::Rectangle rect{
             static_cast<float>(offsetX),
@@ -199,26 +248,41 @@ class Image : public ::Image {
         return *this;
     }
 
+    /**
+     * Resize and image to new size
+     */
     inline Image& Resize(int newWidth, int newHeight) {
         ::ImageResize(this, newWidth, newHeight);
         return *this;
     }
 
+    /**
+     * Resize and image to new size using Nearest-Neighbor scaling algorithm
+     */
     inline Image& ResizeNN(int newWidth, int newHeight) {
         ::ImageResizeNN(this, newWidth, newHeight);
         return *this;
     }
 
+    /**
+     * Resize canvas and fill with color
+     */
     inline Image& ResizeCanvas(int newWidth, int newHeight, int offsetX, int offsetY, Color color) {
         ::ImageResizeCanvas(this, newWidth, newHeight, offsetX, offsetY, color);
         return *this;
     }
 
+    /**
+     * Generate all mipmap levels for a provided image
+     */
     inline Image& Mipmaps() {
         ::ImageMipmaps(this);
         return *this;
     }
 
+    /**
+     * Dither image data to 16bpp or lower (Floyd-Steinberg dithering)
+     */
     inline Image& Dither(int rBpp, int gBpp, int bBpp, int aBpp) {
         ::ImageDither(this, rBpp, gBpp, bBpp, aBpp);
         return *this;
@@ -228,6 +292,7 @@ class Image : public ::Image {
         ::ImageFlipVertical(this);
         return *this;
     }
+
     inline Image& FlipHorizontal() {
         ::ImageFlipHorizontal(this);
         return *this;
@@ -257,14 +322,17 @@ class Image : public ::Image {
         ::ImageColorGrayscale(this);
         return *this;
     }
+
     inline Image& ColorContrast(float contrast) {
         ::ImageColorContrast(this, contrast);
         return *this;
     }
+
     inline Image& ColorBrightness(int brightness) {
         ::ImageColorBrightness(this, brightness);
         return *this;
     }
+
     inline Image& ColorReplace(::Color color, ::Color replace) {
         ::ImageColorReplace(this, color, replace);
         return *this;
@@ -349,6 +417,7 @@ class Image : public ::Image {
             color);
         return *this;
     }
+
     inline Image& DrawText(const std::string& text, int x, int y, int fontSize,
             ::Color color = WHITE) {
         ::ImageDrawText(this, text.c_str(), x, y, fontSize, color);

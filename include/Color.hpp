@@ -41,8 +41,10 @@ class Color : public ::Color {
         a = color.a;
     }
 
-    Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) : ::Color{red, green, blue, alpha} {};
-    Color(unsigned char red, unsigned char green, unsigned char blue) : ::Color{red, green, blue, 255} {};
+    Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) :
+        ::Color{red, green, blue, alpha} {};
+    Color(unsigned char red, unsigned char green, unsigned char blue) :
+        ::Color{red, green, blue, 255} {};
 
     /**
      * Black.
