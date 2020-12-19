@@ -145,13 +145,6 @@ class Wave : public ::Wave {
         return LoadSound();
     }
 
-    /**
-     * Get samples data from wave as a floats array
-     */
-    inline float* GetData() {
-        return ::GetWaveData(*this);
-    }
-
  protected:
     inline void set(::Wave wave) {
         sampleCount = wave.sampleCount;
