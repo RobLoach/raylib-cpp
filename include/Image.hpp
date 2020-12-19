@@ -338,10 +338,6 @@ class Image : public ::Image {
         return *this;
     }
 
-    inline ::Color* GetPalette(int maxPaletteSize, int *extractCount) {
-        return ::GetImagePalette(*this, maxPaletteSize, extractCount);
-    }
-
     inline Rectangle GetAlphaBorder(float threshold) const {
         return ::GetImageAlphaBorder(*this, threshold);
     }
@@ -430,8 +426,12 @@ class Image : public ::Image {
         return *this;
     }
 
-    inline ::Color* GetImageData() {
-        return ::GetImageData(*this);
+    inline ::Color* LoadColors() {
+        return ::LoadImageColors(*this);
+    }
+
+    inline ::Color* LoadPalette(int maxPaletteSize, int *colorsCount) {
+        return ::LoadImagePalette(*this, maxPaletteSize, colorsCount);
     }
 
     ::Texture2D LoadTexture() {
