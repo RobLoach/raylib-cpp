@@ -91,25 +91,40 @@ class Mesh : public ::Mesh {
         return BoundingBox();
     }
 
+    /**
+     * Compute mesh tangents
+     */
     inline Mesh& Tangents() {
         ::MeshTangents(this);
         return *this;
     }
 
+    /**
+     * Compute mesh binormals (aka bitangent)
+     */
     inline Mesh& Binormals() {
         ::MeshBinormals(this);
         return *this;
     }
 
+    /**
+     * Smooth (average) vertex normals
+     */
     inline Mesh& NormalsSmooth() {
         ::MeshNormalsSmooth(this);
         return *this;
     }
 
+    /**
+     * Load model from generated mesh
+     */
     inline raylib::Model LoadModelFrom() {
         return ::LoadModelFromMesh(*this);
     }
 
+    /**
+     * Load model from generated mesh
+     */
     operator raylib::Model() {
         return ::LoadModelFromMesh(*this);
     }

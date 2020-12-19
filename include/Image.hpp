@@ -95,24 +95,39 @@ class Image : public ::Image {
         return ::GenImageGradientH(width, height, left, right);
     }
 
+    /**
+     * Generate image: radial gradient
+     */
     static Image GenGradientRadial(int width, int height, float density,
             Color inner, Color outer) {
         return ::GenImageGradientRadial(width, height, density, inner, outer);
     }
 
+    /**
+     * Generate image: checked
+     */
     static Image GenChecked(int width, int height, int checksX, int checksY,
             Color col1, Color col2) {
         return ::GenImageChecked(width, height, checksX, checksY, col1, col2);
     }
 
+    /**
+     * Generate image: white noise
+     */
     static Image GenWhiteNoise(int width, int height, float factor) {
         return ::GenImageWhiteNoise(width, height, factor);
     }
 
+    /**
+     * Generate image: perlin noise
+     */
     static Image GenPerlinNoise(int width, int height, int offsetX, int offsetY, float scale) {
         return ::GenImagePerlinNoise(width, height, offsetX, offsetY, scale);
     }
 
+    /**
+     * Generate image: cellular algorithm. Bigger tileSize means bigger cells
+     */
     static Image GenCellular(int width, int height, int tileSize) {
         return ::GenImageCellular(width, height, tileSize);
     }
@@ -288,65 +303,110 @@ class Image : public ::Image {
         return *this;
     }
 
+    /**
+     * Flip image vertically
+     */
     inline Image& FlipVertical() {
         ::ImageFlipVertical(this);
         return *this;
     }
 
+    /**
+     * Flip image horizontally
+     */
     inline Image& FlipHorizontal() {
         ::ImageFlipHorizontal(this);
         return *this;
     }
 
+    /**
+     * Rotate image clockwise 90deg
+     */
     inline Image& RotateCW() {
         ::ImageRotateCW(this);
         return *this;
     }
 
+    /**
+     * Rotate image counter-clockwise 90deg
+     */
     inline Image& RotateCCW() {
         ::ImageRotateCCW(this);
         return *this;
     }
 
+    /**
+     * Modify image color: tint
+     */
     inline Image& ColorTint(::Color color = WHITE) {
         ::ImageColorTint(this, color);
         return *this;
     }
 
+    /**
+     * Modify image color: invert
+     */
     inline Image& ColorInvert() {
         ::ImageColorInvert(this);
         return *this;
     }
 
+    /**
+     * Modify image color: grayscale
+     */
     inline Image& ColorGrayscale() {
         ::ImageColorGrayscale(this);
         return *this;
     }
 
+    /**
+     * Modify image color: contrast
+     *
+     * @param contrast Contrast values between -100 and 100
+     */
     inline Image& ColorContrast(float contrast) {
         ::ImageColorContrast(this, contrast);
         return *this;
     }
 
+    /**
+     * Modify image color: brightness
+     *
+     * @param brightness Brightness values between -255 and 255
+     */
     inline Image& ColorBrightness(int brightness) {
         ::ImageColorBrightness(this, brightness);
         return *this;
     }
 
+    /**
+     * Modify image color: replace color
+     */
     inline Image& ColorReplace(::Color color, ::Color replace) {
         ::ImageColorReplace(this, color, replace);
         return *this;
     }
 
+    /**
+     * Get image alpha border rectangle
+     *
+     * @param threshold Threshold is defined as a percentatge: 0.0f -> 1.0f
+     */
     inline Rectangle GetAlphaBorder(float threshold) const {
         return ::GetImageAlphaBorder(*this, threshold);
     }
 
+    /**
+     * Clear image background with given color
+     */
     inline Image& ClearBackground(::Color color = WHITE) {
         ::ImageClearBackground(this, color);
         return *this;
     }
 
+    /**
+     * Draw pixel within an image
+     */
     inline Image& DrawPixel(int posX, int posY, ::Color color) {
         ::ImageDrawPixel(this, posX, posY, color);
         return *this;

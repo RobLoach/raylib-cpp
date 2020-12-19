@@ -45,6 +45,9 @@ class AudioDevice {
         }
     }
 
+    /**
+     * Close the audio device and context.
+     */
     ~AudioDevice() {
         Close();
     }

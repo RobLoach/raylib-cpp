@@ -73,14 +73,23 @@ class Color : public ::Color {
 
     operator int() const { return ::ColorToInt(*this); }
 
+    /**
+     * Returns color with alpha applied, alpha goes from 0.0f to 1.0f
+     */
     Color Fade(float alpha) const {
         return ::Fade(*this, alpha);
     }
 
+    /**
+     * Returns Color normalized as float [0..1]
+     */
     Vector4 Normalize() const {
         return ::ColorNormalize(*this);
     }
 
+    /**
+     * Returns HSV values for a Color
+     */
     Vector3 ToHSV() const {
         return ::ColorToHSV(*this);
     }
@@ -121,6 +130,9 @@ class Color : public ::Color {
         return *this;
     }
 
+    /**
+     * Draw a line
+     */
     inline Color& DrawLine(int startPosX, int startPosY, int endPosX, int endPosY) {
         ::DrawLine(startPosX, startPosY, endPosX, endPosY, *this);
         return *this;
