@@ -35,6 +35,9 @@ class BoundingBox : public ::BoundingBox {
         set(box);
     }
 
+    /**
+     * Compute mesh bounding box limits
+     */
     BoundingBox(::Mesh mesh) {
         set(MeshBoundingBox(mesh));
     }

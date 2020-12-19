@@ -38,6 +38,9 @@ class Material : public ::Material {
         set(material);
     }
 
+    /**
+     * Load default material (Supports: DIFFUSE, SPECULAR, NORMAL maps)
+     */
     Material() {
         set(LoadMaterialDefault());
     }
@@ -67,6 +70,9 @@ class Material : public ::Material {
         return *this;
     }
 
+    /**
+     * Unload material from memory
+     */
     inline void Unload() {
         ::UnloadMaterial(*this);
     }

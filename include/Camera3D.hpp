@@ -68,45 +68,72 @@ class Camera3D : public ::Camera3D {
         return *this;
     }
 
+    /**
+     * Get transform matrix for camera
+     */
     inline Matrix GetMatrix() const {
         return ::GetCameraMatrix(*this);
     }
 
+    /**
+     * Set camera mode (multiple camera modes available)
+     */
     inline Camera3D& SetMode(int mode) {
         ::SetCameraMode(*this, mode);
         return *this;
     }
 
+    /**
+     * Set camera alt key to combine with mouse movement (free camera)
+     */
     inline Camera3D& SetAltControl(int altKey) {
         ::SetCameraAltControl(altKey);
         return *this;
     }
 
+    /**
+     * Set camera smooth zoom key to combine with mouse (free camera)
+     */
     inline Camera3D& SetSmoothZoomControl(int szKey) {
         ::SetCameraSmoothZoomControl(szKey);
         return *this;
     }
 
+    /**
+     * Set camera move controls (1st person and 3rd person cameras)
+     */
     inline Camera3D& SetMoveControls(int frontKey, int backKey, int rightKey, int leftKey,
             int upKey, int downKey) {
         ::SetCameraMoveControls(frontKey, backKey, rightKey, leftKey, upKey, downKey);
         return *this;
     }
 
+    /**
+     * Update camera position for selected mode
+     */
     inline Camera3D& Update() {
         ::UpdateCamera(this);
         return *this;
     }
 
+    /**
+     * Update VR tracking (position and orientation) and camera
+     */
     inline Camera3D& UpdateVrTracking() {
         ::UpdateVrTracking(this);
         return *this;
     }
 
+    /**
+     * Returns a ray trace from mouse position
+     */
     inline Ray GetMouseRay(::Vector2 mousePosition) const {
         return ::GetMouseRay(mousePosition, *this);
     }
 
+    /**
+     * Returns the screen space position for a 3d world space position
+     */
     inline Vector2 GetWorldToScreen(::Vector3 position) const {
         return ::GetWorldToScreen(position, *this);
     }

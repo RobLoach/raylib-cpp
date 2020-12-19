@@ -163,42 +163,86 @@ class Vector2 : public ::Vector2 {
         return *this;
     }
 
+    /**
+     * Calculate vector length
+     */
     float Length() const {
         return Vector2Length(*this);
     }
 
+    /**
+     * Calculate vector square length
+     */
+    float LengthSqr() {
+        return Vector2LengthSqr(*this);
+    }
+
+    /**
+     * Normalize provided vector
+     */
     Vector2 Normalize() {
         return Vector2Normalize(*this);
     }
 
+    /**
+     * Calculate two vectors dot product
+     */
     float DotProduct(const Vector2& vector2) {
         return Vector2DotProduct(*this, vector2);
     }
 
+    /**
+     * Calculate angle from two vectors in X-axis
+     */
     float Angle(const Vector2& vector2) {
         return Vector2Angle(*this, vector2);
     }
 
+    /**
+     * Calculate distance between two vectors
+     */
     float Distance(const Vector2& vector2) {
         return Vector2Distance(*this, vector2);
     }
 
+    /**
+     * Calculate linear interpolation between two vectors
+     */
     Vector2 Lerp(const Vector2& vector2, const float amount) {
         return Vector2Lerp(*this, vector2, amount);
     }
 
+    /**
+     * Calculate reflected vector to normal
+     */
     Vector2 Reflect(const Vector2& normal) {
         return Vector2Reflect(*this, normal);
     }
 
+    /**
+     * Rotate Vector by float in Degrees
+     */
     Vector2 Rotate(float degrees) {
         return Vector2Rotate(*this, degrees);
     }
 
+    /**
+     * Move Vector towards target
+     */
+    Vector2 MoveTowards(Vector2 target, float maxDistance) {
+        return Vector2MoveTowards(*this, target, maxDistance);
+    }
+
+    /**
+     * Vector with components value 0.0f
+     */
     static Vector2 Zero() {
         return Vector2Zero();
     }
 
+    /**
+     * Vector with components value 1.0f
+     */
     static Vector2 One() {
         return Vector2One();
     }

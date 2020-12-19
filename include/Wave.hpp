@@ -109,7 +109,7 @@ class Wave : public ::Wave {
      * Export wave data to file, returns true on success
      */
     inline bool Export(const std::string& fileName) {
-        // TODO: Throw exception on error.
+        // TODO(RobLoach): Throw exception on error.
         return ::ExportWave(*this, fileName.c_str());
     }
 
@@ -117,7 +117,7 @@ class Wave : public ::Wave {
      * Export wave sample data to code (.h), returns true on success
      */
     inline bool ExportAsCode(const std::string& fileName) {
-        // TODO: Throw exception on error.
+        // TODO(RobLoach): Throw exception on error.
         return ::ExportWaveAsCode(*this, fileName.c_str());
     }
 
