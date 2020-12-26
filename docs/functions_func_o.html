@@ -70,6 +70,9 @@ $(function() {
 : <a class="el" href="classraylib_1_1_vector2.html#ae0d880ae074014c100a342292ff85deb">raylib::Vector2</a>
 , <a class="el" href="classraylib_1_1_vector3.html#abffd5504ca7891659fc730b19dd5f495">raylib::Vector3</a>
 </li>
+<li>operator Color()
+: <a class="el" href="classraylib_1_1_vector4.html#aed3d1810f67b55a9a0a1f8684b17bbea">raylib::Vector4</a>
+</li>
 <li>operator float16()
 : <a class="el" href="classraylib_1_1_matrix.html#a63cce6502129548a9ab427efbf714a8b">raylib::Matrix</a>
 </li>
@@ -86,13 +89,16 @@ $(function() {
 <li>operator raylib::Model()
 : <a class="el" href="classraylib_1_1_mesh.html#a8f62c7557383cf2a040bb5dd8f3ecaa1">raylib::Mesh</a>
 </li>
-<li>operator Texture2D()
-: <a class="el" href="classraylib_1_1_image.html#a3dfd4b1b7348e706b894e0343de2909d">raylib::Image</a>
+<li>operator Sound()
+: <a class="el" href="classraylib_1_1_wave.html#a362a52efd58c603c3aac82a4d8b7aad5">raylib::Wave</a>
+</li>
+<li>operator std::string()
+: <a class="el" href="classraylib_1_1_gamepad.html#afd58495a8ac8066eab2aebd2d09fa49c">raylib::Gamepad</a>
 </li>
 <li>operator*()
 : <a class="el" href="classraylib_1_1_matrix.html#ae476282e8d609a8477e74ce58c408a60">raylib::Matrix</a>
 , <a class="el" href="classraylib_1_1_vector2.html#a6739421433c21b80fe771f34a404cbab">raylib::Vector2</a>
-, <a class="el" href="classraylib_1_1_vector3.html#aec1cc1fe29719168c9aed27c5a47c444">raylib::Vector3</a>
+, <a class="el" href="classraylib_1_1_vector3.html#aeaa4e8c02bcaad0d7147fd3a36faceea">raylib::Vector3</a>
 , <a class="el" href="classraylib_1_1_vector4.html#a267f1155a25fe48ce6ea9c9c6ad1469b">raylib::Vector4</a>
 </li>
 <li>operator*=()
@@ -125,6 +131,9 @@ $(function() {
 : <a class="el" href="classraylib_1_1_vector2.html#ad9d489f008b7f111f286150d26ade86d">raylib::Vector2</a>
 , <a class="el" href="classraylib_1_1_vector3.html#a96294148ad63ec557d6eeabe2f33f1b2">raylib::Vector3</a>
 </li>
+<li>operator::Texture2D()
+: <a class="el" href="classraylib_1_1_image.html#a574b01ecc2c8c8eec54ddd83efe512c5">raylib::Image</a>
+</li>
 <li>operator=()
 : <a class="el" href="classraylib_1_1_audio_stream.html#a54edaa11a250ff62e5cd852cfe02b2d1">raylib::AudioStream</a>
 , <a class="el" href="classraylib_1_1_bounding_box.html#a85f934c42bef7a6d336e6215f2daf0b0">raylib::BoundingBox</a>
@@ -133,29 +142,29 @@ $(function() {
 , <a class="el" href="classraylib_1_1_color.html#ae3e2c7b09e326476f0ff20bf4c7a84af">raylib::Color</a>
 , <a class="el" href="classraylib_1_1_font.html#a45a8ed764c7e9d53017daa4759d3aeed">raylib::Font</a>
 , <a class="el" href="classraylib_1_1_gamepad.html#ae694dfc75ad8a7194d2c67d55889662b">raylib::Gamepad</a>
-, <a class="el" href="classraylib_1_1_image.html#aed80783a4dc69e7b9af2fc4537fac669">raylib::Image</a>
+, <a class="el" href="classraylib_1_1_image.html#a0105255962f76cfa6cb3ba55f3d27d26">raylib::Image</a>
 , <a class="el" href="classraylib_1_1_material.html#a26e44fcb980ae66aba0bd85adf7c018a">raylib::Material</a>
-, <a class="el" href="classraylib_1_1_matrix.html#a3dbadf41e38fc79ea5767fc935cd2950">raylib::Matrix</a>
+, <a class="el" href="classraylib_1_1_matrix.html#a9a0c4f538233d9f9347fcaf4ca76309d">raylib::Matrix</a>
 , <a class="el" href="classraylib_1_1_mesh.html#a9b167a88de452860d7c6ad6671be9507">raylib::Mesh</a>
-, <a class="el" href="classraylib_1_1_model.html#a2a06dac6f46a8e58976a38f69728da40">raylib::Model</a>
-, <a class="el" href="classraylib_1_1_model_animation.html#ad5541067c459e4f0d5c6e41dd617e631">raylib::ModelAnimation</a>
+, <a class="el" href="classraylib_1_1_model.html#af8b2b54452d3dafb543f65f72234465d">raylib::Model</a>
+, <a class="el" href="classraylib_1_1_model_animation.html#a4ea53a5ac45708e0fd9f17260a76d5ec">raylib::ModelAnimation</a>
 , <a class="el" href="classraylib_1_1_music.html#aab2fa7bc59b5d7f4596f9b993fa24c05">raylib::Music</a>
-, <a class="el" href="classraylib_1_1_ray.html#a0f0d205a0011aabc27013da1ee72034d">raylib::Ray</a>
-, <a class="el" href="classraylib_1_1_ray_hit_info.html#abeeff3d9b6c58340b9c2213cad957326">raylib::RayHitInfo</a>
-, <a class="el" href="classraylib_1_1_rectangle.html#a9fd326d2eaa0381a5d4e42f6bdae659a">raylib::Rectangle</a>
-, <a class="el" href="classraylib_1_1_render_texture.html#a76f9d8a229ac7f8c9d49693eba8c8188">raylib::RenderTexture</a>
-, <a class="el" href="classraylib_1_1_shader.html#a326cfd56a2758a6c0833d08cecad7ce6">raylib::Shader</a>
-, <a class="el" href="classraylib_1_1_sound.html#abb7422a42131c6206dc4ba9c02fff602">raylib::Sound</a>
+, <a class="el" href="classraylib_1_1_ray.html#af02953182b8ca8a32a88f636600ea346">raylib::Ray</a>
+, <a class="el" href="classraylib_1_1_ray_hit_info.html#a89807422fc8818be96993c9b514f7a51">raylib::RayHitInfo</a>
+, <a class="el" href="classraylib_1_1_rectangle.html#a51eca995fee73d76e02be035f5a21106">raylib::Rectangle</a>
+, <a class="el" href="classraylib_1_1_render_texture.html#a2f037783cc05a1ce825032c1213f0565">raylib::RenderTexture</a>
+, <a class="el" href="classraylib_1_1_shader.html#ab07558a53f1dc63b21db8d4c3fcb1c1a">raylib::Shader</a>
+, <a class="el" href="classraylib_1_1_sound.html#ad8906dacbb7e6d383093e8c5ba23242c">raylib::Sound</a>
 , <a class="el" href="classraylib_1_1_texture.html#a40e2c73f742d6bbb9701d895d5f2af4a">raylib::Texture</a>
 , <a class="el" href="classraylib_1_1_vector2.html#a7482eb2d4f0c5b5261b6473aa07f8af7">raylib::Vector2</a>
-, <a class="el" href="classraylib_1_1_vector3.html#a3dfa742acc536fbeb8d0a7e5fbf3169a">raylib::Vector3</a>
+, <a class="el" href="classraylib_1_1_vector3.html#a543ab704b0020a14a63d9a3cea2b2bec">raylib::Vector3</a>
 , <a class="el" href="classraylib_1_1_vector4.html#a89127d8a66de9b2defabbc089f1aaa7c">raylib::Vector4</a>
 , <a class="el" href="classraylib_1_1_wave.html#ad8f4ffbc95c74e220aaf6872b45fcfc5">raylib::Wave</a>
 </li>
 <li>operator==()
 : <a class="el" href="classraylib_1_1_matrix.html#a391f8fe95a101d544e0ae8e590c0a434">raylib::Matrix</a>
 , <a class="el" href="classraylib_1_1_vector2.html#a83bccddb7c46058b674a2646c490e173">raylib::Vector2</a>
-, <a class="el" href="classraylib_1_1_vector3.html#aca694419f5c9ceef77434d8e6cbbd615">raylib::Vector3</a>
+, <a class="el" href="classraylib_1_1_vector3.html#a848a7b866cadd1e96c4a472343be47cb">raylib::Vector3</a>
 , <a class="el" href="classraylib_1_1_vector4.html#ad492cff089b985bb0b9b1c4fc510fca0">raylib::Vector4</a>
 </li>
 <li>operator[]()
@@ -171,7 +180,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 25 2020 14:07:42 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Dec 26 2020 15:40:05 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -1,10 +1,22 @@
 var searchData=
 [
-  ['unhide_485',['Unhide',['../classraylib_1_1_window.html#ae95b4788cd570afeec61f18b738b34f8',1,'raylib::Window']]],
-  ['unload_486',['Unload',['../classraylib_1_1_font.html#a626232061626ccd76870cf9d81e56ca5',1,'raylib::Font::Unload()'],['../classraylib_1_1_image.html#abb33cee3596f6f74ede70683865aaf0c',1,'raylib::Image::Unload()'],['../classraylib_1_1_material.html#a67962efd02fd7f59cb14cda929e599cc',1,'raylib::Material::Unload()'],['../classraylib_1_1_mesh.html#a2b9f6edb3fce3b6fcea46891e646fcd7',1,'raylib::Mesh::Unload()'],['../classraylib_1_1_model.html#a4a8d6932f932cd9857b62e139418d497',1,'raylib::Model::Unload()'],['../classraylib_1_1_model_animation.html#afa5bb2f87178e477dcbe541cc14eb697',1,'raylib::ModelAnimation::Unload()'],['../classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515',1,'raylib::Music::Unload()'],['../classraylib_1_1_render_texture.html#a56b0bb42ae5ef981404b0fc1b28c2ed9',1,'raylib::RenderTexture::Unload()'],['../classraylib_1_1_shader.html#a5d56815b3531966cee3e2bee8ecfa5a4',1,'raylib::Shader::Unload()'],['../classraylib_1_1_sound.html#a1384d166f189c9bebdb6649b502920f3',1,'raylib::Sound::Unload()'],['../classraylib_1_1_texture.html#a22ab79fcae5acbcb4a6c1f27c519a7ec',1,'raylib::Texture::Unload()'],['../classraylib_1_1_wave.html#a6a143fc632271958e5ee2899338ec5bc',1,'raylib::Wave::Unload()']]],
-  ['update_487',['Update',['../classraylib_1_1_audio_stream.html#ac7aa320c506865cc88d60264549d23b0',1,'raylib::AudioStream::Update()'],['../classraylib_1_1_camera3_d.html#a6a59671e1b7ed19c5b6566e700b625a7',1,'raylib::Camera3D::Update()'],['../classraylib_1_1_music.html#a031bc82c19b51b29f5c507cacd9c2664',1,'raylib::Music::Update()'],['../classraylib_1_1_sound.html#aa10536a28f5c23d056c56b69c86951ef',1,'raylib::Sound::Update()'],['../classraylib_1_1_texture.html#ad2be6ad3fbbff3141dc274b1b397902c',1,'raylib::Texture::Update()'],['../classraylib_1_1_vr_simulator.html#af7711b8cea621ee7c1af38465f24e359',1,'raylib::VrSimulator::Update()']]],
-  ['updateanimation_488',['UpdateAnimation',['../classraylib_1_1_model_animation.html#abfabfc79dea2ddd925b5c82504408f7c',1,'raylib::ModelAnimation']]],
-  ['updatemodelanimation_489',['UpdateModelAnimation',['../classraylib_1_1_model.html#a545315b0be45499f0025acbdd6fd3bb5',1,'raylib::Model']]],
-  ['updaterec_490',['UpdateRec',['../classraylib_1_1_texture.html#aa2e6340c4b0a964ef56a060694d74885',1,'raylib::Texture']]],
-  ['updatevrtracking_491',['UpdateVrTracking',['../classraylib_1_1_camera3_d.html#a0517b151c12fb326c946423553b2b69e',1,'raylib::Camera3D']]]
+  ['tangents_510',['Tangents',['../classraylib_1_1_mesh.html#a4873780eee85a182d90c25eb100199ae',1,'raylib::Mesh']]],
+  ['text_511',['Text',['../classraylib_1_1_image.html#a368482999097dd574dc0a69e51535998',1,'raylib::Image::Text(std::string text, int fontSize, Color color)'],['../classraylib_1_1_image.html#ab8819e0028f7d058ab22eb072d59f808',1,'raylib::Image::Text(::Font font, std::string text, float fontSize, float spacing, ::Color tint)']]],
+  ['texture_512',['Texture',['../classraylib_1_1_texture.html',1,'raylib::Texture'],['../class_texture.html',1,'Texture'],['../classraylib_1_1_texture.html#a78cb97ab050cbcd480d529c2fa9ce2b5',1,'raylib::Texture::Texture()'],['../classraylib_1_1_texture.html#a40ea1411f0b39a78d36fc1a5a08a8fc3',1,'raylib::Texture::Texture(const ::Image &amp;image)'],['../classraylib_1_1_texture.html#aa2697fd78772ce720f8dab323f9be97a',1,'raylib::Texture::Texture(const std::string &amp;fileName)']]],
+  ['texture2d_513',['Texture2D',['../namespaceraylib.html#acbfa8d0b01da4e378cebe24c50c2f55f',1,'raylib']]],
+  ['texturecubemap_514',['TextureCubemap',['../namespaceraylib.html#a31a94f5d187fbad00d1231541a1fe445',1,'raylib']]],
+  ['toaxisangle_515',['ToAxisAngle',['../classraylib_1_1_vector4.html#aec7dcc845e40735b6d70d34ceefc65c1',1,'raylib::Vector4::ToAxisAngle(Vector3 *outAxis, float *outAngle)'],['../classraylib_1_1_vector4.html#a9ba7c844c00e64543c10c3dfdbc6b868',1,'raylib::Vector4::ToAxisAngle()']]],
+  ['toeuler_516',['ToEuler',['../classraylib_1_1_vector4.html#a65730cc70476be33eb1e4daf33a0fd8d',1,'raylib::Vector4']]],
+  ['tofloatv_517',['ToFloatV',['../classraylib_1_1_matrix.html#a54f3ae730b3c5ca7da3522832fd2964d',1,'raylib::Matrix']]],
+  ['toggle_518',['Toggle',['../classraylib_1_1_vr_simulator.html#af18204922c8ed0a8d7c0b19a476160e8',1,'raylib::VrSimulator']]],
+  ['togglefullscreen_519',['ToggleFullscreen',['../classraylib_1_1_window.html#a4f4e526ad3a1bfc3c133ff379d5f04d5',1,'raylib::Window']]],
+  ['tohsv_520',['ToHSV',['../classraylib_1_1_color.html#ab909853a3380e3cf4306a011caca7ec5',1,'raylib::Color']]],
+  ['toint_521',['ToInt',['../classraylib_1_1_color.html#a927ba04098ee1ba3a8e91374ed5d5606',1,'raylib::Color']]],
+  ['tomatrix_522',['ToMatrix',['../classraylib_1_1_vector4.html#a4788b2b5e78b8eb04d8ef43d335c2846',1,'raylib::Vector4']]],
+  ['topot_523',['ToPOT',['../classraylib_1_1_image.html#a9fc1a5bc4cda3f9f837465c2d0df9d98',1,'raylib::Image']]],
+  ['torus_524',['Torus',['../classraylib_1_1_mesh.html#a99fc27bba277cb133b60eb6316699c39',1,'raylib::Mesh']]],
+  ['trace_525',['Trace',['../classraylib_1_1_matrix.html#a7ed7bc3003490c97c363ac2108aaa44b',1,'raylib::Matrix']]],
+  ['transform_526',['Transform',['../classraylib_1_1_vector3.html#a04aeda4ef5cb9d5156171c63024f4f8a',1,'raylib::Vector3::Transform()'],['../classraylib_1_1_vector4.html#ad52462304fa03aed5904ea0b3ec8cd84',1,'raylib::Vector4::Transform()']]],
+  ['translate_527',['Translate',['../classraylib_1_1_matrix.html#a66c40986a01c21a5a1dd139ccf18ab28',1,'raylib::Matrix']]],
+  ['transpose_528',['Transpose',['../classraylib_1_1_matrix.html#a7fc0f1d9225126201c4880a5052b8316',1,'raylib::Matrix']]]
 ];

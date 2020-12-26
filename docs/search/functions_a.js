@@ -1,14 +1,20 @@
 var searchData=
 [
-  ['material_821',['Material',['../classraylib_1_1_material.html#a14a5f5a6f185c193e770d588e9e32069',1,'raylib::Material::Material(::Material material)'],['../classraylib_1_1_material.html#a85e551f0db58082ad9e4b46849a36a8c',1,'raylib::Material::Material()']]],
-  ['matrix_822',['Matrix',['../classraylib_1_1_matrix.html#a75a67f7d63d0059b86fefa0128b6a0fb',1,'raylib::Matrix::Matrix(::Matrix mat)'],['../classraylib_1_1_matrix.html#a10084b64e74c871759307a094392134c',1,'raylib::Matrix::Matrix(float M0=0, float M1=0, float M2=0, float M3=0, float M4=0, float M5=0, float M6=0, float M7=0, float M8=0, float M9=0, float M10=0, float M11=0, float M12=0, float M13=0, float M14=0, float M15=0)']]],
-  ['max_823',['Max',['../classraylib_1_1_vector3.html#ae2cb3dabda206dd6bd2a8d08117caf45',1,'raylib::Vector3']]],
-  ['measuretext_824',['MeasureText',['../classraylib_1_1_font.html#aab8c550a5fcb227bbf517d94cf6f7d4d',1,'raylib::Font']]],
-  ['mesh_825',['Mesh',['../classraylib_1_1_mesh.html#abac0291cd68c3cc75fb7f928b09b1b0c',1,'raylib::Mesh::Mesh(::Mesh mesh)'],['../classraylib_1_1_mesh.html#aaac9fc8c2a3c8fd03458d9fc56f4dfd6',1,'raylib::Mesh::Mesh(int VertexCount=0, int TriangleCount=0)']]],
-  ['min_826',['Min',['../classraylib_1_1_vector3.html#a0791ac3a7720299eb0a31c115bcae1d0',1,'raylib::Vector3']]],
-  ['mipmaps_827',['Mipmaps',['../classraylib_1_1_image.html#aaf8f93e11186f0be62d68ae3f932435f',1,'raylib::Image']]],
-  ['model_828',['Model',['../classraylib_1_1_model.html#ab9dab9e82589b4b34c874b5926510fe0',1,'raylib::Model::Model(::Model model)'],['../classraylib_1_1_model.html#aa15ecaff51acb302ebd7058b920d9952',1,'raylib::Model::Model(const std::string &amp;fileName)'],['../classraylib_1_1_model.html#ac0fe357bff5689afc1dcfcb36fe872ff',1,'raylib::Model::Model(::Mesh mesh)']]],
-  ['modelanimation_829',['ModelAnimation',['../classraylib_1_1_model_animation.html#a4c3e632e110e94ad87db89977440cd93',1,'raylib::ModelAnimation']]],
-  ['multiply_830',['Multiply',['../classraylib_1_1_matrix.html#a466d97d9a478f209923dac070a54b6aa',1,'raylib::Matrix::Multiply()'],['../classraylib_1_1_vector2.html#a5977fbcf5c0eadae2e55bc4602e78425',1,'raylib::Vector2::Multiply()'],['../classraylib_1_1_vector3.html#ab00095f81d4ba0923e9b03834ccb8b35',1,'raylib::Vector3::Multiply()'],['../classraylib_1_1_vector4.html#a3813aac768f70279db54253bf700f96a',1,'raylib::Vector4::Multiply()']]],
-  ['music_831',['Music',['../classraylib_1_1_music.html#a35b533b9592fa27a63855add1549222b',1,'raylib::Music::Music(::Music music)'],['../classraylib_1_1_music.html#a3cbc2287ba5c8e55ce16c47bbb640c60',1,'raylib::Music::Music(const std::string &amp;fileName)']]]
+  ['length_881',['Length',['../classraylib_1_1_vector2.html#a31b7bc465faebf07ef894eee4291e725',1,'raylib::Vector2::Length()'],['../classraylib_1_1_vector3.html#a8a34da2f9489bb78d4862cdedd14cd5e',1,'raylib::Vector3::Length()'],['../classraylib_1_1_vector4.html#a8595e296feb4b4ecb2caccecd5bbef39',1,'raylib::Vector4::Length()']]],
+  ['lengthsqr_882',['LengthSqr',['../classraylib_1_1_vector2.html#a3e68ca85bfbd5cbe8ebce0ad9e4688a4',1,'raylib::Vector2']]],
+  ['lerp_883',['Lerp',['../classraylib_1_1_vector2.html#a696ebdd6c4d915cf6ca239c75c4c69d4',1,'raylib::Vector2::Lerp()'],['../classraylib_1_1_vector3.html#ad7a406ac11b13a062e1ebc1e0e6eec45',1,'raylib::Vector3::Lerp()'],['../classraylib_1_1_vector4.html#ac809ac859aa3fcc71e5d3dfb28e632f2',1,'raylib::Vector4::Lerp()']]],
+  ['load_884',['Load',['../classraylib_1_1_image.html#a399564cc57fbee6d5055c3adf0da6ac7',1,'raylib::Image::Load()'],['../classraylib_1_1_material.html#ac482f46142b5ecc9eea4206aced73e26',1,'raylib::Material::Load()'],['../classraylib_1_1_mesh.html#ad7b2b5dc392a28f363e595e5f05a5c38',1,'raylib::Mesh::Load()'],['../classraylib_1_1_model_animation.html#ae743a3f4d87b6c904b2b4737851f0e21',1,'raylib::ModelAnimation::Load()'],['../classraylib_1_1_shader.html#ad59310e7d1246bc1597506065f8ce2be',1,'raylib::Shader::Load()'],['../classraylib_1_1_texture.html#a564e265a684d713f0a77d54eb22542ab',1,'raylib::Texture::Load()']]],
+  ['loadanim_885',['LoadAnim',['../classraylib_1_1_image.html#adda786a4dfe95e69e3594199f14f7e40',1,'raylib::Image']]],
+  ['loadcode_886',['LoadCode',['../classraylib_1_1_shader.html#a04ebfdebe0939bb809f6d07ff1de8cd6',1,'raylib::Shader']]],
+  ['loadcolors_887',['LoadColors',['../classraylib_1_1_image.html#a871b57724846bc69a7bd4ccba1c2c1c2',1,'raylib::Image']]],
+  ['loadfromimage_888',['LoadFromImage',['../classraylib_1_1_texture.html#a04a52fbcdb9456c14c21f0fa0532313d',1,'raylib::Texture']]],
+  ['loadfrommemory_889',['LoadFromMemory',['../classraylib_1_1_image.html#a272b76cc29e3e960d8487ee7b9c0c3cd',1,'raylib::Image']]],
+  ['loadmodelfrom_890',['LoadModelFrom',['../classraylib_1_1_mesh.html#a192994cdc37a5f68cf149eb79024563d',1,'raylib::Mesh']]],
+  ['loadpalette_891',['LoadPalette',['../classraylib_1_1_image.html#a5938f6aa42e76acf7ba57340a2e7652f',1,'raylib::Image']]],
+  ['loadraw_892',['LoadRaw',['../classraylib_1_1_image.html#a66f5f0c4b322706d07d19968c893823d',1,'raylib::Image']]],
+  ['loadsamples_893',['LoadSamples',['../classraylib_1_1_wave.html#ac42dd244534663a8fb1da305006c9f3a',1,'raylib::Wave']]],
+  ['loadsound_894',['LoadSound',['../classraylib_1_1_wave.html#a202ca9cef9d90b169c04944182d12515',1,'raylib::Wave']]],
+  ['loadtexture_895',['LoadTexture',['../classraylib_1_1_image.html#aa0f3f43f2a0d357203c3a3b467fde011',1,'raylib::Image']]],
+  ['loadtexturecubemap_896',['LoadTextureCubemap',['../classraylib_1_1_texture.html#a30fc708fa012312d658d3a357251055a',1,'raylib::Texture']]],
+  ['lookat_897',['LookAt',['../classraylib_1_1_matrix.html#a4eeb4cdf09fd97c38d990a27e894f6f1',1,'raylib::Matrix']]]
 ];

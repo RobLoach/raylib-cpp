@@ -71,71 +71,105 @@ $(function() {
 <div class="title">RayHitInfo.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_RAYHITINFO_HPP_</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_RAYHITINFO_HPP_</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span>{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classraylib_1_1_ray_hit_info.html">RayHitInfo</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_ray_hit_info.html">::RayHitInfo</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#ae75c433331a394f6bfc76b2ae9088776">   17</a></span>&#160;        <a class="code" href="classraylib_1_1_ray_hit_info.html#ae75c433331a394f6bfc76b2ae9088776">RayHitInfo</a>(::<a class="code" href="classraylib_1_1_ray_hit_info.html">RayHitInfo</a> ray) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <a class="code" href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">set</a>(ray);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        };</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#a11e57e0eea92e6e996a02f850b4606e2">   21</a></span>&#160;        <a class="code" href="classraylib_1_1_ray_hit_info.html#a11e57e0eea92e6e996a02f850b4606e2">RayHitInfo</a>(<span class="keywordtype">bool</span> Hit, <span class="keywordtype">float</span> Distance, ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> Position, ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> Normal) {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            hit = Hit;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            distance = Distance;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            position = Position;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            normal = Normal;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        };</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*   LICENSE: zlib/libpng</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*   raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified,</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*   BSD-like license that allows static linking with closed source software:</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*   Copyright (c) 2020 Rob Loach (@RobLoach)</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*   This software is provided &quot;as-is&quot;, without any express or implied warranty. In no event</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*   will the authors be held liable for any damages arising from the use of this software.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*   Permission is granted to anyone to use this software for any purpose, including commercial</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*   applications, and to alter it and redistribute it freely, subject to the following restrictions:</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*     1. The origin of this software must not be misrepresented; you must not claim that you</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*     wrote the original software. If you use this software in a product, an acknowledgment</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">*     in the product documentation would be appreciated but is not required.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*     2. Altered source versions must be plainly marked as such, and must not be misrepresented</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*     as being the original software.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*     3. This notice may not be removed or altered from any source distribution.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_RAYHITINFO_HPP_</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_RAYHITINFO_HPP_</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#abeeff3d9b6c58340b9c2213cad957326">   28</a></span>&#160;        <a class="code" href="classraylib_1_1_ray_hit_info.html">RayHitInfo</a>&amp; <a class="code" href="classraylib_1_1_ray_hit_info.html#abeeff3d9b6c58340b9c2213cad957326">operator=</a>(const ::RayHitInfo&amp; ray) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">set</a>(ray);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#a89807422fc8818be96993c9b514f7a51">   33</a></span>&#160;        <a class="code" href="classraylib_1_1_ray_hit_info.html">RayHitInfo</a>&amp; <a class="code" href="classraylib_1_1_ray_hit_info.html#a89807422fc8818be96993c9b514f7a51">operator=</a>(<span class="keyword">const</span> <a class="code" href="classraylib_1_1_ray_hit_info.html">RayHitInfo</a>&amp; ray) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">set</a>(ray);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#a20d84afa8ada5738e1d302ea4018bca1">   38</a></span>&#160;        GETTERSETTER(<span class="keywordtype">bool</span>,Hit,hit)</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#a6f57d6aab046a698e12543bf018fd2c6">   39</a></span>&#160;        GETTERSETTER(<span class="keywordtype">float</span>,Distance,distance)</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#a8fbe154d1bfb9eddff125aabde196f78">   40</a></span>&#160;        GETTERSETTER(::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a>,Position,position)</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#a77b21d6aed725610c29dac7f0134859a">   41</a></span>&#160;        GETTERSETTER(::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a>,Normal,normal)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    protected:</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">   44</a></span>&#160;        inline <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">set</a>(::<a class="code" href="classraylib_1_1_ray_hit_info.html">RayHitInfo</a> ray) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            hit = ray.hit;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            distance = ray.distance;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            position = ray.position;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            normal = ray.normal;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_ray_hit_info.html">RayHitInfo</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_ray_hit_info.html">::RayHitInfo</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#ae75c433331a394f6bfc76b2ae9088776">   37</a></span>&#160;    <a class="code" href="classraylib_1_1_ray_hit_info.html#ae75c433331a394f6bfc76b2ae9088776">RayHitInfo</a>(::<a class="code" href="classraylib_1_1_ray_hit_info.html">RayHitInfo</a> ray) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">set</a>(ray);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#a11e57e0eea92e6e996a02f850b4606e2">   41</a></span>&#160;    <a class="code" href="classraylib_1_1_ray_hit_info.html#a11e57e0eea92e6e996a02f850b4606e2">RayHitInfo</a>(<span class="keywordtype">bool</span> Hit, <span class="keywordtype">float</span> Distance, ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> Position, ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> Normal) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        hit = Hit;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        distance = Distance;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        position = Position;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        normal = Normal;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#aa9b0fbc8a003305203d652f05b07941a">   51</a></span>&#160;    <a class="code" href="classraylib_1_1_ray_hit_info.html#aa9b0fbc8a003305203d652f05b07941a">RayHitInfo</a>(::<a class="code" href="classraylib_1_1_ray.html">Ray</a> ray, ::<a class="code" href="classraylib_1_1_model.html">Model</a> model) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">set</a>(::GetCollisionRayModel(ray, model));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#ab8bb56930283b1d6c2bb180e2c0865eb">   58</a></span>&#160;    <a class="code" href="classraylib_1_1_ray_hit_info.html#ab8bb56930283b1d6c2bb180e2c0865eb">RayHitInfo</a>(::<a class="code" href="classraylib_1_1_ray.html">Ray</a> ray, ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> p1, ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> p2, ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> p3) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">set</a>(::GetCollisionRayTriangle(ray, p1, p2, p3));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#ab10b17626e7bf1b760c55fd91b7089b8">   65</a></span>&#160;    <a class="code" href="classraylib_1_1_ray_hit_info.html#ab10b17626e7bf1b760c55fd91b7089b8">RayHitInfo</a>(::<a class="code" href="classraylib_1_1_ray.html">Ray</a> ray, <span class="keywordtype">float</span> groundHeight) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">set</a>(::GetCollisionRayGround(ray, groundHeight));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#abeeff3d9b6c58340b9c2213cad957326">   69</a></span>&#160;    <a class="code" href="classraylib_1_1_ray_hit_info.html">RayHitInfo</a>&amp; <a class="code" href="classraylib_1_1_ray_hit_info.html#abeeff3d9b6c58340b9c2213cad957326">operator=</a>(const ::RayHitInfo&amp; ray) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">set</a>(ray);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#a89807422fc8818be96993c9b514f7a51">   74</a></span>&#160;    <a class="code" href="classraylib_1_1_ray_hit_info.html">RayHitInfo</a>&amp; <a class="code" href="classraylib_1_1_ray_hit_info.html#a89807422fc8818be96993c9b514f7a51">operator=</a>(<span class="keyword">const</span> <a class="code" href="classraylib_1_1_ray_hit_info.html">RayHitInfo</a>&amp; ray) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">set</a>(ray);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#a20d84afa8ada5738e1d302ea4018bca1">   79</a></span>&#160;    GETTERSETTER(<span class="keywordtype">bool</span>, Hit, hit)</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#a6f57d6aab046a698e12543bf018fd2c6">   80</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, Distance, distance)</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#a8fbe154d1bfb9eddff125aabde196f78">   81</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a>, Position, position)</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#a77b21d6aed725610c29dac7f0134859a">   82</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a>, Normal, normal)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; protected:</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">   85</a></span>&#160;    inline <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">set</a>(::<a class="code" href="classraylib_1_1_ray_hit_info.html">RayHitInfo</a> ray) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        hit = ray.hit;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        distance = ray.distance;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        position = ray.position;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        normal = ray.normal;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_RAYHITINFO_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">Provides all the classes associated with raylib-cpp.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00014">AudioDevice.hpp:14</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html_afbeeaffc0cfe3fd0d68d73dcb70467a6"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">raylib::RayHitInfo::set</a></div><div class="ttdeci">void set(::RayHitInfo ray)</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00044">RayHitInfo.hpp:44</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html_ae75c433331a394f6bfc76b2ae9088776"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html#ae75c433331a394f6bfc76b2ae9088776">raylib::RayHitInfo::RayHitInfo</a></div><div class="ttdeci">RayHitInfo(::RayHitInfo ray)</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00017">RayHitInfo.hpp:17</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html"><div class="ttname"><a href="classraylib_1_1_vector3.html">raylib::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00021">Vector3.hpp:21</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html_abeeff3d9b6c58340b9c2213cad957326"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html#abeeff3d9b6c58340b9c2213cad957326">raylib::RayHitInfo::operator=</a></div><div class="ttdeci">RayHitInfo &amp; operator=(const ::RayHitInfo &amp;ray)</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00028">RayHitInfo.hpp:28</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html_a89807422fc8818be96993c9b514f7a51"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html#a89807422fc8818be96993c9b514f7a51">raylib::RayHitInfo::operator=</a></div><div class="ttdeci">RayHitInfo &amp; operator=(const RayHitInfo &amp;ray)</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00033">RayHitInfo.hpp:33</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html">raylib::RayHitInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00015">RayHitInfo.hpp:15</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html_a11e57e0eea92e6e996a02f850b4606e2"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html#a11e57e0eea92e6e996a02f850b4606e2">raylib::RayHitInfo::RayHitInfo</a></div><div class="ttdeci">RayHitInfo(bool Hit, float Distance, ::Vector3 Position, ::Vector3 Normal)</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00021">RayHitInfo.hpp:21</a></div></div>
+<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">Provides all the classes associated with raylib-cpp.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00031">AudioDevice.hpp:31</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html_afbeeaffc0cfe3fd0d68d73dcb70467a6"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html#afbeeaffc0cfe3fd0d68d73dcb70467a6">raylib::RayHitInfo::set</a></div><div class="ttdeci">void set(::RayHitInfo ray)</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00085">RayHitInfo.hpp:85</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_ray_html"><div class="ttname"><a href="classraylib_1_1_ray.html">raylib::Ray</a></div><div class="ttdoc">Ray type (useful for raycast)</div><div class="ttdef"><b>Definition:</b> <a href="_ray_8hpp_source.html#l00038">Ray.hpp:38</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html_ab10b17626e7bf1b760c55fd91b7089b8"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html#ab10b17626e7bf1b760c55fd91b7089b8">raylib::RayHitInfo::RayHitInfo</a></div><div class="ttdeci">RayHitInfo(::Ray ray, float groundHeight)</div><div class="ttdoc">Get collision info between ray and ground plane (Y-normal plane)</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00065">RayHitInfo.hpp:65</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html_ae75c433331a394f6bfc76b2ae9088776"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html#ae75c433331a394f6bfc76b2ae9088776">raylib::RayHitInfo::RayHitInfo</a></div><div class="ttdeci">RayHitInfo(::RayHitInfo ray)</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00037">RayHitInfo.hpp:37</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector3_html"><div class="ttname"><a href="classraylib_1_1_vector3.html">raylib::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00037">Vector3.hpp:37</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html_ab8bb56930283b1d6c2bb180e2c0865eb"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html#ab8bb56930283b1d6c2bb180e2c0865eb">raylib::RayHitInfo::RayHitInfo</a></div><div class="ttdeci">RayHitInfo(::Ray ray, ::Vector3 p1, ::Vector3 p2, ::Vector3 p3)</div><div class="ttdoc">Get collision info between ray and triangle.</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00058">RayHitInfo.hpp:58</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html_abeeff3d9b6c58340b9c2213cad957326"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html#abeeff3d9b6c58340b9c2213cad957326">raylib::RayHitInfo::operator=</a></div><div class="ttdeci">RayHitInfo &amp; operator=(const ::RayHitInfo &amp;ray)</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00069">RayHitInfo.hpp:69</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html_a89807422fc8818be96993c9b514f7a51"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html#a89807422fc8818be96993c9b514f7a51">raylib::RayHitInfo::operator=</a></div><div class="ttdeci">RayHitInfo &amp; operator=(const RayHitInfo &amp;ray)</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00074">RayHitInfo.hpp:74</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_model_html"><div class="ttname"><a href="classraylib_1_1_model.html">raylib::Model</a></div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00035">Model.hpp:35</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html">raylib::RayHitInfo</a></div><div class="ttdoc">Raycast hit information.</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00035">RayHitInfo.hpp:35</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html_aa9b0fbc8a003305203d652f05b07941a"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html#aa9b0fbc8a003305203d652f05b07941a">raylib::RayHitInfo::RayHitInfo</a></div><div class="ttdeci">RayHitInfo(::Ray ray, ::Model model)</div><div class="ttdoc">Get collision info between ray and model.</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00051">RayHitInfo.hpp:51</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_ray_hit_info_html_a11e57e0eea92e6e996a02f850b4606e2"><div class="ttname"><a href="classraylib_1_1_ray_hit_info.html#a11e57e0eea92e6e996a02f850b4606e2">raylib::RayHitInfo::RayHitInfo</a></div><div class="ttdeci">RayHitInfo(bool Hit, float Distance, ::Vector3 Position, ::Vector3 Normal)</div><div class="ttdef"><b>Definition:</b> <a href="_ray_hit_info_8hpp_source.html#l00041">RayHitInfo.hpp:41</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 25 2020 14:07:42 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Dec 26 2020 15:40:05 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
