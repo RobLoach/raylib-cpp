@@ -21,7 +21,7 @@ int main() {
 
     raylib::AudioDevice audio;              // Initialize audio device
 
-    raylib::Music music("resources/guitar_noodling.ogg");
+    raylib::Music music("resources/target.ogg");
 
     music.Play();
 

@@ -51,27 +51,47 @@ class Color : public ::Color {
      */
     Color() : ::Color{0, 0, 0, 255} {};
 
+    /**
+     * Returns a Color from HSV values
+     */
     Color(::Vector3 hsv) {
         set(::ColorFromHSV(hsv.x, hsv.y, hsv.z));
     }
 
+    /**
+     * Returns a Color from HSV values
+     */
     static Color FromHSV(float hue, float saturation, float value) {
         return ::ColorFromHSV(hue, saturation, value);
     }
 
+    /**
+     * Get Color structure from hexadecimal value
+     */
     Color(int hexValue) {
         set(::GetColor(hexValue));
     }
 
+    /**
+     * Returns Color from normalized values [0..1]
+     */
     Color(::Vector4 normalized) {
         set(::ColorFromNormalized(normalized));
     }
 
+    /**
+     * Returns hexadecimal value for a Color
+     */
     int ToInt() const {
         return ::ColorToInt(*this);
     }
 
-    operator int() const { return ::ColorToInt(*this); }
+    /**
+     * Returns hexadecimal value for a Color
+     */
+    operator int() const {
+        return ::ColorToInt(*this);
+    }
 
     /**
      * Returns color with alpha applied, alpha goes from 0.0f to 1.0f
@@ -208,14 +228,14 @@ class Color : public ::Color {
     /**
      * Returns color with alpha applied, alpha goes from 0.0f to 1.0f
      */
-    Color Alpha(float alpha) {
+    Color Alpha(float alpha) const {
         return ::ColorAlpha(*this, alpha);
     }
 
     /**
      * Returns src alpha-blended into dst color with tint
      */
-    Color AlphaBlend(::Color dst, ::Color tint) {
+    Color AlphaBlend(::Color dst, ::Color tint) const {
         return ::ColorAlphaBlend(dst, *this, tint);
     }
 

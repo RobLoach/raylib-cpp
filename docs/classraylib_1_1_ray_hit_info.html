@@ -75,9 +75,21 @@ $(function() {
 <div class="title">raylib::RayHitInfo Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Raycast hit information.  
+ <a href="classraylib_1_1_ray_hit_info.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aa9b0fbc8a003305203d652f05b07941a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray_hit_info.html#aa9b0fbc8a003305203d652f05b07941a">RayHitInfo</a> (::<a class="el" href="classraylib_1_1_ray.html">Ray</a> ray, ::<a class="el" href="classraylib_1_1_model.html">Model</a> model)</td></tr>
+<tr class="memdesc:aa9b0fbc8a003305203d652f05b07941a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision info between ray and model.  <a href="classraylib_1_1_ray_hit_info.html#aa9b0fbc8a003305203d652f05b07941a">More...</a><br /></td></tr>
+<tr class="separator:aa9b0fbc8a003305203d652f05b07941a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8bb56930283b1d6c2bb180e2c0865eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray_hit_info.html#ab8bb56930283b1d6c2bb180e2c0865eb">RayHitInfo</a> (::<a class="el" href="classraylib_1_1_ray.html">Ray</a> ray, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p1, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p2, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p3)</td></tr>
+<tr class="memdesc:ab8bb56930283b1d6c2bb180e2c0865eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision info between ray and triangle.  <a href="classraylib_1_1_ray_hit_info.html#ab8bb56930283b1d6c2bb180e2c0865eb">More...</a><br /></td></tr>
+<tr class="separator:ab8bb56930283b1d6c2bb180e2c0865eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab10b17626e7bf1b760c55fd91b7089b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray_hit_info.html#ab10b17626e7bf1b760c55fd91b7089b8">RayHitInfo</a> (::<a class="el" href="classraylib_1_1_ray.html">Ray</a> ray, float groundHeight)</td></tr>
+<tr class="memdesc:ab10b17626e7bf1b760c55fd91b7089b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision info between ray and ground plane (Y-normal plane)  <a href="classraylib_1_1_ray_hit_info.html#ab10b17626e7bf1b760c55fd91b7089b8">More...</a><br /></td></tr>
+<tr class="separator:ab10b17626e7bf1b760c55fd91b7089b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae75c433331a394f6bfc76b2ae9088776"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray_hit_info.html#ae75c433331a394f6bfc76b2ae9088776">RayHitInfo</a> (::<a class="el" href="classraylib_1_1_ray_hit_info.html">RayHitInfo</a> ray)</td></tr>
 <tr class="separator:ae75c433331a394f6bfc76b2ae9088776"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11e57e0eea92e6e996a02f850b4606e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray_hit_info.html#a11e57e0eea92e6e996a02f850b4606e2">RayHitInfo</a> (bool Hit, float Distance, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> Position, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> Normal)</td></tr>
@@ -109,11 +121,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:afbeeaffc0cfe3fd0d68d73dcb70467a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00015">15</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<div class="textblock"><p>Raycast hit information. </p>
+
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00035">35</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae75c433331a394f6bfc76b2ae9088776"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae75c433331a394f6bfc76b2ae9088776">&#9670;&nbsp;</a></span>RayHitInfo() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae75c433331a394f6bfc76b2ae9088776">&#9670;&nbsp;</a></span>RayHitInfo() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -136,14 +149,14 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00017">17</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00037">37</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_ray_hit_info_8hpp_source.html#l00044">set()</a>.</p>
+<p class="reference">References <a class="el" href="_ray_hit_info_8hpp_source.html#l00085">set()</a>.</p>
 
 </div>
 </div>
 <a id="a11e57e0eea92e6e996a02f850b4606e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11e57e0eea92e6e996a02f850b4606e2">&#9670;&nbsp;</a></span>RayHitInfo() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a11e57e0eea92e6e996a02f850b4606e2">&#9670;&nbsp;</a></span>RayHitInfo() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,7 +201,145 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00021">21</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00041">41</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa9b0fbc8a003305203d652f05b07941a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9b0fbc8a003305203d652f05b07941a">&#9670;&nbsp;</a></span>RayHitInfo() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">raylib::RayHitInfo::RayHitInfo </td>
+          <td>(</td>
+          <td class="paramtype">::<a class="el" href="classraylib_1_1_ray.html">Ray</a>&#160;</td>
+          <td class="paramname"><em>ray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">::<a class="el" href="classraylib_1_1_model.html">Model</a>&#160;</td>
+          <td class="paramname"><em>model</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get collision info between ray and model. </p>
+
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00051">51</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ray_hit_info_8hpp_source.html#l00085">set()</a>.</p>
+
+</div>
+</div>
+<a id="ab8bb56930283b1d6c2bb180e2c0865eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8bb56930283b1d6c2bb180e2c0865eb">&#9670;&nbsp;</a></span>RayHitInfo() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">raylib::RayHitInfo::RayHitInfo </td>
+          <td>(</td>
+          <td class="paramtype">::<a class="el" href="classraylib_1_1_ray.html">Ray</a>&#160;</td>
+          <td class="paramname"><em>ray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a>&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a>&#160;</td>
+          <td class="paramname"><em>p2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a>&#160;</td>
+          <td class="paramname"><em>p3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get collision info between ray and triangle. </p>
+
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00058">58</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ray_hit_info_8hpp_source.html#l00085">set()</a>.</p>
+
+</div>
+</div>
+<a id="ab10b17626e7bf1b760c55fd91b7089b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab10b17626e7bf1b760c55fd91b7089b8">&#9670;&nbsp;</a></span>RayHitInfo() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">raylib::RayHitInfo::RayHitInfo </td>
+          <td>(</td>
+          <td class="paramtype">::<a class="el" href="classraylib_1_1_ray.html">Ray</a>&#160;</td>
+          <td class="paramname"><em>ray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>groundHeight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get collision info between ray and ground plane (Y-normal plane) </p>
+
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00065">65</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ray_hit_info_8hpp_source.html#l00085">set()</a>.</p>
 
 </div>
 </div>
@@ -216,7 +367,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00039">39</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00080">80</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
 
 </div>
 </div>
@@ -243,7 +394,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00038">38</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00079">79</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
 
 </div>
 </div>
@@ -270,7 +421,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00041">41</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00082">82</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
 
 </div>
 </div>
@@ -297,7 +448,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00040">40</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00081">81</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
 
 </div>
 </div>
@@ -325,9 +476,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00028">28</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00069">69</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_ray_hit_info_8hpp_source.html#l00044">set()</a>.</p>
+<p class="reference">References <a class="el" href="_ray_hit_info_8hpp_source.html#l00085">set()</a>.</p>
 
 </div>
 </div>
@@ -355,9 +506,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00033">33</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00074">74</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_ray_hit_info_8hpp_source.html#l00044">set()</a>.</p>
+<p class="reference">References <a class="el" href="_ray_hit_info_8hpp_source.html#l00085">set()</a>.</p>
 
 </div>
 </div>
@@ -385,9 +536,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00044">44</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00085">85</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_ray_hit_info_8hpp_source.html#l00028">operator=()</a>, and <a class="el" href="_ray_hit_info_8hpp_source.html#l00017">RayHitInfo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_ray_hit_info_8hpp_source.html#l00069">operator=()</a>, and <a class="el" href="_ray_hit_info_8hpp_source.html#l00037">RayHitInfo()</a>.</p>
 
 </div>
 </div>
@@ -415,7 +566,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00039">39</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00080">80</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
 
 </div>
 </div>
@@ -443,7 +594,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00038">38</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00079">79</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
 
 </div>
 </div>
@@ -471,7 +622,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00041">41</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00082">82</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
 
 </div>
 </div>
@@ -499,14 +650,14 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00040">40</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_hit_info_8hpp_source.html#l00081">81</a> of file <a class="el" href="_ray_hit_info_8hpp_source.html">RayHitInfo.hpp</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 25 2020 14:07:42 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Dec 26 2020 15:40:05 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

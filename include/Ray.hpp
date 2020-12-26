@@ -32,6 +32,9 @@
 #include "./RayHitInfo.hpp"
 
 namespace raylib {
+/**
+ * Ray type (useful for raycast)
+ */
 class Ray : public ::Ray {
  public:
     Ray(::Ray ray) {
@@ -60,6 +63,9 @@ class Ray : public ::Ray {
     GETTERSETTER(::Vector3, Position, position)
     GETTERSETTER(::Vector3, Direction, direction)
 
+    /**
+     * Draw a ray line
+     */
     inline Ray& Draw(::Color color) {
         DrawRay(*this, color);
         return *this;

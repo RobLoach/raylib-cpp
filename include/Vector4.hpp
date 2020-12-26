@@ -158,7 +158,7 @@ class Vector4 : public ::Vector4 {
     }
 #endif
 
-    inline Color ColorFromNormalized() {
+    inline Color ColorFromNormalized() const {
         return ::ColorFromNormalized(*this);
     }
 

@@ -8,7 +8,7 @@ if (NOT raylib_FOUND)
         FetchContent_Declare(
         raylib
         GIT_REPOSITORY https://github.com/raysan5/raylib.git
-        GIT_TAG bd512764ff7c82fa6e1395c51accb3ba18162827
+        GIT_TAG e25e380e80a117f2404d65b37700fb620dc1f990
     )
     FetchContent_GetProperties(raylib)
     if (NOT raylib_POPULATED) # Have we downloaded raylib yet?
@@ -28,7 +28,7 @@ if (NOT raylib-cpp_FOUND)
         FetchContent_Declare(
         raylib-cpp
         GIT_REPOSITORY https://github.com/RobLoach/raylib-cpp.git
-        GIT_TAG ebb379029bd8f73dc42791f5d8fc9c9e607ffd1a
+        GIT_TAG 9f57cd6dd720fcfb4a65154b49a1285118eea6c0
     )
     FetchContent_GetProperties(raylib-cpp)
     if (NOT raylib-cpp_POPULATED) # Have we downloaded raylib yet?

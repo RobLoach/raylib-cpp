@@ -49,6 +49,7 @@ class AudioStream : public ::AudioStream {
         Close();
     }
 
+    GETTERSETTER(rAudioBuffer *, Buffer, buffer)
     GETTERSETTER(unsigned int, SampleRate, sampleRate)
     GETTERSETTER(unsigned int, SampleSize, sampleSize)
     GETTERSETTER(unsigned int, Channels, channels)
@@ -74,9 +75,8 @@ class AudioStream : public ::AudioStream {
     /**
      * Close audio stream and free memory
      */
-    inline AudioStream& Close() {
+    inline void Close() {
         ::CloseAudioStream(*this);
-        return *this;
     }
 
     /**
@@ -150,10 +150,10 @@ class AudioStream : public ::AudioStream {
 
  protected:
     inline void set(::AudioStream stream) {
+        buffer = stream.buffer;
         sampleRate = stream.sampleRate;
         sampleSize = stream.sampleSize;
         channels = stream.channels;
-        buffer = stream.buffer;
     }
 };
 }  // namespace raylib

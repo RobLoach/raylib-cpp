@@ -131,24 +131,24 @@ class Shader : public ::Shader {
     /**
      * Set shader uniform value for texture
      */
-    inline Shader& SetValue(int uniformLoc, Texture2D texture) {
+    inline Shader& SetValue(int uniformLoc, ::Texture2D texture) {
         ::SetShaderValueTexture(*this, uniformLoc, texture);
         return *this;
     }
 
-    ::TextureCubemap GenTextureCubemap(Texture2D panorama, int size, int format) {
+    ::TextureCubemap GenTextureCubemap(::Texture2D panorama, int size, int format) const {
         return ::GenTextureCubemap(*this, panorama, size, format);
     }
 
-    ::TextureCubemap GenTextureIrradiance(Texture2D panorama, int size) {
+    ::TextureCubemap GenTextureIrradiance(::Texture2D panorama, int size) const {
         return ::GenTextureIrradiance(*this, panorama, size);
     }
 
-    ::TextureCubemap GenTexturePrefilter(Texture2D panorama, int size) {
+    ::TextureCubemap GenTexturePrefilter(::Texture2D panorama, int size) const {
         return ::GenTexturePrefilter(*this, panorama, size);
     }
 
-    ::Texture2D GenTextureBRDF(int size) {
+    ::Texture2D GenTextureBRDF(int size) const {
         return ::GenTextureBRDF(*this, size);
     }
 

@@ -67,7 +67,16 @@ $(function() {
 <div class="title">raylib-cpp </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a href="https://github.com/robloach/raylib-cpp">raylib-cpp</a> is a C++ wrapper library for raylib, a simple and easy-to-use library to enjoy videogames programming. This C++ header provides object-oriented wrappers around raylib's struct interfaces.</p>
+<div class="textblock"><p>LICENSE: zlib/libpng raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified, BSD-like license that allows static linking with closed source software:</p>
+<p>Copyright 2020 Rob Loach (@RobLoach)</p>
+<p>This software is provided "as-is", without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.</p>
+<p>Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:</p>
+<ol type="1">
+<li>The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.</li>
+<li>Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.</li>
+<li>This notice may not be removed or altered from any source distribution.</li>
+</ol>
+<p><a href="https://github.com/robloach/raylib-cpp">raylib-cpp</a> is a C++ wrapper library for raylib, a simple and easy-to-use library to enjoy videogames programming. This C++ header provides object-oriented wrappers around raylib's struct interfaces.</p>
 <p>See the <a class="el" href="namespaceraylib.html" title="Provides all the classes associated with raylib-cpp.">raylib</a> namespace for all available classes.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;raylib-cpp.hpp&quot;</span></div>
 <div class="line"> </div>
@@ -85,7 +94,7 @@ $(function() {
 <div class="line">    {</div>
 <div class="line">        BeginDrawing();</div>
 <div class="line"> </div>
-<div class="line">        <a class="code" href="classraylib_1_1_color.html#a617a8a434004510d97e65109f2d1cdfb">raylib::Color::RayWhite</a>.<a class="code" href="classraylib_1_1_color.html#ace467f20d71ff4af44e0211d6aeea9b5">ClearBackground</a>();</div>
+<div class="line">        ClearBackground(RAYWHITE);</div>
 <div class="line"> </div>
 <div class="line">        DrawText(<span class="stringliteral">&quot;Congrats! You created your first window!&quot;</span>, 190, 200, 20, LIGHTGRAY);</div>
 <div class="line"> </div>
@@ -103,13 +112,11 @@ $(function() {
 <div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
-<div class="ttc" id="aclassraylib_1_1_color_html_ace467f20d71ff4af44e0211d6aeea9b5"><div class="ttname"><a href="classraylib_1_1_color.html#ace467f20d71ff4af44e0211d6aeea9b5">raylib::Color::ClearBackground</a></div><div class="ttdeci">Color &amp; ClearBackground()</div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00112">Color.hpp:112</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_texture_html"><div class="ttname"><a href="classraylib_1_1_texture.html">raylib::Texture</a></div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00019">Texture.hpp:19</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_color_html_a617a8a434004510d97e65109f2d1cdfb"><div class="ttname"><a href="classraylib_1_1_color.html#a617a8a434004510d97e65109f2d1cdfb">raylib::Color::RayWhite</a></div><div class="ttdeci">static Color RayWhite</div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00077">Color.hpp:77</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_window_html"><div class="ttname"><a href="classraylib_1_1_window.html">raylib::Window</a></div><div class="ttdoc">Window and Graphics Device Functions.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8hpp_source.html#l00026">Window.hpp:26</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_texture_html"><div class="ttname"><a href="classraylib_1_1_texture.html">raylib::Texture</a></div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00036">Texture.hpp:36</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_window_html"><div class="ttname"><a href="classraylib_1_1_window.html">raylib::Window</a></div><div class="ttdoc">Window and Graphics Device Functions.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8hpp_source.html#l00044">Window.hpp:44</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 25 2020 14:07:42 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Dec 26 2020 15:40:05 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -65,6 +65,7 @@ class Font : public ::Font {
 
     GETTERSETTER(int, BaseSize, baseSize)
     GETTERSETTER(int, CharsCount, charsCount)
+    GETTERSETTER(int, CharsPadding, charsPadding)
     GETTERSETTER(::Texture2D, Texture, texture)
     GETTERSETTER(::Rectangle*, Recs, recs)
     GETTERSETTER(::CharInfo*, Chars, chars)
@@ -102,7 +103,7 @@ class Font : public ::Font {
     /**
      * Measure string size for Font
      */
-    inline Vector2 MeasureText(const std::string& text, float fontSize, float spacing) {
+    inline Vector2 MeasureText(const std::string& text, float fontSize, float spacing) const {
         return ::MeasureTextEx(*this, text.c_str(), fontSize, spacing);
     }
 
@@ -116,7 +117,7 @@ class Font : public ::Font {
     /**
      * Create an image from text (custom sprite font)
      */
-    inline Image ImageText(const std::string& text, float fontSize, float spacing, ::Color tint) {
+    inline Image ImageText(const std::string& text, float fontSize, float spacing, ::Color tint) const {
         return ::ImageTextEx(*this, text.c_str(), fontSize, spacing, tint);
     }
 

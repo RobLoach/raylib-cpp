@@ -54,8 +54,89 @@ class Mesh : public ::Mesh {
         return std::vector<Mesh>(meshes, meshes + count);
     }
 
+    /**
+     * Generate polygonal mesh
+     */
+    static Mesh Poly(int sides, float radius) {
+        return ::GenMeshPoly(sides, radius);
+    }
+    /**
+     * Generate plane mesh (with subdivisions)
+     */
+    static Mesh Plane(float width, float length, int resX, int resZ) {
+        return ::GenMeshPlane(width, length, resX, resZ);
+    }
+
+    /**
+     * Generate cuboid mesh
+     */
+    static Mesh Cube(float width, float height, float length) {
+        return ::GenMeshCube(width, height, length);
+    }
+    /**
+     * Generate sphere mesh (standard sphere)
+     */
+    static Mesh Sphere(float radius, int rings, int slices) {
+        return ::GenMeshSphere(radius, rings, slices);
+    }
+
+    /**
+     * Generate half-sphere mesh (no bottom cap)
+     */
+    static Mesh HemiSphere(float radius, int rings, int slices) {
+        return ::GenMeshHemiSphere(radius, rings, slices);
+    }
+
+    /**
+     * Generate cylinder mesh
+     */
+    static Mesh Cylinder(float radius, float height, int slices) {
+        return ::GenMeshCylinder(radius, height, slices);
+    }
+
+    /**
+     * Generate torus mesh
+     */
+    static Mesh Torus(float radius, float size, int radSeg, int sides) {
+        return ::GenMeshTorus(radius, size, radSeg, sides);
+    }
+
+    /**
+     * Generate trefoil knot mesh
+     */
+    static Mesh Knot(float radius, float size, int radSeg, int sides) {
+        return ::GenMeshKnot(radius, size, radSeg, sides);
+    }
+
+    /**
+     * Generate heightmap mesh from image data
+     */
+    static Mesh Heightmap(::Image heightmap, ::Vector3 size) {
+        return ::GenMeshHeightmap(heightmap, size);
+    }
+
+    /**
+     * Generate cubes-based map mesh from image data
+     */
+    static Mesh Cubicmap(::Image cubicmap, ::Vector3 cubeSize) {
+        return ::GenMeshCubicmap(cubicmap, cubeSize);
+    }
+
     GETTERSETTER(int, VertexCount, vertexCount)
     GETTERSETTER(int, TriangleCount, triangleCount)
+    GETTERSETTER(float*, Vertices, vertices)
+    GETTERSETTER(float *, TexCoords, texcoords)
+    GETTERSETTER(float *, TexCoords2, texcoords2)
+    GETTERSETTER(float *, Normals, normals)
+    GETTERSETTER(float *, Tangents, tangents)
+    GETTERSETTER(unsigned char *, Colors, colors)
+    GETTERSETTER(unsigned short *, Indices, indices)
+    GETTERSETTER(float *, AnimVertices, animVertices)
+    GETTERSETTER(float *, AnimNormals, animNormals)
+    GETTERSETTER(int *, BoneIds, boneIds)
+    GETTERSETTER(float *, BoneWeights, boneWeights)
+    GETTERSETTER(unsigned int, VaoId, vaoId)
+    GETTERSETTER(unsigned int *, VboId, vboId)
 
     Mesh& operator=(const ::Mesh& mesh) {
         set(mesh);
@@ -83,7 +164,7 @@ class Mesh : public ::Mesh {
         ::UnloadMesh(*this);
     }
 
-    inline raylib::BoundingBox BoundingBox() {
+    inline raylib::BoundingBox BoundingBox() const {
         return ::MeshBoundingBox(*this);
     }
 
@@ -118,7 +199,7 @@ class Mesh : public ::Mesh {
     /**
      * Load model from generated mesh
      */
-    inline raylib::Model LoadModelFrom() {
+    inline raylib::Model LoadModelFrom() const {
         return ::LoadModelFromMesh(*this);
     }
 
