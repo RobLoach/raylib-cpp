@@ -29,6 +29,9 @@
 #include "./raylib-cpp-utils.hpp"
 
 namespace raylib {
+/**
+ * Bounding box type
+ */
 class BoundingBox : public ::BoundingBox {
  public:
     BoundingBox(::BoundingBox box) {

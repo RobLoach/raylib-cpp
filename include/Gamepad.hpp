@@ -74,6 +74,13 @@ class Gamepad {
     }
 
     /**
+     * Return gamepad internal name id
+     */
+    operator std::string() const {
+        return GetName();
+    }
+
+    /**
      * Detect if a gamepad button has been pressed once
      */
     inline bool IsButtonPressed(int button) const {

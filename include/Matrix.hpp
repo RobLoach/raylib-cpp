@@ -116,6 +116,25 @@ class Matrix : public ::Matrix {
             && m15 == other.m15;
     }
 
+    bool operator==(::Matrix& other) {
+        return m0 == other.m0
+            && m1 == other.m1
+            && m2 == other.m2
+            && m3 == other.m3
+            && m4 == other.m4
+            && m5 == other.m5
+            && m6 == other.m6
+            && m7 == other.m7
+            && m8 == other.m8
+            && m9 == other.m9
+            && m10 == other.m10
+            && m11 == other.m11
+            && m12 == other.m12
+            && m13 == other.m13
+            && m14 == other.m14
+            && m15 == other.m15;
+    }
+
     /**
      * Set a custom projection matrix (replaces internal projection matrix)
      */
@@ -147,19 +166,19 @@ class Matrix : public ::Matrix {
     }
 
 #ifndef RAYLIB_CPP_NO_MATH
-    inline float Trace() {
+    inline float Trace() const {
         return ::MatrixTrace(*this);
     }
 
-    inline Matrix Transpose() {
+    inline Matrix Transpose() const {
         return ::MatrixTranspose(*this);
     }
 
-    inline Matrix Invert() {
+    inline Matrix Invert() const {
         return ::MatrixInvert(*this);
     }
 
-    inline Matrix Normalize() {
+    inline Matrix Normalize() const {
         return ::MatrixNormalize(*this);
     }
 
@@ -211,7 +230,7 @@ class Matrix : public ::Matrix {
         return ::MatrixScale(x, y, z);
     }
 
-    Matrix Multiply(Matrix right) {
+    Matrix Multiply(Matrix right) const {
         return ::MatrixMultiply(*this, right);
     }
 
@@ -237,7 +256,7 @@ class Matrix : public ::Matrix {
         return ::MatrixLookAt(eye, target, up);
     }
 
-    inline float16 ToFloatV() {
+    inline float16 ToFloatV() const {
         return ::MatrixToFloatV(*this);
     }
 

@@ -152,6 +152,14 @@ class Texture : public ::Texture {
         return *this;
     }
 
+    /**
+     * Draws the texture at the top left corner of the screen.
+     */
+    inline Texture& Draw() {
+        ::DrawTexture(*this, 0, 0, WHITE);
+        return *this;
+    }
+
     inline Texture& Draw(int posX, int posY, ::Color tint = WHITE) {
         ::DrawTexture(*this, posX, posY, tint);
         return *this;
@@ -203,11 +211,17 @@ class Texture : public ::Texture {
         return *this;
     }
 
-    inline Texture& SetMaterialTexture(Material *material, int mapType) {
+    /**
+     * Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)
+     */
+    inline Texture& SetMaterial(::Material *material, int mapType) {
         ::SetMaterialTexture(material, mapType, *this);
         return *this;
     }
 
+    /**
+     * Get pixel data size in bytes for certain format
+     */
     static int GetPixelDataSize(int width, int height, int format) {
         return ::GetPixelDataSize(width, height, format);
     }

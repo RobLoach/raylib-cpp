@@ -29,6 +29,9 @@
 #include "./raylib-cpp-utils.hpp"
 
 namespace raylib {
+/**
+ * Raycast hit information
+ */
 class RayHitInfo : public ::RayHitInfo {
  public:
     RayHitInfo(::RayHitInfo ray) {

@@ -85,7 +85,7 @@ class Wave : public ::Wave {
     /**
      * Convert wave data to desired format
      */
-    inline Wave& Format(int SampleRate = 0, int SampleSize = 0, int Channels = 2) {
+    inline Wave& Format(int SampleRate, int SampleSize, int Channels = 2) {
         ::WaveFormat(this, SampleRate, SampleSize, Channels);
         return *this;
     }
@@ -103,6 +103,20 @@ class Wave : public ::Wave {
     inline Wave& Crop(int initSample, int finalSample) {
         ::WaveCrop(this, initSample, finalSample);
         return *this;
+    }
+
+    /**
+     * Load samples data from wave as a floats array
+     */
+    inline float* LoadSamples() {
+        return ::LoadWaveSamples(*this);
+    }
+
+    /**
+     * Unload samples data loaded with LoadWaveSamples()
+     */
+    inline void UnloadSamples(float *samples) {
+        ::UnloadWaveSamples(samples);
     }
 
     /**

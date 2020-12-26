@@ -59,6 +59,8 @@ class Material : public ::Material {
     }
 
     GETTERSETTER(::Shader, Shader, shader)
+    GETTERSETTER(::MaterialMap*, Maps, maps)
+    GETTERSETTER(float*, Params, params)
 
     Material& operator=(const ::Material& material) {
         set(material);

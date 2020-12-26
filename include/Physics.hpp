@@ -78,7 +78,7 @@ class Physics {
         return *this;
     }
 
-    inline bool IsEnabled() {
+    inline bool IsEnabled() const {
         return ::IsPhysicsEnabled();
     }
 

@@ -313,8 +313,11 @@ class Vector3 : public ::Vector3 {
         return *this;
     }
 
-    inline bool CheckCollision(float radiusA, Vector3 centerB, float radiusB) {
-        return CheckCollisionSpheres(*this, radiusA, centerB, radiusB);
+    /**
+     * Detect collision between two spheres
+     */
+    inline bool CheckCollision(float radius1, Vector3 center2, float radius2) {
+        return CheckCollisionSpheres(*this, radius1, center2, radius2);
     }
 
  protected:

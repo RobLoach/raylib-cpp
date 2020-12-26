@@ -120,7 +120,7 @@ class Rectangle : public ::Rectangle {
     /**
      * Get collision rectangle for two rectangles collision
      */
-    inline Rectangle GetCollision(::Rectangle rec2) const {
+    inline ::Rectangle GetCollision(::Rectangle rec2) const {
         return ::GetCollisionRec(*this, rec2);
     }
 

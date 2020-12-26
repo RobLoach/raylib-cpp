@@ -486,18 +486,30 @@ class Image : public ::Image {
         return *this;
     }
 
+    /**
+     * Load color data from image as a Color array (RGBA - 32bit)
+     */
     inline ::Color* LoadColors() {
         return ::LoadImageColors(*this);
     }
 
+    /**
+     * Load colors palette from image as a Color array (RGBA - 32bit)
+     */
     inline ::Color* LoadPalette(int maxPaletteSize, int *colorsCount) {
         return ::LoadImagePalette(*this, maxPaletteSize, colorsCount);
     }
 
-    ::Texture2D LoadTexture() {
+    /**
+     * Load texture from image data
+     */
+    inline ::Texture2D LoadTexture() {
         return ::LoadTextureFromImage(*this);
     }
 
+    /**
+     * Load texture from image data
+     */
     inline operator ::Texture2D() {
         return LoadTexture();
     }

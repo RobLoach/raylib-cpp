@@ -22,7 +22,7 @@ int main() {
     raylib::AudioDevice audiodevice;      // Initialize audio device
 
     raylib::Sound fxWav("resources/sound.wav");         // Load WAV audio file
-    raylib::Sound fxOgg("resources/tanatana.ogg");      // Load OGG audio file
+    raylib::Sound fxOgg("resources/target.ogg");      // Load OGG audio file
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------

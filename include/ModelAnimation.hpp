@@ -33,6 +33,9 @@
 #include "./Mesh.hpp"
 
 namespace raylib {
+/**
+ * Model animation
+ */
 class ModelAnimation : public ::ModelAnimation {
  public:
     ModelAnimation(::ModelAnimation model) {

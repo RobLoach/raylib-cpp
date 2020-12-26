@@ -64,7 +64,7 @@ class Window {
     /**
      * Check if KEY_ESCAPE pressed or Close icon pressed
      */
-    inline bool ShouldClose() {
+    inline bool ShouldClose() const {
         return ::WindowShouldClose();
     }
 
@@ -78,7 +78,7 @@ class Window {
     /**
      * Check if cursor is on the current screen
      */
-    inline bool IsCursorOnScreen() {
+    inline bool IsCursorOnScreen() const {
         return ::IsCursorOnScreen();
     }
 
@@ -134,7 +134,7 @@ class Window {
     /**
      * Check if one specific window flag is enabled
      */
-    inline bool IsState(unsigned int flag) {
+    inline bool IsState(unsigned int flag) const {
         return ::IsWindowState(flag);
     }
 

@@ -97,6 +97,7 @@ class DroppedFiles {
         if (m_files != NULL && pos < m_count && pos >= 0) {
             return std::string(m_files[pos]);
         }
+        // TODO(RobLoach): Throw exception when out of range.
         return "";
     }
 
