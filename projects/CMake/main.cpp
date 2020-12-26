@@ -1,8 +1,8 @@
 /*******************************************************************************************
 *
-*   raylib [core] example - Basic window
+*   raylib-cpp [core] example - Basic window
 *
-*   Welcome to raylib!
+*   Welcome to raylib-cpp!
 *
 *   To test examples, just press F6 and execute raylib_compile_execute script
 *   Note that compiled executable is placed in the same folder as .c file
