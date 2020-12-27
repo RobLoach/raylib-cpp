@@ -27,6 +27,7 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
@@ -161,7 +162,10 @@ class Mesh : public ::Mesh {
     }
 
     inline void Unload() {
-        ::UnloadMesh(*this);
+        if (vboId != NULL) {
+            ::UnloadMesh(*this);
+            vboId = NULL;
+        }
     }
 
     inline raylib::BoundingBox BoundingBox() const {
