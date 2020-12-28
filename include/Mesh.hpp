@@ -27,7 +27,6 @@
 
 #include <string>
 #include <vector>
-#include <iostream>
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
