@@ -53,7 +53,12 @@ class Model : public ::Model {
     GETTERSETTER(::Matrix, Transform, transform)
     GETTERSETTER(int, MeshCount, meshCount)
     GETTERSETTER(int, MaterialCount, materialCount)
+    GETTERSETTER(::Mesh *, Meshes, meshes)
+    GETTERSETTER(::Material *, Materials, materials)
+    GETTERSETTER(int *, MeshMaterial, meshMaterial)
     GETTERSETTER(int, BoneCount, boneCount)
+    GETTERSETTER(::BoneInfo *, Bones, bones)
+    GETTERSETTER(::Transform *, BindPoe, bindPose)
 
     Model& operator=(const ::Model& model) {
         set(model);
@@ -69,7 +74,11 @@ class Model : public ::Model {
      * Unload model (including meshes) from memory (RAM and/or VRAM)
      */
     inline void Unload() {
-        ::UnloadModel(*this);
+        if (meshes != NULL || materials != NULL) {
+            ::UnloadModel(*this);
+            meshes = NULL;
+            materials = NULL;
+        }
     }
 
     /**
@@ -108,6 +117,38 @@ class Model : public ::Model {
      */
     inline bool IsModelAnimationValid(::ModelAnimation anim) const {
         return ::IsModelAnimationValid(*this, anim);
+    }
+
+    /**
+     * Draw a model (with texture if set)
+     */
+    inline Model& Draw(::Vector3 position, float scale = 1.0f, ::Color tint = WHITE) {
+        ::DrawModel(*this, position, scale, tint);
+        return *this;
+    }
+
+    /**
+     * Draw a model with extended parameters
+     */
+    inline Model& Draw(::Vector3 position, ::Vector3 rotationAxis, float rotationAngle = 0.0f, ::Vector3 scale = {1.0f,1.0f,1.0f}, ::Color tint = WHITE) {
+        ::DrawModelEx(*this, position, rotationAxis, rotationAngle, scale, tint);
+        return *this;
+    }
+
+    /**
+     * Draw a model wires (with texture if set)
+     */
+    inline Model& DrawWires(::Vector3 position, float scale = 1.0f, ::Color tint = WHITE) {
+        ::DrawModelWires(*this, position, scale, tint);
+        return *this;
+    }
+
+    /**
+     * Draw a model wires (with texture if set) with extended parameters
+     */
+    inline Model& DrawWires(::Vector3 position, ::Vector3 rotationAxis, float rotationAngle = 0.0f, ::Vector3 scale = {1.0f,1.0f,1.0f}, ::Color tint = WHITE) {
+        ::DrawModelWiresEx(*this, position, rotationAxis, rotationAngle, scale, tint);
+        return *this;
     }
 
  protected:

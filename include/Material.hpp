@@ -76,7 +76,10 @@ class Material : public ::Material {
      * Unload material from memory
      */
     inline void Unload() {
-        ::UnloadMaterial(*this);
+        if (maps != NULL) {
+            ::UnloadMaterial(*this);
+            maps = NULL;
+        }
     }
 
     /**

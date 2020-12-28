@@ -57,68 +57,70 @@ class Mesh : public ::Mesh {
     /**
      * Generate polygonal mesh
      */
-    static Mesh Poly(int sides, float radius) {
+    static ::Mesh Poly(int sides, float radius) {
         return ::GenMeshPoly(sides, radius);
     }
+
     /**
      * Generate plane mesh (with subdivisions)
      */
-    static Mesh Plane(float width, float length, int resX, int resZ) {
+    static ::Mesh Plane(float width, float length, int resX, int resZ) {
         return ::GenMeshPlane(width, length, resX, resZ);
     }
 
     /**
      * Generate cuboid mesh
      */
-    static Mesh Cube(float width, float height, float length) {
+    static ::Mesh Cube(float width, float height, float length) {
         return ::GenMeshCube(width, height, length);
     }
+
     /**
      * Generate sphere mesh (standard sphere)
      */
-    static Mesh Sphere(float radius, int rings, int slices) {
+    static ::Mesh Sphere(float radius, int rings, int slices) {
         return ::GenMeshSphere(radius, rings, slices);
     }
 
     /**
      * Generate half-sphere mesh (no bottom cap)
      */
-    static Mesh HemiSphere(float radius, int rings, int slices) {
+    static ::Mesh HemiSphere(float radius, int rings, int slices) {
         return ::GenMeshHemiSphere(radius, rings, slices);
     }
 
     /**
      * Generate cylinder mesh
      */
-    static Mesh Cylinder(float radius, float height, int slices) {
+    static ::Mesh Cylinder(float radius, float height, int slices) {
         return ::GenMeshCylinder(radius, height, slices);
     }
 
     /**
      * Generate torus mesh
      */
-    static Mesh Torus(float radius, float size, int radSeg, int sides) {
+    static ::Mesh Torus(float radius, float size, int radSeg, int sides) {
         return ::GenMeshTorus(radius, size, radSeg, sides);
     }
 
     /**
      * Generate trefoil knot mesh
      */
-    static Mesh Knot(float radius, float size, int radSeg, int sides) {
+    static ::Mesh Knot(float radius, float size, int radSeg, int sides) {
         return ::GenMeshKnot(radius, size, radSeg, sides);
     }
 
     /**
      * Generate heightmap mesh from image data
      */
-    static Mesh Heightmap(::Image heightmap, ::Vector3 size) {
+    static ::Mesh Heightmap(::Image heightmap, ::Vector3 size) {
         return ::GenMeshHeightmap(heightmap, size);
     }
 
     /**
      * Generate cubes-based map mesh from image data
      */
-    static Mesh Cubicmap(::Image cubicmap, ::Vector3 cubeSize) {
+    static ::Mesh Cubicmap(::Image cubicmap, ::Vector3 cubeSize) {
         return ::GenMeshCubicmap(cubicmap, cubeSize);
     }
 
@@ -161,7 +163,10 @@ class Mesh : public ::Mesh {
     }
 
     inline void Unload() {
-        ::UnloadMesh(*this);
+        if (vboId != NULL) {
+            ::UnloadMesh(*this);
+            vboId = NULL;
+        }
     }
 
     inline raylib::BoundingBox BoundingBox() const {

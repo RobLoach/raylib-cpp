@@ -163,7 +163,10 @@ class Image : public ::Image {
     }
 
     inline void Unload() {
-        ::UnloadImage(*this);
+        if (data != NULL) {
+            ::UnloadImage(*this);
+            data = NULL;
+        }
     }
 
     /**

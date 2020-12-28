@@ -235,10 +235,12 @@ class Vector3 : public ::Vector3 {
         ::DrawLine3D(*this, endPos, color);
         return *this;
     }
+
     inline Vector3& DrawPoint3D(::Color color) {
         ::DrawPoint3D(*this, color);
         return *this;
     }
+
     inline Vector3& DrawCircle3D(
             float radius,
             Vector3 rotationAxis,
@@ -252,6 +254,7 @@ class Vector3 : public ::Vector3 {
         ::DrawCube(*this, width, height, length, color);
         return *this;
     }
+
     inline Vector3& DrawCube(::Vector3 size, ::Color color) {
         ::DrawCubeV(*this, size, color);
         return *this;
@@ -261,6 +264,7 @@ class Vector3 : public ::Vector3 {
         ::DrawCubeWires(*this, width, height, length, color);
         return *this;
     }
+
     inline Vector3& DrawCubeWires(::Vector3 size, ::Color color) {
         ::DrawCubeWiresV(*this, size, color);
         return *this;
