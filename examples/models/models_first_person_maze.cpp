@@ -11,8 +11,6 @@
 
 #include "raylib-cpp.hpp"
 
-#include <stdlib.h>           // Required for: free()
-
 int main(void)
 {
     // Initialization
@@ -26,13 +24,13 @@ int main(void)
     raylib::Camera camera({ 0.2f, 0.4f, 0.2f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f, 0.0f }, 45.0f);
 
     raylib::Image imMap("resources/cubicmap.png");      // Load cubicmap image (RAM)
-    raylib::Texture cubicmap(imMap);       // Convert image to texture to display (VRAM)
-    raylib::Mesh mesh = raylib::Mesh::Cubicmap(imMap, (Vector3){ 1.0f, 1.0f, 1.0f });
+    raylib::Texture cubicmap(imMap);                    // Convert image to texture to display (VRAM)
+    Mesh mesh = raylib::Mesh::Cubicmap(imMap, (Vector3){ 1.0f, 1.0f, 1.0f });
     raylib::Model model(mesh);
 
     // NOTE: By default each cube is mapped to one part of texture atlas
     raylib::Texture texture("resources/cubicmap_atlas.png");    // Load map texture
-    model.materials[0].maps[MAP_DIFFUSE].texture = texture;             // Set map diffuse texture
+    model.materials[0].maps[MAP_DIFFUSE].texture = texture;     // Set map diffuse texture
 
     // Get map image data to be used for collision detection
     Color *mapPixels = imMap.LoadColors();
@@ -96,11 +94,11 @@ int main(void)
             camera.BeginMode3D();
 
                 model.Draw(mapPosition);               // Draw maze map
-                // DrawCubeV(playerPosition, (Vector3){ 0.2f, 0.4f, 0.2f }, RED);  // Draw player
+                // playerPosition.DrawCube((Vector3){ 0.2f, 0.4f, 0.2f }, RED);  // Draw player
 
             camera.EndMode3D();
 
-            cubicmap.Draw((Vector2){ GetScreenWidth() - cubicmap.width*4 - 20, 20 }, 0.0f, 4.0f, WHITE);
+            cubicmap.Draw((Vector2){ static_cast<float>(GetScreenWidth() - cubicmap.width*4 - 20), 20 }, 0.0f, 4.0f, WHITE);
             DrawRectangleLines(GetScreenWidth() - cubicmap.width*4 - 20, 20, cubicmap.width*4, cubicmap.height*4, GREEN);
 
             // Draw player position radar
@@ -114,24 +112,10 @@ int main(void)
 
     // De-Initialization
     //--------------------------------------------------------------------------------------
-    free(mapPixels);            // Unload color array
 
-    /**
-     * TODO: Fix double freeing of Mesh, possibly from UnloadModel() unloading meshes in Model.hpp?
-     *
-     * INFO: TEXTURE: [ID 4] Unloaded texture data from VRAM (GPU)
-     * INFO: VAO: [ID 2] Unloaded vertex data from VRAM (GPU)
-     * INFO: MODEL: Unloaded model (and meshes) from RAM and VRAM
-     * double free or corruption (!prev)
-    */
-    mesh.vboId = NULL; // This shouldn't be needed, but currently is.
+    UnloadImageColors(mapPixels);          // Unload color array
 
-    //UnloadTexture(cubicmap);    // Unload cubicmap texture
-    //UnloadTexture(texture);     // Unload map texture
-    //UnloadModel(model);         // Unload map model
-
-    //CloseWindow();              // Close window and OpenGL context
-    //--------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------
 
     return 0;
 }
