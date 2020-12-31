@@ -1,5 +1,6 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include <string>
+#include <vector>
 #include "raylib-cpp.hpp"
 #include "catch.hpp"
 
@@ -32,5 +33,10 @@ TEST_CASE("raylib_test", "[raylib_test]" ) {
         raylib::Vector2 direction(50, 50);
         raylib::Vector2 newDirection = direction.Rotate(30);
         REQUIRE((int)newDirection.x == 18);
+    }
+
+    SECTION("Functions") {
+        std::vector<std::string> files = raylib::GetDirectoryFiles(::GetWorkingDirectory());
+        REQUIRE(files.size() > 2);
     }
 }

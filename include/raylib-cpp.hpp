@@ -67,13 +67,6 @@
 #ifndef RAYLIB_CPP_INCLUDE_RAYLIB_CPP_HPP_
 #define RAYLIB_CPP_INCLUDE_RAYLIB_CPP_HPP_
 
-/**
- * Provides all the classes associated with raylib-cpp.
- */
-namespace raylib {
-    // Nothing.
-}  // namespace raylib
-
 #include "./AudioDevice.hpp"
 #include "./AudioStream.hpp"
 #include "./BoundingBox.hpp"
@@ -81,6 +74,7 @@ namespace raylib {
 #include "./Camera3D.hpp"
 #include "./Color.hpp"
 #include "./DroppedFiles.hpp"
+#include "./Functions.hpp"
 #include "./Font.hpp"
 #include "./Gamepad.hpp"
 #include "./Image.hpp"
@@ -104,5 +98,12 @@ namespace raylib {
 #include "./VrSimulator.hpp"
 #include "./Wave.hpp"
 #include "./Window.hpp"
+
+/**
+ * Provides all the classes associated with raylib-cpp.
+ */
+namespace raylib {
+    // Nothing.
+}  // namespace raylib
 
 #endif  // RAYLIB_CPP_INCLUDE_RAYLIB_CPP_HPP_
