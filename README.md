@@ -193,7 +193,7 @@ ClearDirectoryFiles();
 // raylib-cpp
 std::vector<std::string> files = raylib::GetDirectoryFiles(".");
 std::cout << "Count: " << files.size() << std::endl;
-for (std::string file : files) {
+for (auto& file : files) {
     std::cout << "File: " << file << std::endl;
 }
 ```
