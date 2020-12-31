@@ -117,7 +117,8 @@ class Font : public ::Font {
     /**
      * Create an image from text (custom sprite font)
      */
-    inline Image ImageText(const std::string& text, float fontSize, float spacing, ::Color tint) const {
+    inline Image ImageText(const std::string& text, float fontSize,
+            float spacing, ::Color tint) const {
         return ::ImageTextEx(*this, text.c_str(), fontSize, spacing, tint);
     }
 

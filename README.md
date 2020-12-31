@@ -176,6 +176,28 @@ raylib::Vector2 speed(10, 10);
 position += speed; // Addition assignment operator override.
 ```
 
+### Vector-Based Returns
+
+When there is a function that would return a pointer-array, there is a wrapper that allows returning a [vector](https://www.cplusplus.com/reference/vector/vector/) of objects instead.
+
+``` cpp
+// raylib
+int count;
+char** files = GetDirectoryFiles(".", &count);
+printf("Count: %i\n", count);
+for (int i = 0; i < count; i++) {
+    printf("File: %s\n", files[i]);
+}
+ClearDirectoryFiles();
+
+// raylib-cpp
+std::vector<std::string> files = raylib::GetDirectoryFiles(".");
+std::cout << "Count: " << files.size() << std::endl;
+for (auto& file : files) {
+    std::cout << "File: " << file << std::endl;
+}
+```
+
 ### RayMath
 
 The [raymath](https://github.com/raysan5/raylib/blob/master/src/raymath.h) methods are included.
