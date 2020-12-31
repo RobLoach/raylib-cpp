@@ -9,9 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Model.Draw()`
 - `Model.DrawWires()`
 - `models_first_person_maze.cpp` example
-- Error correction when unloading images, materials, models and meshes
 - String override functions to use `std::string` directly instead of `const char*`
 - `std::vector<std::string>` wrapper for `GetDirectoryFiles()` and `GetDroppedFiles()`
+
+### Fixed
+- `Mouse::SetX()` and `Mouse::SetY()`
+- Error correction when unloading images, materials, models and meshes
 
 ## [v3.5.0-alpha1] - 2020-12-26
 ### Changed

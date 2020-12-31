@@ -57,12 +57,12 @@ class Mouse {
     }
 
     inline Mouse& SetX(int x) {
-        ::SetMouseOffset(x, GetY());
+        ::SetMousePosition(x, GetY());
         return *this;
     }
 
     inline Mouse& SetY(int y) {
-        ::SetMouseOffset(GetX(), y);
+        ::SetMousePosition(GetX(), y);
         return *this;
     }
 
