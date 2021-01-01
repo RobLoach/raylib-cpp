@@ -123,7 +123,7 @@ class Shader : public ::Shader {
     /**
      * @see ::SetShaderValueMatrix
      */
-    inline Shader& SetValue(int uniformLoc, Matrix mat) {
+    inline Shader& SetValue(int uniformLoc, ::Matrix mat) {
         ::SetShaderValueMatrix(*this, uniformLoc, mat);
         return *this;
     }

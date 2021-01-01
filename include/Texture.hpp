@@ -247,6 +247,7 @@ class Texture : public ::Texture {
 // Create the Texture aliases.
 typedef Texture Texture2D;
 typedef Texture TextureCubemap;
+
 }  // namespace raylib
 
 #endif  // RAYLIB_CPP_INCLUDE_TEXTURE_HPP_

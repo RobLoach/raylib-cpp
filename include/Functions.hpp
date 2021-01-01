@@ -74,7 +74,7 @@ std::string LoadFileText(const std::string& fileName) {
  * Save text data to file (write)
  */
 inline bool SaveFileText(const std::string& fileName, const std::string& text) {
-    return ::SaveFileText(fileName.c_str(), (char*)text.c_str());
+    return ::SaveFileText(fileName.c_str(), const_cast<char*>(text.c_str()));
 }
 
 /**
@@ -172,7 +172,7 @@ std::vector<std::string> GetDroppedFiles() {
 /**
  * Get file modification time (last write time)
  */
-inline long GetFileModTime(const std::string& fileName) {
+inline long GetFileModTime(const std::string& fileName) { // NOLINT
     return ::GetFileModTime(fileName.c_str());
 }
 

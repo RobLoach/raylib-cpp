@@ -116,7 +116,7 @@ class Matrix : public ::Matrix {
             && m15 == other.m15;
     }
 
-    bool operator==(::Matrix& other) {
+    bool operator==(::Matrix& other) { // NOLINT
         return m0 == other.m0
             && m1 == other.m1
             && m2 == other.m2

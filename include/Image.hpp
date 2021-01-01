@@ -52,18 +52,20 @@ class Image : public ::Image {
     Image(::Texture2D texture) {
         set(::GetTextureData(texture));
     }
-    Image(int width, int height, Color color = WHITE) {
+    Image(int width, int height, ::Color color = WHITE) {
         set(::GenImageColor(width, height, color));
     }
-    Image(::Font font, const std::string& text, float fontSize, float spacing, ::Color tint) {
+    Image(::Font font, const std::string& text, float fontSize, float spacing,
+            ::Color tint = WHITE) {
         set(::ImageTextEx(font, text.c_str(), fontSize, spacing, tint));
     }
 
-    static Image Text(std::string text, int fontSize, Color color) {
+    static Image Text(std::string text, int fontSize, ::Color color = WHITE) {
         return ::ImageText(text.c_str(), fontSize, color);
     }
 
-    static Image Text(::Font font, std::string text, float fontSize, float spacing, ::Color tint) {
+    static Image Text(::Font font, std::string text, float fontSize, float spacing,
+            ::Color tint = WHITE) {
         return ::ImageTextEx(font, text.c_str(), fontSize, spacing, tint);
     }
 
@@ -77,21 +79,21 @@ class Image : public ::Image {
     /**
      * Generate image: plain color
      */
-    static Image GenColor(int width, int height, Color color) {
+    static Image GenColor(int width, int height, ::Color color = WHITE) {
         return ::GenImageColor(width, height, color);
     }
 
     /**
      * Generate image: vertical gradient
      */
-    static Image GenGradientV(int width, int height, Color top, Color bottom) {
+    static Image GenGradientV(int width, int height, ::Color top, ::Color bottom) {
         return ::GenImageGradientV(width, height, top, bottom);
     }
 
     /**
      * Generate image: horizontal gradient
      */
-    static Image GenGradientH(int width, int height, Color left, Color right) {
+    static Image GenGradientH(int width, int height, ::Color left, ::Color right) {
         return ::GenImageGradientH(width, height, left, right);
     }
 
@@ -207,7 +209,7 @@ class Image : public ::Image {
     /**
      * Convert image to POT (power-of-two)
      */
-    inline Image& ToPOT(Color fillColor) {
+    inline Image& ToPOT(::Color fillColor) {
         ::ImageToPOT(this, fillColor);
         return *this;
     }
@@ -223,7 +225,7 @@ class Image : public ::Image {
     /**
      * Apply alpha mask to image
      */
-    inline Image& AlphaMask(Image alphaMask) {
+    inline Image& AlphaMask(::Image alphaMask) {
         ::ImageAlphaMask(this, alphaMask);
         return *this;
     }
@@ -410,32 +412,33 @@ class Image : public ::Image {
     /**
      * Draw pixel within an image
      */
-    inline Image& DrawPixel(int posX, int posY, ::Color color) {
+    inline Image& DrawPixel(int posX, int posY, ::Color color = WHITE) {
         ::ImageDrawPixel(this, posX, posY, color);
         return *this;
     }
 
-    inline Image& DrawPixel(::Vector2 position, ::Color color) {
+    inline Image& DrawPixel(::Vector2 position, ::Color color = WHITE) {
         ::ImageDrawPixelV(this, position, color);
         return *this;
     }
 
-    inline Image& DrawLine(int startPosX, int startPosY, int endPosX, int endPosY, ::Color color) {
+    inline Image& DrawLine(int startPosX, int startPosY, int endPosX, int endPosY,
+            ::Color color = WHITE) {
         ::ImageDrawLine(this, startPosX, startPosY, endPosX, endPosY, color);
         return *this;
     }
 
-    inline Image& DrawLine(::Vector2 start, ::Vector2 end, ::Color color) {
+    inline Image& DrawLine(::Vector2 start, ::Vector2 end, ::Color color = WHITE) {
         ::ImageDrawLineV(this, start, end, color);
         return *this;
     }
 
-    inline Image& DrawCircle(int centerX, int centerY, int radius, ::Color color) {
+    inline Image& DrawCircle(int centerX, int centerY, int radius, ::Color color = WHITE) {
         ::ImageDrawCircle(this, centerX, centerY, radius, color);
         return *this;
     }
 
-    inline Image& DrawCircle(::Vector2 center, int radius, ::Color color) {
+    inline Image& DrawCircle(::Vector2 center, int radius, ::Color color = WHITE) {
         ::ImageDrawCircleV(this, center, radius, color);
         return *this;
     }
@@ -455,7 +458,7 @@ class Image : public ::Image {
         return *this;
     }
 
-    inline Image& DrawRectangleLines(::Rectangle rec, int thick, ::Color color) {
+    inline Image& DrawRectangleLines(::Rectangle rec, int thick, ::Color color = WHITE) {
         ::ImageDrawRectangleLines(this, rec, thick, color);
         return *this;
     }

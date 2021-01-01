@@ -132,7 +132,7 @@ class Mesh : public ::Mesh {
     GETTERSETTER(float *, Normals, normals)
     GETTERSETTER(float *, Tangents, tangents)
     GETTERSETTER(unsigned char *, Colors, colors)
-    GETTERSETTER(unsigned short *, Indices, indices)
+    GETTERSETTER(unsigned short *, Indices, indices) // NOLINT
     GETTERSETTER(float *, AnimVertices, animVertices)
     GETTERSETTER(float *, AnimNormals, animNormals)
     GETTERSETTER(int *, BoneIds, boneIds)

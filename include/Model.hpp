@@ -130,7 +130,12 @@ class Model : public ::Model {
     /**
      * Draw a model with extended parameters
      */
-    inline Model& Draw(::Vector3 position, ::Vector3 rotationAxis, float rotationAngle = 0.0f, ::Vector3 scale = {1.0f,1.0f,1.0f}, ::Color tint = WHITE) {
+    inline Model& Draw(
+            ::Vector3 position,
+            ::Vector3 rotationAxis,
+            float rotationAngle = 0.0f,
+            ::Vector3 scale = {1.0f, 1.0f, 1.0f},
+            ::Color tint = WHITE) {
         ::DrawModelEx(*this, position, rotationAxis, rotationAngle, scale, tint);
         return *this;
     }
@@ -146,7 +151,12 @@ class Model : public ::Model {
     /**
      * Draw a model wires (with texture if set) with extended parameters
      */
-    inline Model& DrawWires(::Vector3 position, ::Vector3 rotationAxis, float rotationAngle = 0.0f, ::Vector3 scale = {1.0f,1.0f,1.0f}, ::Color tint = WHITE) {
+    inline Model& DrawWires(
+            ::Vector3 position,
+            ::Vector3 rotationAxis,
+            float rotationAngle = 0.0f,
+            ::Vector3 scale = {1.0f, 1.0f, 1.0f},
+            ::Color tint = WHITE) {
         ::DrawModelWiresEx(*this, position, rotationAxis, rotationAngle, scale, tint);
         return *this;
     }

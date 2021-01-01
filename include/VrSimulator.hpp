@@ -64,8 +64,17 @@ class VrSimulator {
     /**
      * Update VR tracking (position and orientation) and camera
      */
-    inline VrSimulator& Update(Camera *camera) {
+    inline VrSimulator& Update(::Camera *camera) {
         ::UpdateVrTracking(camera);
+        return *this;
+    }
+
+    /**
+     * Update VR tracking (position and orientation) and camera
+     */
+    inline VrSimulator& Update(const ::Camera& camera) {
+        const ::Camera* cameraPointer = reinterpret_cast<const Camera*>(&camera);
+        ::UpdateVrTracking((::Camera*)cameraPointer);
         return *this;
     }
 
