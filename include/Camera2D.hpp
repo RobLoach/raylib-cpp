@@ -40,12 +40,12 @@ class Camera2D : public ::Camera2D {
         zoom = zoomValue;
     }
 
-    inline Camera2D& BeginMode2D() {
+    inline Camera2D& BeginMode() {
         ::BeginMode2D(*this);
         return *this;
     }
 
-    inline Camera2D& EndMode2D() {
+    inline Camera2D& EndMode() {
         ::EndMode2D();
         return *this;
     }
@@ -75,14 +75,14 @@ class Camera2D : public ::Camera2D {
     /**
      * Returns the screen space position for a 3d world space position
      */
-    inline Vector2 GetWorldToScreen2D(Vector2 position) const {
+    inline Vector2 GetWorldToScreen(::Vector2 position) const {
         return ::GetWorldToScreen2D(position, *this);
     }
 
     /**
      * Returns the world space position for a 2d camera screen space position
      */
-    inline Vector2 GetScreenToWorld2D(Vector2 position) const {
+    inline Vector2 GetScreenToWorld(::Vector2 position) const {
         return ::GetScreenToWorld2D(position, *this);
     }
 

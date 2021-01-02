@@ -229,7 +229,7 @@ class Texture : public ::Texture {
     /**
      * Define default texture used to draw shapes
      */
-    inline Texture& SetShapesTexture(Rectangle source) {
+    inline Texture& SetShapesTexture(::Rectangle source) {
         ::SetShapesTexture(*this, source);
         return *this;
     }

@@ -286,28 +286,6 @@ class Window {
     }
 
     /**
-     * Get the human-readable, UTF-8 encoded name of the primary monitor
-     */
-    std::string GetMonitorName(int monitor) const {
-        return ::GetMonitorName(monitor);
-    }
-
-    /**
-     * Get clipboard text content
-     */
-    std::string GetClipboardText() const {
-        return ::GetClipboardText();
-    }
-
-    /**
-     * Set clipboard text content
-     */
-    inline Window& SetClipboardText(const std::string& text) {
-        ::SetClipboardText(text.c_str());
-        return *this;
-    }
-
-    /**
      * Set target FPS (maximum)
      */
     inline Window& SetTargetFPS(int fps) {

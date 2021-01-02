@@ -43,6 +43,7 @@ class Color : public ::Color {
 
     Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) :
         ::Color{red, green, blue, alpha} {};
+
     Color(unsigned char red, unsigned char green, unsigned char blue) :
         ::Color{red, green, blue, 255} {};
 
@@ -61,7 +62,7 @@ class Color : public ::Color {
     /**
      * Returns a Color from HSV values
      */
-    static Color FromHSV(float hue, float saturation, float value) {
+    static ::Color FromHSV(float hue, float saturation, float value) {
         return ::ColorFromHSV(hue, saturation, value);
     }
 
@@ -183,14 +184,19 @@ class Color : public ::Color {
         return *this;
     }
 
-    inline Color& DrawText(::Font font, const std::string& text, ::Vector2 position,
+    inline Color& DrawText(const ::Font& font, const std::string& text, ::Vector2 position,
             float fontSize, float spacing) {
         ::DrawTextEx(font, text.c_str(), position, fontSize, spacing, *this);
         return *this;
     }
 
-    inline Color& DrawText(::Font font, const std::string& text, ::Rectangle rec, float fontSize,
-            float spacing, bool wordWrap = false) {
+    inline Color& DrawText(
+            const ::Font& font,
+            const std::string& text,
+            ::Rectangle rec,
+            float fontSize,
+            float spacing,
+            bool wordWrap = false) {
         ::DrawTextRec(font, text.c_str(), rec, fontSize, spacing, wordWrap, *this);
         return *this;
     }

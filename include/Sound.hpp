@@ -31,6 +31,9 @@
 #include "./raylib-cpp-utils.hpp"
 
 namespace raylib {
+/**
+ * Wave/Sound management functions
+ */
 class Sound : public ::Sound {
  public:
     Sound(::Sound vec) {
@@ -41,7 +44,7 @@ class Sound : public ::Sound {
         set(LoadSound(fileName.c_str()));
     }
 
-    Sound(::Wave wave) {
+    Sound(const ::Wave& wave) {
         set(LoadSoundFromWave(wave));
     }
 

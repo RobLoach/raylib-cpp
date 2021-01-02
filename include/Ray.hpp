@@ -89,14 +89,14 @@ class Ray : public ::Ray {
     /**
      * Detect collision between ray and box
      */
-    inline bool CheckCollisionBox(::BoundingBox box) const {
+    inline bool CheckCollisionBox(const ::BoundingBox& box) const {
         return CheckCollisionRayBox(*this, box);
     }
 
     /**
      * Get collision info between ray and model
      */
-    inline RayHitInfo GetCollisionModel(::Model model) {
+    inline RayHitInfo GetCollisionModel(const ::Model& model) {
         return GetCollisionRayModel(*this, model);
     }
 

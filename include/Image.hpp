@@ -33,104 +33,112 @@
 namespace raylib {
 class Image : public ::Image {
  public:
-    Image() {}
-    Image(::Image image) {
+    Image(const ::Image& image) {
         set(image);
     }
+
     Image(const std::string& fileName) {
         Load(fileName);
     }
+
     Image(const std::string& fileName, int width, int height, int format, int headerSize) {
         LoadRaw(fileName, width, height, format, headerSize);
     }
+
     Image(const std::string& fileName, int* frames) {
         LoadAnim(fileName, frames);
     }
+
     Image(const std::string& fileType, const unsigned char* fileData, int dataSize) {
         LoadFromMemory(fileType, fileData, dataSize);
     }
-    Image(::Texture2D texture) {
+
+    Image(const ::Texture2D& texture) {
         set(::GetTextureData(texture));
     }
-    Image(int width, int height, ::Color color = WHITE) {
+
+    Image(int width, int height, ::Color color = {255, 255, 255, 255}) {
         set(::GenImageColor(width, height, color));
     }
-    Image(::Font font, const std::string& text, float fontSize, float spacing,
-            ::Color tint = WHITE) {
+
+    Image(const ::Font& font, const std::string& text, float fontSize, float spacing,
+            ::Color tint = {255, 255, 255, 255}) {
         set(::ImageTextEx(font, text.c_str(), fontSize, spacing, tint));
     }
 
-    static Image Text(std::string text, int fontSize, ::Color color = WHITE) {
+    static ::Image Text(const std::string& text, int fontSize,
+            ::Color color = {255, 255, 255, 255}) {
         return ::ImageText(text.c_str(), fontSize, color);
     }
 
-    static Image Text(::Font font, std::string text, float fontSize, float spacing,
-            ::Color tint = WHITE) {
+    static ::Image Text(const ::Font& font, const std::string& text, float fontSize, float spacing,
+            ::Color tint = {255, 255, 255, 255}) {
         return ::ImageTextEx(font, text.c_str(), fontSize, spacing, tint);
     }
 
     /**
      * Get pixel data from screen buffer and return an Image (screenshot)
      */
-    static Image GetScreenData() {
-        return Image(::GetScreenData());
+    static ::Image GetScreenData() {
+        return ::GetScreenData();
     }
 
     /**
      * Generate image: plain color
      */
-    static Image GenColor(int width, int height, ::Color color = WHITE) {
+    static ::Image Color(int width, int height, ::Color color = {255, 255, 255, 255}) {
         return ::GenImageColor(width, height, color);
     }
 
     /**
      * Generate image: vertical gradient
      */
-    static Image GenGradientV(int width, int height, ::Color top, ::Color bottom) {
+    static ::Image GradientV(int width, int height, ::Color top, ::Color bottom) {
         return ::GenImageGradientV(width, height, top, bottom);
     }
 
     /**
      * Generate image: horizontal gradient
      */
-    static Image GenGradientH(int width, int height, ::Color left, ::Color right) {
+    static ::Image GradientH(int width, int height, ::Color left, ::Color right) {
         return ::GenImageGradientH(width, height, left, right);
     }
 
     /**
      * Generate image: radial gradient
      */
-    static Image GenGradientRadial(int width, int height, float density,
-            Color inner, Color outer) {
+    static ::Image GradientRadial(int width, int height, float density,
+            ::Color inner, ::Color outer) {
         return ::GenImageGradientRadial(width, height, density, inner, outer);
     }
 
     /**
      * Generate image: checked
      */
-    static Image GenChecked(int width, int height, int checksX, int checksY,
-            Color col1, Color col2) {
+    static ::Image Checked(int width, int height, int checksX, int checksY,
+            ::Color col1, ::Color col2) {
         return ::GenImageChecked(width, height, checksX, checksY, col1, col2);
     }
 
     /**
      * Generate image: white noise
      */
-    static Image GenWhiteNoise(int width, int height, float factor) {
+    static ::Image WhiteNoise(int width, int height, float factor) {
         return ::GenImageWhiteNoise(width, height, factor);
     }
 
     /**
      * Generate image: perlin noise
      */
-    static Image GenPerlinNoise(int width, int height, int offsetX, int offsetY, float scale) {
+    static ::Image PerlinNoise(int width, int height, int offsetX, int offsetY,
+            float scale = 1.0f) {
         return ::GenImagePerlinNoise(width, height, offsetX, offsetY, scale);
     }
 
     /**
      * Generate image: cellular algorithm. Bigger tileSize means bigger cells
      */
-    static Image GenCellular(int width, int height, int tileSize) {
+    static ::Image Cellular(int width, int height, int tileSize) {
         return ::GenImageCellular(width, height, tileSize);
     }
 
@@ -160,7 +168,10 @@ class Image : public ::Image {
         set(::LoadImageAnim(fileName.c_str(), frames));
     }
 
-    void LoadFromMemory(const std::string& fileType, const unsigned char *fileData, int dataSize) {
+    void LoadFromMemory(
+            const std::string& fileType,
+            const unsigned char *fileData,
+            int dataSize) {
         set(::LoadImageFromMemory(fileType.c_str(), fileData, dataSize));
     }
 
@@ -195,14 +206,14 @@ class Image : public ::Image {
     /**
      * Create an image duplicate (useful for transformations)
      */
-    inline Image Copy() {
+    inline ::Image Copy() {
         return ::ImageCopy(*this);
     }
 
     /**
      * Create an image from another image piece
      */
-    inline Image FromImage(::Rectangle rec) {
+    inline ::Image FromImage(::Rectangle rec) {
         return ::ImageFromImage(*this, rec);
     }
 
@@ -287,7 +298,8 @@ class Image : public ::Image {
     /**
      * Resize canvas and fill with color
      */
-    inline Image& ResizeCanvas(int newWidth, int newHeight, int offsetX, int offsetY, Color color) {
+    inline Image& ResizeCanvas(int newWidth, int newHeight, int offsetX, int offsetY,
+            ::Color color = {255, 255, 255, 255}) {
         ::ImageResizeCanvas(this, newWidth, newHeight, offsetX, offsetY, color);
         return *this;
     }
@@ -343,7 +355,7 @@ class Image : public ::Image {
     /**
      * Modify image color: tint
      */
-    inline Image& ColorTint(::Color color = WHITE) {
+    inline Image& ColorTint(::Color color = {255, 255, 255, 255}) {
         ::ImageColorTint(this, color);
         return *this;
     }
@@ -404,7 +416,7 @@ class Image : public ::Image {
     /**
      * Clear image background with given color
      */
-    inline Image& ClearBackground(::Color color = WHITE) {
+    inline Image& ClearBackground(::Color color = {255, 255, 255, 255}) {
         ::ImageClearBackground(this, color);
         return *this;
     }
@@ -412,65 +424,70 @@ class Image : public ::Image {
     /**
      * Draw pixel within an image
      */
-    inline Image& DrawPixel(int posX, int posY, ::Color color = WHITE) {
+    inline Image& DrawPixel(int posX, int posY, ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawPixel(this, posX, posY, color);
         return *this;
     }
 
-    inline Image& DrawPixel(::Vector2 position, ::Color color = WHITE) {
+    inline Image& DrawPixel(::Vector2 position, ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawPixelV(this, position, color);
         return *this;
     }
 
     inline Image& DrawLine(int startPosX, int startPosY, int endPosX, int endPosY,
-            ::Color color = WHITE) {
+            ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawLine(this, startPosX, startPosY, endPosX, endPosY, color);
         return *this;
     }
 
-    inline Image& DrawLine(::Vector2 start, ::Vector2 end, ::Color color = WHITE) {
+    inline Image& DrawLine(::Vector2 start, ::Vector2 end, ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawLineV(this, start, end, color);
         return *this;
     }
 
-    inline Image& DrawCircle(int centerX, int centerY, int radius, ::Color color = WHITE) {
+    inline Image& DrawCircle(int centerX, int centerY, int radius,
+            ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawCircle(this, centerX, centerY, radius, color);
         return *this;
     }
 
-    inline Image& DrawCircle(::Vector2 center, int radius, ::Color color = WHITE) {
+    inline Image& DrawCircle(::Vector2 center, int radius,
+            ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawCircleV(this, center, radius, color);
         return *this;
     }
 
-    inline Image& DrawRectangle(int posX, int posY, int width, int height, ::Color color = WHITE) {
+    inline Image& DrawRectangle(int posX, int posY, int width, int height,
+            ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawRectangle(this, posX, posY, width, height, color);
         return *this;
     }
 
-    inline Image& DrawRectangle(Vector2 position, Vector2 size, ::Color color = WHITE) {
+    inline Image& DrawRectangle(Vector2 position, Vector2 size,
+            ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawRectangleV(this, position, size, color);
         return *this;
     }
 
-    inline Image& DrawRectangle(::Rectangle rec, ::Color color = WHITE) {
+    inline Image& DrawRectangle(::Rectangle rec, ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawRectangleRec(this, rec, color);
         return *this;
     }
 
-    inline Image& DrawRectangleLines(::Rectangle rec, int thick, ::Color color = WHITE) {
+    inline Image& DrawRectangleLines(::Rectangle rec, int thick,
+            ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawRectangleLines(this, rec, thick, color);
         return *this;
     }
 
     inline Image& Draw(const ::Image& src, ::Rectangle srcRec, ::Rectangle dstRec,
-            ::Color tint = WHITE) {
+            ::Color tint = {255, 255, 255, 255}) {
         ::ImageDraw(this, src, srcRec, dstRec, tint);
         return *this;
     }
 
     inline Image& DrawText(const std::string& text, ::Vector2 position, int fontSize,
-            ::Color color = WHITE) {
+            ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawText(this,
             text.c_str(),
             static_cast<int>(position.x),
@@ -481,13 +498,13 @@ class Image : public ::Image {
     }
 
     inline Image& DrawText(const std::string& text, int x, int y, int fontSize,
-            ::Color color = WHITE) {
+            ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawText(this, text.c_str(), x, y, fontSize, color);
         return *this;
     }
 
-    inline Image& DrawText(::Font font, const std::string& text, ::Vector2 position,
-            float fontSize, float spacing, ::Color tint = WHITE) {
+    inline Image& DrawText(const ::Font& font, const std::string& text, ::Vector2 position,
+            float fontSize, float spacing, ::Color tint = {255, 255, 255, 255}) {
         ::ImageDrawTextEx(this, font, text.c_str(), position, fontSize, spacing, tint);
         return *this;
     }
@@ -521,7 +538,7 @@ class Image : public ::Image {
     }
 
  protected:
-    inline void set(::Image image) {
+    inline void set(const ::Image& image) {
         data = image.data;
         width = image.width;
         height = image.height;

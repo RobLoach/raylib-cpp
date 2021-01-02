@@ -31,7 +31,7 @@
 namespace raylib {
 class RenderTexture : public ::RenderTexture {
  public:
-    RenderTexture(::RenderTexture renderTexture) {
+    RenderTexture(const ::RenderTexture& renderTexture) {
         set(renderTexture);
     }
 
@@ -82,7 +82,7 @@ class RenderTexture : public ::RenderTexture {
     }
 
  protected:
-    inline void set(::RenderTexture renderTexture) {
+    inline void set(const ::RenderTexture& renderTexture) {
         id = renderTexture.id;
         texture = renderTexture.texture;
         depth = renderTexture.depth;

@@ -100,14 +100,14 @@ class Model : public ::Model {
     /**
      * Get collision info between ray and model
      */
-    inline RayHitInfo GetCollision(::Ray ray) const {
+    inline RayHitInfo GetCollision(const ::Ray& ray) const {
         return ::GetCollisionRayModel(ray, *this);
     }
 
     /**
      * Update model animation pose
      */
-    inline Model& UpdateModelAnimation(::ModelAnimation anim, int frame) {
+    inline Model& UpdateModelAnimation(const ::ModelAnimation& anim, int frame) {
         ::UpdateModelAnimation(*this, anim, frame);
         return *this;
     }
@@ -115,7 +115,7 @@ class Model : public ::Model {
     /**
      * Check model animation skeleton match
      */
-    inline bool IsModelAnimationValid(::ModelAnimation anim) const {
+    inline bool IsModelAnimationValid(const ::ModelAnimation& anim) const {
         return ::IsModelAnimationValid(*this, anim);
     }
 

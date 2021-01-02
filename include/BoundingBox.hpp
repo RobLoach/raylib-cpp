@@ -34,7 +34,7 @@ namespace raylib {
  */
 class BoundingBox : public ::BoundingBox {
  public:
-    BoundingBox(::BoundingBox box) {
+    BoundingBox(const ::BoundingBox& box) {
         set(box);
     }
 
@@ -74,7 +74,7 @@ class BoundingBox : public ::BoundingBox {
     /**
      * Detect collision between two boxes
      */
-    inline bool CheckCollision(::BoundingBox box2) const {
+    inline bool CheckCollision(const ::BoundingBox& box2) const {
         return CheckCollisionBoxes(*this, box2);
     }
 
@@ -88,12 +88,12 @@ class BoundingBox : public ::BoundingBox {
     /**
      * Detect collision between ray and bounding box
      */
-    inline bool CheckCollision(::Ray ray) const {
+    inline bool CheckCollision(const ::Ray& ray) const {
         return CheckCollisionRayBox(ray, *this);
     }
 
  protected:
-    inline void set(::BoundingBox box) {
+    inline void set(const ::BoundingBox& box) {
         min = box.min;
         max = box.max;
     }

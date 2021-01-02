@@ -34,7 +34,7 @@ namespace raylib {
  */
 class AudioStream : public ::AudioStream {
  public:
-    AudioStream(::AudioStream music) {
+    AudioStream(const ::AudioStream& music) {
         set(music);
     }
 
@@ -149,7 +149,7 @@ class AudioStream : public ::AudioStream {
     }
 
  protected:
-    inline void set(::AudioStream stream) {
+    inline void set(const ::AudioStream& stream) {
         buffer = stream.buffer;
         sampleRate = stream.sampleRate;
         sampleSize = stream.sampleSize;

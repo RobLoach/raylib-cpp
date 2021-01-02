@@ -48,7 +48,7 @@ class RayHitInfo : public ::RayHitInfo {
     /**
      * Get collision info between ray and model
      */
-    RayHitInfo(::Ray ray, ::Model model) {
+    RayHitInfo(::Ray ray, const ::Model& model) {
         set(::GetCollisionRayModel(ray, model));
     }
 

@@ -91,12 +91,12 @@ int main(void)
 
             ClearBackground(RAYWHITE);
 
-            camera.BeginMode3D();
+            camera.BeginMode();
 
                 model.Draw(mapPosition);               // Draw maze map
                 // playerPosition.DrawCube((Vector3){ 0.2f, 0.4f, 0.2f }, RED);  // Draw player
 
-            camera.EndMode3D();
+            camera.EndMode();
 
             cubicmap.Draw((Vector2){ static_cast<float>(GetScreenWidth() - cubicmap.width*4 - 20), 20 }, 0.0f, 4.0f, WHITE);
             DrawRectangleLines(GetScreenWidth() - cubicmap.width*4 - 20, 20, cubicmap.width*4, cubicmap.height*4, GREEN);
