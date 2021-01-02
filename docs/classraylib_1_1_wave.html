@@ -78,8 +78,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a23ec184bbb2ec32268a0820262a0dfde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a23ec184bbb2ec32268a0820262a0dfde">Wave</a> (::<a class="el" href="classraylib_1_1_wave.html">Wave</a> wave)</td></tr>
-<tr class="separator:a23ec184bbb2ec32268a0820262a0dfde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4643a642d42434c4eb39c6888688d495"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a4643a642d42434c4eb39c6888688d495">Wave</a> (const ::<a class="el" href="classraylib_1_1_wave.html">Wave</a> &amp;wave)</td></tr>
+<tr class="separator:a4643a642d42434c4eb39c6888688d495"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5144b906b92b84d95f8ce192ce9f86b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#ad5144b906b92b84d95f8ce192ce9f86b">Wave</a> (const std::string &amp;fileName)</td></tr>
 <tr class="memdesc:ad5144b906b92b84d95f8ce192ce9f86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load wave data from file.  <a href="classraylib_1_1_wave.html#ad5144b906b92b84d95f8ce192ce9f86b">More...</a><br /></td></tr>
 <tr class="separator:ad5144b906b92b84d95f8ce192ce9f86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -90,9 +90,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9834624395e3574cf306dccde86fc46c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a545a0afb559e87f42cdedcda263452ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a545a0afb559e87f42cdedcda263452ba">~Wave</a> ()</td></tr>
 <tr class="separator:a545a0afb559e87f42cdedcda263452ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaa811f0bf97450c108a1de6fa7d0b0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_wave.html">Wave</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#afaa811f0bf97450c108a1de6fa7d0b0b">Copy</a> ()</td></tr>
-<tr class="memdesc:afaa811f0bf97450c108a1de6fa7d0b0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a wave to a new wave.  <a href="classraylib_1_1_wave.html#afaa811f0bf97450c108a1de6fa7d0b0b">More...</a><br /></td></tr>
-<tr class="separator:afaa811f0bf97450c108a1de6fa7d0b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52ca5fa9c0cdc43d3fb50ddc35d699e5"><td class="memItemLeft" align="right" valign="top">inline ::<a class="el" href="classraylib_1_1_wave.html">Wave</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a52ca5fa9c0cdc43d3fb50ddc35d699e5">Copy</a> ()</td></tr>
+<tr class="memdesc:a52ca5fa9c0cdc43d3fb50ddc35d699e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a wave to a new wave.  <a href="classraylib_1_1_wave.html#a52ca5fa9c0cdc43d3fb50ddc35d699e5">More...</a><br /></td></tr>
+<tr class="separator:a52ca5fa9c0cdc43d3fb50ddc35d699e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25601c51a2f81c569b074620c6758e94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_wave.html">Wave</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a25601c51a2f81c569b074620c6758e94">Crop</a> (int initSample, int finalSample)</td></tr>
 <tr class="memdesc:a25601c51a2f81c569b074620c6758e94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crop a wave to defined samples range.  <a href="classraylib_1_1_wave.html#a25601c51a2f81c569b074620c6758e94">More...</a><br /></td></tr>
 <tr class="separator:a25601c51a2f81c569b074620c6758e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,12 +118,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac42dd244534663a8fb1da305006c9f3a"><td class="memItemLeft" align="right" valign="top">float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#ac42dd244534663a8fb1da305006c9f3a">LoadSamples</a> ()</td></tr>
 <tr class="memdesc:ac42dd244534663a8fb1da305006c9f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load samples data from wave as a floats array.  <a href="classraylib_1_1_wave.html#ac42dd244534663a8fb1da305006c9f3a">More...</a><br /></td></tr>
 <tr class="separator:ac42dd244534663a8fb1da305006c9f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a202ca9cef9d90b169c04944182d12515"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_sound.html">Sound</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a202ca9cef9d90b169c04944182d12515">LoadSound</a> ()</td></tr>
-<tr class="memdesc:a202ca9cef9d90b169c04944182d12515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load sound from wave data.  <a href="classraylib_1_1_wave.html#a202ca9cef9d90b169c04944182d12515">More...</a><br /></td></tr>
-<tr class="separator:a202ca9cef9d90b169c04944182d12515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e3a60eee216af788eaa9362a22a847e"><td class="memItemLeft" align="right" valign="top">inline ::<a class="el" href="classraylib_1_1_sound.html">Sound</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a6e3a60eee216af788eaa9362a22a847e">LoadSound</a> ()</td></tr>
+<tr class="memdesc:a6e3a60eee216af788eaa9362a22a847e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load sound from wave data.  <a href="classraylib_1_1_wave.html#a6e3a60eee216af788eaa9362a22a847e">More...</a><br /></td></tr>
+<tr class="separator:a6e3a60eee216af788eaa9362a22a847e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a362a52efd58c603c3aac82a4d8b7aad5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a362a52efd58c603c3aac82a4d8b7aad5">operator Sound</a> ()</td></tr>
 <tr class="memdesc:a362a52efd58c603c3aac82a4d8b7aad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load sound from wave data.  <a href="classraylib_1_1_wave.html#a362a52efd58c603c3aac82a4d8b7aad5">More...</a><br /></td></tr>
 <tr class="separator:a362a52efd58c603c3aac82a4d8b7aad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f54205425932d5ae6b7bab2ab3e5f87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a7f54205425932d5ae6b7bab2ab3e5f87">operator::Sound</a> ()</td></tr>
+<tr class="memdesc:a7f54205425932d5ae6b7bab2ab3e5f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load sound from wave data.  <a href="classraylib_1_1_wave.html#a7f54205425932d5ae6b7bab2ab3e5f87">More...</a><br /></td></tr>
+<tr class="separator:a7f54205425932d5ae6b7bab2ab3e5f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30113ec86e33fa3ecef2f06a3c9283e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_wave.html">Wave</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a30113ec86e33fa3ecef2f06a3c9283e7">operator=</a> (const ::<a class="el" href="classraylib_1_1_wave.html">Wave</a> &amp;wave)</td></tr>
 <tr class="separator:a30113ec86e33fa3ecef2f06a3c9283e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8f4ffbc95c74e220aaf6872b45fcfc5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_wave.html">Wave</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#ad8f4ffbc95c74e220aaf6872b45fcfc5">operator=</a> (const <a class="el" href="classraylib_1_1_wave.html">Wave</a> &amp;wave)</td></tr>
@@ -147,15 +150,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:adc12b4cc3c2757dea21a8d726c40bbbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#adc12b4cc3c2757dea21a8d726c40bbbc">set</a> (::<a class="el" href="classraylib_1_1_wave.html">Wave</a> wave)</td></tr>
-<tr class="separator:adc12b4cc3c2757dea21a8d726c40bbbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afffc2c5c4aaefa6f4261d59094206d7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#afffc2c5c4aaefa6f4261d59094206d7f">set</a> (const ::<a class="el" href="classraylib_1_1_wave.html">Wave</a> &amp;wave)</td></tr>
+<tr class="separator:afffc2c5c4aaefa6f4261d59094206d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00034">34</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a23ec184bbb2ec32268a0820262a0dfde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23ec184bbb2ec32268a0820262a0dfde">&#9670;&nbsp;</a></span>Wave() <span class="overload">[1/4]</span></h2>
+<a id="a4643a642d42434c4eb39c6888688d495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4643a642d42434c4eb39c6888688d495">&#9670;&nbsp;</a></span>Wave() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,7 +169,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">raylib::Wave::Wave </td>
           <td>(</td>
-          <td class="paramtype">::<a class="el" href="classraylib_1_1_wave.html">Wave</a>&#160;</td>
+          <td class="paramtype">const ::<a class="el" href="classraylib_1_1_wave.html">Wave</a> &amp;&#160;</td>
           <td class="paramname"><em>wave</em></td><td>)</td>
           <td></td>
         </tr>
@@ -180,7 +183,7 @@ Protected Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00036">36</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00163">set()</a>.</p>
+<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00170">set()</a>.</p>
 
 </div>
 </div>
@@ -262,7 +265,7 @@ Protected Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00054">54</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00163">set()</a>.</p>
+<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00170">set()</a>.</p>
 
 </div>
 </div>
@@ -311,7 +314,7 @@ Protected Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00061">61</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00163">set()</a>.</p>
+<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00170">set()</a>.</p>
 
 </div>
 </div>
@@ -345,8 +348,8 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="afaa811f0bf97450c108a1de6fa7d0b0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afaa811f0bf97450c108a1de6fa7d0b0b">&#9670;&nbsp;</a></span>Copy()</h2>
+<a id="a52ca5fa9c0cdc43d3fb50ddc35d699e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52ca5fa9c0cdc43d3fb50ddc35d699e5">&#9670;&nbsp;</a></span>Copy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -355,7 +358,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classraylib_1_1_wave.html">Wave</a> raylib::Wave::Copy </td>
+          <td class="memname">inline ::<a class="el" href="classraylib_1_1_wave.html">Wave</a> raylib::Wave::Copy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -684,8 +687,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a202ca9cef9d90b169c04944182d12515"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a202ca9cef9d90b169c04944182d12515">&#9670;&nbsp;</a></span>LoadSound()</h2>
+<a id="a6e3a60eee216af788eaa9362a22a847e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e3a60eee216af788eaa9362a22a847e">&#9670;&nbsp;</a></span>LoadSound()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -694,7 +697,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classraylib_1_1_sound.html">Sound</a> raylib::Wave::LoadSound </td>
+          <td class="memname">inline ::<a class="el" href="classraylib_1_1_sound.html">Sound</a> raylib::Wave::LoadSound </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -711,7 +714,7 @@ Protected Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00151">151</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_wave_8hpp_source.html#l00158">operator Sound()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_wave_8hpp_source.html#l00165">operator Sound()</a>, and <a class="el" href="_wave_8hpp_source.html#l00158">operator::Sound()</a>.</p>
 
 </div>
 </div>
@@ -726,6 +729,37 @@ Protected Member Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">raylib::Wave::operator <a class="el" href="classraylib_1_1_sound.html">Sound</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load sound from wave data. </p>
+
+<p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00165">165</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00151">LoadSound()</a>.</p>
+
+</div>
+</div>
+<a id="a7f54205425932d5ae6b7bab2ab3e5f87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f54205425932d5ae6b7bab2ab3e5f87">&#9670;&nbsp;</a></span>operator::Sound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">raylib::Wave::operator::Sound </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -772,7 +806,7 @@ Protected Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00075">75</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00163">set()</a>.</p>
+<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00170">set()</a>.</p>
 
 </div>
 </div>
@@ -802,12 +836,12 @@ Protected Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00080">80</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00163">set()</a>.</p>
+<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00170">set()</a>.</p>
 
 </div>
 </div>
-<a id="adc12b4cc3c2757dea21a8d726c40bbbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc12b4cc3c2757dea21a8d726c40bbbc">&#9670;&nbsp;</a></span>set()</h2>
+<a id="afffc2c5c4aaefa6f4261d59094206d7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afffc2c5c4aaefa6f4261d59094206d7f">&#9670;&nbsp;</a></span>set()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -818,7 +852,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void raylib::Wave::set </td>
           <td>(</td>
-          <td class="paramtype">::<a class="el" href="classraylib_1_1_wave.html">Wave</a>&#160;</td>
+          <td class="paramtype">const ::<a class="el" href="classraylib_1_1_wave.html">Wave</a> &amp;&#160;</td>
           <td class="paramname"><em>wave</em></td><td>)</td>
           <td></td>
         </tr>
@@ -830,7 +864,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00163">163</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00170">170</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_wave_8hpp_source.html#l00075">operator=()</a>, and <a class="el" href="_wave_8hpp_source.html#l00036">Wave()</a>.</p>
 
@@ -1040,7 +1074,7 @@ Protected Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 26 2020 15:40:05 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 2 2021 14:24:11 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

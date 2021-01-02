@@ -170,6 +170,9 @@ class Texture : public ::Texture {
         return Draw(0, 0);
     }
 
+    /**
+     * Draw a Texture2D
+     */
     inline Texture& Draw(int posX, int posY, ::Color tint = {255, 255, 255, 255}) {
         ::DrawTexture(*this, posX, posY, tint);
         return *this;

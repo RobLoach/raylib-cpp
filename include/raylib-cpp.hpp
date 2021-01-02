@@ -4,7 +4,7 @@
 *   raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified,
 *   BSD-like license that allows static linking with closed source software:
 *
-*   Copyright 2020 Rob Loach (@RobLoach)
+*   Copyright 2020 Rob Loach (RobLoach)
 *
 *   This software is provided "as-is", without any express or implied warranty. In no event
 *   will the authors be held liable for any damages arising from the use of this software.

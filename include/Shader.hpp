@@ -106,6 +106,8 @@ class Shader : public ::Shader {
 
     /**
      * Set shader uniform value
+     *
+     * @see SetShaderValue()
      */
     inline Shader& SetValue(int uniformLoc, const std::string& value, int uniformType) {
         ::SetShaderValue(*this, uniformLoc, value.c_str(), uniformType);
@@ -113,7 +115,9 @@ class Shader : public ::Shader {
     }
 
     /**
-     * @see ::SetShaderValueV
+     * Set shader uniform value vector
+     *
+     * @see SetShaderValueV()
      */
     inline Shader& SetValue(int uniformLoc, const std::string& value, int uniformType, int count) {
         ::SetShaderValueV(*this, uniformLoc, value.c_str(), uniformType, count);
@@ -121,7 +125,9 @@ class Shader : public ::Shader {
     }
 
     /**
-     * @see ::SetShaderValueMatrix
+     * Set shader uniform value (matrix 4x4)
+     *
+     * @see SetShaderValueMatrix()
      */
     inline Shader& SetValue(int uniformLoc, const ::Matrix& mat) {
         ::SetShaderValueMatrix(*this, uniformLoc, mat);
