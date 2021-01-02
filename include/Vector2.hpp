@@ -296,7 +296,7 @@ class Vector2 : public ::Vector2 {
     /**
      * Check collision between two circles
      */
-    inline bool CheckCollisionCircles(float radius1, ::Vector2 center2, float radius2) const {
+    inline bool CheckCollisionCircle(float radius1, ::Vector2 center2, float radius2) const {
         return ::CheckCollisionCircles(*this, radius1, center2, radius2);
     }
 
@@ -317,14 +317,14 @@ class Vector2 : public ::Vector2 {
     /**
      * Check if point is inside circle
      */
-    inline bool CheckCollisionCircle(::Vector2 center, float radius) const {
+    inline bool CheckCollision(::Vector2 center, float radius) const {
         return ::CheckCollisionPointCircle(*this, center, radius);
     }
 
     /**
      * Check if point is inside a triangle
      */
-    inline bool CheckCollisionTriangle(::Vector2 p1, ::Vector2 p2, ::Vector2 p3) const {
+    inline bool CheckCollision(::Vector2 p1, ::Vector2 p2, ::Vector2 p3) const {
         return ::CheckCollisionPointTriangle(*this, p1, p2, p3);
     }
 
