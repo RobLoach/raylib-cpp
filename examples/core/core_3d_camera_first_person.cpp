@@ -75,7 +75,7 @@ int main() {
                     positions[i].DrawCubeWires(2.0f, heights[i], 2.0f, MAROON);
                 }
 
-            EndMode3D();
+            camera.EndMode();
 
             DrawRectangle( 10, 10, 220, 70, Fade(SKYBLUE, 0.5f));
             DrawRectangleLines( 10, 10, 220, 70, BLUE);

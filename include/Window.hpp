@@ -163,6 +163,23 @@ class Window {
     }
 
     /**
+     * Set whether or not the application should be fullscreen.
+     */
+    inline Window& SetFullscreen(bool fullscreen) {
+        if (fullscreen) {
+            if (!IsFullscreen()) {
+                ToggleFullscreen();
+            }
+        } else {
+            if (IsFullscreen()) {
+                ToggleFullscreen();
+            }
+        }
+
+        return *this;
+    }
+
+    /**
      * Set window state: maximized, if resizable (only PLATFORM_DESKTOP)
      */
     inline Window& Maximize() {
@@ -189,7 +206,7 @@ class Window {
     /**
      * Set icon for window
      */
-    inline Window& SetIcon(::Image image) {
+    inline Window& SetIcon(const ::Image& image) {
         ::SetWindowIcon(image);
         return *this;
     }
@@ -208,6 +225,13 @@ class Window {
     inline Window& SetPosition(int x, int y) {
         ::SetWindowPosition(x, y);
         return *this;
+    }
+
+    /**
+     * Set window position on screen
+     */
+    inline Window& SetPosition(const ::Vector2& position) {
+        return SetPosition(static_cast<int>(position.x), static_cast<int>(position.y));
     }
 
     /**
@@ -232,6 +256,13 @@ class Window {
     inline Window& SetSize(int width, int height) {
         ::SetWindowSize(width, height);
         return *this;
+    }
+
+    /**
+     * Set window dimensions
+     */
+    inline Window& SetSize(const ::Vector2& size) {
+        return SetSize(static_cast<int>(size.x), static_cast<int>(size.y));
     }
 
     /**

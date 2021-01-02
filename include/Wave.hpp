@@ -93,7 +93,7 @@ class Wave : public ::Wave {
     /**
      * Copy a wave to a new wave
      */
-    inline Wave Copy() {
+    inline ::Wave Copy() {
         return ::WaveCopy(*this);
     }
 
@@ -148,8 +148,15 @@ class Wave : public ::Wave {
     /**
      * Load sound from wave data
      */
-    inline Sound LoadSound() {
+    inline ::Sound LoadSound() {
         return ::LoadSoundFromWave(*this);
+    }
+
+    /**
+     * Load sound from wave data
+     */
+    inline operator ::Sound() {
+        return LoadSound();
     }
 
     /**

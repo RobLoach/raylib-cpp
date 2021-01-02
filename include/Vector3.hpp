@@ -195,7 +195,7 @@ class Vector3 : public ::Vector3 {
     }
 
     void OrthoNormalize(Vector3* vector3) {
-        return Vector3OrthoNormalize(this, vector3);
+        Vector3OrthoNormalize(this, vector3);
     }
 
     Vector3 Transform(const ::Matrix& matrix) {

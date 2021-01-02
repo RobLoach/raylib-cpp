@@ -81,7 +81,7 @@ class Ray : public ::Ray {
     /**
      * Detect collision between ray and sphere, returns collision point
      */
-    inline bool CheckCollisionSphereEx(::Vector3 center, float radius,
+    inline bool CheckCollisionSphere(::Vector3 center, float radius,
             ::Vector3 *collisionPoint) const {
         return CheckCollisionRaySphereEx(*this, center, radius, collisionPoint);
     }
@@ -89,14 +89,14 @@ class Ray : public ::Ray {
     /**
      * Detect collision between ray and box
      */
-    inline bool CheckCollisionBox(const ::BoundingBox& box) const {
+    inline bool CheckCollision(const ::BoundingBox& box) const {
         return CheckCollisionRayBox(*this, box);
     }
 
     /**
      * Get collision info between ray and model
      */
-    inline RayHitInfo GetCollisionModel(const ::Model& model) {
+    inline RayHitInfo GetCollision(const ::Model& model) {
         return GetCollisionRayModel(*this, model);
     }
 

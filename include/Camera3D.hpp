@@ -63,10 +63,17 @@ class Camera3D : public ::Camera3D {
         return *this;
     }
 
+    /**
+     * Initializes 3D mode with custom camera (3D)
+     */
     Camera3D& BeginMode() {
         ::BeginMode3D(*this);
         return *this;
     }
+
+    /**
+     * Ends 3D mode and returns to default 2D orthographic mode
+     */
     Camera3D& EndMode() {
         ::EndMode3D();
         return *this;

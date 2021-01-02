@@ -59,6 +59,10 @@ class Gamepad {
         return ::IsGamepadAvailable(number);
     }
 
+    static inline bool IsAvailable(int number) {
+        return ::IsGamepadAvailable(number);
+    }
+
     /**
      * Check gamepad name (if available)
      */
@@ -70,7 +74,7 @@ class Gamepad {
      * Return gamepad internal name id
      */
     std::string GetName() const {
-        return std::string(::GetGamepadName(number));
+        return ::GetGamepadName(number);
     }
 
     /**

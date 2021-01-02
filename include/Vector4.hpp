@@ -73,6 +73,14 @@ class Vector4 : public ::Vector4 {
             && w == other.w;
     }
 
+    inline ::Rectangle ToRectangle() {
+        return {x, y, z, w};
+    }
+
+    operator ::Rectangle() const {
+        return {x, y, z, w};
+    }
+
 #ifndef RAYLIB_CPP_NO_MATH
     Vector4 Multiply(const Vector4& vector4) {
         return QuaternionMultiply(*this, vector4);
@@ -111,7 +119,7 @@ class Vector4 : public ::Vector4 {
     }
 
     void ToAxisAngle(Vector3 *outAxis, float *outAngle) {
-        return QuaternionToAxisAngle(*this, outAxis, outAngle);
+        QuaternionToAxisAngle(*this, outAxis, outAngle);
     }
 
     std::pair<Vector3, float> ToAxisAngle() {

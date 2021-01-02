@@ -273,6 +273,13 @@ class Image : public ::Image {
     }
 
     /**
+     * Crop an image to area defined by a vector
+     */
+    inline Image& Crop(::Vector2 size) {
+        return Crop(0, 0, static_cast<int>(size.x), static_cast<int>(size.y));
+    }
+
+    /**
      * Crop an image to area defined by a rectangle
      */
     inline Image& Crop(int offsetX, int offsetY, int newWidth, int newHeight) {
@@ -423,7 +430,7 @@ class Image : public ::Image {
     /**
      * Clear image background with given color
      */
-    inline Image& ClearBackground(::Color color = {255, 255, 255, 255}) {
+    inline Image& ClearBackground(::Color color = {0, 0, 0, 255}) {
         ::ImageClearBackground(this, color);
         return *this;
     }

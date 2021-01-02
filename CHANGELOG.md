@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `models_first_person_maze.cpp` example
 - String override functions to use `std::string` directly instead of `const char*`
 - `std::vector<std::string>` wrapper for `GetDirectoryFiles()` and `GetDroppedFiles()`
+- `raylib::Color::RayWhite()` static functions to build `Color` objects
+- `Rectangle.GetPosition()` and `Rectangle.SetPosition()`
+- `Rectangle.GetSize()` and `Rectangle.SetSize()`
 
 ### Fixed
 - `Mouse::SetX()` and `Mouse::SetY()`

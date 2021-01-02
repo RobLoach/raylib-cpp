@@ -48,21 +48,21 @@ class RayHitInfo : public ::RayHitInfo {
     /**
      * Get collision info between ray and model
      */
-    RayHitInfo(::Ray ray, const ::Model& model) {
+    RayHitInfo(const ::Ray& ray, const ::Model& model) {
         set(::GetCollisionRayModel(ray, model));
     }
 
     /**
      * Get collision info between ray and triangle
      */
-    RayHitInfo(::Ray ray, ::Vector3 p1, ::Vector3 p2, ::Vector3 p3) {
+    RayHitInfo(const ::Ray& ray, ::Vector3 p1, ::Vector3 p2, ::Vector3 p3) {
         set(::GetCollisionRayTriangle(ray, p1, p2, p3));
     }
 
     /**
      * Get collision info between ray and ground plane (Y-normal plane)
      */
-    RayHitInfo(::Ray ray, float groundHeight) {
+    RayHitInfo(const ::Ray& ray, float groundHeight) {
         set(::GetCollisionRayGround(ray, groundHeight));
     }
 

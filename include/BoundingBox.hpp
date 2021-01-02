@@ -41,8 +41,8 @@ class BoundingBox : public ::BoundingBox {
     /**
      * Compute mesh bounding box limits
      */
-    BoundingBox(::Mesh mesh) {
-        set(MeshBoundingBox(mesh));
+    BoundingBox(const ::Mesh& mesh) {
+        set(::MeshBoundingBox(mesh));
     }
 
     BoundingBox(::Vector3 Min, ::Vector3 Max) {

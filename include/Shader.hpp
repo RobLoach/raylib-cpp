@@ -51,11 +51,11 @@ class Shader : public ::Shader {
         set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));
     }
 
-    static Shader Load(const std::string& vsFileName, const std::string& fsFileName) {
+    static ::Shader Load(const std::string& vsFileName, const std::string& fsFileName) {
         return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());
     }
 
-    static Shader LoadCode(const std::string& vsCode, const std::string& fsCode) {
+    static ::Shader LoadCode(const std::string& vsCode, const std::string& fsCode) {
         return ::LoadShaderCode(vsCode.c_str(), fsCode.c_str());
     }
 
@@ -80,12 +80,12 @@ class Shader : public ::Shader {
         ::UnloadShader(*this);
     }
 
-    inline Shader& BeginShaderMode() {
+    inline Shader& BeginMode() {
         ::BeginShaderMode(*this);
         return *this;
     }
 
-    inline Shader& EndShaderMode() {
+    inline Shader& EndMode() {
         ::EndShaderMode();
         return *this;
     }
@@ -123,7 +123,7 @@ class Shader : public ::Shader {
     /**
      * @see ::SetShaderValueMatrix
      */
-    inline Shader& SetValue(int uniformLoc, ::Matrix mat) {
+    inline Shader& SetValue(int uniformLoc, const ::Matrix& mat) {
         ::SetShaderValueMatrix(*this, uniformLoc, mat);
         return *this;
     }
