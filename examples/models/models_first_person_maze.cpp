@@ -75,7 +75,7 @@ int main(void)
             for (int x = 0; x < cubicmap.width; x++)
             {
                 if ((mapPixels[y*cubicmap.width + x].r == 255) &&       // Collision: white pixel, only check R channel
-                    (playerPos.CheckCollisionCircleRec(playerRadius,
+                    (playerPos.CheckCollisionCircle(playerRadius,
                     (Rectangle){ mapPosition.x - 0.5f + x*1.0f, mapPosition.z - 0.5f + y*1.0f, 1.0f, 1.0f })))
                 {
                     // Collision detected, reset camera position
@@ -91,12 +91,12 @@ int main(void)
 
             ClearBackground(RAYWHITE);
 
-            camera.BeginMode3D();
+            camera.BeginMode();
 
                 model.Draw(mapPosition);               // Draw maze map
                 // playerPosition.DrawCube((Vector3){ 0.2f, 0.4f, 0.2f }, RED);  // Draw player
 
-            camera.EndMode3D();
+            camera.EndMode();
 
             cubicmap.Draw((Vector2){ static_cast<float>(GetScreenWidth() - cubicmap.width*4 - 20), 20 }, 0.0f, 4.0f, WHITE);
             DrawRectangleLines(GetScreenWidth() - cubicmap.width*4 - 20, 20, cubicmap.width*4, cubicmap.height*4, GREEN);

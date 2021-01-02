@@ -31,7 +31,7 @@
 namespace raylib {
 class RenderTexture : public ::RenderTexture {
  public:
-    RenderTexture(::RenderTexture renderTexture) {
+    RenderTexture(const ::RenderTexture& renderTexture) {
         set(renderTexture);
     }
 
@@ -68,7 +68,7 @@ class RenderTexture : public ::RenderTexture {
     /**
      * Initializes render texture for drawing
      */
-    inline RenderTexture& BeginTextureMode() {
+    inline RenderTexture& BeginMode() {
         ::BeginTextureMode(*this);
         return *this;
     }
@@ -76,13 +76,13 @@ class RenderTexture : public ::RenderTexture {
     /**
      * Ends drawing to render texture
      */
-    inline RenderTexture& EndTextureMode() {
+    inline RenderTexture& EndMode() {
         ::EndTextureMode();
         return *this;
     }
 
  protected:
-    inline void set(::RenderTexture renderTexture) {
+    inline void set(const ::RenderTexture& renderTexture) {
         id = renderTexture.id;
         texture = renderTexture.texture;
         depth = renderTexture.depth;

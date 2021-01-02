@@ -34,7 +34,7 @@ namespace raylib {
  */
 class RayHitInfo : public ::RayHitInfo {
  public:
-    RayHitInfo(::RayHitInfo ray) {
+    RayHitInfo(const ::RayHitInfo& ray) {
         set(ray);
     }
 
@@ -48,21 +48,21 @@ class RayHitInfo : public ::RayHitInfo {
     /**
      * Get collision info between ray and model
      */
-    RayHitInfo(::Ray ray, ::Model model) {
+    RayHitInfo(const ::Ray& ray, const ::Model& model) {
         set(::GetCollisionRayModel(ray, model));
     }
 
     /**
      * Get collision info between ray and triangle
      */
-    RayHitInfo(::Ray ray, ::Vector3 p1, ::Vector3 p2, ::Vector3 p3) {
+    RayHitInfo(const ::Ray& ray, ::Vector3 p1, ::Vector3 p2, ::Vector3 p3) {
         set(::GetCollisionRayTriangle(ray, p1, p2, p3));
     }
 
     /**
      * Get collision info between ray and ground plane (Y-normal plane)
      */
-    RayHitInfo(::Ray ray, float groundHeight) {
+    RayHitInfo(const ::Ray& ray, float groundHeight) {
         set(::GetCollisionRayGround(ray, groundHeight));
     }
 
@@ -82,7 +82,7 @@ class RayHitInfo : public ::RayHitInfo {
     GETTERSETTER(::Vector3, Normal, normal)
 
  protected:
-    inline void set(::RayHitInfo ray) {
+    inline void set(const ::RayHitInfo& ray) {
         hit = ray.hit;
         distance = ray.distance;
         position = ray.position;

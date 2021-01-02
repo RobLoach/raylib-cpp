@@ -32,6 +32,10 @@
 namespace raylib {
 class Camera3D : public ::Camera3D {
  public:
+    Camera3D(const ::Camera3D& camera) {
+        set(camera);
+    }
+
     Camera3D(::Vector3 positionValue, ::Vector3 targetValue, ::Vector3 upValue,
             float fovyValue = 0, int typeValue = 0) {
         position = positionValue;
@@ -59,11 +63,18 @@ class Camera3D : public ::Camera3D {
         return *this;
     }
 
-    Camera3D& BeginMode3D() {
+    /**
+     * Initializes 3D mode with custom camera (3D)
+     */
+    Camera3D& BeginMode() {
         ::BeginMode3D(*this);
         return *this;
     }
-    Camera3D& EndMode3D() {
+
+    /**
+     * Ends 3D mode and returns to default 2D orthographic mode
+     */
+    Camera3D& EndMode() {
         ::EndMode3D();
         return *this;
     }
@@ -102,7 +113,9 @@ class Camera3D : public ::Camera3D {
     /**
      * Set camera move controls (1st person and 3rd person cameras)
      */
-    inline Camera3D& SetMoveControls(int frontKey, int backKey, int rightKey, int leftKey,
+    inline Camera3D& SetMoveControls(
+            int frontKey, int backKey,
+            int rightKey, int leftKey,
             int upKey, int downKey) {
         ::SetCameraMoveControls(frontKey, backKey, rightKey, leftKey, upKey, downKey);
         return *this;
@@ -138,14 +151,21 @@ class Camera3D : public ::Camera3D {
         return ::GetWorldToScreen(position, *this);
     }
 
-    inline Camera3D& DrawBillboard(::Texture2D texture, ::Vector3 center, float size,
-            ::Color tint = WHITE) {
+    inline Camera3D& DrawBillboard(
+            const ::Texture2D& texture,
+            ::Vector3 center,
+            float size,
+            ::Color tint = {255, 255, 255, 255}) {
         ::DrawBillboard(*this, texture, center, size, tint);
         return *this;
     }
 
-    inline Camera3D& DrawBillboard(::Texture2D texture, ::Rectangle sourceRec, ::Vector3 center,
-            float size, ::Color tint = WHITE) {
+    inline Camera3D& DrawBillboard(
+            const ::Texture2D& texture,
+            ::Rectangle sourceRec,
+            ::Vector3 center,
+            float size,
+            ::Color tint = {255, 255, 255, 255}) {
         ::DrawBillboardRec(*this, texture, sourceRec, center, size, tint);
         return *this;
     }

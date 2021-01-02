@@ -30,83 +30,80 @@
 #include "./Vector2.hpp"
 
 namespace raylib {
+/**
+ * Input-related functions: mouse
+ */
 class Mouse {
  public:
-    inline bool IsButtonPressed(int button) const {
+    static inline bool IsButtonPressed(int button) {
         return ::IsMouseButtonPressed(button);
     }
 
-    inline bool IsButtonDown(int button) const {
+    static inline bool IsButtonDown(int button) {
         return ::IsMouseButtonDown(button);
     }
 
-    inline bool IsButtonReleased(int button) const {
+    static inline bool IsButtonReleased(int button) {
         return ::IsMouseButtonReleased(button);
     }
 
-    inline bool IsButtonUp(int button) const {
+    static inline bool IsButtonUp(int button) {
         return ::IsMouseButtonUp(button);
     }
 
-    inline int GetX() const {
+    static inline int GetX() {
         return ::GetMouseX();
     }
 
-    inline int GetY() const {
+    static inline int GetY() {
         return ::GetMouseY();
     }
 
-    inline Mouse& SetX(int x) {
+    static inline void SetX(int x) {
         ::SetMousePosition(x, GetY());
-        return *this;
     }
 
-    inline Mouse& SetY(int y) {
+    static inline void SetY(int y) {
         ::SetMousePosition(GetX(), y);
-        return *this;
     }
 
-    inline Vector2 GetPosition() const {
+    static inline Vector2 GetPosition() {
         return ::GetMousePosition();
     }
 
-    inline Mouse& SetPosition(int x, int y) {
+    static inline void SetPosition(int x, int y) {
         ::SetMousePosition(x, y);
-        return *this;
     }
 
-    inline Mouse& SetOffset(int offsetX, int offsetY) {
+    static inline void SetOffset(int offsetX, int offsetY) {
         ::SetMouseOffset(offsetX, offsetY);
-        return *this;
     }
 
-    inline Mouse& SetScale(float scaleX, float scaleY) {
+    static inline void SetScale(float scaleX, float scaleY) {
         ::SetMouseScale(scaleX, scaleY);
-        return *this;
     }
 
-    inline float GetWheelMove() const {
+    static inline float GetWheelMove() {
         return ::GetMouseWheelMove();
     }
 
-    inline int GetCursor() const {
+    static inline int GetCursor() {
         return ::GetMouseCursor();
     }
 
-    inline Mouse& SetCursor(int cursor) {
+    static inline void SetCursor(int cursor) {
         ::SetMouseCursor(cursor);
-        return *this;
     }
 
-    inline int GetTouchX() const {
+    static inline int GetTouchX() {
         return ::GetTouchX();
     }
 
-    inline int GetTouchY() const {
+    static inline int GetTouchY() {
         return ::GetTouchY();
     }
 
-    inline Vector2 GetTouchPosition(int index) const {
+    static inline Vector2 GetTouchPosition(int index) {
         return ::GetTouchPosition(index);
     }
 };

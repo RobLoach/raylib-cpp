@@ -45,7 +45,7 @@ extern "C" {
 namespace raylib {
 class Matrix : public ::Matrix {
  public:
-    Matrix(::Matrix mat) {
+    Matrix(const ::Matrix& mat) {
         set(mat);
     }
 
@@ -186,19 +186,19 @@ class Matrix : public ::Matrix {
         return ::MatrixIdentity();
     }
 
-    Matrix Add(::Matrix right) {
+    Matrix Add(const ::Matrix& right) {
         return ::MatrixAdd(*this, right);
     }
 
-    Matrix operator+(const Matrix& matrix) {
+    Matrix operator+(const ::Matrix& matrix) {
             return ::MatrixAdd(*this, matrix);
     }
 
-    Matrix Subtract(::Matrix right) {
+    Matrix Subtract(const ::Matrix& right) {
         return ::MatrixSubtract(*this, right);
     }
 
-    Matrix operator-(const Matrix& matrix) {
+    Matrix operator-(const ::Matrix& matrix) {
         return ::MatrixSubtract(*this, matrix);
     }
 
@@ -230,11 +230,11 @@ class Matrix : public ::Matrix {
         return ::MatrixScale(x, y, z);
     }
 
-    Matrix Multiply(Matrix right) const {
+    Matrix Multiply(const ::Matrix& right) const {
         return ::MatrixMultiply(*this, right);
     }
 
-    Matrix operator*(const Matrix& matrix) {
+    Matrix operator*(const ::Matrix& matrix) {
         return ::MatrixMultiply(*this, matrix);
     }
 
@@ -275,7 +275,7 @@ class Matrix : public ::Matrix {
 #endif
 
  protected:
-    inline void set(::Matrix mat) {
+    inline void set(const ::Matrix& mat) {
         m0 = mat.m0;
         m1 = mat.m1;
         m2 = mat.m2;

@@ -36,7 +36,7 @@
 namespace raylib {
 class Vector2 : public ::Vector2 {
  public:
-    Vector2(::Vector2 vec) {
+    Vector2(const ::Vector2& vec) {
         set(vec);
     }
 
@@ -296,35 +296,35 @@ class Vector2 : public ::Vector2 {
     /**
      * Check collision between two circles
      */
-    inline bool CheckCollisionCircles(float radius1, ::Vector2 center2, float radius2) const {
+    inline bool CheckCollisionCircle(float radius1, ::Vector2 center2, float radius2) const {
         return ::CheckCollisionCircles(*this, radius1, center2, radius2);
     }
 
     /**
      * Check collision between circle and rectangle
      */
-    inline bool CheckCollisionCircleRec(float radius, ::Rectangle rec) const {
+    inline bool CheckCollisionCircle(float radius, ::Rectangle rec) const {
         return ::CheckCollisionCircleRec(*this, radius, rec);
     }
 
     /**
      * Check if point is inside rectangle
      */
-    inline bool CheckCollisionPointRec(::Rectangle rec) const {
+    inline bool CheckCollision(::Rectangle rec) const {
         return ::CheckCollisionPointRec(*this, rec);
     }
 
     /**
      * Check if point is inside circle
      */
-    inline bool CheckCollisionPointCircle(::Vector2 center, float radius) const {
+    inline bool CheckCollision(::Vector2 center, float radius) const {
         return ::CheckCollisionPointCircle(*this, center, radius);
     }
 
     /**
      * Check if point is inside a triangle
      */
-    inline bool CheckCollisionPointTriangle(::Vector2 p1, ::Vector2 p2, ::Vector2 p3) const {
+    inline bool CheckCollision(::Vector2 p1, ::Vector2 p2, ::Vector2 p3) const {
         return ::CheckCollisionPointTriangle(*this, p1, p2, p3);
     }
 
@@ -339,7 +339,7 @@ class Vector2 : public ::Vector2 {
     }
 
  protected:
-    inline void set(::Vector2 vec) {
+    inline void set(const ::Vector2& vec) {
         x = vec.x;
         y = vec.y;
     }

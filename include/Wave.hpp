@@ -33,7 +33,7 @@
 namespace raylib {
 class Wave : public ::Wave {
  public:
-    Wave(::Wave wave) {
+    Wave(const ::Wave& wave) {
         set(wave);
     }
 
@@ -93,7 +93,7 @@ class Wave : public ::Wave {
     /**
      * Copy a wave to a new wave
      */
-    inline Wave Copy() {
+    inline ::Wave Copy() {
         return ::WaveCopy(*this);
     }
 
@@ -148,8 +148,15 @@ class Wave : public ::Wave {
     /**
      * Load sound from wave data
      */
-    inline Sound LoadSound() {
+    inline ::Sound LoadSound() {
         return ::LoadSoundFromWave(*this);
+    }
+
+    /**
+     * Load sound from wave data
+     */
+    inline operator ::Sound() {
+        return LoadSound();
     }
 
     /**
@@ -160,7 +167,7 @@ class Wave : public ::Wave {
     }
 
  protected:
-    inline void set(::Wave wave) {
+    inline void set(const ::Wave& wave) {
         sampleCount = wave.sampleCount;
         sampleRate = wave.sampleRate;
         sampleSize = wave.sampleSize;

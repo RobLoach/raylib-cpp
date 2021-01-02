@@ -32,7 +32,7 @@
 namespace raylib {
 class Rectangle : public ::Rectangle {
  public:
-    Rectangle(::Rectangle vec) {
+    Rectangle(const ::Rectangle& vec) {
         set(vec);
     }
 
@@ -41,6 +41,10 @@ class Rectangle : public ::Rectangle {
     Rectangle(float x, float y) : ::Rectangle{x, y, 0, 0} {}
     Rectangle(float x) : ::Rectangle{x, 0, 0, 0} {}
     Rectangle() : ::Rectangle{0, 0, 0, 0} {}
+
+    Rectangle(::Vector2 position, ::Vector2 size)
+            : ::Rectangle{position.x, position.y, size.x, size.y} {}
+    Rectangle(::Vector2 size) : ::Rectangle{0, 0, size.x, size.y} {}
 
     GETTERSETTER(float, X, x)
     GETTERSETTER(float, Y, y)
@@ -55,6 +59,14 @@ class Rectangle : public ::Rectangle {
     Rectangle& operator=(const Rectangle& rect) {
         set(rect);
         return *this;
+    }
+
+    inline ::Vector4 ToVector4() {
+        return {x, y, width, height};
+    }
+
+    operator ::Vector4() const {
+        return {x, y, width, height};
     }
 
     /**
@@ -94,7 +106,7 @@ class Rectangle : public ::Rectangle {
         return *this;
     }
 
-    inline Rectangle& DrawLinesEx(int lineThick, ::Color color) {
+    inline Rectangle& DrawLines(::Color color, int lineThick) {
         ::DrawRectangleLinesEx(*this, lineThick, color);
         return *this;
     }
@@ -138,8 +150,36 @@ class Rectangle : public ::Rectangle {
         return ::CheckCollisionCircleRec(center, radius, *this);
     }
 
+    inline ::Vector2 GetSize() {
+        return {width, height};
+    }
+
+    inline Rectangle& SetSize(float newWidth, float newHeight) {
+        width = newWidth;
+        height = newHeight;
+        return *this;
+    }
+
+    inline Rectangle& SetSize(const ::Vector2& size) {
+        return SetSize(size.x, size.y);
+    }
+
+    inline ::Vector2 GetPosition() {
+        return {x, y};
+    }
+
+    inline Rectangle& SetPosition(float newX, float newY) {
+        x = newX;
+        y = newY;
+        return *this;
+    }
+
+    inline Rectangle& SetPosition(const ::Vector2& position) {
+        return SetPosition(position.x, position.y);
+    }
+
  protected:
-    inline void set(::Rectangle rect) {
+    inline void set(const ::Rectangle& rect) {
         x = rect.x;
         y = rect.y;
         width = rect.width;

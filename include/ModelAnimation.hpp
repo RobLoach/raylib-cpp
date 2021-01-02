@@ -38,7 +38,7 @@ namespace raylib {
  */
 class ModelAnimation : public ::ModelAnimation {
  public:
-    ModelAnimation(::ModelAnimation model) {
+    ModelAnimation(const ::ModelAnimation& model) {
         set(model);
     }
 
@@ -80,7 +80,7 @@ class ModelAnimation : public ::ModelAnimation {
     /**
      * Update model animation pose
      */
-    inline ModelAnimation& Update(::Model model, int frame) {
+    inline ModelAnimation& Update(const ::Model& model, int frame) {
         ::UpdateModelAnimation(model, *this, frame);
         return *this;
     }
@@ -88,12 +88,12 @@ class ModelAnimation : public ::ModelAnimation {
     /**
      * Check model animation skeleton match
      */
-    inline bool IsValid(::Model model) const {
+    inline bool IsValid(const ::Model& model) const {
         return ::IsModelAnimationValid(model, *this);
     }
 
  protected:
-    inline void set(::ModelAnimation model) {
+    inline void set(const ::ModelAnimation& model) {
         boneCount = model.boneCount;
         bones = model.bones;
         frameCount = model.frameCount;

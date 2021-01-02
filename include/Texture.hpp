@@ -35,6 +35,10 @@
 namespace raylib {
 class Texture : public ::Texture {
  public:
+    Texture(const ::Texture& texture) {
+        set(texture);
+    }
+
     Texture() {
         set(::GetTextureDefault());
     }
@@ -68,6 +72,13 @@ class Texture : public ::Texture {
     Texture& operator=(const Texture& texture) {
         set(texture);
         return *this;
+    }
+
+    /**
+     * Retrieve the width and height of the texture.
+     */
+    inline ::Vector2 GetSize() {
+        return {static_cast<float>(width), static_cast<float>(height)};
     }
 
     /**
@@ -117,7 +128,7 @@ class Texture : public ::Texture {
     /**
      * Get pixel data from GPU texture and return an Image
      */
-    inline Image GetTextureData() const {
+    inline ::Image GetData() const {
         return ::GetTextureData(*this);
     }
 
@@ -125,7 +136,7 @@ class Texture : public ::Texture {
      * Get pixel data from GPU texture and return an Image
      */
     inline operator raylib::Image() {
-        return GetTextureData();
+        return GetData();
     }
 
     /**
@@ -156,57 +167,57 @@ class Texture : public ::Texture {
      * Draws the texture at the top left corner of the screen.
      */
     inline Texture& Draw() {
-        ::DrawTexture(*this, 0, 0, WHITE);
-        return *this;
+        return Draw(0, 0);
     }
 
-    inline Texture& Draw(int posX, int posY, ::Color tint = WHITE) {
+    inline Texture& Draw(int posX, int posY, ::Color tint = {255, 255, 255, 255}) {
         ::DrawTexture(*this, posX, posY, tint);
         return *this;
     }
 
-    inline Texture& Draw(::Vector2 position, ::Color tint = WHITE) {
+    inline Texture& Draw(::Vector2 position, ::Color tint = {255, 255, 255, 255}) {
         ::DrawTextureV(*this, position, tint);
         return *this;
     }
 
     inline Texture& Draw(::Vector2 position, float rotation, float scale = 1.0f,
-            ::Color tint = WHITE) {
+            ::Color tint = {255, 255, 255, 255}) {
         ::DrawTextureEx(*this, position, rotation, scale, tint);
         return *this;
     }
 
-    inline Texture& Draw(::Rectangle sourceRec, ::Vector2 position, ::Color tint = WHITE) {
+    inline Texture& Draw(::Rectangle sourceRec, ::Vector2 position = {0, 0},
+            ::Color tint = {255, 255, 255, 255}) {
         ::DrawTextureRec(*this, sourceRec, position, tint);
         return *this;
     }
 
     inline Texture& Draw(::Vector2 tiling, ::Vector2 offset, ::Rectangle quad,
-            ::Color tint = WHITE) {
+            ::Color tint = {255, 255, 255, 255}) {
         ::DrawTextureQuad(*this, tiling, offset, quad, tint);
         return *this;
     }
 
-    inline Texture& Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin,
-            float rotation = 0, ::Color tint = WHITE) {
+    inline Texture& Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin = {0, 0},
+            float rotation = 0, ::Color tint = {255, 255, 255, 255}) {
         ::DrawTexturePro(*this, sourceRec, destRec, origin, rotation, tint);
         return *this;
     }
 
-    inline Texture& Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin,
-            float rotation = 0, ::Color tint = WHITE) {
+    inline Texture& Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin = {0, 0},
+            float rotation = 0, ::Color tint = {255, 255, 255, 255}) {
         ::DrawTextureNPatch(*this, nPatchInfo, destRec, origin, rotation, tint);
         return *this;
     }
 
     inline Texture& Draw(::Vector3 position, float width, float height, float length,
-            ::Color color = WHITE) {
+            ::Color color = {255, 255, 255, 255}) {
         ::DrawCubeTexture(*this, position, width, height, length, color);
         return *this;
     }
 
-    inline Texture& DrawTiled(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin,
-            float rotation, float scale, Color tint = WHITE) {
+    inline Texture& DrawTiled(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin = {0, 0},
+            float rotation = 0, float scale = 1, Color tint = {255, 255, 255, 255}) {
         ::DrawTextureTiled(*this, sourceRec, destRec, origin, rotation, scale, tint);
         return *this;
     }
@@ -229,13 +240,13 @@ class Texture : public ::Texture {
     /**
      * Define default texture used to draw shapes
      */
-    inline Texture& SetShapesTexture(Rectangle source) {
+    inline Texture& SetShapes(::Rectangle source) {
         ::SetShapesTexture(*this, source);
         return *this;
     }
 
  protected:
-    inline void set(::Texture texture) {
+    inline void set(const ::Texture& texture) {
         id = texture.id;
         width = texture.width;
         height = texture.height;

@@ -50,13 +50,13 @@ int main() {
 
             ClearBackground(RAYWHITE);
 
-            camera.BeginMode3D();
+            camera.BeginMode();
 
                 DrawGrid(10, 1.0f);        // Draw a grid
 
                 camera.DrawBillboard(bill, billPosition, 2.0f, WHITE);
 
-            camera.EndMode3D();
+            camera.EndMode();
 
             DrawFPS(10, 10);
 

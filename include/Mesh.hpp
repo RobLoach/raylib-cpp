@@ -36,7 +36,7 @@
 namespace raylib {
 class Mesh : public ::Mesh {
  public:
-    Mesh(::Mesh mesh) {
+    Mesh(const ::Mesh& mesh) {
         set(mesh);
     }
 
@@ -48,7 +48,7 @@ class Mesh : public ::Mesh {
     /**
      * Load meshes from model file
      */
-    static std::vector<Mesh> Load(const std::string fileName) {
+    static std::vector<Mesh> Load(const std::string& fileName) {
         int count = 0;
         ::Mesh* meshes = LoadMeshes(fileName.c_str(), &count);
         return std::vector<Mesh>(meshes, meshes + count);
@@ -113,14 +113,14 @@ class Mesh : public ::Mesh {
     /**
      * Generate heightmap mesh from image data
      */
-    static ::Mesh Heightmap(::Image heightmap, ::Vector3 size) {
+    static ::Mesh Heightmap(const ::Image& heightmap, ::Vector3 size) {
         return ::GenMeshHeightmap(heightmap, size);
     }
 
     /**
      * Generate cubes-based map mesh from image data
      */
-    static ::Mesh Cubicmap(::Image cubicmap, ::Vector3 cubeSize) {
+    static ::Mesh Cubicmap(const ::Image& cubicmap, ::Vector3 cubeSize) {
         return ::GenMeshCubicmap(cubicmap, cubeSize);
     }
 
@@ -216,7 +216,7 @@ class Mesh : public ::Mesh {
     }
 
  protected:
-    inline void set(::Mesh mesh) {
+    inline void set(const ::Mesh& mesh) {
         vertexCount = mesh.vertexCount;
         triangleCount = mesh.triangleCount;
         vertices = mesh.vertices;

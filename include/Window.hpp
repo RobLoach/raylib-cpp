@@ -57,7 +57,7 @@ class Window {
         Close();
     }
 
-    void Init(int width, int height, const std::string& title) {
+    void Init(int width = 800, int height = 450, const std::string& title = "raylib") {
         ::InitWindow(width, height, title.c_str());
     }
 
@@ -163,6 +163,23 @@ class Window {
     }
 
     /**
+     * Set whether or not the application should be fullscreen.
+     */
+    inline Window& SetFullscreen(bool fullscreen) {
+        if (fullscreen) {
+            if (!IsFullscreen()) {
+                ToggleFullscreen();
+            }
+        } else {
+            if (IsFullscreen()) {
+                ToggleFullscreen();
+            }
+        }
+
+        return *this;
+    }
+
+    /**
      * Set window state: maximized, if resizable (only PLATFORM_DESKTOP)
      */
     inline Window& Maximize() {
@@ -189,7 +206,7 @@ class Window {
     /**
      * Set icon for window
      */
-    inline Window& SetIcon(::Image image) {
+    inline Window& SetIcon(const ::Image& image) {
         ::SetWindowIcon(image);
         return *this;
     }
@@ -208,6 +225,13 @@ class Window {
     inline Window& SetPosition(int x, int y) {
         ::SetWindowPosition(x, y);
         return *this;
+    }
+
+    /**
+     * Set window position on screen
+     */
+    inline Window& SetPosition(const ::Vector2& position) {
+        return SetPosition(static_cast<int>(position.x), static_cast<int>(position.y));
     }
 
     /**
@@ -232,6 +256,20 @@ class Window {
     inline Window& SetSize(int width, int height) {
         ::SetWindowSize(width, height);
         return *this;
+    }
+
+    /**
+     * Set window dimensions
+     */
+    inline Window& SetSize(const ::Vector2& size) {
+        return SetSize(static_cast<int>(size.x), static_cast<int>(size.y));
+    }
+
+    /**
+     * Get the screen's width and height.
+     */
+    inline ::Vector2 GetSize() {
+        return {static_cast<float>(GetWidth()), static_cast<float>(GetHeight())};
     }
 
     /**
@@ -260,51 +298,29 @@ class Window {
     /**
      * Get current screen width
      */
-    inline int GetScreenWidth() const {
+    inline int GetWidth() const {
         return ::GetScreenWidth();
     }
 
     /**
      * Get current screen height
      */
-    inline int GetScreenHeight() const {
+    inline int GetHeight() const {
         return ::GetScreenHeight();
     }
 
     /**
      * Get window position XY on monitor
      */
-    inline Vector2 GetPosition() const {
+    inline ::Vector2 GetPosition() const {
         return ::GetWindowPosition();
     }
 
     /**
      * Get window scale DPI factor
      */
-    inline Vector2 GetScaleDPI() const {
+    inline ::Vector2 GetScaleDPI() const {
         return ::GetWindowScaleDPI();
-    }
-
-    /**
-     * Get the human-readable, UTF-8 encoded name of the primary monitor
-     */
-    std::string GetMonitorName(int monitor) const {
-        return ::GetMonitorName(monitor);
-    }
-
-    /**
-     * Get clipboard text content
-     */
-    std::string GetClipboardText() const {
-        return ::GetClipboardText();
-    }
-
-    /**
-     * Set clipboard text content
-     */
-    inline Window& SetClipboardText(const std::string& text) {
-        ::SetClipboardText(text.c_str());
-        return *this;
     }
 
     /**

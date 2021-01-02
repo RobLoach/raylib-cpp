@@ -34,7 +34,7 @@
 namespace raylib {
 class Model : public ::Model {
  public:
-    Model(::Model model) {
+    Model(const ::Model& model) {
         set(model);
     }
 
@@ -42,7 +42,7 @@ class Model : public ::Model {
         set(::LoadModel(fileName.c_str()));
     }
 
-    Model(::Mesh mesh) {
+    Model(const ::Mesh& mesh) {
         set(::LoadModelFromMesh(mesh));
     }
 
@@ -100,14 +100,14 @@ class Model : public ::Model {
     /**
      * Get collision info between ray and model
      */
-    inline RayHitInfo GetCollision(::Ray ray) const {
+    inline RayHitInfo GetCollision(const ::Ray& ray) const {
         return ::GetCollisionRayModel(ray, *this);
     }
 
     /**
      * Update model animation pose
      */
-    inline Model& UpdateModelAnimation(::ModelAnimation anim, int frame) {
+    inline Model& UpdateModelAnimation(const ::ModelAnimation& anim, int frame) {
         ::UpdateModelAnimation(*this, anim, frame);
         return *this;
     }
@@ -115,14 +115,16 @@ class Model : public ::Model {
     /**
      * Check model animation skeleton match
      */
-    inline bool IsModelAnimationValid(::ModelAnimation anim) const {
+    inline bool IsModelAnimationValid(const ::ModelAnimation& anim) const {
         return ::IsModelAnimationValid(*this, anim);
     }
 
     /**
      * Draw a model (with texture if set)
      */
-    inline Model& Draw(::Vector3 position, float scale = 1.0f, ::Color tint = WHITE) {
+    inline Model& Draw(::Vector3 position,
+            float scale = 1.0f,
+            ::Color tint = {255, 255, 255, 255}) {
         ::DrawModel(*this, position, scale, tint);
         return *this;
     }
@@ -135,7 +137,7 @@ class Model : public ::Model {
             ::Vector3 rotationAxis,
             float rotationAngle = 0.0f,
             ::Vector3 scale = {1.0f, 1.0f, 1.0f},
-            ::Color tint = WHITE) {
+            ::Color tint = {255, 255, 255, 255}) {
         ::DrawModelEx(*this, position, rotationAxis, rotationAngle, scale, tint);
         return *this;
     }
@@ -143,7 +145,9 @@ class Model : public ::Model {
     /**
      * Draw a model wires (with texture if set)
      */
-    inline Model& DrawWires(::Vector3 position, float scale = 1.0f, ::Color tint = WHITE) {
+    inline Model& DrawWires(::Vector3 position,
+            float scale = 1.0f,
+            ::Color tint = {255, 255, 255, 255}) {
         ::DrawModelWires(*this, position, scale, tint);
         return *this;
     }
@@ -156,13 +160,13 @@ class Model : public ::Model {
             ::Vector3 rotationAxis,
             float rotationAngle = 0.0f,
             ::Vector3 scale = {1.0f, 1.0f, 1.0f},
-            ::Color tint = WHITE) {
+            ::Color tint = {255, 255, 255, 255}) {
         ::DrawModelWiresEx(*this, position, rotationAxis, rotationAngle, scale, tint);
         return *this;
     }
 
  protected:
-    inline void set(::Model model) {
+    inline void set(const ::Model& model) {
         transform = model.transform;
 
         meshCount = model.meshCount;

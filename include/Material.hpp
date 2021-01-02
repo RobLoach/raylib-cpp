@@ -34,7 +34,7 @@
 namespace raylib {
 class Material : public ::Material {
  public:
-    Material(::Material material) {
+    Material(const ::Material& material) {
         set(material);
     }
 
@@ -85,13 +85,13 @@ class Material : public ::Material {
     /**
      * Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)
      */
-    inline Material& SetTexture(int mapType, ::Texture2D texture) {
+    inline Material& SetTexture(int mapType, const ::Texture2D& texture) {
         ::SetMaterialTexture(this, mapType, texture);
         return *this;
     }
 
  protected:
-    inline void set(::Material material) {
+    inline void set(const ::Material& material) {
         shader = material.shader;
         maps = material.maps;
         params = material.params;

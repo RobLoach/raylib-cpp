@@ -34,7 +34,7 @@
 namespace raylib {
 class Shader : public ::Shader {
  public:
-    Shader(::Shader shader) {
+    Shader(const ::Shader& shader) {
         set(shader);
     }
 
@@ -51,11 +51,11 @@ class Shader : public ::Shader {
         set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));
     }
 
-    static Shader Load(const std::string& vsFileName, const std::string& fsFileName) {
+    static ::Shader Load(const std::string& vsFileName, const std::string& fsFileName) {
         return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());
     }
 
-    static Shader LoadCode(const std::string& vsCode, const std::string& fsCode) {
+    static ::Shader LoadCode(const std::string& vsCode, const std::string& fsCode) {
         return ::LoadShaderCode(vsCode.c_str(), fsCode.c_str());
     }
 
@@ -80,12 +80,12 @@ class Shader : public ::Shader {
         ::UnloadShader(*this);
     }
 
-    inline Shader& BeginShaderMode() {
+    inline Shader& BeginMode() {
         ::BeginShaderMode(*this);
         return *this;
     }
 
-    inline Shader& EndShaderMode() {
+    inline Shader& EndMode() {
         ::EndShaderMode();
         return *this;
     }
@@ -123,7 +123,7 @@ class Shader : public ::Shader {
     /**
      * @see ::SetShaderValueMatrix
      */
-    inline Shader& SetValue(int uniformLoc, ::Matrix mat) {
+    inline Shader& SetValue(int uniformLoc, const ::Matrix& mat) {
         ::SetShaderValueMatrix(*this, uniformLoc, mat);
         return *this;
     }
@@ -131,20 +131,20 @@ class Shader : public ::Shader {
     /**
      * Set shader uniform value for texture
      */
-    inline Shader& SetValue(int uniformLoc, ::Texture2D texture) {
+    inline Shader& SetValue(int uniformLoc, const ::Texture2D& texture) {
         ::SetShaderValueTexture(*this, uniformLoc, texture);
         return *this;
     }
 
-    ::TextureCubemap GenTextureCubemap(::Texture2D panorama, int size, int format) const {
+    ::TextureCubemap GenTextureCubemap(const ::Texture2D& panorama, int size, int format) const {
         return ::GenTextureCubemap(*this, panorama, size, format);
     }
 
-    ::TextureCubemap GenTextureIrradiance(::Texture2D panorama, int size) const {
+    ::TextureCubemap GenTextureIrradiance(const ::Texture2D& panorama, int size) const {
         return ::GenTextureIrradiance(*this, panorama, size);
     }
 
-    ::TextureCubemap GenTexturePrefilter(::Texture2D panorama, int size) const {
+    ::TextureCubemap GenTexturePrefilter(const ::Texture2D& panorama, int size) const {
         return ::GenTexturePrefilter(*this, panorama, size);
     }
 
@@ -153,7 +153,7 @@ class Shader : public ::Shader {
     }
 
  protected:
-    inline void set(::Shader shader) {
+    inline void set(const ::Shader& shader) {
         id = shader.id;
         locs = shader.locs;
     }

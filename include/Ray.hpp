@@ -37,7 +37,7 @@ namespace raylib {
  */
 class Ray : public ::Ray {
  public:
-    Ray(::Ray ray) {
+    Ray(const ::Ray& ray) {
         set(ray);
     }
 
@@ -81,7 +81,7 @@ class Ray : public ::Ray {
     /**
      * Detect collision between ray and sphere, returns collision point
      */
-    inline bool CheckCollisionSphereEx(::Vector3 center, float radius,
+    inline bool CheckCollisionSphere(::Vector3 center, float radius,
             ::Vector3 *collisionPoint) const {
         return CheckCollisionRaySphereEx(*this, center, radius, collisionPoint);
     }
@@ -89,14 +89,14 @@ class Ray : public ::Ray {
     /**
      * Detect collision between ray and box
      */
-    inline bool CheckCollisionBox(::BoundingBox box) const {
+    inline bool CheckCollision(const ::BoundingBox& box) const {
         return CheckCollisionRayBox(*this, box);
     }
 
     /**
      * Get collision info between ray and model
      */
-    inline RayHitInfo GetCollisionModel(::Model model) {
+    inline RayHitInfo GetCollision(const ::Model& model) {
         return GetCollisionRayModel(*this, model);
     }
 
@@ -115,7 +115,7 @@ class Ray : public ::Ray {
     }
 
  protected:
-    inline void set(::Ray ray) {
+    inline void set(const ::Ray& ray) {
         position = ray.position;
         direction = ray.direction;
     }

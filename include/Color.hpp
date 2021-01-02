@@ -34,15 +34,13 @@
 namespace raylib {
 class Color : public ::Color {
  public:
-    Color(::Color color) {
-        r = color.r;
-        g = color.g;
-        b = color.b;
-        a = color.a;
+    Color(const ::Color& color) {
+        set(color);
     }
 
     Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) :
         ::Color{red, green, blue, alpha} {};
+
     Color(unsigned char red, unsigned char green, unsigned char blue) :
         ::Color{red, green, blue, 255} {};
 
@@ -61,7 +59,7 @@ class Color : public ::Color {
     /**
      * Returns a Color from HSV values
      */
-    static Color FromHSV(float hue, float saturation, float value) {
+    static ::Color FromHSV(float hue, float saturation, float value) {
         return ::ColorFromHSV(hue, saturation, value);
     }
 
@@ -183,14 +181,19 @@ class Color : public ::Color {
         return *this;
     }
 
-    inline Color& DrawText(::Font font, const std::string& text, ::Vector2 position,
+    inline Color& DrawText(const ::Font& font, const std::string& text, ::Vector2 position,
             float fontSize, float spacing) {
         ::DrawTextEx(font, text.c_str(), position, fontSize, spacing, *this);
         return *this;
     }
 
-    inline Color& DrawText(::Font font, const std::string& text, ::Rectangle rec, float fontSize,
-            float spacing, bool wordWrap = false) {
+    inline Color& DrawText(
+            const ::Font& font,
+            const std::string& text,
+            ::Rectangle rec,
+            float fontSize,
+            float spacing,
+            bool wordWrap = false) {
         ::DrawTextRec(font, text.c_str(), rec, fontSize, spacing, wordWrap, *this);
         return *this;
     }
@@ -238,6 +241,33 @@ class Color : public ::Color {
     Color AlphaBlend(::Color dst, ::Color tint) const {
         return ::ColorAlphaBlend(dst, *this, tint);
     }
+
+    inline static Color LightGray() { return LIGHTGRAY; }
+    inline static Color Gray() { return GRAY; }
+    inline static Color DarkGray() { return DARKGRAY; }
+    inline static Color Yellow() { return YELLOW; }
+    inline static Color Gold() { return GOLD; }
+    inline static Color Orange() { return ORANGE; }
+    inline static Color Pink() { return PINK; }
+    inline static Color Red() { return RED; }
+    inline static Color Maroon() { return MAROON; }
+    inline static Color Green() { return GREEN; }
+    inline static Color Lime() { return LIME; }
+    inline static Color DarkGreen() { return DARKGREEN; }
+    inline static Color SkyBlue() { return SKYBLUE; }
+    inline static Color Blue() { return BLUE; }
+    inline static Color DarkBlue() { return DARKBLUE; }
+    inline static Color Purple() { return PURPLE; }
+    inline static Color Violet() { return VIOLET; }
+    inline static Color DarkPurple() { return DARKPURPLE; }
+    inline static Color Beige() { return BEIGE; }
+    inline static Color Brown() { return BROWN; }
+    inline static Color DarkBrown() { return DARKBROWN; }
+    inline static Color White() { return WHITE; }
+    inline static Color Black() { return BLACK; }
+    inline static Color Blank() { return BLANK; }
+    inline static Color Magenta() { return MAGENTA; }
+    inline static Color RayWhite() { return RAYWHITE; }
 
  protected:
     inline void set(const ::Color& color) {

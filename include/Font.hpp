@@ -37,6 +37,10 @@ class Font : public ::Font {
         set(::GetFontDefault());
     }
 
+    Font(const ::Font& font) {
+        set(font);
+    }
+
     Font(const std::string& fileName) {
         set(::LoadFont(fileName.c_str()));
     }
@@ -123,7 +127,7 @@ class Font : public ::Font {
     }
 
  protected:
-    void set(const ::Font font) {
+    void set(const ::Font& font) {
         baseSize = font.baseSize;
         charsCount = font.charsCount;
         texture = font.texture;

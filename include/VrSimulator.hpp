@@ -97,7 +97,7 @@ class VrSimulator {
     /**
      * Begin VR simulator stereo rendering
      */
-    inline VrSimulator& Begin() {
+    inline VrSimulator& BeginDrawing() {
         ::BeginVrDrawing();
         return *this;
     }
@@ -105,7 +105,7 @@ class VrSimulator {
     /**
      * End VR simulator stereo rendering
      */
-    inline VrSimulator& End() {
+    inline VrSimulator& EndDrawing() {
         ::EndVrDrawing();
         return *this;
     }

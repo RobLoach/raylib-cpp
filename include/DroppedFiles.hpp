@@ -30,6 +30,9 @@
 #include "./raylib.hpp"
 
 namespace raylib {
+/**
+ * @see raylib::GetDroppedFiles()
+ */
 class DroppedFiles {
  public:
     DroppedFiles() {

@@ -34,15 +34,15 @@ namespace raylib {
  */
 class BoundingBox : public ::BoundingBox {
  public:
-    BoundingBox(::BoundingBox box) {
+    BoundingBox(const ::BoundingBox& box) {
         set(box);
     }
 
     /**
      * Compute mesh bounding box limits
      */
-    BoundingBox(::Mesh mesh) {
-        set(MeshBoundingBox(mesh));
+    BoundingBox(const ::Mesh& mesh) {
+        set(::MeshBoundingBox(mesh));
     }
 
     BoundingBox(::Vector3 Min, ::Vector3 Max) {
@@ -66,7 +66,7 @@ class BoundingBox : public ::BoundingBox {
     /**
      * Draw a bounding box with wires
      */
-    inline BoundingBox& Draw(::Color color = WHITE) {
+    inline BoundingBox& Draw(::Color color = {255, 255, 255, 255}) {
         DrawBoundingBox(*this, color);
         return *this;
     }
@@ -74,7 +74,7 @@ class BoundingBox : public ::BoundingBox {
     /**
      * Detect collision between two boxes
      */
-    inline bool CheckCollision(::BoundingBox box2) const {
+    inline bool CheckCollision(const ::BoundingBox& box2) const {
         return CheckCollisionBoxes(*this, box2);
     }
 
@@ -88,12 +88,12 @@ class BoundingBox : public ::BoundingBox {
     /**
      * Detect collision between ray and bounding box
      */
-    inline bool CheckCollision(::Ray ray) const {
+    inline bool CheckCollision(const ::Ray& ray) const {
         return CheckCollisionRayBox(ray, *this);
     }
 
  protected:
-    inline void set(::BoundingBox box) {
+    inline void set(const ::BoundingBox& box) {
         min = box.min;
         max = box.max;
     }
