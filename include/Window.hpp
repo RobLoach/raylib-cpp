@@ -57,7 +57,7 @@ class Window {
         Close();
     }
 
-    void Init(int width, int height, const std::string& title) {
+    void Init(int width = 800, int height = 450, const std::string& title = "raylib") {
         ::InitWindow(width, height, title.c_str());
     }
 
@@ -235,6 +235,13 @@ class Window {
     }
 
     /**
+     * Get the screen's width and height.
+     */
+    inline ::Vector2 GetSize() {
+        return {static_cast<float>(GetWidth()), static_cast<float>(GetHeight())};
+    }
+
+    /**
      * Get native window handle
      */
     inline void* GetHandle() const {
@@ -260,28 +267,28 @@ class Window {
     /**
      * Get current screen width
      */
-    inline int GetScreenWidth() const {
+    inline int GetWidth() const {
         return ::GetScreenWidth();
     }
 
     /**
      * Get current screen height
      */
-    inline int GetScreenHeight() const {
+    inline int GetHeight() const {
         return ::GetScreenHeight();
     }
 
     /**
      * Get window position XY on monitor
      */
-    inline Vector2 GetPosition() const {
+    inline ::Vector2 GetPosition() const {
         return ::GetWindowPosition();
     }
 
     /**
      * Get window scale DPI factor
      */
-    inline Vector2 GetScaleDPI() const {
+    inline ::Vector2 GetScaleDPI() const {
         return ::GetWindowScaleDPI();
     }
 

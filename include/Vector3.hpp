@@ -36,7 +36,7 @@
 namespace raylib {
 class Vector3 : public ::Vector3 {
  public:
-    Vector3(::Vector3 vec) {
+    Vector3(const ::Vector3& vec) {
         set(vec);
     }
 
@@ -271,7 +271,7 @@ class Vector3 : public ::Vector3 {
     }
 
     inline Vector3& DrawCubeTexture(
-            ::Texture2D texture,
+            const ::Texture2D& texture,
             float width,
             float height,
             float length,
@@ -325,7 +325,7 @@ class Vector3 : public ::Vector3 {
     }
 
  protected:
-    inline void set(::Vector3 vec) {
+    inline void set(const ::Vector3& vec) {
         x = vec.x;
         y = vec.y;
         z = vec.z;

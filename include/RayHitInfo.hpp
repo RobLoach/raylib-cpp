@@ -34,7 +34,7 @@ namespace raylib {
  */
 class RayHitInfo : public ::RayHitInfo {
  public:
-    RayHitInfo(::RayHitInfo ray) {
+    RayHitInfo(const ::RayHitInfo& ray) {
         set(ray);
     }
 
@@ -82,7 +82,7 @@ class RayHitInfo : public ::RayHitInfo {
     GETTERSETTER(::Vector3, Normal, normal)
 
  protected:
-    inline void set(::RayHitInfo ray) {
+    inline void set(const ::RayHitInfo& ray) {
         hit = ray.hit;
         distance = ray.distance;
         position = ray.position;

@@ -38,7 +38,7 @@ namespace raylib {
  */
 class ModelAnimation : public ::ModelAnimation {
  public:
-    ModelAnimation(::ModelAnimation model) {
+    ModelAnimation(const ::ModelAnimation& model) {
         set(model);
     }
 
@@ -93,7 +93,7 @@ class ModelAnimation : public ::ModelAnimation {
     }
 
  protected:
-    inline void set(::ModelAnimation model) {
+    inline void set(const ::ModelAnimation& model) {
         boneCount = model.boneCount;
         bones = model.bones;
         frameCount = model.frameCount;

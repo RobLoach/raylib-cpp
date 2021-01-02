@@ -32,6 +32,11 @@
 namespace raylib {
 class Camera2D : public ::Camera2D {
  public:
+    Camera2D() {}
+    Camera2D(const ::Camera2D& camera) {
+        set(camera);
+    }
+
     Camera2D(::Vector2 offsetValue, ::Vector2 targetValue, float rotationValue = 0,
             float zoomValue = 1) {
         offset = offsetValue;

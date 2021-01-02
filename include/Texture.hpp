@@ -35,6 +35,10 @@
 namespace raylib {
 class Texture : public ::Texture {
  public:
+    Texture(const ::Texture& texture) {
+        set(texture);
+    }
+
     Texture() {
         set(::GetTextureDefault());
     }
@@ -68,6 +72,13 @@ class Texture : public ::Texture {
     Texture& operator=(const Texture& texture) {
         set(texture);
         return *this;
+    }
+
+    /**
+     * Retrieve the width and height of the texture.
+     */
+    inline ::Vector2 GetSize() {
+        return {static_cast<float>(width), static_cast<float>(height)};
     }
 
     /**
@@ -117,7 +128,7 @@ class Texture : public ::Texture {
     /**
      * Get pixel data from GPU texture and return an Image
      */
-    inline Image GetTextureData() const {
+    inline ::Image GetData() const {
         return ::GetTextureData(*this);
     }
 
@@ -125,7 +136,7 @@ class Texture : public ::Texture {
      * Get pixel data from GPU texture and return an Image
      */
     inline operator raylib::Image() {
-        return GetTextureData();
+        return GetData();
     }
 
     /**
@@ -229,13 +240,13 @@ class Texture : public ::Texture {
     /**
      * Define default texture used to draw shapes
      */
-    inline Texture& SetShapesTexture(::Rectangle source) {
+    inline Texture& SetShapes(::Rectangle source) {
         ::SetShapesTexture(*this, source);
         return *this;
     }
 
  protected:
-    inline void set(::Texture texture) {
+    inline void set(const ::Texture& texture) {
         id = texture.id;
         width = texture.width;
         height = texture.height;

@@ -32,6 +32,10 @@
 namespace raylib {
 class Camera3D : public ::Camera3D {
  public:
+    Camera3D(const ::Camera3D& camera) {
+        set(camera);
+    }
+
     Camera3D(::Vector3 positionValue, ::Vector3 targetValue, ::Vector3 upValue,
             float fovyValue = 0, int typeValue = 0) {
         position = positionValue;

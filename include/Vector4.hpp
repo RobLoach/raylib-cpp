@@ -37,7 +37,7 @@
 namespace raylib {
 class Vector4 : public ::Vector4 {
  public:
-    Vector4(::Vector4 vec) {
+    Vector4(const ::Vector4& vec) {
         set(vec);
     }
 
@@ -167,7 +167,7 @@ class Vector4 : public ::Vector4 {
     }
 
  protected:
-    inline void set(::Vector4 vec4) {
+    inline void set(const ::Vector4& vec4) {
         x = vec4.x;
         y = vec4.y;
         z = vec4.z;

@@ -37,7 +37,7 @@ namespace raylib {
  */
 class Ray : public ::Ray {
  public:
-    Ray(::Ray ray) {
+    Ray(const ::Ray& ray) {
         set(ray);
     }
 
@@ -115,7 +115,7 @@ class Ray : public ::Ray {
     }
 
  protected:
-    inline void set(::Ray ray) {
+    inline void set(const ::Ray& ray) {
         position = ray.position;
         direction = ray.direction;
     }

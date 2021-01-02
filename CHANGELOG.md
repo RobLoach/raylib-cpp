@@ -14,10 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - `Mouse::SetX()` and `Mouse::SetY()`
+- Most objects are now passed by reference
 - Error correction when unloading images, materials, models and meshes
 
 ### Changed
-- `Mouse` functions are now `static`. Use `Mouse::SetX()` instead of instantiating a `Mouse` object.
+- `Mouse` functions are now `static`. Use `Mouse::SetX()` instead of using `Mouse mouse`.
 - `Camera*::BeginMode()` and `Camera*::EndMode()` no longer have 2D/3D in the name
 
 ## [v3.5.0-alpha1] - 2020-12-26

@@ -204,6 +204,13 @@ class Image : public ::Image {
     GETTERSETTER(int, Format, format)
 
     /**
+     * Retrieve the width and height of the image.
+     */
+    inline ::Vector2 GetSize() {
+        return {static_cast<float>(width), static_cast<float>(height)};
+    }
+
+    /**
      * Create an image duplicate (useful for transformations)
      */
     inline ::Image Copy() {
@@ -236,7 +243,7 @@ class Image : public ::Image {
     /**
      * Apply alpha mask to image
      */
-    inline Image& AlphaMask(::Image alphaMask) {
+    inline Image& AlphaMask(const ::Image& alphaMask) {
         ::ImageAlphaMask(this, alphaMask);
         return *this;
     }

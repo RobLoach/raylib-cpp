@@ -66,7 +66,7 @@ class BoundingBox : public ::BoundingBox {
     /**
      * Draw a bounding box with wires
      */
-    inline BoundingBox& Draw(::Color color = WHITE) {
+    inline BoundingBox& Draw(::Color color = {255, 255, 255, 255}) {
         DrawBoundingBox(*this, color);
         return *this;
     }

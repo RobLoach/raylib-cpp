@@ -36,7 +36,7 @@
 namespace raylib {
 class Vector2 : public ::Vector2 {
  public:
-    Vector2(::Vector2 vec) {
+    Vector2(const ::Vector2& vec) {
         set(vec);
     }
 
@@ -339,7 +339,7 @@ class Vector2 : public ::Vector2 {
     }
 
  protected:
-    inline void set(::Vector2 vec) {
+    inline void set(const ::Vector2& vec) {
         x = vec.x;
         y = vec.y;
     }

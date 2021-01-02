@@ -34,7 +34,7 @@
 namespace raylib {
 class Material : public ::Material {
  public:
-    Material(::Material material) {
+    Material(const ::Material& material) {
         set(material);
     }
 
@@ -91,7 +91,7 @@ class Material : public ::Material {
     }
 
  protected:
-    inline void set(::Material material) {
+    inline void set(const ::Material& material) {
         shader = material.shader;
         maps = material.maps;
         params = material.params;

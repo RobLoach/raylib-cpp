@@ -33,7 +33,7 @@
 namespace raylib {
 class Music : public ::Music {
  public:
-    Music(::Music music) {
+    Music(const ::Music& music) {
         set(music);
     }
 
@@ -152,7 +152,7 @@ class Music : public ::Music {
     }
 
  protected:
-    inline void set(::Music music) {
+    inline void set(const ::Music& music) {
         ctxType = music.ctxType;
         ctxData = music.ctxData;
         looping = music.looping;

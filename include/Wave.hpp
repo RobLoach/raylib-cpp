@@ -33,7 +33,7 @@
 namespace raylib {
 class Wave : public ::Wave {
  public:
-    Wave(::Wave wave) {
+    Wave(const ::Wave& wave) {
         set(wave);
     }
 
@@ -160,7 +160,7 @@ class Wave : public ::Wave {
     }
 
  protected:
-    inline void set(::Wave wave) {
+    inline void set(const ::Wave& wave) {
         sampleCount = wave.sampleCount;
         sampleRate = wave.sampleRate;
         sampleSize = wave.sampleSize;

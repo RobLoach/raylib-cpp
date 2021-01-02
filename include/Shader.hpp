@@ -34,7 +34,7 @@
 namespace raylib {
 class Shader : public ::Shader {
  public:
-    Shader(::Shader shader) {
+    Shader(const ::Shader& shader) {
         set(shader);
     }
 
@@ -153,7 +153,7 @@ class Shader : public ::Shader {
     }
 
  protected:
-    inline void set(::Shader shader) {
+    inline void set(const ::Shader& shader) {
         id = shader.id;
         locs = shader.locs;
     }

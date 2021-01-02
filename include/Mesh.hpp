@@ -36,7 +36,7 @@
 namespace raylib {
 class Mesh : public ::Mesh {
  public:
-    Mesh(::Mesh mesh) {
+    Mesh(const ::Mesh& mesh) {
         set(mesh);
     }
 
@@ -216,7 +216,7 @@ class Mesh : public ::Mesh {
     }
 
  protected:
-    inline void set(::Mesh mesh) {
+    inline void set(const ::Mesh& mesh) {
         vertexCount = mesh.vertexCount;
         triangleCount = mesh.triangleCount;
         vertices = mesh.vertices;

@@ -32,7 +32,7 @@
 namespace raylib {
 class Rectangle : public ::Rectangle {
  public:
-    Rectangle(::Rectangle vec) {
+    Rectangle(const ::Rectangle& vec) {
         set(vec);
     }
 
@@ -94,7 +94,7 @@ class Rectangle : public ::Rectangle {
         return *this;
     }
 
-    inline Rectangle& DrawLinesEx(int lineThick, ::Color color) {
+    inline Rectangle& DrawLines(::Color color, int lineThick) {
         ::DrawRectangleLinesEx(*this, lineThick, color);
         return *this;
     }
@@ -139,7 +139,7 @@ class Rectangle : public ::Rectangle {
     }
 
  protected:
-    inline void set(::Rectangle rect) {
+    inline void set(const ::Rectangle& rect) {
         x = rect.x;
         y = rect.y;
         width = rect.width;
