@@ -40,8 +40,5 @@
     "include/VrSimulator.hpp",
     "include/Wave.hpp",
     "include/Window.hpp"
-  ],
-  "dependencies": {
-    "raysan5/raylib": "*"
-  }
+  ]
 }
