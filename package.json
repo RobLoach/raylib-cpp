@@ -1,10 +1,28 @@
 {
   "name": "raylib-cpp",
   "version": "3.5.0-beta1",
-  "repo": "robloach/raylib-cpp",
   "description": "raylib-cpp: C++ Object-Oriented Wrapper for raylib",
-  "keywords": ["raylib"],
+  "homepage": "https://github.com/robloach/raylib-cpp",
+  "bugs": {
+    "url": "https://github.com/robloach/raylib-cpp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RobLoach/raylib-cpp.git"
+  },
+  "directories": {
+    "lib": "include",
+    "doc": "docs",
+    "example": "examples",
+    "test": "tests"
+  },
+  "keywords": [
+    "raylib"
+  ],
   "license": "Zlib",
+  "scripts": {
+    "test": "git submodule update --init && mkdir -p build && cd build && cmake .. && make && make test"
+  },
   "src": [
     "include/AudioDevice.hpp",
     "include/AudioStream.hpp",
