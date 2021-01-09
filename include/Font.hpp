@@ -26,6 +26,7 @@
 #define RAYLIB_CPP_INCLUDE_FONT_HPP_
 
 #include <string>
+#include <memory>
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
@@ -33,19 +34,79 @@
 namespace raylib {
 class Font : public ::Font {
  public:
+    /**
+     * The default font.
+     */
     Font() {
+        printf("Font()\n");
         set(::GetFontDefault());
     }
 
+    /**
+     * Move constructor
+     */
+    Font(Font&& other) {
+        printf("Font(Font&& font)\n");
+        set(other);
+
+        other.baseSize = 0;
+        other.charsCount = 0;
+        other.charsPadding = 0;
+        other.texture = { 0 };
+        other.recs = nullptr;
+        other.chars = nullptr;
+    }
+
+    /**
+     * Move assignment
+     */
+    Font& operator=(Font&& other) noexcept {
+        printf("Font& operator=(Font&& other)\n");
+        if (this != &other) {
+            Unload();
+            set(other);
+
+            other.baseSize = 0;
+            other.charsCount = 0;
+            other.charsPadding = 0;
+            other.texture = { 0 };
+            other.recs = nullptr;
+            other.chars = nullptr;
+        }
+        return *this;
+    }
+
+    /**
+     * Copy constructor
+     */
+    Font(const Font& other) {
+        printf("Font(const Font& other)\n");
+        CopyFrom(other);
+    }
+
+    /**
+     * Copy assignment
+     */
+    Font& operator=(const Font& other) {
+        if (this != &other) {
+            Unload();
+            CopyFrom(other);
+        }
+        return *this;
+    }
+
     Font(const ::Font& font) {
+        printf("Font(const ::Font& font)\n");
         set(font);
     }
 
     Font(const std::string& fileName) {
+        printf("Font(const std::string& fileName)\n");
         set(::LoadFont(fileName.c_str()));
     }
 
     Font(const std::string& fileName, int fontSize, int* fontChars, int charCount)  {
+        printf("Font(const std::string& fileName, int fontSize, int* fontChars, int charCount)\n");
         set(::LoadFontEx(fileName.c_str(), fontSize, fontChars, charCount));
     }
 
@@ -64,7 +125,15 @@ class Font : public ::Font {
     }
 
     void Unload() {
-        UnloadFont(*this);
+        if (baseSize >= 0) {
+            UnloadFont(*this);
+            baseSize = 0;
+            charsCount = 0;
+            charsPadding = 0;
+            texture = {0};
+            recs = nullptr;
+            chars = nullptr;
+        }
     }
 
     GETTERSETTER(int, BaseSize, baseSize)
@@ -74,33 +143,45 @@ class Font : public ::Font {
     GETTERSETTER(::Rectangle*, Recs, recs)
     GETTERSETTER(::CharInfo*, Chars, chars)
 
-    Font& operator=(const ::Font& font) {
-        set(font);
+    Font& operator=(const ::Font& other) {
+        set(other);
         return *this;
     }
 
-    Font& operator=(const Font& font) {
-        set(font);
-        return *this;
-    }
-
+    /**
+     * Draw text using font and additional parameters
+     */
     inline Font& DrawText(const std::string& text, ::Vector2 position, float fontSize,
-            float spacing, ::Color tint = WHITE) {
+            float spacing, ::Color tint = {255, 255, 255, 255}) {
         ::DrawTextEx(*this, text.c_str(), position,  fontSize,  spacing,  tint);
         return *this;
     }
 
+    /**
+     * Draw text using font inside rectangle limits
+     */
     inline Font& DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing,
-            bool wordWrap, ::Color tint = WHITE) {
+            bool wordWrap = false, ::Color tint = {255, 255, 255, 255}) {
         ::DrawTextRec(*this, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint);
         return *this;
     }
 
+    /**
+     * Draw text using font inside rectangle limits with support for text selection
+     */
     inline Font& DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing,
             bool wordWrap, Color tint, int selectStart, int selectLength, ::Color selectText,
             ::Color selectBack) {
         ::DrawTextRecEx(*this, text.c_str(), rec, fontSize, spacing, wordWrap, tint,
             selectStart,  selectLength, selectText, selectBack);
+        return *this;
+    }
+
+    /**
+     * Draw one character (codepoint)
+     */
+    inline Font& DrawText(int codepoint, ::Vector2 position, float fontSize, ::Color tint = {255, 255, 255, 255}) {
+        ::DrawTextCodepoint(*this, codepoint, position, fontSize, tint);
         return *this;
     }
 
@@ -122,7 +203,7 @@ class Font : public ::Font {
      * Create an image from text (custom sprite font)
      */
     inline Image ImageText(const std::string& text, float fontSize,
-            float spacing, ::Color tint) const {
+            float spacing, ::Color tint = {255, 255, 255, 255}) const {
         return ::ImageTextEx(*this, text.c_str(), fontSize, spacing, tint);
     }
 
@@ -135,12 +216,27 @@ class Font : public ::Font {
         chars = font.chars;
     }
 
-    void set(const Font& font) {
-        baseSize = font.baseSize;
-        charsCount = font.charsCount;
-        texture = font.texture;
-        recs = font.recs;
-        chars = font.chars;
+    void CopyFrom(const Font& other) {
+        printf("Font::CopyFrom()\n");
+        baseSize = other.baseSize;
+        charsCount = other.charsCount;
+        charsPadding = other.charsPadding;
+        ::Image texturedata = ::GetTextureData(other.texture);
+        texture = ::LoadTextureFromImage(texturedata);
+        UnloadImage(texturedata);
+        if (other.recs != nullptr) {
+            recs = new ::Rectangle[sizeof(other.recs) + 1];
+            for (int i = 0; i < sizeof(other.recs); i++) {
+                recs[i] = other.recs[i];
+            }
+        }
+        if (other.chars != nullptr) {
+            chars = new ::CharInfo[charsCount];
+            for (int i = 0; i < charsCount; i++) {
+                chars[i] = other.chars[i];
+                chars[i].image = ImageCopy(other.chars[i].image);
+            }
+        }
     }
 };
 }  // namespace raylib

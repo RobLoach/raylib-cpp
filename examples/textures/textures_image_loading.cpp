@@ -19,13 +19,13 @@ int main() {
     int screenWidth = 800;
     int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [textures] example - image loading");
+    raylib::Window window(screenWidth, screenHeight, "raylib [textures] example - image loading");
     raylib::Texture texture("resources/raylib_logo.png");
     raylib::Color background(RAYWHITE);
     raylib::Color textColor(LIGHTGRAY);
 
     // Main game loop
-    while (!w.ShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------

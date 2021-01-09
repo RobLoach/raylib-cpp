@@ -17,7 +17,7 @@ int main() {
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [core] example - mouse input");
+    raylib::Window window(screenWidth, screenHeight, "raylib [core] example - mouse input");
 
     raylib::Vector2 ballPosition(-100.0f, -100.0f);
     raylib::Color background(RAYWHITE);
@@ -28,7 +28,7 @@ int main() {
     //---------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!w.ShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------

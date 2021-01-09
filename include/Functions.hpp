@@ -183,6 +183,24 @@ inline void OpenURL(const std::string& url) {
     return ::OpenURL(url.c_str());
 }
 
+/**
+ * Measure string width for default font
+ */
+int MeasureText(const std::string& text, int fontSize) {
+    return ::MeasureText(text.c_str(), fontSize);
+}
+
+void DrawText(const std::string& text, int posX, int posY, int fontSize, ::Color color) {
+    DrawText(text.c_str(), posX, posY, fontSize, color);
+}
+
+/**
+ * Measure size for font.
+ */
+::Vector2 MeasureTextEx(const ::Font& font, const std::string& text, int fontSize, float spacing) {
+    return ::MeasureTextEx(font, text.c_str(), fontSize, spacing);
+}
+
 }  // namespace raylib
 
 #endif  // RAYLIB_CPP_INCLUDE_FUNCTIONS_HPP_

@@ -19,8 +19,8 @@ int main() {
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [core] example - 3d camera first person");
-    raylib::Color background(RAYWHITE);
+    raylib::Window window(screenWidth, screenHeight, "raylib [core] example - 3d camera first person");
+    raylib::Color background = RAYWHITE;
 
     // Define the camera to look into our 3d world (position, target, up vector)
     raylib::Camera camera(
@@ -48,7 +48,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!w.ShouldClose())                // Detect window close button or ESC key
+    while (!window.ShouldClose())                // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------

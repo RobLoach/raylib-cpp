@@ -27,7 +27,7 @@ int main() {
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [text] example - font loading");
+    raylib::Window window(screenWidth, screenHeight, "raylib [text] example - font loading");
 
     // Define characters to draw
     // NOTE: raylib supports UTF-8 encoding, following list is actually codified as UTF8 internally
@@ -44,11 +44,11 @@ int main() {
 
     bool useTtf = false;
 
-    w.SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
+    SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!w.ShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ int main() {
 
         // Draw
         //----------------------------------------------------------------------------------
-        w.BeginDrawing();
+        BeginDrawing();
 
             ClearBackground(RAYWHITE);
 
