@@ -124,6 +124,16 @@ class Font : public ::Font {
         Unload();
     }
 
+    /**
+     * Implicit conversion between ::Font*.
+     */
+    operator ::Font*() { return this; }
+
+    /**
+     * Implicit conversion between :const :Font*.
+     */
+    operator const ::Font*() const { return this; }
+
     void Unload() {
         if (baseSize >= 0) {
             UnloadFont(*this);
