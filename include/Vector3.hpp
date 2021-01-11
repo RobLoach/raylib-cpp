@@ -65,19 +65,19 @@ class Vector3 : public ::Vector3 {
     }
 
 #ifndef RAYLIB_CPP_NO_MATH
-    Vector3 Add(const Vector3& vector3) {
+    Vector3 Add(const ::Vector3& vector3) {
         return Vector3Add(*this, vector3);
     }
 
-    Vector3 operator+(const Vector3& vector3) {
+    Vector3 operator+(const ::Vector3& vector3) {
         return Vector3Add(*this, vector3);
     }
 
-    Vector3 Subtract(const Vector3& vector3) {
+    Vector3 Subtract(const ::Vector3& vector3) {
         return Vector3Subtract(*this, vector3);
     }
 
-    Vector3 operator-(const Vector3& vector3) {
+    Vector3 operator-(const ::Vector3& vector3) {
         return Vector3Subtract(*this, vector3);
     }
 
@@ -89,11 +89,11 @@ class Vector3 : public ::Vector3 {
         return Vector3Negate(*this);
     }
 
-    Vector3 Multiply(const Vector3& vector3) {
+    Vector3 Multiply(const ::Vector3& vector3) {
         return Vector3Multiply(*this, vector3);
     }
 
-    Vector3 operator*(const Vector3& vector3) {
+    Vector3 operator*(const ::Vector3& vector3) {
         return Vector3Multiply(*this, vector3);
     }
 
@@ -105,11 +105,11 @@ class Vector3 : public ::Vector3 {
         return Vector3Scale(*this, scale);
     }
 
-    Vector3 Divide(const Vector3& vector3) {
+    Vector3 Divide(const ::Vector3& vector3) {
         return Vector3Divide(*this, vector3);
     }
 
-    Vector3 operator/(const Vector3& vector3) {
+    Vector3 operator/(const ::Vector3& vector3) {
         return Vector3Divide(*this, vector3);
     }
 
@@ -125,20 +125,20 @@ class Vector3 : public ::Vector3 {
         return Divide(div);
     }
 
-    Vector3& operator+=(const Vector3& vector3) {
+    Vector3& operator+=(const ::Vector3& vector3) {
         set(Vector3Add(*this, vector3));
 
         return *this;
     }
 
-    Vector3& operator-=(const Vector3& vector3) {
+    Vector3& operator-=(const ::Vector3& vector3) {
         set(Vector3Subtract(*this, vector3));
 
         return *this;
     }
 
 
-    Vector3& operator*=(const Vector3& vector3) {
+    Vector3& operator*=(const ::Vector3& vector3) {
         set(Vector3Multiply(*this, vector3));
 
         return *this;
@@ -150,7 +150,7 @@ class Vector3 : public ::Vector3 {
         return *this;
     }
 
-    Vector3& operator/=(const Vector3& vector3) {
+    Vector3& operator/=(const ::Vector3& vector3) {
         x /= vector3.x;
         y /= vector3.y;
         z /= vector3.z;
@@ -174,19 +174,19 @@ class Vector3 : public ::Vector3 {
         return Vector3Normalize(*this);
     }
 
-    float DotProduct(const Vector3& vector3) {
+    float DotProduct(const ::Vector3& vector3) {
         return Vector3DotProduct(*this, vector3);
     }
 
-    float Distance(const Vector3& vector3) {
+    float Distance(const ::Vector3& vector3) {
         return Vector3Distance(*this, vector3);
     }
 
-    Vector3 Lerp(const Vector3& vector3, const float amount) {
+    Vector3 Lerp(const ::Vector3& vector3, const float amount) {
         return Vector3Lerp(*this, vector3, amount);
     }
 
-    Vector3 CrossProduct(const Vector3& vector3) {
+    Vector3 CrossProduct(const ::Vector3& vector3) {
         return Vector3CrossProduct(*this, vector3);
     }
 
@@ -194,7 +194,7 @@ class Vector3 : public ::Vector3 {
         return Vector3Perpendicular(*this);
     }
 
-    void OrthoNormalize(Vector3* vector3) {
+    void OrthoNormalize(::Vector3* vector3) {
         Vector3OrthoNormalize(this, vector3);
     }
 
@@ -202,23 +202,23 @@ class Vector3 : public ::Vector3 {
         return Vector3Transform(*this, matrix);
     }
 
-    Vector3 RotateByQuaternion(Quaternion quaternion) {
+    Vector3 RotateByQuaternion(const ::Quaternion& quaternion) {
         return Vector3RotateByQuaternion(*this, quaternion);
     }
 
-    Vector3 Reflect(const Vector3& normal) {
+    Vector3 Reflect(const ::Vector3& normal) {
         return Vector3Reflect(*this, normal);
     }
 
-    Vector3 Min(const Vector3& vector3) {
+    Vector3 Min(const ::Vector3& vector3) {
         return Vector3Min(*this, vector3);
     }
 
-    Vector3 Max(const Vector3& vector3) {
+    Vector3 Max(const ::Vector3& vector3) {
         return Vector3Max(*this, vector3);
     }
 
-    Vector3 Barycenter(const Vector3& a, const Vector3& b, const Vector3& c) {
+    Vector3 Barycenter(const ::Vector3& a, const ::Vector3& b, const ::Vector3& c) {
         return Vector3Barycenter(*this, a, b, c);
     }
 
@@ -231,7 +231,7 @@ class Vector3 : public ::Vector3 {
     }
 #endif
 
-    inline Vector3& DrawLine3D(::Vector3 endPos, ::Color color) {
+    inline Vector3& DrawLine3D(const ::Vector3& endPos, ::Color color) {
         ::DrawLine3D(*this, endPos, color);
         return *this;
     }
@@ -243,7 +243,7 @@ class Vector3 : public ::Vector3 {
 
     inline Vector3& DrawCircle3D(
             float radius,
-            Vector3 rotationAxis,
+            const ::Vector3& rotationAxis,
             float rotationAngle,
             Color color) {
         ::DrawCircle3D(*this, radius, rotationAxis, rotationAngle, color);
@@ -255,7 +255,7 @@ class Vector3 : public ::Vector3 {
         return *this;
     }
 
-    inline Vector3& DrawCube(::Vector3 size, ::Color color) {
+    inline Vector3& DrawCube(const ::Vector3& size, ::Color color) {
         ::DrawCubeV(*this, size, color);
         return *this;
     }
@@ -265,7 +265,7 @@ class Vector3 : public ::Vector3 {
         return *this;
     }
 
-    inline Vector3& DrawCubeWires(::Vector3 size, ::Color color) {
+    inline Vector3& DrawCubeWires(const ::Vector3& size, ::Color color) {
         ::DrawCubeWiresV(*this, size, color);
         return *this;
     }
@@ -280,17 +280,17 @@ class Vector3 : public ::Vector3 {
         return *this;
     }
 
-    inline Vector3& DrawSphere(float radius, Color color) {
+    inline Vector3& DrawSphere(float radius, ::Color color) {
         ::DrawSphere(*this, radius, color);
         return *this;
     }
 
-    inline Vector3& DrawSphere(float radius, int rings, int slices, Color color) {
+    inline Vector3& DrawSphere(float radius, int rings, int slices, ::Color color) {
         ::DrawSphereEx(*this, radius, rings, slices, color);
         return *this;
     }
 
-    inline Vector3& DrawSphereWires(float radius, int rings, int slices, Color color) {
+    inline Vector3& DrawSphereWires(float radius, int rings, int slices, ::Color color) {
         ::DrawSphereWires(*this, radius, rings, slices, color);
         return *this;
     }
@@ -307,7 +307,7 @@ class Vector3 : public ::Vector3 {
         return *this;
     }
 
-    inline Vector3& DrawPlane(::Vector2 size, ::Color color) {
+    inline Vector3& DrawPlane(const ::Vector2& size, ::Color color) {
         ::DrawPlane(*this, size, color);
         return *this;
     }
@@ -320,7 +320,7 @@ class Vector3 : public ::Vector3 {
     /**
      * Detect collision between two spheres
      */
-    inline bool CheckCollision(float radius1, Vector3 center2, float radius2) {
+    inline bool CheckCollision(float radius1, const ::Vector3& center2, float radius2) {
         return CheckCollisionSpheres(*this, radius1, center2, radius2);
     }
 

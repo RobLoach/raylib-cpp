@@ -52,30 +52,25 @@ class Vector2 : public ::Vector2 {
         return *this;
     }
 
-    Vector2& operator=(const Vector2& vector2) {
-        set(vector2);
-        return *this;
-    }
-
-    bool operator==(const Vector2& other) {
+    bool operator==(const ::Vector2& other) {
         return x == other.x
             && y == other.y;
     }
 
 #ifndef RAYLIB_CPP_NO_MATH
-    Vector2 Add(const Vector2& vector2) const {
+    Vector2 Add(const ::Vector2& vector2) const {
         return Vector2Add(*this, vector2);
     }
 
-    Vector2 operator+(const Vector2& vector2) {
+    Vector2 operator+(const ::Vector2& vector2) {
         return Vector2Add(*this, vector2);
     }
 
-    Vector2 Subtract(const Vector2& vector2) const {
+    Vector2 Subtract(const ::Vector2& vector2) const {
         return Vector2Subtract(*this, vector2);
     }
 
-    Vector2 operator-(const Vector2& vector2) {
+    Vector2 operator-(const ::Vector2& vector2) {
         return Vector2Subtract(*this, vector2);
     }
 
@@ -87,11 +82,11 @@ class Vector2 : public ::Vector2 {
         return Vector2Negate(*this);
     }
 
-    Vector2 Multiply(const Vector2& vector2) const {
+    Vector2 Multiply(const ::Vector2& vector2) const {
         return Vector2Multiply(*this, vector2);
     }
 
-    Vector2 operator*(const Vector2& vector2) {
+    Vector2 operator*(const ::Vector2& vector2) {
         return Vector2Multiply(*this, vector2);
     }
 
@@ -103,11 +98,11 @@ class Vector2 : public ::Vector2 {
         return Vector2Scale(*this, scale);
     }
 
-    Vector2 Divide(const Vector2& vector2) const {
+    Vector2 Divide(const ::Vector2& vector2) const {
         return Vector2Divide(*this, vector2);
     }
 
-    Vector2 operator/(const Vector2& vector2) {
+    Vector2 operator/(const ::Vector2& vector2) {
         return Vector2Divide(*this, vector2);
     }
 
@@ -125,20 +120,20 @@ class Vector2 : public ::Vector2 {
         return *this;
     }
 
-    Vector2& operator+=(const Vector2& vector2) {
+    Vector2& operator+=(const ::Vector2& vector2) {
         set(Vector2Add(*this, vector2));
 
         return *this;
     }
 
-    Vector2& operator-=(const Vector2& vector2) {
+    Vector2& operator-=(const ::Vector2& vector2) {
         set(Vector2Subtract(*this, vector2));
 
         return *this;
     }
 
 
-    Vector2& operator*=(const Vector2& vector2) {
+    Vector2& operator*=(const ::Vector2& vector2) {
         set(Vector2Multiply(*this, vector2));
 
         return *this;
@@ -150,7 +145,7 @@ class Vector2 : public ::Vector2 {
         return *this;
     }
 
-    Vector2& operator/=(const Vector2& vector2) {
+    Vector2& operator/=(const ::Vector2& vector2) {
         set(Vector2Divide(*this, vector2));
 
         return *this;
@@ -187,35 +182,35 @@ class Vector2 : public ::Vector2 {
     /**
      * Calculate two vectors dot product
      */
-    float DotProduct(const Vector2& vector2) const {
+    float DotProduct(const ::Vector2& vector2) const {
         return Vector2DotProduct(*this, vector2);
     }
 
     /**
      * Calculate angle from two vectors in X-axis
      */
-    float Angle(const Vector2& vector2) const {
+    float Angle(const ::Vector2& vector2) const {
         return Vector2Angle(*this, vector2);
     }
 
     /**
      * Calculate distance between two vectors
      */
-    float Distance(const Vector2& vector2) const {
+    float Distance(const ::Vector2& vector2) const {
         return Vector2Distance(*this, vector2);
     }
 
     /**
      * Calculate linear interpolation between two vectors
      */
-    Vector2 Lerp(const Vector2& vector2, const float amount) const {
+    Vector2 Lerp(const ::Vector2& vector2, const float amount) const {
         return Vector2Lerp(*this, vector2, amount);
     }
 
     /**
      * Calculate reflected vector to normal
      */
-    Vector2 Reflect(const Vector2& normal) const {
+    Vector2 Reflect(const ::Vector2& normal) const {
         return Vector2Reflect(*this, normal);
     }
 
@@ -229,7 +224,7 @@ class Vector2 : public ::Vector2 {
     /**
      * Move Vector towards target
      */
-    Vector2 MoveTowards(Vector2 target, float maxDistance) const {
+    Vector2 MoveTowards(const ::Vector2& target, float maxDistance) const {
         return Vector2MoveTowards(*this, target, maxDistance);
     }
 
