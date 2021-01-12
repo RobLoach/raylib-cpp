@@ -82,23 +82,23 @@ class Vector4 : public ::Vector4 {
     }
 
 #ifndef RAYLIB_CPP_NO_MATH
-    Vector4 Multiply(const Vector4& vector4) {
+    Vector4 Multiply(const ::Vector4& vector4) {
         return QuaternionMultiply(*this, vector4);
     }
 
-    Vector4 operator*(const Vector4& vector4) {
+    Vector4 operator*(const ::Vector4& vector4) {
         return QuaternionMultiply(*this, vector4);
     }
 
-    Vector4 Lerp(const Vector4& vector4, float amount) {
+    Vector4 Lerp(const ::Vector4& vector4, float amount) {
         return QuaternionLerp(*this, vector4, amount);
     }
 
-    Vector4 Nlerp(const Vector4& vector4, float amount) {
+    Vector4 Nlerp(const ::Vector4& vector4, float amount) {
         return QuaternionNlerp(*this, vector4, amount);
     }
 
-    Vector4 Slerp(const Vector4& vector4, float amount) {
+    Vector4 Slerp(const ::Vector4& vector4, float amount) {
         return QuaternionSlerp(*this, vector4, amount);
     }
 
@@ -118,7 +118,7 @@ class Vector4 : public ::Vector4 {
         return QuaternionInvert(*this);
     }
 
-    void ToAxisAngle(Vector3 *outAxis, float *outAngle) {
+    void ToAxisAngle(::Vector3 *outAxis, float *outAngle) {
         QuaternionToAxisAngle(*this, outAxis, outAngle);
     }
 
@@ -141,7 +141,7 @@ class Vector4 : public ::Vector4 {
         return ::QuaternionIdentity();
     }
 
-    static Vector4 FromVector3ToVector3(const Vector3& from , const Vector3& to) {
+    static Vector4 FromVector3ToVector3(const ::Vector3& from , const ::Vector3& to) {
         return ::QuaternionFromVector3ToVector3(from , to);
     }
 
@@ -149,7 +149,7 @@ class Vector4 : public ::Vector4 {
         return ::QuaternionFromMatrix(matrix);
     }
 
-    static Vector4 FromAxisAngle(const Vector3& axis, const float angle) {
+    static Vector4 FromAxisAngle(const ::Vector3& axis, const float angle) {
         return ::QuaternionFromAxisAngle(axis, angle);
     }
 
@@ -157,7 +157,7 @@ class Vector4 : public ::Vector4 {
         return ::QuaternionFromEuler(roll, pitch, yaw);
     }
 
-    static Vector4 FromEuler(const Vector3& vector3) {
+    static Vector4 FromEuler(const ::Vector3& vector3) {
         return ::QuaternionFromEuler(vector3.x, vector3.y, vector3.z);
     }
 
