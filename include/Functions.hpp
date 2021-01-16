@@ -33,6 +33,20 @@
 namespace raylib {
 
 /**
+ * Initialize window and OpenGL context
+ */
+inline void InitWindow(int width, int height, const std::string& title) {
+    ::InitWindow(width, height, title.c_str());
+}
+
+/**
+ * Set title for window
+ */
+inline void SetWindowTitle(const std::string& title) {
+    ::SetWindowTitle(title.c_str());
+}
+
+/**
  * Get the human-readable, UTF-8 encoded name of the primary monitor
  */
 inline std::string GetMonitorName(int monitor) {
