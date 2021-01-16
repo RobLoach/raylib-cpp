@@ -37,7 +37,7 @@ class Rectangle : public ::Rectangle {
     }
 
     Rectangle(float x, float y, float width, float height) : ::Rectangle{x, y, width, height} {}
-    Rectangle(float x, float y, float width) : ::Rectangle{x, y, width, height} {}
+    Rectangle(float x, float y, float width) : ::Rectangle{x, y, width, 0} {}
     Rectangle(float x, float y) : ::Rectangle{x, y, 0, 0} {}
     Rectangle(float x) : ::Rectangle{x, 0, 0, 0} {}
     Rectangle() : ::Rectangle{0, 0, 0, 0} {}
