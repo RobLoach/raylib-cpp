@@ -178,14 +178,6 @@ class Camera3D : public ::Camera3D {
         fovy = camera.fovy;
         type = camera.type;
     }
-
-    inline void set(const Camera3D& camera) {
-        position = camera.position;
-        target = camera.target;
-        up = camera.up;
-        fovy = camera.fovy;
-        type = camera.type;
-    }
 };
 
 typedef Camera3D Camera;

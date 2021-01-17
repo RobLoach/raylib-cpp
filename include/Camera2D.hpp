@@ -98,13 +98,6 @@ class Camera2D : public ::Camera2D {
         rotation = camera.rotation;
         zoom = camera.zoom;
     }
-
-    inline void set(const Camera2D& camera) {
-        offset = camera.offset;
-        target = camera.target;
-        rotation = camera.rotation;
-        zoom = camera.zoom;
-    }
 };
 }  // namespace raylib
 

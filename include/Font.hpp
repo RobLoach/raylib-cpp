@@ -79,11 +79,6 @@ class Font : public ::Font {
         return *this;
     }
 
-    Font& operator=(const Font& font) {
-        set(font);
-        return *this;
-    }
-
     inline Font& DrawText(const std::string& text, ::Vector2 position, float fontSize,
             float spacing, ::Color tint = WHITE) {
         ::DrawTextEx(*this, text.c_str(), position,  fontSize,  spacing,  tint);
@@ -91,16 +86,24 @@ class Font : public ::Font {
     }
 
     inline Font& DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing,
-            bool wordWrap, ::Color tint = WHITE) {
+            bool wordWrap = false, ::Color tint = WHITE) {
         ::DrawTextRec(*this, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint);
         return *this;
     }
 
     inline Font& DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing,
-            bool wordWrap, Color tint, int selectStart, int selectLength, ::Color selectText,
+            bool wordWrap, ::Color tint, int selectStart, int selectLength, ::Color selectText,
             ::Color selectBack) {
         ::DrawTextRecEx(*this, text.c_str(), rec, fontSize, spacing, wordWrap, tint,
             selectStart,  selectLength, selectText, selectBack);
+        return *this;
+    }
+
+    /**
+     * Draw one character (codepoint)
+     */
+    inline Font& DrawText(int codepoint, ::Vector2 position, float fontSize, ::Color tint = { 255, 255, 255, 255 }) {
+        ::DrawTextCodepoint(*this, codepoint, position, fontSize, tint);
         return *this;
     }
 
@@ -121,7 +124,7 @@ class Font : public ::Font {
     /**
      * Create an image from text (custom sprite font)
      */
-    inline Image ImageText(const std::string& text, float fontSize,
+    inline ::Image ImageText(const std::string& text, float fontSize,
             float spacing, ::Color tint) const {
         return ::ImageTextEx(*this, text.c_str(), fontSize, spacing, tint);
     }
@@ -130,14 +133,7 @@ class Font : public ::Font {
     void set(const ::Font& font) {
         baseSize = font.baseSize;
         charsCount = font.charsCount;
-        texture = font.texture;
-        recs = font.recs;
-        chars = font.chars;
-    }
-
-    void set(const Font& font) {
-        baseSize = font.baseSize;
-        charsCount = font.charsCount;
+        charsPadding = font.charsPadding;
         texture = font.texture;
         recs = font.recs;
         chars = font.chars;

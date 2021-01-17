@@ -21,8 +21,7 @@ int main() {
 
     raylib::Window w(screenWidth, screenHeight, "raylib [core] example - drop files");
 
-    // Create the Dropped Files collection object.
-    raylib::DroppedFiles droppedFiles;
+    std::vector<std::string> droppedFiles;
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
@@ -32,8 +31,8 @@ int main() {
     {
         // Update
         //----------------------------------------------------------------------------------
-        if (droppedFiles.IsFileDropped()) {
-            droppedFiles.Get();
+        if (IsFileDropped()) {
+            droppedFiles = raylib::GetDroppedFiles();
         }
         //----------------------------------------------------------------------------------
 
@@ -67,11 +66,6 @@ int main() {
         EndDrawing();
         //----------------------------------------------------------------------------------
     }
-
-    // De-Initialization
-    //--------------------------------------------------------------------------------------
-    // ClearDroppedFiles();    // Called for us.
-    //--------------------------------------------------------------------------------------
 
     return 0;
 }

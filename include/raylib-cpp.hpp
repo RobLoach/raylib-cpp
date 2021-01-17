@@ -73,7 +73,6 @@
 #include "./Camera2D.hpp"
 #include "./Camera3D.hpp"
 #include "./Color.hpp"
-#include "./DroppedFiles.hpp"
 #include "./Functions.hpp"
 #include "./Font.hpp"
 #include "./Gamepad.hpp"

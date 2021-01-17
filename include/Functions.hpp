@@ -197,6 +197,38 @@ inline void OpenURL(const std::string& url) {
     return ::OpenURL(url.c_str());
 }
 
+inline bool IsGamepadName(int gamepad, const std::string& name) {
+    return ::IsGamepadName(gamepad, name.c_str());
+}
+
+inline void UpdateCamera(Camera& camera) {
+    ::UpdateCamera(&camera);
+}
+
+inline Image LoadImage(const std::string& fileName) {
+    return ::LoadImage(fileName.c_str());
+}
+
+inline Image LoadImageRaw(const std::string& fileName, int width, int height, int format, int headerSize) {
+    return ::LoadImageRaw(fileName.c_str(), width, height, format, headerSize);
+}
+
+inline Image LoadImageAnim(const std::string& fileName, int *frames) {
+    return ::LoadImageAnim(fileName.c_str(), frames);
+}
+
+inline Image LoadImageFromMemory(const std::string& fileType, const unsigned char *fileData, int dataSize) {
+    return ::LoadImageFromMemory(fileType.c_str(), fileData, dataSize);
+}
+
+inline bool ExportImage(const Image& image, const std::string& fileName) {
+    return ::ExportImage(image, fileName.c_str());
+}
+
+inline bool ExportImageAsCode(const Image& image, const std::string& fileName) {
+    return ::ExportImageAsCode(image, fileName.c_str());
+}
+
 }  // namespace raylib
 
 #endif  // RAYLIB_CPP_INCLUDE_FUNCTIONS_HPP_

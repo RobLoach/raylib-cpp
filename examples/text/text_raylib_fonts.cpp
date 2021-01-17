@@ -13,6 +13,7 @@
 ********************************************************************************************/
 
 #include <vector>
+#include <array>
 
 #include "raylib-cpp.hpp"
 
@@ -29,7 +30,7 @@ int main() {
     raylib::Color textColor(DARKGRAY);
 
     // NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
-    raylib::Font fonts[MAX_FONTS] = {
+    std::array<raylib::Font, MAX_FONTS> fonts = {
         raylib::Font("resources/fonts/alagard.png"),
         raylib::Font("resources/fonts/pixelplay.png"),
         raylib::Font("resources/fonts/mecha.png"),
@@ -40,22 +41,25 @@ int main() {
         raylib::Font("resources/fonts/jupiter_crash.png")
     };
 
-    std::string messages[MAX_FONTS] = { "ALAGARD FONT designed by Hewett Tsoi",
-                                "PIXELPLAY FONT designed by Aleksander Shevchuk",
-                                "MECHA FONT designed by Captain Falcon",
-                                "SETBACK FONT designed by Brian Kent (AEnigma)",
-                                "ROMULUS FONT designed by Hewett Tsoi",
-                                "PIXANTIQUA FONT designed by Gerhard Grossmann",
-                                "ALPHA_BETA FONT designed by Brian Kent (AEnigma)",
-                                "JUPITER_CRASH FONT designed by Brian Kent (AEnigma)" };
+    std::array<std::string, MAX_FONTS> messages = {
+        "ALAGARD FONT designed by Hewett Tsoi",
+        "PIXELPLAY FONT designed by Aleksander Shevchuk",
+        "MECHA FONT designed by Captain Falcon",
+        "SETBACK FONT designed by Brian Kent (AEnigma)",
+        "ROMULUS FONT designed by Hewett Tsoi",
+        "PIXANTIQUA FONT designed by Gerhard Grossmann",
+        "ALPHA_BETA FONT designed by Brian Kent (AEnigma)",
+        "JUPITER_CRASH FONT designed by Brian Kent (AEnigma)"
+    };
 
-    const int spacings[MAX_FONTS] = { 2, 4, 8, 4, 3, 4, 4, 1 };
+    std::array<int, MAX_FONTS> spacings = { 2, 4, 8, 4, 3, 4, 4, 1 };
 
-    Vector2 positions[MAX_FONTS];
+    std::array<raylib::Vector2, MAX_FONTS> positions;
 
-    for (int i = 0; i < MAX_FONTS; i++)
+    for (int i = 0; i < fonts.size(); i++)
     {
-        positions[i].x = screenWidth/2 - MeasureTextEx(fonts[i], messages[i].c_str(), fonts[i].baseSize*2, spacings[i]).x/2;
+        auto size = fonts[i].MeasureText(messages[i], fonts[i].baseSize * 2, spacings[i]);
+        positions[i].x = screenWidth/2 - size.x/2;
         positions[i].y = 60 + fonts[i].baseSize + 45*i;
     }
 
@@ -64,7 +68,7 @@ int main() {
     positions[4].y += 2;
     positions[7].y -= 8;
 
-    raylib::Color colors[MAX_FONTS] = { MAROON, ORANGE, DARKGREEN, DARKBLUE, DARKPURPLE, LIME, GOLD, RED };
+    std::array<raylib::Color, MAX_FONTS> colors = { MAROON, ORANGE, DARKGREEN, DARKBLUE, DARKPURPLE, LIME, GOLD, RED };
     //--------------------------------------------------------------------------------------
 
     // Main game loop
@@ -84,15 +88,14 @@ int main() {
             textColor.DrawText("free fonts included with raylib", 250, 20, 20);
             textColor.DrawLine(220, 50, 590, 50);
 
-            for (int i = 0; i < MAX_FONTS; i++)
+            for (int i = 0; i < fonts.size(); i++)
             {
-                fonts[i].DrawText(messages[i].c_str(), positions[i], fonts[i].baseSize*2, spacings[i], colors[i]);
+                fonts[i].DrawText(messages[i], positions[i], fonts[i].baseSize*2, spacings[i], colors[i]);
             }
 
         EndDrawing();
         //----------------------------------------------------------------------------------
     }
-    //--------------------------------------------------------------------------------------
 
     return 0;
 }

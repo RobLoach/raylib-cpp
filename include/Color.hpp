@@ -276,13 +276,6 @@ class Color : public ::Color {
         b = color.b;
         a = color.a;
     }
-
-    inline void set(const Color& color) {
-        r = color.r;
-        g = color.g;
-        b = color.b;
-        a = color.a;
-    }
 };
 
 }  // namespace raylib
