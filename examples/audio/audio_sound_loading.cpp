@@ -17,7 +17,7 @@ int main() {
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [audio] example - sound loading and playing");
+    raylib::Window window(screenWidth, screenHeight, "raylib [audio] example - sound loading and playing");
 
     raylib::AudioDevice audiodevice;      // Initialize audio device
 
@@ -28,7 +28,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!w.ShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------

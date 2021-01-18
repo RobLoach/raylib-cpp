@@ -205,19 +205,19 @@ inline void UpdateCamera(Camera& camera) {
     ::UpdateCamera(&camera);
 }
 
-inline Image LoadImage(const std::string& fileName) {
+inline ::Image LoadImage(const std::string& fileName) {
     return ::LoadImage(fileName.c_str());
 }
 
-inline Image LoadImageRaw(const std::string& fileName, int width, int height, int format, int headerSize) {
+inline ::Image LoadImageRaw(const std::string& fileName, int width, int height, int format, int headerSize) {
     return ::LoadImageRaw(fileName.c_str(), width, height, format, headerSize);
 }
 
-inline Image LoadImageAnim(const std::string& fileName, int *frames) {
+inline ::Image LoadImageAnim(const std::string& fileName, int *frames) {
     return ::LoadImageAnim(fileName.c_str(), frames);
 }
 
-inline Image LoadImageFromMemory(const std::string& fileType, const unsigned char *fileData, int dataSize) {
+inline ::Image LoadImageFromMemory(const std::string& fileType, const unsigned char *fileData, int dataSize) {
     return ::LoadImageFromMemory(fileType.c_str(), fileData, dataSize);
 }
 

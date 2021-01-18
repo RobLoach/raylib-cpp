@@ -53,7 +53,7 @@ int main(void)
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [textures] example - bunnymark");
+    raylib::Window window(screenWidth, screenHeight, "raylib [textures] example - bunnymark");
 
     // Load bunny texture
     raylib::Texture2D texBunny("resources/wabbit_alpha.png");
@@ -64,7 +64,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!w.ShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------

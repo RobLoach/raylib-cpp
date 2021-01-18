@@ -273,7 +273,7 @@ class Image : public ::Image {
     }
 
     /**
-     * Crop an image to area defined by a vector
+     * Crop an image to a new given width and height based on a vector.
      */
     inline Image& Crop(::Vector2 size) {
         return Crop(0, 0, static_cast<int>(size.x), static_cast<int>(size.y));

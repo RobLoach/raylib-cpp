@@ -25,7 +25,7 @@ int main() {
     int screenWidth = 800;
     int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [text] example - raylib fonts");
+    raylib::Window window(screenWidth, screenHeight, "raylib [text] example - raylib fonts");
     raylib::Color background(RAYWHITE);
     raylib::Color textColor(DARKGRAY);
 
@@ -72,7 +72,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!w.ShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------
