@@ -13,12 +13,12 @@ int main() {
 	int screenWidth = 800;
 	int screenHeight = 450;
 
-	raylib::Window w(screenWidth, screenHeight, "raylib-cpp - basic window");
+	raylib::Window window(screenWidth, screenHeight, "raylib-cpp - basic window");
 	raylib::Texture logo("raylib_logo.png");
 
 	SetTargetFPS(60);
 
-	while (!w.ShouldClose())
+	while (!window.ShouldClose())
 	{
 		BeginDrawing();
 
@@ -28,7 +28,7 @@ int main() {
 
 		// Object methods.
 		logo.Draw(
-			screenWidth / 2 - logo.GetWidth() / 2,
+            screenWidth / 2 - logo.GetWidth() / 2,
 			screenHeight / 2 - logo.GetHeight() / 2);
 
 		EndDrawing();
@@ -154,7 +154,7 @@ ImageResize(&cat, 150, 200);
 
 // raylib-cpp
 raylib::Image cat("cat.png");
-cat.Crop((Rectangle){ 100, 10, 280, 380 })
+cat.Crop(100, 10, 280, 380)
    .FlipHorizontal()
    .Resize(150, 200);
 ```

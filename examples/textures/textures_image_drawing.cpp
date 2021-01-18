@@ -20,7 +20,7 @@ int main(void)
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [textures] example - image drawing");
+    raylib::Window window(screenWidth, screenHeight, "raylib [textures] example - image drawing");
     raylib::Color background(RAYWHITE);
     raylib::Color darkGray(DARKGRAY);
 
@@ -51,7 +51,7 @@ int main(void)
     //---------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!w.ShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------
@@ -60,7 +60,7 @@ int main(void)
 
         // Draw
         //----------------------------------------------------------------------------------
-        w.BeginDrawing();
+        BeginDrawing();
 
             background.ClearBackground();
 
@@ -70,7 +70,7 @@ int main(void)
             darkGray.DrawText("We are drawing only one texture from various images composed!", 240, 350, 10);
             darkGray.DrawText("Source images have been cropped, scaled, flipped and copied one over the other.", 190, 370, 10);
 
-        w.EndDrawing();
+        EndDrawing();
         //----------------------------------------------------------------------------------
     }
 

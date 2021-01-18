@@ -19,7 +19,7 @@ int main() {
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [core] example - drop files");
+    raylib::Window window(screenWidth, screenHeight, "raylib [core] example - drop files");
 
     std::vector<std::string> droppedFiles;
 
@@ -27,7 +27,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!w.ShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------

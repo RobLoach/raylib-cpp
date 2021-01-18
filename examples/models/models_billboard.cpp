@@ -17,7 +17,7 @@ int main() {
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [models] example - drawing billboards");
+    raylib::Window window(screenWidth, screenHeight, "raylib [models] example - drawing billboards");
 
     // Define the camera to look into our 3d world
     raylib::Camera camera(
@@ -37,7 +37,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!w.ShouldClose())            // Detect window close button or ESC key
+    while (!window.ShouldClose())            // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------
