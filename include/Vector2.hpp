@@ -203,7 +203,7 @@ class Vector2 : public ::Vector2 {
     /**
      * Calculate linear interpolation between two vectors
      */
-    Vector2 Lerp(const ::Vector2& vector2, const float amount) const {
+    Vector2 Lerp(const ::Vector2& vector2, float amount) const {
         return Vector2Lerp(*this, vector2, amount);
     }
 
@@ -268,7 +268,11 @@ class Vector2 : public ::Vector2 {
      *
      * TODO(RobLoach): Add this one this commit makes it in: https://github.com/raysan5/raylib/commit/521ed1cef0c0dbc752cb79f70c21bb4fc3bf70d4
      */
-    //inline Vector2& DrawLineBezierQuad(::Vector2 endPos, ::Vector2 controlPos, float thick, ::Color color) {
+    // inline Vector2& DrawLineBezierQuad(
+    // ::Vector2 endPos,
+    // ::Vector2 controlPos,
+    // float thick,
+    // ::Color color) {
     //    ::DrawLineBezierQuad(*this, endPos, controlPos, thick, color);
     //    return *this;
     //}

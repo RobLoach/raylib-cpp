@@ -174,7 +174,7 @@ $(function() {
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#a6a59671e1b7ed19c5b6566e700b625a7">  127</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_camera3_d.html">Camera3D</a>&amp; <a class="code" href="classraylib_1_1_camera3_d.html#a6a59671e1b7ed19c5b6566e700b625a7">Update</a>() {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        ::UpdateCamera(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="namespaceraylib.html#a4d8e1513cd0802ccd397ce0868b660d9">::UpdateCamera</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
@@ -218,20 +218,12 @@ $(function() {
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        fovy = camera.fovy;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        type = camera.type;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#aba0613131416d0d7ffb0c285eb778b50">  182</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_camera3_d.html#aba0613131416d0d7ffb0c285eb778b50">set</a>(<span class="keyword">const</span> <a class="code" href="classraylib_1_1_camera3_d.html">Camera3D</a>&amp; camera) {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        position = camera.position;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        target = camera.target;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        up = camera.up;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        fovy = camera.fovy;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        type = camera.type;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;};</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="namespaceraylib.html#a44fa75f4522455fb2231d9950c40d629">  191</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="classraylib_1_1_camera3_d.html">Camera3D</a> <a class="code" href="namespaceraylib.html#a44fa75f4522455fb2231d9950c40d629">Camera</a>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_CAMERA3D_HPP_</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;};</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="namespaceraylib.html#a44fa75f4522455fb2231d9950c40d629">  183</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="classraylib_1_1_camera3_d.html">Camera3D</a> <a class="code" href="namespaceraylib.html#a44fa75f4522455fb2231d9950c40d629">Camera</a>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_CAMERA3D_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">Provides all the classes associated with raylib-cpp.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00031">AudioDevice.hpp:31</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_matrix_html"><div class="ttname"><a href="classraylib_1_1_matrix.html">raylib::Matrix</a></div><div class="ttdef"><b>Definition:</b> <a href="_matrix_8hpp_source.html#l00046">Matrix.hpp:46</a></div></div>
@@ -249,7 +241,7 @@ $(function() {
 <div class="ttc" id="aclassraylib_1_1_camera3_d_html_a5cbf6986fba9deb41fecf4076ac7c61f"><div class="ttname"><a href="classraylib_1_1_camera3_d.html#a5cbf6986fba9deb41fecf4076ac7c61f">raylib::Camera3D::DrawBillboard</a></div><div class="ttdeci">Camera3D &amp; DrawBillboard(const ::Texture2D &amp;texture, ::Vector3 center, float size, ::Color tint={255, 255, 255, 255})</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8hpp_source.html#l00154">Camera3D.hpp:154</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_vector3_html"><div class="ttname"><a href="classraylib_1_1_vector3.html">raylib::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00037">Vector3.hpp:37</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_camera3_d_html_a350dca8448a4789feac21505e1a1063d"><div class="ttname"><a href="classraylib_1_1_camera3_d.html#a350dca8448a4789feac21505e1a1063d">raylib::Camera3D::Camera3D</a></div><div class="ttdeci">Camera3D(::Vector3 positionValue, ::Vector3 targetValue, ::Vector3 upValue, float fovyValue=0, int typeValue=0)</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8hpp_source.html#l00039">Camera3D.hpp:39</a></div></div>
-<div class="ttc" id="anamespaceraylib_html_a44fa75f4522455fb2231d9950c40d629"><div class="ttname"><a href="namespaceraylib.html#a44fa75f4522455fb2231d9950c40d629">raylib::Camera</a></div><div class="ttdeci">Camera3D Camera</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8hpp_source.html#l00191">Camera3D.hpp:191</a></div></div>
+<div class="ttc" id="anamespaceraylib_html_a44fa75f4522455fb2231d9950c40d629"><div class="ttname"><a href="namespaceraylib.html#a44fa75f4522455fb2231d9950c40d629">raylib::Camera</a></div><div class="ttdeci">Camera3D Camera</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8hpp_source.html#l00183">Camera3D.hpp:183</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_camera3_d_html_a8ec807581f3610db4830f6ff5c96d1dd"><div class="ttname"><a href="classraylib_1_1_camera3_d.html#a8ec807581f3610db4830f6ff5c96d1dd">raylib::Camera3D::Camera3D</a></div><div class="ttdeci">Camera3D(const ::Camera3D &amp;camera)</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8hpp_source.html#l00035">Camera3D.hpp:35</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_camera3_d_html"><div class="ttname"><a href="classraylib_1_1_camera3_d.html">raylib::Camera3D</a></div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8hpp_source.html#l00033">Camera3D.hpp:33</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_camera3_d_html_a5ccf478fc178de19fc1cbba03ce2557a"><div class="ttname"><a href="classraylib_1_1_camera3_d.html#a5ccf478fc178de19fc1cbba03ce2557a">raylib::Camera3D::operator=</a></div><div class="ttdeci">Camera3D &amp; operator=(const Camera3D &amp;camera)</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8hpp_source.html#l00061">Camera3D.hpp:61</a></div></div>
@@ -259,11 +251,11 @@ $(function() {
 <div class="ttc" id="aclassraylib_1_1_color_html"><div class="ttname"><a href="classraylib_1_1_color.html">raylib::Color</a></div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00035">Color.hpp:35</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_camera3_d_html_a4222bdd9d37cdd12968fda35e9aa2c62"><div class="ttname"><a href="classraylib_1_1_camera3_d.html#a4222bdd9d37cdd12968fda35e9aa2c62">raylib::Camera3D::DrawBillboard</a></div><div class="ttdeci">Camera3D &amp; DrawBillboard(const ::Texture2D &amp;texture, ::Rectangle sourceRec, ::Vector3 center, float size, ::Color tint={255, 255, 255, 255})</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8hpp_source.html#l00163">Camera3D.hpp:163</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_camera3_d_html_a6263a91ecfcc94144cd4cbff82396e78"><div class="ttname"><a href="classraylib_1_1_camera3_d.html#a6263a91ecfcc94144cd4cbff82396e78">raylib::Camera3D::SetSmoothZoomControl</a></div><div class="ttdeci">Camera3D &amp; SetSmoothZoomControl(int szKey)</div><div class="ttdoc">Set camera smooth zoom key to combine with mouse (free camera)</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8hpp_source.html#l00108">Camera3D.hpp:108</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_camera3_d_html_aba0613131416d0d7ffb0c285eb778b50"><div class="ttname"><a href="classraylib_1_1_camera3_d.html#aba0613131416d0d7ffb0c285eb778b50">raylib::Camera3D::set</a></div><div class="ttdeci">void set(const Camera3D &amp;camera)</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8hpp_source.html#l00182">Camera3D.hpp:182</a></div></div>
+<div class="ttc" id="anamespaceraylib_html_a4d8e1513cd0802ccd397ce0868b660d9"><div class="ttname"><a href="namespaceraylib.html#a4d8e1513cd0802ccd397ce0868b660d9">raylib::UpdateCamera</a></div><div class="ttdeci">void UpdateCamera(const ::Camera &amp;camera)</div><div class="ttdef"><b>Definition:</b> <a href="_functions_8hpp_source.html#l00204">Functions.hpp:204</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_camera3_d_html_a6259d44a0a9b08d842fb30530dea19cc"><div class="ttname"><a href="classraylib_1_1_camera3_d.html#a6259d44a0a9b08d842fb30530dea19cc">raylib::Camera3D::GetWorldToScreen</a></div><div class="ttdeci">Vector2 GetWorldToScreen(::Vector3 position) const</div><div class="ttdoc">Returns the screen space position for a 3d world space position.</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8hpp_source.html#l00150">Camera3D.hpp:150</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 2 2021 14:24:11 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 18 2021 19:20:15 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

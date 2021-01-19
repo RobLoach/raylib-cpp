@@ -206,73 +206,73 @@ $(function() {
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        }</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a045bdf62b9676b07c5745172383802c7">  172</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_bounding_box.html">raylib::BoundingBox</a> <a class="code" href="classraylib_1_1_mesh.html#a045bdf62b9676b07c5745172383802c7">BoundingBox</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        return ::MeshBoundingBox(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a5c67dce6d54119cc8922f7ed697eab8c">  176</a></span>&#160;    <span class="keyword">operator</span> <a class="code" href="classraylib_1_1_bounding_box.html">raylib::BoundingBox</a>() {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1_mesh.html#a045bdf62b9676b07c5745172383802c7">BoundingBox</a>();</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a4873780eee85a182d90c25eb100199ae">  183</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_mesh.html">Mesh</a>&amp; <a class="code" href="classraylib_1_1_mesh.html#a4873780eee85a182d90c25eb100199ae">Tangents</a>() {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        ::MeshTangents(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a9288f896d13ca0f5c720ea1e6ef65189">  191</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_mesh.html">Mesh</a>&amp; <a class="code" href="classraylib_1_1_mesh.html#a9288f896d13ca0f5c720ea1e6ef65189">Binormals</a>() {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        ::MeshBinormals(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a7f573f556a04f1ccac630098aeb5cb9d">  199</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_mesh.html">Mesh</a>&amp; <a class="code" href="classraylib_1_1_mesh.html#a7f573f556a04f1ccac630098aeb5cb9d">NormalsSmooth</a>() {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        ::MeshNormalsSmooth(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a192994cdc37a5f68cf149eb79024563d">  207</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_model.html">raylib::Model</a> <a class="code" href="classraylib_1_1_mesh.html#a192994cdc37a5f68cf149eb79024563d">LoadModelFrom</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        return ::LoadModelFromMesh(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a8f62c7557383cf2a040bb5dd8f3ecaa1">  214</a></span>&#160;    <span class="keyword">operator</span> <a class="code" href="classraylib_1_1_model.html">raylib::Model</a>() {</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        return ::LoadModelFromMesh(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#ad53a356225a312c1dd6abf8bee56849c">  219</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_mesh.html#ad53a356225a312c1dd6abf8bee56849c">set</a>(const ::Mesh&amp; mesh) {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        vertexCount = mesh.vertexCount;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        triangleCount = mesh.triangleCount;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        vertices = mesh.vertices;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        texcoords = mesh.texcoords;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        texcoords2 = mesh.texcoords2;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        normals = mesh.normals;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        tangents = mesh.tangents;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        colors = mesh.colors;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        indices = mesh.indices;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        animVertices = mesh.animVertices;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        animNormals = mesh.animNormals;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        boneIds = mesh.boneIds;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        boneWeights = mesh.boneWeights;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        vaoId = mesh.vaoId;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        vboId = mesh.vboId;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    }</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;};</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_MESH_HPP_</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a045bdf62b9676b07c5745172383802c7">  175</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_bounding_box.html">raylib::BoundingBox</a> <a class="code" href="classraylib_1_1_mesh.html#a045bdf62b9676b07c5745172383802c7">BoundingBox</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        return ::MeshBoundingBox(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a5c67dce6d54119cc8922f7ed697eab8c">  182</a></span>&#160;    <span class="keyword">operator</span> <a class="code" href="classraylib_1_1_bounding_box.html">raylib::BoundingBox</a>() {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1_mesh.html#a045bdf62b9676b07c5745172383802c7">BoundingBox</a>();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a4873780eee85a182d90c25eb100199ae">  189</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_mesh.html">Mesh</a>&amp; <a class="code" href="classraylib_1_1_mesh.html#a4873780eee85a182d90c25eb100199ae">Tangents</a>() {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        ::MeshTangents(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a9288f896d13ca0f5c720ea1e6ef65189">  197</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_mesh.html">Mesh</a>&amp; <a class="code" href="classraylib_1_1_mesh.html#a9288f896d13ca0f5c720ea1e6ef65189">Binormals</a>() {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        ::MeshBinormals(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a7f573f556a04f1ccac630098aeb5cb9d">  205</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_mesh.html">Mesh</a>&amp; <a class="code" href="classraylib_1_1_mesh.html#a7f573f556a04f1ccac630098aeb5cb9d">NormalsSmooth</a>() {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        ::MeshNormalsSmooth(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a192994cdc37a5f68cf149eb79024563d">  213</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_model.html">raylib::Model</a> <a class="code" href="classraylib_1_1_mesh.html#a192994cdc37a5f68cf149eb79024563d">LoadModelFrom</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        return ::LoadModelFromMesh(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a8f62c7557383cf2a040bb5dd8f3ecaa1">  220</a></span>&#160;    <span class="keyword">operator</span> <a class="code" href="classraylib_1_1_model.html">raylib::Model</a>() {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        return ::LoadModelFromMesh(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#ad53a356225a312c1dd6abf8bee56849c">  225</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_mesh.html#ad53a356225a312c1dd6abf8bee56849c">set</a>(const ::Mesh&amp; mesh) {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        vertexCount = mesh.vertexCount;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        triangleCount = mesh.triangleCount;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        vertices = mesh.vertices;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        texcoords = mesh.texcoords;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        texcoords2 = mesh.texcoords2;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        normals = mesh.normals;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        tangents = mesh.tangents;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        colors = mesh.colors;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        indices = mesh.indices;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        animVertices = mesh.animVertices;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        animNormals = mesh.animNormals;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        boneIds = mesh.boneIds;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        boneWeights = mesh.boneWeights;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        vaoId = mesh.vaoId;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        vboId = mesh.vboId;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    }</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;};</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_MESH_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassraylib_1_1_mesh_html_a3063bad532be0ec9f0545652ffb2e929"><div class="ttname"><a href="classraylib_1_1_mesh.html#a3063bad532be0ec9f0545652ffb2e929">raylib::Mesh::Cube</a></div><div class="ttdeci">::Mesh Cube(float width, float height, float length)</div><div class="ttdoc">Generate cuboid mesh.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00074">Mesh.hpp:74</a></div></div>
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">Provides all the classes associated with raylib-cpp.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00031">AudioDevice.hpp:31</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html_aabbac566be5d678da87ac30a053eee55"><div class="ttname"><a href="classraylib_1_1_mesh.html#aabbac566be5d678da87ac30a053eee55">raylib::Mesh::Export</a></div><div class="ttdeci">bool Export(const std::string &amp;fileName)</div><div class="ttdoc">Export mesh data to file.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00160">Mesh.hpp:160</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mesh_html_a7f573f556a04f1ccac630098aeb5cb9d"><div class="ttname"><a href="classraylib_1_1_mesh.html#a7f573f556a04f1ccac630098aeb5cb9d">raylib::Mesh::NormalsSmooth</a></div><div class="ttdeci">Mesh &amp; NormalsSmooth()</div><div class="ttdoc">Smooth (average) vertex normals.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00199">Mesh.hpp:199</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mesh_html_a045bdf62b9676b07c5745172383802c7"><div class="ttname"><a href="classraylib_1_1_mesh.html#a045bdf62b9676b07c5745172383802c7">raylib::Mesh::BoundingBox</a></div><div class="ttdeci">raylib::BoundingBox BoundingBox() const</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00172">Mesh.hpp:172</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mesh_html_a4873780eee85a182d90c25eb100199ae"><div class="ttname"><a href="classraylib_1_1_mesh.html#a4873780eee85a182d90c25eb100199ae">raylib::Mesh::Tangents</a></div><div class="ttdeci">Mesh &amp; Tangents()</div><div class="ttdoc">Compute mesh tangents.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00183">Mesh.hpp:183</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_mesh_html_a7f573f556a04f1ccac630098aeb5cb9d"><div class="ttname"><a href="classraylib_1_1_mesh.html#a7f573f556a04f1ccac630098aeb5cb9d">raylib::Mesh::NormalsSmooth</a></div><div class="ttdeci">Mesh &amp; NormalsSmooth()</div><div class="ttdoc">Smooth (average) vertex normals.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00205">Mesh.hpp:205</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_mesh_html_a045bdf62b9676b07c5745172383802c7"><div class="ttname"><a href="classraylib_1_1_mesh.html#a045bdf62b9676b07c5745172383802c7">raylib::Mesh::BoundingBox</a></div><div class="ttdeci">raylib::BoundingBox BoundingBox() const</div><div class="ttdoc">Compute mesh bounding box limits.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00175">Mesh.hpp:175</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_mesh_html_a4873780eee85a182d90c25eb100199ae"><div class="ttname"><a href="classraylib_1_1_mesh.html#a4873780eee85a182d90c25eb100199ae">raylib::Mesh::Tangents</a></div><div class="ttdeci">Mesh &amp; Tangents()</div><div class="ttdoc">Compute mesh tangents.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00189">Mesh.hpp:189</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html_af09e2772739c525a2f957ebb7b4a1486"><div class="ttname"><a href="classraylib_1_1_mesh.html#af09e2772739c525a2f957ebb7b4a1486">raylib::Mesh::~Mesh</a></div><div class="ttdeci">~Mesh()</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00153">Mesh.hpp:153</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html_a52c3d52a426fb774bb3769acaa9b6732"><div class="ttname"><a href="classraylib_1_1_mesh.html#a52c3d52a426fb774bb3769acaa9b6732">raylib::Mesh::Poly</a></div><div class="ttdeci">::Mesh Poly(int sides, float radius)</div><div class="ttdoc">Generate polygonal mesh.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00060">Mesh.hpp:60</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html_a90d8283bb7215bf489a5c0fbae7727d8"><div class="ttname"><a href="classraylib_1_1_mesh.html#a90d8283bb7215bf489a5c0fbae7727d8">raylib::Mesh::Torus</a></div><div class="ttdeci">::Mesh Torus(float radius, float size, int radSeg, int sides)</div><div class="ttdoc">Generate torus mesh.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00102">Mesh.hpp:102</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mesh_html_ad53a356225a312c1dd6abf8bee56849c"><div class="ttname"><a href="classraylib_1_1_mesh.html#ad53a356225a312c1dd6abf8bee56849c">raylib::Mesh::set</a></div><div class="ttdeci">void set(const ::Mesh &amp;mesh)</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00219">Mesh.hpp:219</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_mesh_html_ad53a356225a312c1dd6abf8bee56849c"><div class="ttname"><a href="classraylib_1_1_mesh.html#ad53a356225a312c1dd6abf8bee56849c">raylib::Mesh::set</a></div><div class="ttdeci">void set(const ::Mesh &amp;mesh)</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00225">Mesh.hpp:225</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html_a1b94f6f98a5b4308cfc15e0dd5fe792e"><div class="ttname"><a href="classraylib_1_1_mesh.html#a1b94f6f98a5b4308cfc15e0dd5fe792e">raylib::Mesh::Mesh</a></div><div class="ttdeci">Mesh(const ::Mesh &amp;mesh)</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00039">Mesh.hpp:39</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_vector3_html"><div class="ttname"><a href="classraylib_1_1_vector3.html">raylib::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00037">Vector3.hpp:37</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mesh_html_a9288f896d13ca0f5c720ea1e6ef65189"><div class="ttname"><a href="classraylib_1_1_mesh.html#a9288f896d13ca0f5c720ea1e6ef65189">raylib::Mesh::Binormals</a></div><div class="ttdeci">Mesh &amp; Binormals()</div><div class="ttdoc">Compute mesh binormals (aka bitangent)</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00191">Mesh.hpp:191</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_mesh_html_a9288f896d13ca0f5c720ea1e6ef65189"><div class="ttname"><a href="classraylib_1_1_mesh.html#a9288f896d13ca0f5c720ea1e6ef65189">raylib::Mesh::Binormals</a></div><div class="ttdeci">Mesh &amp; Binormals()</div><div class="ttdoc">Compute mesh binormals (aka bitangent)</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00197">Mesh.hpp:197</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html_a6549598642005a363f01c4cf23a806d6"><div class="ttname"><a href="classraylib_1_1_mesh.html#a6549598642005a363f01c4cf23a806d6">raylib::Mesh::HemiSphere</a></div><div class="ttdeci">::Mesh HemiSphere(float radius, int rings, int slices)</div><div class="ttdoc">Generate half-sphere mesh (no bottom cap)</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00088">Mesh.hpp:88</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html_a2b9f6edb3fce3b6fcea46891e646fcd7"><div class="ttname"><a href="classraylib_1_1_mesh.html#a2b9f6edb3fce3b6fcea46891e646fcd7">raylib::Mesh::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00165">Mesh.hpp:165</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html"><div class="ttname"><a href="classraylib_1_1_mesh.html">raylib::Mesh</a></div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00037">Mesh.hpp:37</a></div></div>
@@ -286,11 +286,11 @@ $(function() {
 <div class="ttc" id="aclassraylib_1_1_model_html"><div class="ttname"><a href="classraylib_1_1_model.html">raylib::Model</a></div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00035">Model.hpp:35</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html_aed00f01b7f68b3ef236814c8468891f0"><div class="ttname"><a href="classraylib_1_1_mesh.html#aed00f01b7f68b3ef236814c8468891f0">raylib::Mesh::Cylinder</a></div><div class="ttdeci">::Mesh Cylinder(float radius, float height, int slices)</div><div class="ttdoc">Generate cylinder mesh.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00095">Mesh.hpp:95</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_bounding_box_html"><div class="ttname"><a href="classraylib_1_1_bounding_box.html">raylib::BoundingBox</a></div><div class="ttdoc">Bounding box type.</div><div class="ttdef"><b>Definition:</b> <a href="_bounding_box_8hpp_source.html#l00035">BoundingBox.hpp:35</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mesh_html_a192994cdc37a5f68cf149eb79024563d"><div class="ttname"><a href="classraylib_1_1_mesh.html#a192994cdc37a5f68cf149eb79024563d">raylib::Mesh::LoadModelFrom</a></div><div class="ttdeci">raylib::Model LoadModelFrom() const</div><div class="ttdoc">Load model from generated mesh.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00207">Mesh.hpp:207</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_mesh_html_a192994cdc37a5f68cf149eb79024563d"><div class="ttname"><a href="classraylib_1_1_mesh.html#a192994cdc37a5f68cf149eb79024563d">raylib::Mesh::LoadModelFrom</a></div><div class="ttdeci">raylib::Model LoadModelFrom() const</div><div class="ttdoc">Load model from generated mesh.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00213">Mesh.hpp:213</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html_a4a3885f78dc0d8a592e05653f5c178b4"><div class="ttname"><a href="classraylib_1_1_mesh.html#a4a3885f78dc0d8a592e05653f5c178b4">raylib::Mesh::Plane</a></div><div class="ttdeci">::Mesh Plane(float width, float length, int resX, int resZ)</div><div class="ttdoc">Generate plane mesh (with subdivisions)</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00067">Mesh.hpp:67</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 2 2021 14:24:11 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 18 2021 19:20:15 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

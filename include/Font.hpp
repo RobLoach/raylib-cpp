@@ -102,7 +102,10 @@ class Font : public ::Font {
     /**
      * Draw one character (codepoint)
      */
-    inline Font& DrawText(int codepoint, ::Vector2 position, float fontSize, ::Color tint = { 255, 255, 255, 255 }) {
+    inline Font& DrawText(int codepoint,
+            ::Vector2 position,
+            float fontSize,
+            ::Color tint = { 255, 255, 255, 255 }) {
         ::DrawTextCodepoint(*this, codepoint, position, fontSize, tint);
         return *this;
     }

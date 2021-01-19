@@ -201,15 +201,18 @@ inline bool IsGamepadName(int gamepad, const std::string& name) {
     return ::IsGamepadName(gamepad, name.c_str());
 }
 
-inline void UpdateCamera(Camera& camera) {
-    ::UpdateCamera(&camera);
+inline void UpdateCamera(const ::Camera& camera) {
+    ::Camera* cameraPointer = (::Camera*)&camera;
+    ::UpdateCamera(cameraPointer);
 }
 
 inline ::Image LoadImage(const std::string& fileName) {
     return ::LoadImage(fileName.c_str());
 }
 
-inline ::Image LoadImageRaw(const std::string& fileName, int width, int height, int format, int headerSize) {
+inline ::Image LoadImageRaw(const std::string& fileName,
+        int width, int height,
+        int format, int headerSize) {
     return ::LoadImageRaw(fileName.c_str(), width, height, format, headerSize);
 }
 
@@ -217,7 +220,9 @@ inline ::Image LoadImageAnim(const std::string& fileName, int *frames) {
     return ::LoadImageAnim(fileName.c_str(), frames);
 }
 
-inline ::Image LoadImageFromMemory(const std::string& fileType, const unsigned char *fileData, int dataSize) {
+inline ::Image LoadImageFromMemory(const std::string& fileType,
+        const unsigned char *fileData,
+        int dataSize) {
     return ::LoadImageFromMemory(fileType.c_str(), fileData, dataSize);
 }
 
