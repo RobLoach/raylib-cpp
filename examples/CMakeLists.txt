@@ -11,6 +11,7 @@ if (NOT raylib_FOUND)
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../vendor/raylib ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/raylib)
 endif()
 
+# Find all examples
 foreach(example_dir ${example_dirs})
     file(GLOB sources ${example_dir}/*.cpp)
     list(APPEND example_sources ${sources})
@@ -20,7 +21,7 @@ foreach(example_dir ${example_dirs})
     list(APPEND example_resources ${resources})
 endforeach()
 
-# Do each example
+# Compile all examples
 foreach(example_source ${example_sources})
     # Create the basename for the example
     get_filename_component(example_name ${example_source} NAME)
@@ -37,4 +38,5 @@ foreach(example_source ${example_sources})
 
 endforeach()
 
+# Copy all the resources
 file(COPY ${example_resources} DESTINATION "resources/")

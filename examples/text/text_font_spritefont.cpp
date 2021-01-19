@@ -20,7 +20,7 @@ int main(void)
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [text] example - sprite fonts usage");
+    raylib::Window window(screenWidth, screenHeight, "raylib [text] example - sprite fonts usage");
 
     std::string msg1 = "THIS IS A custom SPRITE FONT...";
     std::string msg2 = "...and this is ANOTHER CUSTOM font...";
@@ -44,7 +44,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!w.ShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------

@@ -20,7 +20,7 @@ int main(void)
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [shapes] example - collision area");
+    raylib::Window window(screenWidth, screenHeight, "raylib [shapes] example - collision area");
 
     // Box A: Moving box
     raylib::Rectangle boxA(10, GetScreenHeight()/2 - 50, 200, 100);
@@ -41,7 +41,7 @@ int main(void)
     //----------------------------------------------------------
 
     // Main game loop
-    while (!WindowShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //-----------------------------------------------------

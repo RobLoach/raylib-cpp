@@ -29,7 +29,7 @@ int main(void)
     const int screenHeight = 450;
 
     SetConfigFlags(FLAG_MSAA_4X_HINT);
-    raylib::Window w(screenWidth, screenHeight, "Physac [raylib-cpp] - Physics demo");
+    raylib::Window window(screenWidth, screenHeight, "Physac [raylib-cpp] - Physics demo");
 
     // Physac logo drawing position
     int logoX = screenWidth - MeasureText("Physac", 30) - 10;
@@ -51,7 +51,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!w.ShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------

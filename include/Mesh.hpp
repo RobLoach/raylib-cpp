@@ -169,10 +169,16 @@ class Mesh : public ::Mesh {
         }
     }
 
+    /**
+     * Compute mesh bounding box limits
+     */
     inline raylib::BoundingBox BoundingBox() const {
         return ::MeshBoundingBox(*this);
     }
 
+    /**
+     * Compute mesh bounding box limits
+     */
     operator raylib::BoundingBox() {
         return BoundingBox();
     }

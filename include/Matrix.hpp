@@ -166,10 +166,16 @@ class Matrix : public ::Matrix {
     }
 
 #ifndef RAYLIB_CPP_NO_MATH
+    /**
+     * Returns the trace of the matrix (sum of the values along the diagonal)
+     */
     inline float Trace() const {
         return ::MatrixTrace(*this);
     }
 
+    /**
+     * Transposes provided matrix
+     */
     inline Matrix Transpose() const {
         return ::MatrixTranspose(*this);
     }

@@ -17,7 +17,7 @@ int main() {
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    raylib::Window w(screenWidth, screenHeight, "raylib [shapes] example - raylib logo using shapes");
+    raylib::Window window(screenWidth, screenHeight, "raylib [shapes] example - raylib logo using shapes");
     raylib::Color foreground = raylib::Color(0, 68, 130);
     raylib::Color background = RAYWHITE;
 
@@ -25,7 +25,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!w.ShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------
