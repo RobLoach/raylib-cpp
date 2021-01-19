@@ -166,7 +166,7 @@ class Color : public ::Color {
         return *this;
     }
 
-    inline Color& DrawLineBezier(::Vector2 startPos, Vector2 endPos, float thick) {
+    inline Color& DrawLineBezier(::Vector2 startPos, ::Vector2 endPos, float thick) {
         ::DrawLineBezier(startPos, endPos, thick, *this);
         return *this;
     }
