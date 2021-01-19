@@ -10,33 +10,33 @@
 #include "raylib-cpp.hpp"
 
 int main() {
-	int screenWidth = 800;
-	int screenHeight = 450;
+    int screenWidth = 800;
+    int screenHeight = 450;
 
-	raylib::Window window(screenWidth, screenHeight, "raylib-cpp - basic window");
-	raylib::Texture logo("raylib_logo.png");
+    raylib::Window window(screenWidth, screenHeight, "raylib-cpp - basic window");
+    raylib::Texture logo("raylib_logo.png");
 
-	SetTargetFPS(60);
+    SetTargetFPS(60);
 
-	while (!window.ShouldClose())
-	{
-		BeginDrawing();
+    while (!window.ShouldClose())
+    {
+        BeginDrawing();
 
-		ClearBackground(RAYWHITE);
+        ClearBackground(RAYWHITE);
 
-		DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+        DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 
-		// Object methods.
-		logo.Draw(
+        // Object methods.
+        logo.Draw(
             screenWidth / 2 - logo.GetWidth() / 2,
-			screenHeight / 2 - logo.GetHeight() / 2);
+            screenHeight / 2 - logo.GetHeight() / 2);
 
-		EndDrawing();
-	}
+        EndDrawing();
+    }
 
-	// UnloadTexture() and CloseWindow() are called automatically.
+    // UnloadTexture() and CloseWindow() are called automatically.
 
-	return 0;
+    return 0;
 }
 ```
 
@@ -78,7 +78,7 @@ position.DrawPixel(PURPLE);
 
 ### Method Names
 
-If a method's name contains an object's name, it is removed from its name to shorten it.
+If a method's name contains an object's name, it is removed from its name to shorten the method name.
 
 ``` cpp
 // raylib
@@ -98,8 +98,8 @@ InitWindow(640, 480, "Hello World");
 CloseWindow();
 
 // raylib-cpp
-raylib::Window w(640, 480, "Hello World");
-// CloseWindow(); // w.Close() is automatically called when the object is destructed.
+raylib::Window window(640, 480, "Hello World");
+// window.Close() will be called automatically when the object is destructed.
 ```
 
 ### Property Get/Set
