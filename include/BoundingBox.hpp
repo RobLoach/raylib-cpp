@@ -58,11 +58,6 @@ class BoundingBox : public ::BoundingBox {
         return *this;
     }
 
-    BoundingBox& operator=(const BoundingBox& box) {
-        set(box);
-        return *this;
-    }
-
     /**
      * Draw a bounding box with wires
      */

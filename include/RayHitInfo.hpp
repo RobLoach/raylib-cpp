@@ -71,11 +71,6 @@ class RayHitInfo : public ::RayHitInfo {
         return *this;
     }
 
-    RayHitInfo& operator=(const RayHitInfo& ray) {
-        set(ray);
-        return *this;
-    }
-
     GETTERSETTER(bool, Hit, hit)
     GETTERSETTER(float, Distance, distance)
     GETTERSETTER(::Vector3, Position, position)

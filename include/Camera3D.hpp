@@ -58,11 +58,6 @@ class Camera3D : public ::Camera3D {
         return *this;
     }
 
-    Camera3D& operator=(const Camera3D& camera) {
-        set(camera);
-        return *this;
-    }
-
     /**
      * Initializes 3D mode with custom camera (3D)
      */

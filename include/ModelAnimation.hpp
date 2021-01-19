@@ -65,11 +65,6 @@ class ModelAnimation : public ::ModelAnimation {
         return *this;
     }
 
-    ModelAnimation& operator=(const ModelAnimation& model) {
-        set(model);
-        return *this;
-    }
-
     /**
      * Unload animation data
      */

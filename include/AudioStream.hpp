@@ -59,11 +59,6 @@ class AudioStream : public ::AudioStream {
         return *this;
     }
 
-    AudioStream& operator=(const AudioStream& stream) {
-        set(stream);
-        return *this;
-    }
-
     /**
      * Update audio stream buffers with data
      */

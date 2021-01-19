@@ -67,11 +67,6 @@ class Shader : public ::Shader {
         return *this;
     }
 
-    Shader& operator=(const Shader& shader) {
-        set(shader);
-        return *this;
-    }
-
     ~Shader() {
         Unload();
     }

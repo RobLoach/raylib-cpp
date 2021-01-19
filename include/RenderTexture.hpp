@@ -52,11 +52,6 @@ class RenderTexture : public ::RenderTexture {
         return *this;
     }
 
-    RenderTexture& operator=(const RenderTexture& texture) {
-        set(texture);
-        return *this;
-    }
-
     ~RenderTexture() {
         Unload();
     }

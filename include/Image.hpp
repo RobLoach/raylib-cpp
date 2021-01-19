@@ -151,11 +151,6 @@ class Image : public ::Image {
         return *this;
     }
 
-    Image& operator=(const Image& image) {
-        set(image);
-        return *this;
-    }
-
     void Load(const std::string& fileName) {
         set(::LoadImage(fileName.c_str()));
     }

@@ -67,11 +67,6 @@ class Material : public ::Material {
         return *this;
     }
 
-    Material& operator=(const Material& material) {
-        set(material);
-        return *this;
-    }
-
     /**
      * Unload material from memory
      */

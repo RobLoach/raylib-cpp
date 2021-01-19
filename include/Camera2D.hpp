@@ -65,11 +65,6 @@ class Camera2D : public ::Camera2D {
         return *this;
     }
 
-    Camera2D& operator=(const Camera2D& camera) {
-        set(camera);
-        return *this;
-    }
-
     /**
      * Returns camera 2d transform matrix
      */

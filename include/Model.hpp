@@ -65,11 +65,6 @@ class Model : public ::Model {
         return *this;
     }
 
-    Model& operator=(const Model& model) {
-        set(model);
-        return *this;
-    }
-
     /**
      * Unload model (including meshes) from memory (RAM and/or VRAM)
      */

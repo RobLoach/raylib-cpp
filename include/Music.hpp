@@ -62,11 +62,6 @@ class Music : public ::Music {
         return *this;
     }
 
-    Music& operator=(const Music& music) {
-        set(music);
-        return *this;
-    }
-
     /**
      * Unload music stream
      */

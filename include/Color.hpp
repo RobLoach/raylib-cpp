@@ -122,11 +122,6 @@ class Color : public ::Color {
         return *this;
     }
 
-    Color& operator=(const Color& color) {
-        set(color);
-        return *this;
-    }
-
     /**
      * Set background color (framebuffer clear color)
      */

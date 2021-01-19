@@ -69,11 +69,6 @@ class Texture : public ::Texture {
         return *this;
     }
 
-    Texture& operator=(const Texture& texture) {
-        set(texture);
-        return *this;
-    }
-
     /**
      * Retrieve the width and height of the texture.
      */

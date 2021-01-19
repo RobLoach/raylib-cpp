@@ -77,11 +77,6 @@ class Wave : public ::Wave {
         return *this;
     }
 
-    Wave& operator=(const Wave& wave) {
-        set(wave);
-        return *this;
-    }
-
     /**
      * Convert wave data to desired format
      */

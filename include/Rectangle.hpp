@@ -56,11 +56,6 @@ class Rectangle : public ::Rectangle {
         return *this;
     }
 
-    Rectangle& operator=(const Rectangle& rect) {
-        set(rect);
-        return *this;
-    }
-
     inline ::Vector4 ToVector4() {
         return {x, y, width, height};
     }

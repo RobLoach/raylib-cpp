@@ -60,11 +60,6 @@ class Sound : public ::Sound {
         return *this;
     }
 
-    Sound& operator=(const Sound& sound) {
-        set(sound);
-        return *this;
-    }
-
     /**
      * Update sound buffer with new data
      */

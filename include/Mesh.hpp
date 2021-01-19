@@ -145,11 +145,6 @@ class Mesh : public ::Mesh {
         return *this;
     }
 
-    Mesh& operator=(const Mesh& mesh) {
-        set(mesh);
-        return *this;
-    }
-
     ~Mesh() {
         Unload();
     }
