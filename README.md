@@ -48,7 +48,7 @@ See the [examples folder](examples) for more of the raylib examples that have be
 
 ## Features
 
-There are a few conventions that raylib-cpp takes on when adopting raylib...
+There are a few conventions that raylib-cpp takes on when adopting raylib. See the [raylib-cpp documentation](https://robloach.github.io/raylib-cpp/index.html) for details on the entire API.
 
 ### Constructors
 
@@ -82,10 +82,22 @@ If a method's name contains an object's name, it is removed from its name to sho
 
 ``` cpp
 // raylib
-DrawTexture(texture, 50, 50, RAYWHITE);
+DrawTexture(texture, 50, 50, WHITE);
 
 // raylib-cpp
-texture.Draw(50, 50, RAYWHITE);
+texture.Draw(50, 50, WHITE);
+```
+
+### Optional Parameters
+
+Many methods have optional parameters with sane defaults.
+
+``` cpp
+// raylib
+DrawTexture(texture, 50, 50, WHITE);
+
+// raylib-cpp
+texture.Draw(50, 50); // WHITE is provided as the default tint.
 ```
 
 ### Object Destructors
