@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/core_random_values.dir/core/core_random_values.o  -o core_random_values  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/models_billboard.dir/models/models_billboard.o  -o models_billboard  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 

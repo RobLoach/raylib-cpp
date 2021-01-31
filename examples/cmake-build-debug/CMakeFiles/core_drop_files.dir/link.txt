@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/core_drop_files.dir/core/core_drop_files.o  -o core_drop_files  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 

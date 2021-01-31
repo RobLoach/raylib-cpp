@@ -69,7 +69,7 @@ class Physics {
     }
 
     inline Physics& RunStep() {
-        ::RunPhysicsStep();
+        ::UpdatePhysics();
         return *this;
     }
 
@@ -78,9 +78,9 @@ class Physics {
         return *this;
     }
 
-    inline bool IsEnabled() const {
-        return ::IsPhysicsEnabled();
-    }
+    //inline bool IsEnabled() const {
+    //    return ::IsPhysicsEnabled();
+    //}
 
     inline Physics& SetGravity(float x, float y) {
         ::SetPhysicsGravity(x, y);

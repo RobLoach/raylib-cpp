@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/textures_bunnymark.dir/textures/textures_bunnymark.o  -o textures_bunnymark  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 

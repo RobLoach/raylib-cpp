@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/text_font_loading.dir/text/text_font_loading.o  -o text_font_loading  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 

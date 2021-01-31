@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/shapes_logo_raylib.dir/shapes/shapes_logo_raylib.o  -o shapes_logo_raylib  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 

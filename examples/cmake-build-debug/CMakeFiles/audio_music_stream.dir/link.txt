@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/audio_music_stream.dir/audio/audio_music_stream.o  -o audio_music_stream  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 

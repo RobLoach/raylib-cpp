@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/run/media/comlarsic/9CC2-5E4B/Projects/Forks/raylib-cpp/examples/physics/physics_demo.cpp
+raylib-cpp.hpp
+/run/media/comlarsic/9CC2-5E4B/Projects/Forks/raylib-cpp/examples/physics/raylib-cpp.hpp
+Physics.hpp
+/run/media/comlarsic/9CC2-5E4B/Projects/Forks/raylib-cpp/examples/physics/Physics.hpp
+

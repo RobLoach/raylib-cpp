@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/core_basic_window.dir/core/core_basic_window.o  -o core_basic_window  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 

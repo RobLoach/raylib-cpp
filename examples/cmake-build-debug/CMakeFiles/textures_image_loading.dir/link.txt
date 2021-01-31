@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/textures_image_loading.dir/textures/textures_image_loading.o  -o textures_image_loading  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 

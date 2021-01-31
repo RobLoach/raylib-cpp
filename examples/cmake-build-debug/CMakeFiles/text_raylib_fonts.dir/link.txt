@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/text_raylib_fonts.dir/text/text_raylib_fonts.o  -o text_raylib_fonts  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 
