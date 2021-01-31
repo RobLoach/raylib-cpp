@@ -69,7 +69,7 @@ class Physics {
     }
 
     inline Physics& RunStep() {
-        ::UpdatePhysics();
+        ::UpdatePhysicsStep();
         return *this;
     }
 
