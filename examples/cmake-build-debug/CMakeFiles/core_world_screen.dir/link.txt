@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/core_world_screen.dir/core/core_world_screen.o  -o core_world_screen  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/core_world_screen.dir/core/core_world_screen.o  -o core_world_screen   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib -lraylib-cpp /usr/local/lib/libraylib.so 

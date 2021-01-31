@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/shapes_collision_area.dir/shapes/shapes_collision_area.o  -o shapes_collision_area  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/shapes_collision_area.dir/shapes/shapes_collision_area.o  -o shapes_collision_area   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib -lraylib-cpp /usr/local/lib/libraylib.so 

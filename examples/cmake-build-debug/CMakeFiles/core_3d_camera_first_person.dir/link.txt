@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/core_3d_camera_first_person.dir/core/core_3d_camera_first_person.o  -o core_3d_camera_first_person  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/core_3d_camera_first_person.dir/core/core_3d_camera_first_person.o  -o core_3d_camera_first_person   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib -lraylib-cpp /usr/local/lib/libraylib.so 

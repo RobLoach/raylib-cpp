@@ -23,5 +23,30 @@ CMake Warning (dev) in CMakeLists.txt:
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
 -- Configuring done
+CMake Warning (dev) at CMakeLists.txt:31 (add_executable):
+  Policy CMP0003 should be set before this line.  Add code such as
+
+    if(COMMAND cmake_policy)
+      cmake_policy(SET CMP0003 NEW)
+    endif(COMMAND cmake_policy)
+
+  as early as possible but after the most recent call to
+  cmake_minimum_required or cmake_policy(VERSION).  This warning appears
+  because target "textures_image_loading" links to some libraries for which
+  the linker must search:
+
+    raylib-cpp
+
+  and other libraries with known full path:
+
+    /usr/local/lib/libraylib.so
+
+  CMake is adding directories in the second list to the linker search path in
+  case they are needed to find libraries from the first list (for backwards
+  compatibility with CMake 2.4).  Set policy CMP0003 to OLD or NEW to enable
+  or disable this behavior explicitly.  Run "cmake --help-policy CMP0003" for
+  more information.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
 -- Generating done
 -- Build files have been written to: /run/media/comlarsic/9CC2-5E4B/Projects/Forks/raylib-cpp/examples/cmake-build-debug

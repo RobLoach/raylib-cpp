@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/models_first_person_maze.dir/models/models_first_person_maze.o  -o models_first_person_maze  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/models_first_person_maze.dir/models/models_first_person_maze.o  -o models_first_person_maze   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib -lraylib-cpp /usr/local/lib/libraylib.so 

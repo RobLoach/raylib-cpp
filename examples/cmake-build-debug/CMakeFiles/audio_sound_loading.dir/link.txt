@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/audio_sound_loading.dir/audio/audio_sound_loading.o  -o audio_sound_loading  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/audio_sound_loading.dir/audio/audio_sound_loading.o  -o audio_sound_loading   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib -lraylib-cpp /usr/local/lib/libraylib.so 
