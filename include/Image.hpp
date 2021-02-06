@@ -533,6 +533,20 @@ class Image : public ::Image {
     }
 
     /**
+     * Unload color data loaded with LoadImageColors()
+     */
+    inline void UnloadColors(::Color* colors) {
+        ::UnloadImageColors(colors);
+    }
+
+    /**
+     * Unload colors palette loaded with LoadImagePalette()
+     */
+    inline void UnloadPalette(::Color* colors) {
+        ::UnloadImagePalette(colors);
+    }
+
+    /**
      * Load texture from image data
      */
     inline ::Texture2D LoadTexture() {

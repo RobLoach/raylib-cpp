@@ -150,6 +150,13 @@ class Mesh : public ::Mesh {
     }
 
     /**
+     * Upload mesh vertex data to GPU (VRAM)
+     */
+    inline void Upload() {
+        ::UploadMesh(this);
+    }
+
+    /**
      * Export mesh data to file
      */
     inline bool Export(const std::string& fileName) {
@@ -191,14 +198,6 @@ class Mesh : public ::Mesh {
      */
     inline Mesh& Binormals() {
         ::MeshBinormals(this);
-        return *this;
-    }
-
-    /**
-     * Smooth (average) vertex normals
-     */
-    inline Mesh& NormalsSmooth() {
-        ::MeshNormalsSmooth(this);
         return *this;
     }
 
