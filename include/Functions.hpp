@@ -42,7 +42,7 @@ namespace raylib {
 /**
  * Initialize window and OpenGL context
  */
-RLCPPAPI inline void InitWindow(int width, int height, const std::string& title = "") {
+RLCPPAPI inline void InitWindow(int width, int height, const std::string& title = "raylib") {
     ::InitWindow(width, height, title.c_str());
 }
 
