@@ -35,14 +35,23 @@ namespace raylib {
  */
 class Mouse {
  public:
+    /**
+     * Detect if a mouse button has been pressed once
+     */
     static inline bool IsButtonPressed(int button) {
         return ::IsMouseButtonPressed(button);
     }
 
+    /**
+     * Detect if a mouse button is being pressed
+     */
     static inline bool IsButtonDown(int button) {
         return ::IsMouseButtonDown(button);
     }
 
+    /**
+     * Detect if a mouse button has been released once
+     */
     static inline bool IsButtonReleased(int button) {
         return ::IsMouseButtonReleased(button);
     }

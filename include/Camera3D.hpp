@@ -146,6 +146,9 @@ class Camera3D : public ::Camera3D {
         return ::GetWorldToScreen(position, *this);
     }
 
+    /**
+     * Draw a billboard texture.
+     */
     inline Camera3D& DrawBillboard(
             const ::Texture2D& texture,
             ::Vector3 center,
@@ -155,6 +158,9 @@ class Camera3D : public ::Camera3D {
         return *this;
     }
 
+    /**
+     * Draw a billboard texture defined by source.
+     */
     inline Camera3D& DrawBillboard(
             const ::Texture2D& texture,
             ::Rectangle sourceRec,

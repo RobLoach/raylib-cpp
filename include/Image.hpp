@@ -151,18 +151,30 @@ class Image : public ::Image {
         return *this;
     }
 
+    /**
+     * Load image from file into CPU memory (RAM)
+     */
     void Load(const std::string& fileName) {
         set(::LoadImage(fileName.c_str()));
     }
 
+    /**
+     * Load image from RAW file data.
+     */
     void LoadRaw(const std::string& fileName, int width, int height, int format, int headerSize) {
         set(::LoadImageRaw(fileName.c_str(), width, height, format, headerSize));
     }
 
+    /**
+     * Load image sequence from file (frames appended to image.data).
+     */
     void LoadAnim(const std::string& fileName, int* frames) {
         set(::LoadImageAnim(fileName.c_str(), frames));
     }
 
+    /**
+     * Load image from memory buffer, fileType refers to extension: i.e. "png".
+     */
     void LoadFromMemory(
             const std::string& fileType,
             const unsigned char *fileData,
@@ -170,6 +182,9 @@ class Image : public ::Image {
         set(::LoadImageFromMemory(fileType.c_str(), fileData, dataSize));
     }
 
+    /**
+     * Unload image from CPU memory (RAM)
+     */
     inline void Unload() {
         if (data != NULL) {
             ::UnloadImage(*this);
