@@ -59,6 +59,9 @@ class Gamepad {
         return ::IsGamepadAvailable(number);
     }
 
+    /**
+     * Detect if a gamepad is available
+     */
     static inline bool IsAvailable(int number) {
         return ::IsGamepadAvailable(number);
     }

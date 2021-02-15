@@ -79,6 +79,9 @@ class Font : public ::Font {
         return *this;
     }
 
+    /**
+     * Draw text using font and additional parameters.
+     */
     inline Font& DrawText(const std::string& text, ::Vector2 position, float fontSize,
             float spacing, ::Color tint = WHITE) {
         ::DrawTextEx(*this, text.c_str(), position,  fontSize,  spacing,  tint);
@@ -91,6 +94,9 @@ class Font : public ::Font {
         return *this;
     }
 
+    /**
+     * Draw text using font inside rectangle limits with support for text selection.
+     */
     inline Font& DrawText(const std::string& text, ::Rectangle rec, float fontSize, float spacing,
             bool wordWrap, ::Color tint, int selectStart, int selectLength, ::Color selectText,
             ::Color selectBack) {

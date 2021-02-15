@@ -51,10 +51,16 @@ class Shader : public ::Shader {
         set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));
     }
 
+    /**
+     * Load shader from files and bind default locations.
+     */
     static ::Shader Load(const std::string& vsFileName, const std::string& fsFileName) {
         return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());
     }
 
+    /**
+     * Load shader from code strings and bind default locations.
+     */
     static ::Shader LoadCode(const std::string& vsCode, const std::string& fsCode) {
         return ::LoadShaderCode(vsCode.c_str(), fsCode.c_str());
     }
@@ -75,11 +81,17 @@ class Shader : public ::Shader {
         ::UnloadShader(*this);
     }
 
+    /**
+     * Begin custom shader drawing.
+     */
     inline Shader& BeginMode() {
         ::BeginShaderMode(*this);
         return *this;
     }
 
+    /**
+     * End custom shader drawing (use default shader).
+     */
     inline Shader& EndMode() {
         ::EndShaderMode();
         return *this;
@@ -131,6 +143,8 @@ class Shader : public ::Shader {
 
     /**
      * Set shader uniform value for texture
+     *
+     * @see SetShaderValueTexture()
      */
     inline Shader& SetValue(int uniformLoc, const ::Texture2D& texture) {
         ::SetShaderValueTexture(*this, uniformLoc, texture);

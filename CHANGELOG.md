@@ -7,7 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [x.x.x] - Unreleased
 ### Added
 - Added a C++ version of raylib's loading thread example (by (@pkeir)[https://github.com/pkeir])
-
 ### Fixed
 - Made the global wrapped functions static to avoid redeclaration
 
