@@ -9,9 +9,11 @@ int main() {
     Player player;
     while (!window.ShouldClose()) {
         window.BeginDrawing();
-        ClearBackground(SKYBLUE);
-        player.Update();
-        player.Draw();
+        {
+            ClearBackground(SKYBLUE);
+            player.Update();
+            player.Draw();
+        }
         window.EndDrawing();
     }
 

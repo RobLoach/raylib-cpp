@@ -11,8 +11,8 @@ install(FILES
     Camera2D.hpp
     Camera3D.hpp
     Color.hpp
-    Functions.hpp
     Font.hpp
+    Functions.hpp
     Gamepad.hpp
     Image.hpp
     Material.hpp
@@ -25,14 +25,15 @@ install(FILES
     Physics.hpp
     RayHitInfo.hpp
     Ray.hpp
-    raylib.hpp
     raylib-cpp.hpp
     raylib-cpp-utils.hpp
+    raylib.hpp
     raymath.hpp
     Rectangle.hpp
     RenderTexture.hpp
     Shader.hpp
     Sound.hpp
+    Text.hpp
     Texture.hpp
     Vector2.hpp
     Vector3.hpp

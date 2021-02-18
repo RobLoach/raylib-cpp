@@ -33,6 +33,9 @@
 #include "./Material.hpp"
 
 namespace raylib {
+/**
+ * Texture type
+ */
 class Texture : public ::Texture {
  public:
     Texture(const ::Texture& texture) {

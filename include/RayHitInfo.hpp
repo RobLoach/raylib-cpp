@@ -46,6 +46,13 @@ class RayHitInfo : public ::RayHitInfo {
     }
 
     /**
+     * Get collision info between ray and mesh
+     */
+    RayHitInfo(const ::Ray& ray, const ::Mesh& mesh, const ::Matrix& transform) {
+        set(::GetCollisionRayMesh(ray, mesh, transform));
+    }
+
+    /**
      * Get collision info between ray and model
      */
     RayHitInfo(const ::Ray& ray, const ::Model& model) {

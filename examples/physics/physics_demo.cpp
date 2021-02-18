@@ -92,7 +92,7 @@ int main(void)
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-
+        {
             ClearBackground(BLACK);
 
             DrawFPS(screenWidth - 90, screenHeight - 30);
@@ -126,7 +126,7 @@ int main(void)
 
             DrawText("Physac", logoX, logoY, 30, WHITE);
             DrawText("Powered by", logoX + 50, logoY - 7, 10, WHITE);
-
+        }
         EndDrawing();
         //----------------------------------------------------------------------------------
     }

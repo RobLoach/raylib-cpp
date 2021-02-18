@@ -42,13 +42,13 @@ int main() {
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-
+        {
             background.ClearBackground();
 
             ballPosition.DrawCircle(40, ballColor);
 
             textColor.DrawText("move ball with mouse and click mouse button to change color", 10, 10, 20);
-
+        }
         EndDrawing();
         //----------------------------------------------------------------------------------
     }

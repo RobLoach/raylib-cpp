@@ -35,7 +35,7 @@ int main() {
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-
+        {
             background.ClearBackground();
 
             foreground.DrawRectangle(screenWidth/2 - 128, screenHeight/2 - 128, 256, 256);
@@ -44,7 +44,7 @@ int main() {
             foreground.DrawText("cpp", screenWidth/2 - 74, screenHeight/2 + 54, 50);
 
             DrawText("this is NOT a texture!", 350, 370, 10, GRAY);
-
+        }
         EndDrawing();
         //----------------------------------------------------------------------------------
     }

@@ -47,19 +47,19 @@ int main() {
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
+        {
 
             ClearBackground(RAYWHITE);
 
             camera.BeginMode();
-
+            {
                 DrawGrid(10, 1.0f);        // Draw a grid
-
                 camera.DrawBillboard(bill, billPosition, 2.0f, WHITE);
-
+            }
             camera.EndMode();
 
             DrawFPS(10, 10);
-
+        }
         EndDrawing();
         //----------------------------------------------------------------------------------
     }

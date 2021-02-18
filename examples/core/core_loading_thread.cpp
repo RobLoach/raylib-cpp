@@ -90,6 +90,7 @@ int main(void)
         // Draw
         //----------------------------------------------------------------------
         BeginDrawing();
+        {
 
             ClearBackground(RAYWHITE);
 
@@ -110,12 +111,10 @@ int main(void)
                     DrawRectangle(150, 200, 500, 60, LIME);
                     DrawText("DATA LOADED!", 250, 210, 40, GREEN);
                     break;
-
-                default:
-                    break;
             }
 
             DrawRectangleLines(150, 200, 500, 60, DARKGRAY);
+        }
 
         EndDrawing();
         //----------------------------------------------------------------------

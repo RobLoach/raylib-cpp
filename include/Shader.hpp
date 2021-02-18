@@ -99,6 +99,8 @@ class Shader : public ::Shader {
 
     /**
      * Get shader uniform location
+     *
+     * @see GetShaderLocation()
      */
     inline int GetLocation(const std::string& uniformName) const {
         return ::GetShaderLocation(*this, uniformName.c_str());
@@ -106,6 +108,8 @@ class Shader : public ::Shader {
 
     /**
      * Get shader attribute location
+     *
+     * @see GetShaderLocationAttrib()
      */
     inline int GetLocationAttrib(const std::string& attribName) const {
         return ::GetShaderLocationAttrib(*this, attribName.c_str());

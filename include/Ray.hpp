@@ -47,7 +47,7 @@ class Ray : public ::Ray {
     }
 
     Ray(::Vector2 mousePosition, ::Camera camera) {
-        set(GetMouseRay(mousePosition, camera));
+        set(::GetMouseRay(mousePosition, camera));
     }
 
     Ray& operator=(const ::Ray& ray) {
@@ -91,21 +91,21 @@ class Ray : public ::Ray {
     /**
      * Get collision info between ray and model
      */
-    inline RayHitInfo GetCollision(const ::Model& model) {
+    inline RayHitInfo GetCollision(const ::Model& model) const {
         return GetCollisionRayModel(*this, model);
     }
 
     /**
      * Get collision info between ray and triangle
      */
-    inline RayHitInfo GetCollisionTriangle(::Vector3 p1, ::Vector3 p2, ::Vector3 p3) {
+    inline RayHitInfo GetCollisionTriangle(::Vector3 p1, ::Vector3 p2, ::Vector3 p3) const {
         return GetCollisionRayTriangle(*this, p1, p2, p3);
     }
 
     /**
      * Get collision info between ray and ground plane (Y-normal plane)
      */
-    inline RayHitInfo GetCollisionGround(float groundHeight) {
+    inline RayHitInfo GetCollisionGround(float groundHeight) const {
         return GetCollisionRayGround(*this, groundHeight);
     }
 

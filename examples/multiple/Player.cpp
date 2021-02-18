@@ -4,8 +4,8 @@
 
 Player::Player() {
     position = Rectangle{
-        GetScreenWidth() / 2 - 50,
-        GetScreenHeight() / 2 - 50,
+        GetScreenWidth() / 2.0f - 50,
+        GetScreenHeight() / 2.0f - 50,
         100,
         100
     };

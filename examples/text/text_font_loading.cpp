@@ -59,6 +59,7 @@ int main() {
         // Draw
         //----------------------------------------------------------------------------------
         window.BeginDrawing();
+        {
 
             ClearBackground(RAYWHITE);
 
@@ -74,8 +75,8 @@ int main() {
                 fontTtf.DrawText(msg, (Vector2){ 20.0f, 100.0f }, fontTtf.baseSize, 2, LIME);
                 DrawText("Using TTF font generated", 20, GetScreenHeight() - 30, 20, GRAY);
             }
-
-        EndDrawing();
+        }
+        window.EndDrawing();
         //----------------------------------------------------------------------------------
     }
 

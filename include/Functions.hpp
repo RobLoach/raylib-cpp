@@ -30,10 +30,10 @@
 
 #include "./raylib.hpp"
 
-#ifndef RLCPPAPI
 /**
  * Allow changing the declare type for all raylib-cpp global functions. Defaults to static.
  */
+#ifndef RLCPPAPI
 #define RLCPPAPI static
 #endif
 
@@ -204,39 +204,63 @@ RLCPPAPI inline void OpenURL(const std::string& url) {
     return ::OpenURL(url.c_str());
 }
 
+/**
+ * Check gamepad name (if available)
+ */
 RLCPPAPI inline bool IsGamepadName(int gamepad, const std::string& name) {
     return ::IsGamepadName(gamepad, name.c_str());
 }
 
+/**
+ * Update camera depending on selected mode
+ */
 RLCPPAPI inline void UpdateCamera(const ::Camera& camera) {
     ::Camera* cameraPointer = (::Camera*)&camera;
     ::UpdateCamera(cameraPointer);
 }
 
+/**
+ * Load an image.
+ */
 RLCPPAPI inline ::Image LoadImage(const std::string& fileName) {
     return ::LoadImage(fileName.c_str());
 }
 
+/**
+ * Load an image from RAW file data
+ */
 RLCPPAPI inline ::Image LoadImageRaw(const std::string& fileName,
         int width, int height,
         int format, int headerSize) {
     return ::LoadImageRaw(fileName.c_str(), width, height, format, headerSize);
 }
 
+/**
+ * Load animated image data
+ */
 RLCPPAPI inline ::Image LoadImageAnim(const std::string& fileName, int *frames) {
     return ::LoadImageAnim(fileName.c_str(), frames);
 }
 
+/**
+ * Load image from memory buffer, fileType refers to extension: i.e. "png"
+ */
 RLCPPAPI inline ::Image LoadImageFromMemory(const std::string& fileType,
         const unsigned char *fileData,
         int dataSize) {
     return ::LoadImageFromMemory(fileType.c_str(), fileData, dataSize);
 }
 
+/**
+ * Export image data to file
+ */
 RLCPPAPI inline bool ExportImage(const Image& image, const std::string& fileName) {
     return ::ExportImage(image, fileName.c_str());
 }
 
+/**
+ * Export image as code file (.h) defining an array of bytes
+ */
 RLCPPAPI inline bool ExportImageAsCode(const Image& image, const std::string& fileName) {
     return ::ExportImageAsCode(image, fileName.c_str());
 }

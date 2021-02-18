@@ -1,6 +1,6 @@
 {
   "name": "raylib-cpp",
-  "version": "3.5.0-beta2",
+  "version": "3.5.0-beta3",
   "description": "raylib-cpp: C++ Object-Oriented Wrapper for raylib",
   "homepage": "https://github.com/robloach/raylib-cpp",
   "bugs": {
@@ -51,6 +51,7 @@
     "include/RenderTexture2D.hpp",
     "include/Shader.hpp",
     "include/Sound.hpp",
+    "include/Text.hpp",
     "include/Texture2D.hpp",
     "include/Vector2.hpp",
     "include/Vector3.hpp",

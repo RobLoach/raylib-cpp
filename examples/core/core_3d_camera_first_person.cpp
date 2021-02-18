@@ -44,11 +44,11 @@ int main() {
 
     camera.SetMode(CAMERA_FIRST_PERSON); // Set a first person camera mode
 
-    SetTargetFPS(60);                           // Set our game to run at 60 frames-per-second
+    SetTargetFPS(60);                    // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())                // Detect window close button or ESC key
+    while (!window.ShouldClose())        // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------
@@ -58,11 +58,11 @@ int main() {
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-
+        {
             background.ClearBackground();
 
             camera.BeginMode();
-
+            {
                 DrawPlane(Vector3{ 0.0f, 0.0f, 0.0f }, Vector2{ 32.0f, 32.0f }, LIGHTGRAY); // Draw ground
                 DrawCube(Vector3{ -16.0f, 2.5f, 0.0f }, 1.0f, 5.0f, 32.0f, BLUE);     // Draw a blue wall
                 DrawCube(Vector3{ 16.0f, 2.5f, 0.0f }, 1.0f, 5.0f, 32.0f, LIME);      // Draw a green wall
@@ -74,16 +74,16 @@ int main() {
                     positions[i].DrawCube(2.0f, heights[i], 2.0f, colors[i]);
                     positions[i].DrawCubeWires(2.0f, heights[i], 2.0f, MAROON);
                 }
-
+            }
             camera.EndMode();
 
-            DrawRectangle( 10, 10, 220, 70, Fade(SKYBLUE, 0.5f));
+            DrawRectangle( 10, 10, 220, 70, raylib::Color::SkyBlue().Fade(0.5f));
             DrawRectangleLines( 10, 10, 220, 70, BLUE);
 
             DrawText("First person camera default controls:", 20, 20, 10, BLACK);
             DrawText("- Move with keys: W, A, S, D", 40, 40, 10, DARKGRAY);
             DrawText("- Mouse move to look around", 40, 60, 10, DARKGRAY);
-
+        }
         EndDrawing();
         //----------------------------------------------------------------------------------
     }
