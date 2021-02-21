@@ -22,6 +22,7 @@ install(FILES
     Model.hpp
     Mouse.hpp
     Music.hpp
+    physac.hpp
     Physics.hpp
     RayHitInfo.hpp
     Ray.hpp

@@ -39,7 +39,7 @@ int main() {
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-
+        {
             ClearBackground(RAYWHITE);
 
             // Check if there are files to process.
@@ -62,7 +62,7 @@ int main() {
 
                 DrawText("Drop new files...", 100, 110 + 40 * droppedFiles.size(), 20, DARKGRAY);
             }
-
+        }
         EndDrawing();
         //----------------------------------------------------------------------------------
     }
