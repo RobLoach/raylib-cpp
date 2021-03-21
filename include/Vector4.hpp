@@ -148,8 +148,8 @@ class Vector4 : public ::Vector4 {
         return ::QuaternionFromAxisAngle(axis, angle);
     }
 
-    static Vector4 FromEuler(const float roll, const float pitch, const float yaw) {
-        return ::QuaternionFromEuler(roll, pitch, yaw);
+    static Vector4 FromEuler(const float yaw, const float pitch, const float roll) {
+        return ::QuaternionFromEuler(yaw, pitch, roll);
     }
 
     static Vector4 FromEuler(const ::Vector3& vector3) {

@@ -39,12 +39,17 @@ class Texture : public ::Texture {
         set(texture);
     }
 
-    Texture() {
-        set(::GetTextureDefault());
-    }
-
     Texture(const ::Image& image) {
         LoadFromImage(image);
+    }
+
+    /**
+     * Load cubemap from image, multiple image cubemap layouts supported.
+     *
+     * @see LoadTextureCubemap()
+     */
+    Texture(const ::Image& image, int layout) {
+        LoadCubemap(image, layout);
     }
 
     /**
@@ -86,7 +91,7 @@ class Texture : public ::Texture {
     /**
      * Load cubemap from image, multiple image cubemap layouts supported
      */
-    void LoadTextureCubemap(const ::Image& image, int layoutType) {
+    void LoadCubemap(const ::Image& image, int layoutType) {
         set(::LoadTextureCubemap(image, layoutType));
     }
 
@@ -233,14 +238,6 @@ class Texture : public ::Texture {
      */
     static int GetPixelDataSize(int width, int height, int format) {
         return ::GetPixelDataSize(width, height, format);
-    }
-
-    /**
-     * Define default texture used to draw shapes
-     */
-    inline Texture& SetShapes(::Rectangle source) {
-        ::SetShapesTexture(*this, source);
-        return *this;
     }
 
  protected:

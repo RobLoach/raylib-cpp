@@ -31,20 +31,15 @@
 namespace raylib {
 class VrSimulator {
  public:
-    VrSimulator() {
-        Init();
-    }
-
-    VrSimulator(::VrDeviceInfo info, ::Shader distortion) {
-        Init();
-        Set(info, distortion);
+    VrSimulator(::VrDeviceInfo& info) {
+        Init(info);
     }
 
     /**
      * Init VR simulator for selected device parameters
      */
-    inline void Init() {
-        InitVrSimulator();
+    inline void Init(::VrDeviceInfo info) {
+        InitVrSimulator(info);
     }
 
     /**
@@ -79,26 +74,10 @@ class VrSimulator {
     }
 
     /**
-     * Set stereo rendering configuration parameters
-     */
-    inline VrSimulator& Set(::VrDeviceInfo info, ::Shader distortion) {
-        ::SetVrConfiguration(info, distortion);
-        return *this;
-    }
-
-    /**
-     * Enable/Disable VR experience
-     */
-    inline VrSimulator& Toggle() {
-        ::ToggleVrMode();
-        return *this;
-    }
-
-    /**
      * Begin VR simulator stereo rendering
      */
-    inline VrSimulator& BeginDrawing() {
-        ::BeginVrDrawing();
+    inline VrSimulator& BeginDrawing(::RenderTexture2D& target) {
+        ::BeginVrDrawing(target);
         return *this;
     }
 
@@ -115,6 +94,13 @@ class VrSimulator {
      */
     inline void Close() {
         ::CloseVrSimulator();
+    }
+
+    /**
+     * Get stereo rendering configuration parameters
+     */
+    inline VrStereoConfig GetConfig(VrDeviceInfo& device) {
+        return GetVrConfig(device);
     }
 };
 }  // namespace raylib
