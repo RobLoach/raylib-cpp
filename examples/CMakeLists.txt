@@ -38,5 +38,9 @@ foreach(example_source ${example_sources})
 
 endforeach()
 
+# Multiple Files Example
+add_executable("multiple" multiple/main.cpp multiple/Player.cpp)
+target_link_libraries("multiple" PUBLIC raylib-cpp raylib)
+
 # Copy all the resources
 file(COPY ${example_resources} DESTINATION "resources/")

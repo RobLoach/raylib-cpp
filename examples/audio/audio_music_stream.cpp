@@ -32,7 +32,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())   // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ int main() {
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-
+        {
             ClearBackground(RAYWHITE);
 
             DrawText("MUSIC SHOULD BE PLAYING!", 255, 150, 20, LIGHTGRAY);
@@ -74,7 +74,7 @@ int main() {
 
             DrawText("PRESS SPACE TO RESTART MUSIC", 215, 250, 20, LIGHTGRAY);
             DrawText("PRESS P TO PAUSE/RESUME MUSIC", 208, 280, 20, LIGHTGRAY);
-
+        }
         EndDrawing();
         //----------------------------------------------------------------------------------
     }

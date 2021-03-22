@@ -90,7 +90,7 @@ int main(void)
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-
+        {
             ClearBackground(RAYWHITE);
 
             for (Bunny& bunny: bunnies) {
@@ -108,7 +108,7 @@ int main(void)
             DrawText(FormatText("batched draw calls: %i", 1 + bunnies.size()/MAX_BATCH_ELEMENTS), 320, 10, 20, MAROON);
 
             DrawFPS(10, 10);
-
+        }
         EndDrawing();
         //----------------------------------------------------------------------------------
     }

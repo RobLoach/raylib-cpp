@@ -43,11 +43,10 @@ int main() {
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-
-        ClearBackground(RAYWHITE);
-
-        textColor.DrawText("Congrats! You created your first window!", 190, 200, 20);
-
+        {
+            ClearBackground(RAYWHITE);
+            textColor.DrawText("Congrats! You created your first window!", 190, 200, 20);
+        }
         EndDrawing();
         //----------------------------------------------------------------------------------
     }

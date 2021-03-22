@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['takescreenshot_1158',['TakeScreenshot',['../namespaceraylib.html#a7cfdf3250ce16e985c6eca15b76ec032',1,'raylib']]],
+  ['takescreenshot_1158',['TakeScreenshot',['../namespaceraylib.html#a85b0e8952631936155bae8979cbf2aed',1,'raylib']]],
   ['tangents_1159',['Tangents',['../classraylib_1_1_mesh.html#a4873780eee85a182d90c25eb100199ae',1,'raylib::Mesh']]],
   ['text_1160',['Text',['../classraylib_1_1_image.html#a91744abc374f20b21f66549fcb4d5692',1,'raylib::Image::Text(const std::string &amp;text, int fontSize, ::Color color={255, 255, 255, 255})'],['../classraylib_1_1_image.html#a31c3f86d7ab5dfbd618202a0a9c6156b',1,'raylib::Image::Text(const ::Font &amp;font, const std::string &amp;text, float fontSize, float spacing, ::Color tint={255, 255, 255, 255})']]],
   ['texture_1161',['Texture',['../classraylib_1_1_texture.html#a26856c78320052557b234ba318a408db',1,'raylib::Texture::Texture(const ::Texture &amp;texture)'],['../classraylib_1_1_texture.html#a78cb97ab050cbcd480d529c2fa9ce2b5',1,'raylib::Texture::Texture()'],['../classraylib_1_1_texture.html#a40ea1411f0b39a78d36fc1a5a08a8fc3',1,'raylib::Texture::Texture(const ::Image &amp;image)'],['../classraylib_1_1_texture.html#aa2697fd78772ce720f8dab323f9be97a',1,'raylib::Texture::Texture(const std::string &amp;fileName)']]],

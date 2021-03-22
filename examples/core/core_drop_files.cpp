@@ -39,7 +39,7 @@ int main() {
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-
+        {
             ClearBackground(RAYWHITE);
 
             // Check if there are files to process.
@@ -51,18 +51,18 @@ int main() {
 
                 // Iterate through all the dropped files.
                 for (int i = 0; i < droppedFiles.size(); i++) {
-                    if (i%2 == 0)
+                    if (i % 2 == 0)
                         DrawRectangle(0, 85 + 40*i, screenWidth, 40, Fade(LIGHTGRAY, 0.5f));
                     else
                         DrawRectangle(0, 85 + 40*i, screenWidth, 40, Fade(LIGHTGRAY, 0.3f));
 
                     // Display the path to the dropped file.
-                    DrawText(droppedFiles[i].c_str(), 120, 100 + 40*i, 10, GRAY);
+                    DrawText(droppedFiles[i].c_str(), 120, 100 + 40 * i, 10, GRAY);
                 }
 
                 DrawText("Drop new files...", 100, 110 + 40 * droppedFiles.size(), 20, DARKGRAY);
             }
-
+        }
         EndDrawing();
         //----------------------------------------------------------------------------------
     }

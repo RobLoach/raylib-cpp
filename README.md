@@ -1,8 +1,8 @@
 ![raylib-cpp Logo](projects/Doxygen/raylib-cpp_256x256.png)
 
-# raylib-cpp [![Tests](https://github.com/RobLoach/raylib-cpp/workflows/Tests/badge.svg)](https://github.com/RobLoach/raylib-cpp/actions?query=workflow%3ATests+branch%3Amaster)
+# raylib-cpp [![Tests](https://github.com/RobLoach/raylib-cpp/workflows/Tests/badge.svg)](https://github.com/RobLoach/raylib-cpp/actions?query=workflow%3ATests+branch%3Amaster) [![License](https://img.shields.io/badge/license-zlib%2Flibpng-blue.svg)](LICENSE)
 
-*raylib-cpp* is a C++ wrapper library for [raylib](https://www.raylib.com/), a simple and easy-to-use library to enjoy videogames programming. This C++ header provides object-oriented wrappers around raylib's struct interfaces.
+[raylib-cpp](https://github.com/robloach/raylib-cpp) is a C++ wrapper library for [raylib](https://www.raylib.com), a simple and easy-to-use library to enjoy videogames programming. This C++ header provides object-oriented wrappers around *raylib*'s struct interfaces.
 
 ## Example
 
@@ -210,6 +210,22 @@ for (auto& file : files) {
 }
 ```
 
+### String Functions
+
+Many of the raylib functions have `std::string`-related functions to allow calling them directly with `std::string`s to save having to use the `.c_str()` method.
+
+``` cpp
+// raylib
+const char* url = "https://raylib.com";
+OpenURL(url);
+
+// raylib-cpp
+std::string url = "https://raylib.com";
+raylib::OpenURL(url);
+OpenURL(url.c_str()); // Alternatively
+```
+
+
 ### RayMath
 
 The [raymath](https://github.com/raysan5/raylib/blob/master/src/raymath.h) methods are included.
@@ -283,3 +299,7 @@ cpplint --recursive include
 ### Defines
 
 - `RAYLIB_CPP_NO_MATH` - When set, will skip adding the `raymath.h` integrations
+
+## License
+
+raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified, BSD-like license that allows static linking with closed source software. Check [LICENSE](LICENSE) for further details.

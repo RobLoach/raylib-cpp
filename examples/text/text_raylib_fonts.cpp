@@ -82,7 +82,7 @@ int main() {
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-
+        {
             background.ClearBackground();
 
             textColor.DrawText("free fonts included with raylib", 250, 20, 20);
@@ -92,7 +92,7 @@ int main() {
             {
                 fonts[i].DrawText(messages[i], positions[i], fonts[i].baseSize*2, spacings[i], colors[i]);
             }
-
+        }
         EndDrawing();
         //----------------------------------------------------------------------------------
     }

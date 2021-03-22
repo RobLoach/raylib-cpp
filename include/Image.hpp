@@ -1,27 +1,3 @@
-/*
-*   LICENSE: zlib/libpng
-*
-*   raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified,
-*   BSD-like license that allows static linking with closed source software:
-*
-*   Copyright (c) 2020 Rob Loach (@RobLoach)
-*
-*   This software is provided "as-is", without any express or implied warranty. In no event
-*   will the authors be held liable for any damages arising from the use of this software.
-*
-*   Permission is granted to anyone to use this software for any purpose, including commercial
-*   applications, and to alter it and redistribute it freely, subject to the following restrictions:
-*
-*     1. The origin of this software must not be misrepresented; you must not claim that you
-*     wrote the original software. If you use this software in a product, an acknowledgment
-*     in the product documentation would be appreciated but is not required.
-*
-*     2. Altered source versions must be plainly marked as such, and must not be misrepresented
-*     as being the original software.
-*
-*     3. This notice may not be removed or altered from any source distribution.
-*/
-
 #ifndef RAYLIB_CPP_INCLUDE_IMAGE_HPP_
 #define RAYLIB_CPP_INCLUDE_IMAGE_HPP_
 
@@ -31,6 +7,11 @@
 #include "./raylib-cpp-utils.hpp"
 
 namespace raylib {
+/**
+ * Image type, bpp always RGBA (32bit)
+ *
+ * Data stored in CPU memory (RAM)
+ */
 class Image : public ::Image {
  public:
     Image(const ::Image& image) {
@@ -151,18 +132,30 @@ class Image : public ::Image {
         return *this;
     }
 
+    /**
+     * Load image from file into CPU memory (RAM)
+     */
     void Load(const std::string& fileName) {
         set(::LoadImage(fileName.c_str()));
     }
 
+    /**
+     * Load image from RAW file data.
+     */
     void LoadRaw(const std::string& fileName, int width, int height, int format, int headerSize) {
         set(::LoadImageRaw(fileName.c_str(), width, height, format, headerSize));
     }
 
+    /**
+     * Load image sequence from file (frames appended to image.data).
+     */
     void LoadAnim(const std::string& fileName, int* frames) {
         set(::LoadImageAnim(fileName.c_str(), frames));
     }
 
+    /**
+     * Load image from memory buffer, fileType refers to extension: i.e. "png".
+     */
     void LoadFromMemory(
             const std::string& fileType,
             const unsigned char *fileData,
@@ -170,6 +163,9 @@ class Image : public ::Image {
         set(::LoadImageFromMemory(fileType.c_str(), fileData, dataSize));
     }
 
+    /**
+     * Unload image from CPU memory (RAM)
+     */
     inline void Unload() {
         if (data != NULL) {
             ::UnloadImage(*this);
@@ -560,7 +556,7 @@ class Image : public ::Image {
         return LoadTexture();
     }
 
- protected:
+ private:
     inline void set(const ::Image& image) {
         data = image.data;
         width = image.width;

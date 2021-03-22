@@ -30,7 +30,6 @@ int main(void)
     raylib::Rectangle boxB(GetScreenWidth()/2 - 30, GetScreenHeight()/2 - 30, 60, 60);
 
     raylib::Rectangle boxCollision(0); // Collision rectangle
-    ///raylib::Rectangle boxCollision(0,0); // Collision rectangle
 
     int screenUpperLimit = 40;      // Top menu limits
 

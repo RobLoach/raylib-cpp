@@ -88,14 +88,14 @@ int main(void)
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-
+        {
             ClearBackground(RAYWHITE);
 
             camera.BeginMode();
-
+            {
                 model.Draw(mapPosition);               // Draw maze map
                 // playerPosition.DrawCube((Vector3){ 0.2f, 0.4f, 0.2f }, RED);  // Draw player
-
+            }
             camera.EndMode();
 
             cubicmap.Draw((Vector2){ static_cast<float>(GetScreenWidth() - cubicmap.width*4 - 20), 20 }, 0.0f, 4.0f, WHITE);
@@ -105,7 +105,7 @@ int main(void)
             DrawRectangle(GetScreenWidth() - cubicmap.width*4 - 20 + playerCellX*4, 20 + playerCellY*4, 4, 4, RED);
 
             DrawFPS(10, 10);
-
+        }
         EndDrawing();
         //----------------------------------------------------------------------------------
     }

@@ -1,27 +1,3 @@
-/*
-*   LICENSE: zlib/libpng
-*
-*   raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified,
-*   BSD-like license that allows static linking with closed source software:
-*
-*   Copyright (c) 2020 Rob Loach (@RobLoach)
-*
-*   This software is provided "as-is", without any express or implied warranty. In no event
-*   will the authors be held liable for any damages arising from the use of this software.
-*
-*   Permission is granted to anyone to use this software for any purpose, including commercial
-*   applications, and to alter it and redistribute it freely, subject to the following restrictions:
-*
-*     1. The origin of this software must not be misrepresented; you must not claim that you
-*     wrote the original software. If you use this software in a product, an acknowledgment
-*     in the product documentation would be appreciated but is not required.
-*
-*     2. Altered source versions must be plainly marked as such, and must not be misrepresented
-*     as being the original software.
-*
-*     3. This notice may not be removed or altered from any source distribution.
-*/
-
 #ifndef RAYLIB_CPP_INCLUDE_SHADER_HPP_
 #define RAYLIB_CPP_INCLUDE_SHADER_HPP_
 
@@ -32,6 +8,9 @@
 #include "Texture.hpp"
 
 namespace raylib {
+/**
+ * Shader type (generic)
+ */
 class Shader : public ::Shader {
  public:
     Shader(const ::Shader& shader) {
@@ -47,6 +26,9 @@ class Shader : public ::Shader {
         set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));
     }
 
+    /**
+     * Load shader from files and bind default locations.
+     */
     static ::Shader Load(const std::string& vsFileName, const std::string& fsFileName) {
         return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());
     }
@@ -67,11 +49,17 @@ class Shader : public ::Shader {
         ::UnloadShader(*this);
     }
 
+    /**
+     * Begin custom shader drawing.
+     */
     inline Shader& BeginMode() {
         ::BeginShaderMode(*this);
         return *this;
     }
 
+    /**
+     * End custom shader drawing (use default shader).
+     */
     inline Shader& EndMode() {
         ::EndShaderMode();
         return *this;
@@ -79,6 +67,8 @@ class Shader : public ::Shader {
 
     /**
      * Get shader uniform location
+     *
+     * @see GetShaderLocation()
      */
     inline int GetLocation(const std::string& uniformName) const {
         return ::GetShaderLocation(*this, uniformName.c_str());
@@ -86,6 +76,8 @@ class Shader : public ::Shader {
 
     /**
      * Get shader attribute location
+     *
+     * @see GetShaderLocationAttrib()
      */
     inline int GetLocationAttrib(const std::string& attribName) const {
         return ::GetShaderLocationAttrib(*this, attribName.c_str());
@@ -123,13 +115,15 @@ class Shader : public ::Shader {
 
     /**
      * Set shader uniform value for texture
+     *
+     * @see SetShaderValueTexture()
      */
     inline Shader& SetValue(int uniformLoc, const ::Texture2D& texture) {
         ::SetShaderValueTexture(*this, uniformLoc, texture);
         return *this;
     }
 
- protected:
+ private:
     inline void set(const ::Shader& shader) {
         id = shader.id;
         locs = shader.locs;
