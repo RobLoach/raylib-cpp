@@ -71,140 +71,99 @@ $(function() {
 <div class="title">Mouse.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*   LICENSE: zlib/libpng</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*   raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified,</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*   BSD-like license that allows static linking with closed source software:</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*   Copyright (c) 2020 Rob Loach (@RobLoach)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*   This software is provided &quot;as-is&quot;, without any express or implied warranty. In no event</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*   will the authors be held liable for any damages arising from the use of this software.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*   Permission is granted to anyone to use this software for any purpose, including commercial</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*   applications, and to alter it and redistribute it freely, subject to the following restrictions:</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*     1. The origin of this software must not be misrepresented; you must not claim that you</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*     wrote the original software. If you use this software in a product, an acknowledgment</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">*     in the product documentation would be appreciated but is not required.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*     2. Altered source versions must be plainly marked as such, and must not be misrepresented</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*     as being the original software.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*     3. This notice may not be removed or altered from any source distribution.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_MOUSE_HPP_</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_MOUSE_HPP_</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;./Vector2.hpp&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_mouse.html">Mouse</a> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#abe697fb08941f2207f1ce87f9dd56917">   41</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_mouse.html#abe697fb08941f2207f1ce87f9dd56917">IsButtonPressed</a>(<span class="keywordtype">int</span> button) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        return ::IsMouseButtonPressed(button);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#a4df87937eb26af3a7ce677679a006b87">   48</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_mouse.html#a4df87937eb26af3a7ce677679a006b87">IsButtonDown</a>(<span class="keywordtype">int</span> button) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        return ::IsMouseButtonDown(button);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#a9f050865fcc3b2021db4eddb77bca7c8">   55</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_mouse.html#a9f050865fcc3b2021db4eddb77bca7c8">IsButtonReleased</a>(<span class="keywordtype">int</span> button) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        return ::IsMouseButtonReleased(button);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#a798f845135681fffe637e62b832eaa86">   59</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_mouse.html#a798f845135681fffe637e62b832eaa86">IsButtonUp</a>(<span class="keywordtype">int</span> button) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        return ::IsMouseButtonUp(button);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#a0277ae88bc16d5c92821a46782c81a83">   63</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_mouse.html#a0277ae88bc16d5c92821a46782c81a83">GetX</a>() {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        return ::GetMouseX();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#a0d2eec7fca435ae35809305a1bb5e92e">   67</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_mouse.html#a0d2eec7fca435ae35809305a1bb5e92e">GetY</a>() {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        return ::GetMouseY();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#a5aa814d46b8f02b923cb5a492aac8148">   71</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_mouse.html#a5aa814d46b8f02b923cb5a492aac8148">SetX</a>(<span class="keywordtype">int</span> x) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        ::SetMousePosition(x, <a class="code" href="classraylib_1_1_mouse.html#a0d2eec7fca435ae35809305a1bb5e92e">GetY</a>());</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#a70fe1e1561aa9106799cfa5d98fe98cf">   75</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_mouse.html#a70fe1e1561aa9106799cfa5d98fe98cf">SetY</a>(<span class="keywordtype">int</span> y) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        ::SetMousePosition(<a class="code" href="classraylib_1_1_mouse.html#a0277ae88bc16d5c92821a46782c81a83">GetX</a>(), y);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#aecac52e620b5de23251a6ec7fc96babf">   79</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_mouse.html#aecac52e620b5de23251a6ec7fc96babf">GetPosition</a>() {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        return ::GetMousePosition();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#af15947500da7d3aa95b3894576d6ea3d">   83</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_mouse.html#af15947500da7d3aa95b3894576d6ea3d">SetPosition</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        ::SetMousePosition(x, y);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#ac8ebce8508f60795f9aaf93548e81ac0">   87</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_mouse.html#ac8ebce8508f60795f9aaf93548e81ac0">SetOffset</a>(<span class="keywordtype">int</span> offsetX, <span class="keywordtype">int</span> offsetY) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        ::SetMouseOffset(offsetX, offsetY);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#a56a90f124acd2eb11a6748633e9745af">   91</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_mouse.html#a56a90f124acd2eb11a6748633e9745af">SetScale</a>(<span class="keywordtype">float</span> scaleX, <span class="keywordtype">float</span> scaleY) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        ::SetMouseScale(scaleX, scaleY);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#afb094f45ac8964ae24e068af0595eea9">   95</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_mouse.html#afb094f45ac8964ae24e068af0595eea9">GetWheelMove</a>() {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        return ::GetMouseWheelMove();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#aebbe02dd4605189afa55096c7a54692e">   99</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_mouse.html#aebbe02dd4605189afa55096c7a54692e">GetCursor</a>() {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        return ::GetMouseCursor();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#ae07549857687c40bba9230d000be2427">  103</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_mouse.html#ae07549857687c40bba9230d000be2427">SetCursor</a>(<span class="keywordtype">int</span> cursor) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        ::SetMouseCursor(cursor);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#a3745314ab43bff36198dc34e2605a84d">  107</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_mouse.html#a3745314ab43bff36198dc34e2605a84d">GetTouchX</a>() {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        return ::GetTouchX();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#a6bc20e86551f9dc641afbf68b0c8cda6">  111</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_mouse.html#a6bc20e86551f9dc641afbf68b0c8cda6">GetTouchY</a>() {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        return ::GetTouchY();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#a87a1e77a62344626b587e105699c2c61">  115</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_mouse.html#a87a1e77a62344626b587e105699c2c61">GetTouchPosition</a>(<span class="keywordtype">int</span> index) {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        return ::GetTouchPosition(index);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;};</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_MOUSE_HPP_</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_MOUSE_HPP_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_MOUSE_HPP_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;./Vector2.hpp&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_mouse.html">Mouse</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#abe697fb08941f2207f1ce87f9dd56917">   16</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_mouse.html#abe697fb08941f2207f1ce87f9dd56917">IsButtonPressed</a>(<span class="keywordtype">int</span> button) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        return ::IsMouseButtonPressed(button);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#a4df87937eb26af3a7ce677679a006b87">   23</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_mouse.html#a4df87937eb26af3a7ce677679a006b87">IsButtonDown</a>(<span class="keywordtype">int</span> button) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        return ::IsMouseButtonDown(button);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classraylib_1_1_mouse.html#a9f050865fcc3b2021db4eddb77bca7c8">   30</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_mouse.html#a9f050865fcc3b2021db4eddb77bca7c8">IsButtonReleased</a>(<span class="keywordtype">int</span> button) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        return ::IsMouseButtonReleased(button);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> IsButtonUp(<span class="keywordtype">int</span> button) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        return ::IsMouseButtonUp(button);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> GetX() {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        return ::GetMouseX();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> GetY() {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        return ::GetMouseY();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> SetX(<span class="keywordtype">int</span> x) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        ::SetMousePosition(x, GetY());</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> SetY(<span class="keywordtype">int</span> y) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        ::SetMousePosition(GetX(), y);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> Vector2 GetPosition() {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        return ::GetMousePosition();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> SetPosition(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        ::SetMousePosition(x, y);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> SetOffset(<span class="keywordtype">int</span> offsetX, <span class="keywordtype">int</span> offsetY) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        ::SetMouseOffset(offsetX, offsetY);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> SetScale(<span class="keywordtype">float</span> scaleX, <span class="keywordtype">float</span> scaleY) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        ::SetMouseScale(scaleX, scaleY);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">float</span> GetWheelMove() {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        return ::GetMouseWheelMove();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> GetCursor() {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        return ::GetMouseCursor();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> SetCursor(<span class="keywordtype">int</span> cursor) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        ::SetMouseCursor(cursor);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> GetTouchX() {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        return ::GetTouchX();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> GetTouchY() {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        return ::GetTouchY();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> Vector2 GetTouchPosition(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        return ::GetTouchPosition(index);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_MOUSE_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">Provides all the classes associated with raylib-cpp.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00031">AudioDevice.hpp:31</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html"><div class="ttname"><a href="classraylib_1_1_mouse.html">raylib::Mouse</a></div><div class="ttdoc">Input-related functions: mouse.</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00036">Mouse.hpp:36</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_ae07549857687c40bba9230d000be2427"><div class="ttname"><a href="classraylib_1_1_mouse.html#ae07549857687c40bba9230d000be2427">raylib::Mouse::SetCursor</a></div><div class="ttdeci">static void SetCursor(int cursor)</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00103">Mouse.hpp:103</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_a0277ae88bc16d5c92821a46782c81a83"><div class="ttname"><a href="classraylib_1_1_mouse.html#a0277ae88bc16d5c92821a46782c81a83">raylib::Mouse::GetX</a></div><div class="ttdeci">static int GetX()</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00063">Mouse.hpp:63</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_ac8ebce8508f60795f9aaf93548e81ac0"><div class="ttname"><a href="classraylib_1_1_mouse.html#ac8ebce8508f60795f9aaf93548e81ac0">raylib::Mouse::SetOffset</a></div><div class="ttdeci">static void SetOffset(int offsetX, int offsetY)</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00087">Mouse.hpp:87</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_a4df87937eb26af3a7ce677679a006b87"><div class="ttname"><a href="classraylib_1_1_mouse.html#a4df87937eb26af3a7ce677679a006b87">raylib::Mouse::IsButtonDown</a></div><div class="ttdeci">static bool IsButtonDown(int button)</div><div class="ttdoc">Detect if a mouse button is being pressed.</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00048">Mouse.hpp:48</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_abe697fb08941f2207f1ce87f9dd56917"><div class="ttname"><a href="classraylib_1_1_mouse.html#abe697fb08941f2207f1ce87f9dd56917">raylib::Mouse::IsButtonPressed</a></div><div class="ttdeci">static bool IsButtonPressed(int button)</div><div class="ttdoc">Detect if a mouse button has been pressed once.</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00041">Mouse.hpp:41</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_a87a1e77a62344626b587e105699c2c61"><div class="ttname"><a href="classraylib_1_1_mouse.html#a87a1e77a62344626b587e105699c2c61">raylib::Mouse::GetTouchPosition</a></div><div class="ttdeci">static Vector2 GetTouchPosition(int index)</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00115">Mouse.hpp:115</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_a56a90f124acd2eb11a6748633e9745af"><div class="ttname"><a href="classraylib_1_1_mouse.html#a56a90f124acd2eb11a6748633e9745af">raylib::Mouse::SetScale</a></div><div class="ttdeci">static void SetScale(float scaleX, float scaleY)</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00091">Mouse.hpp:91</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_aecac52e620b5de23251a6ec7fc96babf"><div class="ttname"><a href="classraylib_1_1_mouse.html#aecac52e620b5de23251a6ec7fc96babf">raylib::Mouse::GetPosition</a></div><div class="ttdeci">static Vector2 GetPosition()</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00079">Mouse.hpp:79</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_a0d2eec7fca435ae35809305a1bb5e92e"><div class="ttname"><a href="classraylib_1_1_mouse.html#a0d2eec7fca435ae35809305a1bb5e92e">raylib::Mouse::GetY</a></div><div class="ttdeci">static int GetY()</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00067">Mouse.hpp:67</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_a3745314ab43bff36198dc34e2605a84d"><div class="ttname"><a href="classraylib_1_1_mouse.html#a3745314ab43bff36198dc34e2605a84d">raylib::Mouse::GetTouchX</a></div><div class="ttdeci">static int GetTouchX()</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00107">Mouse.hpp:107</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html"><div class="ttname"><a href="classraylib_1_1_vector2.html">raylib::Vector2</a></div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00037">Vector2.hpp:37</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_a6bc20e86551f9dc641afbf68b0c8cda6"><div class="ttname"><a href="classraylib_1_1_mouse.html#a6bc20e86551f9dc641afbf68b0c8cda6">raylib::Mouse::GetTouchY</a></div><div class="ttdeci">static int GetTouchY()</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00111">Mouse.hpp:111</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_a5aa814d46b8f02b923cb5a492aac8148"><div class="ttname"><a href="classraylib_1_1_mouse.html#a5aa814d46b8f02b923cb5a492aac8148">raylib::Mouse::SetX</a></div><div class="ttdeci">static void SetX(int x)</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00071">Mouse.hpp:71</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_afb094f45ac8964ae24e068af0595eea9"><div class="ttname"><a href="classraylib_1_1_mouse.html#afb094f45ac8964ae24e068af0595eea9">raylib::Mouse::GetWheelMove</a></div><div class="ttdeci">static float GetWheelMove()</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00095">Mouse.hpp:95</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_a9f050865fcc3b2021db4eddb77bca7c8"><div class="ttname"><a href="classraylib_1_1_mouse.html#a9f050865fcc3b2021db4eddb77bca7c8">raylib::Mouse::IsButtonReleased</a></div><div class="ttdeci">static bool IsButtonReleased(int button)</div><div class="ttdoc">Detect if a mouse button has been released once.</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00055">Mouse.hpp:55</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_a798f845135681fffe637e62b832eaa86"><div class="ttname"><a href="classraylib_1_1_mouse.html#a798f845135681fffe637e62b832eaa86">raylib::Mouse::IsButtonUp</a></div><div class="ttdeci">static bool IsButtonUp(int button)</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00059">Mouse.hpp:59</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_af15947500da7d3aa95b3894576d6ea3d"><div class="ttname"><a href="classraylib_1_1_mouse.html#af15947500da7d3aa95b3894576d6ea3d">raylib::Mouse::SetPosition</a></div><div class="ttdeci">static void SetPosition(int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00083">Mouse.hpp:83</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_aebbe02dd4605189afa55096c7a54692e"><div class="ttname"><a href="classraylib_1_1_mouse.html#aebbe02dd4605189afa55096c7a54692e">raylib::Mouse::GetCursor</a></div><div class="ttdeci">static int GetCursor()</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00099">Mouse.hpp:99</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mouse_html_a70fe1e1561aa9106799cfa5d98fe98cf"><div class="ttname"><a href="classraylib_1_1_mouse.html#a70fe1e1561aa9106799cfa5d98fe98cf">raylib::Mouse::SetY</a></div><div class="ttdeci">static void SetY(int y)</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00075">Mouse.hpp:75</a></div></div>
+<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_mouse_html"><div class="ttname"><a href="classraylib_1_1_mouse.html">raylib::Mouse</a></div><div class="ttdoc">Input-related functions: mouse.</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00011">Mouse.hpp:11</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_mouse_html_a4df87937eb26af3a7ce677679a006b87"><div class="ttname"><a href="classraylib_1_1_mouse.html#a4df87937eb26af3a7ce677679a006b87">raylib::Mouse::IsButtonDown</a></div><div class="ttdeci">static bool IsButtonDown(int button)</div><div class="ttdoc">Detect if a mouse button is being pressed.</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00023">Mouse.hpp:23</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_mouse_html_abe697fb08941f2207f1ce87f9dd56917"><div class="ttname"><a href="classraylib_1_1_mouse.html#abe697fb08941f2207f1ce87f9dd56917">raylib::Mouse::IsButtonPressed</a></div><div class="ttdeci">static bool IsButtonPressed(int button)</div><div class="ttdoc">Detect if a mouse button has been pressed once.</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00016">Mouse.hpp:16</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_mouse_html_a9f050865fcc3b2021db4eddb77bca7c8"><div class="ttname"><a href="classraylib_1_1_mouse.html#a9f050865fcc3b2021db4eddb77bca7c8">raylib::Mouse::IsButtonReleased</a></div><div class="ttdeci">static bool IsButtonReleased(int button)</div><div class="ttdoc">Detect if a mouse button has been released once.</div><div class="ttdef"><b>Definition:</b> <a href="_mouse_8hpp_source.html#l00030">Mouse.hpp:30</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 14 2021 16:32:47 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 24 2021 01:42:06 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

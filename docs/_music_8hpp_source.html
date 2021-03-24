@@ -71,149 +71,123 @@ $(function() {
 <div class="title">Music.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*   LICENSE: zlib/libpng</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*   raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified,</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*   BSD-like license that allows static linking with closed source software:</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*   Copyright (c) 2020 Rob Loach (@RobLoach)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*   This software is provided &quot;as-is&quot;, without any express or implied warranty. In no event</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*   will the authors be held liable for any damages arising from the use of this software.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*   Permission is granted to anyone to use this software for any purpose, including commercial</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*   applications, and to alter it and redistribute it freely, subject to the following restrictions:</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*     1. The origin of this software must not be misrepresented; you must not claim that you</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*     wrote the original software. If you use this software in a product, an acknowledgment</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">*     in the product documentation would be appreciated but is not required.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*     2. Altered source versions must be plainly marked as such, and must not be misrepresented</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*     as being the original software.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*     3. This notice may not be removed or altered from any source distribution.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_MUSIC_HPP_</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_MUSIC_HPP_</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_MUSIC_HPP_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_MUSIC_HPP_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_music.html">Music</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_music.html">::Music</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classraylib_1_1_music.html">Music</a>(const ::Music&amp; music) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        set(music);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a3cbc2287ba5c8e55ce16c47bbb640c60">   22</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html#a3cbc2287ba5c8e55ce16c47bbb640c60">Music</a>(<span class="keyword">const</span> std::string&amp; fileName) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        set(::LoadMusicStream(fileName.c_str()));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a6fb0e1cb0807c33e952bdd8c5028fa16">   29</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html#a6fb0e1cb0807c33e952bdd8c5028fa16">~Music</a>() {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515">Unload</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_music.html">Music</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_music.html">::Music</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a29f51d7e8e89df932a6c07bd0106a834">   36</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html#a29f51d7e8e89df932a6c07bd0106a834">Music</a>(const ::Music&amp; music) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classraylib_1_1_music.html#a4180c70a97d37f0319942c14c1be7cf4">set</a>(music);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a3cbc2287ba5c8e55ce16c47bbb640c60">   43</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html#a3cbc2287ba5c8e55ce16c47bbb640c60">Music</a>(<span class="keyword">const</span> std::string&amp; fileName) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classraylib_1_1_music.html#a4180c70a97d37f0319942c14c1be7cf4">set</a>(::LoadMusicStream(fileName.c_str()));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a6fb0e1cb0807c33e952bdd8c5028fa16">   50</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html#a6fb0e1cb0807c33e952bdd8c5028fa16">~Music</a>() {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515">Unload</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#af00ed20b552cd395df95fddad4fa460e">   54</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_audio_stream.html">AudioStream</a>, Stream, stream)</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a1cef139c624311b21259bd3d1ed84db2">   55</a></span>&#160;    GETTERSETTER(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, SampleCount, sampleCount)</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a57eb787882e835db6f49a2354379280b">   56</a></span>&#160;    GETTERSETTER(<span class="keywordtype">bool</span>, Looping, looping)</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a040d2fce2f109c952604dd909bb15fd7">   57</a></span>&#160;    GETTERSETTER(<span class="keywordtype">int</span>, CtxType, ctxType)</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a56fd8d72fd7bdc920f546d9e8da05953">   58</a></span>&#160;    GETTERSETTER(<span class="keywordtype">void</span>*, CtxData, ctxData)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#aab2fa7bc59b5d7f4596f9b993fa24c05">   60</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_music.html">Music</a>&amp; music) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classraylib_1_1_music.html#a4180c70a97d37f0319942c14c1be7cf4">set</a>(music);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515">   68</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515">Unload</a>() {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        ::UnloadMusicStream(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a908ddb6c248c75bd1a3cabc1381a45fc">   75</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a908ddb6c248c75bd1a3cabc1381a45fc">Play</a>() {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        ::PlayMusicStream(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a031bc82c19b51b29f5c507cacd9c2664">   83</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a031bc82c19b51b29f5c507cacd9c2664">Update</a>() {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        ::UpdateMusicStream(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a6a6ed906b768631c86a006b23900d542">   91</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a6a6ed906b768631c86a006b23900d542">Stop</a>() {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        ::StopMusicStream(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a810f0ae266f247237aa23574e1e31626">   99</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a810f0ae266f247237aa23574e1e31626">Pause</a>() {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        ::PauseMusicStream(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a5c5c67064aa37d2b3f3234a2a02230de">  107</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a5c5c67064aa37d2b3f3234a2a02230de">Resume</a>() {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        ::ResumeMusicStream(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a020a0807b02878ce88eb72a51f93a7a8">  115</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_music.html#a020a0807b02878ce88eb72a51f93a7a8">IsPlaying</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        return ::IsMusicPlaying(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#acbcc821ca804c0c9783e96267b7c5ef9">  122</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#acbcc821ca804c0c9783e96267b7c5ef9">SetVolume</a>(<span class="keywordtype">float</span> volume) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        ::SetMusicVolume(*<span class="keyword">this</span>, volume);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a863348374483c4b9b01f6e2624f833e8">  130</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a863348374483c4b9b01f6e2624f833e8">SetPitch</a>(<span class="keywordtype">float</span> pitch) {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        ::SetMusicPitch(*<span class="keyword">this</span>, pitch);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#ad23d121ee312f31c3a8f1db201ac5f12">  138</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_music.html#ad23d121ee312f31c3a8f1db201ac5f12">GetTimeLength</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        return ::GetMusicTimeLength(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a513dc0d09de1d51e1b961d4e59622ebb">  145</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_music.html#a513dc0d09de1d51e1b961d4e59622ebb">GetTimePlayed</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        return ::GetMusicTimePlayed(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a4180c70a97d37f0319942c14c1be7cf4">  150</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_music.html#a4180c70a97d37f0319942c14c1be7cf4">set</a>(const ::Music&amp; music) {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        ctxType = music.ctxType;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        ctxData = music.ctxData;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        looping = music.looping;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        sampleCount = music.sampleCount;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        stream = music.stream;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;};</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_MUSIC_HPP_</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#af00ed20b552cd395df95fddad4fa460e">   33</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_audio_stream.html">AudioStream</a>, Stream, stream)</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a1cef139c624311b21259bd3d1ed84db2">   34</a></span>&#160;    GETTERSETTER(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, SampleCount, sampleCount)</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a57eb787882e835db6f49a2354379280b">   35</a></span>&#160;    GETTERSETTER(<span class="keywordtype">bool</span>, Looping, looping)</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a040d2fce2f109c952604dd909bb15fd7">   36</a></span>&#160;    GETTERSETTER(<span class="keywordtype">int</span>, CtxType, ctxType)</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a56fd8d72fd7bdc920f546d9e8da05953">   37</a></span>&#160;    GETTERSETTER(<span class="keywordtype">void</span>*, CtxData, ctxData)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_music.html">Music</a>&amp; music) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        set(music);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515">   47</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515">Unload</a>() {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        ::UnloadMusicStream(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a908ddb6c248c75bd1a3cabc1381a45fc">   54</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a908ddb6c248c75bd1a3cabc1381a45fc">Play</a>() {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        ::PlayMusicStream(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a031bc82c19b51b29f5c507cacd9c2664">   62</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a031bc82c19b51b29f5c507cacd9c2664">Update</a>() {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        ::UpdateMusicStream(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a6a6ed906b768631c86a006b23900d542">   70</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a6a6ed906b768631c86a006b23900d542">Stop</a>() {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        ::StopMusicStream(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a810f0ae266f247237aa23574e1e31626">   78</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a810f0ae266f247237aa23574e1e31626">Pause</a>() {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        ::PauseMusicStream(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a5c5c67064aa37d2b3f3234a2a02230de">   86</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a5c5c67064aa37d2b3f3234a2a02230de">Resume</a>() {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        ::ResumeMusicStream(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a020a0807b02878ce88eb72a51f93a7a8">   94</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_music.html#a020a0807b02878ce88eb72a51f93a7a8">IsPlaying</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        return ::IsMusicPlaying(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#acbcc821ca804c0c9783e96267b7c5ef9">  101</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#acbcc821ca804c0c9783e96267b7c5ef9">SetVolume</a>(<span class="keywordtype">float</span> volume) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        ::SetMusicVolume(*<span class="keyword">this</span>, volume);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a863348374483c4b9b01f6e2624f833e8">  109</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a863348374483c4b9b01f6e2624f833e8">SetPitch</a>(<span class="keywordtype">float</span> pitch) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        ::SetMusicPitch(*<span class="keyword">this</span>, pitch);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#ad23d121ee312f31c3a8f1db201ac5f12">  117</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_music.html#ad23d121ee312f31c3a8f1db201ac5f12">GetTimeLength</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        return ::GetMusicTimeLength(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a513dc0d09de1d51e1b961d4e59622ebb">  124</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_music.html#a513dc0d09de1d51e1b961d4e59622ebb">GetTimePlayed</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        return ::GetMusicTimePlayed(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Music&amp; music) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        ctxType = music.ctxType;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        ctxData = music.ctxData;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        looping = music.looping;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        sampleCount = music.sampleCount;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        stream = music.stream;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;};</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_MUSIC_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">Provides all the classes associated with raylib-cpp.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00031">AudioDevice.hpp:31</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_a863348374483c4b9b01f6e2624f833e8"><div class="ttname"><a href="classraylib_1_1_music.html#a863348374483c4b9b01f6e2624f833e8">raylib::Music::SetPitch</a></div><div class="ttdeci">Music &amp; SetPitch(float pitch)</div><div class="ttdoc">Set pitch for music.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00130">Music.hpp:130</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_a6a6ed906b768631c86a006b23900d542"><div class="ttname"><a href="classraylib_1_1_music.html#a6a6ed906b768631c86a006b23900d542">raylib::Music::Stop</a></div><div class="ttdeci">Music &amp; Stop()</div><div class="ttdoc">Stop music playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00091">Music.hpp:91</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_acbcc821ca804c0c9783e96267b7c5ef9"><div class="ttname"><a href="classraylib_1_1_music.html#acbcc821ca804c0c9783e96267b7c5ef9">raylib::Music::SetVolume</a></div><div class="ttdeci">Music &amp; SetVolume(float volume)</div><div class="ttdoc">Set volume for music.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00122">Music.hpp:122</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_a5c5c67064aa37d2b3f3234a2a02230de"><div class="ttname"><a href="classraylib_1_1_music.html#a5c5c67064aa37d2b3f3234a2a02230de">raylib::Music::Resume</a></div><div class="ttdeci">Music &amp; Resume()</div><div class="ttdoc">Resume music playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00107">Music.hpp:107</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_a908ddb6c248c75bd1a3cabc1381a45fc"><div class="ttname"><a href="classraylib_1_1_music.html#a908ddb6c248c75bd1a3cabc1381a45fc">raylib::Music::Play</a></div><div class="ttdeci">Music &amp; Play()</div><div class="ttdoc">Start music playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00075">Music.hpp:75</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_a810f0ae266f247237aa23574e1e31626"><div class="ttname"><a href="classraylib_1_1_music.html#a810f0ae266f247237aa23574e1e31626">raylib::Music::Pause</a></div><div class="ttdeci">Music &amp; Pause()</div><div class="ttdoc">Pause music playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00099">Music.hpp:99</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_a020a0807b02878ce88eb72a51f93a7a8"><div class="ttname"><a href="classraylib_1_1_music.html#a020a0807b02878ce88eb72a51f93a7a8">raylib::Music::IsPlaying</a></div><div class="ttdeci">bool IsPlaying() const</div><div class="ttdoc">Check if music is playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00115">Music.hpp:115</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_a4180c70a97d37f0319942c14c1be7cf4"><div class="ttname"><a href="classraylib_1_1_music.html#a4180c70a97d37f0319942c14c1be7cf4">raylib::Music::set</a></div><div class="ttdeci">void set(const ::Music &amp;music)</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00150">Music.hpp:150</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_a6fb0e1cb0807c33e952bdd8c5028fa16"><div class="ttname"><a href="classraylib_1_1_music.html#a6fb0e1cb0807c33e952bdd8c5028fa16">raylib::Music::~Music</a></div><div class="ttdeci">~Music()</div><div class="ttdoc">Unload music stream.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00050">Music.hpp:50</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_a3cbc2287ba5c8e55ce16c47bbb640c60"><div class="ttname"><a href="classraylib_1_1_music.html#a3cbc2287ba5c8e55ce16c47bbb640c60">raylib::Music::Music</a></div><div class="ttdeci">Music(const std::string &amp;fileName)</div><div class="ttdoc">Load music stream from file.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00043">Music.hpp:43</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_aeaec37b4d521dfca16f39ce141c12515"><div class="ttname"><a href="classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515">raylib::Music::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdoc">Unload music stream.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00068">Music.hpp:68</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html"><div class="ttname"><a href="classraylib_1_1_music.html">raylib::Music</a></div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00034">Music.hpp:34</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_audio_stream_html"><div class="ttname"><a href="classraylib_1_1_audio_stream.html">raylib::AudioStream</a></div><div class="ttdoc">AudioStream management functions.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_stream_8hpp_source.html#l00035">AudioStream.hpp:35</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_a29f51d7e8e89df932a6c07bd0106a834"><div class="ttname"><a href="classraylib_1_1_music.html#a29f51d7e8e89df932a6c07bd0106a834">raylib::Music::Music</a></div><div class="ttdeci">Music(const ::Music &amp;music)</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00036">Music.hpp:36</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_a031bc82c19b51b29f5c507cacd9c2664"><div class="ttname"><a href="classraylib_1_1_music.html#a031bc82c19b51b29f5c507cacd9c2664">raylib::Music::Update</a></div><div class="ttdeci">Music &amp; Update()</div><div class="ttdoc">Updates buffers for music streaming.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00083">Music.hpp:83</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_ad23d121ee312f31c3a8f1db201ac5f12"><div class="ttname"><a href="classraylib_1_1_music.html#ad23d121ee312f31c3a8f1db201ac5f12">raylib::Music::GetTimeLength</a></div><div class="ttdeci">float GetTimeLength() const</div><div class="ttdoc">Get music time length (in seconds)</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00138">Music.hpp:138</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_music_html_a513dc0d09de1d51e1b961d4e59622ebb"><div class="ttname"><a href="classraylib_1_1_music.html#a513dc0d09de1d51e1b961d4e59622ebb">raylib::Music::GetTimePlayed</a></div><div class="ttdeci">float GetTimePlayed() const</div><div class="ttdoc">Get current music time played (in seconds)</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00145">Music.hpp:145</a></div></div>
+<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_a863348374483c4b9b01f6e2624f833e8"><div class="ttname"><a href="classraylib_1_1_music.html#a863348374483c4b9b01f6e2624f833e8">raylib::Music::SetPitch</a></div><div class="ttdeci">Music &amp; SetPitch(float pitch)</div><div class="ttdoc">Set pitch for music.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00109">Music.hpp:109</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_a6a6ed906b768631c86a006b23900d542"><div class="ttname"><a href="classraylib_1_1_music.html#a6a6ed906b768631c86a006b23900d542">raylib::Music::Stop</a></div><div class="ttdeci">Music &amp; Stop()</div><div class="ttdoc">Stop music playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00070">Music.hpp:70</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_acbcc821ca804c0c9783e96267b7c5ef9"><div class="ttname"><a href="classraylib_1_1_music.html#acbcc821ca804c0c9783e96267b7c5ef9">raylib::Music::SetVolume</a></div><div class="ttdeci">Music &amp; SetVolume(float volume)</div><div class="ttdoc">Set volume for music.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00101">Music.hpp:101</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_a5c5c67064aa37d2b3f3234a2a02230de"><div class="ttname"><a href="classraylib_1_1_music.html#a5c5c67064aa37d2b3f3234a2a02230de">raylib::Music::Resume</a></div><div class="ttdeci">Music &amp; Resume()</div><div class="ttdoc">Resume music playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00086">Music.hpp:86</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_a908ddb6c248c75bd1a3cabc1381a45fc"><div class="ttname"><a href="classraylib_1_1_music.html#a908ddb6c248c75bd1a3cabc1381a45fc">raylib::Music::Play</a></div><div class="ttdeci">Music &amp; Play()</div><div class="ttdoc">Start music playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00054">Music.hpp:54</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_a810f0ae266f247237aa23574e1e31626"><div class="ttname"><a href="classraylib_1_1_music.html#a810f0ae266f247237aa23574e1e31626">raylib::Music::Pause</a></div><div class="ttdeci">Music &amp; Pause()</div><div class="ttdoc">Pause music playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00078">Music.hpp:78</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_a020a0807b02878ce88eb72a51f93a7a8"><div class="ttname"><a href="classraylib_1_1_music.html#a020a0807b02878ce88eb72a51f93a7a8">raylib::Music::IsPlaying</a></div><div class="ttdeci">bool IsPlaying() const</div><div class="ttdoc">Check if music is playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00094">Music.hpp:94</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_a6fb0e1cb0807c33e952bdd8c5028fa16"><div class="ttname"><a href="classraylib_1_1_music.html#a6fb0e1cb0807c33e952bdd8c5028fa16">raylib::Music::~Music</a></div><div class="ttdeci">~Music()</div><div class="ttdoc">Unload music stream.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00029">Music.hpp:29</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_a3cbc2287ba5c8e55ce16c47bbb640c60"><div class="ttname"><a href="classraylib_1_1_music.html#a3cbc2287ba5c8e55ce16c47bbb640c60">raylib::Music::Music</a></div><div class="ttdeci">Music(const std::string &amp;fileName)</div><div class="ttdoc">Load music stream from file.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00022">Music.hpp:22</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_aeaec37b4d521dfca16f39ce141c12515"><div class="ttname"><a href="classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515">raylib::Music::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdoc">Unload music stream.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00047">Music.hpp:47</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html"><div class="ttname"><a href="classraylib_1_1_music.html">raylib::Music</a></div><div class="ttdoc">Music stream type (audio file streaming from memory)</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00013">Music.hpp:13</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_audio_stream_html"><div class="ttname"><a href="classraylib_1_1_audio_stream.html">raylib::AudioStream</a></div><div class="ttdoc">AudioStream management functions.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_stream_8hpp_source.html#l00011">AudioStream.hpp:11</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_a031bc82c19b51b29f5c507cacd9c2664"><div class="ttname"><a href="classraylib_1_1_music.html#a031bc82c19b51b29f5c507cacd9c2664">raylib::Music::Update</a></div><div class="ttdeci">Music &amp; Update()</div><div class="ttdoc">Updates buffers for music streaming.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00062">Music.hpp:62</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_ad23d121ee312f31c3a8f1db201ac5f12"><div class="ttname"><a href="classraylib_1_1_music.html#ad23d121ee312f31c3a8f1db201ac5f12">raylib::Music::GetTimeLength</a></div><div class="ttdeci">float GetTimeLength() const</div><div class="ttdoc">Get music time length (in seconds)</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00117">Music.hpp:117</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_a513dc0d09de1d51e1b961d4e59622ebb"><div class="ttname"><a href="classraylib_1_1_music.html#a513dc0d09de1d51e1b961d4e59622ebb">raylib::Music::GetTimePlayed</a></div><div class="ttdeci">float GetTimePlayed() const</div><div class="ttdoc">Get current music time played (in seconds)</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00124">Music.hpp:124</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 14 2021 16:32:47 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 24 2021 01:42:06 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

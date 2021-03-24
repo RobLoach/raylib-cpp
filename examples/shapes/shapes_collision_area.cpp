@@ -11,7 +11,7 @@
 
 #include "raylib-cpp.hpp"
 
-#include <cmath>
+#include <cmath> // NOLINT
 
 int main(void)
 {
@@ -40,8 +40,7 @@ int main(void)
     //----------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())    // Detect window close button or ESC key
-    {
+    while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //-----------------------------------------------------
         // Move box if not paused
@@ -82,8 +81,7 @@ int main(void)
             boxA.Draw(GOLD);
             boxB.Draw(BLUE);
 
-            if (collision)
-            {
+            if (collision) {
                 // Draw collision area
                 boxCollision.Draw(LIME);
 

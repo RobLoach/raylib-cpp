@@ -1,6 +1,6 @@
 {
   "name": "raylib-cpp",
-  "version": "3.5.0-beta3",
+  "version": "3.5.0",
   "description": "raylib-cpp: C++ Object-Oriented Wrapper for raylib",
   "homepage": "https://github.com/robloach/raylib-cpp",
   "bugs": {
@@ -30,7 +30,6 @@
     "include/Camera2D.hpp",
     "include/Camera3D.hpp",
     "include/Color.hpp",
-    "include/DroppedFiles.hpp",
     "include/Functions.hpp",
     "include/Font.hpp",
     "include/Gamepad.hpp",
@@ -46,6 +45,8 @@
     "include/Physics.hpp",
     "include/RayHitInfo.hpp",
     "include/Ray.hpp",
+    "include/raymath.hpp",
+    "include/raylib.hpp",
     "include/raylib-cpp.hpp",
     "include/raylib-cpp-utils.hpp",
     "include/Rectangle.hpp",
@@ -53,7 +54,7 @@
     "include/Shader.hpp",
     "include/Sound.hpp",
     "include/Text.hpp",
-    "include/Texture2D.hpp",
+    "include/Texture.hpp",
     "include/Vector2.hpp",
     "include/Vector3.hpp",
     "include/Vector4.hpp",

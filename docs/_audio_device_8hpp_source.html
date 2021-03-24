@@ -71,83 +71,58 @@ $(function() {
 <div class="title">AudioDevice.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*   LICENSE: zlib/libpng</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*   raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified,</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*   BSD-like license that allows static linking with closed source software:</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*   Copyright (c) 2020 Rob Loach (@RobLoach)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*   This software is provided &quot;as-is&quot;, without any express or implied warranty. In no event</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*   will the authors be held liable for any damages arising from the use of this software.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*   Permission is granted to anyone to use this software for any purpose, including commercial</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*   applications, and to alter it and redistribute it freely, subject to the following restrictions:</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*     1. The origin of this software must not be misrepresented; you must not claim that you</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*     wrote the original software. If you use this software in a product, an acknowledgment</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">*     in the product documentation would be appreciated but is not required.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*     2. Altered source versions must be plainly marked as such, and must not be misrepresented</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*     as being the original software.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*     3. This notice may not be removed or altered from any source distribution.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_AUDIODEVICE_HPP_</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_AUDIODEVICE_HPP_</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_AUDIODEVICE_HPP_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_AUDIODEVICE_HPP_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespaceraylib.html">    7</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_audio_device.html">AudioDevice</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#ada9e1459186cb8658b28c1fbeec0f261">   18</a></span>&#160;    <a class="code" href="classraylib_1_1_audio_device.html#ada9e1459186cb8658b28c1fbeec0f261">AudioDevice</a>(<span class="keywordtype">bool</span> lateInit = <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span> (!lateInit) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="classraylib_1_1_audio_device.html#aab013db3caeb89942dd6ea387005319f">Init</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#aab60bade54ebe2fc41e567d0023047d9">   27</a></span>&#160;    <a class="code" href="classraylib_1_1_audio_device.html#aab60bade54ebe2fc41e567d0023047d9">~AudioDevice</a>() {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classraylib_1_1_audio_device.html#a04b39055a7d4dc12801f39f3429af9a0">Close</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespaceraylib.html">   31</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_audio_device.html">AudioDevice</a> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#ada9e1459186cb8658b28c1fbeec0f261">   42</a></span>&#160;    <a class="code" href="classraylib_1_1_audio_device.html#ada9e1459186cb8658b28c1fbeec0f261">AudioDevice</a>(<span class="keywordtype">bool</span> lateInit = <span class="keyword">false</span>) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span> (!lateInit) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="classraylib_1_1_audio_device.html#aab013db3caeb89942dd6ea387005319f">Init</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#aab60bade54ebe2fc41e567d0023047d9">   51</a></span>&#160;    <a class="code" href="classraylib_1_1_audio_device.html#aab60bade54ebe2fc41e567d0023047d9">~AudioDevice</a>() {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classraylib_1_1_audio_device.html#a7daee2c9ec9d59db550841e780a23692">Close</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#aab013db3caeb89942dd6ea387005319f">   58</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_audio_device.html">AudioDevice</a>&amp; <a class="code" href="classraylib_1_1_audio_device.html#aab013db3caeb89942dd6ea387005319f">Init</a>() {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        ::InitAudioDevice();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#aab013db3caeb89942dd6ea387005319f">   34</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_audio_device.html">AudioDevice</a>&amp; <a class="code" href="classraylib_1_1_audio_device.html#aab013db3caeb89942dd6ea387005319f">Init</a>() {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        ::InitAudioDevice();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#a04b39055a7d4dc12801f39f3429af9a0">   42</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_audio_device.html#a04b39055a7d4dc12801f39f3429af9a0">Close</a>() {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        ::CloseAudioDevice();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#a5555c3a41868046ea8b6ff08195f21bc">   49</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_audio_device.html#a5555c3a41868046ea8b6ff08195f21bc">IsReady</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        return ::IsAudioDeviceReady();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#ae1e2ca6a0cd5a3b2cb6f4cfc5455a3f1">   56</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_audio_device.html">AudioDevice</a>&amp; <a class="code" href="classraylib_1_1_audio_device.html#ae1e2ca6a0cd5a3b2cb6f4cfc5455a3f1">SetVolume</a>(<span class="keywordtype">float</span> volume) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        ::SetMasterVolume(volume);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}  <span class="comment">// namespace raylib</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#a7daee2c9ec9d59db550841e780a23692">   66</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_audio_device.html">AudioDevice</a>&amp; <a class="code" href="classraylib_1_1_audio_device.html#a7daee2c9ec9d59db550841e780a23692">Close</a>() {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        ::CloseAudioDevice();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#a5555c3a41868046ea8b6ff08195f21bc">   74</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_audio_device.html#a5555c3a41868046ea8b6ff08195f21bc">IsReady</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        return ::IsAudioDeviceReady();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#ae1e2ca6a0cd5a3b2cb6f4cfc5455a3f1">   81</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_audio_device.html">AudioDevice</a>&amp; <a class="code" href="classraylib_1_1_audio_device.html#ae1e2ca6a0cd5a3b2cb6f4cfc5455a3f1">SetVolume</a>(<span class="keywordtype">float</span> volume) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        ::SetMasterVolume(volume);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_AUDIODEVICE_HPP_</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_AUDIODEVICE_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">Provides all the classes associated with raylib-cpp.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00031">AudioDevice.hpp:31</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_audio_device_html_a7daee2c9ec9d59db550841e780a23692"><div class="ttname"><a href="classraylib_1_1_audio_device.html#a7daee2c9ec9d59db550841e780a23692">raylib::AudioDevice::Close</a></div><div class="ttdeci">AudioDevice &amp; Close()</div><div class="ttdoc">Close the audio device and context.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00066">AudioDevice.hpp:66</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_audio_device_html_ae1e2ca6a0cd5a3b2cb6f4cfc5455a3f1"><div class="ttname"><a href="classraylib_1_1_audio_device.html#ae1e2ca6a0cd5a3b2cb6f4cfc5455a3f1">raylib::AudioDevice::SetVolume</a></div><div class="ttdeci">AudioDevice &amp; SetVolume(float volume)</div><div class="ttdoc">Set master volume (listener).</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00081">AudioDevice.hpp:81</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_audio_device_html_aab013db3caeb89942dd6ea387005319f"><div class="ttname"><a href="classraylib_1_1_audio_device.html#aab013db3caeb89942dd6ea387005319f">raylib::AudioDevice::Init</a></div><div class="ttdeci">AudioDevice &amp; Init()</div><div class="ttdoc">Initialize audio device and context.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00058">AudioDevice.hpp:58</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_audio_device_html_aab60bade54ebe2fc41e567d0023047d9"><div class="ttname"><a href="classraylib_1_1_audio_device.html#aab60bade54ebe2fc41e567d0023047d9">raylib::AudioDevice::~AudioDevice</a></div><div class="ttdeci">~AudioDevice()</div><div class="ttdoc">Close the audio device and context.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00051">AudioDevice.hpp:51</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_audio_device_html_ada9e1459186cb8658b28c1fbeec0f261"><div class="ttname"><a href="classraylib_1_1_audio_device.html#ada9e1459186cb8658b28c1fbeec0f261">raylib::AudioDevice::AudioDevice</a></div><div class="ttdeci">AudioDevice(bool lateInit=false)</div><div class="ttdoc">Initialize audio device and context.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00042">AudioDevice.hpp:42</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_audio_device_html"><div class="ttname"><a href="classraylib_1_1_audio_device.html">raylib::AudioDevice</a></div><div class="ttdoc">Audio device management functions.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00035">AudioDevice.hpp:35</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_audio_device_html_a5555c3a41868046ea8b6ff08195f21bc"><div class="ttname"><a href="classraylib_1_1_audio_device.html#a5555c3a41868046ea8b6ff08195f21bc">raylib::AudioDevice::IsReady</a></div><div class="ttdeci">bool IsReady() const</div><div class="ttdoc">Check if audio device has been initialized successfully.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00074">AudioDevice.hpp:74</a></div></div>
+<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_audio_device_html_ae1e2ca6a0cd5a3b2cb6f4cfc5455a3f1"><div class="ttname"><a href="classraylib_1_1_audio_device.html#ae1e2ca6a0cd5a3b2cb6f4cfc5455a3f1">raylib::AudioDevice::SetVolume</a></div><div class="ttdeci">AudioDevice &amp; SetVolume(float volume)</div><div class="ttdoc">Set master volume (listener).</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00056">AudioDevice.hpp:56</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_audio_device_html_aab013db3caeb89942dd6ea387005319f"><div class="ttname"><a href="classraylib_1_1_audio_device.html#aab013db3caeb89942dd6ea387005319f">raylib::AudioDevice::Init</a></div><div class="ttdeci">AudioDevice &amp; Init()</div><div class="ttdoc">Initialize audio device and context.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00034">AudioDevice.hpp:34</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_audio_device_html_aab60bade54ebe2fc41e567d0023047d9"><div class="ttname"><a href="classraylib_1_1_audio_device.html#aab60bade54ebe2fc41e567d0023047d9">raylib::AudioDevice::~AudioDevice</a></div><div class="ttdeci">~AudioDevice()</div><div class="ttdoc">Close the audio device and context.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00027">AudioDevice.hpp:27</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_audio_device_html_ada9e1459186cb8658b28c1fbeec0f261"><div class="ttname"><a href="classraylib_1_1_audio_device.html#ada9e1459186cb8658b28c1fbeec0f261">raylib::AudioDevice::AudioDevice</a></div><div class="ttdeci">AudioDevice(bool lateInit=false)</div><div class="ttdoc">Initialize audio device and context.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00018">AudioDevice.hpp:18</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_audio_device_html"><div class="ttname"><a href="classraylib_1_1_audio_device.html">raylib::AudioDevice</a></div><div class="ttdoc">Audio device management functions.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00011">AudioDevice.hpp:11</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_audio_device_html_a04b39055a7d4dc12801f39f3429af9a0"><div class="ttname"><a href="classraylib_1_1_audio_device.html#a04b39055a7d4dc12801f39f3429af9a0">raylib::AudioDevice::Close</a></div><div class="ttdeci">void Close()</div><div class="ttdoc">Close the audio device and context.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00042">AudioDevice.hpp:42</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_audio_device_html_a5555c3a41868046ea8b6ff08195f21bc"><div class="ttname"><a href="classraylib_1_1_audio_device.html#a5555c3a41868046ea8b6ff08195f21bc">raylib::AudioDevice::IsReady</a></div><div class="ttdeci">bool IsReady() const</div><div class="ttdoc">Check if audio device has been initialized successfully.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00049">AudioDevice.hpp:49</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 14 2021 16:32:47 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 24 2021 01:42:06 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

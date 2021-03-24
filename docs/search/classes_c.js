@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['wave_624',['Wave',['../class_wave.html',1,'Wave'],['../classraylib_1_1_wave.html',1,'raylib::Wave']]],
-  ['window_625',['Window',['../classraylib_1_1_window.html',1,'raylib']]]
+  ['wave_476',['Wave',['../classraylib_1_1_wave.html',1,'raylib']]],
+  ['window_477',['Window',['../classraylib_1_1_window.html',1,'raylib']]]
 ];

@@ -18,16 +18,16 @@ install(FILES
     Material.hpp
     Matrix.hpp
     Mesh.hpp
-    ModelAnimation.hpp
     Model.hpp
+    ModelAnimation.hpp
     Mouse.hpp
     Music.hpp
     physac.hpp
     Physics.hpp
-    RayHitInfo.hpp
     Ray.hpp
-    raylib-cpp.hpp
+    RayHitInfo.hpp
     raylib-cpp-utils.hpp
+    raylib-cpp.hpp
     raylib.hpp
     raymath.hpp
     Rectangle.hpp

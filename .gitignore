@@ -1,5 +1,5 @@
 build
-.vscode
+/.vscode
 package-lock.json
 node_modules
 cmake-build-debug

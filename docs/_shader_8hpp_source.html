@@ -71,174 +71,139 @@ $(function() {
 <div class="title">Shader.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*   LICENSE: zlib/libpng</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*   raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified,</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*   BSD-like license that allows static linking with closed source software:</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*   Copyright (c) 2020 Rob Loach (@RobLoach)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*   This software is provided &quot;as-is&quot;, without any express or implied warranty. In no event</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*   will the authors be held liable for any damages arising from the use of this software.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*   Permission is granted to anyone to use this software for any purpose, including commercial</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*   applications, and to alter it and redistribute it freely, subject to the following restrictions:</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*     1. The origin of this software must not be misrepresented; you must not claim that you</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*     wrote the original software. If you use this software in a product, an acknowledgment</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">*     in the product documentation would be appreciated but is not required.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*     2. Altered source versions must be plainly marked as such, and must not be misrepresented</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*     as being the original software.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*     3. This notice may not be removed or altered from any source distribution.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">*/</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_SHADER_HPP_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_SHADER_HPP_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;Texture.hpp&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_shader.html">Shader</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_shader.html">::Shader</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classraylib_1_1_shader.html">Shader</a>(const ::Shader&amp; shader) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        set(shader);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classraylib_1_1_shader.html">Shader</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Id, <span class="keywordtype">int</span>* Locs) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">id</span> = Id;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        locs = Locs;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_SHADER_HPP_</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_SHADER_HPP_</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;Texture.hpp&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_shader.html">Shader</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_shader.html">::Shader</a> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a62e4f196016badbf10b34f9e628d66eb">   37</a></span>&#160;    <a class="code" href="classraylib_1_1_shader.html#a62e4f196016badbf10b34f9e628d66eb">Shader</a>(const ::Shader&amp; shader) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classraylib_1_1_shader.html#a608ffa93c160b52e0b563e99f8893759">set</a>(shader);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#ab3da329a7bbbcc4c7f0ef6790c110a0c">   41</a></span>&#160;    <a class="code" href="classraylib_1_1_shader.html#ab3da329a7bbbcc4c7f0ef6790c110a0c">Shader</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Id, <span class="keywordtype">int</span>* Locs) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">id</span> = Id;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        locs = Locs;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#ae75772925d6b63c2e7f79de123289a17">   46</a></span>&#160;    <a class="code" href="classraylib_1_1_shader.html#ae75772925d6b63c2e7f79de123289a17">Shader</a>() {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classraylib_1_1_shader.html#a608ffa93c160b52e0b563e99f8893759">set</a>(GetShaderDefault());</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classraylib_1_1_shader.html">Shader</a>() {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        set(GetShaderDefault());</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classraylib_1_1_shader.html">Shader</a>(<span class="keyword">const</span> std::string&amp; vsFileName, <span class="keyword">const</span> std::string&amp; fsFileName) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a65feaccca849680bb3f0a4424309dc53">   36</a></span>&#160;    static ::Shader <a class="code" href="classraylib_1_1_shader.html#a65feaccca849680bb3f0a4424309dc53">Load</a>(<span class="keyword">const</span> std::string&amp; vsFileName, <span class="keyword">const</span> std::string&amp; fsFileName) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a2e63bb9245b140e1c5905a9388719f66">   43</a></span>&#160;    static ::Shader <a class="code" href="classraylib_1_1_shader.html#a2e63bb9245b140e1c5905a9388719f66">LoadCode</a>(<span class="keyword">const</span> std::string&amp; vsCode, <span class="keyword">const</span> std::string&amp; fsCode) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        return ::LoadShaderCode(vsCode.c_str(), fsCode.c_str());</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#ad989f72fce0403b1b01d88e1709de512">   47</a></span>&#160;    GETTERSETTER(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, Id, <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#ac1ed2a53fbb669eb877c9f80ada02174">   48</a></span>&#160;    GETTERSETTER(<span class="keywordtype">int</span>*, Locs, locs)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a68787ddef60edcd1d7f766fb28f8c880">   50</a></span>&#160;    <a class="code" href="classraylib_1_1_shader.html#a68787ddef60edcd1d7f766fb28f8c880">Shader</a>(<span class="keyword">const</span> std::string&amp; vsFileName, <span class="keyword">const</span> std::string&amp; fsFileName) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classraylib_1_1_shader.html#a608ffa93c160b52e0b563e99f8893759">set</a>(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a65feaccca849680bb3f0a4424309dc53">   57</a></span>&#160;    static ::Shader <a class="code" href="classraylib_1_1_shader.html#a65feaccca849680bb3f0a4424309dc53">Load</a>(<span class="keyword">const</span> std::string&amp; vsFileName, <span class="keyword">const</span> std::string&amp; fsFileName) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a2e63bb9245b140e1c5905a9388719f66">   64</a></span>&#160;    static ::Shader <a class="code" href="classraylib_1_1_shader.html#a2e63bb9245b140e1c5905a9388719f66">LoadCode</a>(<span class="keyword">const</span> std::string&amp; vsCode, <span class="keyword">const</span> std::string&amp; fsCode) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        return ::LoadShaderCode(vsCode.c_str(), fsCode.c_str());</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#ad989f72fce0403b1b01d88e1709de512">   68</a></span>&#160;    GETTERSETTER(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, Id, <span class="keywordtype">id</span>)</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#ac1ed2a53fbb669eb877c9f80ada02174">   69</a></span>&#160;    GETTERSETTER(<span class="keywordtype">int</span>*, Locs, locs)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; shader) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        set(shader);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    ~<a class="code" href="classraylib_1_1_shader.html">Shader</a>() {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        Unload();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> Unload() {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        ::UnloadShader(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a63311cdadb7f81791a61e2ccea33efbe">   66</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; <a class="code" href="classraylib_1_1_shader.html#a63311cdadb7f81791a61e2ccea33efbe">BeginMode</a>() {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        ::BeginShaderMode(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#ab07558a53f1dc63b21db8d4c3fcb1c1a">   71</a></span>&#160;    <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; shader) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classraylib_1_1_shader.html#a608ffa93c160b52e0b563e99f8893759">set</a>(shader);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a5fdd95f82f152bae43e274830cffcbf1">   76</a></span>&#160;    <a class="code" href="classraylib_1_1_shader.html#a5fdd95f82f152bae43e274830cffcbf1">~Shader</a>() {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classraylib_1_1_shader.html#a5d56815b3531966cee3e2bee8ecfa5a4">Unload</a>();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a5d56815b3531966cee3e2bee8ecfa5a4">   80</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_shader.html#a5d56815b3531966cee3e2bee8ecfa5a4">Unload</a>() {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        ::UnloadShader(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a63311cdadb7f81791a61e2ccea33efbe">   87</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; <a class="code" href="classraylib_1_1_shader.html#a63311cdadb7f81791a61e2ccea33efbe">BeginMode</a>() {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        ::BeginShaderMode(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a525c31d5a7482bc89e41f03d1284b9f7">   95</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; <a class="code" href="classraylib_1_1_shader.html#a525c31d5a7482bc89e41f03d1284b9f7">EndMode</a>() {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        ::EndShaderMode();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a95634f8def8f234a84113d80fd8e521a">  103</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_shader.html#a95634f8def8f234a84113d80fd8e521a">GetLocation</a>(<span class="keyword">const</span> std::string&amp; uniformName)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        return ::GetShaderLocation(*<span class="keyword">this</span>, uniformName.c_str());</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a525c31d5a7482bc89e41f03d1284b9f7">   74</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; <a class="code" href="classraylib_1_1_shader.html#a525c31d5a7482bc89e41f03d1284b9f7">EndMode</a>() {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        ::EndShaderMode();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a95634f8def8f234a84113d80fd8e521a">   84</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_shader.html#a95634f8def8f234a84113d80fd8e521a">GetLocation</a>(<span class="keyword">const</span> std::string&amp; uniformName)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        return ::GetShaderLocation(*<span class="keyword">this</span>, uniformName.c_str());</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a9c6eed0a0addfc76110bcec7cc8c3daf">   93</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_shader.html#a9c6eed0a0addfc76110bcec7cc8c3daf">GetLocationAttrib</a>(<span class="keyword">const</span> std::string&amp; attribName)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        return ::GetShaderLocationAttrib(*<span class="keyword">this</span>, attribName.c_str());</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#ac06aca8c81dc9dcc50d27c3b46a26712">  102</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; <a class="code" href="classraylib_1_1_shader.html#ac06aca8c81dc9dcc50d27c3b46a26712">SetValue</a>(<span class="keywordtype">int</span> uniformLoc, <span class="keyword">const</span> std::string&amp; value, <span class="keywordtype">int</span> uniformType) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        ::SetShaderValue(*<span class="keyword">this</span>, uniformLoc, value.c_str(), uniformType);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a9c6eed0a0addfc76110bcec7cc8c3daf">  110</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_shader.html#a9c6eed0a0addfc76110bcec7cc8c3daf">GetLocationAttrib</a>(<span class="keyword">const</span> std::string&amp; attribName)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        return ::GetShaderLocationAttrib(*<span class="keyword">this</span>, attribName.c_str());</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#ac06aca8c81dc9dcc50d27c3b46a26712">  119</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; <a class="code" href="classraylib_1_1_shader.html#ac06aca8c81dc9dcc50d27c3b46a26712">SetValue</a>(<span class="keywordtype">int</span> uniformLoc, <span class="keyword">const</span> std::string&amp; value, <span class="keywordtype">int</span> uniformType) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        ::SetShaderValue(*<span class="keyword">this</span>, uniformLoc, value.c_str(), uniformType);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#afdbe29251bd12788759b3c4978fb68d3">  129</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; <a class="code" href="classraylib_1_1_shader.html#afdbe29251bd12788759b3c4978fb68d3">SetValue</a>(<span class="keywordtype">int</span> uniformLoc, <span class="keyword">const</span> std::string&amp; value, <span class="keywordtype">int</span> uniformType, <span class="keywordtype">int</span> count) {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        ::SetShaderValueV(*<span class="keyword">this</span>, uniformLoc, value.c_str(), uniformType, count);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#adade0b76feffac6c439efb46586f4099">  139</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; <a class="code" href="classraylib_1_1_shader.html#adade0b76feffac6c439efb46586f4099">SetValue</a>(<span class="keywordtype">int</span> uniformLoc, const ::Matrix&amp; mat) {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        ::SetShaderValueMatrix(*<span class="keyword">this</span>, uniformLoc, mat);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a7bbc8d326c377cee898bf772dda1fc1c">  149</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; <a class="code" href="classraylib_1_1_shader.html#a7bbc8d326c377cee898bf772dda1fc1c">SetValue</a>(<span class="keywordtype">int</span> uniformLoc, const ::Texture2D&amp; texture) {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        ::SetShaderValueTexture(*<span class="keyword">this</span>, uniformLoc, texture);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a5518025bbd4e2254f6a135746d0ec458">  154</a></span>&#160;    <a class="code" href="classraylib_1_1_texture.html">::TextureCubemap</a> <a class="code" href="classraylib_1_1_shader.html#a5518025bbd4e2254f6a135746d0ec458">GenTextureCubemap</a>(const ::Texture2D&amp; panorama, <span class="keywordtype">int</span> size, <span class="keywordtype">int</span> format)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        return ::GenTextureCubemap(*<span class="keyword">this</span>, panorama, size, format);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a26c857f509f22ad508011cd53c04a8b4">  158</a></span>&#160;    <a class="code" href="classraylib_1_1_texture.html">::TextureCubemap</a> <a class="code" href="classraylib_1_1_shader.html#a26c857f509f22ad508011cd53c04a8b4">GenTextureIrradiance</a>(const ::Texture2D&amp; panorama, <span class="keywordtype">int</span> size)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        return ::GenTextureIrradiance(*<span class="keyword">this</span>, panorama, size);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a59098bfbe83e2a3105528cd87ef23cd8">  162</a></span>&#160;    <a class="code" href="classraylib_1_1_texture.html">::TextureCubemap</a> <a class="code" href="classraylib_1_1_shader.html#a59098bfbe83e2a3105528cd87ef23cd8">GenTexturePrefilter</a>(const ::Texture2D&amp; panorama, <span class="keywordtype">int</span> size)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        return ::GenTexturePrefilter(*<span class="keyword">this</span>, panorama, size);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#ae326f4879325f114fb286b2b673b51dc">  166</a></span>&#160;    <a class="code" href="classraylib_1_1_texture.html">::Texture2D</a> <a class="code" href="classraylib_1_1_shader.html#ae326f4879325f114fb286b2b673b51dc">GenTextureBRDF</a>(<span class="keywordtype">int</span> size)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        return ::GenTextureBRDF(*<span class="keyword">this</span>, size);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a608ffa93c160b52e0b563e99f8893759">  171</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_shader.html#a608ffa93c160b52e0b563e99f8893759">set</a>(const ::Shader&amp; shader) {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordtype">id</span> = shader.id;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        locs = shader.locs;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;};</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_SHADER_HPP_</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#afdbe29251bd12788759b3c4978fb68d3">  112</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; <a class="code" href="classraylib_1_1_shader.html#afdbe29251bd12788759b3c4978fb68d3">SetValue</a>(<span class="keywordtype">int</span> uniformLoc, <span class="keyword">const</span> std::string&amp; value, <span class="keywordtype">int</span> uniformType, <span class="keywordtype">int</span> count) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        ::SetShaderValueV(*<span class="keyword">this</span>, uniformLoc, value.c_str(), uniformType, count);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#adade0b76feffac6c439efb46586f4099">  122</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; <a class="code" href="classraylib_1_1_shader.html#adade0b76feffac6c439efb46586f4099">SetValue</a>(<span class="keywordtype">int</span> uniformLoc, const ::Matrix&amp; mat) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        ::SetShaderValueMatrix(*<span class="keyword">this</span>, uniformLoc, mat);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#a7bbc8d326c377cee898bf772dda1fc1c">  132</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_shader.html">Shader</a>&amp; <a class="code" href="classraylib_1_1_shader.html#a7bbc8d326c377cee898bf772dda1fc1c">SetValue</a>(<span class="keywordtype">int</span> uniformLoc, const ::Texture2D&amp; texture) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        ::SetShaderValueTexture(*<span class="keyword">this</span>, uniformLoc, texture);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="classraylib_1_1_texture.html">::TextureCubemap</a> GenTextureCubemap(const ::Texture2D&amp; panorama, <span class="keywordtype">int</span> size, <span class="keywordtype">int</span> format)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        return ::GenTextureCubemap(*<span class="keyword">this</span>, panorama, size, format);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    ::TextureCubemap GenTextureIrradiance(const ::Texture2D&amp; panorama, <span class="keywordtype">int</span> size)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        return ::GenTextureIrradiance(*<span class="keyword">this</span>, panorama, size);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    ::TextureCubemap GenTexturePrefilter(const ::Texture2D&amp; panorama, <span class="keywordtype">int</span> size)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        return ::GenTexturePrefilter(*<span class="keyword">this</span>, panorama, size);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    ::Texture2D GenTextureBRDF(<span class="keywordtype">int</span> size)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        return ::GenTextureBRDF(*<span class="keyword">this</span>, size);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Shader&amp; shader) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordtype">id</span> = shader.id;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        locs = shader.locs;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;};</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_SHADER_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">Provides all the classes associated with raylib-cpp.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00031">AudioDevice.hpp:31</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_ac06aca8c81dc9dcc50d27c3b46a26712"><div class="ttname"><a href="classraylib_1_1_shader.html#ac06aca8c81dc9dcc50d27c3b46a26712">raylib::Shader::SetValue</a></div><div class="ttdeci">Shader &amp; SetValue(int uniformLoc, const std::string &amp;value, int uniformType)</div><div class="ttdoc">Set shader uniform value.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00119">Shader.hpp:119</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a5518025bbd4e2254f6a135746d0ec458"><div class="ttname"><a href="classraylib_1_1_shader.html#a5518025bbd4e2254f6a135746d0ec458">raylib::Shader::GenTextureCubemap</a></div><div class="ttdeci">::TextureCubemap GenTextureCubemap(const ::Texture2D &amp;panorama, int size, int format) const</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00154">Shader.hpp:154</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a5fdd95f82f152bae43e274830cffcbf1"><div class="ttname"><a href="classraylib_1_1_shader.html#a5fdd95f82f152bae43e274830cffcbf1">raylib::Shader::~Shader</a></div><div class="ttdeci">~Shader()</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00076">Shader.hpp:76</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_adade0b76feffac6c439efb46586f4099"><div class="ttname"><a href="classraylib_1_1_shader.html#adade0b76feffac6c439efb46586f4099">raylib::Shader::SetValue</a></div><div class="ttdeci">Shader &amp; SetValue(int uniformLoc, const ::Matrix &amp;mat)</div><div class="ttdoc">Set shader uniform value (matrix 4x4)</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00139">Shader.hpp:139</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a59098bfbe83e2a3105528cd87ef23cd8"><div class="ttname"><a href="classraylib_1_1_shader.html#a59098bfbe83e2a3105528cd87ef23cd8">raylib::Shader::GenTexturePrefilter</a></div><div class="ttdeci">::TextureCubemap GenTexturePrefilter(const ::Texture2D &amp;panorama, int size) const</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00162">Shader.hpp:162</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a95634f8def8f234a84113d80fd8e521a"><div class="ttname"><a href="classraylib_1_1_shader.html#a95634f8def8f234a84113d80fd8e521a">raylib::Shader::GetLocation</a></div><div class="ttdeci">int GetLocation(const std::string &amp;uniformName) const</div><div class="ttdoc">Get shader uniform location.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00103">Shader.hpp:103</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_ae75772925d6b63c2e7f79de123289a17"><div class="ttname"><a href="classraylib_1_1_shader.html#ae75772925d6b63c2e7f79de123289a17">raylib::Shader::Shader</a></div><div class="ttdeci">Shader()</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00046">Shader.hpp:46</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_afdbe29251bd12788759b3c4978fb68d3"><div class="ttname"><a href="classraylib_1_1_shader.html#afdbe29251bd12788759b3c4978fb68d3">raylib::Shader::SetValue</a></div><div class="ttdeci">Shader &amp; SetValue(int uniformLoc, const std::string &amp;value, int uniformType, int count)</div><div class="ttdoc">Set shader uniform value vector.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00129">Shader.hpp:129</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a26c857f509f22ad508011cd53c04a8b4"><div class="ttname"><a href="classraylib_1_1_shader.html#a26c857f509f22ad508011cd53c04a8b4">raylib::Shader::GenTextureIrradiance</a></div><div class="ttdeci">::TextureCubemap GenTextureIrradiance(const ::Texture2D &amp;panorama, int size) const</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00158">Shader.hpp:158</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a525c31d5a7482bc89e41f03d1284b9f7"><div class="ttname"><a href="classraylib_1_1_shader.html#a525c31d5a7482bc89e41f03d1284b9f7">raylib::Shader::EndMode</a></div><div class="ttdeci">Shader &amp; EndMode()</div><div class="ttdoc">End custom shader drawing (use default shader).</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00095">Shader.hpp:95</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html"><div class="ttname"><a href="classraylib_1_1_shader.html">raylib::Shader</a></div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00035">Shader.hpp:35</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a63311cdadb7f81791a61e2ccea33efbe"><div class="ttname"><a href="classraylib_1_1_shader.html#a63311cdadb7f81791a61e2ccea33efbe">raylib::Shader::BeginMode</a></div><div class="ttdeci">Shader &amp; BeginMode()</div><div class="ttdoc">Begin custom shader drawing.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00087">Shader.hpp:87</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_ab3da329a7bbbcc4c7f0ef6790c110a0c"><div class="ttname"><a href="classraylib_1_1_shader.html#ab3da329a7bbbcc4c7f0ef6790c110a0c">raylib::Shader::Shader</a></div><div class="ttdeci">Shader(unsigned int Id, int *Locs)</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00041">Shader.hpp:41</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a608ffa93c160b52e0b563e99f8893759"><div class="ttname"><a href="classraylib_1_1_shader.html#a608ffa93c160b52e0b563e99f8893759">raylib::Shader::set</a></div><div class="ttdeci">void set(const ::Shader &amp;shader)</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00171">Shader.hpp:171</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a68787ddef60edcd1d7f766fb28f8c880"><div class="ttname"><a href="classraylib_1_1_shader.html#a68787ddef60edcd1d7f766fb28f8c880">raylib::Shader::Shader</a></div><div class="ttdeci">Shader(const std::string &amp;vsFileName, const std::string &amp;fsFileName)</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00050">Shader.hpp:50</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a5d56815b3531966cee3e2bee8ecfa5a4"><div class="ttname"><a href="classraylib_1_1_shader.html#a5d56815b3531966cee3e2bee8ecfa5a4">raylib::Shader::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00080">Shader.hpp:80</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a9c6eed0a0addfc76110bcec7cc8c3daf"><div class="ttname"><a href="classraylib_1_1_shader.html#a9c6eed0a0addfc76110bcec7cc8c3daf">raylib::Shader::GetLocationAttrib</a></div><div class="ttdeci">int GetLocationAttrib(const std::string &amp;attribName) const</div><div class="ttdoc">Get shader attribute location.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00110">Shader.hpp:110</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a2e63bb9245b140e1c5905a9388719f66"><div class="ttname"><a href="classraylib_1_1_shader.html#a2e63bb9245b140e1c5905a9388719f66">raylib::Shader::LoadCode</a></div><div class="ttdeci">::Shader LoadCode(const std::string &amp;vsCode, const std::string &amp;fsCode)</div><div class="ttdoc">Load shader from code strings and bind default locations.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00064">Shader.hpp:64</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_texture_html"><div class="ttname"><a href="classraylib_1_1_texture.html">raylib::Texture</a></div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00036">Texture.hpp:36</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_ae326f4879325f114fb286b2b673b51dc"><div class="ttname"><a href="classraylib_1_1_shader.html#ae326f4879325f114fb286b2b673b51dc">raylib::Shader::GenTextureBRDF</a></div><div class="ttdeci">::Texture2D GenTextureBRDF(int size) const</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00166">Shader.hpp:166</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a62e4f196016badbf10b34f9e628d66eb"><div class="ttname"><a href="classraylib_1_1_shader.html#a62e4f196016badbf10b34f9e628d66eb">raylib::Shader::Shader</a></div><div class="ttdeci">Shader(const ::Shader &amp;shader)</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00037">Shader.hpp:37</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a65feaccca849680bb3f0a4424309dc53"><div class="ttname"><a href="classraylib_1_1_shader.html#a65feaccca849680bb3f0a4424309dc53">raylib::Shader::Load</a></div><div class="ttdeci">::Shader Load(const std::string &amp;vsFileName, const std::string &amp;fsFileName)</div><div class="ttdoc">Load shader from files and bind default locations.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00057">Shader.hpp:57</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_shader_html_a7bbc8d326c377cee898bf772dda1fc1c"><div class="ttname"><a href="classraylib_1_1_shader.html#a7bbc8d326c377cee898bf772dda1fc1c">raylib::Shader::SetValue</a></div><div class="ttdeci">Shader &amp; SetValue(int uniformLoc, const ::Texture2D &amp;texture)</div><div class="ttdoc">Set shader uniform value for texture.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00149">Shader.hpp:149</a></div></div>
+<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_shader_html_ac06aca8c81dc9dcc50d27c3b46a26712"><div class="ttname"><a href="classraylib_1_1_shader.html#ac06aca8c81dc9dcc50d27c3b46a26712">raylib::Shader::SetValue</a></div><div class="ttdeci">Shader &amp; SetValue(int uniformLoc, const std::string &amp;value, int uniformType)</div><div class="ttdoc">Set shader uniform value.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00102">Shader.hpp:102</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_shader_html_adade0b76feffac6c439efb46586f4099"><div class="ttname"><a href="classraylib_1_1_shader.html#adade0b76feffac6c439efb46586f4099">raylib::Shader::SetValue</a></div><div class="ttdeci">Shader &amp; SetValue(int uniformLoc, const ::Matrix &amp;mat)</div><div class="ttdoc">Set shader uniform value (matrix 4x4)</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00122">Shader.hpp:122</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_shader_html_a95634f8def8f234a84113d80fd8e521a"><div class="ttname"><a href="classraylib_1_1_shader.html#a95634f8def8f234a84113d80fd8e521a">raylib::Shader::GetLocation</a></div><div class="ttdeci">int GetLocation(const std::string &amp;uniformName) const</div><div class="ttdoc">Get shader uniform location.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00084">Shader.hpp:84</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_shader_html_afdbe29251bd12788759b3c4978fb68d3"><div class="ttname"><a href="classraylib_1_1_shader.html#afdbe29251bd12788759b3c4978fb68d3">raylib::Shader::SetValue</a></div><div class="ttdeci">Shader &amp; SetValue(int uniformLoc, const std::string &amp;value, int uniformType, int count)</div><div class="ttdoc">Set shader uniform value vector.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00112">Shader.hpp:112</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_shader_html_a525c31d5a7482bc89e41f03d1284b9f7"><div class="ttname"><a href="classraylib_1_1_shader.html#a525c31d5a7482bc89e41f03d1284b9f7">raylib::Shader::EndMode</a></div><div class="ttdeci">Shader &amp; EndMode()</div><div class="ttdoc">End custom shader drawing (use default shader).</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00074">Shader.hpp:74</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_shader_html"><div class="ttname"><a href="classraylib_1_1_shader.html">raylib::Shader</a></div><div class="ttdoc">Shader type (generic)</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00014">Shader.hpp:14</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_shader_html_a63311cdadb7f81791a61e2ccea33efbe"><div class="ttname"><a href="classraylib_1_1_shader.html#a63311cdadb7f81791a61e2ccea33efbe">raylib::Shader::BeginMode</a></div><div class="ttdeci">Shader &amp; BeginMode()</div><div class="ttdoc">Begin custom shader drawing.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00066">Shader.hpp:66</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_shader_html_a9c6eed0a0addfc76110bcec7cc8c3daf"><div class="ttname"><a href="classraylib_1_1_shader.html#a9c6eed0a0addfc76110bcec7cc8c3daf">raylib::Shader::GetLocationAttrib</a></div><div class="ttdeci">int GetLocationAttrib(const std::string &amp;attribName) const</div><div class="ttdoc">Get shader attribute location.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00093">Shader.hpp:93</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_shader_html_a2e63bb9245b140e1c5905a9388719f66"><div class="ttname"><a href="classraylib_1_1_shader.html#a2e63bb9245b140e1c5905a9388719f66">raylib::Shader::LoadCode</a></div><div class="ttdeci">::Shader LoadCode(const std::string &amp;vsCode, const std::string &amp;fsCode)</div><div class="ttdoc">Load shader from code strings and bind default locations.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00043">Shader.hpp:43</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_texture_html"><div class="ttname"><a href="classraylib_1_1_texture.html">raylib::Texture</a></div><div class="ttdoc">Texture type.</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00015">Texture.hpp:15</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_shader_html_a65feaccca849680bb3f0a4424309dc53"><div class="ttname"><a href="classraylib_1_1_shader.html#a65feaccca849680bb3f0a4424309dc53">raylib::Shader::Load</a></div><div class="ttdeci">::Shader Load(const std::string &amp;vsFileName, const std::string &amp;fsFileName)</div><div class="ttdoc">Load shader from files and bind default locations.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00036">Shader.hpp:36</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_shader_html_a7bbc8d326c377cee898bf772dda1fc1c"><div class="ttname"><a href="classraylib_1_1_shader.html#a7bbc8d326c377cee898bf772dda1fc1c">raylib::Shader::SetValue</a></div><div class="ttdeci">Shader &amp; SetValue(int uniformLoc, const ::Texture2D &amp;texture)</div><div class="ttdoc">Set shader uniform value for texture.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00132">Shader.hpp:132</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 14 2021 16:32:47 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 24 2021 01:42:06 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

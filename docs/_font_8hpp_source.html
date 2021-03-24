@@ -71,167 +71,133 @@ $(function() {
 <div class="title">Font.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*   LICENSE: zlib/libpng</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*   raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified,</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*   BSD-like license that allows static linking with closed source software:</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*   Copyright (c) 2020 Rob Loach (@RobLoach)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*   This software is provided &quot;as-is&quot;, without any express or implied warranty. In no event</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*   will the authors be held liable for any damages arising from the use of this software.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*   Permission is granted to anyone to use this software for any purpose, including commercial</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*   applications, and to alter it and redistribute it freely, subject to the following restrictions:</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*     1. The origin of this software must not be misrepresented; you must not claim that you</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*     wrote the original software. If you use this software in a product, an acknowledgment</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">*     in the product documentation would be appreciated but is not required.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*     2. Altered source versions must be plainly marked as such, and must not be misrepresented</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*     as being the original software.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*     3. This notice may not be removed or altered from any source distribution.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_FONT_HPP_</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_FONT_HPP_</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_font.html">Font</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_font.html">::Font</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a583656ce94c5ade2bf4a47717f767764">   36</a></span>&#160;    <a class="code" href="classraylib_1_1_font.html#a583656ce94c5ade2bf4a47717f767764">Font</a>() {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classraylib_1_1_font.html#ae074b3bbfdbe4d7e4155f04b50ca5215">set</a>(::GetFontDefault());</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a53f097120183d34ad5474989a450bf43">   40</a></span>&#160;    <a class="code" href="classraylib_1_1_font.html#a53f097120183d34ad5474989a450bf43">Font</a>(const ::Font&amp; font) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classraylib_1_1_font.html#ae074b3bbfdbe4d7e4155f04b50ca5215">set</a>(font);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a8a29c7a9f5aacc2073d407784774ff7d">   44</a></span>&#160;    <a class="code" href="classraylib_1_1_font.html#a8a29c7a9f5aacc2073d407784774ff7d">Font</a>(<span class="keyword">const</span> std::string&amp; fileName) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="classraylib_1_1_font.html#ae074b3bbfdbe4d7e4155f04b50ca5215">set</a>(::LoadFont(fileName.c_str()));</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a702dd1ec33bbb9c9ff6d0ccb7515dfd7">   48</a></span>&#160;    <a class="code" href="classraylib_1_1_font.html#a702dd1ec33bbb9c9ff6d0ccb7515dfd7">Font</a>(<span class="keyword">const</span> std::string&amp; fileName, <span class="keywordtype">int</span> fontSize, <span class="keywordtype">int</span>* fontChars, <span class="keywordtype">int</span> charCount)  {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classraylib_1_1_font.html#ae074b3bbfdbe4d7e4155f04b50ca5215">set</a>(::LoadFontEx(fileName.c_str(), fontSize, fontChars, charCount));</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#adfe1913d9f5aa7848fcb033fe7bc7ca2">   52</a></span>&#160;    <a class="code" href="classraylib_1_1_font.html#adfe1913d9f5aa7848fcb033fe7bc7ca2">Font</a>(const ::Image&amp; image, ::<a class="code" href="classraylib_1_1_color.html">Color</a> key, <span class="keywordtype">int</span> firstChar) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classraylib_1_1_font.html#ae074b3bbfdbe4d7e4155f04b50ca5215">set</a>(::LoadFontFromImage(image, key, firstChar));</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_FONT_HPP_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_FONT_HPP_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_font.html">Font</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_font.html">::Font</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classraylib_1_1_font.html">Font</a>() {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        set(::GetFontDefault());</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classraylib_1_1_font.html">Font</a>(const ::Font&amp; font) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        set(font);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classraylib_1_1_font.html">Font</a>(<span class="keyword">const</span> std::string&amp; fileName) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        set(::LoadFont(fileName.c_str()));</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classraylib_1_1_font.html">Font</a>(<span class="keyword">const</span> std::string&amp; fileName, <span class="keywordtype">int</span> fontSize, <span class="keywordtype">int</span>* fontChars, <span class="keywordtype">int</span> charCount)  {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        set(::LoadFontEx(fileName.c_str(), fontSize, fontChars, charCount));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classraylib_1_1_font.html">Font</a>(const ::Image&amp; image, ::<a class="code" href="classraylib_1_1_color.html">Color</a> key, <span class="keywordtype">int</span> firstChar) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        set(::LoadFontFromImage(image, key, firstChar));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classraylib_1_1_font.html">Font</a>(<span class="keyword">const</span> std::string&amp; fileType, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *fileData, <span class="keywordtype">int</span> dataSize, <span class="keywordtype">int</span> fontSize,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordtype">int</span> *fontChars, <span class="keywordtype">int</span> charsCount)  {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        set(::LoadFontFromMemory(fileType.c_str(), fileData, dataSize, fontSize, fontChars,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            charsCount));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ~<a class="code" href="classraylib_1_1_font.html">Font</a>() {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        Unload();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> Unload() {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        UnloadFont(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#ae649dde6d344112b02d4f560eb638f94">   49</a></span>&#160;    GETTERSETTER(<span class="keywordtype">int</span>, BaseSize, baseSize)</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a5b18d0dba51e54d83faf62205a6a92c6">   50</a></span>&#160;    GETTERSETTER(<span class="keywordtype">int</span>, CharsCount, charsCount)</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#ac600ada80290128ea336625275d2893b">   51</a></span>&#160;    GETTERSETTER(<span class="keywordtype">int</span>, CharsPadding, charsPadding)</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#ac50d5aa47129525b46e935d4c6f0d0a8">   52</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_texture.html">Texture2D</a>, <a class="code" href="classraylib_1_1_texture.html">Texture</a>, texture)</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a1030f35362a541bc750605f0e47592e9">   53</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_rectangle.html">Rectangle</a>*, Recs, recs)</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#ae741128d1b41a4529d4f23a6d8eea913">   54</a></span>&#160;    GETTERSETTER(::CharInfo*, Chars, chars)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a4cfb9ae6c224437ad3d5c7c4f905b6ab">   56</a></span>&#160;    <a class="code" href="classraylib_1_1_font.html#a4cfb9ae6c224437ad3d5c7c4f905b6ab">Font</a>(<span class="keyword">const</span> std::string&amp; fileType, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *fileData, <span class="keywordtype">int</span> dataSize, <span class="keywordtype">int</span> fontSize,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordtype">int</span> *fontChars, <span class="keywordtype">int</span> charsCount)  {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classraylib_1_1_font.html#ae074b3bbfdbe4d7e4155f04b50ca5215">set</a>(::LoadFontFromMemory(fileType.c_str(), fileData, dataSize, fontSize, fontChars,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            charsCount));</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#ac26732eaa27d5984b2c356941b5762ad">   62</a></span>&#160;    <a class="code" href="classraylib_1_1_font.html#ac26732eaa27d5984b2c356941b5762ad">~Font</a>() {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classraylib_1_1_font.html#a626232061626ccd76870cf9d81e56ca5">Unload</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a626232061626ccd76870cf9d81e56ca5">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_font.html#a626232061626ccd76870cf9d81e56ca5">Unload</a>() {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        UnloadFont(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classraylib_1_1_font.html">Font</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_font.html">Font</a>&amp; font) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        set(font);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#ac3edd0d0ff79509e4e7144d2a111d704">   64</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_font.html">Font</a>&amp; <a class="code" href="classraylib_1_1_font.html#ac3edd0d0ff79509e4e7144d2a111d704">DrawText</a>(<span class="keyword">const</span> std::string&amp; text, ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> position, <span class="keywordtype">float</span> fontSize,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordtype">float</span> spacing, ::<a class="code" href="classraylib_1_1_color.html">Color</a> tint = WHITE) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        ::DrawTextEx(*<span class="keyword">this</span>, text.c_str(), position,  fontSize,  spacing,  tint);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#ae649dde6d344112b02d4f560eb638f94">   70</a></span>&#160;    GETTERSETTER(<span class="keywordtype">int</span>, BaseSize, baseSize)</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a5b18d0dba51e54d83faf62205a6a92c6">   71</a></span>&#160;    GETTERSETTER(<span class="keywordtype">int</span>, CharsCount, charsCount)</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#ac600ada80290128ea336625275d2893b">   72</a></span>&#160;    GETTERSETTER(<span class="keywordtype">int</span>, CharsPadding, charsPadding)</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#ac50d5aa47129525b46e935d4c6f0d0a8">   73</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_texture.html">Texture2D</a>, <a class="code" href="classraylib_1_1_texture.html">Texture</a>, texture)</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a1030f35362a541bc750605f0e47592e9">   74</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_rectangle.html">Rectangle</a>*, Recs, recs)</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#ae741128d1b41a4529d4f23a6d8eea913">   75</a></span>&#160;    GETTERSETTER(::CharInfo*, Chars, chars)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a45a8ed764c7e9d53017daa4759d3aeed">   77</a></span>&#160;    <a class="code" href="classraylib_1_1_font.html">Font</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_font.html">Font</a>&amp; font) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classraylib_1_1_font.html#ae074b3bbfdbe4d7e4155f04b50ca5215">set</a>(font);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#ac3edd0d0ff79509e4e7144d2a111d704">   85</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_font.html">Font</a>&amp; <a class="code" href="classraylib_1_1_font.html#ac3edd0d0ff79509e4e7144d2a111d704">DrawText</a>(<span class="keyword">const</span> std::string&amp; text, ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> position, <span class="keywordtype">float</span> fontSize,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordtype">float</span> spacing, ::<a class="code" href="classraylib_1_1_color.html">Color</a> tint = WHITE) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        ::DrawTextEx(*<span class="keyword">this</span>, text.c_str(), position,  fontSize,  spacing,  tint);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a46f184b15c2615e7effc66357131edda">   91</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_font.html">Font</a>&amp; <a class="code" href="classraylib_1_1_font.html#a46f184b15c2615e7effc66357131edda">DrawText</a>(<span class="keyword">const</span> std::string&amp; text, ::<a class="code" href="classraylib_1_1_rectangle.html">Rectangle</a> rec, <span class="keywordtype">float</span> fontSize, <span class="keywordtype">float</span> spacing,</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordtype">bool</span> wordWrap = <span class="keyword">false</span>, ::<a class="code" href="classraylib_1_1_color.html">Color</a> tint = WHITE) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        ::DrawTextRec(*<span class="keyword">this</span>, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a1714ea67ea3913a27fd7f5283bcdbbb4">  100</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_font.html">Font</a>&amp; <a class="code" href="classraylib_1_1_font.html#a1714ea67ea3913a27fd7f5283bcdbbb4">DrawText</a>(<span class="keyword">const</span> std::string&amp; text, ::<a class="code" href="classraylib_1_1_rectangle.html">Rectangle</a> rec, <span class="keywordtype">float</span> fontSize, <span class="keywordtype">float</span> spacing,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordtype">bool</span> wordWrap, ::<a class="code" href="classraylib_1_1_color.html">Color</a> tint, <span class="keywordtype">int</span> selectStart, <span class="keywordtype">int</span> selectLength, ::<a class="code" href="classraylib_1_1_color.html">Color</a> selectText,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            ::<a class="code" href="classraylib_1_1_color.html">Color</a> selectBack) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        ::DrawTextRecEx(*<span class="keyword">this</span>, text.c_str(), rec, fontSize, spacing, wordWrap, tint,</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            selectStart,  selectLength, selectText, selectBack);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a1a3c668905d6769fdf3d8f341520926c">  111</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_font.html">Font</a>&amp; <a class="code" href="classraylib_1_1_font.html#a1a3c668905d6769fdf3d8f341520926c">DrawText</a>(<span class="keywordtype">int</span> codepoint,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> position,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordtype">float</span> fontSize,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            ::<a class="code" href="classraylib_1_1_color.html">Color</a> tint = { 255, 255, 255, 255 }) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        ::DrawTextCodepoint(*<span class="keyword">this</span>, codepoint, position, fontSize, tint);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a230f1f02c3b77b1319316ab7d45d2553">  122</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_font.html#a230f1f02c3b77b1319316ab7d45d2553">MeasureText</a>(<span class="keyword">const</span> std::string&amp; text, <span class="keywordtype">float</span> fontSize, <span class="keywordtype">float</span> spacing)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        return ::MeasureTextEx(*<span class="keyword">this</span>, text.c_str(), fontSize, spacing);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a4dac04aebd39c1c038f936ef83d86b42">  129</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_font.html#a4dac04aebd39c1c038f936ef83d86b42">GetGlyphIndex</a>(<span class="keywordtype">int</span> character)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        return ::GetGlyphIndex(*<span class="keyword">this</span>, character);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#afd68d404370d62e2a3573977e5bbeb22">  136</a></span>&#160;    inline ::Image <a class="code" href="classraylib_1_1_font.html#afd68d404370d62e2a3573977e5bbeb22">ImageText</a>(<span class="keyword">const</span> std::string&amp; text, <span class="keywordtype">float</span> fontSize,</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordtype">float</span> spacing, ::<a class="code" href="classraylib_1_1_color.html">Color</a> tint)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        return ::ImageTextEx(*<span class="keyword">this</span>, text.c_str(), fontSize, spacing, tint);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#ae074b3bbfdbe4d7e4155f04b50ca5215">  142</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_font.html#ae074b3bbfdbe4d7e4155f04b50ca5215">set</a>(const ::Font&amp; font) {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        baseSize = font.baseSize;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        charsCount = font.charsCount;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        charsPadding = font.charsPadding;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        texture = font.texture;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        recs = font.recs;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        chars = font.chars;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;};</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_FONT_HPP_</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_font.html">Font</a>&amp; <a class="code" href="classraylib_1_1_font.html#ac3edd0d0ff79509e4e7144d2a111d704">DrawText</a>(<span class="keyword">const</span> std::string&amp; text, ::<a class="code" href="classraylib_1_1_rectangle.html">Rectangle</a> rec, <span class="keywordtype">float</span> fontSize, <span class="keywordtype">float</span> spacing,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordtype">bool</span> wordWrap = <span class="keyword">false</span>, ::<a class="code" href="classraylib_1_1_color.html">Color</a> tint = WHITE) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        ::DrawTextRec(*<span class="keyword">this</span>, text.c_str(), rec,  fontSize,  spacing,  wordWrap,  tint);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a1714ea67ea3913a27fd7f5283bcdbbb4">   79</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_font.html">Font</a>&amp; <a class="code" href="classraylib_1_1_font.html#a1714ea67ea3913a27fd7f5283bcdbbb4">DrawText</a>(<span class="keyword">const</span> std::string&amp; text, ::<a class="code" href="classraylib_1_1_rectangle.html">Rectangle</a> rec, <span class="keywordtype">float</span> fontSize, <span class="keywordtype">float</span> spacing,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordtype">bool</span> wordWrap, ::<a class="code" href="classraylib_1_1_color.html">Color</a> tint, <span class="keywordtype">int</span> selectStart, <span class="keywordtype">int</span> selectLength, ::<a class="code" href="classraylib_1_1_color.html">Color</a> selectText,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            ::<a class="code" href="classraylib_1_1_color.html">Color</a> selectBack) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        ::DrawTextRecEx(*<span class="keyword">this</span>, text.c_str(), rec, fontSize, spacing, wordWrap, tint,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            selectStart,  selectLength, selectText, selectBack);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a1a3c668905d6769fdf3d8f341520926c">   90</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_font.html">Font</a>&amp; <a class="code" href="classraylib_1_1_font.html#a1a3c668905d6769fdf3d8f341520926c">DrawText</a>(<span class="keywordtype">int</span> codepoint,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> position,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordtype">float</span> fontSize,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            ::<a class="code" href="classraylib_1_1_color.html">Color</a> tint = { 255, 255, 255, 255 }) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        ::DrawTextCodepoint(*<span class="keyword">this</span>, codepoint, position, fontSize, tint);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a230f1f02c3b77b1319316ab7d45d2553">  101</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_font.html#a230f1f02c3b77b1319316ab7d45d2553">MeasureText</a>(<span class="keyword">const</span> std::string&amp; text, <span class="keywordtype">float</span> fontSize, <span class="keywordtype">float</span> spacing)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        return ::MeasureTextEx(*<span class="keyword">this</span>, text.c_str(), fontSize, spacing);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#a4dac04aebd39c1c038f936ef83d86b42">  108</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_font.html#a4dac04aebd39c1c038f936ef83d86b42">GetGlyphIndex</a>(<span class="keywordtype">int</span> character)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        return ::GetGlyphIndex(*<span class="keyword">this</span>, character);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classraylib_1_1_font.html#afd68d404370d62e2a3573977e5bbeb22">  115</a></span>&#160;    inline ::Image <a class="code" href="classraylib_1_1_font.html#afd68d404370d62e2a3573977e5bbeb22">ImageText</a>(<span class="keyword">const</span> std::string&amp; text, <span class="keywordtype">float</span> fontSize,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordtype">float</span> spacing, ::<a class="code" href="classraylib_1_1_color.html">Color</a> tint)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        return ::ImageTextEx(*<span class="keyword">this</span>, text.c_str(), fontSize, spacing, tint);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> set(const ::Font&amp; font) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        baseSize = font.baseSize;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        charsCount = font.charsCount;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        charsPadding = font.charsPadding;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        texture = font.texture;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        recs = font.recs;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        chars = font.chars;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;};</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_FONT_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassraylib_1_1_font_html_a8a29c7a9f5aacc2073d407784774ff7d"><div class="ttname"><a href="classraylib_1_1_font.html#a8a29c7a9f5aacc2073d407784774ff7d">raylib::Font::Font</a></div><div class="ttdeci">Font(const std::string &amp;fileName)</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00044">Font.hpp:44</a></div></div>
-<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">Provides all the classes associated with raylib-cpp.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00031">AudioDevice.hpp:31</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_ae074b3bbfdbe4d7e4155f04b50ca5215"><div class="ttname"><a href="classraylib_1_1_font.html#ae074b3bbfdbe4d7e4155f04b50ca5215">raylib::Font::set</a></div><div class="ttdeci">void set(const ::Font &amp;font)</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00142">Font.hpp:142</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_ac3edd0d0ff79509e4e7144d2a111d704"><div class="ttname"><a href="classraylib_1_1_font.html#ac3edd0d0ff79509e4e7144d2a111d704">raylib::Font::DrawText</a></div><div class="ttdeci">Font &amp; DrawText(const std::string &amp;text, ::Vector2 position, float fontSize, float spacing, ::Color tint=WHITE)</div><div class="ttdoc">Draw text using font and additional parameters.</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00085">Font.hpp:85</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_a626232061626ccd76870cf9d81e56ca5"><div class="ttname"><a href="classraylib_1_1_font.html#a626232061626ccd76870cf9d81e56ca5">raylib::Font::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00066">Font.hpp:66</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_a46f184b15c2615e7effc66357131edda"><div class="ttname"><a href="classraylib_1_1_font.html#a46f184b15c2615e7effc66357131edda">raylib::Font::DrawText</a></div><div class="ttdeci">Font &amp; DrawText(const std::string &amp;text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap=false, ::Color tint=WHITE)</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00091">Font.hpp:91</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_a583656ce94c5ade2bf4a47717f767764"><div class="ttname"><a href="classraylib_1_1_font.html#a583656ce94c5ade2bf4a47717f767764">raylib::Font::Font</a></div><div class="ttdeci">Font()</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00036">Font.hpp:36</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_ac26732eaa27d5984b2c356941b5762ad"><div class="ttname"><a href="classraylib_1_1_font.html#ac26732eaa27d5984b2c356941b5762ad">raylib::Font::~Font</a></div><div class="ttdeci">~Font()</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00062">Font.hpp:62</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_adfe1913d9f5aa7848fcb033fe7bc7ca2"><div class="ttname"><a href="classraylib_1_1_font.html#adfe1913d9f5aa7848fcb033fe7bc7ca2">raylib::Font::Font</a></div><div class="ttdeci">Font(const ::Image &amp;image, ::Color key, int firstChar)</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00052">Font.hpp:52</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_a1a3c668905d6769fdf3d8f341520926c"><div class="ttname"><a href="classraylib_1_1_font.html#a1a3c668905d6769fdf3d8f341520926c">raylib::Font::DrawText</a></div><div class="ttdeci">Font &amp; DrawText(int codepoint, ::Vector2 position, float fontSize, ::Color tint={ 255, 255, 255, 255 })</div><div class="ttdoc">Draw one character (codepoint)</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00111">Font.hpp:111</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_a4cfb9ae6c224437ad3d5c7c4f905b6ab"><div class="ttname"><a href="classraylib_1_1_font.html#a4cfb9ae6c224437ad3d5c7c4f905b6ab">raylib::Font::Font</a></div><div class="ttdeci">Font(const std::string &amp;fileType, const unsigned char *fileData, int dataSize, int fontSize, int *fontChars, int charsCount)</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00056">Font.hpp:56</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_rectangle_html"><div class="ttname"><a href="classraylib_1_1_rectangle.html">raylib::Rectangle</a></div><div class="ttdef"><b>Definition:</b> <a href="_rectangle_8hpp_source.html#l00033">Rectangle.hpp:33</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html"><div class="ttname"><a href="classraylib_1_1_font.html">raylib::Font</a></div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00034">Font.hpp:34</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_a4dac04aebd39c1c038f936ef83d86b42"><div class="ttname"><a href="classraylib_1_1_font.html#a4dac04aebd39c1c038f936ef83d86b42">raylib::Font::GetGlyphIndex</a></div><div class="ttdeci">int GetGlyphIndex(int character) const</div><div class="ttdoc">Get index position for a unicode character on font.</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00129">Font.hpp:129</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html"><div class="ttname"><a href="classraylib_1_1_vector2.html">raylib::Vector2</a></div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00037">Vector2.hpp:37</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_a53f097120183d34ad5474989a450bf43"><div class="ttname"><a href="classraylib_1_1_font.html#a53f097120183d34ad5474989a450bf43">raylib::Font::Font</a></div><div class="ttdeci">Font(const ::Font &amp;font)</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00040">Font.hpp:40</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_a702dd1ec33bbb9c9ff6d0ccb7515dfd7"><div class="ttname"><a href="classraylib_1_1_font.html#a702dd1ec33bbb9c9ff6d0ccb7515dfd7">raylib::Font::Font</a></div><div class="ttdeci">Font(const std::string &amp;fileName, int fontSize, int *fontChars, int charCount)</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00048">Font.hpp:48</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_color_html"><div class="ttname"><a href="classraylib_1_1_color.html">raylib::Color</a></div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00035">Color.hpp:35</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_afd68d404370d62e2a3573977e5bbeb22"><div class="ttname"><a href="classraylib_1_1_font.html#afd68d404370d62e2a3573977e5bbeb22">raylib::Font::ImageText</a></div><div class="ttdeci">inline ::Image ImageText(const std::string &amp;text, float fontSize, float spacing, ::Color tint) const</div><div class="ttdoc">Create an image from text (custom sprite font)</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00136">Font.hpp:136</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_texture_html"><div class="ttname"><a href="classraylib_1_1_texture.html">raylib::Texture</a></div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00036">Texture.hpp:36</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_a230f1f02c3b77b1319316ab7d45d2553"><div class="ttname"><a href="classraylib_1_1_font.html#a230f1f02c3b77b1319316ab7d45d2553">raylib::Font::MeasureText</a></div><div class="ttdeci">Vector2 MeasureText(const std::string &amp;text, float fontSize, float spacing) const</div><div class="ttdoc">Measure string size for Font.</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00122">Font.hpp:122</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_font_html_a1714ea67ea3913a27fd7f5283bcdbbb4"><div class="ttname"><a href="classraylib_1_1_font.html#a1714ea67ea3913a27fd7f5283bcdbbb4">raylib::Font::DrawText</a></div><div class="ttdeci">Font &amp; DrawText(const std::string &amp;text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap, ::Color tint, int selectStart, int selectLength, ::Color selectText, ::Color selectBack)</div><div class="ttdoc">Draw text using font inside rectangle limits with support for text selection.</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00100">Font.hpp:100</a></div></div>
+<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_font_html_ac3edd0d0ff79509e4e7144d2a111d704"><div class="ttname"><a href="classraylib_1_1_font.html#ac3edd0d0ff79509e4e7144d2a111d704">raylib::Font::DrawText</a></div><div class="ttdeci">Font &amp; DrawText(const std::string &amp;text, ::Vector2 position, float fontSize, float spacing, ::Color tint=WHITE)</div><div class="ttdoc">Draw text using font and additional parameters.</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00064">Font.hpp:64</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_font_html_a1a3c668905d6769fdf3d8f341520926c"><div class="ttname"><a href="classraylib_1_1_font.html#a1a3c668905d6769fdf3d8f341520926c">raylib::Font::DrawText</a></div><div class="ttdeci">Font &amp; DrawText(int codepoint, ::Vector2 position, float fontSize, ::Color tint={ 255, 255, 255, 255 })</div><div class="ttdoc">Draw one character (codepoint)</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00090">Font.hpp:90</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_rectangle_html"><div class="ttname"><a href="classraylib_1_1_rectangle.html">raylib::Rectangle</a></div><div class="ttdoc">Rectangle type.</div><div class="ttdef"><b>Definition:</b> <a href="_rectangle_8hpp_source.html#l00012">Rectangle.hpp:12</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_font_html"><div class="ttname"><a href="classraylib_1_1_font.html">raylib::Font</a></div><div class="ttdoc">Font type, includes texture and charSet array data.</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00013">Font.hpp:13</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_font_html_a4dac04aebd39c1c038f936ef83d86b42"><div class="ttname"><a href="classraylib_1_1_font.html#a4dac04aebd39c1c038f936ef83d86b42">raylib::Font::GetGlyphIndex</a></div><div class="ttdeci">int GetGlyphIndex(int character) const</div><div class="ttdoc">Get index position for a unicode character on font.</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00108">Font.hpp:108</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html"><div class="ttname"><a href="classraylib_1_1_vector2.html">raylib::Vector2</a></div><div class="ttdoc">Vector2 type.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00016">Vector2.hpp:16</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_color_html"><div class="ttname"><a href="classraylib_1_1_color.html">raylib::Color</a></div><div class="ttdoc">Color type, RGBA (32bit)</div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00014">Color.hpp:14</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_font_html_afd68d404370d62e2a3573977e5bbeb22"><div class="ttname"><a href="classraylib_1_1_font.html#afd68d404370d62e2a3573977e5bbeb22">raylib::Font::ImageText</a></div><div class="ttdeci">inline ::Image ImageText(const std::string &amp;text, float fontSize, float spacing, ::Color tint) const</div><div class="ttdoc">Create an image from text (custom sprite font)</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00115">Font.hpp:115</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_texture_html"><div class="ttname"><a href="classraylib_1_1_texture.html">raylib::Texture</a></div><div class="ttdoc">Texture type.</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00015">Texture.hpp:15</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_font_html_a230f1f02c3b77b1319316ab7d45d2553"><div class="ttname"><a href="classraylib_1_1_font.html#a230f1f02c3b77b1319316ab7d45d2553">raylib::Font::MeasureText</a></div><div class="ttdeci">Vector2 MeasureText(const std::string &amp;text, float fontSize, float spacing) const</div><div class="ttdoc">Measure string size for Font.</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00101">Font.hpp:101</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_font_html_a1714ea67ea3913a27fd7f5283bcdbbb4"><div class="ttname"><a href="classraylib_1_1_font.html#a1714ea67ea3913a27fd7f5283bcdbbb4">raylib::Font::DrawText</a></div><div class="ttdeci">Font &amp; DrawText(const std::string &amp;text, ::Rectangle rec, float fontSize, float spacing, bool wordWrap, ::Color tint, int selectStart, int selectLength, ::Color selectText, ::Color selectBack)</div><div class="ttdoc">Draw text using font inside rectangle limits with support for text selection.</div><div class="ttdef"><b>Definition:</b> <a href="_font_8hpp_source.html#l00079">Font.hpp:79</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 14 2021 16:32:47 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 24 2021 01:42:06 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

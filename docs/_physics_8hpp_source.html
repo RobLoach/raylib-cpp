@@ -71,191 +71,135 @@ $(function() {
 <div class="title">Physics.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*   LICENSE: zlib/libpng</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*   raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified,</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*   BSD-like license that allows static linking with closed source software:</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*   Copyright (c) 2020 Rob Loach (@RobLoach)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*   This software is provided &quot;as-is&quot;, without any express or implied warranty. In no event</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*   will the authors be held liable for any damages arising from the use of this software.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*   Permission is granted to anyone to use this software for any purpose, including commercial</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*   applications, and to alter it and redistribute it freely, subject to the following restrictions:</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*     1. The origin of this software must not be misrepresented; you must not claim that you</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*     wrote the original software. If you use this software in a product, an acknowledgment</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">*     in the product documentation would be appreciated but is not required.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*     2. Altered source versions must be plainly marked as such, and must not be misrepresented</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*     as being the original software.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*     3. This notice may not be removed or altered from any source distribution.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_PHYSICS_HPP_</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_PHYSICS_HPP_</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_PHYSICS_HPP_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_PHYSICS_HPP_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;./physac.hpp&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;./Vector2.hpp&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_physics.html">Physics</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classraylib_1_1_physics.html">Physics</a>() {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        Init();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classraylib_1_1_physics.html">Physics</a>(<span class="keywordtype">float</span> gravityY) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        Init();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        SetGravity(0, gravityY);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classraylib_1_1_physics.html">Physics</a>(<span class="keywordtype">float</span> gravityX, <span class="keywordtype">float</span> gravityY) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        Init();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        SetGravity(gravityX, gravityY);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;physac.h&quot;</span> <span class="comment">// NOLINT</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;./Vector2.hpp&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_physics.html">Physics</a> {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#ab6fe48c3f1ccc583d78898d3946b3096">   43</a></span>&#160;    <a class="code" href="classraylib_1_1_physics.html#ab6fe48c3f1ccc583d78898d3946b3096">Physics</a>() {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classraylib_1_1_physics.html#a4f1fa61b07a3826fc668ccb60c26d697">Init</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    ~<a class="code" href="classraylib_1_1_physics.html">Physics</a>() {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        Close();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; Init() {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        ::InitPhysics();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; Close() {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        ::ClosePhysics();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; RunStep() {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        ::RunPhysicsStep();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#a9638fbedf8f35acd23bb5c502c9ddac7">   47</a></span>&#160;    <a class="code" href="classraylib_1_1_physics.html#a9638fbedf8f35acd23bb5c502c9ddac7">Physics</a>(<span class="keywordtype">float</span> gravityY) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classraylib_1_1_physics.html#a4f1fa61b07a3826fc668ccb60c26d697">Init</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classraylib_1_1_physics.html#ae52f8f28ec862afd8f89abdfc607ceb5">SetGravity</a>(0, gravityY);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; SetTimeStep(<span class="keywordtype">double</span> delta) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        ::SetPhysicsTimeStep(delta);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#abe69671cb0e5e5e765c6de48cccb0111">   52</a></span>&#160;    <a class="code" href="classraylib_1_1_physics.html#abe69671cb0e5e5e765c6de48cccb0111">Physics</a>(<span class="keywordtype">float</span> gravityX, <span class="keywordtype">float</span> gravityY) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classraylib_1_1_physics.html#a4f1fa61b07a3826fc668ccb60c26d697">Init</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classraylib_1_1_physics.html#ae52f8f28ec862afd8f89abdfc607ceb5">SetGravity</a>(gravityX, gravityY);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#a0629ca80510dec5e652457f0f6af2531">   57</a></span>&#160;    <a class="code" href="classraylib_1_1_physics.html#a0629ca80510dec5e652457f0f6af2531">~Physics</a>() {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classraylib_1_1_physics.html#ac40cb0d5f0b5ac9f77446b42aabcc124">Close</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> IsEnabled()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        return ::IsPhysicsEnabled();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; SetGravity(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        ::SetPhysicsGravity(x, y);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#a4f1fa61b07a3826fc668ccb60c26d697">   61</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; <a class="code" href="classraylib_1_1_physics.html#a4f1fa61b07a3826fc668ccb60c26d697">Init</a>() {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        ::InitPhysics();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#ac40cb0d5f0b5ac9f77446b42aabcc124">   66</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; <a class="code" href="classraylib_1_1_physics.html#ac40cb0d5f0b5ac9f77446b42aabcc124">Close</a>() {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        ::ClosePhysics();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#a7cd2a60d4e15be2f4df7368eb9ec5507">   71</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; <a class="code" href="classraylib_1_1_physics.html#a7cd2a60d4e15be2f4df7368eb9ec5507">RunStep</a>() {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        ::RunPhysicsStep();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#aa125e44e0db35e58068d1b8bb61e04e2">   76</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; <a class="code" href="classraylib_1_1_physics.html#aa125e44e0db35e58068d1b8bb61e04e2">SetTimeStep</a>(<span class="keywordtype">double</span> delta) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        ::SetPhysicsTimeStep(delta);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#a268626d12b7333b1b04642e6dc111f82">   81</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_physics.html#a268626d12b7333b1b04642e6dc111f82">IsEnabled</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        return ::IsPhysicsEnabled();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#ae52f8f28ec862afd8f89abdfc607ceb5">   85</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; <a class="code" href="classraylib_1_1_physics.html#ae52f8f28ec862afd8f89abdfc607ceb5">SetGravity</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        ::SetPhysicsGravity(x, y);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#a436c99fb21784b33ed039a713b927023">   90</a></span>&#160;    <span class="keyword">inline</span> PhysicsBody <a class="code" href="classraylib_1_1_physics.html#a436c99fb21784b33ed039a713b927023">CreateBodyCircle</a>(<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> pos, <span class="keywordtype">float</span> radius, <span class="keywordtype">float</span> density) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        return ::CreatePhysicsBodyCircle(pos, radius, density);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#aca1bd6e53ddbf8c64a3225ce32f1c3cc">   94</a></span>&#160;    <span class="keyword">inline</span> PhysicsBody <a class="code" href="classraylib_1_1_physics.html#aca1bd6e53ddbf8c64a3225ce32f1c3cc">CreateBodyRectangle</a>(<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> pos, <span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height, <span class="keywordtype">float</span> density) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        return ::CreatePhysicsBodyRectangle(pos, width, height, density);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#a9cbab4c8c8682f30924e4f7e85d37482">   98</a></span>&#160;    <span class="keyword">inline</span> PhysicsBody <a class="code" href="classraylib_1_1_physics.html#a9cbab4c8c8682f30924e4f7e85d37482">CreateBodyPolygon</a>(<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> pos, <span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> sides, <span class="keywordtype">float</span> density) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        return ::CreatePhysicsBodyPolygon(pos, radius, sides, density);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#a8e810eeb47e133aee1d43c1358158b2e">  102</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; <a class="code" href="classraylib_1_1_physics.html#a8e810eeb47e133aee1d43c1358158b2e">AddForce</a>(PhysicsBody body, <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> force) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        ::PhysicsAddForce(body, force);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#a57876d5f8dc434b46f6e93879cf47e86">  107</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; <a class="code" href="classraylib_1_1_physics.html#a57876d5f8dc434b46f6e93879cf47e86">AddTorque</a>(PhysicsBody body, <span class="keywordtype">float</span> amount) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        ::PhysicsAddTorque(body, amount);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#ab9595ed00c9baf02736a130d94e10a6e">  112</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; <a class="code" href="classraylib_1_1_physics.html#ab9595ed00c9baf02736a130d94e10a6e">Shatter</a>(PhysicsBody body, <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> position, <span class="keywordtype">float</span> force) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        ::PhysicsShatter(body, position, force);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#aff7aed721273fb7e990974dbc9854974">  117</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_physics.html#aff7aed721273fb7e990974dbc9854974">GetBodiesCount</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        return ::GetPhysicsBodiesCount();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#ac0d23dc143aec4b2aac7570ecaa34e55">  121</a></span>&#160;    <span class="keyword">inline</span> PhysicsBody <a class="code" href="classraylib_1_1_physics.html#ac0d23dc143aec4b2aac7570ecaa34e55">GetBody</a>(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        return ::GetPhysicsBody(index);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">inline</span> PhysicsBody CreateBodyCircle(<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> pos, <span class="keywordtype">float</span> radius, <span class="keywordtype">float</span> density) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        return ::CreatePhysicsBodyCircle(pos, radius, density);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">inline</span> PhysicsBody CreateBodyRectangle(<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> pos, <span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height, <span class="keywordtype">float</span> density) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        return ::CreatePhysicsBodyRectangle(pos, width, height, density);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">inline</span> PhysicsBody CreateBodyPolygon(<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> pos, <span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> sides, <span class="keywordtype">float</span> density) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        return ::CreatePhysicsBodyPolygon(pos, radius, sides, density);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; AddForce(PhysicsBody body, <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> force) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        ::PhysicsAddForce(body, force);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; AddTorque(PhysicsBody body, <span class="keywordtype">float</span> amount) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        ::PhysicsAddTorque(body, amount);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; Shatter(PhysicsBody body, <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> position, <span class="keywordtype">float</span> force) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        ::PhysicsShatter(body, position, force);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> GetBodiesCount()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        return ::GetPhysicsBodiesCount();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">inline</span> PhysicsBody GetBody(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        return ::GetPhysicsBody(index);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> GetShapeType(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        return ::GetPhysicsShapeType(index);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> GetShapeVerticesCount(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        return ::GetPhysicsShapeVerticesCount(index);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> GetShapeVertex(PhysicsBody body, <span class="keywordtype">int</span> vertex)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        return ::GetPhysicsShapeVertex(body, vertex);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; SetBodyRotation(PhysicsBody body, <span class="keywordtype">float</span> radians) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        ::SetPhysicsBodyRotation(body, radians);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; DestroyBody(PhysicsBody body) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        ::DestroyPhysicsBody(body);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; Reset() {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        ::ResetPhysics();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;};</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}  <span class="comment">// namespace raylib</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#ab317acc20d9cf36c110672a4c6ae7390">  125</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_physics.html#ab317acc20d9cf36c110672a4c6ae7390">GetShapeType</a>(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        return ::GetPhysicsShapeType(index);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#a9ff5c0328462f0976dbef73b75978079">  129</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_physics.html#a9ff5c0328462f0976dbef73b75978079">GetShapeVerticesCount</a>(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        return ::GetPhysicsShapeVerticesCount(index);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#a899af94cbe7a5c4709993c9ab9638192">  133</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_physics.html#a899af94cbe7a5c4709993c9ab9638192">GetShapeVertex</a>(PhysicsBody body, <span class="keywordtype">int</span> vertex)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        return ::GetPhysicsShapeVertex(body, vertex);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#a6103b87cc7f1ad2ffcd9e5ab19a6416a">  137</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; <a class="code" href="classraylib_1_1_physics.html#a6103b87cc7f1ad2ffcd9e5ab19a6416a">SetBodyRotation</a>(PhysicsBody body, <span class="keywordtype">float</span> radians) {</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        ::SetPhysicsBodyRotation(body, radians);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#afd9b6d9935a11fd1b66fbb2ee4f46289">  142</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; <a class="code" href="classraylib_1_1_physics.html#afd9b6d9935a11fd1b66fbb2ee4f46289">DestroyBody</a>(PhysicsBody body) {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        ::DestroyPhysicsBody(body);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classraylib_1_1_physics.html#a920a1d98e656beafb05e54ad275d0080">  147</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_physics.html">Physics</a>&amp; <a class="code" href="classraylib_1_1_physics.html#a920a1d98e656beafb05e54ad275d0080">Reset</a>() {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        ::ResetPhysics();</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;};</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_PHYSICS_HPP_</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_PHYSICS_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">Provides all the classes associated with raylib-cpp.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00031">AudioDevice.hpp:31</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_a436c99fb21784b33ed039a713b927023"><div class="ttname"><a href="classraylib_1_1_physics.html#a436c99fb21784b33ed039a713b927023">raylib::Physics::CreateBodyCircle</a></div><div class="ttdeci">PhysicsBody CreateBodyCircle(Vector2 pos, float radius, float density)</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00090">Physics.hpp:90</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_a7cd2a60d4e15be2f4df7368eb9ec5507"><div class="ttname"><a href="classraylib_1_1_physics.html#a7cd2a60d4e15be2f4df7368eb9ec5507">raylib::Physics::RunStep</a></div><div class="ttdeci">Physics &amp; RunStep()</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00071">Physics.hpp:71</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_afd9b6d9935a11fd1b66fbb2ee4f46289"><div class="ttname"><a href="classraylib_1_1_physics.html#afd9b6d9935a11fd1b66fbb2ee4f46289">raylib::Physics::DestroyBody</a></div><div class="ttdeci">Physics &amp; DestroyBody(PhysicsBody body)</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00142">Physics.hpp:142</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html"><div class="ttname"><a href="classraylib_1_1_physics.html">raylib::Physics</a></div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00041">Physics.hpp:41</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_a6103b87cc7f1ad2ffcd9e5ab19a6416a"><div class="ttname"><a href="classraylib_1_1_physics.html#a6103b87cc7f1ad2ffcd9e5ab19a6416a">raylib::Physics::SetBodyRotation</a></div><div class="ttdeci">Physics &amp; SetBodyRotation(PhysicsBody body, float radians)</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00137">Physics.hpp:137</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_ab6fe48c3f1ccc583d78898d3946b3096"><div class="ttname"><a href="classraylib_1_1_physics.html#ab6fe48c3f1ccc583d78898d3946b3096">raylib::Physics::Physics</a></div><div class="ttdeci">Physics()</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00043">Physics.hpp:43</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_a9cbab4c8c8682f30924e4f7e85d37482"><div class="ttname"><a href="classraylib_1_1_physics.html#a9cbab4c8c8682f30924e4f7e85d37482">raylib::Physics::CreateBodyPolygon</a></div><div class="ttdeci">PhysicsBody CreateBodyPolygon(Vector2 pos, float radius, int sides, float density)</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00098">Physics.hpp:98</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_ae52f8f28ec862afd8f89abdfc607ceb5"><div class="ttname"><a href="classraylib_1_1_physics.html#ae52f8f28ec862afd8f89abdfc607ceb5">raylib::Physics::SetGravity</a></div><div class="ttdeci">Physics &amp; SetGravity(float x, float y)</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00085">Physics.hpp:85</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_a9ff5c0328462f0976dbef73b75978079"><div class="ttname"><a href="classraylib_1_1_physics.html#a9ff5c0328462f0976dbef73b75978079">raylib::Physics::GetShapeVerticesCount</a></div><div class="ttdeci">int GetShapeVerticesCount(int index) const</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00129">Physics.hpp:129</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_ac0d23dc143aec4b2aac7570ecaa34e55"><div class="ttname"><a href="classraylib_1_1_physics.html#ac0d23dc143aec4b2aac7570ecaa34e55">raylib::Physics::GetBody</a></div><div class="ttdeci">PhysicsBody GetBody(int index) const</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00121">Physics.hpp:121</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_a0629ca80510dec5e652457f0f6af2531"><div class="ttname"><a href="classraylib_1_1_physics.html#a0629ca80510dec5e652457f0f6af2531">raylib::Physics::~Physics</a></div><div class="ttdeci">~Physics()</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00057">Physics.hpp:57</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_aca1bd6e53ddbf8c64a3225ce32f1c3cc"><div class="ttname"><a href="classraylib_1_1_physics.html#aca1bd6e53ddbf8c64a3225ce32f1c3cc">raylib::Physics::CreateBodyRectangle</a></div><div class="ttdeci">PhysicsBody CreateBodyRectangle(Vector2 pos, float width, float height, float density)</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00094">Physics.hpp:94</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_ab9595ed00c9baf02736a130d94e10a6e"><div class="ttname"><a href="classraylib_1_1_physics.html#ab9595ed00c9baf02736a130d94e10a6e">raylib::Physics::Shatter</a></div><div class="ttdeci">Physics &amp; Shatter(PhysicsBody body, Vector2 position, float force)</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00112">Physics.hpp:112</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_ab317acc20d9cf36c110672a4c6ae7390"><div class="ttname"><a href="classraylib_1_1_physics.html#ab317acc20d9cf36c110672a4c6ae7390">raylib::Physics::GetShapeType</a></div><div class="ttdeci">int GetShapeType(int index) const</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00125">Physics.hpp:125</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_ac40cb0d5f0b5ac9f77446b42aabcc124"><div class="ttname"><a href="classraylib_1_1_physics.html#ac40cb0d5f0b5ac9f77446b42aabcc124">raylib::Physics::Close</a></div><div class="ttdeci">Physics &amp; Close()</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00066">Physics.hpp:66</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_abe69671cb0e5e5e765c6de48cccb0111"><div class="ttname"><a href="classraylib_1_1_physics.html#abe69671cb0e5e5e765c6de48cccb0111">raylib::Physics::Physics</a></div><div class="ttdeci">Physics(float gravityX, float gravityY)</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00052">Physics.hpp:52</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_aa125e44e0db35e58068d1b8bb61e04e2"><div class="ttname"><a href="classraylib_1_1_physics.html#aa125e44e0db35e58068d1b8bb61e04e2">raylib::Physics::SetTimeStep</a></div><div class="ttdeci">Physics &amp; SetTimeStep(double delta)</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00076">Physics.hpp:76</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html"><div class="ttname"><a href="classraylib_1_1_vector2.html">raylib::Vector2</a></div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00037">Vector2.hpp:37</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_a9638fbedf8f35acd23bb5c502c9ddac7"><div class="ttname"><a href="classraylib_1_1_physics.html#a9638fbedf8f35acd23bb5c502c9ddac7">raylib::Physics::Physics</a></div><div class="ttdeci">Physics(float gravityY)</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00047">Physics.hpp:47</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_a8e810eeb47e133aee1d43c1358158b2e"><div class="ttname"><a href="classraylib_1_1_physics.html#a8e810eeb47e133aee1d43c1358158b2e">raylib::Physics::AddForce</a></div><div class="ttdeci">Physics &amp; AddForce(PhysicsBody body, Vector2 force)</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00102">Physics.hpp:102</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_aff7aed721273fb7e990974dbc9854974"><div class="ttname"><a href="classraylib_1_1_physics.html#aff7aed721273fb7e990974dbc9854974">raylib::Physics::GetBodiesCount</a></div><div class="ttdeci">int GetBodiesCount() const</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00117">Physics.hpp:117</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_a4f1fa61b07a3826fc668ccb60c26d697"><div class="ttname"><a href="classraylib_1_1_physics.html#a4f1fa61b07a3826fc668ccb60c26d697">raylib::Physics::Init</a></div><div class="ttdeci">Physics &amp; Init()</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00061">Physics.hpp:61</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_a920a1d98e656beafb05e54ad275d0080"><div class="ttname"><a href="classraylib_1_1_physics.html#a920a1d98e656beafb05e54ad275d0080">raylib::Physics::Reset</a></div><div class="ttdeci">Physics &amp; Reset()</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00147">Physics.hpp:147</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_a268626d12b7333b1b04642e6dc111f82"><div class="ttname"><a href="classraylib_1_1_physics.html#a268626d12b7333b1b04642e6dc111f82">raylib::Physics::IsEnabled</a></div><div class="ttdeci">bool IsEnabled() const</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00081">Physics.hpp:81</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_a57876d5f8dc434b46f6e93879cf47e86"><div class="ttname"><a href="classraylib_1_1_physics.html#a57876d5f8dc434b46f6e93879cf47e86">raylib::Physics::AddTorque</a></div><div class="ttdeci">Physics &amp; AddTorque(PhysicsBody body, float amount)</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00107">Physics.hpp:107</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_physics_html_a899af94cbe7a5c4709993c9ab9638192"><div class="ttname"><a href="classraylib_1_1_physics.html#a899af94cbe7a5c4709993c9ab9638192">raylib::Physics::GetShapeVertex</a></div><div class="ttdeci">Vector2 GetShapeVertex(PhysicsBody body, int vertex) const</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00133">Physics.hpp:133</a></div></div>
+<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_physics_html"><div class="ttname"><a href="classraylib_1_1_physics.html">raylib::Physics</a></div><div class="ttdoc">2D Physics library for videogames</div><div class="ttdef"><b>Definition:</b> <a href="_physics_8hpp_source.html#l00012">Physics.hpp:12</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html"><div class="ttname"><a href="classraylib_1_1_vector2.html">raylib::Vector2</a></div><div class="ttdoc">Vector2 type.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00016">Vector2.hpp:16</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 14 2021 16:32:47 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 24 2021 01:42:06 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

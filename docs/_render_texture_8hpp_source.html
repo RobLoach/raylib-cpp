@@ -71,105 +71,74 @@ $(function() {
 <div class="title">RenderTexture.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*   LICENSE: zlib/libpng</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*   raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified,</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*   BSD-like license that allows static linking with closed source software:</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*   Copyright (c) 2020 Rob Loach (@RobLoach)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*   This software is provided &quot;as-is&quot;, without any express or implied warranty. In no event</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*   will the authors be held liable for any damages arising from the use of this software.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*   Permission is granted to anyone to use this software for any purpose, including commercial</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*   applications, and to alter it and redistribute it freely, subject to the following restrictions:</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*     1. The origin of this software must not be misrepresented; you must not claim that you</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*     wrote the original software. If you use this software in a product, an acknowledgment</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">*     in the product documentation would be appreciated but is not required.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*     2. Altered source versions must be plainly marked as such, and must not be misrepresented</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*     as being the original software.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*     3. This notice may not be removed or altered from any source distribution.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">*/</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_RENDERTEXTURE_HPP_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_RENDERTEXTURE_HPP_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_render_texture.html">::RenderTexture</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a>(const ::RenderTexture&amp; renderTexture) {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        set(renderTexture);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Id) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">id</span> = Id;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        set(LoadRenderTexture(width, height));</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_RENDERTEXTURE_HPP_</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_RENDERTEXTURE_HPP_</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_render_texture.html">::RenderTexture</a> {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#a86e1112d634dd3f3fa08ab448b120174">   34</a></span>&#160;    <a class="code" href="classraylib_1_1_render_texture.html#a86e1112d634dd3f3fa08ab448b120174">RenderTexture</a>(const ::RenderTexture&amp; renderTexture) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classraylib_1_1_render_texture.html#a7f31b8f9060c694c9cc477783964bfca">set</a>(renderTexture);</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#a962803da3c2a50de3f4a337ebfd47fa2">   25</a></span>&#160;    GETTERSETTER(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, Id, <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#a06acb5fa12b2404449f018978cef0f81">   26</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_texture.html">Texture2D</a>, <a class="code" href="classraylib_1_1_texture.html">Texture</a>, texture)</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#ab24569c92eea7bffe99354c54ddc5235">   27</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_texture.html">Texture2D</a>, Depth, depth)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a>&amp; texture) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        set(texture);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    ~<a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a>() {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        Unload();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#a01df906cdf8a539c4b8c8da4e94da60b">   38</a></span>&#160;    <a class="code" href="classraylib_1_1_render_texture.html#a01df906cdf8a539c4b8c8da4e94da60b">RenderTexture</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Id) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">id</span> = Id;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> Unload() {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        UnloadRenderTexture(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#add8d201aec938fe0a66ecedd304e2fd3">   42</a></span>&#160;    <a class="code" href="classraylib_1_1_render_texture.html#add8d201aec938fe0a66ecedd304e2fd3">RenderTexture</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classraylib_1_1_render_texture.html#a7f31b8f9060c694c9cc477783964bfca">set</a>(LoadRenderTexture(width, height));</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#a962803da3c2a50de3f4a337ebfd47fa2">   46</a></span>&#160;    GETTERSETTER(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, Id, <span class="keywordtype">id</span>)</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#a06acb5fa12b2404449f018978cef0f81">   47</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_texture.html">Texture2D</a>, <a class="code" href="classraylib_1_1_texture.html">Texture</a>, texture)</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#ab24569c92eea7bffe99354c54ddc5235">   48</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_texture.html">Texture2D</a>, Depth, depth)</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#a7d05e471bb2d7fc83094f7a9463d836f">   45</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a>&amp; <a class="code" href="classraylib_1_1_render_texture.html#a7d05e471bb2d7fc83094f7a9463d836f">BeginMode</a>() {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        ::BeginTextureMode(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#a2f037783cc05a1ce825032c1213f0565">   50</a></span>&#160;    <a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a>&amp; texture) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classraylib_1_1_render_texture.html#a7f31b8f9060c694c9cc477783964bfca">set</a>(texture);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#aa82fb85022acc70314c1ddd22d12f44d">   55</a></span>&#160;    <a class="code" href="classraylib_1_1_render_texture.html#aa82fb85022acc70314c1ddd22d12f44d">~RenderTexture</a>() {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classraylib_1_1_render_texture.html#a56b0bb42ae5ef981404b0fc1b28c2ed9">Unload</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#a56b0bb42ae5ef981404b0fc1b28c2ed9">   59</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_render_texture.html#a56b0bb42ae5ef981404b0fc1b28c2ed9">Unload</a>() {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        UnloadRenderTexture(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#a7d05e471bb2d7fc83094f7a9463d836f">   66</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a>&amp; <a class="code" href="classraylib_1_1_render_texture.html#a7d05e471bb2d7fc83094f7a9463d836f">BeginMode</a>() {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        ::BeginTextureMode(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#a2b742cd39ce046d2ac8e1cd0bb6ae4ff">   74</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a>&amp; <a class="code" href="classraylib_1_1_render_texture.html#a2b742cd39ce046d2ac8e1cd0bb6ae4ff">EndMode</a>() {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        ::EndTextureMode();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#a7f31b8f9060c694c9cc477783964bfca">   80</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_render_texture.html#a7f31b8f9060c694c9cc477783964bfca">set</a>(const ::RenderTexture&amp; renderTexture) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">id</span> = renderTexture.id;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        texture = renderTexture.texture;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        depth = renderTexture.depth;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="namespaceraylib.html#ad0bcd17a51d5afe483d6f57e03cc3237">   86</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a> <a class="code" href="namespaceraylib.html#ad0bcd17a51d5afe483d6f57e03cc3237">RenderTexture2D</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_RENDERTEXTURE_HPP_</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classraylib_1_1_render_texture.html#a2b742cd39ce046d2ac8e1cd0bb6ae4ff">   53</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_render_texture.html">RenderTexture</a>&amp; <a class="code" href="classraylib_1_1_render_texture.html#a2b742cd39ce046d2ac8e1cd0bb6ae4ff">EndMode</a>() {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        ::EndTextureMode();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::RenderTexture&amp; renderTexture) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">id</span> = renderTexture.id;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        texture = renderTexture.texture;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        depth = renderTexture.depth;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">typedef</span> RenderTexture RenderTexture2D;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_RENDERTEXTURE_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">Provides all the classes associated with raylib-cpp.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00031">AudioDevice.hpp:31</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_render_texture_html_aa82fb85022acc70314c1ddd22d12f44d"><div class="ttname"><a href="classraylib_1_1_render_texture.html#aa82fb85022acc70314c1ddd22d12f44d">raylib::RenderTexture::~RenderTexture</a></div><div class="ttdeci">~RenderTexture()</div><div class="ttdef"><b>Definition:</b> <a href="_render_texture_8hpp_source.html#l00055">RenderTexture.hpp:55</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_render_texture_html_add8d201aec938fe0a66ecedd304e2fd3"><div class="ttname"><a href="classraylib_1_1_render_texture.html#add8d201aec938fe0a66ecedd304e2fd3">raylib::RenderTexture::RenderTexture</a></div><div class="ttdeci">RenderTexture(int width, int height)</div><div class="ttdef"><b>Definition:</b> <a href="_render_texture_8hpp_source.html#l00042">RenderTexture.hpp:42</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_render_texture_html_a01df906cdf8a539c4b8c8da4e94da60b"><div class="ttname"><a href="classraylib_1_1_render_texture.html#a01df906cdf8a539c4b8c8da4e94da60b">raylib::RenderTexture::RenderTexture</a></div><div class="ttdeci">RenderTexture(unsigned int Id)</div><div class="ttdef"><b>Definition:</b> <a href="_render_texture_8hpp_source.html#l00038">RenderTexture.hpp:38</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_render_texture_html_a56b0bb42ae5ef981404b0fc1b28c2ed9"><div class="ttname"><a href="classraylib_1_1_render_texture.html#a56b0bb42ae5ef981404b0fc1b28c2ed9">raylib::RenderTexture::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdef"><b>Definition:</b> <a href="_render_texture_8hpp_source.html#l00059">RenderTexture.hpp:59</a></div></div>
-<div class="ttc" id="anamespaceraylib_html_ad0bcd17a51d5afe483d6f57e03cc3237"><div class="ttname"><a href="namespaceraylib.html#ad0bcd17a51d5afe483d6f57e03cc3237">raylib::RenderTexture2D</a></div><div class="ttdeci">RenderTexture RenderTexture2D</div><div class="ttdef"><b>Definition:</b> <a href="_render_texture_8hpp_source.html#l00086">RenderTexture.hpp:86</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_render_texture_html"><div class="ttname"><a href="classraylib_1_1_render_texture.html">raylib::RenderTexture</a></div><div class="ttdef"><b>Definition:</b> <a href="_render_texture_8hpp_source.html#l00032">RenderTexture.hpp:32</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_render_texture_html_a2b742cd39ce046d2ac8e1cd0bb6ae4ff"><div class="ttname"><a href="classraylib_1_1_render_texture.html#a2b742cd39ce046d2ac8e1cd0bb6ae4ff">raylib::RenderTexture::EndMode</a></div><div class="ttdeci">RenderTexture &amp; EndMode()</div><div class="ttdoc">Ends drawing to render texture.</div><div class="ttdef"><b>Definition:</b> <a href="_render_texture_8hpp_source.html#l00074">RenderTexture.hpp:74</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_render_texture_html_a7d05e471bb2d7fc83094f7a9463d836f"><div class="ttname"><a href="classraylib_1_1_render_texture.html#a7d05e471bb2d7fc83094f7a9463d836f">raylib::RenderTexture::BeginMode</a></div><div class="ttdeci">RenderTexture &amp; BeginMode()</div><div class="ttdoc">Initializes render texture for drawing.</div><div class="ttdef"><b>Definition:</b> <a href="_render_texture_8hpp_source.html#l00066">RenderTexture.hpp:66</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_render_texture_html_a7f31b8f9060c694c9cc477783964bfca"><div class="ttname"><a href="classraylib_1_1_render_texture.html#a7f31b8f9060c694c9cc477783964bfca">raylib::RenderTexture::set</a></div><div class="ttdeci">void set(const ::RenderTexture &amp;renderTexture)</div><div class="ttdef"><b>Definition:</b> <a href="_render_texture_8hpp_source.html#l00080">RenderTexture.hpp:80</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_texture_html"><div class="ttname"><a href="classraylib_1_1_texture.html">raylib::Texture</a></div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00036">Texture.hpp:36</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_render_texture_html_a86e1112d634dd3f3fa08ab448b120174"><div class="ttname"><a href="classraylib_1_1_render_texture.html#a86e1112d634dd3f3fa08ab448b120174">raylib::RenderTexture::RenderTexture</a></div><div class="ttdeci">RenderTexture(const ::RenderTexture &amp;renderTexture)</div><div class="ttdef"><b>Definition:</b> <a href="_render_texture_8hpp_source.html#l00034">RenderTexture.hpp:34</a></div></div>
+<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_render_texture_html"><div class="ttname"><a href="classraylib_1_1_render_texture.html">raylib::RenderTexture</a></div><div class="ttdoc">RenderTexture type, for texture rendering.</div><div class="ttdef"><b>Definition:</b> <a href="_render_texture_8hpp_source.html#l00011">RenderTexture.hpp:11</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_render_texture_html_a2b742cd39ce046d2ac8e1cd0bb6ae4ff"><div class="ttname"><a href="classraylib_1_1_render_texture.html#a2b742cd39ce046d2ac8e1cd0bb6ae4ff">raylib::RenderTexture::EndMode</a></div><div class="ttdeci">RenderTexture &amp; EndMode()</div><div class="ttdoc">Ends drawing to render texture.</div><div class="ttdef"><b>Definition:</b> <a href="_render_texture_8hpp_source.html#l00053">RenderTexture.hpp:53</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_render_texture_html_a7d05e471bb2d7fc83094f7a9463d836f"><div class="ttname"><a href="classraylib_1_1_render_texture.html#a7d05e471bb2d7fc83094f7a9463d836f">raylib::RenderTexture::BeginMode</a></div><div class="ttdeci">RenderTexture &amp; BeginMode()</div><div class="ttdoc">Initializes render texture for drawing.</div><div class="ttdef"><b>Definition:</b> <a href="_render_texture_8hpp_source.html#l00045">RenderTexture.hpp:45</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_texture_html"><div class="ttname"><a href="classraylib_1_1_texture.html">raylib::Texture</a></div><div class="ttdoc">Texture type.</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00015">Texture.hpp:15</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 14 2021 16:32:47 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 24 2021 01:42:06 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
