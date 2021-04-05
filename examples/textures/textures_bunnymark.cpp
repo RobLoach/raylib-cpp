@@ -90,7 +90,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             for (Bunny& bunny: bunnies) {
                 // NOTE: When internal batch buffer limit is reached (MAX_BATCH_ELEMENTS),

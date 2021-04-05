@@ -20,7 +20,6 @@ int main() {
     const int screenHeight = 450;
 
     raylib::Window window(screenWidth, screenHeight, "raylib [core] example - 3d camera first person");
-    raylib::Color background(RAYWHITE);
 
     // Define the camera to look into our 3d world (position, target, up vector)
     raylib::Camera camera(
@@ -58,7 +57,7 @@ int main() {
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            background.ClearBackground();
+            window.ClearBackground(RAYWHITE);
 
             camera.BeginMode();
             {

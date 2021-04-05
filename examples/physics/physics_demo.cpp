@@ -92,7 +92,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            ClearBackground(BLACK);
+            window.ClearBackground(BLACK);
 
             DrawFPS(screenWidth - 90, screenHeight - 30);
 

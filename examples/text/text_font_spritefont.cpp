@@ -54,7 +54,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             font1.DrawText(msg1, fontPosition1, font1.baseSize, -3);
             font2.DrawText(msg2, fontPosition2, font2.baseSize, -2);

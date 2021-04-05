@@ -39,7 +39,7 @@ int main() {
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             // Check if there are files to process.
             if (droppedFiles.empty()) {

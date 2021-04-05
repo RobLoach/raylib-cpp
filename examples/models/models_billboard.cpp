@@ -48,7 +48,7 @@ int main() {
         BeginDrawing();
         {
 
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             camera.BeginMode();
             {
