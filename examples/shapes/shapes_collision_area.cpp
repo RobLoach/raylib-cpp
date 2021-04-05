@@ -74,7 +74,7 @@ int main(void)
         //-----------------------------------------------------
         BeginDrawing();
 
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             DrawRectangle(0, 0, screenWidth, screenUpperLimit, collision? RED : BLACK);
 

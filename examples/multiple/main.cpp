@@ -10,7 +10,7 @@ int main() {
     while (!window.ShouldClose()) {
         window.BeginDrawing();
         {
-            ClearBackground(SKYBLUE);
+            window.ClearBackground(SKYBLUE);
             player.Update();
             player.Draw();
         }

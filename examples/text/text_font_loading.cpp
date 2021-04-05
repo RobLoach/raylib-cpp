@@ -60,7 +60,7 @@ int main() {
         window.BeginDrawing();
         {
 
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             DrawText("Hold SPACE to use TTF generated font", 20, 20, 20, LIGHTGRAY);
 

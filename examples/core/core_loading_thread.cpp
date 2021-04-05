@@ -91,7 +91,7 @@ int main(void)
         BeginDrawing();
         {
 
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             switch (state)
             {

@@ -21,7 +21,6 @@ int main(void)
     const int screenHeight = 450;
 
     raylib::Window window(screenWidth, screenHeight, "raylib [textures] example - image drawing");
-    raylib::Color background(RAYWHITE);
     raylib::Color darkGray(DARKGRAY);
 
     // NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
@@ -61,7 +60,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            background.ClearBackground();
+            window.ClearBackground(RAYWHITE);
 
             texture.Draw(screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2 - 40);
             darkGray.DrawRectangleLines(screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2 - 40, texture.width, texture.height);
