@@ -128,7 +128,7 @@ class Window {
     /**
      * Clear window with given color.
      */
-    inline Window& ClearBackground(const raylib::Color& color = raylib::Color::Black()) {
+    inline Window& ClearBackground(const ::Color& color = BLACK) {
         ::ClearBackground(color);
         return *this;
     }
