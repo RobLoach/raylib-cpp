@@ -104,14 +104,6 @@ class Camera3D : public ::Camera3D {
     }
 
     /**
-     * Update VR tracking (position and orientation) and camera
-     */
-    inline Camera3D& UpdateVrTracking() {
-        ::UpdateVrTracking(this);
-        return *this;
-    }
-
-    /**
      * Returns a ray trace from mouse position
      */
     inline Ray GetMouseRay(::Vector2 mousePosition) const {

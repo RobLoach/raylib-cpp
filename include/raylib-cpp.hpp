@@ -59,7 +59,7 @@
 #include "./Vector2.hpp"
 #include "./Vector3.hpp"
 #include "./Vector4.hpp"
-#include "./VrSimulator.hpp"
+#include "./VrStereoConfig.hpp"
 #include "./Wave.hpp"
 #include "./Window.hpp"
 

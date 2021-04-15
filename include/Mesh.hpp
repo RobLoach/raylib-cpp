@@ -27,11 +27,11 @@ class Mesh : public ::Mesh {
     /**
      * Load meshes from model file
      */
-    static std::vector<Mesh> Load(const std::string& fileName) {
-        int count = 0;
-        ::Mesh* meshes = LoadMeshes(fileName.c_str(), &count);
-        return std::vector<Mesh>(meshes, meshes + count);
-    }
+    // static std::vector<Mesh> Load(const std::string& fileName) {
+    //    int count = 0;
+    //    ::Mesh* meshes = LoadMeshes(fileName.c_str(), &count);
+    //    return std::vector<Mesh>(meshes, meshes + count);
+    // }
 
     /**
      * Generate polygonal mesh
@@ -131,8 +131,8 @@ class Mesh : public ::Mesh {
     /**
      * Upload mesh vertex data to GPU (VRAM)
      */
-    inline void Upload() {
-        ::UploadMesh(this);
+    inline void Upload(bool dynamic = false) {
+        ::UploadMesh(this, dynamic);
     }
 
     /**

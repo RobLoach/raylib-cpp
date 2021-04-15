@@ -291,11 +291,6 @@ class Vector3 : public ::Vector3 {
         return *this;
     }
 
-    inline Vector3& DrawGizmo() {
-        ::DrawGizmo(*this);
-        return *this;
-    }
-
     /**
      * Detect collision between two spheres
      */
