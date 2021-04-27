@@ -19,7 +19,7 @@ class Mesh : public ::Mesh {
         set(mesh);
     }
 
-    Mesh(int VertexCount = 0, int TriangleCount = 0) {
+    Mesh(int VertexCount, int TriangleCount) {
         vertexCount = VertexCount;
         triangleCount = TriangleCount;
     }
@@ -27,11 +27,11 @@ class Mesh : public ::Mesh {
     /**
      * Load meshes from model file
      */
-    static std::vector<Mesh> Load(const std::string& fileName) {
-        int count = 0;
-        ::Mesh* meshes = LoadMeshes(fileName.c_str(), &count);
-        return std::vector<Mesh>(meshes, meshes + count);
-    }
+    // static std::vector<Mesh> Load(const std::string& fileName) {
+    //    int count = 0;
+    //    ::Mesh* meshes = LoadMeshes(fileName.c_str(), &count);
+    //    return std::vector<Mesh>(meshes, meshes + count);
+    // }
 
     /**
      * Generate polygonal mesh
@@ -129,6 +129,28 @@ class Mesh : public ::Mesh {
     }
 
     /**
+     * Upload mesh vertex data to GPU (VRAM)
+     */
+    inline void Upload(bool dynamic = false) {
+        ::UploadMesh(this, dynamic);
+    }
+
+    /**
+     * Upload mesh vertex data to GPU (VRAM)
+     */
+    inline void UpdateBuffer(int index, void *data, int dataSize, int offset = 0) {
+        ::UpdateMeshBuffer(*this, index, data, dataSize, offset);
+    }
+
+    inline void Draw(const ::Material& material, const ::Matrix& transform) {
+        ::DrawMesh(*this, material, transform);
+    }
+
+    inline void DrawInstanced(const ::Material& material, ::Matrix* transforms, int instances) {
+        ::DrawMeshInstanced(*this, material, transforms, instances);
+    }
+
+    /**
      * Export mesh data to file
      */
     inline bool Export(const std::string& fileName) {
@@ -173,14 +195,6 @@ class Mesh : public ::Mesh {
      */
     inline Mesh& Binormals() {
         ::MeshBinormals(this);
-        return *this;
-    }
-
-    /**
-     * Smooth (average) vertex normals
-     */
-    inline Mesh& NormalsSmooth() {
-        ::MeshNormalsSmooth(this);
         return *this;
     }
 

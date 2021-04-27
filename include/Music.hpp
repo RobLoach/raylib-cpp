@@ -24,6 +24,13 @@ class Music : public ::Music {
     }
 
     /**
+     * Load music stream from memory
+     */
+    Music(const std::string& fileType, unsigned char* data, int dataSize) {
+        set(::LoadMusicStreamFromMemory(fileType.c_str(), data, dataSize));
+    }
+
+    /**
      * Unload music stream
      */
     ~Music() {

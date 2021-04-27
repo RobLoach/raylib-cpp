@@ -39,7 +39,8 @@ class Material : public ::Material {
 
     GETTERSETTER(::Shader, Shader, shader)
     GETTERSETTER(::MaterialMap*, Maps, maps)
-    GETTERSETTER(float*, Params, params)
+    // TODO(RobLoach): Resolve the Material params being a float[4].
+    // GETTERSETTER(float[4], Params, params)
 
     Material& operator=(const ::Material& material) {
         set(material);
@@ -68,7 +69,10 @@ class Material : public ::Material {
     inline void set(const ::Material& material) {
         shader = material.shader;
         maps = material.maps;
-        params = material.params;
+        params[0] = material.params[0];
+        params[1] = material.params[1];
+        params[2] = material.params[2];
+        params[3] = material.params[3];
     }
 };
 }  // namespace raylib

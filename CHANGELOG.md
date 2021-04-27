@@ -5,9 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## [x.x.x] - xxxx-xx-xx
+## [3.7.0] - 2021-04-23
 ### Added
 - `Window::ClearBackground()` ([#127](https://github.com/RobLoach/raylib-cpp/pull/127) by [ufrshubham](https://github.com/ufrshubham))
+### Changes
+- Updated to raylib 3.7.0
 
 ## [3.5.0] - 2021-03-24
 ### Added

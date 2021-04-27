@@ -39,7 +39,7 @@ install(FILES
     Vector2.hpp
     Vector3.hpp
     Vector4.hpp
-    VrSimulator.hpp
+    VrStereoConfig.hpp
     Wave.hpp
     Window.hpp
     DESTINATION include

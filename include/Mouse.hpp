@@ -71,10 +71,6 @@ class Mouse {
         return ::GetMouseWheelMove();
     }
 
-    static inline int GetCursor() {
-        return ::GetMouseCursor();
-    }
-
     static inline void SetCursor(int cursor) {
         ::SetMouseCursor(cursor);
     }

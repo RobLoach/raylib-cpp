@@ -18,12 +18,17 @@ class Texture : public ::Texture {
         set(texture);
     }
 
-    Texture() {
-        set(::GetTextureDefault());
-    }
-
     Texture(const ::Image& image) {
         LoadFromImage(image);
+    }
+
+    /**
+     * Load cubemap from image, multiple image cubemap layouts supported.
+     *
+     * @see LoadTextureCubemap()
+     */
+    Texture(const ::Image& image, int layout) {
+        LoadCubemap(image, layout);
     }
 
     /**
@@ -65,7 +70,7 @@ class Texture : public ::Texture {
     /**
      * Load cubemap from image, multiple image cubemap layouts supported
      */
-    void LoadTextureCubemap(const ::Image& image, int layoutType) {
+    void LoadCubemap(const ::Image& image, int layoutType) {
         set(::LoadTextureCubemap(image, layoutType));
     }
 
@@ -199,6 +204,13 @@ class Texture : public ::Texture {
         return *this;
     }
 
+    inline Texture& DrawPoly(Vector2 center, Vector2 *points,
+            Vector2 *texcoords, int pointsCount,
+            Color tint = {255, 255, 255, 255}) {
+        ::DrawTexturePoly(*this, center, points, texcoords, pointsCount, tint);
+        return *this;
+    }
+
     /**
      * Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)
      */
@@ -212,14 +224,6 @@ class Texture : public ::Texture {
      */
     static int GetPixelDataSize(int width, int height, int format) {
         return ::GetPixelDataSize(width, height, format);
-    }
-
-    /**
-     * Define default texture used to draw shapes
-     */
-    inline Texture& SetShapes(::Rectangle source) {
-        ::SetShapesTexture(*this, source);
-        return *this;
     }
 
  private:

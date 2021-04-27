@@ -86,36 +86,6 @@ class Matrix : public ::Matrix {
             && m15 == other.m15;
     }
 
-    /**
-     * Set a custom projection matrix (replaces internal projection matrix)
-     */
-    inline Matrix& SetProjection() {
-        ::SetMatrixProjection(*this);
-        return *this;
-    }
-
-    /**
-     * Set a custom modelview matrix (replaces internal modelview matrix)
-     */
-    inline Matrix& SetModelview() {
-        ::SetMatrixModelview(*this);
-        return *this;
-    }
-
-    /**
-     * Get internal modelview matrix
-     */
-    static Matrix GetModelview() {
-        return ::GetMatrixModelview();
-    }
-
-    /**
-     * Get internal projection matrix
-     */
-    static Matrix GetProjection() {
-        return ::GetMatrixProjection();
-    }
-
 #ifndef RAYLIB_CPP_NO_MATH
     /**
      * Returns the trace of the matrix (sum of the values along the diagonal)

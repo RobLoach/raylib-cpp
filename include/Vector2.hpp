@@ -243,18 +243,16 @@ class Vector2 : public ::Vector2 {
     }
 
     /**
-     * Draw line using quadratic bezier curves with a control point
-     *
-     * TODO(RobLoach): Add this one this commit makes it in: https://github.com/raysan5/raylib/commit/521ed1cef0c0dbc752cb79f70c21bb4fc3bf70d4
+     * Draw line using quadratic bezier curves with a control point.
      */
-    // inline Vector2& DrawLineBezierQuad(
-    // ::Vector2 endPos,
-    // ::Vector2 controlPos,
-    // float thick,
-    // ::Color color) {
-    //    ::DrawLineBezierQuad(*this, endPos, controlPos, thick, color);
-    //    return *this;
-    //}
+    inline Vector2& DrawLineBezierQuad(
+            ::Vector2 endPos,
+            ::Vector2 controlPos,
+            float thick,
+            ::Color color) {
+       ::DrawLineBezierQuad(*this, endPos, controlPos, thick, color);
+       return *this;
+    }
 
     /**
      * Draw a color-filled circle (Vector version)

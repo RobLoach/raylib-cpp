@@ -97,7 +97,7 @@ class Image : public ::Image {
      * Generate image: checked
      */
     static ::Image Checked(int width, int height, int checksX, int checksY,
-            ::Color col1, ::Color col2) {
+            ::Color col1 = {255, 255, 255, 255}, ::Color col2 = {0, 0, 0, 255}) {
         return ::GenImageChecked(width, height, checksX, checksY, col1, col2);
     }
 
@@ -526,6 +526,20 @@ class Image : public ::Image {
      */
     inline ::Color* LoadPalette(int maxPaletteSize, int *colorsCount) {
         return ::LoadImagePalette(*this, maxPaletteSize, colorsCount);
+    }
+
+    /**
+     * Unload color data loaded with LoadImageColors()
+     */
+    inline void UnloadColors(::Color* colors) {
+        ::UnloadImageColors(colors);
+    }
+
+    /**
+     * Unload colors palette loaded with LoadImagePalette()
+     */
+    inline void UnloadPalette(::Color* colors) {
+        ::UnloadImagePalette(colors);
     }
 
     /**

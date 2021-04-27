@@ -39,18 +39,14 @@ class Physics {
         return *this;
     }
 
-    inline Physics& RunStep() {
-        ::RunPhysicsStep();
+    inline Physics& UpdateStep() {
+        ::UpdatePhysicsStep();
         return *this;
     }
 
     inline Physics& SetTimeStep(double delta) {
         ::SetPhysicsTimeStep(delta);
         return *this;
-    }
-
-    inline bool IsEnabled() const {
-        return ::IsPhysicsEnabled();
     }
 
     inline Physics& SetGravity(float x, float y) {

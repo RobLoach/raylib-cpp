@@ -22,10 +22,6 @@ class Shader : public ::Shader {
         locs = Locs;
     }
 
-    Shader() {
-        set(GetShaderDefault());
-    }
-
     Shader(const std::string& vsFileName, const std::string& fsFileName) {
         set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));
     }
@@ -37,11 +33,8 @@ class Shader : public ::Shader {
         return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());
     }
 
-    /**
-     * Load shader from code strings and bind default locations.
-     */
-    static ::Shader LoadCode(const std::string& vsCode, const std::string& fsCode) {
-        return ::LoadShaderCode(vsCode.c_str(), fsCode.c_str());
+    static ::Shader LoadFromMemory(const std::string& vsCode, const std::string& fsCode) {
+        return ::LoadShaderFromMemory(vsCode.c_str(), fsCode.c_str());
     }
 
     GETTERSETTER(unsigned int, Id, id)
@@ -57,7 +50,9 @@ class Shader : public ::Shader {
     }
 
     void Unload() {
-        ::UnloadShader(*this);
+        if (locs != NULL) {
+            ::UnloadShader(*this);
+        }
     }
 
     /**
@@ -132,22 +127,6 @@ class Shader : public ::Shader {
     inline Shader& SetValue(int uniformLoc, const ::Texture2D& texture) {
         ::SetShaderValueTexture(*this, uniformLoc, texture);
         return *this;
-    }
-
-    ::TextureCubemap GenTextureCubemap(const ::Texture2D& panorama, int size, int format) const {
-        return ::GenTextureCubemap(*this, panorama, size, format);
-    }
-
-    ::TextureCubemap GenTextureIrradiance(const ::Texture2D& panorama, int size) const {
-        return ::GenTextureIrradiance(*this, panorama, size);
-    }
-
-    ::TextureCubemap GenTexturePrefilter(const ::Texture2D& panorama, int size) const {
-        return ::GenTexturePrefilter(*this, panorama, size);
-    }
-
-    ::Texture2D GenTextureBRDF(int size) const {
-        return ::GenTextureBRDF(*this, size);
     }
 
  private:

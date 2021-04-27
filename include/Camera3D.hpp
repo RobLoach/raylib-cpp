@@ -16,12 +16,12 @@ class Camera3D : public ::Camera3D {
     }
 
     Camera3D(::Vector3 positionValue, ::Vector3 targetValue, ::Vector3 upValue,
-            float fovyValue = 0, int typeValue = 0) {
+            float fovyValue = 0, int projectionValue = 0) {
         position = positionValue;
         target = targetValue;
         up = upValue;
         fovy = fovyValue;
-        type = typeValue;
+        projection = projectionValue;
     }
 
     Camera3D() {}
@@ -30,7 +30,7 @@ class Camera3D : public ::Camera3D {
     GETTERSETTER(::Vector3, Target, target)
     GETTERSETTER(::Vector3, Up, up)
     GETTERSETTER(float, Fovy, fovy)
-    GETTERSETTER(int, Type, type)
+    GETTERSETTER(int, Projection, projection)
 
     Camera3D& operator=(const ::Camera3D& camera) {
         set(camera);
@@ -104,14 +104,6 @@ class Camera3D : public ::Camera3D {
     }
 
     /**
-     * Update VR tracking (position and orientation) and camera
-     */
-    inline Camera3D& UpdateVrTracking() {
-        ::UpdateVrTracking(this);
-        return *this;
-    }
-
-    /**
      * Returns a ray trace from mouse position
      */
     inline Ray GetMouseRay(::Vector2 mousePosition) const {
@@ -156,7 +148,7 @@ class Camera3D : public ::Camera3D {
         target = camera.target;
         up = camera.up;
         fovy = camera.fovy;
-        type = camera.type;
+        projection = camera.projection;
     }
 };
 
