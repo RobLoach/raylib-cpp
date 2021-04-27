@@ -84,9 +84,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1b94f6f98a5b4308cfc15e0dd5fe792e"><td class="memItemLeft" align="right" valign="top"><a id="a1b94f6f98a5b4308cfc15e0dd5fe792e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Mesh</b> (const ::<a class="el" href="classraylib_1_1_mesh.html">Mesh</a> &amp;mesh)</td></tr>
 <tr class="separator:a1b94f6f98a5b4308cfc15e0dd5fe792e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaac9fc8c2a3c8fd03458d9fc56f4dfd6"><td class="memItemLeft" align="right" valign="top"><a id="aaac9fc8c2a3c8fd03458d9fc56f4dfd6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Mesh</b> (int VertexCount=0, int TriangleCount=0)</td></tr>
-<tr class="separator:aaac9fc8c2a3c8fd03458d9fc56f4dfd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af09721dfcb516d349dba57e20d36a29e"><td class="memItemLeft" align="right" valign="top"><a id="af09721dfcb516d349dba57e20d36a29e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Mesh</b> (int VertexCount, int TriangleCount)</td></tr>
+<tr class="separator:af09721dfcb516d349dba57e20d36a29e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9288f896d13ca0f5c720ea1e6ef65189"><td class="memItemLeft" align="right" valign="top"><a id="a9288f896d13ca0f5c720ea1e6ef65189"></a>
 <a class="el" href="classraylib_1_1_mesh.html">Mesh</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#a9288f896d13ca0f5c720ea1e6ef65189">Binormals</a> ()</td></tr>
 <tr class="memdesc:a9288f896d13ca0f5c720ea1e6ef65189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute mesh binormals (aka bitangent) <br /></td></tr>
@@ -95,6 +95,12 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="classraylib_1_1_bounding_box.html">raylib::BoundingBox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#a045bdf62b9676b07c5745172383802c7">BoundingBox</a> () const</td></tr>
 <tr class="memdesc:a045bdf62b9676b07c5745172383802c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute mesh bounding box limits. <br /></td></tr>
 <tr class="separator:a045bdf62b9676b07c5745172383802c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0986b0d483a5ecd617b6f861c42522c0"><td class="memItemLeft" align="right" valign="top"><a id="a0986b0d483a5ecd617b6f861c42522c0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> (const ::<a class="el" href="classraylib_1_1_material.html">Material</a> &amp;material, const ::<a class="el" href="classraylib_1_1_matrix.html">Matrix</a> &amp;transform)</td></tr>
+<tr class="separator:a0986b0d483a5ecd617b6f861c42522c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8415383a676dfc8923df9015eb3d351f"><td class="memItemLeft" align="right" valign="top"><a id="a8415383a676dfc8923df9015eb3d351f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawInstanced</b> (const ::<a class="el" href="classraylib_1_1_material.html">Material</a> &amp;material, ::<a class="el" href="classraylib_1_1_matrix.html">Matrix</a> *transforms, int instances)</td></tr>
+<tr class="separator:a8415383a676dfc8923df9015eb3d351f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabbac566be5d678da87ac30a053eee55"><td class="memItemLeft" align="right" valign="top"><a id="aabbac566be5d678da87ac30a053eee55"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#aabbac566be5d678da87ac30a053eee55">Export</a> (const std::string &amp;fileName)</td></tr>
 <tr class="memdesc:aabbac566be5d678da87ac30a053eee55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export mesh data to file. <br /></td></tr>
@@ -148,10 +154,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a class="el" href="classraylib_1_1_model.html">raylib::Model</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#a192994cdc37a5f68cf149eb79024563d">LoadModelFrom</a> () const</td></tr>
 <tr class="memdesc:a192994cdc37a5f68cf149eb79024563d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load model from generated mesh. <br /></td></tr>
 <tr class="separator:a192994cdc37a5f68cf149eb79024563d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f573f556a04f1ccac630098aeb5cb9d"><td class="memItemLeft" align="right" valign="top"><a id="a7f573f556a04f1ccac630098aeb5cb9d"></a>
-<a class="el" href="classraylib_1_1_mesh.html">Mesh</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#a7f573f556a04f1ccac630098aeb5cb9d">NormalsSmooth</a> ()</td></tr>
-<tr class="memdesc:a7f573f556a04f1ccac630098aeb5cb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smooth (average) vertex normals. <br /></td></tr>
-<tr class="separator:a7f573f556a04f1ccac630098aeb5cb9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c67dce6d54119cc8922f7ed697eab8c"><td class="memItemLeft" align="right" valign="top"><a id="a5c67dce6d54119cc8922f7ed697eab8c"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#a5c67dce6d54119cc8922f7ed697eab8c">operator raylib::BoundingBox</a> ()</td></tr>
 <tr class="memdesc:a5c67dce6d54119cc8922f7ed697eab8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute mesh bounding box limits. <br /></td></tr>
@@ -216,6 +218,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#a2b9f6edb3fce3b6fcea46891e646fcd7">Unload</a> ()</td></tr>
 <tr class="memdesc:a2b9f6edb3fce3b6fcea46891e646fcd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unload mesh from memory (RAM and/or VRAM) <br /></td></tr>
 <tr class="separator:a2b9f6edb3fce3b6fcea46891e646fcd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d592396bc6c930fe886a406336b8bdf"><td class="memItemLeft" align="right" valign="top"><a id="a2d592396bc6c930fe886a406336b8bdf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#a2d592396bc6c930fe886a406336b8bdf">UpdateBuffer</a> (int index, void *data, int dataSize, int offset=0)</td></tr>
+<tr class="memdesc:a2d592396bc6c930fe886a406336b8bdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upload mesh vertex data to GPU (VRAM) <br /></td></tr>
+<tr class="separator:a2d592396bc6c930fe886a406336b8bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa32b8f666eece6bf8839f27538a6b4d1"><td class="memItemLeft" align="right" valign="top"><a id="aa32b8f666eece6bf8839f27538a6b4d1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#aa32b8f666eece6bf8839f27538a6b4d1">Upload</a> (bool dynamic=false)</td></tr>
+<tr class="memdesc:aa32b8f666eece6bf8839f27538a6b4d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upload mesh vertex data to GPU (VRAM) <br /></td></tr>
+<tr class="separator:aa32b8f666eece6bf8839f27538a6b4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -243,17 +253,12 @@ Static Public Member Functions</h2></td></tr>
 ::<a class="el" href="classraylib_1_1_mesh.html">Mesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#a29bea6873743413a23c573bb2a3cebed">Knot</a> (float radius, float size, int radSeg, int sides)</td></tr>
 <tr class="memdesc:a29bea6873743413a23c573bb2a3cebed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate trefoil knot mesh. <br /></td></tr>
 <tr class="separator:a29bea6873743413a23c573bb2a3cebed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88fabb386b426da556490f61d267086c"><td class="memItemLeft" align="right" valign="top"><a id="a88fabb386b426da556490f61d267086c"></a>
-static std::vector&lt; <a class="el" href="classraylib_1_1_mesh.html">Mesh</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#a88fabb386b426da556490f61d267086c">Load</a> (const std::string &amp;fileName)</td></tr>
-<tr class="memdesc:a88fabb386b426da556490f61d267086c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load meshes from model file. <br /></td></tr>
-<tr class="separator:a88fabb386b426da556490f61d267086c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a3885f78dc0d8a592e05653f5c178b4"><td class="memItemLeft" align="right" valign="top"><a id="a4a3885f78dc0d8a592e05653f5c178b4"></a>
 ::<a class="el" href="classraylib_1_1_mesh.html">Mesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#a4a3885f78dc0d8a592e05653f5c178b4">Plane</a> (float width, float length, int resX, int resZ)</td></tr>
 <tr class="memdesc:a4a3885f78dc0d8a592e05653f5c178b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate plane mesh (with subdivisions) <br /></td></tr>
 <tr class="separator:a4a3885f78dc0d8a592e05653f5c178b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52c3d52a426fb774bb3769acaa9b6732"><td class="memItemLeft" align="right" valign="top"><a id="a52c3d52a426fb774bb3769acaa9b6732"></a>
-::<a class="el" href="classraylib_1_1_mesh.html">Mesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#a52c3d52a426fb774bb3769acaa9b6732">Poly</a> (int sides, float radius)</td></tr>
-<tr class="memdesc:a52c3d52a426fb774bb3769acaa9b6732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate polygonal mesh. <br /></td></tr>
+<tr class="memitem:a52c3d52a426fb774bb3769acaa9b6732"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classraylib_1_1_mesh.html">Mesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#a52c3d52a426fb774bb3769acaa9b6732">Poly</a> (int sides, float radius)</td></tr>
+<tr class="memdesc:a52c3d52a426fb774bb3769acaa9b6732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load meshes from model file.  <a href="classraylib_1_1_mesh.html#a52c3d52a426fb774bb3769acaa9b6732">More...</a><br /></td></tr>
 <tr class="separator:a52c3d52a426fb774bb3769acaa9b6732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c47f75cc2add45ccd623dd6922f66e3"><td class="memItemLeft" align="right" valign="top"><a id="a1c47f75cc2add45ccd623dd6922f66e3"></a>
 ::<a class="el" href="classraylib_1_1_mesh.html">Mesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_mesh.html#a1c47f75cc2add45ccd623dd6922f66e3">Sphere</a> (float radius, int rings, int slices)</td></tr>
@@ -716,6 +721,47 @@ static std::vector&lt; <a class="el" href="classraylib_1_1_mesh.html">Mesh</a> &
 <dl class="section return"><dt>Returns</dt><dd>The vertices value of the object. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_mesh_8hpp_source.html#l00108">108</a> of file <a class="el" href="_mesh_8hpp_source.html">Mesh.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a52c3d52a426fb774bb3769acaa9b6732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52c3d52a426fb774bb3769acaa9b6732">&#9670;&nbsp;</a></span>Poly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">::<a class="el" href="classraylib_1_1_mesh.html">Mesh</a> raylib::Mesh::Poly </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sides</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load meshes from model file. </p>
+<p>Generate polygonal mesh </p>
+
+<p class="definition">Definition at line <a class="el" href="_mesh_8hpp_source.html#l00039">39</a> of file <a class="el" href="_mesh_8hpp_source.html">Mesh.hpp</a>.</p>
 
 </div>
 </div>
@@ -1262,7 +1308,7 @@ static std::vector&lt; <a class="el" href="classraylib_1_1_mesh.html">Mesh</a> &
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 5 2021 19:25:22 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 27 2021 00:48:57 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

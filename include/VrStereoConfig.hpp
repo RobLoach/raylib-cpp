@@ -10,14 +10,14 @@ namespace raylib {
  */
 class VrStereoConfig : public ::VrStereoConfig  {
  public:
-    VrStereoConfig(::VrDeviceInfo& info) {
+    VrStereoConfig(const ::VrDeviceInfo& info) {
         Init(info);
     }
 
     /**
      * Load VR stereo config for VR simulator device parameters
      */
-    inline void Init(::VrDeviceInfo info) {
+    inline void Init(const ::VrDeviceInfo& info) {
         set(LoadVrStereoConfig(info));
     }
 

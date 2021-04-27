@@ -135,8 +135,9 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_vector2.html#a31c32996761d89b568102b2f6b60b745">DotProduct</a> (const ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> &amp;vector2) const</td></tr>
 <tr class="memdesc:a31c32996761d89b568102b2f6b60b745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate two vectors dot product. <br /></td></tr>
 <tr class="separator:a31c32996761d89b568102b2f6b60b745"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad13e3d98cc06a835db9dc605b090b15c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_vector2.html">Vector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_vector2.html#ad13e3d98cc06a835db9dc605b090b15c">DrawCircle</a> (float radius, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color)</td></tr>
-<tr class="memdesc:ad13e3d98cc06a835db9dc605b090b15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw line using quadratic bezier curves with a control point.  <a href="classraylib_1_1_vector2.html#ad13e3d98cc06a835db9dc605b090b15c">More...</a><br /></td></tr>
+<tr class="memitem:ad13e3d98cc06a835db9dc605b090b15c"><td class="memItemLeft" align="right" valign="top"><a id="ad13e3d98cc06a835db9dc605b090b15c"></a>
+<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_vector2.html#ad13e3d98cc06a835db9dc605b090b15c">DrawCircle</a> (float radius, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color)</td></tr>
+<tr class="memdesc:ad13e3d98cc06a835db9dc605b090b15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a color-filled circle (Vector version) <br /></td></tr>
 <tr class="separator:ad13e3d98cc06a835db9dc605b090b15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a984c5753a7a384614f08126913028ef5"><td class="memItemLeft" align="right" valign="top"><a id="a984c5753a7a384614f08126913028ef5"></a>
 <a class="el" href="classraylib_1_1_vector2.html">Vector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>DrawLine</b> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> endPos, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color)</td></tr>
@@ -147,6 +148,10 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <tr class="memitem:aa5d1e6e3bca09e46298cfdccc41242fc"><td class="memItemLeft" align="right" valign="top"><a id="aa5d1e6e3bca09e46298cfdccc41242fc"></a>
 <a class="el" href="classraylib_1_1_vector2.html">Vector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>DrawLineBezier</b> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> endPos, float thick, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color)</td></tr>
 <tr class="separator:aa5d1e6e3bca09e46298cfdccc41242fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ad1e5906da8eb4ab23c12748b431cb"><td class="memItemLeft" align="right" valign="top"><a id="a75ad1e5906da8eb4ab23c12748b431cb"></a>
+<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_vector2.html#a75ad1e5906da8eb4ab23c12748b431cb">DrawLineBezierQuad</a> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> endPos, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> controlPos, float thick, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color)</td></tr>
+<tr class="memdesc:a75ad1e5906da8eb4ab23c12748b431cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw line using quadratic bezier curves with a control point. <br /></td></tr>
+<tr class="separator:a75ad1e5906da8eb4ab23c12748b431cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb7aa63203b8a7454c3563c9aafc64a2"><td class="memItemLeft" align="right" valign="top"><a id="abb7aa63203b8a7454c3563c9aafc64a2"></a>
 <a class="el" href="classraylib_1_1_vector2.html">Vector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>DrawPixel</b> (::<a class="el" href="classraylib_1_1_color.html">Color</a> color)</td></tr>
 <tr class="separator:abb7aa63203b8a7454c3563c9aafc64a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -270,47 +275,6 @@ static <a class="el" href="classraylib_1_1_vector2.html">Vector2</a>&#160;</td><
 
 <p class="definition">Definition at line <a class="el" href="_vector2_8hpp_source.html#l00016">16</a> of file <a class="el" href="_vector2_8hpp_source.html">Vector2.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad13e3d98cc06a835db9dc605b090b15c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad13e3d98cc06a835db9dc605b090b15c">&#9670;&nbsp;</a></span>DrawCircle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classraylib_1_1_vector2.html">Vector2</a>&amp; raylib::Vector2::DrawCircle </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>radius</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">::<a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td>
-          <td class="paramname"><em>color</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Draw line using quadratic bezier curves with a control point. </p>
-<p>TODO(RobLoach): Add this one this commit makes it in: <a href="https://github.com/raysan5/raylib/commit/521ed1cef0c0dbc752cb79f70c21bb4fc3bf70d4">https://github.com/raysan5/raylib/commit/521ed1cef0c0dbc752cb79f70c21bb4fc3bf70d4</a> Draw a color-filled circle (Vector version) </p>
-
-<p class="definition">Definition at line <a class="el" href="_vector2_8hpp_source.html#l00262">262</a> of file <a class="el" href="_vector2_8hpp_source.html">Vector2.hpp</a>.</p>
-
-</div>
-</div>
 <a id="a8f3caf893df8b295287b9d38db071f7b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8f3caf893df8b295287b9d38db071f7b">&#9670;&nbsp;</a></span>GetX()</h2>
 
@@ -446,7 +410,7 @@ static <a class="el" href="classraylib_1_1_vector2.html">Vector2</a>&#160;</td><
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 5 2021 19:25:22 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 27 2021 00:48:57 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

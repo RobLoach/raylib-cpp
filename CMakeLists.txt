@@ -30,6 +30,5 @@ if(BUILD_TESTING)
     set(CTEST_CUSTOM_TESTS_IGNORE
         pkg-config--static
     )
-
     add_subdirectory(tests)
 endif()

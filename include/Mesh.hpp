@@ -24,10 +24,6 @@ class Mesh : public ::Mesh {
         triangleCount = TriangleCount;
     }
 
-    Mesh(int vertexCount) {
-        set(GenMeshDefault(vertexCount));
-    }
-
     /**
      * Load meshes from model file
      */
@@ -36,13 +32,6 @@ class Mesh : public ::Mesh {
     //    ::Mesh* meshes = LoadMeshes(fileName.c_str(), &count);
     //    return std::vector<Mesh>(meshes, meshes + count);
     // }
-
-    /**
-     * Generate default mesh
-     */
-    static ::Mesh Default(int vertexCount) {
-        return ::GenMeshDefault(vertexCount);
-    }
 
     /**
      * Generate polygonal mesh
@@ -150,7 +139,7 @@ class Mesh : public ::Mesh {
      * Upload mesh vertex data to GPU (VRAM)
      */
     inline void UpdateBuffer(int index, void *data, int dataSize, int offset = 0) {
-        ::UpdateMeshBuffer(*this, index, data, dataSize, offsetof);
+        ::UpdateMeshBuffer(*this, index, data, dataSize, offset);
     }
 
     inline void Draw(const ::Material& material, const ::Matrix& transform) {

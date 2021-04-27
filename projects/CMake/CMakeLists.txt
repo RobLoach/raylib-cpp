@@ -22,7 +22,7 @@ if (NOT raylib_FOUND)
 endif()
 
 # raylib-cpp
-find_package(raylib-cpp 3.6.0 QUIET)
+find_package(raylib-cpp 3.7.0 QUIET)
 if (NOT raylib-cpp_FOUND)
     include(FetchContent)
         FetchContent_Declare(

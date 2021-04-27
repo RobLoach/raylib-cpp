@@ -361,33 +361,28 @@ $(function() {
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawGizmo() {</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        ::DrawGizmo(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">  302</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">CheckCollision</a>(<span class="keywordtype">float</span> radius1, const ::Vector3&amp; center2, <span class="keywordtype">float</span> radius2) {</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">return</span> CheckCollisionSpheres(*<span class="keyword">this</span>, radius1, center2, radius2);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Vector3&amp; vec) {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        x = vec.x;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        y = vec.y;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        z = vec.z;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;};</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_VECTOR3_HPP_</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">  297</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">CheckCollision</a>(<span class="keywordtype">float</span> radius1, const ::Vector3&amp; center2, <span class="keywordtype">float</span> radius2) {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="keywordflow">return</span> CheckCollisionSpheres(*<span class="keyword">this</span>, radius1, center2, radius2);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Vector3&amp; vec) {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        x = vec.x;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        y = vec.y;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        z = vec.z;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    }</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;};</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_VECTOR3_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_vector3_html"><div class="ttname"><a href="classraylib_1_1_vector3.html">raylib::Vector3</a></div><div class="ttdoc">Vector3 type.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00016">Vector3.hpp:16</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_color_html"><div class="ttname"><a href="classraylib_1_1_color.html">raylib::Color</a></div><div class="ttdoc">Color type, RGBA (32bit)</div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00014">Color.hpp:14</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a7b325f85196b92450b76c3f1925cf205"><div class="ttname"><a href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">raylib::Vector3::CheckCollision</a></div><div class="ttdeci">bool CheckCollision(float radius1, const ::Vector3 &amp;center2, float radius2)</div><div class="ttdoc">Detect collision between two spheres.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00302">Vector3.hpp:302</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector3_html_a7b325f85196b92450b76c3f1925cf205"><div class="ttname"><a href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">raylib::Vector3::CheckCollision</a></div><div class="ttdeci">bool CheckCollision(float radius1, const ::Vector3 &amp;center2, float radius2)</div><div class="ttdoc">Detect collision between two spheres.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00297">Vector3.hpp:297</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 5 2021 19:25:21 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 27 2021 00:48:56 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

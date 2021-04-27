@@ -84,6 +84,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a40ea1411f0b39a78d36fc1a5a08a8fc3"><td class="memItemLeft" align="right" valign="top"><a id="a40ea1411f0b39a78d36fc1a5a08a8fc3"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Texture</b> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image)</td></tr>
 <tr class="separator:a40ea1411f0b39a78d36fc1a5a08a8fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a125ac253e41ceaee8cecb7de8652da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a9a125ac253e41ceaee8cecb7de8652da">Texture</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image, int layout)</td></tr>
+<tr class="memdesc:a9a125ac253e41ceaee8cecb7de8652da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load cubemap from image, multiple image cubemap layouts supported.  <a href="classraylib_1_1_texture.html#a9a125ac253e41ceaee8cecb7de8652da">More...</a><br /></td></tr>
+<tr class="separator:a9a125ac253e41ceaee8cecb7de8652da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26856c78320052557b234ba318a408db"><td class="memItemLeft" align="right" valign="top"><a id="a26856c78320052557b234ba318a408db"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Texture</b> (const ::<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;texture)</td></tr>
 <tr class="separator:a26856c78320052557b234ba318a408db"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,6 +123,9 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a4c4f82a6e97e4f6d6163d5a2bb2a583c">Draw</a> (int posX, int posY, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
 <tr class="memdesc:a4c4f82a6e97e4f6d6163d5a2bb2a583c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a Texture2D. <br /></td></tr>
 <tr class="separator:a4c4f82a6e97e4f6d6163d5a2bb2a583c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a070ae3a55866c017d5361ee153343ca6"><td class="memItemLeft" align="right" valign="top"><a id="a070ae3a55866c017d5361ee153343ca6"></a>
+<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>DrawPoly</b> (<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> center, <a class="el" href="classraylib_1_1_vector2.html">Vector2</a> *points, <a class="el" href="classraylib_1_1_vector2.html">Vector2</a> *texcoords, int pointsCount, <a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
+<tr class="separator:a070ae3a55866c017d5361ee153343ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53618923795979c12643310c1bff8444"><td class="memItemLeft" align="right" valign="top"><a id="a53618923795979c12643310c1bff8444"></a>
 <a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>DrawTiled</b> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> sourceRec, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> destRec, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin={0, 0}, float rotation=0, float scale=1, <a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
 <tr class="separator:a53618923795979c12643310c1bff8444"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,14 +160,14 @@ inline ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a>&#160;</td
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a564e265a684d713f0a77d54eb22542ab">Load</a> (const std::string &amp;fileName)</td></tr>
 <tr class="memdesc:a564e265a684d713f0a77d54eb22542ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load texture from file into GPU memory (VRAM) <br /></td></tr>
 <tr class="separator:a564e265a684d713f0a77d54eb22542ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27f9c0e11401110fa2efe75e58092627"><td class="memItemLeft" align="right" valign="top"><a id="a27f9c0e11401110fa2efe75e58092627"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a27f9c0e11401110fa2efe75e58092627">LoadCubemap</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image, int layoutType)</td></tr>
+<tr class="memdesc:a27f9c0e11401110fa2efe75e58092627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load cubemap from image, multiple image cubemap layouts supported. <br /></td></tr>
+<tr class="separator:a27f9c0e11401110fa2efe75e58092627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04a52fbcdb9456c14c21f0fa0532313d"><td class="memItemLeft" align="right" valign="top"><a id="a04a52fbcdb9456c14c21f0fa0532313d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a04a52fbcdb9456c14c21f0fa0532313d">LoadFromImage</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image)</td></tr>
 <tr class="memdesc:a04a52fbcdb9456c14c21f0fa0532313d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load texture from image data. <br /></td></tr>
 <tr class="separator:a04a52fbcdb9456c14c21f0fa0532313d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30fc708fa012312d658d3a357251055a"><td class="memItemLeft" align="right" valign="top"><a id="a30fc708fa012312d658d3a357251055a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a30fc708fa012312d658d3a357251055a">LoadTextureCubemap</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image, int layoutType)</td></tr>
-<tr class="memdesc:a30fc708fa012312d658d3a357251055a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load cubemap from image, multiple image cubemap layouts supported. <br /></td></tr>
-<tr class="separator:a30fc708fa012312d658d3a357251055a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d77c3831e3d01bb4ea33e4fcc7a6e1e"><td class="memItemLeft" align="right" valign="top"><a id="a7d77c3831e3d01bb4ea33e4fcc7a6e1e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a7d77c3831e3d01bb4ea33e4fcc7a6e1e">operator raylib::Image</a> ()</td></tr>
 <tr class="memdesc:a7d77c3831e3d01bb4ea33e4fcc7a6e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get pixel data from GPU texture and return an <a class="el" href="classraylib_1_1_image.html" title="Image type, bpp always RGBA (32bit)">Image</a>. <br /></td></tr>
@@ -189,10 +195,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a254383891cab574ba50751ad44e42c7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a254383891cab574ba50751ad44e42c7f">SetMipmaps</a> (int value)</td></tr>
 <tr class="memdesc:a254383891cab574ba50751ad44e42c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the mipmaps value for the object.  <a href="classraylib_1_1_texture.html#a254383891cab574ba50751ad44e42c7f">More...</a><br /></td></tr>
 <tr class="separator:a254383891cab574ba50751ad44e42c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae646a33d12364e248d840310da2d440f"><td class="memItemLeft" align="right" valign="top"><a id="ae646a33d12364e248d840310da2d440f"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#ae646a33d12364e248d840310da2d440f">SetShapes</a> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> source)</td></tr>
-<tr class="memdesc:ae646a33d12364e248d840310da2d440f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define default texture used to draw shapes. <br /></td></tr>
-<tr class="separator:ae646a33d12364e248d840310da2d440f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee9315728f4c54b1e950e9b0380a83bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#aee9315728f4c54b1e950e9b0380a83bf">SetWidth</a> (int value)</td></tr>
 <tr class="memdesc:aee9315728f4c54b1e950e9b0380a83bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the width value for the object.  <a href="classraylib_1_1_texture.html#aee9315728f4c54b1e950e9b0380a83bf">More...</a><br /></td></tr>
 <tr class="separator:aee9315728f4c54b1e950e9b0380a83bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,7 +226,51 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <div class="textblock"><p><a class="el" href="classraylib_1_1_texture.html" title="Texture type.">Texture</a> type. </p>
 
 <p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00015">15</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9a125ac253e41ceaee8cecb7de8652da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a125ac253e41ceaee8cecb7de8652da">&#9670;&nbsp;</a></span>Texture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">raylib::Texture::Texture </td>
+          <td>(</td>
+          <td class="paramtype">const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>layout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load cubemap from image, multiple image cubemap layouts supported. </p>
+<dl class="section see"><dt>See also</dt><dd>LoadTextureCubemap() </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00030">30</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_texture_8hpp_source.html#l00073">LoadCubemap()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a98cd3a49f6b5e06137a72b2c4e9bced4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a98cd3a49f6b5e06137a72b2c4e9bced4">&#9670;&nbsp;</a></span>GetFormat()</h2>
 
@@ -251,7 +297,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Retrieves the format value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The format value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00044">44</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00049">49</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
 
 </div>
 </div>
@@ -281,7 +327,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Retrieves the height value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The height value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00042">42</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00047">47</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
 
 </div>
 </div>
@@ -311,7 +357,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Retrieves the id value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The id value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00040">40</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00045">45</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
 
 </div>
 </div>
@@ -341,7 +387,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Retrieves the mipmaps value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The mipmaps value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00043">43</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00048">48</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
 
 </div>
 </div>
@@ -371,7 +417,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Retrieves the width value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The width value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00041">41</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00046">46</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
 
 </div>
 </div>
@@ -407,7 +453,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00044">44</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00049">49</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
 
 </div>
 </div>
@@ -443,7 +489,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00042">42</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00047">47</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
 
 </div>
 </div>
@@ -479,7 +525,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00040">40</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00045">45</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
 
 </div>
 </div>
@@ -515,7 +561,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00043">43</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00048">48</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
 
 </div>
 </div>
@@ -551,14 +597,14 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00041">41</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00046">46</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 5 2021 19:25:22 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 27 2021 00:48:57 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

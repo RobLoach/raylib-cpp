@@ -1,6 +1,6 @@
 {
   "name": "raylib-cpp",
-  "version": "3.5.0",
+  "version": "3.7.0",
   "description": "raylib-cpp: C++ Object-Oriented Wrapper for raylib",
   "homepage": "https://github.com/robloach/raylib-cpp",
   "bugs": {
@@ -58,7 +58,7 @@
     "include/Vector2.hpp",
     "include/Vector3.hpp",
     "include/Vector4.hpp",
-    "include/VrSimulator.hpp",
+    "include/VrStereoConfig.hpp",
     "include/Wave.hpp",
     "include/Window.hpp"
   ]

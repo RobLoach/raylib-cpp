@@ -40,7 +40,7 @@ class Material : public ::Material {
     GETTERSETTER(::Shader, Shader, shader)
     GETTERSETTER(::MaterialMap*, Maps, maps)
     // TODO(RobLoach): Resolve the Material params being a float[4].
-    //GETTERSETTER(const float*, Params, params)
+    // GETTERSETTER(float[4], Params, params)
 
     Material& operator=(const ::Material& material) {
         set(material);
@@ -62,14 +62,6 @@ class Material : public ::Material {
      */
     inline Material& SetTexture(int mapType, const ::Texture2D& texture) {
         ::SetMaterialTexture(this, mapType, texture);
-        return *this;
-    }
-
-    /**
-     * Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)
-     */
-    inline Material& SetModelMesh(int meshId, int materialId) {
-        ::SetModelMeshMaterial(this, meshId, materialId);
         return *this;
     }
 

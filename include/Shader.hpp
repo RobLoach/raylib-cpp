@@ -55,10 +55,6 @@ class Shader : public ::Shader {
         }
     }
 
-    inline Shader& LoadFromMemory(const std::string& vsCode, const std::string& fsCode) {
-        set(::LoadShaderFromMemory(vsCode.c_str(), fsCode.c_str()));
-    }
-
     /**
      * Begin custom shader drawing.
      */
