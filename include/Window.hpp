@@ -126,6 +126,14 @@ class Window {
     }
 
     /**
+     * Clear window with given color.
+     */
+    inline Window& ClearBackground(const ::Color& color = BLACK) {
+        ::ClearBackground(color);
+        return *this;
+    }
+
+    /**
      * Toggle window state: fullscreen/windowed
      */
     inline Window& ToggleFullscreen() {

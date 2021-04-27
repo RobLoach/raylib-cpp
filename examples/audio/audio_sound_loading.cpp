@@ -28,8 +28,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())    // Detect window close button or ESC key
-    {
+    while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         if (IsKeyPressed(KEY_SPACE)) fxWav.Play();      // Play WAV sound
@@ -40,7 +39,7 @@ int main() {
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             DrawText("Press SPACE to PLAY the WAV sound!", 200, 180, 20, LIGHTGRAY);
             DrawText("Press ENTER to PLAY the OGG sound!", 200, 220, 20, LIGHTGRAY);

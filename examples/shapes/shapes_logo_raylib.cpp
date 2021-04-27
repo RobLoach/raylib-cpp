@@ -25,8 +25,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())    // Detect window close button or ESC key
-    {
+    while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         // TODO: Update your variables here
@@ -36,7 +35,7 @@ int main() {
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            background.ClearBackground();
+            window.ClearBackground(background);
 
             foreground.DrawRectangle(screenWidth/2 - 128, screenHeight/2 - 128, 256, 256);
             background.DrawRectangle(screenWidth/2 - 112, screenHeight/2 - 112, 224, 224);

@@ -21,12 +21,10 @@ int main() {
 
     raylib::Window window(screenWidth, screenHeight, "raylib [textures] example - image loading");
     raylib::Texture texture("resources/raylib_logo.png");
-    raylib::Color background = raylib::Color::RayWhite();
     raylib::Color textColor = raylib::Color::LightGray();
 
     // Main game loop
-    while (!window.ShouldClose())    // Detect window close button or ESC key
-    {
+    while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         // TODO: Update your variables here
@@ -36,7 +34,7 @@ int main() {
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            background.ClearBackground();
+            window.ClearBackground(raylib::Color::RayWhite());
 
             texture.Draw(screenWidth / 2 - texture.GetWidth() / 2, screenHeight / 2 - texture.GetHeight() / 2);
 

@@ -48,8 +48,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())    // Detect window close button or ESC key
-    {
+    while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         if (IsKeyDown(KEY_SPACE)) useTtf = true;
@@ -61,7 +60,7 @@ int main() {
         window.BeginDrawing();
         {
 
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             DrawText("Hold SPACE to use TTF generated font", 20, 20, 20, LIGHTGRAY);
 

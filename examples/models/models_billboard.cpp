@@ -37,8 +37,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())            // Detect window close button or ESC key
-    {
+    while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         camera.Update();              // Update camera
@@ -49,7 +48,7 @@ int main() {
         BeginDrawing();
         {
 
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             camera.BeginMode();
             {

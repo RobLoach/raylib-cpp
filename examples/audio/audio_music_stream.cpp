@@ -32,26 +32,26 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())   // Detect window close button or ESC key
-    {
+    while (!window.ShouldClose()) {   // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         music.Update();   // Update music buffer with new stream data
 
         // Restart music playing (stop and play)
-        if (IsKeyPressed(KEY_SPACE))
-        {
+        if (IsKeyPressed(KEY_SPACE)) {
             music.Stop();
             music.Play();
         }
 
         // Pause/Resume music playing
-        if (IsKeyPressed(KEY_P))
-        {
+        if (IsKeyPressed(KEY_P)) {
             pause = !pause;
 
-            if (pause) music.Pause();
-            else music.Resume();
+            if (pause) {
+                music.Pause();
+            } else {
+                music.Resume();
+            }
         }
 
         // Get timePlayed scaled to bar dimensions (400 pixels)
@@ -64,12 +64,12 @@ int main() {
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             DrawText("MUSIC SHOULD BE PLAYING!", 255, 150, 20, LIGHTGRAY);
 
             DrawRectangle(200, 200, 400, 12, LIGHTGRAY);
-            DrawRectangle(200, 200, (int)timePlayed, 12, MAROON);
+            DrawRectangle(200, 200, static_cast<int>(timePlayed), 12, MAROON);
             DrawRectangleLines(200, 200, 400, 12, GRAY);
 
             DrawText("PRESS SPACE TO RESTART MUSIC", 215, 250, 20, LIGHTGRAY);

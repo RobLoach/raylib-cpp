@@ -20,7 +20,6 @@ int main() {
     raylib::Window window(screenWidth, screenHeight, "raylib [core] example - mouse input");
 
     raylib::Vector2 ballPosition(-100.0f, -100.0f);
-    raylib::Color background(RAYWHITE);
     raylib::Color ballColor(DARKBLUE);
     raylib::Color textColor(DARKGRAY);
 
@@ -28,8 +27,7 @@ int main() {
     //---------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())    // Detect window close button or ESC key
-    {
+    while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         ballPosition = GetMousePosition();
@@ -43,7 +41,7 @@ int main() {
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            background.ClearBackground();
+            window.ClearBackground(RAYWHITE);
 
             ballPosition.DrawCircle(40, ballColor);
 

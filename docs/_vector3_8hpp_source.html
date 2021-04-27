@@ -71,406 +71,323 @@ $(function() {
 <div class="title">Vector3.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*   LICENSE: zlib/libpng</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*   raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified,</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*   BSD-like license that allows static linking with closed source software:</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*   Copyright (c) 2020 Rob Loach (@RobLoach)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*   This software is provided &quot;as-is&quot;, without any express or implied warranty. In no event</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*   will the authors be held liable for any damages arising from the use of this software.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*   Permission is granted to anyone to use this software for any purpose, including commercial</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*   applications, and to alter it and redistribute it freely, subject to the following restrictions:</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*     1. The origin of this software must not be misrepresented; you must not claim that you</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*     wrote the original software. If you use this software in a product, an acknowledgment</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">*     in the product documentation would be appreciated but is not required.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*     2. Altered source versions must be plainly marked as such, and must not be misrepresented</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*     as being the original software.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*     3. This notice may not be removed or altered from any source distribution.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_VECTOR3_HPP_</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_VECTOR3_HPP_</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_NO_MATH</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;./raymath.hpp&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_vector3.html">Vector3</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_vector3.html">::Vector3</a> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a28f01bc9b06a7482caa86e84e7fe6fd6">   39</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html#a28f01bc9b06a7482caa86e84e7fe6fd6">Vector3</a>(const ::Vector3&amp; vec) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#aa9673f2dad04cccce5f96b5066557775">set</a>(vec);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a3ab43e8992532e03b278e5315391e657">   43</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html#a3ab43e8992532e03b278e5315391e657">Vector3</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z) : ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a>{x, y, z} {}</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a111fc1d7cd09c6a10a05d3918e431c38">   44</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html#a111fc1d7cd09c6a10a05d3918e431c38">Vector3</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y) : ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a>{x, y, 0} {}</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a5b6463f85404813d49cd95376e92ff56">   45</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html#a5b6463f85404813d49cd95376e92ff56">Vector3</a>(<span class="keywordtype">float</span> x) : ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a>{x, 0, 0} {}</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#adad550f85023b399e2d736efdaaa8bbd">   46</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html#adad550f85023b399e2d736efdaaa8bbd">Vector3</a>() {}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#abf9e88a2959a105153cc6640e0fea4b5">   48</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html#abf9e88a2959a105153cc6640e0fea4b5">Vector3</a>(::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#aa9673f2dad04cccce5f96b5066557775">set</a>(ColorToHSV(color));</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#aedfa9761bf452e7c7c92574fc3a7717c">   52</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, X, x)</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#aae0d8010357e617b76dada9375b6c085">   53</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, Y, y)</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a6ff8718eb583f9963c58e0d27f24f506">   54</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, Z, z)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a543ab704b0020a14a63d9a3cea2b2bec">   56</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; vector3) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#aa9673f2dad04cccce5f96b5066557775">set</a>(vector3);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a848a7b866cadd1e96c4a472343be47cb">   61</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector3.html#a848a7b866cadd1e96c4a472343be47cb">operator==</a>(const ::Vector3&amp; other) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> x == other.x</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            &amp;&amp; y == other.y</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            &amp;&amp; z == other.z;</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_VECTOR3_HPP_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_VECTOR3_HPP_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_NO_MATH</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;./raymath.hpp&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_vector3.html">Vector3</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_vector3.html">::Vector3</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>(const ::Vector3&amp; vec) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        set(vec);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z) : <a class="code" href="classraylib_1_1_vector3.html">::Vector3</a>{x, y, z} {}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y) : <a class="code" href="classraylib_1_1_vector3.html">::Vector3</a>{x, y, 0} {}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>(<span class="keywordtype">float</span> x) : <a class="code" href="classraylib_1_1_vector3.html">::Vector3</a>{x, 0, 0} {}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>() {}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>(::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        set(ColorToHSV(color));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#aedfa9761bf452e7c7c92574fc3a7717c">   31</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, X, x)</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#aae0d8010357e617b76dada9375b6c085">   32</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, Y, y)</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a6ff8718eb583f9963c58e0d27f24f506">   33</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, Z, z)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; vector3) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        set(vector3);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> operator==(const ::Vector3&amp; other) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> x == other.x</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            &amp;&amp; y == other.y</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            &amp;&amp; z == other.z;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_NO_MATH</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    Vector3 Add(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> Vector3Add(*<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    Vector3 operator+(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> Vector3Add(*<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    Vector3 Subtract(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> Vector3Subtract(*<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    Vector3 operator-(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> Vector3Subtract(*<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    Vector3 Negate() {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> Vector3Negate(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_NO_MATH</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a640c5d01ab7d004830de1f7609abfdd2">   68</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a640c5d01ab7d004830de1f7609abfdd2">Add</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> Vector3Add(*<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a4564e8aa7532966eed679cd730c39c36">   72</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a4564e8aa7532966eed679cd730c39c36">operator+</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> Vector3Add(*<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#af99d38f6a5f8100a91397a11994c9717">   76</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#af99d38f6a5f8100a91397a11994c9717">Subtract</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> Vector3Subtract(*<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a843267dd14d8a706106dd5258cfa6676">   80</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a843267dd14d8a706106dd5258cfa6676">operator-</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> Vector3Subtract(*<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a475ed42613db507afa6f7fdcec14a25c">   84</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a475ed42613db507afa6f7fdcec14a25c">Negate</a>() {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> Vector3Negate(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a9999af247190e4b6969f61d98e3be934">   88</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a9999af247190e4b6969f61d98e3be934">operator-</a>() {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> Vector3Negate(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a34864e440695edab0f254b31da3dfb1b">   92</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a34864e440695edab0f254b31da3dfb1b">Multiply</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> Vector3Multiply(*<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a9e97fd143914c85cbb51a0c00588161a">   96</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a9e97fd143914c85cbb51a0c00588161a">operator*</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> Vector3Multiply(*<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    Vector3 operator-() {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> Vector3Negate(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    Vector3 Multiply(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> Vector3Multiply(*<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    Vector3 operator*(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> Vector3Multiply(*<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    Vector3 Scale(<span class="keyword">const</span> <span class="keywordtype">float</span> scale) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> Vector3Scale(*<span class="keyword">this</span>, scale);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    Vector3 operator*(<span class="keyword">const</span> <span class="keywordtype">float</span> scale) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> Vector3Scale(*<span class="keyword">this</span>, scale);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    Vector3 Divide(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> Vector3Divide(*<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    Vector3 operator/(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> Vector3Divide(*<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    Vector3&amp; Divide(<span class="keyword">const</span> <span class="keywordtype">float</span> div) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        x /= div;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        y /= div;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        z /= div;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a03e9c84af1143df35d3ab4dcb3023c15">  100</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a03e9c84af1143df35d3ab4dcb3023c15">Scale</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> scale) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> Vector3Scale(*<span class="keyword">this</span>, scale);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#aeaa4e8c02bcaad0d7147fd3a36faceea">  104</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#aeaa4e8c02bcaad0d7147fd3a36faceea">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> scale) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> Vector3Scale(*<span class="keyword">this</span>, scale);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#af97339959af688e9cc55efa70fa2a761">  108</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#af97339959af688e9cc55efa70fa2a761">Divide</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> Vector3Divide(*<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a92dbaf11e08e09550ec3293ce2e40a31">  112</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a92dbaf11e08e09550ec3293ce2e40a31">operator/</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> Vector3Divide(*<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    Vector3 operator/(<span class="keyword">const</span> <span class="keywordtype">float</span> div) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> Divide(div);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    Vector3&amp; operator+=(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        set(Vector3Add(*<span class="keyword">this</span>, vector3));</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    Vector3&amp; operator-=(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        set(Vector3Subtract(*<span class="keyword">this</span>, vector3));</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#aca07eeed14391e5a77542317602ed5ec">  116</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#aca07eeed14391e5a77542317602ed5ec">Divide</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> div) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        x /= div;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        y /= div;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        z /= div;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a664d1c3d265586801b622261c754f304">  124</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a664d1c3d265586801b622261c754f304">operator/</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> div) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1_vector3.html#af97339959af688e9cc55efa70fa2a761">Divide</a>(div);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#af41a121611c0be1dd9324c4a918060ec">  128</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#af41a121611c0be1dd9324c4a918060ec">operator+=</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#aa9673f2dad04cccce5f96b5066557775">set</a>(Vector3Add(*<span class="keyword">this</span>, vector3));</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a57dd3f158dbac5e20287d6aa4d592f9e">  134</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#a57dd3f158dbac5e20287d6aa4d592f9e">operator-=</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#aa9673f2dad04cccce5f96b5066557775">set</a>(Vector3Subtract(*<span class="keyword">this</span>, vector3));</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    Vector3&amp; operator*=(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        set(Vector3Multiply(*<span class="keyword">this</span>, vector3));</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    Vector3&amp; operator*=(<span class="keyword">const</span> <span class="keywordtype">float</span> scale) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        set(Vector3Scale(*<span class="keyword">this</span>, scale));</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    Vector3&amp; operator/=(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        x /= vector3.x;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        y /= vector3.y;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        z /= vector3.z;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a28be7d5bee8c76e3150ec35a52ed0223">  141</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#a28be7d5bee8c76e3150ec35a52ed0223">operator*=</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#aa9673f2dad04cccce5f96b5066557775">set</a>(Vector3Multiply(*<span class="keyword">this</span>, vector3));</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#aad26a08c6fd09e5adf1d65b169368cc7">  147</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#aad26a08c6fd09e5adf1d65b169368cc7">operator*=</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> scale) {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#aa9673f2dad04cccce5f96b5066557775">set</a>(Vector3Scale(*<span class="keyword">this</span>, scale));</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a2601db71baebda5e0b63f961420caea0">  153</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#a2601db71baebda5e0b63f961420caea0">operator/=</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        x /= vector3.x;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        y /= vector3.y;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        z /= vector3.z;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#aaf126a750920c95d56f980278d1ae90e">  161</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#aaf126a750920c95d56f980278d1ae90e">operator/=</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> div) {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        x /= div;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        y /= div;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        z /= div;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a8a34da2f9489bb78d4862cdedd14cd5e">  169</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_vector3.html#a8a34da2f9489bb78d4862cdedd14cd5e">Length</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">return</span> Vector3Length(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a6c229bb58f7137e1303e7b391e766bd6">  173</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a6c229bb58f7137e1303e7b391e766bd6">Normalize</a>() {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">return</span> Vector3Normalize(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#ad5ed567a46fa3b08f77e9a05338d2214">  177</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_vector3.html#ad5ed567a46fa3b08f77e9a05338d2214">DotProduct</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">return</span> Vector3DotProduct(*<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#aed1c1ff094b708730ed537d565664699">  181</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_vector3.html#aed1c1ff094b708730ed537d565664699">Distance</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">return</span> Vector3Distance(*<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#ab4ba21f48fa1c5d1eca17b1a587e2c80">  185</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#ab4ba21f48fa1c5d1eca17b1a587e2c80">Lerp</a>(const ::Vector3&amp; vector3, <span class="keyword">const</span> <span class="keywordtype">float</span> amount) {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">return</span> Vector3Lerp(*<span class="keyword">this</span>, vector3, amount);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#ad0a1bb51b4b50dd7d996d4d27ee57497">  189</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#ad0a1bb51b4b50dd7d996d4d27ee57497">CrossProduct</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">return</span> Vector3CrossProduct(*<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#aa8c61f505fa8956804541d1bedd8bdf2">  193</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#aa8c61f505fa8956804541d1bedd8bdf2">Perpendicular</a>() {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">return</span> Vector3Perpendicular(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a39326460de2d051c5bde8366a7101de6">  197</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_vector3.html#a39326460de2d051c5bde8366a7101de6">OrthoNormalize</a>(::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a>* vector3) {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        Vector3OrthoNormalize(<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a04aeda4ef5cb9d5156171c63024f4f8a">  201</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a04aeda4ef5cb9d5156171c63024f4f8a">Transform</a>(const ::Matrix&amp; matrix) {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">return</span> Vector3Transform(*<span class="keyword">this</span>, matrix);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a3c7424a3f680503dcd338861a19c53e1">  205</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a3c7424a3f680503dcd338861a19c53e1">RotateByQuaternion</a>(const ::Quaternion&amp; quaternion) {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">return</span> Vector3RotateByQuaternion(*<span class="keyword">this</span>, quaternion);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#aadc2d7e4e495558577c3c0a88ac3a261">  209</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#aadc2d7e4e495558577c3c0a88ac3a261">Reflect</a>(const ::Vector3&amp; normal) {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">return</span> Vector3Reflect(*<span class="keyword">this</span>, normal);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    Vector3&amp; operator/=(<span class="keyword">const</span> <span class="keywordtype">float</span> div) {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        x /= div;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        y /= div;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        z /= div;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">float</span> Length()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span> Vector3Length(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    Vector3 Normalize() {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">return</span> Vector3Normalize(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">float</span> DotProduct(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">return</span> Vector3DotProduct(*<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">float</span> Distance(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">return</span> Vector3Distance(*<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    Vector3 Lerp(const ::Vector3&amp; vector3, <span class="keyword">const</span> <span class="keywordtype">float</span> amount) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">return</span> Vector3Lerp(*<span class="keyword">this</span>, vector3, amount);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    Vector3 CrossProduct(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">return</span> Vector3CrossProduct(*<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    Vector3 Perpendicular() {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">return</span> Vector3Perpendicular(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">void</span> OrthoNormalize(::Vector3* vector3) {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        Vector3OrthoNormalize(<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    Vector3 Transform(const ::Matrix&amp; matrix) {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">return</span> Vector3Transform(*<span class="keyword">this</span>, matrix);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    Vector3 RotateByQuaternion(const ::Quaternion&amp; quaternion) {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">return</span> Vector3RotateByQuaternion(*<span class="keyword">this</span>, quaternion);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    Vector3 Reflect(const ::Vector3&amp; normal) {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">return</span> Vector3Reflect(*<span class="keyword">this</span>, normal);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    Vector3 Min(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">return</span> Vector3Min(*<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    Vector3 Max(const ::Vector3&amp; vector3) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">return</span> Vector3Max(*<span class="keyword">this</span>, vector3);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    Vector3 Barycenter(const ::Vector3&amp; a, const ::Vector3&amp; b, const ::Vector3&amp; c) {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">return</span> Vector3Barycenter(*<span class="keyword">this</span>, a, b, c);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keyword">static</span> Vector3 Zero() {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">return</span> Vector3Zero();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keyword">static</span> Vector3 One() {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordflow">return</span> Vector3One();</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a6fae0923d50becfa10b9d347080fc360">  213</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a6fae0923d50becfa10b9d347080fc360">Min</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">return</span> Vector3Min(*<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a6000c34fb8a54d9e01f9b3e7da063bdd">  217</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a6000c34fb8a54d9e01f9b3e7da063bdd">Max</a>(const ::Vector3&amp; vector3) {</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">return</span> Vector3Max(*<span class="keyword">this</span>, vector3);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a3adb51fa6e3c137095ba6aa60f976ddc">  221</a></span>&#160;    <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#a3adb51fa6e3c137095ba6aa60f976ddc">Barycenter</a>(const ::Vector3&amp; a, const ::Vector3&amp; b, const ::Vector3&amp; c) {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">return</span> Vector3Barycenter(*<span class="keyword">this</span>, a, b, c);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#ae3a9048507c018f7a90e86e2131f2ea5">  225</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#ae3a9048507c018f7a90e86e2131f2ea5">Zero</a>() {</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">return</span> Vector3Zero();</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#abffd5504ca7891659fc730b19dd5f495">  229</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a> <a class="code" href="classraylib_1_1_vector3.html#abffd5504ca7891659fc730b19dd5f495">One</a>() {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">return</span> Vector3One();</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a23d1642e02cc7054f8d7cb9ae8ae30f2">  234</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#a23d1642e02cc7054f8d7cb9ae8ae30f2">DrawLine3D</a>(const ::Vector3&amp; endPos, ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#a23d1642e02cc7054f8d7cb9ae8ae30f2">::DrawLine3D</a>(*<span class="keyword">this</span>, endPos, color);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    }</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a30d4851ace68ab6bab73a83eeb0f2cf3">  239</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#a30d4851ace68ab6bab73a83eeb0f2cf3">DrawPoint3D</a>(::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#a30d4851ace68ab6bab73a83eeb0f2cf3">::DrawPoint3D</a>(*<span class="keyword">this</span>, color);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a22639b3c871e46d85ff03f4cf9a52e85">  244</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#a22639b3c871e46d85ff03f4cf9a52e85">DrawCircle3D</a>(</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordtype">float</span> radius,</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            const ::Vector3&amp; rotationAxis,</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordtype">float</span> rotationAngle,</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#a22639b3c871e46d85ff03f4cf9a52e85">::DrawCircle3D</a>(*<span class="keyword">this</span>, radius, rotationAxis, rotationAngle, color);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    }</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a7b09d340cc86a61ed53b723708736727">  253</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#a7b09d340cc86a61ed53b723708736727">DrawCube</a>(<span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height, <span class="keywordtype">float</span> length, ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#a7b09d340cc86a61ed53b723708736727">::DrawCube</a>(*<span class="keyword">this</span>, width, height, length, color);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#ad56478144d8146fac3b0c180ebef58c1">  258</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#ad56478144d8146fac3b0c180ebef58c1">DrawCube</a>(const ::Vector3&amp; size, ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        ::DrawCubeV(*<span class="keyword">this</span>, size, color);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#af9426b4f60d6e0a3f3adc005d66e74aa">  263</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#af9426b4f60d6e0a3f3adc005d66e74aa">DrawCubeWires</a>(<span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height, <span class="keywordtype">float</span> length, ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#af9426b4f60d6e0a3f3adc005d66e74aa">::DrawCubeWires</a>(*<span class="keyword">this</span>, width, height, length, color);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a7d8a0c0f43f06b6b9c2faec8e42b3088">  268</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#a7d8a0c0f43f06b6b9c2faec8e42b3088">DrawCubeWires</a>(const ::Vector3&amp; size, ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        ::DrawCubeWiresV(*<span class="keyword">this</span>, size, color);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#ab741390c0c451b500507f806a8e35b18">  273</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#ab741390c0c451b500507f806a8e35b18">DrawCubeTexture</a>(</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            const ::Texture2D&amp; texture,</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keywordtype">float</span> width,</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keywordtype">float</span> height,</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordtype">float</span> length,</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#ab741390c0c451b500507f806a8e35b18">::DrawCubeTexture</a>(texture, *<span class="keyword">this</span>, width, height, length, color);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawLine3D(const ::Vector3&amp; endPos, ::Color color) {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        ::DrawLine3D(*<span class="keyword">this</span>, endPos, color);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawPoint3D(::Color color) {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        ::DrawPoint3D(*<span class="keyword">this</span>, color);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawCircle3D(</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordtype">float</span> radius,</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            const ::Vector3&amp; rotationAxis,</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordtype">float</span> rotationAngle,</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            Color color) {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        ::DrawCircle3D(*<span class="keyword">this</span>, radius, rotationAxis, rotationAngle, color);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawCube(<span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height, <span class="keywordtype">float</span> length, ::Color color) {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        ::DrawCube(*<span class="keyword">this</span>, width, height, length, color);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawCube(const ::Vector3&amp; size, ::Color color) {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        ::DrawCubeV(*<span class="keyword">this</span>, size, color);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawCubeWires(<span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height, <span class="keywordtype">float</span> length, ::Color color) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        ::DrawCubeWires(*<span class="keyword">this</span>, width, height, length, color);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawCubeWires(const ::Vector3&amp; size, ::Color color) {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        ::DrawCubeWiresV(*<span class="keyword">this</span>, size, color);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawCubeTexture(</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            const ::Texture2D&amp; texture,</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keywordtype">float</span> width,</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordtype">float</span> height,</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keywordtype">float</span> length,</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            ::Color color) {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        ::DrawCubeTexture(texture, *<span class="keyword">this</span>, width, height, length, color);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawSphere(<span class="keywordtype">float</span> radius, ::Color color) {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        ::DrawSphere(*<span class="keyword">this</span>, radius, color);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawSphere(<span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> rings, <span class="keywordtype">int</span> slices, ::Color color) {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        ::DrawSphereEx(*<span class="keyword">this</span>, radius, rings, slices, color);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    }</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawSphereWires(<span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> rings, <span class="keywordtype">int</span> slices, ::Color color) {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        ::DrawSphereWires(*<span class="keyword">this</span>, radius, rings, slices, color);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawCylinder(<span class="keywordtype">float</span> radiusTop, <span class="keywordtype">float</span> radiusBottom, <span class="keywordtype">float</span> height,</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="keywordtype">int</span> slices, Color color) {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        ::DrawCylinder(*<span class="keyword">this</span>, radiusTop, radiusBottom, height, slices, color);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    }</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a61e1cb7d43348c16dd4690e94352788b">  283</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#a61e1cb7d43348c16dd4690e94352788b">DrawSphere</a>(<span class="keywordtype">float</span> radius, ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#a61e1cb7d43348c16dd4690e94352788b">::DrawSphere</a>(*<span class="keyword">this</span>, radius, color);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    }</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a0687d0cc94c9343d9a717e2c9d1e3ea7">  288</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#a0687d0cc94c9343d9a717e2c9d1e3ea7">DrawSphere</a>(<span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> rings, <span class="keywordtype">int</span> slices, ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        ::DrawSphereEx(*<span class="keyword">this</span>, radius, rings, slices, color);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    }</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
-<div class="line"><a name="l00293"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#afb5d03c46f9f05715f95cc4740a44d74">  293</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#afb5d03c46f9f05715f95cc4740a44d74">DrawSphereWires</a>(<span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> rings, <span class="keywordtype">int</span> slices, ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#afb5d03c46f9f05715f95cc4740a44d74">::DrawSphereWires</a>(*<span class="keyword">this</span>, radius, rings, slices, color);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#ac7ed4fabd2244c37ed272096bf7d94cc">  298</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#ac7ed4fabd2244c37ed272096bf7d94cc">DrawCylinder</a>(<span class="keywordtype">float</span> radiusTop, <span class="keywordtype">float</span> radiusBottom, <span class="keywordtype">float</span> height,</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="keywordtype">int</span> slices, <a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#ac7ed4fabd2244c37ed272096bf7d94cc">::DrawCylinder</a>(*<span class="keyword">this</span>, radiusTop, radiusBottom, height, slices, color);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#aebbdf2feb9a54d35c4d45e5b32a53e40">  304</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#aebbdf2feb9a54d35c4d45e5b32a53e40">DrawCylinderWires</a>(<span class="keywordtype">float</span> radiusTop, <span class="keywordtype">float</span> radiusBottom, <span class="keywordtype">float</span> height,</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <span class="keywordtype">int</span> slices, <a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#aebbdf2feb9a54d35c4d45e5b32a53e40">::DrawCylinderWires</a>(*<span class="keyword">this</span>, radiusTop, radiusBottom, height, slices, color);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
-<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#abaaafd3556e45b9a2fa1cde40dd62e9a">  310</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#abaaafd3556e45b9a2fa1cde40dd62e9a">DrawPlane</a>(const ::Vector2&amp; size, ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#abaaafd3556e45b9a2fa1cde40dd62e9a">::DrawPlane</a>(*<span class="keyword">this</span>, size, color);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawCylinderWires(<span class="keywordtype">float</span> radiusTop, <span class="keywordtype">float</span> radiusBottom, <span class="keywordtype">float</span> height,</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordtype">int</span> slices, Color color) {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        ::DrawCylinderWires(*<span class="keyword">this</span>, radiusTop, radiusBottom, height, slices, color);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawPlane(const ::Vector2&amp; size, ::Color color) {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        ::DrawPlane(*<span class="keyword">this</span>, size, color);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keyword">inline</span> Vector3&amp; DrawGizmo() {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        ::DrawGizmo(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">  302</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">CheckCollision</a>(<span class="keywordtype">float</span> radius1, const ::Vector3&amp; center2, <span class="keywordtype">float</span> radius2) {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">return</span> CheckCollisionSpheres(*<span class="keyword">this</span>, radius1, center2, radius2);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Vector3&amp; vec) {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        x = vec.x;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        y = vec.y;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        z = vec.z;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;};</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}  <span class="comment">// namespace raylib</span></div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a806171a484df2ae390da85f657ecb34c">  315</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector3.html">Vector3</a>&amp; <a class="code" href="classraylib_1_1_vector3.html#a806171a484df2ae390da85f657ecb34c">DrawGizmo</a>() {</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <a class="code" href="classraylib_1_1_vector3.html#a806171a484df2ae390da85f657ecb34c">::DrawGizmo</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00323"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">  323</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">CheckCollision</a>(<span class="keywordtype">float</span> radius1, const ::Vector3&amp; center2, <span class="keywordtype">float</span> radius2) {</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">return</span> CheckCollisionSpheres(*<span class="keyword">this</span>, radius1, center2, radius2);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    }</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00328"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#aa9673f2dad04cccce5f96b5066557775">  328</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_vector3.html#aa9673f2dad04cccce5f96b5066557775">set</a>(const ::Vector3&amp; vec) {</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        x = vec.x;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        y = vec.y;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        z = vec.z;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;};</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_VECTOR3_HPP_</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_VECTOR3_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">Provides all the classes associated with raylib-cpp.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00031">AudioDevice.hpp:31</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_aa8c61f505fa8956804541d1bedd8bdf2"><div class="ttname"><a href="classraylib_1_1_vector3.html#aa8c61f505fa8956804541d1bedd8bdf2">raylib::Vector3::Perpendicular</a></div><div class="ttdeci">Vector3 Perpendicular()</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00193">Vector3.hpp:193</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_aeaa4e8c02bcaad0d7147fd3a36faceea"><div class="ttname"><a href="classraylib_1_1_vector3.html#aeaa4e8c02bcaad0d7147fd3a36faceea">raylib::Vector3::operator*</a></div><div class="ttdeci">Vector3 operator*(const float scale)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00104">Vector3.hpp:104</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a22639b3c871e46d85ff03f4cf9a52e85"><div class="ttname"><a href="classraylib_1_1_vector3.html#a22639b3c871e46d85ff03f4cf9a52e85">raylib::Vector3::DrawCircle3D</a></div><div class="ttdeci">Vector3 &amp; DrawCircle3D(float radius, const ::Vector3 &amp;rotationAxis, float rotationAngle, Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00244">Vector3.hpp:244</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_afb5d03c46f9f05715f95cc4740a44d74"><div class="ttname"><a href="classraylib_1_1_vector3.html#afb5d03c46f9f05715f95cc4740a44d74">raylib::Vector3::DrawSphereWires</a></div><div class="ttdeci">Vector3 &amp; DrawSphereWires(float radius, int rings, int slices, ::Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00293">Vector3.hpp:293</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_aadc2d7e4e495558577c3c0a88ac3a261"><div class="ttname"><a href="classraylib_1_1_vector3.html#aadc2d7e4e495558577c3c0a88ac3a261">raylib::Vector3::Reflect</a></div><div class="ttdeci">Vector3 Reflect(const ::Vector3 &amp;normal)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00209">Vector3.hpp:209</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a9e97fd143914c85cbb51a0c00588161a"><div class="ttname"><a href="classraylib_1_1_vector3.html#a9e97fd143914c85cbb51a0c00588161a">raylib::Vector3::operator*</a></div><div class="ttdeci">Vector3 operator*(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00096">Vector3.hpp:96</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a34864e440695edab0f254b31da3dfb1b"><div class="ttname"><a href="classraylib_1_1_vector3.html#a34864e440695edab0f254b31da3dfb1b">raylib::Vector3::Multiply</a></div><div class="ttdeci">Vector3 Multiply(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00092">Vector3.hpp:92</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_abf9e88a2959a105153cc6640e0fea4b5"><div class="ttname"><a href="classraylib_1_1_vector3.html#abf9e88a2959a105153cc6640e0fea4b5">raylib::Vector3::Vector3</a></div><div class="ttdeci">Vector3(::Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00048">Vector3.hpp:48</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a6c229bb58f7137e1303e7b391e766bd6"><div class="ttname"><a href="classraylib_1_1_vector3.html#a6c229bb58f7137e1303e7b391e766bd6">raylib::Vector3::Normalize</a></div><div class="ttdeci">Vector3 Normalize()</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00173">Vector3.hpp:173</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_ad0a1bb51b4b50dd7d996d4d27ee57497"><div class="ttname"><a href="classraylib_1_1_vector3.html#ad0a1bb51b4b50dd7d996d4d27ee57497">raylib::Vector3::CrossProduct</a></div><div class="ttdeci">Vector3 CrossProduct(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00189">Vector3.hpp:189</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a3adb51fa6e3c137095ba6aa60f976ddc"><div class="ttname"><a href="classraylib_1_1_vector3.html#a3adb51fa6e3c137095ba6aa60f976ddc">raylib::Vector3::Barycenter</a></div><div class="ttdeci">Vector3 Barycenter(const ::Vector3 &amp;a, const ::Vector3 &amp;b, const ::Vector3 &amp;c)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00221">Vector3.hpp:221</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a3ab43e8992532e03b278e5315391e657"><div class="ttname"><a href="classraylib_1_1_vector3.html#a3ab43e8992532e03b278e5315391e657">raylib::Vector3::Vector3</a></div><div class="ttdeci">Vector3(float x, float y, float z)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00043">Vector3.hpp:43</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a3c7424a3f680503dcd338861a19c53e1"><div class="ttname"><a href="classraylib_1_1_vector3.html#a3c7424a3f680503dcd338861a19c53e1">raylib::Vector3::RotateByQuaternion</a></div><div class="ttdeci">Vector3 RotateByQuaternion(const ::Quaternion &amp;quaternion)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00205">Vector3.hpp:205</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a848a7b866cadd1e96c4a472343be47cb"><div class="ttname"><a href="classraylib_1_1_vector3.html#a848a7b866cadd1e96c4a472343be47cb">raylib::Vector3::operator==</a></div><div class="ttdeci">bool operator==(const ::Vector3 &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00061">Vector3.hpp:61</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_aca07eeed14391e5a77542317602ed5ec"><div class="ttname"><a href="classraylib_1_1_vector3.html#aca07eeed14391e5a77542317602ed5ec">raylib::Vector3::Divide</a></div><div class="ttdeci">Vector3 &amp; Divide(const float div)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00116">Vector3.hpp:116</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html"><div class="ttname"><a href="classraylib_1_1_vector3.html">raylib::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00037">Vector3.hpp:37</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_aebbdf2feb9a54d35c4d45e5b32a53e40"><div class="ttname"><a href="classraylib_1_1_vector3.html#aebbdf2feb9a54d35c4d45e5b32a53e40">raylib::Vector3::DrawCylinderWires</a></div><div class="ttdeci">Vector3 &amp; DrawCylinderWires(float radiusTop, float radiusBottom, float height, int slices, Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00304">Vector3.hpp:304</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a6000c34fb8a54d9e01f9b3e7da063bdd"><div class="ttname"><a href="classraylib_1_1_vector3.html#a6000c34fb8a54d9e01f9b3e7da063bdd">raylib::Vector3::Max</a></div><div class="ttdeci">Vector3 Max(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00217">Vector3.hpp:217</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a111fc1d7cd09c6a10a05d3918e431c38"><div class="ttname"><a href="classraylib_1_1_vector3.html#a111fc1d7cd09c6a10a05d3918e431c38">raylib::Vector3::Vector3</a></div><div class="ttdeci">Vector3(float x, float y)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00044">Vector3.hpp:44</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a28be7d5bee8c76e3150ec35a52ed0223"><div class="ttname"><a href="classraylib_1_1_vector3.html#a28be7d5bee8c76e3150ec35a52ed0223">raylib::Vector3::operator*=</a></div><div class="ttdeci">Vector3 &amp; operator*=(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00141">Vector3.hpp:141</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a61e1cb7d43348c16dd4690e94352788b"><div class="ttname"><a href="classraylib_1_1_vector3.html#a61e1cb7d43348c16dd4690e94352788b">raylib::Vector3::DrawSphere</a></div><div class="ttdeci">Vector3 &amp; DrawSphere(float radius, ::Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00283">Vector3.hpp:283</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a92dbaf11e08e09550ec3293ce2e40a31"><div class="ttname"><a href="classraylib_1_1_vector3.html#a92dbaf11e08e09550ec3293ce2e40a31">raylib::Vector3::operator/</a></div><div class="ttdeci">Vector3 operator/(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00112">Vector3.hpp:112</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a03e9c84af1143df35d3ab4dcb3023c15"><div class="ttname"><a href="classraylib_1_1_vector3.html#a03e9c84af1143df35d3ab4dcb3023c15">raylib::Vector3::Scale</a></div><div class="ttdeci">Vector3 Scale(const float scale)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00100">Vector3.hpp:100</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a843267dd14d8a706106dd5258cfa6676"><div class="ttname"><a href="classraylib_1_1_vector3.html#a843267dd14d8a706106dd5258cfa6676">raylib::Vector3::operator-</a></div><div class="ttdeci">Vector3 operator-(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00080">Vector3.hpp:80</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a8a34da2f9489bb78d4862cdedd14cd5e"><div class="ttname"><a href="classraylib_1_1_vector3.html#a8a34da2f9489bb78d4862cdedd14cd5e">raylib::Vector3::Length</a></div><div class="ttdeci">float Length() const</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00169">Vector3.hpp:169</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a806171a484df2ae390da85f657ecb34c"><div class="ttname"><a href="classraylib_1_1_vector3.html#a806171a484df2ae390da85f657ecb34c">raylib::Vector3::DrawGizmo</a></div><div class="ttdeci">Vector3 &amp; DrawGizmo()</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00315">Vector3.hpp:315</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a28f01bc9b06a7482caa86e84e7fe6fd6"><div class="ttname"><a href="classraylib_1_1_vector3.html#a28f01bc9b06a7482caa86e84e7fe6fd6">raylib::Vector3::Vector3</a></div><div class="ttdeci">Vector3(const ::Vector3 &amp;vec)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00039">Vector3.hpp:39</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_ac7ed4fabd2244c37ed272096bf7d94cc"><div class="ttname"><a href="classraylib_1_1_vector3.html#ac7ed4fabd2244c37ed272096bf7d94cc">raylib::Vector3::DrawCylinder</a></div><div class="ttdeci">Vector3 &amp; DrawCylinder(float radiusTop, float radiusBottom, float height, int slices, Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00298">Vector3.hpp:298</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_aad26a08c6fd09e5adf1d65b169368cc7"><div class="ttname"><a href="classraylib_1_1_vector3.html#aad26a08c6fd09e5adf1d65b169368cc7">raylib::Vector3::operator*=</a></div><div class="ttdeci">Vector3 &amp; operator*=(const float scale)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00147">Vector3.hpp:147</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a23d1642e02cc7054f8d7cb9ae8ae30f2"><div class="ttname"><a href="classraylib_1_1_vector3.html#a23d1642e02cc7054f8d7cb9ae8ae30f2">raylib::Vector3::DrawLine3D</a></div><div class="ttdeci">Vector3 &amp; DrawLine3D(const ::Vector3 &amp;endPos, ::Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00234">Vector3.hpp:234</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_aa9673f2dad04cccce5f96b5066557775"><div class="ttname"><a href="classraylib_1_1_vector3.html#aa9673f2dad04cccce5f96b5066557775">raylib::Vector3::set</a></div><div class="ttdeci">void set(const ::Vector3 &amp;vec)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00328">Vector3.hpp:328</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_af97339959af688e9cc55efa70fa2a761"><div class="ttname"><a href="classraylib_1_1_vector3.html#af97339959af688e9cc55efa70fa2a761">raylib::Vector3::Divide</a></div><div class="ttdeci">Vector3 Divide(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00108">Vector3.hpp:108</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_color_html"><div class="ttname"><a href="classraylib_1_1_color.html">raylib::Color</a></div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00035">Color.hpp:35</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_ab741390c0c451b500507f806a8e35b18"><div class="ttname"><a href="classraylib_1_1_vector3.html#ab741390c0c451b500507f806a8e35b18">raylib::Vector3::DrawCubeTexture</a></div><div class="ttdeci">Vector3 &amp; DrawCubeTexture(const ::Texture2D &amp;texture, float width, float height, float length, ::Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00273">Vector3.hpp:273</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a7b325f85196b92450b76c3f1925cf205"><div class="ttname"><a href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">raylib::Vector3::CheckCollision</a></div><div class="ttdeci">bool CheckCollision(float radius1, const ::Vector3 &amp;center2, float radius2)</div><div class="ttdoc">Detect collision between two spheres.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00323">Vector3.hpp:323</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a0687d0cc94c9343d9a717e2c9d1e3ea7"><div class="ttname"><a href="classraylib_1_1_vector3.html#a0687d0cc94c9343d9a717e2c9d1e3ea7">raylib::Vector3::DrawSphere</a></div><div class="ttdeci">Vector3 &amp; DrawSphere(float radius, int rings, int slices, ::Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00288">Vector3.hpp:288</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a39326460de2d051c5bde8366a7101de6"><div class="ttname"><a href="classraylib_1_1_vector3.html#a39326460de2d051c5bde8366a7101de6">raylib::Vector3::OrthoNormalize</a></div><div class="ttdeci">void OrthoNormalize(::Vector3 *vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00197">Vector3.hpp:197</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_af9426b4f60d6e0a3f3adc005d66e74aa"><div class="ttname"><a href="classraylib_1_1_vector3.html#af9426b4f60d6e0a3f3adc005d66e74aa">raylib::Vector3::DrawCubeWires</a></div><div class="ttdeci">Vector3 &amp; DrawCubeWires(float width, float height, float length, ::Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00263">Vector3.hpp:263</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a5b6463f85404813d49cd95376e92ff56"><div class="ttname"><a href="classraylib_1_1_vector3.html#a5b6463f85404813d49cd95376e92ff56">raylib::Vector3::Vector3</a></div><div class="ttdeci">Vector3(float x)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00045">Vector3.hpp:45</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_ab4ba21f48fa1c5d1eca17b1a587e2c80"><div class="ttname"><a href="classraylib_1_1_vector3.html#ab4ba21f48fa1c5d1eca17b1a587e2c80">raylib::Vector3::Lerp</a></div><div class="ttdeci">Vector3 Lerp(const ::Vector3 &amp;vector3, const float amount)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00185">Vector3.hpp:185</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a04aeda4ef5cb9d5156171c63024f4f8a"><div class="ttname"><a href="classraylib_1_1_vector3.html#a04aeda4ef5cb9d5156171c63024f4f8a">raylib::Vector3::Transform</a></div><div class="ttdeci">Vector3 Transform(const ::Matrix &amp;matrix)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00201">Vector3.hpp:201</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a475ed42613db507afa6f7fdcec14a25c"><div class="ttname"><a href="classraylib_1_1_vector3.html#a475ed42613db507afa6f7fdcec14a25c">raylib::Vector3::Negate</a></div><div class="ttdeci">Vector3 Negate()</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00084">Vector3.hpp:84</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_af99d38f6a5f8100a91397a11994c9717"><div class="ttname"><a href="classraylib_1_1_vector3.html#af99d38f6a5f8100a91397a11994c9717">raylib::Vector3::Subtract</a></div><div class="ttdeci">Vector3 Subtract(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00076">Vector3.hpp:76</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a664d1c3d265586801b622261c754f304"><div class="ttname"><a href="classraylib_1_1_vector3.html#a664d1c3d265586801b622261c754f304">raylib::Vector3::operator/</a></div><div class="ttdeci">Vector3 operator/(const float div)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00124">Vector3.hpp:124</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a57dd3f158dbac5e20287d6aa4d592f9e"><div class="ttname"><a href="classraylib_1_1_vector3.html#a57dd3f158dbac5e20287d6aa4d592f9e">raylib::Vector3::operator-=</a></div><div class="ttdeci">Vector3 &amp; operator-=(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00134">Vector3.hpp:134</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_ae3a9048507c018f7a90e86e2131f2ea5"><div class="ttname"><a href="classraylib_1_1_vector3.html#ae3a9048507c018f7a90e86e2131f2ea5">raylib::Vector3::Zero</a></div><div class="ttdeci">static Vector3 Zero()</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00225">Vector3.hpp:225</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_abaaafd3556e45b9a2fa1cde40dd62e9a"><div class="ttname"><a href="classraylib_1_1_vector3.html#abaaafd3556e45b9a2fa1cde40dd62e9a">raylib::Vector3::DrawPlane</a></div><div class="ttdeci">Vector3 &amp; DrawPlane(const ::Vector2 &amp;size, ::Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00310">Vector3.hpp:310</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_aed1c1ff094b708730ed537d565664699"><div class="ttname"><a href="classraylib_1_1_vector3.html#aed1c1ff094b708730ed537d565664699">raylib::Vector3::Distance</a></div><div class="ttdeci">float Distance(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00181">Vector3.hpp:181</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_adad550f85023b399e2d736efdaaa8bbd"><div class="ttname"><a href="classraylib_1_1_vector3.html#adad550f85023b399e2d736efdaaa8bbd">raylib::Vector3::Vector3</a></div><div class="ttdeci">Vector3()</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00046">Vector3.hpp:46</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_aaf126a750920c95d56f980278d1ae90e"><div class="ttname"><a href="classraylib_1_1_vector3.html#aaf126a750920c95d56f980278d1ae90e">raylib::Vector3::operator/=</a></div><div class="ttdeci">Vector3 &amp; operator/=(const float div)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00161">Vector3.hpp:161</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_af41a121611c0be1dd9324c4a918060ec"><div class="ttname"><a href="classraylib_1_1_vector3.html#af41a121611c0be1dd9324c4a918060ec">raylib::Vector3::operator+=</a></div><div class="ttdeci">Vector3 &amp; operator+=(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00128">Vector3.hpp:128</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a7d8a0c0f43f06b6b9c2faec8e42b3088"><div class="ttname"><a href="classraylib_1_1_vector3.html#a7d8a0c0f43f06b6b9c2faec8e42b3088">raylib::Vector3::DrawCubeWires</a></div><div class="ttdeci">Vector3 &amp; DrawCubeWires(const ::Vector3 &amp;size, ::Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00268">Vector3.hpp:268</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a6fae0923d50becfa10b9d347080fc360"><div class="ttname"><a href="classraylib_1_1_vector3.html#a6fae0923d50becfa10b9d347080fc360">raylib::Vector3::Min</a></div><div class="ttdeci">Vector3 Min(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00213">Vector3.hpp:213</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a4564e8aa7532966eed679cd730c39c36"><div class="ttname"><a href="classraylib_1_1_vector3.html#a4564e8aa7532966eed679cd730c39c36">raylib::Vector3::operator+</a></div><div class="ttdeci">Vector3 operator+(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00072">Vector3.hpp:72</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_ad5ed567a46fa3b08f77e9a05338d2214"><div class="ttname"><a href="classraylib_1_1_vector3.html#ad5ed567a46fa3b08f77e9a05338d2214">raylib::Vector3::DotProduct</a></div><div class="ttdeci">float DotProduct(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00177">Vector3.hpp:177</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a2601db71baebda5e0b63f961420caea0"><div class="ttname"><a href="classraylib_1_1_vector3.html#a2601db71baebda5e0b63f961420caea0">raylib::Vector3::operator/=</a></div><div class="ttdeci">Vector3 &amp; operator/=(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00153">Vector3.hpp:153</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_ad56478144d8146fac3b0c180ebef58c1"><div class="ttname"><a href="classraylib_1_1_vector3.html#ad56478144d8146fac3b0c180ebef58c1">raylib::Vector3::DrawCube</a></div><div class="ttdeci">Vector3 &amp; DrawCube(const ::Vector3 &amp;size, ::Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00258">Vector3.hpp:258</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_abffd5504ca7891659fc730b19dd5f495"><div class="ttname"><a href="classraylib_1_1_vector3.html#abffd5504ca7891659fc730b19dd5f495">raylib::Vector3::One</a></div><div class="ttdeci">static Vector3 One()</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00229">Vector3.hpp:229</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a9999af247190e4b6969f61d98e3be934"><div class="ttname"><a href="classraylib_1_1_vector3.html#a9999af247190e4b6969f61d98e3be934">raylib::Vector3::operator-</a></div><div class="ttdeci">Vector3 operator-()</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00088">Vector3.hpp:88</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a30d4851ace68ab6bab73a83eeb0f2cf3"><div class="ttname"><a href="classraylib_1_1_vector3.html#a30d4851ace68ab6bab73a83eeb0f2cf3">raylib::Vector3::DrawPoint3D</a></div><div class="ttdeci">Vector3 &amp; DrawPoint3D(::Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00239">Vector3.hpp:239</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a640c5d01ab7d004830de1f7609abfdd2"><div class="ttname"><a href="classraylib_1_1_vector3.html#a640c5d01ab7d004830de1f7609abfdd2">raylib::Vector3::Add</a></div><div class="ttdeci">Vector3 Add(const ::Vector3 &amp;vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00068">Vector3.hpp:68</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a7b09d340cc86a61ed53b723708736727"><div class="ttname"><a href="classraylib_1_1_vector3.html#a7b09d340cc86a61ed53b723708736727">raylib::Vector3::DrawCube</a></div><div class="ttdeci">Vector3 &amp; DrawCube(float width, float height, float length, ::Color color)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00253">Vector3.hpp:253</a></div></div>
+<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector3_html"><div class="ttname"><a href="classraylib_1_1_vector3.html">raylib::Vector3</a></div><div class="ttdoc">Vector3 type.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00016">Vector3.hpp:16</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_color_html"><div class="ttname"><a href="classraylib_1_1_color.html">raylib::Color</a></div><div class="ttdoc">Color type, RGBA (32bit)</div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00014">Color.hpp:14</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector3_html_a7b325f85196b92450b76c3f1925cf205"><div class="ttname"><a href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">raylib::Vector3::CheckCollision</a></div><div class="ttdeci">bool CheckCollision(float radius1, const ::Vector3 &amp;center2, float radius2)</div><div class="ttdoc">Detect collision between two spheres.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00302">Vector3.hpp:302</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 14 2021 16:32:47 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 5 2021 19:25:21 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

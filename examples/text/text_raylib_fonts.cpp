@@ -26,7 +26,6 @@ int main() {
     int screenHeight = 450;
 
     raylib::Window window(screenWidth, screenHeight, "raylib [text] example - raylib fonts");
-    raylib::Color background(RAYWHITE);
     raylib::Color textColor(DARKGRAY);
 
     // NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
@@ -72,8 +71,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())    // Detect window close button or ESC key
-    {
+    while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         // TODO: Update your variables here
@@ -83,7 +81,7 @@ int main() {
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            background.ClearBackground();
+            window.ClearBackground(RAYWHITE);
 
             textColor.DrawText("free fonts included with raylib", 250, 20, 20);
             textColor.DrawLine(220, 50, 590, 50);

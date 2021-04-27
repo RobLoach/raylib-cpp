@@ -64,8 +64,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())    // Detect window close button or ESC key
-    {
+    while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         if (IsMouseButtonDown(MOUSE_LEFT_BUTTON))
@@ -91,7 +90,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             for (Bunny& bunny: bunnies) {
                 // NOTE: When internal batch buffer limit is reached (MAX_BATCH_ELEMENTS),

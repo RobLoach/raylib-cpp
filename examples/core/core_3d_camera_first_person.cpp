@@ -20,7 +20,6 @@ int main() {
     const int screenHeight = 450;
 
     raylib::Window window(screenWidth, screenHeight, "raylib [core] example - 3d camera first person");
-    raylib::Color background(RAYWHITE);
 
     // Define the camera to look into our 3d world (position, target, up vector)
     raylib::Camera camera(
@@ -48,8 +47,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())        // Detect window close button or ESC key
-    {
+    while (!window.ShouldClose()) {       // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         camera.Update();                  // Update camera
@@ -59,7 +57,7 @@ int main() {
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            background.ClearBackground();
+            window.ClearBackground(RAYWHITE);
 
             camera.BeginMode();
             {
@@ -69,8 +67,7 @@ int main() {
                 DrawCube(Vector3{ 0.0f, 2.5f, 16.0f }, 32.0f, 5.0f, 1.0f, GOLD);      // Draw a yellow wall
 
                 // Draw some cubes around
-                for (int i = 0; i < MAX_COLUMNS; i++)
-                {
+                for (int i = 0; i < MAX_COLUMNS; i++) {
                     positions[i].DrawCube(2.0f, heights[i], 2.0f, colors[i]);
                     positions[i].DrawCubeWires(2.0f, heights[i], 2.0f, MAROON);
                 }

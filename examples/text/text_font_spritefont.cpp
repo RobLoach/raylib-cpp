@@ -44,8 +44,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())    // Detect window close button or ESC key
-    {
+    while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         // TODO: Update variables here...
@@ -55,7 +54,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             font1.DrawText(msg1, fontPosition1, font1.baseSize, -3);
             font2.DrawText(msg2, fontPosition2, font2.baseSize, -2);

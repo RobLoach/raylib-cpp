@@ -27,8 +27,7 @@ int main() {
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())    // Detect window close button or ESC key
-    {
+    while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         if (IsFileDropped()) {
@@ -40,13 +39,12 @@ int main() {
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-            ClearBackground(RAYWHITE);
+            window.ClearBackground(RAYWHITE);
 
             // Check if there are files to process.
             if (droppedFiles.empty()) {
                 DrawText("Drop your files to this window!", 100, 40, 20, DARKGRAY);
-            }
-            else {
+            } else {
                 DrawText("Dropped files:", 100, 40, 20, DARKGRAY);
 
                 // Iterate through all the dropped files.
