@@ -204,6 +204,11 @@ class Texture : public ::Texture {
         return *this;
     }
 
+    inline Texture& DrawPoly(Vector2 center, Vector2 *points, Vector2 *texcoords, int pointsCount, Color tint = {255, 255, 255, 255}) {
+        ::DrawTexturePoly(*this, center, points, texcoords, pointsCount, tint);
+        return *this;
+    }
+
     /**
      * Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)
      */

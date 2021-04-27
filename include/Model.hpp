@@ -81,7 +81,7 @@ class Model : public ::Model {
     /**
      * Update model animation pose
      */
-    inline Model& UpdateModelAnimation(const ::ModelAnimation& anim, int frame) {
+    inline Model& UpdateAnimation(const ::ModelAnimation& anim, int frame) {
         ::UpdateModelAnimation(*this, anim, frame);
         return *this;
     }

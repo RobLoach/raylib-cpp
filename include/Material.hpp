@@ -65,6 +65,14 @@ class Material : public ::Material {
         return *this;
     }
 
+    /**
+     * Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)
+     */
+    inline Material& SetModelMesh(int meshId, int materialId) {
+        ::SetModelMeshMaterial(this, meshId, materialId);
+        return *this;
+    }
+
  private:
     inline void set(const ::Material& material) {
         shader = material.shader;

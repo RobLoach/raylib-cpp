@@ -33,6 +33,10 @@ class Shader : public ::Shader {
         return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());
     }
 
+    static ::Shader LoadFromMemory(const std::string& vsCode, const std::string& fsCode) {
+        return ::LoadShaderFromMemory(vsCode.c_str(), fsCode.c_str());
+    }
+
     GETTERSETTER(unsigned int, Id, id)
     GETTERSETTER(int*, Locs, locs)
 
@@ -46,7 +50,13 @@ class Shader : public ::Shader {
     }
 
     void Unload() {
-        ::UnloadShader(*this);
+        if (locs != NULL) {
+            ::UnloadShader(*this);
+        }
+    }
+
+    inline Shader& LoadFromMemory(const std::string& vsCode, const std::string& fsCode) {
+        set(::LoadShaderFromMemory(vsCode.c_str(), fsCode.c_str()));
     }
 
     /**
