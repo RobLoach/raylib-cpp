@@ -21,7 +21,7 @@ int main(void)
     const int screenHeight = 450;
 
     raylib::Window window(screenWidth, screenHeight, "raylib [textures] example - image drawing");
-    raylib::Color darkGray(DARKGRAY);
+    raylib::Color darkGray = DARKGRAY;
 
     // NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
     raylib::Image cat("resources/cat.png");             // Load image in CPU memory (RAM)

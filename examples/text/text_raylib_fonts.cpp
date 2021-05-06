@@ -26,7 +26,7 @@ int main() {
     int screenHeight = 450;
 
     raylib::Window window(screenWidth, screenHeight, "raylib [text] example - raylib fonts");
-    raylib::Color textColor(DARKGRAY);
+    raylib::Color textColor = DARKGRAY;
 
     // NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
     std::array<raylib::Font, MAX_FONTS> fonts = {

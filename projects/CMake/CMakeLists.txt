@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.11) # FetchContent is available in 3.11+
 project(raylib-cpp-example)
 
 # raylib
-find_package(raylib 3.7.0 QUIET)
+find_package(raylib QUIET)
 if (NOT raylib_FOUND)
     include(FetchContent)
         FetchContent_Declare(
@@ -22,13 +22,12 @@ if (NOT raylib_FOUND)
 endif()
 
 # raylib-cpp
-find_package(raylib-cpp 3.7.0 QUIET)
+find_package(raylib-cpp QUIET)
 if (NOT raylib-cpp_FOUND)
     include(FetchContent)
-        FetchContent_Declare(
+    FetchContent_Declare(
         raylib-cpp
-        GIT_REPOSITORY https://github.com/RobLoach/raylib-cpp.git
-        GIT_TAG 9a02e9f2d0cc86a70735a25ed5dfa1f2082ceadc
+        URL https://github.com/RobLoach/raylib-cpp/archive/master.tar.gz
     )
     FetchContent_GetProperties(raylib-cpp)
     if (NOT raylib-cpp_POPULATED) # Have we downloaded raylib yet?

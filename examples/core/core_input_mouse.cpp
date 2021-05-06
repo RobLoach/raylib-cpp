@@ -20,8 +20,8 @@ int main() {
     raylib::Window window(screenWidth, screenHeight, "raylib [core] example - mouse input");
 
     raylib::Vector2 ballPosition(-100.0f, -100.0f);
-    raylib::Color ballColor(DARKBLUE);
-    raylib::Color textColor(DARKGRAY);
+    raylib::Color ballColor = raylib::Color::DarkBlue();
+    raylib::Color textColor = raylib::Color::DarkGray();
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //---------------------------------------------------------------------------------------

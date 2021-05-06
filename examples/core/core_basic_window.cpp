@@ -26,7 +26,7 @@ int main() {
     //--------------------------------------------------------------------------------------
     int screenWidth = 800;
     int screenHeight = 450;
-    raylib::Color textColor(LIGHTGRAY);
+    raylib::Color textColor = raylib::Color::LightGray();
     raylib::Window window(screenWidth, screenHeight, "raylib [core] example - basic window");
 
     SetTargetFPS(60);

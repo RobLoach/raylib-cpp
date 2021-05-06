@@ -18,7 +18,7 @@ int main() {
     const int screenHeight = 450;
 
     raylib::Window window(screenWidth, screenHeight, "raylib [shapes] example - raylib logo using shapes");
-    raylib::Color foreground = raylib::Color(0, 68, 130);
+    raylib::Color foreground(0, 68, 130);
     raylib::Color background = RAYWHITE;
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second

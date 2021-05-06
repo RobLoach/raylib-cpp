@@ -9,8 +9,8 @@ project (raylib-cpp
 # Options
 option(BUILD_RAYLIB_CPP_EXAMPLES "Examples" ON)
 
-# C++17
-set(CMAKE_CXX_STANDARD 17)
+# C++
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -26,7 +26,7 @@ endif()
 # Testing
 include(CTest)
 enable_testing()
-if(BUILD_TESTING)
+if(BUILD_TESTING AND BUILD_RAYLIB_CPP_EXAMPLES)
     set(CTEST_CUSTOM_TESTS_IGNORE
         pkg-config--static
     )

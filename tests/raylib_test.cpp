@@ -22,11 +22,11 @@ TEST_CASE("raylib_test", "[raylib_test]" ) {
     }
 
     SECTION("Color") {
-        raylib::Color c(RED);
-        REQUIRE(c.ToInt() == ::ColorToInt(RED));
+        raylib::Color color = RED;
+        REQUIRE(color.ToInt() == ::ColorToInt(RED));
 
-        c = RAYWHITE;
-        REQUIRE(c.r == RAYWHITE.r);
+        color = RAYWHITE;
+        REQUIRE(color.r == RAYWHITE.r);
     }
 
     SECTION("RayMath") {
@@ -37,6 +37,6 @@ TEST_CASE("raylib_test", "[raylib_test]" ) {
 
     SECTION("Functions") {
         std::vector<std::string> files = raylib::GetDirectoryFiles(::GetWorkingDirectory());
-        REQUIRE(files.size() > 2);
+        REQUIRE(files.size() > 3);
     }
 }

@@ -146,7 +146,7 @@ Vector2 position = {50.0f, 50.0f};
 DrawPixelV(position, color); // Extra V in method name.
 
 // raylib-cpp
-raylib::Color color = GRAY;
+raylib::Color color = raylib::Color::Gray();
 color.DrawPixel(50, 50);
 Vector2 position(50.0f, 50.0f);
 color.DrawPixel(position); // No more V in method name.
@@ -222,9 +222,7 @@ OpenURL(url);
 // raylib-cpp
 std::string url = "https://raylib.com";
 raylib::OpenURL(url);
-OpenURL(url.c_str()); // Alternatively
 ```
-
 
 ### RayMath
 
@@ -245,8 +243,9 @@ raylib::Vector2 newDirection = direction.Rotate(30);
 *raylib-cpp* is a header-only library. This means in order to use it, you must link your project to [raylib](https://www.raylib.com/), and then include [`include/raylib-cpp.hpp`](raylib-cpp/include/raylib-cpp.hpp).
 
 1. Set up a *raylib* project using the [build and install instructions](https://github.com/raysan5/raylib#build-and-installation)
-2. Download *raylib-cpp*
-3. Include [`raylib-cpp.hpp`](include/raylib-cpp.hpp)
+2. Ensure C++ files are compiled with C++
+3. Download *raylib-cpp*
+4. Include [`include/raylib-cpp.hpp`](include/raylib-cpp.hpp)
     ``` cpp
     #include "path/to/raylib-cpp.hpp"
     ```
@@ -262,7 +261,7 @@ If there's a project template you would like to see added, feel free to [make an
 
 ## Development
 
-The following are some tools in order to build and contribute to raylib-cpp...
+The following are some tools in order to build and contribute to *raylib-cpp*...
 
 ### Compiling
 
@@ -302,4 +301,4 @@ cpplint --recursive include
 
 ## License
 
-raylib-cpp is licensed under an unmodified zlib/libpng license, which is an OSI-certified, BSD-like license that allows static linking with closed source software. Check [LICENSE](LICENSE) for further details.
+*raylib-cpp* is licensed under an unmodified zlib/libpng license, which is an OSI-certified, BSD-like license that allows static linking with closed source software. Check [LICENSE](LICENSE) for further details.
