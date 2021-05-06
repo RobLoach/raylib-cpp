@@ -50,6 +50,14 @@ class Sound : public ::Sound {
     }
 
     /**
+     * Update sound buffer with new data, assuming it's the same sample count.
+     */
+    inline Sound& Update(const void *data) {
+        ::UpdateSound(*this, data, sampleCount);
+        return *this;
+    }
+
+    /**
      * Unload sound
      */
     inline void Unload() {

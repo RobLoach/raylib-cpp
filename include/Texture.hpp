@@ -193,8 +193,8 @@ class Texture : public ::Texture {
     }
 
     inline Texture& Draw(::Vector3 position, float width, float height, float length,
-            ::Color color = {255, 255, 255, 255}) {
-        ::DrawCubeTexture(*this, position, width, height, length, color);
+            ::Color tint = {255, 255, 255, 255}) {
+        ::DrawCubeTexture(*this, position, width, height, length, tint);
         return *this;
     }
 
@@ -214,16 +214,14 @@ class Texture : public ::Texture {
     /**
      * Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)
      */
-    inline Texture& SetMaterial(::Material *material, int mapType) {
+    inline Texture& SetMaterial(::Material *material, int mapType = MATERIAL_MAP_NORMAL) {
         ::SetMaterialTexture(material, mapType, *this);
         return *this;
     }
 
-    /**
-     * Get pixel data size in bytes for certain format
-     */
-    static int GetPixelDataSize(int width, int height, int format) {
-        return ::GetPixelDataSize(width, height, format);
+    inline Texture& SetMaterial(const ::Material& material, int mapType = MATERIAL_MAP_NORMAL) {
+        ::SetMaterialTexture((::Material*)(&material), mapType, *this);
+        return *this;
     }
 
  private:

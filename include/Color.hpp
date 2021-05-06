@@ -17,11 +17,12 @@ class Color : public ::Color {
         set(color);
     }
 
-    Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) :
+    Color(
+            unsigned char red,
+            unsigned char green,
+            unsigned char blue,
+            unsigned char alpha = 255) :
         ::Color{red, green, blue, alpha} {};
-
-    Color(unsigned char red, unsigned char green, unsigned char blue) :
-        ::Color{red, green, blue, 255} {};
 
     /**
      * Black.

@@ -479,7 +479,7 @@ class Image : public ::Image {
         return *this;
     }
 
-    inline Image& DrawRectangleLines(::Rectangle rec, int thick,
+    inline Image& DrawRectangleLines(::Rectangle rec, int thick = 1,
             ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawRectangleLines(this, rec, thick, color);
         return *this;
@@ -554,6 +554,22 @@ class Image : public ::Image {
      */
     inline operator ::Texture2D() {
         return LoadTexture();
+    }
+
+    /**
+     * Get pixel data size in bytes for certain format
+     */
+    static int GetPixelDataSize(int width, int height, int format = PIXELFORMAT_UNCOMPRESSED_R32G32B32A32) {
+        return ::GetPixelDataSize(width, height, format);
+    }
+
+    /**
+     * Returns the pixel data size of the image.
+     *
+     * @return The pixel data size of the image.
+     */
+    int GetPixelDataSize() {
+        return ::GetPixelDataSize(width, height, format);
     }
 
  private:

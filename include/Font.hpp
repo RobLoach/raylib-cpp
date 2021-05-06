@@ -32,7 +32,7 @@ class Font : public ::Font {
         set(::LoadFontFromImage(image, key, firstChar));
     }
 
-    Font(const std::string& fileType, const unsigned char *fileData, int dataSize, int fontSize,
+    Font(const std::string& fileType, const unsigned char* fileData, int dataSize, int fontSize,
             int *fontChars, int charsCount)  {
         set(::LoadFontFromMemory(fileType.c_str(), fileData, dataSize, fontSize, fontChars,
             charsCount));

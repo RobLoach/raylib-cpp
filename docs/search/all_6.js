@@ -89,7 +89,7 @@ var searchData=
   ['getnormals_148',['GetNormals',['../classraylib_1_1_mesh.html#a0fcc7bca9b9419a0d8e3d59666082edc',1,'raylib::Mesh']]],
   ['getnumber_149',['GetNumber',['../classraylib_1_1_gamepad.html#ac04f6820f2a0d7ffa3876ac1bac9926b',1,'raylib::Gamepad']]],
   ['getoffset_150',['GetOffset',['../classraylib_1_1_camera2_d.html#a6f2a2adaac6ce26b6ca132f88a119e01',1,'raylib::Camera2D']]],
-  ['getpixeldatasize_151',['GetPixelDataSize',['../classraylib_1_1_texture.html#a0fff973d5945d3029f2020979753f75b',1,'raylib::Texture']]],
+  ['getpixeldatasize_151',['GetPixelDataSize',['../classraylib_1_1_image.html#aa432e9f4e1b7a5e31a70447e3efd979d',1,'raylib::Image::GetPixelDataSize(int width, int height, int format=PIXELFORMAT_UNCOMPRESSED_R32G32B32A32)'],['../classraylib_1_1_image.html#afcfe495d4d8c3126584b1f922f8d350b',1,'raylib::Image::GetPixelDataSize()']]],
   ['getposition_152',['GetPosition',['../classraylib_1_1_camera3_d.html#a8de66de053eac614313c0912aff2b755',1,'raylib::Camera3D::GetPosition()'],['../classraylib_1_1_ray.html#a13d000fd9369b90b44dffcbc63eb5475',1,'raylib::Ray::GetPosition()'],['../classraylib_1_1_ray_hit_info.html#a0aa30a98327549861234c144734b7605',1,'raylib::RayHitInfo::GetPosition()'],['../classraylib_1_1_window.html#a3b1ba3352da1660ebc3528abba28347c',1,'raylib::Window::GetPosition()']]],
   ['getprevdirectorypath_153',['GetPrevDirectoryPath',['../namespaceraylib.html#ade271537f199a6fb169389b9bb05a529',1,'raylib']]],
   ['getprojection_154',['GetProjection',['../classraylib_1_1_camera3_d.html#a2886f1e2b41524fcc7e43862460201ce',1,'raylib::Camera3D']]],

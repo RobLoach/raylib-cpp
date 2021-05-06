@@ -213,8 +213,8 @@ $(function() {
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keyword">inline</span> Texture&amp; <a class="code" href="classraylib_1_1_texture.html#ab76f4ae074269ad67ec8b731a3bf25a6">Draw</a>(::Vector3 position, <span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height, <span class="keywordtype">float</span> length,</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            ::Color color = {255, 255, 255, 255}) {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        ::DrawCubeTexture(*<span class="keyword">this</span>, position, width, height, length, color);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            ::Color tint = {255, 255, 255, 255}) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        ::DrawCubeTexture(*<span class="keyword">this</span>, position, width, height, length, tint);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
@@ -231,34 +231,34 @@ $(function() {
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="classraylib_1_1_texture.html#a30155e10c340a6e095d430cdb8b113b1">  217</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_texture.html">Texture</a>&amp; <a class="code" href="classraylib_1_1_texture.html#a30155e10c340a6e095d430cdb8b113b1">SetMaterial</a>(::<a class="code" href="classraylib_1_1_material.html">Material</a> *material, <span class="keywordtype">int</span> mapType) {</div>
+<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="classraylib_1_1_texture.html#a8667f5e1c478cfe06e48a1a98f3c1368">  217</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_texture.html">Texture</a>&amp; <a class="code" href="classraylib_1_1_texture.html#a8667f5e1c478cfe06e48a1a98f3c1368">SetMaterial</a>(::<a class="code" href="classraylib_1_1_material.html">Material</a> *material, <span class="keywordtype">int</span> mapType = MATERIAL_MAP_NORMAL) {</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        ::SetMaterialTexture(material, mapType, *<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
-<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="classraylib_1_1_texture.html#a0fff973d5945d3029f2020979753f75b">  225</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classraylib_1_1_texture.html#a0fff973d5945d3029f2020979753f75b">GetPixelDataSize</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">int</span> format) {</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        return ::GetPixelDataSize(width, height, format);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Texture&amp; texture) {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordtype">id</span> = texture.id;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        width = texture.width;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        height = texture.height;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        mipmaps = texture.mipmaps;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        format = texture.format;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;};</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">// Create the Texture aliases.</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keyword">typedef</span> Texture Texture2D;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="keyword">typedef</span> Texture TextureCubemap;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_texture.html">Texture</a>&amp; <a class="code" href="classraylib_1_1_texture.html#a8667f5e1c478cfe06e48a1a98f3c1368">SetMaterial</a>(const ::Material&amp; material, <span class="keywordtype">int</span> mapType = MATERIAL_MAP_NORMAL) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        ::SetMaterialTexture((::<a class="code" href="classraylib_1_1_material.html">Material</a>*)(&amp;material), mapType, *<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Texture&amp; texture) {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordtype">id</span> = texture.id;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        width = texture.width;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        height = texture.height;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        mipmaps = texture.mipmaps;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        format = texture.format;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;};</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">// Create the Texture aliases.</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="keyword">typedef</span> Texture Texture2D;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="keyword">typedef</span> Texture TextureCubemap;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}  <span class="comment">// namespace raylib</span></div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_TEXTURE_HPP_</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_TEXTURE_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassraylib_1_1_texture_html_a0fff973d5945d3029f2020979753f75b"><div class="ttname"><a href="classraylib_1_1_texture.html#a0fff973d5945d3029f2020979753f75b">raylib::Texture::GetPixelDataSize</a></div><div class="ttdeci">static int GetPixelDataSize(int width, int height, int format)</div><div class="ttdoc">Get pixel data size in bytes for certain format.</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00225">Texture.hpp:225</a></div></div>
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_texture_html_a29ac6e7037bc2678159760744d4538a4"><div class="ttname"><a href="classraylib_1_1_texture.html#a29ac6e7037bc2678159760744d4538a4">raylib::Texture::SetWrap</a></div><div class="ttdeci">Texture &amp; SetWrap(int wrapMode)</div><div class="ttdoc">Set texture wrapping mode.</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00140">Texture.hpp:140</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_texture_html_a4c4f82a6e97e4f6d6163d5a2bb2a583c"><div class="ttname"><a href="classraylib_1_1_texture.html#a4c4f82a6e97e4f6d6163d5a2bb2a583c">raylib::Texture::Draw</a></div><div class="ttdeci">Texture &amp; Draw(int posX, int posY, ::Color tint={255, 255, 255, 255})</div><div class="ttdoc">Draw a Texture2D.</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00155">Texture.hpp:155</a></div></div>
@@ -274,16 +274,16 @@ $(function() {
 <div class="ttc" id="aclassraylib_1_1_color_html"><div class="ttname"><a href="classraylib_1_1_color.html">raylib::Color</a></div><div class="ttdoc">Color type, RGBA (32bit)</div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00014">Color.hpp:14</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_texture_html_a3afee0767b1b7ca54e5477667761f5ed"><div class="ttname"><a href="classraylib_1_1_texture.html#a3afee0767b1b7ca54e5477667761f5ed">raylib::Texture::GetData</a></div><div class="ttdeci">inline ::Image GetData() const</div><div class="ttdoc">Get pixel data from GPU texture and return an Image.</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00110">Texture.hpp:110</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_texture_html_ab76f4ae074269ad67ec8b731a3bf25a6"><div class="ttname"><a href="classraylib_1_1_texture.html#ab76f4ae074269ad67ec8b731a3bf25a6">raylib::Texture::Draw</a></div><div class="ttdeci">Texture &amp; Draw()</div><div class="ttdoc">Draws the texture at the top left corner of the screen.</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00148">Texture.hpp:148</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_texture_html_a8667f5e1c478cfe06e48a1a98f3c1368"><div class="ttname"><a href="classraylib_1_1_texture.html#a8667f5e1c478cfe06e48a1a98f3c1368">raylib::Texture::SetMaterial</a></div><div class="ttdeci">Texture &amp; SetMaterial(::Material *material, int mapType=MATERIAL_MAP_NORMAL)</div><div class="ttdoc">Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00217">Texture.hpp:217</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_texture_html_a373b656c96ad2345eb395d061867eab8"><div class="ttname"><a href="classraylib_1_1_texture.html#a373b656c96ad2345eb395d061867eab8">raylib::Texture::UpdateRec</a></div><div class="ttdeci">Texture &amp; UpdateRec(::Rectangle rec, const void *pixels)</div><div class="ttdoc">Update GPU texture rectangle with new data.</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00102">Texture.hpp:102</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_texture_html"><div class="ttname"><a href="classraylib_1_1_texture.html">raylib::Texture</a></div><div class="ttdoc">Texture type.</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00015">Texture.hpp:15</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_texture_html_a22ab79fcae5acbcb4a6c1f27c519a7ec"><div class="ttname"><a href="classraylib_1_1_texture.html#a22ab79fcae5acbcb4a6c1f27c519a7ec">raylib::Texture::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdoc">Unload texture from GPU memory (VRAM)</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00087">Texture.hpp:87</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_texture_html_a2f895f3a629cf1a74fe88d05b1dd3003"><div class="ttname"><a href="classraylib_1_1_texture.html#a2f895f3a629cf1a74fe88d05b1dd3003">raylib::Texture::GenMipmaps</a></div><div class="ttdeci">Texture &amp; GenMipmaps()</div><div class="ttdoc">Generate GPU mipmaps for a texture.</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00124">Texture.hpp:124</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_material_html"><div class="ttname"><a href="classraylib_1_1_material.html">raylib::Material</a></div><div class="ttdoc">Material type (generic)</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00014">Material.hpp:14</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_texture_html_a30155e10c340a6e095d430cdb8b113b1"><div class="ttname"><a href="classraylib_1_1_texture.html#a30155e10c340a6e095d430cdb8b113b1">raylib::Texture::SetMaterial</a></div><div class="ttdeci">Texture &amp; SetMaterial(::Material *material, int mapType)</div><div class="ttdoc">Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00217">Texture.hpp:217</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_texture_html_ad2be6ad3fbbff3141dc274b1b397902c"><div class="ttname"><a href="classraylib_1_1_texture.html#ad2be6ad3fbbff3141dc274b1b397902c">raylib::Texture::Update</a></div><div class="ttdeci">Texture &amp; Update(const void *pixels)</div><div class="ttdoc">Update GPU texture with new data.</div><div class="ttdef"><b>Definition:</b> <a href="_texture_8hpp_source.html#l00094">Texture.hpp:94</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 6 2021 18:43:23 for raylib-cpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -57,7 +57,7 @@ var searchData=
   ['setm8_340',['SetM8',['../classraylib_1_1_matrix.html#a5417c6adbc0106783dd8f05a279d9c02',1,'raylib::Matrix']]],
   ['setm9_341',['SetM9',['../classraylib_1_1_matrix.html#a2476f470c2462a859ea139d7013f272c',1,'raylib::Matrix']]],
   ['setmaps_342',['SetMaps',['../classraylib_1_1_material.html#a629e453e6e682bde8e0a7db31dda7523',1,'raylib::Material']]],
-  ['setmaterial_343',['SetMaterial',['../classraylib_1_1_texture.html#a30155e10c340a6e095d430cdb8b113b1',1,'raylib::Texture']]],
+  ['setmaterial_343',['SetMaterial',['../classraylib_1_1_texture.html#a8667f5e1c478cfe06e48a1a98f3c1368',1,'raylib::Texture']]],
   ['setmaterialcount_344',['SetMaterialCount',['../classraylib_1_1_model.html#a6ba6210b8a4e52cee98529f2d7b82b67',1,'raylib::Model']]],
   ['setmaterials_345',['SetMaterials',['../classraylib_1_1_model.html#a9f9f5f426134239d73d681da5283dc9f',1,'raylib::Model']]],
   ['setmax_346',['SetMax',['../classraylib_1_1_bounding_box.html#a6c58c71a3be8e2b821c4fb0be3b176f1',1,'raylib::BoundingBox']]],
