@@ -20,15 +20,15 @@
 #include <vector>
 
 class Bunny {
-public:
+ public:
     Bunny() {
         position = GetMousePosition();
-        speed.x = (float)GetRandomValue(-250, 250)/60.0f;
-        speed.y = (float)GetRandomValue(-250, 250)/60.0f;
+        speed.x = static_cast<float>(GetRandomValue(-250, 250)) / 60.0f;
+        speed.y = static_cast<float>(GetRandomValue(-250, 250)) / 60.0f;
         color = raylib::Color(
                 GetRandomValue(50, 240),
                 GetRandomValue(80, 240),
-                GetRandomValue(100, 240), 255);
+                GetRandomValue(100, 240));
     }
 
     void Update(const raylib::Texture2D& texBunny) {

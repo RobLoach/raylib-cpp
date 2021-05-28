@@ -36,7 +36,7 @@ int main() {
     while (!window.ShouldClose()) {   // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
-        // TODO: Update your variables here
+        // Update your variables here
         //----------------------------------------------------------------------------------
 
         // Draw

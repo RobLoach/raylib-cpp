@@ -1,6 +1,5 @@
+#include "Player.hpp"
 #include "raylib-cpp.hpp"
-
-#include "./Player.hpp"
 
 Player::Player() {
     position = Rectangle{

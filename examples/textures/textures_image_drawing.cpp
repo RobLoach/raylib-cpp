@@ -13,8 +13,7 @@
 
 #include "raylib-cpp.hpp"
 
-int main(void)
-{
+int main(void) {
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;
@@ -34,9 +33,9 @@ int main(void)
     // Draw one image over the other with a scaling of 1.5f
     parrots
         .Draw(cat,
-            raylib::Rectangle(0, 0, cat.GetWidth(), cat.GetHeight()),
+        raylib::Rectangle(0, 0, cat.GetWidth(), cat.GetHeight()),
             raylib::Rectangle(30, 40, cat.GetWidth() * 1.5f, cat.GetHeight() * 1.5f))
-        .Crop(raylib::Rectangle(0, 50, parrots.GetWidth(), parrots.GetHeight() - 100)); // Crop resulting image
+        .Crop(raylib::Rectangle(0, 50, parrots.GetWidth(), parrots.GetHeight() - 100));  // Crop resulting image
 
     // Load custom font for frawing on image
     raylib::Font font("resources/custom_jupiter_crash.png");
@@ -53,7 +52,7 @@ int main(void)
     while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
-        // TODO: Update your variables here
+        // Update your variables here
         //----------------------------------------------------------------------------------
 
         // Draw
@@ -62,11 +61,16 @@ int main(void)
         {
             window.ClearBackground(RAYWHITE);
 
-            texture.Draw(screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2 - 40);
-            darkGray.DrawRectangleLines(screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2 - 40, texture.width, texture.height);
+            texture.Draw(screenWidth / 2 - texture.width / 2,
+                screenHeight / 2 - texture.height / 2 - 40);
+            darkGray.DrawRectangleLines(screenWidth / 2 - texture.width / 2,
+                screenHeight / 2 - texture.height / 2 - 40,
+                texture.width, texture.height);
 
-            darkGray.DrawText("We are drawing only one texture from various images composed!", 240, 350, 10);
-            darkGray.DrawText("Source images have been cropped, scaled, flipped and copied one over the other.", 190, 370, 10);
+            darkGray.DrawText("We are drawing only one texture from various images composed!",
+                240, 350, 10);
+            darkGray.DrawText("Source images have been cropped, scaled, flipped and copied one over the other.",
+                190, 370, 10);
         }
         EndDrawing();
         //----------------------------------------------------------------------------------

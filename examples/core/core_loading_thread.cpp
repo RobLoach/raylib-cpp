@@ -11,11 +11,12 @@
 *
 *******************************************************************************/
 
-#include "raylib-cpp.hpp"
 #include <thread>                           // C++11 standard library threads
 #include <atomic>                           // C++ atomic data types
 #include <chrono>                           // For: chrono::steady_clock::now()
 #include <system_error>                     // May be thrown by thread c'tor
+
+#include "raylib-cpp.hpp"
 
 // Using C++ std::atomic_bool (aka. std::atomic<bool>) for synchronization.
 // n.b. A plain built-in type can't be used for inter-thread synchronization

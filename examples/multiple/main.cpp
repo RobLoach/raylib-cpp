@@ -1,6 +1,5 @@
+#include "Player.hpp"
 #include "raylib-cpp.hpp"
-
-#include "./Player.hpp"
 
 int main() {
     raylib::Window window(640, 480);
@@ -16,5 +15,4 @@ int main() {
         }
         window.EndDrawing();
     }
-
 }

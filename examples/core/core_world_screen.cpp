@@ -30,16 +30,16 @@ int main() {
     Vector3 cubePosition;
     Vector2 cubeScreenPosition;
 
-    camera.SetMode(CAMERA_FREE); // Set a free camera mode
+    camera.SetMode(CAMERA_FREE);        // Set a free camera mode
 
     SetTargetFPS(60);                   // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose()) {    // Detect window close button or ESC key
+    while (!window.ShouldClose()) {     // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
-        camera.Update();            // Update camera
+        camera.Update();                // Update camera
 
         // Calculate cube screen space position (with a little offset to be in top)
         cubeScreenPosition = GetWorldToScreen((Vector3){cubePosition.x, cubePosition.y + 2.5f, cubePosition.z}, camera);
@@ -60,8 +60,13 @@ int main() {
             }
             camera.EndMode();
 
-            DrawText("Enemy: 100 / 100", cubeScreenPosition.x - MeasureText("Enemy: 100/100", 20)/2, cubeScreenPosition.y, 20, BLACK);
-            DrawText("Text is always on top of the cube", (screenWidth - MeasureText("Text is always on top of the cube", 20))/2, 25, 20, GRAY);
+            DrawText("Enemy: 100 / 100",
+                cubeScreenPosition.x - MeasureText("Enemy: 100/100", 20) / 2,
+                cubeScreenPosition.y, 20,
+                BLACK);
+            DrawText("Text is always on top of the cube",
+                (screenWidth - MeasureText("Text is always on top of the cube", 20)) / 2,
+                25, 20, GRAY);
         }
         EndDrawing();
         //----------------------------------------------------------------------------------

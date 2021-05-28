@@ -25,8 +25,7 @@ int main() {
         raylib::Vector3(0.0f, 2.0f, 0.0f),
         raylib::Vector3(0.0f, 1.0f, 0.0f),
         45.0f,
-        CAMERA_PERSPECTIVE
-    );
+        CAMERA_PERSPECTIVE);
 
     raylib::Texture2D bill("resources/billboard.png");     // Our texture billboard
     raylib::Vector3 billPosition(0.0f, 2.0f, 0.0f);                // Position where draw billboard
@@ -47,7 +46,6 @@ int main() {
         //----------------------------------------------------------------------------------
         BeginDrawing();
         {
-
             window.ClearBackground(RAYWHITE);
 
             camera.BeginMode();

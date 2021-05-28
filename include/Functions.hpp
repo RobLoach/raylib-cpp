@@ -162,6 +162,9 @@ RLCPPAPI inline bool ChangeDirectory(const std::string& dir) {
  * Get dropped files names
  */
 RLCPPAPI std::vector<std::string> GetDroppedFiles() {
+    if (!::IsFileDropped()) {
+        return std::vector<std::string>();
+    }
     int count;
     char** files = ::GetDroppedFiles(&count);
     std::vector<std::string> output(files, files + count);

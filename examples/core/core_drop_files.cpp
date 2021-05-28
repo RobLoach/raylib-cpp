@@ -30,9 +30,7 @@ int main() {
     while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
-        if (IsFileDropped()) {
-            droppedFiles = raylib::GetDroppedFiles();
-        }
+        droppedFiles = raylib::GetDroppedFiles();
         //----------------------------------------------------------------------------------
 
         // Draw

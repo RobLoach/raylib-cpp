@@ -34,16 +34,15 @@ int main() {
     raylib::Vector3 positions[MAX_COLUMNS] = { 0 };
     raylib::Color colors[MAX_COLUMNS] = { 0 };
 
-    for (int i = 0; i < MAX_COLUMNS; i++)
-    {
-        heights[i] = (float)GetRandomValue(1, 12);
+    for (int i = 0; i < MAX_COLUMNS; i++) {
+        heights[i] = static_cast<float>(GetRandomValue(1, 12));
         positions[i] = raylib::Vector3(GetRandomValue(-15, 15), heights[i]/2, GetRandomValue(-15, 15));
         colors[i] = raylib::Color(GetRandomValue(20, 255), GetRandomValue(10, 55), 30);
     }
 
-    camera.SetMode(CAMERA_FIRST_PERSON); // Set a first person camera mode
+    camera.SetMode(CAMERA_FIRST_PERSON);  // Set a first person camera mode
 
-    SetTargetFPS(60);                    // Set our game to run at 60 frames-per-second
+    SetTargetFPS(60);                     // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
     // Main game loop
@@ -61,7 +60,7 @@ int main() {
 
             camera.BeginMode();
             {
-                DrawPlane(Vector3{ 0.0f, 0.0f, 0.0f }, Vector2{ 32.0f, 32.0f }, LIGHTGRAY); // Draw ground
+                DrawPlane(Vector3{ 0.0f, 0.0f, 0.0f }, Vector2{ 32.0f, 32.0f }, LIGHTGRAY);  // Draw ground
                 DrawCube(Vector3{ -16.0f, 2.5f, 0.0f }, 1.0f, 5.0f, 32.0f, BLUE);     // Draw a blue wall
                 DrawCube(Vector3{ 16.0f, 2.5f, 0.0f }, 1.0f, 5.0f, 32.0f, LIME);      // Draw a green wall
                 DrawCube(Vector3{ 0.0f, 2.5f, 16.0f }, 32.0f, 5.0f, 1.0f, GOLD);      // Draw a yellow wall
@@ -74,8 +73,8 @@ int main() {
             }
             camera.EndMode();
 
-            DrawRectangle( 10, 10, 220, 70, raylib::Color::SkyBlue().Fade(0.5f));
-            DrawRectangleLines( 10, 10, 220, 70, BLUE);
+            DrawRectangle(10, 10, 220, 70, raylib::Color::SkyBlue().Fade(0.5f));
+            DrawRectangleLines(10, 10, 220, 70, BLUE);
 
             DrawText("First person camera default controls:", 20, 20, 10, BLACK);
             DrawText("- Move with keys: W, A, S, D", 40, 40, 10, DARKGRAY);

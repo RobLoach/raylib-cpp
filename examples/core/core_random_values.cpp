@@ -33,8 +33,7 @@ int main() {
         framesCounter++;
 
         // Every two seconds (120 frames) a new random value is generated
-        if (((framesCounter/120)%2) == 1)
-        {
+        if (((framesCounter / 120) % 2) == 1) {
             randValue = GetRandomValue(-8, 5);
             framesCounter = 0;
         }
