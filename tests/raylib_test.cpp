@@ -9,7 +9,7 @@ int main() {
     raylib::Vector2 position(50, 100);
     assert(position.GetX() == position.x);
     position.x = 150;
-    assert(position.GetX() == 160);
+    assert(position.GetX() == 150);
 
     // Addition operator.
     raylib::Vector2 speed(10, 10);
