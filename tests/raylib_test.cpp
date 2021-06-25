@@ -1,42 +1,37 @@
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
+#include <cassert>
+#include <iostream>
 #include <string>
 #include <vector>
 #include "raylib-cpp.hpp"
-#include "catch.hpp"
 
-TEST_CASE("raylib_test", "[raylib_test]" ) {
-    SECTION("Vector2") {
-        raylib::Vector2 position(50, 100);
-        REQUIRE(position.GetX() == position.x);
-        position.x = 150;
-        REQUIRE(position.GetX() == 150);
+int main() {
+    // Vector
+    raylib::Vector2 position(50, 100);
+    assert(position.GetX() == position.x);
+    position.x = 150;
+    assert(position.GetX() == 160);
 
-        // Addition operator.
-        raylib::Vector2 speed(10, 10);
-        position += speed;
-        REQUIRE(position.x == 160);
-    }
+    // Addition operator.
+    raylib::Vector2 speed(10, 10);
+    position += speed;
+    assert(position.x == 160);
+    assert(raylib::Window::IsReady() == false);
 
-    SECTION("Window") {
-        REQUIRE(raylib::Window::IsReady() == false);
-    }
+    // Color
+    raylib::Color color = RED;
+    assert(color.ToInt() == ::ColorToInt(RED));
+    color = RAYWHITE;
+    assert(color.r == RAYWHITE.r);
 
-    SECTION("Color") {
-        raylib::Color color = RED;
-        REQUIRE(color.ToInt() == ::ColorToInt(RED));
+    // Math
+    raylib::Vector2 direction(50, 50);
+    raylib::Vector2 newDirection = direction.Rotate(30);
+    assert((int)newDirection.x == 18);
 
-        color = RAYWHITE;
-        REQUIRE(color.r == RAYWHITE.r);
-    }
+    // raylib::GetDirectoryFiles()
+    std::vector<std::string> files = raylib::GetDirectoryFiles(::GetWorkingDirectory());
+    assert(files.size() > 3);
 
-    SECTION("RayMath") {
-        raylib::Vector2 direction(50, 50);
-        raylib::Vector2 newDirection = direction.Rotate(30);
-        REQUIRE((int)newDirection.x == 18);
-    }
-
-    SECTION("Functions") {
-        std::vector<std::string> files = raylib::GetDirectoryFiles(::GetWorkingDirectory());
-        REQUIRE(files.size() > 3);
-    }
+    std::cout << "Tests complete" << std::endl;
+    return 0;
 }
