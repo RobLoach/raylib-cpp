@@ -3,7 +3,7 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
-#include "./RayHitInfo.hpp"
+#include "./RayCollision.hpp"
 
 namespace raylib {
 /**
@@ -44,7 +44,7 @@ class Ray : public ::Ray {
      * Detect collision between ray and sphere
      */
     inline bool CheckCollisionSphere(::Vector3 center, float radius) const {
-        return CheckCollisionRaySphere(*this, center, radius);
+        return GetRayCollisionSphere(*this, center, radius).hit; // Updated (Knocker)
     }
 
     /**
@@ -52,36 +52,41 @@ class Ray : public ::Ray {
      */
     inline bool CheckCollisionSphere(::Vector3 center, float radius,
             ::Vector3 *collisionPoint) const {
-        return CheckCollisionRaySphereEx(*this, center, radius, collisionPoint);
+        RayCollision coll = GetRayCollisionSphere(*this, center, radius);
+        collisionPoint = &coll.point;
+        return coll.hit; // Updated (Knocker)
     }
 
     /**
      * Detect collision between ray and box
      */
     inline bool CheckCollision(const ::BoundingBox& box) const {
-        return CheckCollisionRayBox(*this, box);
+        return GetRayCollisionBox(*this, box).hit; // Updated (Knocker)
     }
 
     /**
      * Get collision info between ray and model
      */
-    inline RayHitInfo GetCollision(const ::Model& model) const {
-        return GetCollisionRayModel(*this, model);
+    // Updated (Knocker)
+    inline RayCollision GetCollision(const ::Model& model) const {
+        return GetRayCollisionModel(*this, model); // Updated (Knocker)
     }
 
     /**
      * Get collision info between ray and triangle
      */
-    inline RayHitInfo GetCollisionTriangle(::Vector3 p1, ::Vector3 p2, ::Vector3 p3) const {
-        return GetCollisionRayTriangle(*this, p1, p2, p3);
+    // Updated (Knocker)
+    inline RayCollision GetCollisionTriangle(::Vector3 p1, ::Vector3 p2, ::Vector3 p3) const {
+        return GetRayCollisionTriangle(*this, p1, p2, p3); // Updated (Knocker)
     }
 
     /**
      * Get collision info between ray and ground plane (Y-normal plane)
      */
-    inline RayHitInfo GetCollisionGround(float groundHeight) const {
-        return GetCollisionRayGround(*this, groundHeight);
-    }
+    // Updated (Knocker), seems to have been removed
+    // inline RayCollision GetCollisionGround(float groundHeight) const {
+    //     return GetRayCollisionGround(*this, groundHeight);
+    // }
 
  private:
     inline void set(const ::Ray& ray) {

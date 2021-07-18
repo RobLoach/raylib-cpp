@@ -99,7 +99,7 @@ class Music : public ::Music {
      * Check if music is playing
      */
     inline bool IsPlaying() const {
-        return ::IsMusicPlaying(*this);
+        return ::IsMusicStreamPlaying(*this); // Updated (Knocker)
     }
 
     /**

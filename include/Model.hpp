@@ -74,8 +74,9 @@ class Model : public ::Model {
     /**
      * Get collision info between ray and model
      */
-    inline RayHitInfo GetCollision(const ::Ray& ray) const {
-        return ::GetCollisionRayModel(ray, *this);
+    // Updated (Knocker)
+    inline RayCollision GetCollision(const ::Ray& ray) const {
+        return ::GetRayCollisionModel(ray, *this);
     }
 
     /**

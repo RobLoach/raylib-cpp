@@ -18,7 +18,7 @@ class AudioStream : public ::AudioStream {
      * Init audio stream (to stream raw audio pcm data)
      */
     AudioStream(unsigned int SampleRate, unsigned int SampleSize, unsigned int Channels) {
-        set(InitAudioStream(SampleRate, SampleSize, Channels));
+        set(LoadAudioStream(SampleRate, SampleSize, Channels)); // Updated (Knocker)
     }
 
     ~AudioStream() {
@@ -47,7 +47,7 @@ class AudioStream : public ::AudioStream {
      * Close audio stream and free memory
      */
     inline void Close() {
-        ::CloseAudioStream(*this);
+        ::UnloadAudioStream(*this); // Updated (Knocker)
     }
 
     /**

@@ -66,7 +66,7 @@ RLCPPAPI inline void TakeScreenshot(const std::string& fileName) {
 RLCPPAPI std::string LoadFileText(const std::string& fileName) {
     char* text = ::LoadFileText(fileName.c_str());
     std::string output(text);
-    ::UnloadFileText((unsigned char*)text);
+    ::UnloadFileText(text); // Updated (Knocker)
     return output;
 }
 
