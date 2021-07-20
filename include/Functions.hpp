@@ -63,6 +63,7 @@ RLCPPAPI inline void TakeScreenshot(const std::string& fileName) {
 /**
  * Load text data from file (read)
  */
+[[maybe_unused]]
 RLCPPAPI std::string LoadFileText(const std::string& fileName) {
     char* text = ::LoadFileText(fileName.c_str());
     std::string output(text);
@@ -143,6 +144,7 @@ RLCPPAPI inline std::string GetWorkingDirectory() {
 /**
  * Get filenames in a directory path
  */
+[[maybe_unused]]
 RLCPPAPI std::vector<std::string> GetDirectoryFiles(const std::string& dirPath) {
     int count;
     char** files = ::GetDirectoryFiles(dirPath.c_str(), &count);
@@ -161,6 +163,7 @@ RLCPPAPI inline bool ChangeDirectory(const std::string& dir) {
 /**
  * Get dropped files names
  */
+[[maybe_unused]]
 RLCPPAPI std::vector<std::string> GetDroppedFiles() {
     if (!::IsFileDropped()) {
         return std::vector<std::string>();
