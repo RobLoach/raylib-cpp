@@ -15,14 +15,21 @@ class Camera3D : public ::Camera3D {
         set(camera);
     }
 
-    Camera3D(::Vector3 positionValue, ::Vector3 targetValue, ::Vector3 upValue,
-            float fovyValue = 0, int projectionValue = 0) {
-        position = positionValue;
-        target = targetValue;
-        up = upValue;
-        fovy = fovyValue;
-        projection = projectionValue;
-    }
+    /**
+     * Create a new Camera3D.
+     *
+     * @param position Camera position
+     * @param target Camera target it looks-at
+     * @param up Camera up vector (rotation over its axis)
+     * @param fovy Camera field-of-view apperture in Y (degrees) in perspective, used as near plane width in orthographic
+     * @param projection Camera projection: CAMERA_PERSPECTIVE or CAMERA_ORTHOGRAPHIC
+     */
+    Camera3D(::Vector3 position,
+            ::Vector3 target = (::Vector3){0.0f, 0.0f, 0.0f},
+            ::Vector3 up = (::Vector3){0.0f, 1.0f, 0.0f},
+            float fovy = 0,
+            int projection = CAMERA_PERSPECTIVE
+        ) : ::Camera3D{position, target, up, fovy, projection} {}
 
     Camera3D() {}
 

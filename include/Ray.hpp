@@ -15,10 +15,7 @@ class Ray : public ::Ray {
         set(ray);
     }
 
-    Ray(::Vector3 Position, ::Vector3 Direction) {
-        position = Position;
-        direction = Direction;
-    }
+    Ray(::Vector3 position, ::Vector3 direction) : ::Ray{position, direction} {}
 
     Ray(::Vector2 mousePosition, ::Camera camera) {
         set(::GetMouseRay(mousePosition, camera));

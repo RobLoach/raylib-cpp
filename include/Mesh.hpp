@@ -19,10 +19,7 @@ class Mesh : public ::Mesh {
         set(mesh);
     }
 
-    Mesh(int VertexCount, int TriangleCount) {
-        vertexCount = VertexCount;
-        triangleCount = TriangleCount;
-    }
+    Mesh(int vertexCount, int triangleCount) : ::Mesh{vertexCount, triangleCount} {}
 
     /**
      * Load meshes from model file

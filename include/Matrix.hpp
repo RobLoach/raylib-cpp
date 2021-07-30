@@ -19,26 +19,11 @@ class Matrix : public ::Matrix {
         set(mat);
     }
 
-    Matrix(float M0 = 0, float M1 = 0, float M2 = 0, float M3 = 0, float M4 = 0, float M5 = 0,
-            float M6 = 0, float M7 = 0, float M8 = 0, float M9 = 0, float M10 = 0, float M11 = 0,
-            float M12 = 0, float M13 = 0, float M14 = 0, float M15 = 0) {
-        m0 = M0;
-        m1 = M1;
-        m2 = M2;
-        m3 = M3;
-        m4 = M4;
-        m5 = M5;
-        m6 = M6;
-        m7 = M7;
-        m8 = M8;
-        m9 = M9;
-        m10 = M10;
-        m11 = M11;
-        m12 = M12;
-        m13 = M13;
-        m14 = M14;
-        m15 = M15;
-    }
+    Matrix(
+            float m0 = 0, float m1 = 0, float m2 = 0, float m3 = 0, float m4 = 0, float m5 = 0,
+            float m6 = 0, float m7 = 0, float m8 = 0, float m9 = 0, float m10 = 0, float m11 = 0,
+            float m12 = 0, float m13 = 0, float m14 = 0, float m15 = 0) :
+        ::Matrix{m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15} {}
 
     GETTERSETTER(float, M0, m0)
     GETTERSETTER(float, M1, m1)
