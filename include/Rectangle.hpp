@@ -24,6 +24,7 @@ class Rectangle : public ::Rectangle {
     Rectangle(::Vector2 position, ::Vector2 size)
             : ::Rectangle{position.x, position.y, size.x, size.y} {}
     Rectangle(::Vector2 size) : ::Rectangle{0, 0, size.x, size.y} {}
+    Rectangle(::Vector4 rect) : ::Rectangle{rect.x, rect.y, rect.z, rect.w} {}
 
     GETTERSETTER(float, X, x)
     GETTERSETTER(float, Y, y)

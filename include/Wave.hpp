@@ -17,15 +17,11 @@ class Wave : public ::Wave {
     }
 
     Wave(
-            unsigned int SampleCount = 0,
-            unsigned int SampleRate = 0,
-            unsigned int SampleSize = 0,
-            unsigned int Channels = 0) {
-        sampleCount = SampleCount;
-        sampleRate = SampleRate;
-        sampleSize = SampleSize;
-        channels = Channels;
-    }
+            unsigned int sampleCount = 0,
+            unsigned int sampleRate = 0,
+            unsigned int sampleSize = 0,
+            unsigned int channels = 0
+        ) : ::Wave{sampleCount, sampleRate, sampleSize, channels} { }
 
     /**
      * Load wave data from file

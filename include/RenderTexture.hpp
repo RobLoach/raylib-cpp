@@ -14,9 +14,7 @@ class RenderTexture : public ::RenderTexture {
         set(renderTexture);
     }
 
-    RenderTexture(unsigned int Id) {
-        id = Id;
-    }
+    RenderTexture(unsigned int id, ::Texture texture, ::Texture depth) : ::RenderTexture{id, texture, depth} {}
 
     RenderTexture(int width, int height) {
         set(LoadRenderTexture(width, height));
