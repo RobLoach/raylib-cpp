@@ -11,18 +11,14 @@ namespace raylib {
  */
 class Camera2D : public ::Camera2D {
  public:
-    Camera2D() {}
     Camera2D(const ::Camera2D& camera) {
         set(camera);
     }
 
-    Camera2D(::Vector2 offsetValue, ::Vector2 targetValue, float rotationValue = 0,
-            float zoomValue = 1) {
-        offset = offsetValue;
-        target = targetValue;
-        rotation = rotationValue;
-        zoom = zoomValue;
-    }
+    Camera2D() {}
+    Camera2D(::Vector2 offset, ::Vector2 target,
+            float rotation = 0.0f, float zoom = 1.0f
+        ) : ::Camera2D{offset, target, rotation, zoom} {}
 
     inline Camera2D& BeginMode() {
         ::BeginMode2D(*this);

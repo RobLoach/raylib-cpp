@@ -17,7 +17,7 @@ class AudioStream : public ::AudioStream {
     /**
      * Init audio stream (to stream raw audio pcm data)
      */
-    AudioStream(unsigned int SampleRate, unsigned int SampleSize, unsigned int Channels) {
+    AudioStream(unsigned int SampleRate, unsigned int SampleSize, unsigned int Channels = 2) {
         set(InitAudioStream(SampleRate, SampleSize, Channels));
     }
 

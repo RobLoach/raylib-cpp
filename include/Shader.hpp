@@ -17,10 +17,7 @@ class Shader : public ::Shader {
         set(shader);
     }
 
-    Shader(unsigned int Id, int* Locs) {
-        id = Id;
-        locs = Locs;
-    }
+    Shader(unsigned int id, int* locs = NULL) : ::Shader{id, locs} {}
 
     Shader(const std::string& vsFileName, const std::string& fsFileName) {
         set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));

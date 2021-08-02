@@ -14,12 +14,7 @@ class RayHitInfo : public ::RayHitInfo {
         set(ray);
     }
 
-    RayHitInfo(bool Hit, float Distance, ::Vector3 Position, ::Vector3 Normal) {
-        hit = Hit;
-        distance = Distance;
-        position = Position;
-        normal = Normal;
-    }
+    RayHitInfo(bool hit, float distance, ::Vector3 position, ::Vector3 normal) : ::RayHitInfo{hit, distance, position, normal} {}
 
     /**
      * Get collision info between ray and mesh
