@@ -59,10 +59,10 @@ int main(void)
 
         if (needsReset)
         {
-            floor = physics.CreateBodyRectangle((Vector2){ screenWidth/2, screenHeight }, 500, 100, 10);
+            floor = physics.CreateBodyRectangle(Vector2{ screenWidth/2, screenHeight }, 500, 100, 10);
             floor->enabled = false;
 
-            circle = physics.CreateBodyCircle((Vector2){ screenWidth/2, screenHeight/2 }, 45, 10);
+            circle = physics.CreateBodyCircle(Vector2{ screenWidth/2, screenHeight/2 }, 45, 10);
             circle->enabled = false;
 
             needsReset = false;

@@ -25,7 +25,7 @@ int main(void)
 
     raylib::Image imMap("resources/cubicmap.png");      // Load cubicmap image (RAM)
     raylib::Texture cubicmap(imMap);                    // Convert image to texture to display (VRAM)
-    Mesh mesh = raylib::Mesh::Cubicmap(imMap, (Vector3){ 1.0f, 1.0f, 1.0f });
+    Mesh mesh = raylib::Mesh::Cubicmap(imMap, Vector3{ 1.0f, 1.0f, 1.0f });
     raylib::Model model(mesh);
 
     // NOTE: By default each cube is mapped to one part of texture atlas
@@ -75,7 +75,7 @@ int main(void)
             {
                 if ((mapPixels[y*cubicmap.width + x].r == 255) &&       // Collision: white pixel, only check R channel
                     (playerPos.CheckCollisionCircle(playerRadius,
-                    (Rectangle){ mapPosition.x - 0.5f + x*1.0f, mapPosition.z - 0.5f + y*1.0f, 1.0f, 1.0f })))
+                    Rectangle{ mapPosition.x - 0.5f + x*1.0f, mapPosition.z - 0.5f + y*1.0f, 1.0f, 1.0f })))
                 {
                     // Collision detected, reset camera position
                     camera.position = oldCamPos;
@@ -97,7 +97,7 @@ int main(void)
             }
             camera.EndMode();
 
-            cubicmap.Draw((Vector2){ static_cast<float>(GetScreenWidth() - cubicmap.width*4 - 20), 20 }, 0.0f, 4.0f, WHITE);
+            cubicmap.Draw(Vector2{ static_cast<float>(GetScreenWidth() - cubicmap.width*4 - 20), 20 }, 0.0f, 4.0f, WHITE);
             DrawRectangleLines(GetScreenWidth() - cubicmap.width*4 - 20, 20, cubicmap.width*4, cubicmap.height*4, GREEN);
 
             // Draw player position radar
