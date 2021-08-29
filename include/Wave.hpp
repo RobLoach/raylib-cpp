@@ -20,8 +20,9 @@ class Wave : public ::Wave {
             unsigned int sampleCount = 0,
             unsigned int sampleRate = 0,
             unsigned int sampleSize = 0,
-            unsigned int channels = 0
-        ) : ::Wave{sampleCount, sampleRate, sampleSize, channels} { }
+            unsigned int channels = 0,
+            void *data = NULL
+        ) : ::Wave{sampleCount, sampleRate, sampleSize, channels, data} { }
 
     /**
      * Load wave data from file
@@ -129,13 +130,6 @@ class Wave : public ::Wave {
      * Load sound from wave data
      */
     inline operator ::Sound() {
-        return LoadSound();
-    }
-
-    /**
-     * Load sound from wave data
-     */
-    inline operator Sound() {
         return LoadSound();
     }
 

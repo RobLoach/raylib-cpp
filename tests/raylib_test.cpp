@@ -32,6 +32,12 @@ int main() {
     std::vector<std::string> files = raylib::GetDirectoryFiles(::GetWorkingDirectory());
     assert(files.size() > 3);
 
+    // Sound
+    {
+        raylib::Sound sound("resources/weird.wav");
+        sound.Play();
+    }
+
     std::cout << "Tests complete" << std::endl;
     return 0;
 }
