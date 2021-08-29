@@ -87,7 +87,7 @@ class Texture : public ::Texture {
     /**
      * Retrieve the width and height of the texture.
      */
-    inline ::Vector2 GetSize() {
+    inline ::Vector2 GetSize() const {
         return {static_cast<float>(width), static_cast<float>(height)};
     }
 
