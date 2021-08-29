@@ -39,7 +39,11 @@ class ModelAnimation : public ::ModelAnimation {
     static std::vector<ModelAnimation> Load(const std::string& fileName) {
         int count = 0;
         ::ModelAnimation* modelAnimations = ::LoadModelAnimations(fileName.c_str(), &count);
-        return std::vector<ModelAnimation>(modelAnimations, modelAnimations + count);
+        std::vector<ModelAnimation> mats(modelAnimations, modelAnimations + count);
+
+        RL_FREE(modelAnimations);
+
+        return mats;
     }
 
     GETTERSETTER(int, BoneCount, boneCount)
