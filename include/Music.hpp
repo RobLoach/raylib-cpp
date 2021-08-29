@@ -30,6 +30,18 @@ class Music : public ::Music {
         set(::LoadMusicStreamFromMemory(fileType.c_str(), data, dataSize));
     }
 
+    Music(const Music&) = delete;
+
+    Music(Music&& other) {
+        set(other);
+
+        other.ctxType = 0;
+        other.ctxData = nullptr;
+        other.looping = false;
+        other.sampleCount = 0;
+        other.stream = { 0 };
+    }
+
     /**
      * Unload music stream
      */
@@ -45,6 +57,25 @@ class Music : public ::Music {
 
     Music& operator=(const ::Music& music) {
         set(music);
+        return *this;
+    }
+
+    Music& operator=(const Music&) = delete;
+
+    Music& operator=(Music&& other) {
+        if (this == &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.ctxType = 0;
+        other.ctxData = nullptr;
+        other.looping = false;
+        other.sampleCount = 0;
+        other.stream = { 0 };
+
         return *this;
     }
 

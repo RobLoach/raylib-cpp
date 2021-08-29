@@ -38,6 +38,18 @@ class Texture : public ::Texture {
         Load(fileName);
     }
 
+    Texture(const Texture&) = delete;
+
+    Texture(Texture&& other) {
+        set(other);
+
+        other.id = 0;
+        other.width = 0;
+        other.height = 0;
+        other.mipmaps = 0;
+        other.format = 0;
+    }
+
     ~Texture() {
         Unload();
     }
@@ -50,6 +62,25 @@ class Texture : public ::Texture {
 
     Texture& operator=(const ::Texture& texture) {
         set(texture);
+        return *this;
+    }
+
+    Texture& operator=(const Texture&) = delete;
+
+    Texture& operator=(Texture&& other) {
+        if (this == &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.id = 0;
+        other.width = 0;
+        other.height = 0;
+        other.mipmaps = 0;
+        other.format = 0;
+
         return *this;
     }
 

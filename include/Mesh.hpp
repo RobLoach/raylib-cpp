@@ -30,6 +30,28 @@ class Mesh : public ::Mesh {
     //    return std::vector<Mesh>(meshes, meshes + count);
     // }
 
+    Mesh(const Mesh&) = delete;
+
+    Mesh(Mesh&& other) {
+        set(other);
+
+        other.vertexCount = 0;
+        other.triangleCount = 0;
+        other.vertices = nullptr;
+        other.texcoords = nullptr;
+        other.texcoords2 = nullptr;
+        other.normals = nullptr;
+        other.tangents = nullptr;
+        other.colors = nullptr;
+        other.indices = nullptr;
+        other.animVertices = nullptr;
+        other.animNormals = nullptr;
+        other.boneIds = nullptr;
+        other.boneWeights = nullptr;
+        other.vaoId = 0;
+        other.vboId = nullptr;
+    }
+
     /**
      * Generate polygonal mesh
      */
@@ -118,6 +140,35 @@ class Mesh : public ::Mesh {
 
     Mesh& operator=(const ::Mesh& mesh) {
         set(mesh);
+        return *this;
+    }
+
+    Mesh& operator=(const Mesh&) = delete;
+
+    Mesh& operator=(Mesh&& other) {
+        if (this != &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.vertexCount = 0;
+        other.triangleCount = 0;
+        other.vertices = nullptr;
+        other.texcoords = nullptr;
+        other.texcoords2 = nullptr;
+        other.normals = nullptr;
+        other.tangents = nullptr;
+        other.colors = nullptr;
+        other.indices = nullptr;
+        other.animVertices = nullptr;
+        other.animNormals = nullptr;
+        other.boneIds = nullptr;
+        other.boneWeights = nullptr;
+        other.vaoId = 0;
+        other.vboId = nullptr;
+
         return *this;
     }
 

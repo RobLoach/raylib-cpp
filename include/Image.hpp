@@ -47,6 +47,20 @@ class Image : public ::Image {
         set(::ImageTextEx(font, text.c_str(), fontSize, spacing, tint));
     }
 
+    Image(const Image& other) {
+        set(other.Copy());
+    }
+
+    Image(Image&& other) {
+        set(other);
+
+        other.data = nullptr;
+        other.width = 0;
+        other.height = 0;
+        other.mipmaps = 0;
+        other.format = 0;
+    }
+
     static ::Image Text(const std::string& text, int fontSize,
             ::Color color = {255, 255, 255, 255}) {
         return ::ImageText(text.c_str(), fontSize, color);
@@ -129,6 +143,32 @@ class Image : public ::Image {
 
     Image& operator=(const ::Image& image) {
         set(image);
+        return *this;
+    }
+
+    Image& operator=(const Image& other) {
+        if (this == &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other.Copy());
+    }
+
+    Image& operator=(Image&& other) {
+        if (this == &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.data = nullptr;
+        other.width = 0;
+        other.height = 0;
+        other.mipmaps = 0;
+        other.format = 0;
+
         return *this;
     }
 

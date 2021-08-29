@@ -23,6 +23,15 @@ class Shader : public ::Shader {
         set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));
     }
 
+    Shader(const Shader&) = delete;
+
+    Shader(Shader&& other) {
+        set(other);
+
+        other.id = 0;
+        other.locs = nullptr;
+    }
+
     /**
      * Load shader from files and bind default locations.
      */
@@ -40,6 +49,20 @@ class Shader : public ::Shader {
     Shader& operator=(const ::Shader& shader) {
         set(shader);
         return *this;
+    }
+
+    Shader& operator=(const Shader&) = delete;
+
+    Shader& operator=(Shader&& other) {
+        if (this != &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.id = 0;
+        other.locs = nullptr;
     }
 
     ~Shader() {

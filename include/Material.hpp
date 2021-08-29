@@ -24,6 +24,15 @@ class Material : public ::Material {
         set(LoadMaterialDefault());
     }
 
+    Material(const Material&) = delete;
+
+    Material(Material&& other) {
+        set(other);
+
+        other.maps = nullptr;
+        other.shader = { 0 };
+    }
+
     ~Material() {
         Unload();
     }
@@ -33,6 +42,7 @@ class Material : public ::Material {
      */
     static std::vector<Material> Load(const std::string& fileName) {
         int count = 0;
+        // this function possibly leaks the materials array
         ::Material* materials = ::LoadMaterials(fileName.c_str(), &count);
         return std::vector<Material>(materials, materials + count);
     }
@@ -44,6 +54,22 @@ class Material : public ::Material {
 
     Material& operator=(const ::Material& material) {
         set(material);
+        return *this;
+    }
+
+    Material& operator=(const Material&) = delete;
+
+    Material& operator=(Material&& other) {
+        if (this != &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.maps = nullptr;
+        other.shader = { 0 };
+
         return *this;
     }
 

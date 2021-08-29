@@ -38,6 +38,18 @@ class Wave : public ::Wave {
         set(::LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
     }
 
+    Wave(const Wave&) = delete;
+
+    Wave(Wave&& other) {
+        set(other);
+
+        other.sampleCount = 0;
+        other.sampleRate = 0;
+        other.sampleSize = 0;
+        other.channels = 0;
+        other.data = nullptr;
+    }
+
     /**
      * Unload wave data
      */
@@ -53,6 +65,25 @@ class Wave : public ::Wave {
 
     Wave& operator=(const ::Wave& wave) {
         set(wave);
+        return *this;
+    }
+
+    Wave& operator=(const Wave&) = delete;
+
+    Wave& operator=(Wave&& other) {
+        if (this != &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.sampleCount = 0;
+        other.sampleRate = 0;
+        other.sampleSize = 0;
+        other.channels = 0;
+        other.data = nullptr;
+
         return *this;
     }
 

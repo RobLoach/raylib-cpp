@@ -21,6 +21,17 @@ class AudioStream : public ::AudioStream {
         set(InitAudioStream(SampleRate, SampleSize, Channels));
     }
 
+    AudioStream(const AudioStream&) = delete;
+
+    AudioStream(AudioStream&& other) {
+        set(other);
+
+        other.buffer = nullptr;
+        other.sampleRate = 0;
+        other.sampleSize = 0;
+        other.channels = 0;
+    }
+
     ~AudioStream() {
         Close();
     }
@@ -32,6 +43,24 @@ class AudioStream : public ::AudioStream {
 
     AudioStream& operator=(const ::AudioStream& stream) {
         set(stream);
+        return *this;
+    }
+
+    AudioStream& operator=(const AudioStream&) = delete;
+
+    AudioStream& operator=(AudioStream&& other) {
+        if (this == &other) {
+            return *this;
+        }
+
+        Close();
+        set(other);
+
+        other.buffer = nullptr;
+        other.sampleRate = 0;
+        other.sampleSize = 0;
+        other.channels = 0;
+
         return *this;
     }
 

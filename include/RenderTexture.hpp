@@ -20,12 +20,39 @@ class RenderTexture : public ::RenderTexture {
         set(LoadRenderTexture(width, height));
     }
 
+    RenderTexture(const RenderTexture&) = delete;
+
+    RenderTexture(RenderTexture&& other) {
+        set(other);
+
+        other.id = 0;
+        other.texture = { 0 };
+        other.depth = { 0 };
+    }
+
     GETTERSETTER(unsigned int, Id, id)
     GETTERSETTER(::Texture2D, Texture, texture)
     GETTERSETTER(::Texture2D, Depth, depth)
 
     RenderTexture& operator=(const ::RenderTexture& texture) {
         set(texture);
+        return *this;
+    }
+
+    RenderTexture& operator=(const RenderTexture&) = delete;
+
+    RenderTexture& operator=(RenderTexture&& other) {
+        if (this == &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.id = 0;
+        other.texture = { 0 };
+        other.depth = { 0 };
+
         return *this;
     }
 
