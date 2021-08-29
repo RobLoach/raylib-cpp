@@ -167,9 +167,9 @@ class Image : public ::Image {
      * Unload image from CPU memory (RAM)
      */
     inline void Unload() {
-        if (data != NULL) {
+        if (data != nullptr) {
             ::UnloadImage(*this);
-            data = NULL;
+            data = nullptr;
         }
     }
 

@@ -159,9 +159,9 @@ class Mesh : public ::Mesh {
      * Unload mesh from memory (RAM and/or VRAM)
      */
     inline void Unload() {
-        if (vboId != NULL) {
+        if (vboId != nullptr) {
             ::UnloadMesh(*this);
-            vboId = NULL;
+            vboId = nullptr;
         }
     }
 

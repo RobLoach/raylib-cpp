@@ -17,7 +17,7 @@ class Shader : public ::Shader {
         set(shader);
     }
 
-    Shader(unsigned int id, int* locs = NULL) : ::Shader{id, locs} {}
+    Shader(unsigned int id, int* locs = nullptr) : ::Shader{id, locs} {}
 
     Shader(const std::string& vsFileName, const std::string& fsFileName) {
         set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));
@@ -47,7 +47,7 @@ class Shader : public ::Shader {
     }
 
     void Unload() {
-        if (locs != NULL) {
+        if (locs != nullptr) {
             ::UnloadShader(*this);
         }
     }

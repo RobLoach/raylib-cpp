@@ -21,7 +21,7 @@ class Wave : public ::Wave {
             unsigned int sampleRate = 0,
             unsigned int sampleSize = 0,
             unsigned int channels = 0,
-            void *data = NULL
+            void *data = nullptr
         ) : ::Wave{sampleCount, sampleRate, sampleSize, channels, data} { }
 
     /**
@@ -113,9 +113,9 @@ class Wave : public ::Wave {
      * Unload wave data
      */
     void Unload() {
-        if (data != NULL) {
+        if (data != nullptr) {
             ::UnloadWave(*this);
-            data = NULL;
+            data = nullptr;
         }
     }
 

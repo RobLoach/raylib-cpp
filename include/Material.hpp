@@ -51,9 +51,9 @@ class Material : public ::Material {
      * Unload material from memory
      */
     inline void Unload() {
-        if (maps != NULL) {
+        if (maps != nullptr) {
             ::UnloadMaterial(*this);
-            maps = NULL;
+            maps = nullptr;
         }
     }
 

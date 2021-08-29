@@ -48,10 +48,10 @@ class Model : public ::Model {
      * Unload model (including meshes) from memory (RAM and/or VRAM)
      */
     inline void Unload() {
-        if (meshes != NULL || materials != NULL) {
+        if (meshes != nullptr || materials != nullptr) {
             ::UnloadModel(*this);
-            meshes = NULL;
-            materials = NULL;
+            meshes = nullptr;
+            materials = nullptr;
         }
     }
 
