@@ -71,8 +71,14 @@ class Wave : public ::Wave {
     }
 
     Wave& operator=(const Wave& other) {
+        if (&other != this) {
+            return *this;
+        }
+
         Unload();
         set(other.Copy());
+
+        return *this;
     };
 
     Wave& operator=(Wave&& other) {
