@@ -38,7 +38,9 @@ class Wave : public ::Wave {
         set(::LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
     }
 
-    Wave(const Wave&) = delete;
+    Wave(const Wave& other) {
+        set(other.Copy());
+    };
 
     Wave(Wave&& other) {
         set(other);
@@ -68,7 +70,10 @@ class Wave : public ::Wave {
         return *this;
     }
 
-    Wave& operator=(const Wave&) = delete;
+    Wave& operator=(const Wave& other) {
+        Unload();
+        set(other.Copy());
+    };
 
     Wave& operator=(Wave&& other) {
         if (this != &other) {
@@ -98,7 +103,7 @@ class Wave : public ::Wave {
     /**
      * Copy a wave to a new wave
      */
-    inline ::Wave Copy() {
+    inline ::Wave Copy() const {
         return ::WaveCopy(*this);
     }
 
