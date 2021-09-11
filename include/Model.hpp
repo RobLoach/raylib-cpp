@@ -29,6 +29,20 @@ class Model : public ::Model {
         Unload();
     }
 
+    Model(const Model&) = delete;
+
+    Model(Model&& other) {
+        set(other);
+
+        other.bones = nullptr;
+        other.boneCount = 0;
+        other.materials = nullptr;
+        other.materialCount = 0;
+        other.meshes = nullptr;
+        other.meshCount = 0;
+        other.bindPose = nullptr;
+    }
+
     GETTERSETTER(::Matrix, Transform, transform)
     GETTERSETTER(int, MeshCount, meshCount)
     GETTERSETTER(int, MaterialCount, materialCount)
@@ -44,14 +58,35 @@ class Model : public ::Model {
         return *this;
     }
 
+    Model& operator=(const Model&) = delete;
+
+    Model& operator=(Model&& other) {
+        if (this != &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.bones = nullptr;
+        other.boneCount = 0;
+        other.materials = nullptr;
+        other.materialCount = 0;
+        other.meshes = nullptr;
+        other.meshCount = 0;
+        other.bindPose = nullptr;
+
+        return *this;
+    }
+
     /**
      * Unload model (including meshes) from memory (RAM and/or VRAM)
      */
     inline void Unload() {
-        if (meshes != NULL || materials != NULL) {
+        if (meshes != nullptr || materials != nullptr) {
             ::UnloadModel(*this);
-            meshes = NULL;
-            materials = NULL;
+            meshes = nullptr;
+            materials = nullptr;
         }
     }
 

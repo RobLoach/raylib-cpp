@@ -17,9 +17,15 @@ namespace raylib {
  */
 class Sound : public ::Sound {
  public:
-    Sound(const ::Sound& vec) {
-        set(vec);
-    }
+    Sound(const Sound&) = delete;
+    Sound& operator=(const Sound&) = delete;
+
+    Sound(Sound&& other) {
+        set(other);
+
+        other.sampleCount = 0;
+        other.stream = { 0, 0, 0, 0 };
+    };
 
     Sound(const std::string& fileName) {
         set(LoadSound(fileName.c_str()));
@@ -36,10 +42,18 @@ class Sound : public ::Sound {
     GETTERSETTER(unsigned int, SampleCount, sampleCount)
     GETTERSETTER(::AudioStream, Stream, stream)
 
-    Sound& operator=(const ::Sound& sound) {
-        set(sound);
+    Sound& operator=(Sound&& other) {
+        if (this == &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+        other.sampleCount = 0;
+        other.stream = { 0, 0, 0, 0 };
+
         return *this;
-    }
+    };
 
     /**
      * Update sound buffer with new data

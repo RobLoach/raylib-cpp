@@ -20,8 +20,9 @@ class Wave : public ::Wave {
             unsigned int sampleCount = 0,
             unsigned int sampleRate = 0,
             unsigned int sampleSize = 0,
-            unsigned int channels = 0
-        ) : ::Wave{sampleCount, sampleRate, sampleSize, channels} { }
+            unsigned int channels = 0,
+            void *data = nullptr
+        ) : ::Wave{sampleCount, sampleRate, sampleSize, channels, data} { }
 
     /**
      * Load wave data from file
@@ -35,6 +36,20 @@ class Wave : public ::Wave {
      */
     Wave(const std::string& fileType, const unsigned char *fileData, int dataSize) {
         set(::LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
+    }
+
+    Wave(const Wave& other) {
+        set(other.Copy());
+    };
+
+    Wave(Wave&& other) {
+        set(other);
+
+        other.sampleCount = 0;
+        other.sampleRate = 0;
+        other.sampleSize = 0;
+        other.channels = 0;
+        other.data = nullptr;
     }
 
     /**
@@ -55,6 +70,34 @@ class Wave : public ::Wave {
         return *this;
     }
 
+    Wave& operator=(const Wave& other) {
+        if (&other != this) {
+            return *this;
+        }
+
+        Unload();
+        set(other.Copy());
+
+        return *this;
+    };
+
+    Wave& operator=(Wave&& other) {
+        if (this != &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.sampleCount = 0;
+        other.sampleRate = 0;
+        other.sampleSize = 0;
+        other.channels = 0;
+        other.data = nullptr;
+
+        return *this;
+    }
+
     /**
      * Convert wave data to desired format
      */
@@ -66,7 +109,7 @@ class Wave : public ::Wave {
     /**
      * Copy a wave to a new wave
      */
-    inline ::Wave Copy() {
+    inline ::Wave Copy() const {
         return ::WaveCopy(*this);
     }
 
@@ -112,9 +155,9 @@ class Wave : public ::Wave {
      * Unload wave data
      */
     void Unload() {
-        if (data != NULL) {
+        if (data != nullptr) {
             ::UnloadWave(*this);
-            data = NULL;
+            data = nullptr;
         }
     }
 
@@ -129,13 +172,6 @@ class Wave : public ::Wave {
      * Load sound from wave data
      */
     inline operator ::Sound() {
-        return LoadSound();
-    }
-
-    /**
-     * Load sound from wave data
-     */
-    inline operator Sound() {
         return LoadSound();
     }
 

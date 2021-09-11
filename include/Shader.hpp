@@ -17,10 +17,19 @@ class Shader : public ::Shader {
         set(shader);
     }
 
-    Shader(unsigned int id, int* locs = NULL) : ::Shader{id, locs} {}
+    Shader(unsigned int id, int* locs = nullptr) : ::Shader{id, locs} {}
 
     Shader(const std::string& vsFileName, const std::string& fsFileName) {
         set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));
+    }
+
+    Shader(const Shader&) = delete;
+
+    Shader(Shader&& other) {
+        set(other);
+
+        other.id = 0;
+        other.locs = nullptr;
     }
 
     /**
@@ -42,12 +51,26 @@ class Shader : public ::Shader {
         return *this;
     }
 
+    Shader& operator=(const Shader&) = delete;
+
+    Shader& operator=(Shader&& other) {
+        if (this != &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.id = 0;
+        other.locs = nullptr;
+    }
+
     ~Shader() {
         Unload();
     }
 
     void Unload() {
-        if (locs != NULL) {
+        if (locs != nullptr) {
             ::UnloadShader(*this);
         }
     }
