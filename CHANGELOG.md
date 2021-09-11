@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [x.x.x] - xxxx-xx-xx
 ### Changes
 - For tests, replaced catch.hpp with `assert()` calls
+- Added assignment operators for objects ([#142](https://github.com/RobLoach/raylib-cpp/pull/142) by [@marciejewiczow](https://github.com/maciejewiczow))
+- Replaced `NULL` with `nullptr`
+- Fixed memory leak in `ModelAnimation::Load` method
 
 ## [3.7.0] - 2021-04-23
 ### Added
