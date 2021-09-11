@@ -47,6 +47,20 @@ class Image : public ::Image {
         set(::ImageTextEx(font, text.c_str(), fontSize, spacing, tint));
     }
 
+    Image(const Image& other) {
+        set(other.Copy());
+    }
+
+    Image(Image&& other) {
+        set(other);
+
+        other.data = nullptr;
+        other.width = 0;
+        other.height = 0;
+        other.mipmaps = 0;
+        other.format = 0;
+    }
+
     static ::Image Text(const std::string& text, int fontSize,
             ::Color color = {255, 255, 255, 255}) {
         return ::ImageText(text.c_str(), fontSize, color);
@@ -132,6 +146,32 @@ class Image : public ::Image {
         return *this;
     }
 
+    Image& operator=(const Image& other) {
+        if (this == &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other.Copy());
+    }
+
+    Image& operator=(Image&& other) {
+        if (this == &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.data = nullptr;
+        other.width = 0;
+        other.height = 0;
+        other.mipmaps = 0;
+        other.format = 0;
+
+        return *this;
+    }
+
     /**
      * Load image from file into CPU memory (RAM)
      */
@@ -167,16 +207,16 @@ class Image : public ::Image {
      * Unload image from CPU memory (RAM)
      */
     inline void Unload() {
-        if (data != NULL) {
+        if (data != nullptr) {
             ::UnloadImage(*this);
-            data = NULL;
+            data = nullptr;
         }
     }
 
     /**
      * Export image data to file, returns true on success
      */
-    inline bool Export(const std::string& fileName) {
+    inline bool Export(const std::string& fileName) const {
         // TODO(RobLoach): Switch to an invalid loading exception on false.
         return ::ExportImage(*this, fileName.c_str());
     }
@@ -184,7 +224,7 @@ class Image : public ::Image {
     /**
      * Export image as code file defining an array of bytes, returns true on success
      */
-    inline bool ExportAsCode(const std::string& fileName) {
+    inline bool ExportAsCode(const std::string& fileName) const {
         return ::ExportImageAsCode(*this, fileName.c_str());
     }
 
@@ -197,21 +237,21 @@ class Image : public ::Image {
     /**
      * Retrieve the width and height of the image.
      */
-    inline ::Vector2 GetSize() {
+    inline ::Vector2 GetSize() const {
         return {static_cast<float>(width), static_cast<float>(height)};
     }
 
     /**
      * Create an image duplicate (useful for transformations)
      */
-    inline ::Image Copy() {
+    inline ::Image Copy() const {
         return ::ImageCopy(*this);
     }
 
     /**
      * Create an image from another image piece
      */
-    inline ::Image FromImage(::Rectangle rec) {
+    inline ::Image FromImage(::Rectangle rec) const {
         return ::ImageFromImage(*this, rec);
     }
 
@@ -517,35 +557,35 @@ class Image : public ::Image {
     /**
      * Load color data from image as a Color array (RGBA - 32bit)
      */
-    inline ::Color* LoadColors() {
+    inline ::Color* LoadColors() const {
         return ::LoadImageColors(*this);
     }
 
     /**
      * Load colors palette from image as a Color array (RGBA - 32bit)
      */
-    inline ::Color* LoadPalette(int maxPaletteSize, int *colorsCount) {
+    inline ::Color* LoadPalette(int maxPaletteSize, int *colorsCount) const {
         return ::LoadImagePalette(*this, maxPaletteSize, colorsCount);
     }
 
     /**
      * Unload color data loaded with LoadImageColors()
      */
-    inline void UnloadColors(::Color* colors) {
+    inline void UnloadColors(::Color* colors) const {
         ::UnloadImageColors(colors);
     }
 
     /**
      * Unload colors palette loaded with LoadImagePalette()
      */
-    inline void UnloadPalette(::Color* colors) {
+    inline void UnloadPalette(::Color* colors) const {
         ::UnloadImagePalette(colors);
     }
 
     /**
      * Load texture from image data
      */
-    inline ::Texture2D LoadTexture() {
+    inline ::Texture2D LoadTexture() const {
         return ::LoadTextureFromImage(*this);
     }
 
@@ -568,7 +608,7 @@ class Image : public ::Image {
      *
      * @return The pixel data size of the image.
      */
-    int GetPixelDataSize() {
+    int GetPixelDataSize() const {
         return ::GetPixelDataSize(width, height, format);
     }
 

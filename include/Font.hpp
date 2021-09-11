@@ -38,6 +38,19 @@ class Font : public ::Font {
             charsCount));
     }
 
+    Font(const Font&) = delete;
+
+    Font(Font&& other) {
+        set(other);
+
+        other.baseSize = 0;
+        other.charsCount = 0;
+        other.charsPadding = 0;
+        other.texture = { 0 };
+        other.recs = nullptr;
+        other.chars = nullptr;
+    }
+
     ~Font() {
         Unload();
     }
@@ -55,6 +68,26 @@ class Font : public ::Font {
 
     Font& operator=(const ::Font& font) {
         set(font);
+        return *this;
+    }
+
+    Font& operator=(const Font&) = delete;
+
+    Font& operator=(Font&& other) {
+        if (this == &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.baseSize = 0;
+        other.charsCount = 0;
+        other.charsPadding = 0;
+        other.texture = { 0 };
+        other.recs = nullptr;
+        other.chars = nullptr;
+
         return *this;
     }
 

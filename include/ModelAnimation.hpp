@@ -18,6 +18,17 @@ class ModelAnimation : public ::ModelAnimation {
         set(model);
     }
 
+    ModelAnimation(const ModelAnimation&) = delete;
+
+    ModelAnimation(ModelAnimation&& other) {
+        set(other);
+
+        other.boneCount = 0;
+        other.bones = nullptr;
+        other.frameCount = 0;
+        other.framePoses = nullptr;
+    }
+
     ~ModelAnimation() {
         Unload();
     }
@@ -28,7 +39,11 @@ class ModelAnimation : public ::ModelAnimation {
     static std::vector<ModelAnimation> Load(const std::string& fileName) {
         int count = 0;
         ::ModelAnimation* modelAnimations = ::LoadModelAnimations(fileName.c_str(), &count);
-        return std::vector<ModelAnimation>(modelAnimations, modelAnimations + count);
+        std::vector<ModelAnimation> mats(modelAnimations, modelAnimations + count);
+
+        RL_FREE(modelAnimations);
+
+        return mats;
     }
 
     GETTERSETTER(int, BoneCount, boneCount)
@@ -39,6 +54,23 @@ class ModelAnimation : public ::ModelAnimation {
     ModelAnimation& operator=(const ::ModelAnimation& model) {
         set(model);
         return *this;
+    }
+
+
+    ModelAnimation& operator=(const ModelAnimation&) = delete;
+
+    ModelAnimation& operator=(ModelAnimation&& other) {
+        if (this != &other) {
+            return *this;
+        }
+
+        Unload();
+        set(other);
+
+        other.boneCount = 0;
+        other.bones = nullptr;
+        other.frameCount = 0;
+        other.framePoses = nullptr;
     }
 
     /**
