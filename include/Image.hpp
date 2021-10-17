@@ -35,7 +35,7 @@ class Image : public ::Image {
     }
 
     Image(const ::Texture2D& texture) {
-        set(::GetTextureData(texture));
+        set(::LoadImageFromTexture(texture));
     }
 
     Image(int width, int height, ::Color color = {255, 255, 255, 255}) {
@@ -74,8 +74,8 @@ class Image : public ::Image {
     /**
      * Get pixel data from screen buffer and return an Image (screenshot)
      */
-    static ::Image GetScreenData() {
-        return ::GetScreenData();
+    static ::Image LoadFromScreen() {
+        return ::LoadImageFromScreen();
     }
 
     /**
@@ -120,14 +120,6 @@ class Image : public ::Image {
      */
     static ::Image WhiteNoise(int width, int height, float factor) {
         return ::GenImageWhiteNoise(width, height, factor);
-    }
-
-    /**
-     * Generate image: perlin noise
-     */
-    static ::Image PerlinNoise(int width, int height, int offsetX, int offsetY,
-            float scale = 1.0f) {
-        return ::GenImagePerlinNoise(width, height, offsetX, offsetY, scale);
     }
 
     /**

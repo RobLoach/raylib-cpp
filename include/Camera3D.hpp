@@ -143,7 +143,7 @@ class Camera3D : public ::Camera3D {
             const ::Texture2D& texture,
             ::Rectangle sourceRec,
             ::Vector3 center,
-            float size,
+            ::Vector2 size,
             ::Color tint = {255, 255, 255, 255}) {
         ::DrawBillboardRec(*this, texture, sourceRec, center, size, tint);
         return *this;

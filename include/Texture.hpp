@@ -139,7 +139,7 @@ class Texture : public ::Texture {
      * Get pixel data from GPU texture and return an Image
      */
     inline ::Image GetData() const {
-        return ::GetTextureData(*this);
+        return ::LoadImageFromTexture(*this);
     }
 
     /**

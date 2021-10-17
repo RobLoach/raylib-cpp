@@ -220,7 +220,7 @@ class Mesh : public ::Mesh {
      * Compute mesh bounding box limits
      */
     inline raylib::BoundingBox BoundingBox() const {
-        return ::MeshBoundingBox(*this);
+        return ::GetMeshBoundingBox(*this);
     }
 
     /**
@@ -234,7 +234,7 @@ class Mesh : public ::Mesh {
      * Compute mesh tangents
      */
     inline Mesh& Tangents() {
-        ::MeshTangents(this);
+        ::GenMeshTangents(this);
         return *this;
     }
 
@@ -242,7 +242,7 @@ class Mesh : public ::Mesh {
      * Compute mesh binormals (aka bitangent)
      */
     inline Mesh& Binormals() {
-        ::MeshBinormals(this);
+        ::GenMeshBinormals(this);
         return *this;
     }
 

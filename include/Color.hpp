@@ -163,13 +163,14 @@ class Color : public ::Color {
     }
 
     inline Color& DrawText(
-            const ::Font& font,
+            const ::Font font,
             const std::string& text,
-            ::Rectangle rec,
+            ::Vector2 position,
+            ::Vector2 origin,
+            float rotation,
             float fontSize,
-            float spacing,
-            bool wordWrap = false) {
-        ::DrawTextRec(font, text.c_str(), rec, fontSize, spacing, wordWrap, *this);
+            float spacing) {
+        ::DrawTextPro(font, text.c_str(), position, origin, rotation, fontSize, spacing, *this);
         return *this;
     }
 
