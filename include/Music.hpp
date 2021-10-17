@@ -39,7 +39,7 @@ class Music : public ::Music {
         other.ctxData = nullptr;
         other.looping = false;
         other.frameCount = 0;
-        other.stream = { 0 };
+        other.stream = {};
     }
 
     /**
@@ -74,7 +74,7 @@ class Music : public ::Music {
         other.ctxData = nullptr;
         other.looping = false;
         other.frameCount = 0;
-        other.stream = { 0 };
+        other.stream = {};
 
         return *this;
     }

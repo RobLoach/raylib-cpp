@@ -30,7 +30,7 @@ class Material : public ::Material {
         set(other);
 
         other.maps = nullptr;
-        other.shader = { 0 };
+        other.shader = {};
     }
 
     ~Material() {
@@ -68,7 +68,7 @@ class Material : public ::Material {
         set(other);
 
         other.maps = nullptr;
-        other.shader = { 0 };
+        other.shader = {};
 
         return *this;
     }

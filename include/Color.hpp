@@ -46,7 +46,7 @@ class Color : public ::Color {
     /**
      * Get Color structure from hexadecimal value
      */
-    Color(int hexValue) {
+    Color(unsigned int hexValue) {
         set(::GetColor(hexValue));
     }
 
@@ -199,7 +199,7 @@ class Color : public ::Color {
         return *this;
     }
 
-    inline Color& DrawRectangleLines(::Rectangle rec, int lineThick) {
+    inline Color& DrawRectangleLines(::Rectangle rec, float lineThick) {
         ::DrawRectangleLinesEx(rec, lineThick, *this);
         return *this;
     }

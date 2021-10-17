@@ -46,7 +46,7 @@ class Font : public ::Font {
         other.baseSize = 0;
         other.glyphCount = 0;
         other.glyphPadding = 0;
-        other.texture = { 0 };
+        other.texture = {};
         other.recs = nullptr;
         other.glyphs = nullptr;
     }
@@ -84,7 +84,7 @@ class Font : public ::Font {
         other.baseSize = 0;
         other.glyphCount = 0;
         other.glyphPadding = 0;
-        other.texture = { 0 };
+        other.texture = {};
         other.recs = nullptr;
         other.glyphs = nullptr;
 

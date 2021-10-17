@@ -81,7 +81,7 @@ class Rectangle : public ::Rectangle {
         return *this;
     }
 
-    inline Rectangle& DrawLines(::Color color, int lineThick) {
+    inline Rectangle& DrawLines(::Color color, float lineThick) {
         ::DrawRectangleLinesEx(*this, lineThick, color);
         return *this;
     }
@@ -91,8 +91,8 @@ class Rectangle : public ::Rectangle {
         return *this;
     }
 
-    inline Rectangle& DrawRoundedLines(float roundness, int segments, int lineThick,
-            ::Color color) {
+    inline Rectangle& DrawRoundedLines(float roundness, int segments,
+            float lineThick, ::Color color) {
         ::DrawRectangleRoundedLines(*this, roundness, segments, lineThick, color);
         return *this;
     }
