@@ -255,6 +255,13 @@ class Texture : public ::Texture {
         return *this;
     }
 
+    /**
+     * Set texture and rectangle to be used on shapes drawing.
+     */
+    inline Texture& SetShapes(const ::Rectangle& source) {
+        ::SetShapesTexture(*this, source);
+    }
+
  private:
     inline void set(const ::Texture& texture) {
         id = texture.id;

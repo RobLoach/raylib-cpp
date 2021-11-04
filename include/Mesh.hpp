@@ -19,7 +19,23 @@ class Mesh : public ::Mesh {
         set(mesh);
     }
 
-    Mesh(int vertexCount, int triangleCount) : ::Mesh{vertexCount, triangleCount} {}
+    Mesh(int vertexCount, int triangleCount) : ::Mesh{
+            vertexCount,
+            triangleCount,
+            nullptr,
+            nullptr,
+            nullptr,
+            nullptr,
+            nullptr,
+            nullptr,
+            nullptr,
+            nullptr,
+            nullptr,
+            nullptr,
+            nullptr,
+            0,
+            nullptr
+        } {}
 
     /**
      * Load meshes from model file
@@ -133,7 +149,7 @@ class Mesh : public ::Mesh {
     GETTERSETTER(unsigned short *, Indices, indices) // NOLINT
     GETTERSETTER(float *, AnimVertices, animVertices)
     GETTERSETTER(float *, AnimNormals, animNormals)
-    GETTERSETTER(int *, BoneIds, boneIds)
+    GETTERSETTER(unsigned char *, BoneIds, boneIds)
     GETTERSETTER(float *, BoneWeights, boneWeights)
     GETTERSETTER(unsigned int, VaoId, vaoId)
     GETTERSETTER(unsigned int *, VboId, vboId)

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [x.x.x] - xxxx-xx-xx
 ### Changes
+- Update to raylib 4.0.0
 - For tests, replaced catch.hpp with `assert()` calls
 - Added assignment operators for objects ([#142](https://github.com/RobLoach/raylib-cpp/pull/142) by [@marciejewiczow](https://github.com/maciejewiczow))
 - Replaced `NULL` with `nullptr`

@@ -42,6 +42,10 @@ class Image : public ::Image {
         set(::GenImageColor(width, height, color));
     }
 
+    Image(const std::string& text, int fontSize, ::Color color = {255, 255, 255, 255}) {
+        set(::ImageText(text.c_str(), fontSize, color));
+    }
+
     Image(const ::Font& font, const std::string& text, float fontSize, float spacing,
             ::Color tint = {255, 255, 255, 255}) {
         set(::ImageTextEx(font, text.c_str(), fontSize, spacing, tint));
@@ -276,6 +280,22 @@ class Image : public ::Image {
      */
     inline Image& AlphaCrop(float threshold) {
         ::ImageAlphaCrop(this, threshold);
+        return *this;
+    }
+
+    /**
+     * Clear alpha channel to desired color
+     */
+    inline Image& AlphaClear(::Color color, float threshold) {
+        ::ImageAlphaClear(this, color, threshold);
+        return *this;
+    }
+
+    /**
+     * Apply alpha mask to image
+     */
+    inline Image& AlphaMask(::Color color, const ::Image& alphaMask) {
+        ::ImageAlphaMask(this, alphaMask);
         return *this;
     }
 

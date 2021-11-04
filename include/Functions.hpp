@@ -190,13 +190,6 @@ RLCPPAPI inline void OpenURL(const std::string& url) {
 }
 
 /**
- * Check gamepad name (if available)
- */
-RLCPPAPI inline bool IsGamepadName(int gamepad, const std::string& name) {
-    return ::IsGamepadName(gamepad, name.c_str());
-}
-
-/**
  * Update camera depending on selected mode
  */
 RLCPPAPI inline void UpdateCamera(const ::Camera& camera) {

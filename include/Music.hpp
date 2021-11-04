@@ -127,6 +127,14 @@ class Music : public ::Music {
     }
 
     /**
+     * Seek music to a position (in seconds)
+     */
+    inline Music& Seek(float position) {
+        SeekMusicStream(*this, position);
+        return *this;
+    }
+
+    /**
      * Check if music is playing
      */
     inline bool IsPlaying() const {
