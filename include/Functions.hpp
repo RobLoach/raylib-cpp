@@ -67,7 +67,7 @@ RLCPPAPI inline void TakeScreenshot(const std::string& fileName) {
 RLCPPAPI std::string LoadFileText(const std::string& fileName) {
     char* text = ::LoadFileText(fileName.c_str());
     std::string output(text);
-    ::UnloadFileText((unsigned char*)text);
+    ::UnloadFileText(text);
     return output;
 }
 
@@ -187,13 +187,6 @@ RLCPPAPI inline long GetFileModTime(const std::string& fileName) { // NOLINT
  */
 RLCPPAPI inline void OpenURL(const std::string& url) {
     return ::OpenURL(url.c_str());
-}
-
-/**
- * Check gamepad name (if available)
- */
-RLCPPAPI inline bool IsGamepadName(int gamepad, const std::string& name) {
-    return ::IsGamepadName(gamepad, name.c_str());
 }
 
 /**

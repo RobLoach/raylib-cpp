@@ -18,7 +18,7 @@ class AudioStream : public ::AudioStream {
      * Init audio stream (to stream raw audio pcm data)
      */
     AudioStream(unsigned int SampleRate, unsigned int SampleSize, unsigned int Channels = 2) {
-        set(InitAudioStream(SampleRate, SampleSize, Channels));
+        set(LoadAudioStream(SampleRate, SampleSize, Channels));
     }
 
     AudioStream(const AudioStream&) = delete;
@@ -33,7 +33,7 @@ class AudioStream : public ::AudioStream {
     }
 
     ~AudioStream() {
-        Close();
+        Unload();
     }
 
     GETTERSETTER(rAudioBuffer *, Buffer, buffer)
@@ -53,7 +53,7 @@ class AudioStream : public ::AudioStream {
             return *this;
         }
 
-        Close();
+        Unload();
         set(other);
 
         other.buffer = nullptr;
@@ -73,10 +73,10 @@ class AudioStream : public ::AudioStream {
     }
 
     /**
-     * Close audio stream and free memory
+     * Unload audio stream and free memory
      */
-    inline void Close() {
-        ::CloseAudioStream(*this);
+    inline void Unload() {
+        ::UnloadAudioStream(*this);
     }
 
     /**

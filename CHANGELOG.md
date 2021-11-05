@@ -5,8 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## [x.x.x] - xxxx-xx-xx
+## [4.0.0] - 2021-11-04
 ### Changes
+- Update to [raylib 4.0.0](https://github.com/raysan5/raylib/releases/tag/4.0.0)
 - For tests, replaced catch.hpp with `assert()` calls
 - Added assignment operators for objects ([#142](https://github.com/RobLoach/raylib-cpp/pull/142) by [@marciejewiczow](https://github.com/maciejewiczow))
 - Replaced `NULL` with `nullptr`

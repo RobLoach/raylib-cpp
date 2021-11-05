@@ -46,13 +46,6 @@ class Gamepad {
     }
 
     /**
-     * Check gamepad name (if available)
-     */
-    inline bool IsName(const std::string& name) const {
-        return ::IsGamepadName(number, name.c_str());
-    }
-
-    /**
      * Return gamepad internal name id
      */
     std::string GetName() const {

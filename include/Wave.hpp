@@ -17,12 +17,12 @@ class Wave : public ::Wave {
     }
 
     Wave(
-            unsigned int sampleCount = 0,
+            unsigned int frameCount = 0,
             unsigned int sampleRate = 0,
             unsigned int sampleSize = 0,
             unsigned int channels = 0,
             void *data = nullptr
-        ) : ::Wave{sampleCount, sampleRate, sampleSize, channels, data} { }
+        ) : ::Wave{frameCount, sampleRate, sampleSize, channels, data} { }
 
     /**
      * Load wave data from file
@@ -45,7 +45,7 @@ class Wave : public ::Wave {
     Wave(Wave&& other) {
         set(other);
 
-        other.sampleCount = 0;
+        other.frameCount = 0;
         other.sampleRate = 0;
         other.sampleSize = 0;
         other.channels = 0;
@@ -59,7 +59,7 @@ class Wave : public ::Wave {
         Unload();
     }
 
-    GETTERSETTER(unsigned int, SampleCount, sampleCount)
+    GETTERSETTER(unsigned int, FrameCount, frameCount)
     GETTERSETTER(unsigned int, SampleRate, sampleRate)
     GETTERSETTER(unsigned int, SampleSize, sampleSize)
     GETTERSETTER(unsigned int, Channels, channels)
@@ -89,7 +89,7 @@ class Wave : public ::Wave {
         Unload();
         set(other);
 
-        other.sampleCount = 0;
+        other.frameCount = 0;
         other.sampleRate = 0;
         other.sampleSize = 0;
         other.channels = 0;
@@ -177,7 +177,7 @@ class Wave : public ::Wave {
 
  private:
     inline void set(const ::Wave& wave) {
-        sampleCount = wave.sampleCount;
+        frameCount = wave.frameCount;
         sampleRate = wave.sampleRate;
         sampleSize = wave.sampleSize;
         channels = wave.channels;

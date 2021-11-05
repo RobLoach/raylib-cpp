@@ -37,7 +37,7 @@ class ModelAnimation : public ::ModelAnimation {
      * Load model animations from file
      */
     static std::vector<ModelAnimation> Load(const std::string& fileName) {
-        int count = 0;
+        unsigned int count = 0;
         ::ModelAnimation* modelAnimations = ::LoadModelAnimations(fileName.c_str(), &count);
         std::vector<ModelAnimation> mats(modelAnimations, modelAnimations + count);
 

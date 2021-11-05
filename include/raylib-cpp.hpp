@@ -49,7 +49,7 @@
 #include "./Mouse.hpp"
 #include "./Music.hpp"
 #include "./Ray.hpp"
-#include "./RayHitInfo.hpp"
+#include "./RayCollision.hpp"
 #include "./Rectangle.hpp"
 #include "./RenderTexture.hpp"
 #include "./Shader.hpp"

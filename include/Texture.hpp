@@ -139,7 +139,7 @@ class Texture : public ::Texture {
      * Get pixel data from GPU texture and return an Image
      */
     inline ::Image GetData() const {
-        return ::GetTextureData(*this);
+        return ::LoadImageFromTexture(*this);
     }
 
     /**
@@ -252,6 +252,14 @@ class Texture : public ::Texture {
 
     inline Texture& SetMaterial(const ::Material& material, int mapType = MATERIAL_MAP_NORMAL) {
         ::SetMaterialTexture((::Material*)(&material), mapType, *this);
+        return *this;
+    }
+
+    /**
+     * Set texture and rectangle to be used on shapes drawing.
+     */
+    inline Texture& SetShapes(const ::Rectangle& source) {
+        ::SetShapesTexture(*this, source);
         return *this;
     }
 

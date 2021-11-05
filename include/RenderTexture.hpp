@@ -26,8 +26,8 @@ class RenderTexture : public ::RenderTexture {
         set(other);
 
         other.id = 0;
-        other.texture = { 0 };
-        other.depth = { 0 };
+        other.texture = {};
+        other.depth = {};
     }
 
     GETTERSETTER(unsigned int, Id, id)
@@ -50,8 +50,8 @@ class RenderTexture : public ::RenderTexture {
         set(other);
 
         other.id = 0;
-        other.texture = { 0 };
-        other.depth = { 0 };
+        other.texture = {};
+        other.depth = {};
 
         return *this;
     }

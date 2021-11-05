@@ -38,8 +38,8 @@ class Music : public ::Music {
         other.ctxType = 0;
         other.ctxData = nullptr;
         other.looping = false;
-        other.sampleCount = 0;
-        other.stream = { 0 };
+        other.frameCount = 0;
+        other.stream = {};
     }
 
     /**
@@ -50,7 +50,7 @@ class Music : public ::Music {
     }
 
     GETTERSETTER(::AudioStream, Stream, stream)
-    GETTERSETTER(unsigned int, SampleCount, sampleCount)
+    GETTERSETTER(unsigned int, FrameCount, frameCount)
     GETTERSETTER(bool, Looping, looping)
     GETTERSETTER(int, CtxType, ctxType)
     GETTERSETTER(void*, CtxData, ctxData)
@@ -73,8 +73,8 @@ class Music : public ::Music {
         other.ctxType = 0;
         other.ctxData = nullptr;
         other.looping = false;
-        other.sampleCount = 0;
-        other.stream = { 0 };
+        other.frameCount = 0;
+        other.stream = {};
 
         return *this;
     }
@@ -127,10 +127,18 @@ class Music : public ::Music {
     }
 
     /**
+     * Seek music to a position (in seconds)
+     */
+    inline Music& Seek(float position) {
+        SeekMusicStream(*this, position);
+        return *this;
+    }
+
+    /**
      * Check if music is playing
      */
     inline bool IsPlaying() const {
-        return ::IsMusicPlaying(*this);
+        return ::IsMusicStreamPlaying(*this);
     }
 
     /**
@@ -168,7 +176,7 @@ class Music : public ::Music {
         ctxType = music.ctxType;
         ctxData = music.ctxData;
         looping = music.looping;
-        sampleCount = music.sampleCount;
+        frameCount = music.frameCount;
         stream = music.stream;
     }
 };

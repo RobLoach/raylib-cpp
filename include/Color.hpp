@@ -46,7 +46,7 @@ class Color : public ::Color {
     /**
      * Get Color structure from hexadecimal value
      */
-    Color(int hexValue) {
+    Color(unsigned int hexValue) {
         set(::GetColor(hexValue));
     }
 
@@ -163,13 +163,14 @@ class Color : public ::Color {
     }
 
     inline Color& DrawText(
-            const ::Font& font,
+            const ::Font font,
             const std::string& text,
-            ::Rectangle rec,
+            ::Vector2 position,
+            ::Vector2 origin,
+            float rotation,
             float fontSize,
-            float spacing,
-            bool wordWrap = false) {
-        ::DrawTextRec(font, text.c_str(), rec, fontSize, spacing, wordWrap, *this);
+            float spacing) {
+        ::DrawTextPro(font, text.c_str(), position, origin, rotation, fontSize, spacing, *this);
         return *this;
     }
 
@@ -198,7 +199,7 @@ class Color : public ::Color {
         return *this;
     }
 
-    inline Color& DrawRectangleLines(::Rectangle rec, int lineThick) {
+    inline Color& DrawRectangleLines(::Rectangle rec, float lineThick) {
         ::DrawRectangleLinesEx(rec, lineThick, *this);
         return *this;
     }

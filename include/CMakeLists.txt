@@ -25,7 +25,7 @@ install(FILES
     physac.hpp
     Physics.hpp
     Ray.hpp
-    RayHitInfo.hpp
+    RayCollision.hpp
     raylib-cpp-utils.hpp
     raylib-cpp.hpp
     raylib.hpp

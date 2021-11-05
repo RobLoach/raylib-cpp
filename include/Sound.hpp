@@ -23,7 +23,7 @@ class Sound : public ::Sound {
     Sound(Sound&& other) {
         set(other);
 
-        other.sampleCount = 0;
+        other.frameCount = 0;
         other.stream = { 0, 0, 0, 0 };
     };
 
@@ -39,7 +39,7 @@ class Sound : public ::Sound {
         Unload();
     }
 
-    GETTERSETTER(unsigned int, SampleCount, sampleCount)
+    GETTERSETTER(unsigned int, FrameCount, frameCount)
     GETTERSETTER(::AudioStream, Stream, stream)
 
     Sound& operator=(Sound&& other) {
@@ -49,7 +49,7 @@ class Sound : public ::Sound {
 
         Unload();
         set(other);
-        other.sampleCount = 0;
+        other.frameCount = 0;
         other.stream = { 0, 0, 0, 0 };
 
         return *this;
@@ -67,7 +67,7 @@ class Sound : public ::Sound {
      * Update sound buffer with new data, assuming it's the same sample count.
      */
     inline Sound& Update(const void *data) {
-        ::UpdateSound(*this, data, static_cast<int>(sampleCount));
+        ::UpdateSound(*this, data, static_cast<int>(frameCount));
         return *this;
     }
 
@@ -151,7 +151,7 @@ class Sound : public ::Sound {
 
  private:
     inline void set(const ::Sound& sound) {
-        sampleCount = sound.sampleCount;
+        frameCount = sound.frameCount;
         stream = sound.stream;
     }
 };

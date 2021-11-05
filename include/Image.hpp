@@ -35,11 +35,15 @@ class Image : public ::Image {
     }
 
     Image(const ::Texture2D& texture) {
-        set(::GetTextureData(texture));
+        set(::LoadImageFromTexture(texture));
     }
 
     Image(int width, int height, ::Color color = {255, 255, 255, 255}) {
         set(::GenImageColor(width, height, color));
+    }
+
+    Image(const std::string& text, int fontSize, ::Color color = {255, 255, 255, 255}) {
+        set(::ImageText(text.c_str(), fontSize, color));
     }
 
     Image(const ::Font& font, const std::string& text, float fontSize, float spacing,
@@ -74,8 +78,8 @@ class Image : public ::Image {
     /**
      * Get pixel data from screen buffer and return an Image (screenshot)
      */
-    static ::Image GetScreenData() {
-        return ::GetScreenData();
+    static ::Image LoadFromScreen() {
+        return ::LoadImageFromScreen();
     }
 
     /**
@@ -120,14 +124,6 @@ class Image : public ::Image {
      */
     static ::Image WhiteNoise(int width, int height, float factor) {
         return ::GenImageWhiteNoise(width, height, factor);
-    }
-
-    /**
-     * Generate image: perlin noise
-     */
-    static ::Image PerlinNoise(int width, int height, int offsetX, int offsetY,
-            float scale = 1.0f) {
-        return ::GenImagePerlinNoise(width, height, offsetX, offsetY, scale);
     }
 
     /**
@@ -272,18 +268,26 @@ class Image : public ::Image {
     }
 
     /**
-     * Apply alpha mask to image
-     */
-    inline Image& AlphaMask(const ::Image& alphaMask) {
-        ::ImageAlphaMask(this, alphaMask);
-        return *this;
-    }
-
-    /**
      * Crop image depending on alpha value
      */
     inline Image& AlphaCrop(float threshold) {
         ::ImageAlphaCrop(this, threshold);
+        return *this;
+    }
+
+    /**
+     * Clear alpha channel to desired color
+     */
+    inline Image& AlphaClear(::Color color, float threshold) {
+        ::ImageAlphaClear(this, color, threshold);
+        return *this;
+    }
+
+    /**
+     * Apply alpha mask to image
+     */
+    inline Image& AlphaMask(const ::Image& alphaMask) {
+        ::ImageAlphaMask(this, alphaMask);
         return *this;
     }
 

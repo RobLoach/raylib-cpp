@@ -14,3 +14,6 @@ target_link_libraries(raylib_test raylib-cpp raylib)
 
 # Test
 add_test(NAME raylib_test COMMAND raylib_test)
+
+# Copy all the resources
+file(COPY resources/ DESTINATION "resources/")

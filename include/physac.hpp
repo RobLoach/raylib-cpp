@@ -7,7 +7,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#include "physac.h" // NOLINT
+#include "extras/physac.h" // NOLINT
 #ifdef __cplusplus
 }
 #endif
