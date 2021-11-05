@@ -26,7 +26,8 @@ int main() {
     // Math
     raylib::Vector2 direction(50, 50);
     raylib::Vector2 newDirection = direction.Rotate(30);
-    assert((int)newDirection.x == 18);
+    std::cout << "Out: " << newDirection.x << std::endl;
+    assert((int)newDirection.x == 57);
 
     // raylib::GetDirectoryFiles()
     std::vector<std::string> files = raylib::GetDirectoryFiles(::GetWorkingDirectory());

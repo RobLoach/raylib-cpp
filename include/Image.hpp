@@ -268,14 +268,6 @@ class Image : public ::Image {
     }
 
     /**
-     * Apply alpha mask to image
-     */
-    inline Image& AlphaMask(const ::Image& alphaMask) {
-        ::ImageAlphaMask(this, alphaMask);
-        return *this;
-    }
-
-    /**
      * Crop image depending on alpha value
      */
     inline Image& AlphaCrop(float threshold) {
@@ -294,7 +286,7 @@ class Image : public ::Image {
     /**
      * Apply alpha mask to image
      */
-    inline Image& AlphaMask(::Color color, const ::Image& alphaMask) {
+    inline Image& AlphaMask(const ::Image& alphaMask) {
         ::ImageAlphaMask(this, alphaMask);
         return *this;
     }

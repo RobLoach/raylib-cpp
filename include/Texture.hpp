@@ -260,6 +260,7 @@ class Texture : public ::Texture {
      */
     inline Texture& SetShapes(const ::Rectangle& source) {
         ::SetShapesTexture(*this, source);
+        return *this;
     }
 
  private:
