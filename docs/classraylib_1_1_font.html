@@ -86,6 +86,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adfe1913d9f5aa7848fcb033fe7bc7ca2"><td class="memItemLeft" align="right" valign="top"><a id="adfe1913d9f5aa7848fcb033fe7bc7ca2"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Font</b> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image, ::<a class="el" href="classraylib_1_1_color.html">Color</a> key, int firstChar)</td></tr>
 <tr class="separator:adfe1913d9f5aa7848fcb033fe7bc7ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a075661783e8267f508e285d6ce39e959"><td class="memItemLeft" align="right" valign="top"><a id="a075661783e8267f508e285d6ce39e959"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Font</b> (const <a class="el" href="classraylib_1_1_font.html">Font</a> &amp;)=delete</td></tr>
+<tr class="separator:a075661783e8267f508e285d6ce39e959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a29c7a9f5aacc2073d407784774ff7d"><td class="memItemLeft" align="right" valign="top"><a id="a8a29c7a9f5aacc2073d407784774ff7d"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Font</b> (const std::string &amp;fileName)</td></tr>
 <tr class="separator:a8a29c7a9f5aacc2073d407784774ff7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -95,13 +98,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4cfb9ae6c224437ad3d5c7c4f905b6ab"><td class="memItemLeft" align="right" valign="top"><a id="a4cfb9ae6c224437ad3d5c7c4f905b6ab"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Font</b> (const std::string &amp;fileType, const unsigned char *fileData, int dataSize, int fontSize, int *fontChars, int charsCount)</td></tr>
 <tr class="separator:a4cfb9ae6c224437ad3d5c7c4f905b6ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1714ea67ea3913a27fd7f5283bcdbbb4"><td class="memItemLeft" align="right" valign="top"><a id="a1714ea67ea3913a27fd7f5283bcdbbb4"></a>
-<a class="el" href="classraylib_1_1_font.html">Font</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#a1714ea67ea3913a27fd7f5283bcdbbb4">DrawText</a> (const std::string &amp;text, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> rec, float fontSize, float spacing, bool wordWrap, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint, int selectStart, int selectLength, ::<a class="el" href="classraylib_1_1_color.html">Color</a> selectText, ::<a class="el" href="classraylib_1_1_color.html">Color</a> selectBack)</td></tr>
-<tr class="memdesc:a1714ea67ea3913a27fd7f5283bcdbbb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw text using font inside rectangle limits with support for text selection. <br /></td></tr>
-<tr class="separator:a1714ea67ea3913a27fd7f5283bcdbbb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46f184b15c2615e7effc66357131edda"><td class="memItemLeft" align="right" valign="top"><a id="a46f184b15c2615e7effc66357131edda"></a>
-<a class="el" href="classraylib_1_1_font.html">Font</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const std::string &amp;text, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> rec, float fontSize, float spacing, bool wordWrap=false, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint=WHITE)</td></tr>
-<tr class="separator:a46f184b15c2615e7effc66357131edda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afde2bd6bb51a7fe6fa02f4d9be73087f"><td class="memItemLeft" align="right" valign="top"><a id="afde2bd6bb51a7fe6fa02f4d9be73087f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Font</b> (<a class="el" href="classraylib_1_1_font.html">Font</a> &amp;&amp;other)</td></tr>
+<tr class="separator:afde2bd6bb51a7fe6fa02f4d9be73087f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8303ddbb5cc0b1ca80921e4410c6fbd8"><td class="memItemLeft" align="right" valign="top"><a id="a8303ddbb5cc0b1ca80921e4410c6fbd8"></a>
+<a class="el" href="classraylib_1_1_font.html">Font</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const std::string &amp;text, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin, float rotation, float fontSize, float spacing, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint=WHITE)</td></tr>
+<tr class="separator:a8303ddbb5cc0b1ca80921e4410c6fbd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3edd0d0ff79509e4e7144d2a111d704"><td class="memItemLeft" align="right" valign="top"><a id="ac3edd0d0ff79509e4e7144d2a111d704"></a>
 <a class="el" href="classraylib_1_1_font.html">Font</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#ac3edd0d0ff79509e4e7144d2a111d704">DrawText</a> (const std::string &amp;text, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position, float fontSize, float spacing, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint=WHITE)</td></tr>
 <tr class="memdesc:ac3edd0d0ff79509e4e7144d2a111d704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw text using font and additional parameters. <br /></td></tr>
@@ -113,19 +115,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a944d3af1c94f00bbe39182307c26009c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#a944d3af1c94f00bbe39182307c26009c">GetBaseSize</a> () const</td></tr>
 <tr class="memdesc:a944d3af1c94f00bbe39182307c26009c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the baseSize value for the object.  <a href="classraylib_1_1_font.html#a944d3af1c94f00bbe39182307c26009c">More...</a><br /></td></tr>
 <tr class="separator:a944d3af1c94f00bbe39182307c26009c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a306a84f143c99a5b790ec92b2d697873"><td class="memItemLeft" align="right" valign="top">::CharInfo *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#a306a84f143c99a5b790ec92b2d697873">GetChars</a> () const</td></tr>
-<tr class="memdesc:a306a84f143c99a5b790ec92b2d697873"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the chars value for the object.  <a href="classraylib_1_1_font.html#a306a84f143c99a5b790ec92b2d697873">More...</a><br /></td></tr>
-<tr class="separator:a306a84f143c99a5b790ec92b2d697873"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bcd72ac54efcaae8e891ee14ae89c58"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#a1bcd72ac54efcaae8e891ee14ae89c58">GetCharsCount</a> () const</td></tr>
-<tr class="memdesc:a1bcd72ac54efcaae8e891ee14ae89c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the charsCount value for the object.  <a href="classraylib_1_1_font.html#a1bcd72ac54efcaae8e891ee14ae89c58">More...</a><br /></td></tr>
-<tr class="separator:a1bcd72ac54efcaae8e891ee14ae89c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5457503a3d414c86d50fce4c407073c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#ad5457503a3d414c86d50fce4c407073c">GetCharsPadding</a> () const</td></tr>
-<tr class="memdesc:ad5457503a3d414c86d50fce4c407073c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the charsPadding value for the object.  <a href="classraylib_1_1_font.html#ad5457503a3d414c86d50fce4c407073c">More...</a><br /></td></tr>
-<tr class="separator:ad5457503a3d414c86d50fce4c407073c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac30454e6cee755a116378a0a1d20558f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#ac30454e6cee755a116378a0a1d20558f">GetGlyphCount</a> () const</td></tr>
+<tr class="memdesc:ac30454e6cee755a116378a0a1d20558f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the glyphCount value for the object.  <a href="classraylib_1_1_font.html#ac30454e6cee755a116378a0a1d20558f">More...</a><br /></td></tr>
+<tr class="separator:ac30454e6cee755a116378a0a1d20558f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dac04aebd39c1c038f936ef83d86b42"><td class="memItemLeft" align="right" valign="top"><a id="a4dac04aebd39c1c038f936ef83d86b42"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#a4dac04aebd39c1c038f936ef83d86b42">GetGlyphIndex</a> (int character) const</td></tr>
 <tr class="memdesc:a4dac04aebd39c1c038f936ef83d86b42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get index position for a unicode character on font. <br /></td></tr>
 <tr class="separator:a4dac04aebd39c1c038f936ef83d86b42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeddd05c2c79f07cd40901361d1117e0e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#aeddd05c2c79f07cd40901361d1117e0e">GetGlyphPadding</a> () const</td></tr>
+<tr class="memdesc:aeddd05c2c79f07cd40901361d1117e0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the glyphPadding value for the object.  <a href="classraylib_1_1_font.html#aeddd05c2c79f07cd40901361d1117e0e">More...</a><br /></td></tr>
+<tr class="separator:aeddd05c2c79f07cd40901361d1117e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a741aa157ac264e77613794818e2fdbe1"><td class="memItemLeft" align="right" valign="top">::GlyphInfo *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#a741aa157ac264e77613794818e2fdbe1">GetGlyphs</a> () const</td></tr>
+<tr class="memdesc:a741aa157ac264e77613794818e2fdbe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the glyphs value for the object.  <a href="classraylib_1_1_font.html#a741aa157ac264e77613794818e2fdbe1">More...</a><br /></td></tr>
+<tr class="separator:a741aa157ac264e77613794818e2fdbe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a396cae69c0d0c46bf76fc3879d5219e1"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#a396cae69c0d0c46bf76fc3879d5219e1">GetRecs</a> () const</td></tr>
 <tr class="memdesc:a396cae69c0d0c46bf76fc3879d5219e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the recs value for the object.  <a href="classraylib_1_1_font.html#a396cae69c0d0c46bf76fc3879d5219e1">More...</a><br /></td></tr>
 <tr class="separator:a396cae69c0d0c46bf76fc3879d5219e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,18 +145,24 @@ inline ::<a class="el" href="classraylib_1_1_image.html">Image</a>&#160;</td><td
 <tr class="memitem:a45a8ed764c7e9d53017daa4759d3aeed"><td class="memItemLeft" align="right" valign="top"><a id="a45a8ed764c7e9d53017daa4759d3aeed"></a>
 <a class="el" href="classraylib_1_1_font.html">Font</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const ::<a class="el" href="classraylib_1_1_font.html">Font</a> &amp;font)</td></tr>
 <tr class="separator:a45a8ed764c7e9d53017daa4759d3aeed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc4300daa108a3701b8a68ba63e7c7f"><td class="memItemLeft" align="right" valign="top"><a id="aebc4300daa108a3701b8a68ba63e7c7f"></a>
+<a class="el" href="classraylib_1_1_font.html">Font</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classraylib_1_1_font.html">Font</a> &amp;)=delete</td></tr>
+<tr class="separator:aebc4300daa108a3701b8a68ba63e7c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af955155a53061a978926690f4751e9c2"><td class="memItemLeft" align="right" valign="top"><a id="af955155a53061a978926690f4751e9c2"></a>
+<a class="el" href="classraylib_1_1_font.html">Font</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classraylib_1_1_font.html">Font</a> &amp;&amp;other)</td></tr>
+<tr class="separator:af955155a53061a978926690f4751e9c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae649dde6d344112b02d4f560eb638f94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#ae649dde6d344112b02d4f560eb638f94">SetBaseSize</a> (int value)</td></tr>
 <tr class="memdesc:ae649dde6d344112b02d4f560eb638f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the baseSize value for the object.  <a href="classraylib_1_1_font.html#ae649dde6d344112b02d4f560eb638f94">More...</a><br /></td></tr>
 <tr class="separator:ae649dde6d344112b02d4f560eb638f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae741128d1b41a4529d4f23a6d8eea913"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#ae741128d1b41a4529d4f23a6d8eea913">SetChars</a> (::CharInfo *value)</td></tr>
-<tr class="memdesc:ae741128d1b41a4529d4f23a6d8eea913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the chars value for the object.  <a href="classraylib_1_1_font.html#ae741128d1b41a4529d4f23a6d8eea913">More...</a><br /></td></tr>
-<tr class="separator:ae741128d1b41a4529d4f23a6d8eea913"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b18d0dba51e54d83faf62205a6a92c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#a5b18d0dba51e54d83faf62205a6a92c6">SetCharsCount</a> (int value)</td></tr>
-<tr class="memdesc:a5b18d0dba51e54d83faf62205a6a92c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the charsCount value for the object.  <a href="classraylib_1_1_font.html#a5b18d0dba51e54d83faf62205a6a92c6">More...</a><br /></td></tr>
-<tr class="separator:a5b18d0dba51e54d83faf62205a6a92c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac600ada80290128ea336625275d2893b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#ac600ada80290128ea336625275d2893b">SetCharsPadding</a> (int value)</td></tr>
-<tr class="memdesc:ac600ada80290128ea336625275d2893b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the charsPadding value for the object.  <a href="classraylib_1_1_font.html#ac600ada80290128ea336625275d2893b">More...</a><br /></td></tr>
-<tr class="separator:ac600ada80290128ea336625275d2893b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71603057b8528b342d9223ddd1bc3073"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#a71603057b8528b342d9223ddd1bc3073">SetGlyphCount</a> (int value)</td></tr>
+<tr class="memdesc:a71603057b8528b342d9223ddd1bc3073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the glyphCount value for the object.  <a href="classraylib_1_1_font.html#a71603057b8528b342d9223ddd1bc3073">More...</a><br /></td></tr>
+<tr class="separator:a71603057b8528b342d9223ddd1bc3073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea746ddd6b9db042f5bc77c1d45b19f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#aea746ddd6b9db042f5bc77c1d45b19f1">SetGlyphPadding</a> (int value)</td></tr>
+<tr class="memdesc:aea746ddd6b9db042f5bc77c1d45b19f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the glyphPadding value for the object.  <a href="classraylib_1_1_font.html#aea746ddd6b9db042f5bc77c1d45b19f1">More...</a><br /></td></tr>
+<tr class="separator:aea746ddd6b9db042f5bc77c1d45b19f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03a2b8fcfa44f77bba8fcfff933115b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#a03a2b8fcfa44f77bba8fcfff933115b4">SetGlyphs</a> (::GlyphInfo *value)</td></tr>
+<tr class="memdesc:a03a2b8fcfa44f77bba8fcfff933115b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the glyphs value for the object.  <a href="classraylib_1_1_font.html#a03a2b8fcfa44f77bba8fcfff933115b4">More...</a><br /></td></tr>
+<tr class="separator:a03a2b8fcfa44f77bba8fcfff933115b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1030f35362a541bc750605f0e47592e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#a1030f35362a541bc750605f0e47592e9">SetRecs</a> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> *value)</td></tr>
 <tr class="memdesc:a1030f35362a541bc750605f0e47592e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the recs value for the object.  <a href="classraylib_1_1_font.html#a1030f35362a541bc750605f0e47592e9">More...</a><br /></td></tr>
 <tr class="separator:a1030f35362a541bc750605f0e47592e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -196,12 +204,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 <p>Retrieves the baseSize value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The baseSize value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00049">49</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00062">62</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a306a84f143c99a5b790ec92b2d697873"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a306a84f143c99a5b790ec92b2d697873">&#9670;&nbsp;</a></span>GetChars()</h2>
+<a id="ac30454e6cee755a116378a0a1d20558f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac30454e6cee755a116378a0a1d20558f">&#9670;&nbsp;</a></span>GetGlyphCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +218,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">::CharInfo* raylib::Font::GetChars </td>
+          <td class="memname">int raylib::Font::GetGlyphCount </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -223,15 +231,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 </table>
 </div><div class="memdoc">
 
-<p>Retrieves the chars value for the object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The chars value of the object. </dd></dl>
+<p>Retrieves the glyphCount value for the object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The glyphCount value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00054">54</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00063">63</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a1bcd72ac54efcaae8e891ee14ae89c58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bcd72ac54efcaae8e891ee14ae89c58">&#9670;&nbsp;</a></span>GetCharsCount()</h2>
+<a id="aeddd05c2c79f07cd40901361d1117e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeddd05c2c79f07cd40901361d1117e0e">&#9670;&nbsp;</a></span>GetGlyphPadding()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,7 +248,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int raylib::Font::GetCharsCount </td>
+          <td class="memname">int raylib::Font::GetGlyphPadding </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -253,15 +261,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 </table>
 </div><div class="memdoc">
 
-<p>Retrieves the charsCount value for the object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The charsCount value of the object. </dd></dl>
+<p>Retrieves the glyphPadding value for the object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The glyphPadding value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00050">50</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00064">64</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ad5457503a3d414c86d50fce4c407073c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5457503a3d414c86d50fce4c407073c">&#9670;&nbsp;</a></span>GetCharsPadding()</h2>
+<a id="a741aa157ac264e77613794818e2fdbe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a741aa157ac264e77613794818e2fdbe1">&#9670;&nbsp;</a></span>GetGlyphs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -270,7 +278,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int raylib::Font::GetCharsPadding </td>
+          <td class="memname">::GlyphInfo* raylib::Font::GetGlyphs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -283,10 +291,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 </table>
 </div><div class="memdoc">
 
-<p>Retrieves the charsPadding value for the object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The charsPadding value of the object. </dd></dl>
+<p>Retrieves the glyphs value for the object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The glyphs value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00051">51</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00067">67</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -316,7 +324,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 <p>Retrieves the recs value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The recs value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00053">53</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00066">66</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -346,7 +354,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 <p>Retrieves the texture value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The texture value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00052">52</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00065">65</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -382,12 +390,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00049">49</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00062">62</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ae741128d1b41a4529d4f23a6d8eea913"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae741128d1b41a4529d4f23a6d8eea913">&#9670;&nbsp;</a></span>SetChars()</h2>
+<a id="a71603057b8528b342d9223ddd1bc3073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71603057b8528b342d9223ddd1bc3073">&#9670;&nbsp;</a></span>SetGlyphCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -396,43 +404,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void raylib::Font::SetChars </td>
-          <td>(</td>
-          <td class="paramtype">::CharInfo *&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the chars value for the object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of which to set chars to. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00054">54</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a5b18d0dba51e54d83faf62205a6a92c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b18d0dba51e54d83faf62205a6a92c6">&#9670;&nbsp;</a></span>SetCharsCount()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void raylib::Font::SetCharsCount </td>
+          <td class="memname">void raylib::Font::SetGlyphCount </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -446,20 +418,20 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 </table>
 </div><div class="memdoc">
 
-<p>Sets the charsCount value for the object. </p>
+<p>Sets the glyphCount value for the object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>The value of which to set charsCount to. </td></tr>
+    <tr><td class="paramname">value</td><td>The value of which to set glyphCount to. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00050">50</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00063">63</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ac600ada80290128ea336625275d2893b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac600ada80290128ea336625275d2893b">&#9670;&nbsp;</a></span>SetCharsPadding()</h2>
+<a id="aea746ddd6b9db042f5bc77c1d45b19f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea746ddd6b9db042f5bc77c1d45b19f1">&#9670;&nbsp;</a></span>SetGlyphPadding()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -468,7 +440,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void raylib::Font::SetCharsPadding </td>
+          <td class="memname">void raylib::Font::SetGlyphPadding </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -482,15 +454,51 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 </table>
 </div><div class="memdoc">
 
-<p>Sets the charsPadding value for the object. </p>
+<p>Sets the glyphPadding value for the object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>The value of which to set charsPadding to. </td></tr>
+    <tr><td class="paramname">value</td><td>The value of which to set glyphPadding to. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00051">51</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00064">64</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a03a2b8fcfa44f77bba8fcfff933115b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03a2b8fcfa44f77bba8fcfff933115b4">&#9670;&nbsp;</a></span>SetGlyphs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void raylib::Font::SetGlyphs </td>
+          <td>(</td>
+          <td class="paramtype">::GlyphInfo *&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the glyphs value for the object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value of which to set glyphs to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00067">67</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -526,7 +534,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00053">53</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00066">66</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -562,7 +570,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00052">52</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00065">65</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>

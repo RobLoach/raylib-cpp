@@ -91,58 +91,84 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        set(LoadMaterialDefault());</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ~<a class="code" href="classraylib_1_1_material.html">Material</a>() {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classraylib_1_1_material.html#a67962efd02fd7f59cb14cda929e599cc">Unload</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classraylib_1_1_material.html#ac482f46142b5ecc9eea4206aced73e26">   34</a></span>&#160;    <span class="keyword">static</span> std::vector&lt;Material&gt; <a class="code" href="classraylib_1_1_material.html#ac482f46142b5ecc9eea4206aced73e26">Load</a>(<span class="keyword">const</span> std::string&amp; fileName) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">int</span> count = 0;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classraylib_1_1_material.html">::Material</a>* materials = ::LoadMaterials(fileName.c_str(), &amp;count);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> std::vector&lt;Material&gt;(materials, materials + count);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classraylib_1_1_material.html#a85e551f0db58082ad9e4b46849a36a8c">Material</a>(<span class="keyword">const</span> <a class="code" href="classraylib_1_1_material.html">Material</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classraylib_1_1_material.html#a85e551f0db58082ad9e4b46849a36a8c">Material</a>(<a class="code" href="classraylib_1_1_material.html">Material</a>&amp;&amp; other) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        set(other);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        other.maps = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        other.shader = {};</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    ~<a class="code" href="classraylib_1_1_material.html#a85e551f0db58082ad9e4b46849a36a8c">Material</a>() {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classraylib_1_1_material.html#a67962efd02fd7f59cb14cda929e599cc">Unload</a>();</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classraylib_1_1_material.html#ae52f7a1005f77683fadb5bb2d6f10669">   40</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_shader.html">Shader</a>, <a class="code" href="classraylib_1_1_shader.html">Shader</a>, shader)</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classraylib_1_1_material.html#a629e453e6e682bde8e0a7db31dda7523">   41</a></span>&#160;    GETTERSETTER(::MaterialMap*, Maps, maps)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// TODO(RobLoach): Resolve the Material params being a float[4].</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// GETTERSETTER(float[4], Params, params)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classraylib_1_1_material.html">Material</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_material.html">Material</a>&amp; material) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        set(material);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classraylib_1_1_material.html#ac482f46142b5ecc9eea4206aced73e26">   43</a></span>&#160;    <span class="keyword">static</span> std::vector&lt;Material&gt; <a class="code" href="classraylib_1_1_material.html#ac482f46142b5ecc9eea4206aced73e26">Load</a>(<span class="keyword">const</span> std::string&amp; fileName) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">// TODO(RobLoach): Material::Load() possibly leaks the materials array.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="classraylib_1_1_material.html">::Material</a>* materials = ::LoadMaterials(fileName.c_str(), &amp;count);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> std::vector&lt;Material&gt;(materials, materials + count);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classraylib_1_1_material.html#a67962efd02fd7f59cb14cda929e599cc">   53</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_material.html#a67962efd02fd7f59cb14cda929e599cc">Unload</a>() {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (maps != NULL) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            ::UnloadMaterial(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            maps = NULL;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classraylib_1_1_material.html#ae52f7a1005f77683fadb5bb2d6f10669">   50</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_shader.html">Shader</a>, <a class="code" href="classraylib_1_1_shader.html">Shader</a>, shader)</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classraylib_1_1_material.html#a629e453e6e682bde8e0a7db31dda7523">   51</a></span>&#160;    GETTERSETTER(::MaterialMap*, Maps, maps)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// TODO(RobLoach): Resolve the Material params being a float[4].</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// GETTERSETTER(float[4], Params, params)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classraylib_1_1_material.html">Material</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_material.html">Material</a>&amp; material) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        set(material);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classraylib_1_1_material.html#a563a153517435efba319c750d7bd0379">   63</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_material.html">Material</a>&amp; <a class="code" href="classraylib_1_1_material.html#a563a153517435efba319c750d7bd0379">SetTexture</a>(<span class="keywordtype">int</span> mapType, const ::Texture2D&amp; texture) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        ::SetMaterialTexture(<span class="keyword">this</span>, mapType, texture);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Material&amp; material) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        shader = material.shader;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        maps = material.maps;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        params[0] = material.params[0];</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        params[1] = material.params[1];</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        params[2] = material.params[2];</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        params[3] = material.params[3];</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_MATERIAL_HPP_</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classraylib_1_1_material.html">Material</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classraylib_1_1_material.html">Material</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classraylib_1_1_material.html">Material</a>&amp; operator=(<a class="code" href="classraylib_1_1_material.html">Material</a>&amp;&amp; other) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classraylib_1_1_material.html#a67962efd02fd7f59cb14cda929e599cc">Unload</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        set(other);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        other.maps = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        other.shader = {};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classraylib_1_1_material.html#a67962efd02fd7f59cb14cda929e599cc">   79</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_material.html#a67962efd02fd7f59cb14cda929e599cc">Unload</a>() {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (maps != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            ::UnloadMaterial(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            maps = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classraylib_1_1_material.html#a563a153517435efba319c750d7bd0379">   89</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_material.html">Material</a>&amp; <a class="code" href="classraylib_1_1_material.html#a563a153517435efba319c750d7bd0379">SetTexture</a>(<span class="keywordtype">int</span> mapType, const ::Texture2D&amp; texture) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        ::SetMaterialTexture(<span class="keyword">this</span>, mapType, texture);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Material&amp; material) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        shader = material.shader;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        maps = material.maps;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        params[0] = material.params[0];</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        params[1] = material.params[1];</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        params[2] = material.params[2];</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        params[3] = material.params[3];</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_MATERIAL_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_material_html_ac482f46142b5ecc9eea4206aced73e26"><div class="ttname"><a href="classraylib_1_1_material.html#ac482f46142b5ecc9eea4206aced73e26">raylib::Material::Load</a></div><div class="ttdeci">static std::vector&lt; Material &gt; Load(const std::string &amp;fileName)</div><div class="ttdoc">Load materials from model file.</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00034">Material.hpp:34</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_material_html_a563a153517435efba319c750d7bd0379"><div class="ttname"><a href="classraylib_1_1_material.html#a563a153517435efba319c750d7bd0379">raylib::Material::SetTexture</a></div><div class="ttdeci">Material &amp; SetTexture(int mapType, const ::Texture2D &amp;texture)</div><div class="ttdoc">Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00063">Material.hpp:63</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_material_html_ac482f46142b5ecc9eea4206aced73e26"><div class="ttname"><a href="classraylib_1_1_material.html#ac482f46142b5ecc9eea4206aced73e26">raylib::Material::Load</a></div><div class="ttdeci">static std::vector&lt; Material &gt; Load(const std::string &amp;fileName)</div><div class="ttdoc">Load materials from model file.</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00043">Material.hpp:43</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_material_html_a563a153517435efba319c750d7bd0379"><div class="ttname"><a href="classraylib_1_1_material.html#a563a153517435efba319c750d7bd0379">raylib::Material::SetTexture</a></div><div class="ttdeci">Material &amp; SetTexture(int mapType, const ::Texture2D &amp;texture)</div><div class="ttdoc">Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00089">Material.hpp:89</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_material_html_a85e551f0db58082ad9e4b46849a36a8c"><div class="ttname"><a href="classraylib_1_1_material.html#a85e551f0db58082ad9e4b46849a36a8c">raylib::Material::Material</a></div><div class="ttdeci">Material()</div><div class="ttdoc">Load default material (Supports: DIFFUSE, SPECULAR, NORMAL maps)</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00023">Material.hpp:23</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_shader_html"><div class="ttname"><a href="classraylib_1_1_shader.html">raylib::Shader</a></div><div class="ttdoc">Shader type (generic)</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00014">Shader.hpp:14</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_material_html_a67962efd02fd7f59cb14cda929e599cc"><div class="ttname"><a href="classraylib_1_1_material.html#a67962efd02fd7f59cb14cda929e599cc">raylib::Material::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdoc">Unload material from memory.</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00053">Material.hpp:53</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_material_html_a67962efd02fd7f59cb14cda929e599cc"><div class="ttname"><a href="classraylib_1_1_material.html#a67962efd02fd7f59cb14cda929e599cc">raylib::Material::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdoc">Unload material from memory.</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00079">Material.hpp:79</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_material_html"><div class="ttname"><a href="classraylib_1_1_material.html">raylib::Material</a></div><div class="ttdoc">Material type (generic)</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00014">Material.hpp:14</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

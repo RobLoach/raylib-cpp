@@ -80,9 +80,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a38e3bea9be0194354ce06de9a1c1ce5c"><td class="memItemLeft" align="right" valign="top"><a id="a38e3bea9be0194354ce06de9a1c1ce5c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BoundingBox</b> (::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> Min, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> Max)</td></tr>
-<tr class="separator:a38e3bea9be0194354ce06de9a1c1ce5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7e2ee18a319a9ea834e46add4b0dbc8"><td class="memItemLeft" align="right" valign="top"><a id="ad7e2ee18a319a9ea834e46add4b0dbc8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>BoundingBox</b> (::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> min, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> max)</td></tr>
+<tr class="separator:ad7e2ee18a319a9ea834e46add4b0dbc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e0d7b4af3123898d6fa541ed2fd2672"><td class="memItemLeft" align="right" valign="top"><a id="a6e0d7b4af3123898d6fa541ed2fd2672"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>BoundingBox</b> (::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> minMax)</td></tr>
 <tr class="separator:a6e0d7b4af3123898d6fa541ed2fd2672"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,6 +109,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a class="el" href="classraylib_1_1_bounding_box.html">BoundingBox</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_bounding_box.html#aae0a66351992f36372ef68a6d4508c62">Draw</a> (::<a class="el" href="classraylib_1_1_color.html">Color</a> color={255, 255, 255, 255})</td></tr>
 <tr class="memdesc:aae0a66351992f36372ef68a6d4508c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a bounding box with wires. <br /></td></tr>
 <tr class="separator:aae0a66351992f36372ef68a6d4508c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75c1287b1fd3b4fb7a67b099fc8d629e"><td class="memItemLeft" align="right" valign="top"><a id="a75c1287b1fd3b4fb7a67b099fc8d629e"></a>
+<a class="el" href="classraylib_1_1_ray_collision.html">RayCollision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_bounding_box.html#a75c1287b1fd3b4fb7a67b099fc8d629e">GetCollision</a> (const ::<a class="el" href="classraylib_1_1_ray.html">Ray</a> &amp;ray) const</td></tr>
+<tr class="memdesc:a75c1287b1fd3b4fb7a67b099fc8d629e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision information between ray and bounding box. <br /></td></tr>
+<tr class="separator:a75c1287b1fd3b4fb7a67b099fc8d629e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b537ee581dfdb203c619fbd67e20f18"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_bounding_box.html#a4b537ee581dfdb203c619fbd67e20f18">GetMax</a> () const</td></tr>
 <tr class="memdesc:a4b537ee581dfdb203c619fbd67e20f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the max value for the object.  <a href="classraylib_1_1_bounding_box.html#a4b537ee581dfdb203c619fbd67e20f18">More...</a><br /></td></tr>
 <tr class="separator:a4b537ee581dfdb203c619fbd67e20f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,7 +160,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the max value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The max value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_bounding_box_8hpp_source.html#l00035">35</a> of file <a class="el" href="_bounding_box_8hpp_source.html">BoundingBox.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bounding_box_8hpp_source.html#l00028">28</a> of file <a class="el" href="_bounding_box_8hpp_source.html">BoundingBox.hpp</a>.</p>
 
 </div>
 </div>
@@ -186,7 +190,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the min value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The min value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_bounding_box_8hpp_source.html#l00034">34</a> of file <a class="el" href="_bounding_box_8hpp_source.html">BoundingBox.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bounding_box_8hpp_source.html#l00027">27</a> of file <a class="el" href="_bounding_box_8hpp_source.html">BoundingBox.hpp</a>.</p>
 
 </div>
 </div>
@@ -222,7 +226,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_bounding_box_8hpp_source.html#l00035">35</a> of file <a class="el" href="_bounding_box_8hpp_source.html">BoundingBox.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bounding_box_8hpp_source.html#l00028">28</a> of file <a class="el" href="_bounding_box_8hpp_source.html">BoundingBox.hpp</a>.</p>
 
 </div>
 </div>
@@ -258,7 +262,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_bounding_box_8hpp_source.html#l00034">34</a> of file <a class="el" href="_bounding_box_8hpp_source.html">BoundingBox.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bounding_box_8hpp_source.html#l00027">27</a> of file <a class="el" href="_bounding_box_8hpp_source.html">BoundingBox.hpp</a>.</p>
 
 </div>
 </div>
