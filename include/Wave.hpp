@@ -21,8 +21,7 @@ class Wave : public ::Wave {
             unsigned int sampleRate = 0,
             unsigned int sampleSize = 0,
             unsigned int channels = 0,
-            void *data = nullptr
-        ) : ::Wave{frameCount, sampleRate, sampleSize, channels, data} { }
+            void *data = nullptr) : ::Wave{frameCount, sampleRate, sampleSize, channels, data} { }
 
     /**
      * Load wave data from file
@@ -40,7 +39,7 @@ class Wave : public ::Wave {
 
     Wave(const Wave& other) {
         set(other.Copy());
-    };
+    }
 
     Wave(Wave&& other) {
         set(other);
@@ -79,7 +78,7 @@ class Wave : public ::Wave {
         set(other.Copy());
 
         return *this;
-    };
+    }
 
     Wave& operator=(Wave&& other) {
         if (this != &other) {

@@ -43,7 +43,7 @@ class Ray : public ::Ray {
     inline bool CheckCollisionSphere(::Vector3 center, float radius) const {
         return GetRayCollisionSphere(*this, center, radius).hit;
     }
-    
+
     /**
      * Get collision information between ray and sphere
      */
@@ -57,7 +57,7 @@ class Ray : public ::Ray {
     inline bool CheckCollision(const ::BoundingBox& box) const {
         return GetRayCollisionBox(*this, box).hit;
     }
-    
+
     /**
      * Get collision information between ray and box
      */

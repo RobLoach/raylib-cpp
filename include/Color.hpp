@@ -21,8 +21,7 @@ class Color : public ::Color {
             unsigned char red,
             unsigned char green,
             unsigned char blue,
-            unsigned char alpha = 255
-        ) : ::Color{red, green, blue, alpha} {};
+            unsigned char alpha = 255) : ::Color{red, green, blue, alpha} {};
 
     /**
      * Black.

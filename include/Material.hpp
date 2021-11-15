@@ -42,7 +42,7 @@ class Material : public ::Material {
      */
     static std::vector<Material> Load(const std::string& fileName) {
         int count = 0;
-        // TODO: Material::Load() possibly leaks the materials array.
+        // TODO(RobLoach): Material::Load() possibly leaks the materials array.
         ::Material* materials = ::LoadMaterials(fileName.c_str(), &count);
         return std::vector<Material>(materials, materials + count);
     }

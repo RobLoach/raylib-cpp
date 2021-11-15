@@ -1,5 +1,5 @@
-#ifndef RAYLIB_CPP_INCLUDE_RAYHITINFO_HPP_
-#define RAYLIB_CPP_INCLUDE_RAYHITINFO_HPP_
+#ifndef RAYLIB_CPP_INCLUDE_RAYCOLLISION_HPP_
+#define RAYLIB_CPP_INCLUDE_RAYCOLLISION_HPP_
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
@@ -14,7 +14,8 @@ class RayCollision : public ::RayCollision {
         set(ray);
     }
 
-    RayCollision(bool hit, float distance, ::Vector3 point, ::Vector3 normal) : ::RayCollision{hit, distance, point, normal} {}
+    RayCollision(bool hit, float distance,
+        ::Vector3 point, ::Vector3 normal) : ::RayCollision{hit, distance, point, normal} {}
 
     /**
      * Get collision info between ray and mesh
@@ -57,4 +58,4 @@ class RayCollision : public ::RayCollision {
 };
 }  // namespace raylib
 
-#endif  // RAYLIB_CPP_INCLUDE_RAYHITINFO_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_RAYCOLLISION_HPP_

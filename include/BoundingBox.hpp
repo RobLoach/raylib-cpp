@@ -60,7 +60,7 @@ class BoundingBox : public ::BoundingBox {
     inline bool CheckCollision(const ::Ray& ray) const {
         return GetRayCollisionBox(ray, *this).hit;
     }
-    
+
     /**
      * Get collision information between ray and bounding box
      */

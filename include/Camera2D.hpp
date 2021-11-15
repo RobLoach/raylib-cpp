@@ -17,8 +17,7 @@ class Camera2D : public ::Camera2D {
 
     Camera2D() {}
     Camera2D(::Vector2 offset, ::Vector2 target,
-            float rotation = 0.0f, float zoom = 1.0f
-        ) : ::Camera2D{offset, target, rotation, zoom} {}
+            float rotation = 0.0f, float zoom = 1.0f) : ::Camera2D{offset, target, rotation, zoom} {}
 
     inline Camera2D& BeginMode() {
         ::BeginMode2D(*this);
