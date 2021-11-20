@@ -52,6 +52,8 @@ class AudioDevice {
 
     /**
      * Set master volume (listener).
+     *
+     * @param volume The desired volume to set.
      */
     inline AudioDevice& SetVolume(float volume) {
         ::SetMasterVolume(volume);
