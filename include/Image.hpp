@@ -149,6 +149,8 @@ class Image : public ::Image {
 
         Unload();
         set(other.Copy());
+
+        return *this;
     }
 
     Image& operator=(Image&& other) {
