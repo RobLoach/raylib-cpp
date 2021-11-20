@@ -63,6 +63,8 @@ class Shader : public ::Shader {
 
         other.id = 0;
         other.locs = nullptr;
+        
+        return *this;
     }
 
     ~Shader() {
