@@ -71,7 +71,7 @@ class ModelAnimation : public ::ModelAnimation {
         other.bones = nullptr;
         other.frameCount = 0;
         other.framePoses = nullptr;
-        
+
         return *this;
     }
 
