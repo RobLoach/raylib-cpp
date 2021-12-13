@@ -47,7 +47,7 @@ int main(void)
     int ampXLoc = shader.GetLocation("ampX");
     int ampYLoc = shader.GetLocation("ampY");
     int speedXLoc = shader.GetLocation("speedX");
-    int speedYLoc = shader.GetLocation(s"speedY");
+    int speedYLoc = shader.GetLocation("speedY");
 
     // Shader uniform values that can be updated at any time
     float freqX = 25.0f;
@@ -57,7 +57,7 @@ int main(void)
     float speedX = 8.0f;
     float speedY = 8.0f;
 
-    float screenSize[2] = { (float)w.GetWidth(), (float)w.GetHeight() };
+    float screenSize[2] = { (float)window.GetWidth(), (float)window.GetHeight() };
     shader.SetValue(shader.GetLocation("size"), &screenSize, SHADER_UNIFORM_VEC2);
     shader.SetValue(freqXLoc, &freqX, SHADER_UNIFORM_FLOAT);
     shader.SetValue(freqYLoc, &freqY, SHADER_UNIFORM_FLOAT);

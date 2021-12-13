@@ -34,7 +34,6 @@ install(FILES
     RenderTexture.hpp
     Shader.hpp
     Sound.hpp
-    Text.hpp
     Texture.hpp
     Vector2.hpp
     Vector3.hpp

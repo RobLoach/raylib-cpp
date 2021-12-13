@@ -243,6 +243,50 @@ RLCPPAPI inline bool ExportImageAsCode(const Image& image, const std::string& fi
     return ::ExportImageAsCode(image, fileName.c_str());
 }
 
+/**
+ * Draw text (using default font)
+ */
+RLCPPAPI inline void DrawText(const std::string& text, int posX, int posY, int fontSize, ::Color color) {
+    ::DrawText(text.c_str(), posX, posY, fontSize, color);
+}
+
+/**
+ * Draw text using font and additional parameters
+ */
+RLCPPAPI inline void DrawTextEx(const Font& font, const std::string& text, Vector2 position,
+        float fontSize, float spacing, ::Color tint) {
+    ::DrawTextEx(font, text.c_str(), position, fontSize, spacing, tint);
+}
+
+/**
+ * Draw text using Font and pro parameters (rotation)
+ */
+RLCPPAPI inline void DrawTextPro(const Font& font, const std::string& text, Vector2 position,
+        Vector2 origin, float rotation, float fontSize, float spacing, ::Color tint) {
+    ::DrawTextPro(font, text.c_str(), position, origin, rotation, fontSize, spacing, tint);
+}
+
+/**
+ * Measure string width for default font
+ */
+RLCPPAPI inline int MeasureText(const std::string& text, int fontSize) {
+    return ::MeasureText(text.c_str(), fontSize);
+}
+
+/**
+ * Check if two text string are equal
+ */
+RLCPPAPI inline bool TextIsEqual(const std::string& text1, const std::string& text2) {
+    return ::TextIsEqual(text1.c_str(), text2.c_str());
+}
+
+/**
+ * Check if two text string are equal
+ */
+RLCPPAPI inline unsigned int TextLength(const std::string& text) {
+    return ::TextLength(text.c_str());
+}
+
 }  // namespace raylib
 
 #endif  // RAYLIB_CPP_INCLUDE_FUNCTIONS_HPP_

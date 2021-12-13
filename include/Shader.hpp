@@ -23,6 +23,10 @@ class Shader : public ::Shader {
         set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));
     }
 
+    Shader(const char* vsFileName, const char* fsFileName) {
+        set(::LoadShader(vsFileName, fsFileName));
+    }
+
     Shader(const Shader&) = delete;
 
     Shader(Shader&& other) {
@@ -34,11 +38,18 @@ class Shader : public ::Shader {
 
     /**
      * Load shader from files and bind default locations.
+     *
+     * @see ::LoadShader
      */
     static ::Shader Load(const std::string& vsFileName, const std::string& fsFileName) {
         return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());
     }
 
+    /**
+     * Load a shader from memory.
+     *
+     * @see ::LoadShaderFromMemory
+     */
     static ::Shader LoadFromMemory(const std::string& vsCode, const std::string& fsCode) {
         return ::LoadShaderFromMemory(vsCode.c_str(), fsCode.c_str());
     }

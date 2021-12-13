@@ -149,6 +149,15 @@ class Sound : public ::Sound {
         return *this;
     }
 
+    /**
+     * Retrieve whether or not the Sound buffer is loaded.
+     *
+     * @return True or false depending on whether the Sound buffer is loaded.
+     */
+    bool IsLoaded() {
+        return stream.buffer != nullptr;
+    }
+
  private:
     inline void set(const ::Sound& sound) {
         frameCount = sound.frameCount;

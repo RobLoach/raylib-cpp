@@ -171,6 +171,15 @@ class Music : public ::Music {
         return ::GetMusicTimePlayed(*this);
     }
 
+    /**
+     * Retrieve whether or not the Music has been loaded.
+     *
+     * @return True or false depending on whether the music has been loaded.
+     */
+    inline bool IsLoaded() const {
+        return stream.buffer != nullptr;
+    }
+
  private:
     inline void set(const ::Music& music) {
         ctxType = music.ctxType;
