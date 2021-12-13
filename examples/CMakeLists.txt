@@ -1,5 +1,5 @@
 # Get the sources together
-set(example_dirs audio core models physics shapes text textures)
+set(example_dirs audio core models physics shaders shapes text textures)
 set(example_sources)
 set(example_resources)
 

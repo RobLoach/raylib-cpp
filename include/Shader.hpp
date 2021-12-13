@@ -116,8 +116,8 @@ class Shader : public ::Shader {
      *
      * @see SetShaderValue()
      */
-    inline Shader& SetValue(int uniformLoc, const std::string& value, int uniformType) {
-        ::SetShaderValue(*this, uniformLoc, value.c_str(), uniformType);
+    inline Shader& SetValue(int uniformLoc, const void* value, int uniformType) {
+        ::SetShaderValue(*this, uniformLoc, value, uniformType);
         return *this;
     }
 
@@ -126,8 +126,8 @@ class Shader : public ::Shader {
      *
      * @see SetShaderValueV()
      */
-    inline Shader& SetValue(int uniformLoc, const std::string& value, int uniformType, int count) {
-        ::SetShaderValueV(*this, uniformLoc, value.c_str(), uniformType, count);
+    inline Shader& SetValue(int uniformLoc, const void* value, int uniformType, int count) {
+        ::SetShaderValueV(*this, uniformLoc, value, uniformType, count);
         return *this;
     }
 
