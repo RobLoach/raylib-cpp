@@ -1,7 +1,12 @@
 # Get the sources together
-set(example_dirs audio core models physics shapes text textures)
+set(example_dirs audio core models physics shaders shapes text textures)
 set(example_sources)
 set(example_resources)
+
+# C++
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # raylib
 find_package(raylib QUIET)

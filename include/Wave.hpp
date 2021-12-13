@@ -174,6 +174,15 @@ class Wave : public ::Wave {
         return LoadSound();
     }
 
+    /**
+     * Retrieve whether or not the Wave data has been loaded.
+     *
+     * @return True or false depending on whether the wave data has been loaded.
+     */
+    inline bool IsLoaded() const {
+        return data != nullptr;
+    }
+
  private:
     inline void set(const ::Wave& wave) {
         frameCount = wave.frameCount;

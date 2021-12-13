@@ -54,7 +54,6 @@
 #include "./RenderTexture.hpp"
 #include "./Shader.hpp"
 #include "./Sound.hpp"
-#include "./Text.hpp"
 #include "./Texture.hpp"
 #include "./Vector2.hpp"
 #include "./Vector3.hpp"

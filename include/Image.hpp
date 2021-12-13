@@ -618,6 +618,15 @@ class Image : public ::Image {
         return ::GetPixelDataSize(width, height, format);
     }
 
+    /**
+     * Retrieve whether or not the Image has been loaded.
+     *
+     * @return True or false depending on whether the image has been loaded.
+     */
+    inline bool IsLoaded() const {
+        return data != nullptr;
+    }
+
  private:
     inline void set(const ::Image& image) {
         data = image.data;

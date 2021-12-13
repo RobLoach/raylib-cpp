@@ -212,7 +212,7 @@ for (auto& file : files) {
 
 ### String Functions
 
-Many of the raylib functions have `std::string`-related functions to allow calling them directly with `std::string`s to save having to use the `.c_str()` method.
+Many of the raylib functions have `std::string`-related overrides to allow calling them directly with `std::string`s to save having to use the `.c_str()` method.
 
 ``` cpp
 // raylib

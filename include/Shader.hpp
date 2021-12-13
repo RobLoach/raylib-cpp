@@ -23,6 +23,10 @@ class Shader : public ::Shader {
         set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));
     }
 
+    Shader(const char* vsFileName, const char* fsFileName) {
+        set(::LoadShader(vsFileName, fsFileName));
+    }
+
     Shader(const Shader&) = delete;
 
     Shader(Shader&& other) {
@@ -34,11 +38,18 @@ class Shader : public ::Shader {
 
     /**
      * Load shader from files and bind default locations.
+     *
+     * @see ::LoadShader
      */
     static ::Shader Load(const std::string& vsFileName, const std::string& fsFileName) {
         return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());
     }
 
+    /**
+     * Load a shader from memory.
+     *
+     * @see ::LoadShaderFromMemory
+     */
     static ::Shader LoadFromMemory(const std::string& vsCode, const std::string& fsCode) {
         return ::LoadShaderFromMemory(vsCode.c_str(), fsCode.c_str());
     }
@@ -116,8 +127,8 @@ class Shader : public ::Shader {
      *
      * @see SetShaderValue()
      */
-    inline Shader& SetValue(int uniformLoc, const std::string& value, int uniformType) {
-        ::SetShaderValue(*this, uniformLoc, value.c_str(), uniformType);
+    inline Shader& SetValue(int uniformLoc, const void* value, int uniformType) {
+        ::SetShaderValue(*this, uniformLoc, value, uniformType);
         return *this;
     }
 
@@ -126,8 +137,8 @@ class Shader : public ::Shader {
      *
      * @see SetShaderValueV()
      */
-    inline Shader& SetValue(int uniformLoc, const std::string& value, int uniformType, int count) {
-        ::SetShaderValueV(*this, uniformLoc, value.c_str(), uniformType, count);
+    inline Shader& SetValue(int uniformLoc, const void* value, int uniformType, int count) {
+        ::SetShaderValueV(*this, uniformLoc, value, uniformType, count);
         return *this;
     }
 
