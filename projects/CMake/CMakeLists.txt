@@ -30,7 +30,7 @@ if (NOT raylib-cpp_FOUND)
         URL https://github.com/RobLoach/raylib-cpp/archive/master.tar.gz
     )
     FetchContent_GetProperties(raylib-cpp)
-    if (NOT raylib-cpp_POPULATED) # Have we downloaded raylib yet?
+    if (NOT raylib-cpp_POPULATED) # Have we downloaded raylib-cpp yet?
         set(FETCHCONTENT_QUIET NO)
         FetchContent_Populate(raylib-cpp)
         set(BUILD_RAYLIB_CPP_EXAMPLES OFF CACHE BOOL "" FORCE)
