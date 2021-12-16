@@ -287,6 +287,69 @@ RLCPPAPI inline unsigned int TextLength(const std::string& text) {
     return ::TextLength(text.c_str());
 }
 
+/**
+ * Get text length, checks for '\0' ending
+ */
+RLAPI inline std::string TextSubtext(const std::string& text, int position, int length) {
+    return TextSubtext(text.c_str(), position, length);
+}
+
+/**
+ * Replace text string (WARNING: memory must be freed!)
+ */
+RLAPI inline std::string TextReplace(const std::string& text, const std::string& replace, const std::string& by) {
+    return TextReplace(text.c_str(), replace.c_str(), by.c_str());
+}
+
+/**
+ * Insert text in a position (WARNING: memory must be freed!)
+ */
+RLAPI inline std::string TextInsert(const std::string& text, const std::string& insert, int position) {
+    return TextInsert(text.c_str(), insert.c_str(), position);
+}
+
+/**
+ * Append text at specific position and move cursor!
+ */
+RLAPI inline void TextAppend(const std::string& text, const std::string& append, int *position) {
+    return TextAppend(text.c_str(), append.c_str(), position);
+}
+
+/**
+ * Find first text occurrence within a string
+ */
+RLAPI inline int TextFindIndex(const std::string& text, const std::string& find) {
+    return TextFindIndex(text.c_str(), find.c_str());
+}
+
+/**
+ * Get upper case version of provided string
+ */
+RLAPI inline std::string TextToUpper(const std::string& text) {
+    return TextToUpper(text.c_str());
+}
+
+/**
+ * Get lower case version of provided string
+ */
+RLAPI inline std::string TextToLower(const std::string& text) {
+    return TextToLower(text.c_str());
+}
+
+/**
+ * Get Pascal case notation version of provided string
+ */
+RLAPI inline std::string TextToPascal(const std::string& text) {
+    return TextToPascal(text.c_str());
+}
+
+/**
+ * Get integer value from text (negative values not supported)
+ */
+RLAPI inline int TextToInteger(const std::string& text) {
+    return TextToInteger(text.c_str());
+}
+
 }  // namespace raylib
 
 #endif  // RAYLIB_CPP_INCLUDE_FUNCTIONS_HPP_
