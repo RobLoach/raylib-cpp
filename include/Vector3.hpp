@@ -68,39 +68,35 @@ class Vector3 : public ::Vector3 {
         return Vector3Negate(*this);
     }
 
-    Vector3 Multiply(const ::Vector3& vector3) {
+    Vector3 Multiply(const ::Vector3& vector3) const {
         return Vector3Multiply(*this, vector3);
     }
 
-    Vector3 operator*(const ::Vector3& vector3) {
+    Vector3 operator*(const ::Vector3& vector3) const {
         return Vector3Multiply(*this, vector3);
     }
 
-    Vector3 Scale(const float scale) {
+    Vector3 Scale(const float scale) const {
         return Vector3Scale(*this, scale);
     }
 
-    Vector3 operator*(const float scale) {
+    Vector3 operator*(const float scale) const {
         return Vector3Scale(*this, scale);
     }
 
-    Vector3 Divide(const ::Vector3& vector3) {
+    Vector3 Divide(const ::Vector3& vector3) const {
         return Vector3Divide(*this, vector3);
     }
 
-    Vector3 operator/(const ::Vector3& vector3) {
+    Vector3 operator/(const ::Vector3& vector3) const {
         return Vector3Divide(*this, vector3);
     }
 
-    Vector3& Divide(const float div) {
-        x /= div;
-        y /= div;
-        z /= div;
-
-        return *this;
+    Vector3 Divide(const float div) const {
+        return ::Vector3{x / div, y / div, z / div};
     }
 
-    Vector3 operator/(const float div) {
+    Vector3 operator/(const float div) const {
         return Divide(div);
     }
 
@@ -149,7 +145,7 @@ class Vector3 : public ::Vector3 {
         return Vector3Length(*this);
     }
 
-    Vector3 Normalize() {
+    Vector3 Normalize() const {
         return Vector3Normalize(*this);
     }
 
@@ -157,19 +153,19 @@ class Vector3 : public ::Vector3 {
         return Vector3DotProduct(*this, vector3);
     }
 
-    float Distance(const ::Vector3& vector3) {
+    float Distance(const ::Vector3& vector3) const {
         return Vector3Distance(*this, vector3);
     }
 
-    Vector3 Lerp(const ::Vector3& vector3, const float amount) {
+    Vector3 Lerp(const ::Vector3& vector3, const float amount) const {
         return Vector3Lerp(*this, vector3, amount);
     }
 
-    Vector3 CrossProduct(const ::Vector3& vector3) {
+    Vector3 CrossProduct(const ::Vector3& vector3) const {
         return Vector3CrossProduct(*this, vector3);
     }
 
-    Vector3 Perpendicular() {
+    Vector3 Perpendicular() const {
         return Vector3Perpendicular(*this);
     }
 
@@ -177,7 +173,7 @@ class Vector3 : public ::Vector3 {
         Vector3OrthoNormalize(this, vector3);
     }
 
-    Vector3 Transform(const ::Matrix& matrix) {
+    Vector3 Transform(const ::Matrix& matrix) const {
         return Vector3Transform(*this, matrix);
     }
 
@@ -185,7 +181,7 @@ class Vector3 : public ::Vector3 {
         return Vector3RotateByQuaternion(*this, quaternion);
     }
 
-    Vector3 Reflect(const ::Vector3& normal) {
+    Vector3 Reflect(const ::Vector3& normal) const {
         return Vector3Reflect(*this, normal);
     }
 

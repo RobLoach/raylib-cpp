@@ -41,7 +41,7 @@ class Vector2 : public ::Vector2 {
         return Vector2Add(*this, vector2);
     }
 
-    Vector2 operator+(const ::Vector2& vector2) {
+    Vector2 operator+(const ::Vector2& vector2) const {
         return Vector2Add(*this, vector2);
     }
 
@@ -49,7 +49,7 @@ class Vector2 : public ::Vector2 {
         return Vector2Subtract(*this, vector2);
     }
 
-    Vector2 operator-(const ::Vector2& vector2) {
+    Vector2 operator-(const ::Vector2& vector2) const {
         return Vector2Subtract(*this, vector2);
     }
 
@@ -57,7 +57,7 @@ class Vector2 : public ::Vector2 {
         return Vector2Negate(*this);
     }
 
-    Vector2 operator-() {
+    Vector2 operator-() const {
         return Vector2Negate(*this);
     }
 
@@ -65,7 +65,7 @@ class Vector2 : public ::Vector2 {
         return Vector2Multiply(*this, vector2);
     }
 
-    Vector2 operator*(const ::Vector2& vector2) {
+    Vector2 operator*(const ::Vector2& vector2) const {
         return Vector2Multiply(*this, vector2);
     }
 
@@ -73,7 +73,7 @@ class Vector2 : public ::Vector2 {
         return Vector2Scale(*this, scale);
     }
 
-    Vector2 operator*(const float scale) {
+    Vector2 operator*(const float scale) const {
         return Vector2Scale(*this, scale);
     }
 
@@ -81,22 +81,16 @@ class Vector2 : public ::Vector2 {
         return Vector2Divide(*this, vector2);
     }
 
-    Vector2 operator/(const ::Vector2& vector2) {
+    Vector2 operator/(const ::Vector2& vector2) const {
         return Vector2Divide(*this, vector2);
     }
 
-    Vector2& Divide(const float div) {
-        x /= div;
-        y /= div;
-
-        return *this;
+    Vector2 Divide(const float div) const {
+        return ::Vector2{x / div, y / div};
     }
 
-    Vector2& operator/(const float div) {
-        x /= div;
-        y /= div;
-
-        return *this;
+    Vector2 operator/(const float div) const {
+        return Divide(div);
     }
 
     Vector2& operator+=(const ::Vector2& vector2) {

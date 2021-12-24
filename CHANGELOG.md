@@ -11,12 +11,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Sound::IsLoaded()`
 - `Music::IsLoaded()`
 - Shader example
-- `raylib::DrawText()` for `std::string` support
-- `raylib::DrawTextEx()` for `std::string` support
-- `raylib::DrawTextPro()` for `std::string` support
+- Function overrides for `std::string` support
+    - `raylib::DrawText()`
+    - `raylib::DrawTextEx()`
+    - `raylib::DrawTextPro()`
+    - `raylib::TextSubtext()`
+    - `raylib::TextReplace()`
+    - `raylib::TextInsert()`
+    - `raylib::TextAppend()`
+    - `raylib::TextFindIndex()`
+    - `raylib::TextToUpper()`
+    - `raylib::TextToLower()`
+    - `raylib::TextToPascal()`
+    - `raylib::TextToInteger()`
 
 ### Fixed
 - Shader constructor
+- Vector2 muliplication operator behavior ([#155](https://github.com/RobLoach/raylib-cpp/issues/155))
 
 ### Changed
 - Merged `Text.hpp` into `Functions.hpp`

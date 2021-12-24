@@ -57,27 +57,27 @@ class Vector4 : public ::Vector4 {
     }
 
 #ifndef RAYLIB_CPP_NO_MATH
-    Vector4 Multiply(const ::Vector4& vector4) {
+    Vector4 Multiply(const ::Vector4& vector4) const {
         return QuaternionMultiply(*this, vector4);
     }
 
-    Vector4 operator*(const ::Vector4& vector4) {
+    Vector4 operator*(const ::Vector4& vector4) const {
         return QuaternionMultiply(*this, vector4);
     }
 
-    Vector4 Lerp(const ::Vector4& vector4, float amount) {
+    Vector4 Lerp(const ::Vector4& vector4, float amount) const {
         return QuaternionLerp(*this, vector4, amount);
     }
 
-    Vector4 Nlerp(const ::Vector4& vector4, float amount) {
+    Vector4 Nlerp(const ::Vector4& vector4, float amount) const {
         return QuaternionNlerp(*this, vector4, amount);
     }
 
-    Vector4 Slerp(const ::Vector4& vector4, float amount) {
+    Vector4 Slerp(const ::Vector4& vector4, float amount) const {
         return QuaternionSlerp(*this, vector4, amount);
     }
 
-    Matrix ToMatrix() {
+    Matrix ToMatrix() const {
         return QuaternionToMatrix(*this);
     }
 
@@ -85,11 +85,11 @@ class Vector4 : public ::Vector4 {
         return QuaternionLength(*this);
     }
 
-    Vector4 Normalize() {
+    Vector4 Normalize() const {
         return QuaternionNormalize(*this);
     }
 
-    Vector4 Invert() {
+    Vector4 Invert() const {
         return QuaternionInvert(*this);
     }
 

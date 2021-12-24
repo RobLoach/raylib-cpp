@@ -25,6 +25,16 @@ int main(int argc, char *argv[]) {
         position += speed;
         assert(position.x == 310);
         assert(raylib::Window::IsReady() == false);
+
+        raylib::Vector2 size{50,50};
+        raylib::Vector2 halfsize = size / 2.0f;
+
+        assert(size.x == 50);
+        assert(halfsize.x == 25);
+
+        raylib::Vector2 doublesize = size * 2.0f;
+        assert(size.x == 50);
+        assert(doublesize.x == 100);
     }
 
     // Color
