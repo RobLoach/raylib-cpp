@@ -7,7 +7,12 @@ project (raylib-cpp
     LANGUAGES C CXX)
 
 # Options
-option(BUILD_RAYLIB_CPP_EXAMPLES "Examples" ON)
+if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+    set(BUILD_RAYLIB_CPP_EXAMPLES_DEFAULT TRUE)
+else()
+    set(BUILD_RAYLIB_CPP_EXAMPLES_DEFAULT FALSE)
+endif()
+option(BUILD_RAYLIB_CPP_EXAMPLES "Examples" ${BUILD_RAYLIB_CPP_EXAMPLES_DEFAULT})
 
 # Include Directory
 add_subdirectory(include)
@@ -16,14 +21,14 @@ add_subdirectory(include)
 if(BUILD_RAYLIB_CPP_EXAMPLES)
     add_subdirectory(examples)
     set(BUILD_RAYLIB_CPP_STATIC ON)
-endif()
 
-# Testing
-include(CTest)
-enable_testing()
-if(BUILD_TESTING AND BUILD_RAYLIB_CPP_EXAMPLES)
-    set(CTEST_CUSTOM_TESTS_IGNORE
-        pkg-config--static
-    )
-    add_subdirectory(tests)
+    # Testing
+    include(CTest)
+    enable_testing()
+    if(BUILD_TESTING)
+        set(CTEST_CUSTOM_TESTS_IGNORE
+            pkg-config--static
+        )
+        add_subdirectory(tests)
+    endif()
 endif()
