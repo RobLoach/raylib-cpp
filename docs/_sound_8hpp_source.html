@@ -178,21 +178,26 @@ $(function() {
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Sound&amp; sound) {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        frameCount = sound.frameCount;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        stream = sound.stream;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;};</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_SOUND_HPP_</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="classraylib_1_1_sound.html#a55f2f36627d5251f37f009147d18d7a2">  157</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_sound.html#a55f2f36627d5251f37f009147d18d7a2">IsLoaded</a>() {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> stream.buffer != <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Sound&amp; sound) {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        frameCount = sound.frameCount;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        stream = sound.stream;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;};</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_SOUND_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_sound_html_a6925b0114e6d9636c928fed1f0f0586c"><div class="ttname"><a href="classraylib_1_1_sound.html#a6925b0114e6d9636c928fed1f0f0586c">raylib::Sound::StopMulti</a></div><div class="ttdeci">Sound &amp; StopMulti()</div><div class="ttdoc">Stop any sound playing (using multichannel buffer pool)</div><div class="ttdef"><b>Definition:</b> <a href="_sound_8hpp_source.html#l00124">Sound.hpp:124</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_sound_html_a03cbb1aa868bf037d163a5a540db8c8f"><div class="ttname"><a href="classraylib_1_1_sound.html#a03cbb1aa868bf037d163a5a540db8c8f">raylib::Sound::SetVolume</a></div><div class="ttdeci">Sound &amp; SetVolume(float volume)</div><div class="ttdoc">Set volume for a sound (1.0 is max level)</div><div class="ttdef"><b>Definition:</b> <a href="_sound_8hpp_source.html#l00139">Sound.hpp:139</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_sound_html_acec4ed7b817a356a13a24691192da968"><div class="ttname"><a href="classraylib_1_1_sound.html#acec4ed7b817a356a13a24691192da968">raylib::Sound::Update</a></div><div class="ttdeci">Sound &amp; Update(const void *data, int samplesCount)</div><div class="ttdoc">Update sound buffer with new data.</div><div class="ttdef"><b>Definition:</b> <a href="_sound_8hpp_source.html#l00061">Sound.hpp:61</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_sound_html"><div class="ttname"><a href="classraylib_1_1_sound.html">raylib::Sound</a></div><div class="ttdoc">Wave/Sound management functions.</div><div class="ttdef"><b>Definition:</b> <a href="_sound_8hpp_source.html#l00018">Sound.hpp:18</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_sound_html_a55f2f36627d5251f37f009147d18d7a2"><div class="ttname"><a href="classraylib_1_1_sound.html#a55f2f36627d5251f37f009147d18d7a2">raylib::Sound::IsLoaded</a></div><div class="ttdeci">bool IsLoaded()</div><div class="ttdoc">Retrieve whether or not the Sound buffer is loaded.</div><div class="ttdef"><b>Definition:</b> <a href="_sound_8hpp_source.html#l00157">Sound.hpp:157</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_sound_html_a51f64c5c76a86a6b6f2225870d5a83a3"><div class="ttname"><a href="classraylib_1_1_sound.html#a51f64c5c76a86a6b6f2225870d5a83a3">raylib::Sound::Pause</a></div><div class="ttdeci">Sound &amp; Pause()</div><div class="ttdoc">Pause a sound.</div><div class="ttdef"><b>Definition:</b> <a href="_sound_8hpp_source.html#l00100">Sound.hpp:100</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_sound_html_a08132251f7b6e4caec600475f610e2f5"><div class="ttname"><a href="classraylib_1_1_sound.html#a08132251f7b6e4caec600475f610e2f5">raylib::Sound::Resume</a></div><div class="ttdeci">Sound &amp; Resume()</div><div class="ttdoc">Resume a paused sound.</div><div class="ttdef"><b>Definition:</b> <a href="_sound_8hpp_source.html#l00108">Sound.hpp:108</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_sound_html_af00839539bfeb6dd1bac84b5d1c90f0b"><div class="ttname"><a href="classraylib_1_1_sound.html#af00839539bfeb6dd1bac84b5d1c90f0b">raylib::Sound::Stop</a></div><div class="ttdeci">Sound &amp; Stop()</div><div class="ttdoc">Stop playing a sound.</div><div class="ttdef"><b>Definition:</b> <a href="_sound_8hpp_source.html#l00092">Sound.hpp:92</a></div></div>

@@ -1,6 +1,6 @@
 {
   "name": "raylib-cpp",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "raylib-cpp: C++ Object-Oriented Wrapper for raylib",
   "homepage": "https://github.com/robloach/raylib-cpp",
   "bugs": {

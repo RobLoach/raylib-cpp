@@ -196,10 +196,18 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a2991a63252dbe2be7e1ae4b852c9bd69">DirectoryExists</a> (const std::string &amp;dirPath)</td></tr>
 <tr class="memdesc:a2991a63252dbe2be7e1ae4b852c9bd69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if directory path exists. <br /></td></tr>
 <tr class="separator:a2991a63252dbe2be7e1ae4b852c9bd69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c3578f8b3d850ffa73e9a602453e003"><td class="memItemLeft" align="right" valign="top"><a id="a1c3578f8b3d850ffa73e9a602453e003"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a1c3578f8b3d850ffa73e9a602453e003">DrawText</a> (const std::string &amp;title, int posX, int posY, int fontSize, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color)</td></tr>
-<tr class="memdesc:a1c3578f8b3d850ffa73e9a602453e003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw text (using default font) <br /></td></tr>
-<tr class="separator:a1c3578f8b3d850ffa73e9a602453e003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54b76d681a4cd002e304501d5a040bda"><td class="memItemLeft" align="right" valign="top"><a id="a54b76d681a4cd002e304501d5a040bda"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a54b76d681a4cd002e304501d5a040bda">DrawText</a> (const std::string &amp;text, int posX, int posY, int fontSize, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color)</td></tr>
+<tr class="memdesc:a54b76d681a4cd002e304501d5a040bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw text (using default font) <br /></td></tr>
+<tr class="separator:a54b76d681a4cd002e304501d5a040bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb818239879e345434fec0f2b61e5cd"><td class="memItemLeft" align="right" valign="top"><a id="adeb818239879e345434fec0f2b61e5cd"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#adeb818239879e345434fec0f2b61e5cd">DrawTextEx</a> (const <a class="el" href="classraylib_1_1_font.html">Font</a> &amp;font, const std::string &amp;text, <a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position, float fontSize, float spacing, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint)</td></tr>
+<tr class="memdesc:adeb818239879e345434fec0f2b61e5cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw text using font and additional parameters. <br /></td></tr>
+<tr class="separator:adeb818239879e345434fec0f2b61e5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9373305a332c98fd718966388bc2946"><td class="memItemLeft" align="right" valign="top"><a id="ad9373305a332c98fd718966388bc2946"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#ad9373305a332c98fd718966388bc2946">DrawTextPro</a> (const <a class="el" href="classraylib_1_1_font.html">Font</a> &amp;font, const std::string &amp;text, <a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position, <a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin, float rotation, float fontSize, float spacing, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint)</td></tr>
+<tr class="memdesc:ad9373305a332c98fd718966388bc2946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw text using <a class="el" href="classraylib_1_1_font.html" title="Font type, includes texture and charSet array data.">Font</a> and pro parameters (rotation) <br /></td></tr>
+<tr class="separator:ad9373305a332c98fd718966388bc2946"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5099093ce156cc4d2f25593261009c18"><td class="memItemLeft" align="right" valign="top"><a id="a5099093ce156cc4d2f25593261009c18"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a5099093ce156cc4d2f25593261009c18">ExportImage</a> (const <a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image, const std::string &amp;fileName)</td></tr>
 <tr class="memdesc:a5099093ce156cc4d2f25593261009c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export image data to file. <br /></td></tr>
@@ -308,6 +316,18 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a85b0e8952631936155bae8979cbf2aed">TakeScreenshot</a> (const std::string &amp;fileName)</td></tr>
 <tr class="memdesc:a85b0e8952631936155bae8979cbf2aed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a screenshot of current screen (saved a .png) <br /></td></tr>
 <tr class="separator:a85b0e8952631936155bae8979cbf2aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55886a9f2aa8047bfb1af236f38a15c1"><td class="memItemLeft" align="right" valign="top"><a id="a55886a9f2aa8047bfb1af236f38a15c1"></a>
+RLAPI void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a55886a9f2aa8047bfb1af236f38a15c1">TextAppend</a> (const std::string &amp;text, const std::string &amp;append, int *position)</td></tr>
+<tr class="memdesc:a55886a9f2aa8047bfb1af236f38a15c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append text at specific position and move cursor! <br /></td></tr>
+<tr class="separator:a55886a9f2aa8047bfb1af236f38a15c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a326b43b5b209389b1b5ecf4adc9ea49d"><td class="memItemLeft" align="right" valign="top"><a id="a326b43b5b209389b1b5ecf4adc9ea49d"></a>
+RLAPI int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a326b43b5b209389b1b5ecf4adc9ea49d">TextFindIndex</a> (const std::string &amp;text, const std::string &amp;find)</td></tr>
+<tr class="memdesc:a326b43b5b209389b1b5ecf4adc9ea49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find first text occurrence within a string. <br /></td></tr>
+<tr class="separator:a326b43b5b209389b1b5ecf4adc9ea49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a957beb0de1bc12f1781b9f9af4e7d5a6"><td class="memItemLeft" align="right" valign="top"><a id="a957beb0de1bc12f1781b9f9af4e7d5a6"></a>
+RLAPI std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a957beb0de1bc12f1781b9f9af4e7d5a6">TextInsert</a> (const std::string &amp;text, const std::string &amp;insert, int position)</td></tr>
+<tr class="memdesc:a957beb0de1bc12f1781b9f9af4e7d5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert text in a position (WARNING: memory must be freed!) <br /></td></tr>
+<tr class="separator:a957beb0de1bc12f1781b9f9af4e7d5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc1e3c933eb301bee7d42466a3ec5261"><td class="memItemLeft" align="right" valign="top"><a id="afc1e3c933eb301bee7d42466a3ec5261"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#afc1e3c933eb301bee7d42466a3ec5261">TextIsEqual</a> (const std::string &amp;text1, const std::string &amp;text2)</td></tr>
 <tr class="memdesc:afc1e3c933eb301bee7d42466a3ec5261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two text string are equal. <br /></td></tr>
@@ -316,6 +336,30 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a3c5e254ed90864520fd592295941bbaf">TextLength</a> (const std::string &amp;text)</td></tr>
 <tr class="memdesc:a3c5e254ed90864520fd592295941bbaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two text string are equal. <br /></td></tr>
 <tr class="separator:a3c5e254ed90864520fd592295941bbaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80f557311e1acab398ea456340db6566"><td class="memItemLeft" align="right" valign="top"><a id="a80f557311e1acab398ea456340db6566"></a>
+RLAPI std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a80f557311e1acab398ea456340db6566">TextReplace</a> (const std::string &amp;text, const std::string &amp;replace, const std::string &amp;by)</td></tr>
+<tr class="memdesc:a80f557311e1acab398ea456340db6566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace text string (WARNING: memory must be freed!) <br /></td></tr>
+<tr class="separator:a80f557311e1acab398ea456340db6566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56b3428d8e400e61dc30af5b5827bbd3"><td class="memItemLeft" align="right" valign="top"><a id="a56b3428d8e400e61dc30af5b5827bbd3"></a>
+RLAPI std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a56b3428d8e400e61dc30af5b5827bbd3">TextSubtext</a> (const std::string &amp;text, int position, int length)</td></tr>
+<tr class="memdesc:a56b3428d8e400e61dc30af5b5827bbd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get text length, checks for '\0' ending. <br /></td></tr>
+<tr class="separator:a56b3428d8e400e61dc30af5b5827bbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a616f2f07e2659317414528488dcd7dc9"><td class="memItemLeft" align="right" valign="top"><a id="a616f2f07e2659317414528488dcd7dc9"></a>
+RLAPI int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a616f2f07e2659317414528488dcd7dc9">TextToInteger</a> (const std::string &amp;text)</td></tr>
+<tr class="memdesc:a616f2f07e2659317414528488dcd7dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get integer value from text (negative values not supported) <br /></td></tr>
+<tr class="separator:a616f2f07e2659317414528488dcd7dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eefbb6b4e9818162487ab277f4b8be0"><td class="memItemLeft" align="right" valign="top"><a id="a2eefbb6b4e9818162487ab277f4b8be0"></a>
+RLAPI std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a2eefbb6b4e9818162487ab277f4b8be0">TextToLower</a> (const std::string &amp;text)</td></tr>
+<tr class="memdesc:a2eefbb6b4e9818162487ab277f4b8be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get lower case version of provided string. <br /></td></tr>
+<tr class="separator:a2eefbb6b4e9818162487ab277f4b8be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5908d3c152c471e79cb9afb83f36759b"><td class="memItemLeft" align="right" valign="top"><a id="a5908d3c152c471e79cb9afb83f36759b"></a>
+RLAPI std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a5908d3c152c471e79cb9afb83f36759b">TextToPascal</a> (const std::string &amp;text)</td></tr>
+<tr class="memdesc:a5908d3c152c471e79cb9afb83f36759b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Pascal case notation version of provided string. <br /></td></tr>
+<tr class="separator:a5908d3c152c471e79cb9afb83f36759b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2065a8eb9b4c0c419e6c7a332c868d04"><td class="memItemLeft" align="right" valign="top"><a id="a2065a8eb9b4c0c419e6c7a332c868d04"></a>
+RLAPI std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a2065a8eb9b4c0c419e6c7a332c868d04">TextToUpper</a> (const std::string &amp;text)</td></tr>
+<tr class="memdesc:a2065a8eb9b4c0c419e6c7a332c868d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get upper case version of provided string. <br /></td></tr>
+<tr class="separator:a2065a8eb9b4c0c419e6c7a332c868d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd45302dac72cb253026bce044dee236"><td class="memItemLeft" align="right" valign="top"><a id="abd45302dac72cb253026bce044dee236"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#abd45302dac72cb253026bce044dee236">UpdateCamera</a> (const ::<a class="el" href="classraylib_1_1_camera3_d.html">Camera</a> &amp;camera)</td></tr>
 <tr class="memdesc:abd45302dac72cb253026bce044dee236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update camera depending on selected mode. <br /></td></tr>

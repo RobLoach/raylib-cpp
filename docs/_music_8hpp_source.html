@@ -196,24 +196,29 @@ $(function() {
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        return ::GetMusicTimePlayed(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Music&amp; music) {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        ctxType = music.ctxType;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        ctxData = music.ctxData;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        looping = music.looping;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        frameCount = music.frameCount;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        stream = music.stream;</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a7f34bf3ae52e895dc76a8f451c437ddb">  179</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_music.html#a7f34bf3ae52e895dc76a8f451c437ddb">IsLoaded</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">return</span> stream.buffer != <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;};</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_MUSIC_HPP_</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Music&amp; music) {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        ctxType = music.ctxType;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        ctxData = music.ctxData;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        looping = music.looping;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        frameCount = music.frameCount;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        stream = music.stream;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;};</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_MUSIC_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassraylib_1_1_music_html_a894c193e31d956b4c8763698beae17c4"><div class="ttname"><a href="classraylib_1_1_music.html#a894c193e31d956b4c8763698beae17c4">raylib::Music::Music</a></div><div class="ttdeci">Music(const std::string &amp;fileType, unsigned char *data, int dataSize)</div><div class="ttdoc">Load music stream from memory.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00029">Music.hpp:29</a></div></div>
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_music_html_a863348374483c4b9b01f6e2624f833e8"><div class="ttname"><a href="classraylib_1_1_music.html#a863348374483c4b9b01f6e2624f833e8">raylib::Music::SetPitch</a></div><div class="ttdeci">Music &amp; SetPitch(float pitch)</div><div class="ttdoc">Set pitch for music.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00155">Music.hpp:155</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_music_html_a6a6ed906b768631c86a006b23900d542"><div class="ttname"><a href="classraylib_1_1_music.html#a6a6ed906b768631c86a006b23900d542">raylib::Music::Stop</a></div><div class="ttdeci">Music &amp; Stop()</div><div class="ttdoc">Stop music playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00108">Music.hpp:108</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_music_html_acbcc821ca804c0c9783e96267b7c5ef9"><div class="ttname"><a href="classraylib_1_1_music.html#acbcc821ca804c0c9783e96267b7c5ef9">raylib::Music::SetVolume</a></div><div class="ttdeci">Music &amp; SetVolume(float volume)</div><div class="ttdoc">Set volume for music.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00147">Music.hpp:147</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_music_html_a7f34bf3ae52e895dc76a8f451c437ddb"><div class="ttname"><a href="classraylib_1_1_music.html#a7f34bf3ae52e895dc76a8f451c437ddb">raylib::Music::IsLoaded</a></div><div class="ttdeci">bool IsLoaded() const</div><div class="ttdoc">Retrieve whether or not the Music has been loaded.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00179">Music.hpp:179</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_music_html_a5c5c67064aa37d2b3f3234a2a02230de"><div class="ttname"><a href="classraylib_1_1_music.html#a5c5c67064aa37d2b3f3234a2a02230de">raylib::Music::Resume</a></div><div class="ttdeci">Music &amp; Resume()</div><div class="ttdoc">Resume music playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00124">Music.hpp:124</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_music_html_a908ddb6c248c75bd1a3cabc1381a45fc"><div class="ttname"><a href="classraylib_1_1_music.html#a908ddb6c248c75bd1a3cabc1381a45fc">raylib::Music::Play</a></div><div class="ttdeci">Music &amp; Play()</div><div class="ttdoc">Start music playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00092">Music.hpp:92</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_music_html_a810f0ae266f247237aa23574e1e31626"><div class="ttname"><a href="classraylib_1_1_music.html#a810f0ae266f247237aa23574e1e31626">raylib::Music::Pause</a></div><div class="ttdeci">Music &amp; Pause()</div><div class="ttdoc">Pause music playing.</div><div class="ttdef"><b>Definition:</b> <a href="_music_8hpp_source.html#l00116">Music.hpp:116</a></div></div>

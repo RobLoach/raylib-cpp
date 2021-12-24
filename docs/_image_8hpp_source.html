@@ -519,18 +519,22 @@ $(function() {
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        return ::GetPixelDataSize(width, height, format);</div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    }</div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160; </div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Image&amp; image) {</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        data = image.data;</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        width = image.width;</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        height = image.height;</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        mipmaps = image.mipmaps;</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        format = image.format;</div>
+<div class="line"><a name="l00626"></a><span class="lineno"><a class="line" href="classraylib_1_1_image.html#add2ef8fbb89abbd2319a3b198f7d21af">  626</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_image.html#add2ef8fbb89abbd2319a3b198f7d21af">IsLoaded</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        <span class="keywordflow">return</span> data != <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    }</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;};</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160; </div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_IMAGE_HPP_</span></div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Image&amp; image) {</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        data = image.data;</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        width = image.width;</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        height = image.height;</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        mipmaps = image.mipmaps;</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        format = image.format;</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    }</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;};</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160; </div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_IMAGE_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassraylib_1_1_image_html_a055b6908b9e8cfcd109abc537f3d2056"><div class="ttname"><a href="classraylib_1_1_image.html#a055b6908b9e8cfcd109abc537f3d2056">raylib::Image::Dither</a></div><div class="ttdeci">Image &amp; Dither(int rBpp, int gBpp, int bBpp, int aBpp)</div><div class="ttdoc">Dither image data to 16bpp or lower (Floyd-Steinberg dithering)</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00369">Image.hpp:369</a></div></div>
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
@@ -590,6 +594,7 @@ $(function() {
 <div class="ttc" id="aclassraylib_1_1_image_html_a322fc19c5ae2a843a7c243b7fa4b74b1"><div class="ttname"><a href="classraylib_1_1_image.html#a322fc19c5ae2a843a7c243b7fa4b74b1">raylib::Image::Cellular</a></div><div class="ttdeci">::Image Cellular(int width, int height, int tileSize)</div><div class="ttdoc">Generate image: cellular algorithm.</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00132">Image.hpp:132</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_image_html_aed48d37124df81191a9c10a417508703"><div class="ttname"><a href="classraylib_1_1_image.html#aed48d37124df81191a9c10a417508703">raylib::Image::ClearBackground</a></div><div class="ttdeci">Image &amp; ClearBackground(::Color color={0, 0, 0, 255})</div><div class="ttdoc">Clear image background with given color.</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00470">Image.hpp:470</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_image_html_aed253e5dd980e63b7fd7a8ef43ef7cf6"><div class="ttname"><a href="classraylib_1_1_image.html#aed253e5dd980e63b7fd7a8ef43ef7cf6">raylib::Image::RotateCW</a></div><div class="ttdeci">Image &amp; RotateCW()</div><div class="ttdoc">Rotate image clockwise 90deg.</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00393">Image.hpp:393</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_image_html_add2ef8fbb89abbd2319a3b198f7d21af"><div class="ttname"><a href="classraylib_1_1_image.html#add2ef8fbb89abbd2319a3b198f7d21af">raylib::Image::IsLoaded</a></div><div class="ttdeci">bool IsLoaded() const</div><div class="ttdoc">Retrieve whether or not the Image has been loaded.</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00626">Image.hpp:626</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_image_html_a3bbcbb96834c526b6b789a804078d472"><div class="ttname"><a href="classraylib_1_1_image.html#a3bbcbb96834c526b6b789a804078d472">raylib::Image::AlphaMask</a></div><div class="ttdeci">Image &amp; AlphaMask(const ::Image &amp;alphaMask)</div><div class="ttdoc">Apply alpha mask to image.</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00291">Image.hpp:291</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_image_html_af9d668a5feaed2554a77694f61cbdae0"><div class="ttname"><a href="classraylib_1_1_image.html#af9d668a5feaed2554a77694f61cbdae0">raylib::Image::ColorReplace</a></div><div class="ttdeci">Image &amp; ColorReplace(::Color color, ::Color replace)</div><div class="ttdoc">Modify image color: replace color.</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00453">Image.hpp:453</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_image_html_a41c1bbd428e6a5eb0a755aebc657acb9"><div class="ttname"><a href="classraylib_1_1_image.html#a41c1bbd428e6a5eb0a755aebc657acb9">raylib::Image::Copy</a></div><div class="ttdeci">inline ::Image Copy() const</div><div class="ttdoc">Create an image duplicate (useful for transformations)</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00245">Image.hpp:245</a></div></div>
