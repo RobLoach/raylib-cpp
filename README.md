@@ -256,6 +256,7 @@ The [projects directory](projects) includes some starter templates...
 
 - [CMake template](projects/CMake)
 - [Make template](projects/Make)
+- [VSCode template](projects/VSCode)
 
 If there's a project template you would like to see added, feel free to [make an issue](https://github.com/RobLoach/raylib-cpp/issues) and we can add it in.
 
@@ -270,7 +271,6 @@ The following are some tools in order to build and contribute to *raylib-cpp*...
 ``` bash
 git clone https://github.com/RobLoach/raylib-cpp.git
 cd raylib-cpp
-git submodule update --init
 mkdir build
 cd build
 cmake ..

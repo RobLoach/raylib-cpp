@@ -1,4 +1,0 @@
-[submodule "vendor/raylib"]
-	path = vendor/raylib
-	url = https://github.com/raysan5/raylib.git
-	ignore = dirty
