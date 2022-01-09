@@ -1,14 +1,11 @@
 {
   "name": "raylib-cpp",
   "version": "4.0.3",
+  "repo": "RobLoach/raylib-cpp",
   "description": "raylib-cpp: C++ Object-Oriented Wrapper for raylib",
   "homepage": "https://github.com/robloach/raylib-cpp",
   "bugs": {
     "url": "https://github.com/robloach/raylib-cpp/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RobLoach/raylib-cpp.git"
   },
   "directories": {
     "lib": "include",
