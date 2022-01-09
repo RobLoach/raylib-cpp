@@ -22,28 +22,28 @@ if (NOT raylib_FOUND)
 endif()
 
 # raylib-cpp
-find_package(raylib-cpp QUIET)
-if (NOT raylib-cpp_FOUND)
+find_package(raylib_cpp QUIET)
+if (NOT raylib_cpp_FOUND)
     include(FetchContent)
     FetchContent_Declare(
         raylib-cpp
         URL https://github.com/RobLoach/raylib-cpp/archive/master.tar.gz
     )
-    FetchContent_GetProperties(raylib-cpp)
-    if (NOT raylib-cpp_POPULATED) # Have we downloaded raylib-cpp yet?
+    FetchContent_GetProperties(raylib_cpp)
+    if (NOT raylib_cpp_POPULATED) # Have we downloaded raylib-cpp yet?
         set(FETCHCONTENT_QUIET NO)
-        FetchContent_Populate(raylib-cpp)
+        FetchContent_Populate(raylib_cpp)
         set(BUILD_RAYLIB_CPP_EXAMPLES OFF CACHE BOOL "" FORCE)
         set(BUILD_TESTING             OFF CACHE BOOL "" FORCE)
-        add_subdirectory(${raylib-cpp_SOURCE_DIR} ${raylib-cpp_BINARY_DIR})
+        add_subdirectory(${raylib_cpp_SOURCE_DIR} ${raylib_cpp_BINARY_DIR})
     endif()
 endif()
 
 # This is the main part:
-set(PROJECT_NAME raylib-cpp-example)
+set(PROJECT_NAME raylib_cpp_example)
 set(PROJECT_SOURCES main.cpp)
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 set(raylib_VERBOSE 1)
-target_link_libraries(${PROJECT_NAME} PUBLIC raylib raylib-cpp)
+target_link_libraries(${PROJECT_NAME} PUBLIC raylib raylib_cpp)
 
 # That's it! You should have an example executable that you can run. Have fun!

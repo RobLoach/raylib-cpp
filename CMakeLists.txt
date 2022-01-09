@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.11)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-project (raylib-cpp
-    VERSION 4.0.3
+project (raylib_cpp
+    VERSION 4.0.4
     DESCRIPTION "raylib-cpp C++ Object Oriented Wrapper for raylib"
     HOMEPAGE_URL "https://github.com/robloach/raylib-cpp"
     LANGUAGES C CXX)

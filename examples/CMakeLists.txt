@@ -47,16 +47,15 @@ foreach(example_source ${example_sources})
     add_executable(${example_name} ${example_source})
 
     # Link raylib and raylib-cpp
-    target_link_libraries(${example_name} PUBLIC raylib-cpp raylib)
+    target_link_libraries(${example_name} PUBLIC raylib_cpp raylib)
 
     string(REGEX MATCH ".*/.*/" resources_dir ${example_source})
     string(APPEND resources_dir "resources")
-
 endforeach()
 
 # Multiple Files Example
 add_executable("multiple" multiple/main.cpp multiple/Player.cpp)
-target_link_libraries("multiple" PUBLIC raylib-cpp raylib)
+target_link_libraries("multiple" PUBLIC raylib_cpp raylib)
 
 # Copy all the resources
 file(COPY ${example_resources} DESTINATION "resources/")

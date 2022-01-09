@@ -10,7 +10,7 @@ if (MSVC)
 else()
     target_compile_options(raylib_test PRIVATE -Wall -Wextra -Wconversion -Wsign-conversion)
 endif()
-target_link_libraries(raylib_test raylib-cpp raylib)
+target_link_libraries(raylib_test raylib_cpp raylib)
 
 # Test
 add_test(NAME raylib_test COMMAND raylib_test)
