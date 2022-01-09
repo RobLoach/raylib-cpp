@@ -26,7 +26,7 @@ find_package(raylib_cpp QUIET)
 if (NOT raylib_cpp_FOUND)
     include(FetchContent)
     FetchContent_Declare(
-        raylib-cpp
+        raylib_cpp
         URL https://github.com/RobLoach/raylib-cpp/archive/master.tar.gz
     )
     FetchContent_GetProperties(raylib_cpp)
