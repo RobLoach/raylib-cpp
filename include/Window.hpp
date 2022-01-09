@@ -230,6 +230,14 @@ class Window {
     }
 
     /**
+     * Set window minimum dimensions
+     */
+    inline Window& SetMinSize(const ::Vector2& size) {
+        ::SetWindowMinSize(static_cast<int>(size.x), static_cast<int>(size.y));
+        return *this;
+    }
+
+    /**
      * Set window dimensions
      */
     inline Window& SetSize(int width, int height) {
@@ -247,7 +255,7 @@ class Window {
     /**
      * Get the screen's width and height.
      */
-    inline ::Vector2 GetSize() {
+    inline Vector2 GetSize() {
         return {static_cast<float>(GetWidth()), static_cast<float>(GetHeight())};
     }
 

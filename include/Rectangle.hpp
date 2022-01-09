@@ -139,6 +139,11 @@ class Rectangle : public ::Rectangle {
         return SetSize(size.x, size.y);
     }
 
+    inline Rectangle& SetShapesTexture(const ::Texture2D& texture) {
+        ::SetShapesTexture(texture, *this);
+        return *this;
+    }
+
     inline ::Vector2 GetPosition() {
         return {x, y};
     }

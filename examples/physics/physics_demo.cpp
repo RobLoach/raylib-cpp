@@ -55,7 +55,7 @@ int main(void)
         // Update
         //----------------------------------------------------------------------------------
         // Delay initialization of variables due to physics reset async
-        physics.UpdateStep();
+        physics.Update();
 
         if (needsReset)
         {

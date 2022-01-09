@@ -206,11 +206,17 @@ class Mesh : public ::Mesh {
         ::UpdateMeshBuffer(*this, index, data, dataSize, offset);
     }
 
+    /**
+     * Draw a 3d mesh with material and transform
+     */
     inline void Draw(const ::Material& material, const ::Matrix& transform) {
         ::DrawMesh(*this, material, transform);
     }
 
-    inline void DrawInstanced(const ::Material& material, ::Matrix* transforms, int instances) {
+    /**
+     * Draw multiple mesh instances with material and different transforms
+     */
+    inline void Draw(const ::Material& material, ::Matrix* transforms, int instances) {
         ::DrawMeshInstanced(*this, material, transforms, instances);
     }
 
@@ -249,7 +255,7 @@ class Mesh : public ::Mesh {
     /**
      * Compute mesh tangents
      */
-    inline Mesh& Tangents() {
+    inline Mesh& GenTangents() {
         ::GenMeshTangents(this);
         return *this;
     }
@@ -257,7 +263,7 @@ class Mesh : public ::Mesh {
     /**
      * Compute mesh binormals (aka bitangent)
      */
-    inline Mesh& Binormals() {
+    inline Mesh& GenBinormals() {
         ::GenMeshBinormals(this);
         return *this;
     }

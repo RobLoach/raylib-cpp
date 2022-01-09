@@ -174,6 +174,20 @@ class Model : public ::Model {
         return *this;
     }
 
+    /**
+     * Compute model bounding box limits (considers all meshes)
+     */
+    inline BoundingBox GetBoundingBox() const {
+        return ::GetModelBoundingBox(*this);
+    }
+
+    /**
+     * Compute model bounding box limits (considers all meshes)
+     */
+    operator BoundingBox() const {
+        return ::GetModelBoundingBox(*this);
+    }
+
  private:
     inline void set(const ::Model& model) {
         transform = model.transform;

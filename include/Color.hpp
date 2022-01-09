@@ -162,7 +162,7 @@ class Color : public ::Color {
     }
 
     inline Color& DrawText(
-            const ::Font font,
+            const ::Font& font,
             const std::string& text,
             ::Vector2 position,
             ::Vector2 origin,

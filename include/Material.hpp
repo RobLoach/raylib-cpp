@@ -91,6 +91,22 @@ class Material : public ::Material {
         return *this;
     }
 
+    /**
+     * Draw a 3d mesh with material and transform
+     */
+    inline const Material& DrawMesh(const ::Mesh& mesh, ::Matrix transform) const {
+        ::DrawMesh(mesh, *this, transform);
+        return *this;
+    }
+
+    /**
+     * Draw multiple mesh instances with material and different transforms
+     */
+    inline const Material& DrawMesh(const ::Mesh& mesh, ::Matrix* transforms, int instances) const {
+        ::DrawMeshInstanced(mesh, *this, transforms, instances);
+        return *this;
+    }
+
  private:
     inline void set(const ::Material& material) {
         shader = material.shader;

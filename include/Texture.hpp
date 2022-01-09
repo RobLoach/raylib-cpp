@@ -130,7 +130,7 @@ class Texture : public ::Texture {
     /**
      * Update GPU texture rectangle with new data
      */
-    inline Texture& UpdateRec(::Rectangle rec, const void *pixels) {
+    inline Texture& Update(::Rectangle rec, const void *pixels) {
         UpdateTextureRec(*this, rec, pixels);
         return *this;
     }
@@ -260,6 +260,14 @@ class Texture : public ::Texture {
      */
     inline Texture& SetShapes(const ::Rectangle& source) {
         ::SetShapesTexture(*this, source);
+        return *this;
+    }
+
+    /**
+     * Set shader uniform value for texture (sampler2d)
+     */
+    inline Texture& SetShaderValue(const ::Shader& shader, int locIndex) {
+        ::SetShaderValueTexture(shader, locIndex, *this);
         return *this;
     }
 

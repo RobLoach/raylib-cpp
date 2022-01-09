@@ -34,13 +34,18 @@ class Physics {
         return *this;
     }
 
-    inline Physics& Close() {
-        ::ClosePhysics();
+    inline Physics& Update() {
+        ::UpdatePhysics();
         return *this;
     }
 
-    inline Physics& UpdateStep() {
-        ::UpdatePhysicsStep();
+    inline Physics& Reset() {
+        ::ResetPhysics();
+        return *this;
+    }
+
+    inline Physics& Close() {
+        ::ClosePhysics();
         return *this;
     }
 
@@ -66,6 +71,11 @@ class Physics {
         return ::CreatePhysicsBodyPolygon(pos, radius, sides, density);
     }
 
+    inline Physics& DestroyBody(PhysicsBody body) {
+        ::DestroyPhysicsBody(body);
+        return *this;
+    }
+
     inline Physics& AddForce(PhysicsBody body, Vector2 force) {
         ::PhysicsAddForce(body, force);
         return *this;
@@ -78,6 +88,11 @@ class Physics {
 
     inline Physics& Shatter(PhysicsBody body, Vector2 position, float force) {
         ::PhysicsShatter(body, position, force);
+        return *this;
+    }
+
+    inline Physics& SetBodyRotation(PhysicsBody body, float radians) {
+        ::SetPhysicsBodyRotation(body, radians);
         return *this;
     }
 
@@ -99,21 +114,6 @@ class Physics {
 
     inline Vector2 GetShapeVertex(PhysicsBody body, int vertex) const {
         return ::GetPhysicsShapeVertex(body, vertex);
-    }
-
-    inline Physics& SetBodyRotation(PhysicsBody body, float radians) {
-        ::SetPhysicsBodyRotation(body, radians);
-        return *this;
-    }
-
-    inline Physics& DestroyBody(PhysicsBody body) {
-        ::DestroyPhysicsBody(body);
-        return *this;
-    }
-
-    inline Physics& Reset() {
-        ::ResetPhysics();
-        return *this;
     }
 };
 }  // namespace raylib
