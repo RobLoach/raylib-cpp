@@ -44,6 +44,7 @@ set(PROJECT_NAME raylib_cpp_example)
 set(PROJECT_SOURCES main.cpp)
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 set(raylib_VERBOSE 1)
+set_property(${PROJECT_NAME} PROPERTY CXX_STANDARD 11) 
 target_link_libraries(${PROJECT_NAME} PUBLIC raylib raylib_cpp)
 
 # That's it! You should have an example executable that you can run. Have fun!
