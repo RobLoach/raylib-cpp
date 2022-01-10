@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.5] - Unreleased
+### Added
+- Web-based example at [core_basic_window_web.cpp](examples/core/core_basic_window_web.cpp)
+
 ## [4.0.4] - 2022-01-09
 ### Fixed
 - Renamed CMake project name to `raylib_cpp`
