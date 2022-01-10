@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>raylib-cpp [core] example - basic window</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <meta name="title" content="raylib-cpp [core] example - basic window">
+        <meta name="description" content="raylib is a simple and easy-to-use library to enjoy videogames programming. This a small example of what you can do.">
+        <meta name="viewport" content="width=device-width">
+        <style>
+            body {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: 0;
+                padding: 0;
+                background-color: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            body canvas {
+                object-fit: contain;
+                max-height: 100%;
+                max-width: 100%;
+            }
+        </style>
+        <script type='text/javascript' src="https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js/dist/FileSaver.min.js"> </script>
+        <script type='text/javascript'>
+            function saveFileFromMEMFSToDisk(memoryFSname, localFSname) {
+                var isSafari = false;
+                var data = FS.readFile(memoryFSname);
+                var blob;
+                if (isSafari) blob = new Blob([data.buffer], { type: "application/octet-stream" });
+                else blob = new Blob([data.buffer], { type: "application/octet-binary" });
+                saveAs(blob, localFSname);
+            }
+        </script>
+    </head>
+
+    <body>
+        <canvas id="canvas" width="800" height="450"></canvas>
+
+        <script>
+			var Module = {
+				print: console.log,
+				printErr: console.error,
+				canvas: (function() {
+					return document.getElementById('canvas');
+				})()
+            }
+        </script>
+        <script type="text/javascript" src="../core_basic_window_web.js"></script>
+    </body>
+</html>

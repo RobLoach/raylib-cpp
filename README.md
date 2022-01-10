@@ -266,6 +266,10 @@ The following are some tools in order to build and contribute to *raylib-cpp*...
 
 ### Compiling
 
+Since *raylib-cpp* is a header only library, the build process is the same as raylib's, except you will use C++ to compile instead of C. The following are some specific instructions on local development.
+
+#### Desktop
+
 *raylib-cpp* uses [CMake](https://cmake.org) as a primary target for development. To build it, and run the tests or examples, use...
 
 ``` bash
@@ -278,6 +282,19 @@ make
 make test
 ./examples/core_basic_window
 ```
+
+#### Web
+
+Use [emscripten](https://emscripten.org/) to build and test [core_basic_window_web.cpp](examples/core/core_basic_window_web.cpp).
+
+```
+mkdir build
+cd build
+emcmake cmake .. -DPLATFORM=Web -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-s USE_GLFW=3"
+emmake make
+```
+
+See [`core_basic_window_web.html`](examples/core/resources/core_basic_window_web.html) for an example HTML canvas you can you.
 
 ### Documentation
 
