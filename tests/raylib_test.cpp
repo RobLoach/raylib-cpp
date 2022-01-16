@@ -58,6 +58,27 @@ int main(int argc, char *argv[]) {
         assert(files.size() > 3);
     }
 
+    // raylib::TextReplace()
+    {
+        std::string input = "Hello World!";
+        std::string output = raylib::TextReplace(input, "World", "Moon");
+        assert(output == "Hello Moon!");
+    }
+
+    // raylib::TextInsert()
+    {
+        std::string input = "Hello World!";
+        std::string output = raylib::TextInsert(input, "Good!", 0);
+        assert(output == "Good! World!");
+    }
+
+    // raylib::TextSubtext()
+    {
+        std::string input = "Hello World!";
+        std::string output = raylib::TextSubtext(input, 6, 5);
+        assert(output == "World");
+    }
+
     // Sound
     {
         raylib::Wave wave(path + "/resources/weird.wav");
