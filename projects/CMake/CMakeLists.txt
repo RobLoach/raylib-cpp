@@ -27,14 +27,13 @@ if (NOT raylib_cpp_FOUND)
     include(FetchContent)
     FetchContent_Declare(
         raylib_cpp
-        URL https://github.com/RobLoach/raylib-cpp/archive/master.tar.gz
+        GIT_REPOSITORY https://github.com/RobLoach/raylib-cpp.git
+        GIT_TAG v4.0.4
     )
     FetchContent_GetProperties(raylib_cpp)
     if (NOT raylib_cpp_POPULATED) # Have we downloaded raylib-cpp yet?
         set(FETCHCONTENT_QUIET NO)
         FetchContent_Populate(raylib_cpp)
-        set(BUILD_RAYLIB_CPP_EXAMPLES OFF CACHE BOOL "" FORCE)
-        set(BUILD_TESTING             OFF CACHE BOOL "" FORCE)
         add_subdirectory(${raylib_cpp_SOURCE_DIR} ${raylib_cpp_BINARY_DIR})
     endif()
 endif()
@@ -43,8 +42,7 @@ endif()
 set(PROJECT_NAME raylib_cpp_example)
 set(PROJECT_SOURCES main.cpp)
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
-set(raylib_VERBOSE 1)
-set_property(${PROJECT_NAME} PROPERTY CXX_STANDARD 11) 
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 11)
 target_link_libraries(${PROJECT_NAME} PUBLIC raylib raylib_cpp)
 
 # That's it! You should have an example executable that you can run. Have fun!
