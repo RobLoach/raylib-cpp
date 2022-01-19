@@ -42,10 +42,6 @@ int main() {
 
 See the [examples folder](examples) for more of the raylib examples that have been ported over to *raylib-cpp*.
 
-## Sample Applications
-
-- [Ian Pan's Raylib Games](https://github.com/ianpan870102/raylib-practices)
-
 ## Features
 
 There are a few conventions that raylib-cpp takes on when adopting raylib. See the [raylib-cpp documentation](https://robloach.github.io/raylib-cpp/index.html) for details on the entire API.
@@ -240,7 +236,7 @@ raylib::Vector2 newDirection = direction.Rotate(30);
 
 ## Getting Started
 
-*raylib-cpp* is a header-only library. This means in order to use it, you must link your project to [raylib](https://www.raylib.com/), and then include [`include/raylib-cpp.hpp`](raylib-cpp/include/raylib-cpp.hpp).
+*raylib-cpp* is a header-only library. This means in order to use it, you must link your project to [raylib](https://www.raylib.com/), and then include [`raylib-cpp.hpp`](raylib-cpp/include/raylib-cpp.hpp).
 
 1. Set up a *raylib* project using the [build and install instructions](https://github.com/raysan5/raylib#build-and-installation)
 2. Ensure C++ files are compiled with C++
@@ -259,6 +255,10 @@ The [projects directory](projects) includes some starter templates...
 - [VSCode template](projects/VSCode)
 
 If there's a project template you would like to see added, feel free to [make an issue](https://github.com/RobLoach/raylib-cpp/issues) and we can add it in.
+
+### Applications
+
+- [Ian Pan's Raylib Games](https://github.com/ianpan870102/raylib-practices)
 
 ## Development
 
