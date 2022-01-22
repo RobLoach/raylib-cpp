@@ -5,7 +5,7 @@
 
 #include <string>
 
-#include "raylib.h"
+#include "./raylib.hpp"
 
 namespace raylib {
 class RaylibException : public std::runtime_error {
