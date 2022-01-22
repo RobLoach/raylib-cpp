@@ -11,16 +11,9 @@ namespace raylib {
 class RaylibException : public std::runtime_error {
     protected:
  public:
-    RaylibException(std::string msg) throw() : std::runtime_error(msg)
-        {
-
-        }
-
-
-    /** Destructor.
-     *  Virtual to allow for subclassing.
-     */
-    //virtual ~Except() throw () {}
+    RaylibException(std::string msg) throw() : std::runtime_error(msg) {
+        // Nothing
+    }
 
     /**
      * Outputs the exception message to TraceLog().
