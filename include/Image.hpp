@@ -5,6 +5,7 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -20,22 +21,37 @@ class Image : public ::Image {
 
     Image(const std::string& fileName) {
         Load(fileName);
+        if (!IsReady()) {
+            throw RaylibException(TextFormat("Failed to load Image from file: %s", fileName.c_str()));
+        }
     }
 
     Image(const std::string& fileName, int width, int height, int format, int headerSize) {
         LoadRaw(fileName, width, height, format, headerSize);
+        if (!IsReady()) {
+            throw RaylibException(TextFormat("Failed to load Image from file: %s", fileName.c_str()));
+        }
     }
 
     Image(const std::string& fileName, int* frames) {
         LoadAnim(fileName, frames);
+        if (!IsReady()) {
+            throw RaylibException(TextFormat("Failed to load Image from animation: %s", fileName.c_str()));
+        }
     }
 
     Image(const std::string& fileType, const unsigned char* fileData, int dataSize) {
         LoadFromMemory(fileType, fileData, dataSize);
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Image from memory");
+        }
     }
 
     Image(const ::Texture2D& texture) {
         set(::LoadImageFromTexture(texture));
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Image from Texture");
+        }
     }
 
     Image(int width, int height, ::Color color = {255, 255, 255, 255}) {
@@ -621,9 +637,9 @@ class Image : public ::Image {
     /**
      * Retrieve whether or not the Image has been loaded.
      *
-     * @return True or false depending on whether the image has been loaded.
+     * @return True or false depending on whether the Image has been loaded.
      */
-    inline bool IsLoaded() const {
+    inline bool IsReady() const {
         return data != nullptr;
     }
 

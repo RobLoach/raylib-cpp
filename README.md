@@ -220,6 +220,26 @@ std::string url = "https://raylib.com";
 raylib::OpenURL(url);
 ```
 
+### Exceptions
+
+When loading an asset fails, raylib will log a warning, but provide no other feedback for you to act upon. raylib-cpp will throw a [`RaylibException`](include/RaylibException.hpp) [runtime exception](https://en.cppreference.com/w/cpp/error/runtime_error), allowing to provide a safe method to catch failed loads.
+
+``` cpp
+// raylib
+Texture texture = LoadTexture("FileNotFound.png");
+if (texture.width == 0) {
+    TraceLog(LOG_ERROR, "Texture failed to load!");
+}
+
+// raylib-cpp
+try {
+    raylib::Texture texture("FileNotFound.png");
+}
+catch (raylib::RaylibException& error) {
+    error.TraceLog(LOG_ERROR);
+}
+```
+
 ### RayMath
 
 The [raymath](https://github.com/raysan5/raylib/blob/master/src/raymath.h) methods are included.

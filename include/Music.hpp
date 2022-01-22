@@ -5,6 +5,7 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -21,6 +22,9 @@ class Music : public ::Music {
      */
     Music(const std::string& fileName) {
         set(::LoadMusicStream(fileName.c_str()));
+        if (!IsReady()) {
+            throw RaylibException(TextFormat("Failed to load Music from file: %s", fileName.c_str()));
+        }
     }
 
     /**
@@ -28,6 +32,9 @@ class Music : public ::Music {
      */
     Music(const std::string& fileType, unsigned char* data, int dataSize) {
         set(::LoadMusicStreamFromMemory(fileType.c_str(), data, dataSize));
+        if (!IsReady()) {
+            throw RaylibException(TextFormat("Failed to load Music from %s file", fileType.c_str()));
+        }
     }
 
     Music(const Music&) = delete;
@@ -174,9 +181,9 @@ class Music : public ::Music {
     /**
      * Retrieve whether or not the Music has been loaded.
      *
-     * @return True or false depending on whether the music has been loaded.
+     * @return True or false depending on whether the Music has been loaded.
      */
-    inline bool IsLoaded() const {
+    inline bool IsReady() const {
         return stream.buffer != nullptr;
     }
 

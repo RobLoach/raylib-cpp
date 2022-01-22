@@ -5,6 +5,7 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -28,6 +29,9 @@ class Wave : public ::Wave {
      */
     Wave(const std::string& fileName) {
         set(::LoadWave(fileName.c_str()));
+        if (!IsReady()) {
+            throw RaylibException(TextFormat("Failed to load Wave from file: %s", fileName.c_str()));
+        }
     }
 
     /**
@@ -35,6 +39,9 @@ class Wave : public ::Wave {
      */
     Wave(const std::string& fileType, const unsigned char *fileData, int dataSize) {
         set(::LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Wave from memory");
+        }
     }
 
     Wave(const Wave& other) {
@@ -179,7 +186,7 @@ class Wave : public ::Wave {
      *
      * @return True or false depending on whether the wave data has been loaded.
      */
-    inline bool IsLoaded() const {
+    inline bool IsReady() const {
         return data != nullptr;
     }
 

@@ -5,6 +5,7 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -29,10 +30,16 @@ class Sound : public ::Sound {
 
     Sound(const std::string& fileName) {
         set(LoadSound(fileName.c_str()));
+        if (!IsReady()) {
+            throw RaylibException(TextFormat("Failed to load Sound from file: %s", fileName.c_str()));
+        }
     }
 
     Sound(const ::Wave& wave) {
         set(LoadSoundFromWave(wave));
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Sound from Wave");
+        }
     }
 
     ~Sound() {
@@ -154,7 +161,7 @@ class Sound : public ::Sound {
      *
      * @return True or false depending on whether the Sound buffer is loaded.
      */
-    bool IsLoaded() {
+    bool IsReady() {
         return stream.buffer != nullptr;
     }
 
