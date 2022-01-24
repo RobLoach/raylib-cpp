@@ -30,12 +30,28 @@ class Font : public ::Font {
         set(font);
     }
 
+    /**
+     * Loads a Font from the given file.
+     *
+     * @param fileName The file name of the font to load.
+     *
+     * @throws raylib::RaylibException Throws if the given font failed to initialize.
+     */
     Font(const std::string& fileName) {
         if (!Load(fileName)) {
             throw RaylibException("Failed to load Font from file");
         }
     }
 
+    /**
+     * Loads a Font from the given file, with generation parameters.
+     *
+     * @param fileName The file name of the font to load.
+     *
+     * @throws raylib::RaylibException Throws if the given font failed to initialize.
+     *
+     * @see ::LoadFontEx
+     */
     Font(const std::string& fileName, int fontSize, int* fontChars, int charCount)  {
         if (!Load(fileName, fontSize, fontChars, charCount)) {
             throw RaylibException("Failed to load font from font with extras");
@@ -108,11 +124,30 @@ class Font : public ::Font {
         return *this;
     }
 
+    /**
+     * Loads a font from a given file.
+     *
+     * @param fileName The filename of the font to load.
+     *
+     * @return True of false depending on if the font loaded successfully.
+     *
+     * @see ::LoadFont()
+     */
     bool Load(const std::string& fileName) {
         set(::LoadFont(fileName.c_str()));
         return baseSize > 0;
     }
 
+    /**
+     * Loads a font from a given file with generation parameters.
+     *
+     * @param fileName The filename of the font to load.
+     * @param fontSize The desired size of the font.
+     *
+     * @return True of false depending on if the font loaded successfully.
+     *
+     * @see ::LoadFontEx()
+     */
     bool Load(const std::string& fileName, int fontSize, int* fontChars, int charCount)  {
         set(::LoadFontEx(fileName.c_str(), fontSize, fontChars, charCount));
         return baseSize > 0;

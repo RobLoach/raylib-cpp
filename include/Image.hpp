@@ -222,6 +222,10 @@ class Image : public ::Image {
 
     /**
      * Load image from file into CPU memory (RAM)
+     *
+     * @return Whether or not the image was loaded successfully.
+     *
+     * @see ::LoadImage()
      */
     bool Load(const std::string& fileName) {
         set(::LoadImage(fileName.c_str()));
@@ -230,6 +234,10 @@ class Image : public ::Image {
 
     /**
      * Load image from RAW file data.
+     *
+     * @return Whether or not the raw image data was loaded successfully.
+     *
+     * @see ::LoadImageRaw()
      */
     bool Load(const std::string& fileName, int width, int height, int format, int headerSize) {
         set(::LoadImageRaw(fileName.c_str(), width, height, format, headerSize));
@@ -238,6 +246,10 @@ class Image : public ::Image {
 
     /**
      * Load image sequence from file (frames appended to image.data).
+     *
+     * @return Whether or not the image animation was loaded successfully.
+     *
+     * @see ::LoadImageAnim()
      */
     bool Load(const std::string& fileName, int* frames) {
         set(::LoadImageAnim(fileName.c_str(), frames));
@@ -246,6 +258,10 @@ class Image : public ::Image {
 
     /**
      * Load image from memory buffer, fileType refers to extension: i.e. "png".
+     *
+     * @return Whether or not the image data was loaded successfully.
+     *
+     * @see ::LoadImageFromMemory()
      */
     bool Load(
             const std::string& fileType,
@@ -259,6 +275,8 @@ class Image : public ::Image {
      * Load an image from the given file.
      *
      * @return True or false depending on whether or not the image was loaded from the texture.
+     *
+     * @see ::LoadImageFromTexture()
      */
     bool Load(const ::Texture2D& texture) {
         set(::LoadImageFromTexture(texture));

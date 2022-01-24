@@ -15,6 +15,8 @@ class AudioDevice {
      * Initialize audio device and context.
      *
      * @param lateInit Whether or not to post-pone initializing the context.
+     *
+     * @throws raylib::RaylibException Throws if the AudioDevice failed to initialize.
      */
     AudioDevice(bool lateInit = false) {
         if (!lateInit) {
