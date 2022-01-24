@@ -14,14 +14,13 @@ var searchData=
   ['isfocused_208',['IsFocused',['../classraylib_1_1_window.html#adc7484e498d54cdb28f342097d313284',1,'raylib::Window']]],
   ['isfullscreen_209',['IsFullscreen',['../classraylib_1_1_window.html#a5497f129bcfd214f198a1494a8d6aeb0',1,'raylib::Window']]],
   ['ishidden_210',['IsHidden',['../classraylib_1_1_window.html#aa84905241727491fcfa04d1b2b4bf9a4',1,'raylib::Window']]],
-  ['isloaded_211',['IsLoaded',['../classraylib_1_1_image.html#add2ef8fbb89abbd2319a3b198f7d21af',1,'raylib::Image::IsLoaded()'],['../classraylib_1_1_music.html#a7f34bf3ae52e895dc76a8f451c437ddb',1,'raylib::Music::IsLoaded()'],['../classraylib_1_1_sound.html#a55f2f36627d5251f37f009147d18d7a2',1,'raylib::Sound::IsLoaded()'],['../classraylib_1_1_wave.html#a17304e06ee5f3a6e61886796e0ce86db',1,'raylib::Wave::IsLoaded()']]],
-  ['ismaximized_212',['IsMaximized',['../classraylib_1_1_window.html#ae83a47dddc7be356bfd7d8328f7bfcc2',1,'raylib::Window']]],
-  ['isminimized_213',['IsMinimized',['../classraylib_1_1_window.html#af37b1503d3d94dadd16a2e443853fca7',1,'raylib::Window']]],
-  ['ismodelanimationvalid_214',['IsModelAnimationValid',['../classraylib_1_1_model.html#a4d9e6f4093c9afd36c8a882884b2e973',1,'raylib::Model']]],
-  ['isplaying_215',['IsPlaying',['../classraylib_1_1_audio_stream.html#a3ddeb56330bff2e4ae2f6aff6b8c63e9',1,'raylib::AudioStream::IsPlaying()'],['../classraylib_1_1_music.html#a020a0807b02878ce88eb72a51f93a7a8',1,'raylib::Music::IsPlaying()'],['../classraylib_1_1_sound.html#abcb43001db69499796a100f8593c1233',1,'raylib::Sound::IsPlaying()']]],
-  ['isprocessed_216',['IsProcessed',['../classraylib_1_1_audio_stream.html#a1c208447f698ea82fb3c51f5c9978251',1,'raylib::AudioStream']]],
-  ['isready_217',['IsReady',['../classraylib_1_1_audio_device.html#a5555c3a41868046ea8b6ff08195f21bc',1,'raylib::AudioDevice::IsReady()'],['../classraylib_1_1_window.html#a9814a0d29da572bba75910b41cfe0f77',1,'raylib::Window::IsReady()']]],
-  ['isresized_218',['IsResized',['../classraylib_1_1_window.html#abc3ef5315e01e7fbaa1023a3a1be5124',1,'raylib::Window']]],
-  ['isstate_219',['IsState',['../classraylib_1_1_window.html#a5b9dd646247a51705a040d8c1860bb86',1,'raylib::Window']]],
-  ['isvalid_220',['IsValid',['../classraylib_1_1_model_animation.html#a8759ec999d5a7370e364e8e86d278c34',1,'raylib::ModelAnimation']]]
+  ['ismaximized_211',['IsMaximized',['../classraylib_1_1_window.html#ae83a47dddc7be356bfd7d8328f7bfcc2',1,'raylib::Window']]],
+  ['isminimized_212',['IsMinimized',['../classraylib_1_1_window.html#af37b1503d3d94dadd16a2e443853fca7',1,'raylib::Window']]],
+  ['ismodelanimationvalid_213',['IsModelAnimationValid',['../classraylib_1_1_model.html#a4d9e6f4093c9afd36c8a882884b2e973',1,'raylib::Model']]],
+  ['isplaying_214',['IsPlaying',['../classraylib_1_1_audio_stream.html#a3ddeb56330bff2e4ae2f6aff6b8c63e9',1,'raylib::AudioStream::IsPlaying()'],['../classraylib_1_1_music.html#a020a0807b02878ce88eb72a51f93a7a8',1,'raylib::Music::IsPlaying()'],['../classraylib_1_1_sound.html#abcb43001db69499796a100f8593c1233',1,'raylib::Sound::IsPlaying()']]],
+  ['isprocessed_215',['IsProcessed',['../classraylib_1_1_audio_stream.html#a1c208447f698ea82fb3c51f5c9978251',1,'raylib::AudioStream']]],
+  ['isready_216',['IsReady',['../classraylib_1_1_audio_device.html#a5555c3a41868046ea8b6ff08195f21bc',1,'raylib::AudioDevice::IsReady()'],['../classraylib_1_1_image.html#a59d31473c20102852665e3210bb4818b',1,'raylib::Image::IsReady()'],['../classraylib_1_1_music.html#a42cbf0ab75ae78377c4f2dbb6ddc82e4',1,'raylib::Music::IsReady()'],['../classraylib_1_1_sound.html#a0cb0bd9183fa40233f42dae15240abf9',1,'raylib::Sound::IsReady()'],['../classraylib_1_1_texture.html#a03163319999f4279fc17c24eb37fd187',1,'raylib::Texture::IsReady()'],['../classraylib_1_1_wave.html#a9f714404699bcf17b4ccfe6248691a7a',1,'raylib::Wave::IsReady()'],['../classraylib_1_1_window.html#a9814a0d29da572bba75910b41cfe0f77',1,'raylib::Window::IsReady()']]],
+  ['isresized_217',['IsResized',['../classraylib_1_1_window.html#abc3ef5315e01e7fbaa1023a3a1be5124',1,'raylib::Window']]],
+  ['isstate_218',['IsState',['../classraylib_1_1_window.html#a5b9dd646247a51705a040d8c1860bb86',1,'raylib::Window']]],
+  ['isvalid_219',['IsValid',['../classraylib_1_1_model_animation.html#a8759ec999d5a7370e364e8e86d278c34',1,'raylib::ModelAnimation']]]
 ];

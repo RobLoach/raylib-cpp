@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['raylib_2dcpp_272',['raylib-cpp',['../index.html',1,'']]],
-  ['ray_273',['Ray',['../classraylib_1_1_ray.html',1,'raylib']]],
-  ['raycollision_274',['RayCollision',['../classraylib_1_1_ray_collision.html',1,'raylib::RayCollision'],['../classraylib_1_1_ray_collision.html#a083a89a5a88e73e6b9b76a341c1fdbc4',1,'raylib::RayCollision::RayCollision(const ::Ray &amp;ray, const ::Mesh &amp;mesh, const ::Matrix &amp;transform)'],['../classraylib_1_1_ray_collision.html#a9acc36137eb6f874736d51ec68e8843e',1,'raylib::RayCollision::RayCollision(const ::Ray &amp;ray, const ::Model &amp;model)'],['../classraylib_1_1_ray_collision.html#a3aad99fa07398e0315e8cae9b57b14c0',1,'raylib::RayCollision::RayCollision(const ::Ray &amp;ray, ::Vector3 p1, ::Vector3 p2, ::Vector3 p3)']]],
-  ['raylib_275',['raylib',['../namespaceraylib.html',1,'']]],
+  ['raylib_2dcpp_271',['raylib-cpp',['../index.html',1,'']]],
+  ['ray_272',['Ray',['../classraylib_1_1_ray.html',1,'raylib']]],
+  ['raycollision_273',['RayCollision',['../classraylib_1_1_ray_collision.html',1,'raylib::RayCollision'],['../classraylib_1_1_ray_collision.html#a083a89a5a88e73e6b9b76a341c1fdbc4',1,'raylib::RayCollision::RayCollision(const ::Ray &amp;ray, const ::Mesh &amp;mesh, const ::Matrix &amp;transform)'],['../classraylib_1_1_ray_collision.html#a9acc36137eb6f874736d51ec68e8843e',1,'raylib::RayCollision::RayCollision(const ::Ray &amp;ray, const ::Model &amp;model)'],['../classraylib_1_1_ray_collision.html#a3aad99fa07398e0315e8cae9b57b14c0',1,'raylib::RayCollision::RayCollision(const ::Ray &amp;ray, ::Vector3 p1, ::Vector3 p2, ::Vector3 p3)']]],
+  ['raylib_274',['raylib',['../namespaceraylib.html',1,'']]],
+  ['raylibexception_275',['RaylibException',['../classraylib_1_1_raylib_exception.html',1,'raylib::RaylibException'],['../classraylib_1_1_raylib_exception.html#a12eace3257881770d0464dc17dfb2f37',1,'raylib::RaylibException::RaylibException()']]],
   ['rectangle_276',['Rectangle',['../classraylib_1_1_rectangle.html',1,'raylib']]],
   ['reflect_277',['Reflect',['../classraylib_1_1_vector2.html#a8732abb90648f01e75480a0edf7292d7',1,'raylib::Vector2']]],
   ['rendertexture_278',['RenderTexture',['../classraylib_1_1_render_texture.html',1,'raylib']]],

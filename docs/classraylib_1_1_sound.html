@@ -98,13 +98,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a356f3d89b688e93d3d72e2cbf3f1a47f"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classraylib_1_1_audio_stream.html">AudioStream</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_sound.html#a356f3d89b688e93d3d72e2cbf3f1a47f">GetStream</a> () const</td></tr>
 <tr class="memdesc:a356f3d89b688e93d3d72e2cbf3f1a47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the stream value for the object.  <a href="classraylib_1_1_sound.html#a356f3d89b688e93d3d72e2cbf3f1a47f">More...</a><br /></td></tr>
 <tr class="separator:a356f3d89b688e93d3d72e2cbf3f1a47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55f2f36627d5251f37f009147d18d7a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_sound.html#a55f2f36627d5251f37f009147d18d7a2">IsLoaded</a> ()</td></tr>
-<tr class="memdesc:a55f2f36627d5251f37f009147d18d7a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve whether or not the <a class="el" href="classraylib_1_1_sound.html" title="Wave/Sound management functions.">Sound</a> buffer is loaded.  <a href="classraylib_1_1_sound.html#a55f2f36627d5251f37f009147d18d7a2">More...</a><br /></td></tr>
-<tr class="separator:a55f2f36627d5251f37f009147d18d7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcb43001db69499796a100f8593c1233"><td class="memItemLeft" align="right" valign="top"><a id="abcb43001db69499796a100f8593c1233"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_sound.html#abcb43001db69499796a100f8593c1233">IsPlaying</a> () const</td></tr>
 <tr class="memdesc:abcb43001db69499796a100f8593c1233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a sound is currently playing. <br /></td></tr>
 <tr class="separator:abcb43001db69499796a100f8593c1233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb0bd9183fa40233f42dae15240abf9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_sound.html#a0cb0bd9183fa40233f42dae15240abf9">IsReady</a> ()</td></tr>
+<tr class="memdesc:a0cb0bd9183fa40233f42dae15240abf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve whether or not the <a class="el" href="classraylib_1_1_sound.html" title="Wave/Sound management functions.">Sound</a> buffer is loaded.  <a href="classraylib_1_1_sound.html#a0cb0bd9183fa40233f42dae15240abf9">More...</a><br /></td></tr>
+<tr class="separator:a0cb0bd9183fa40233f42dae15240abf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8842afbd75bfa9f997c9f92eaaf56896"><td class="memItemLeft" align="right" valign="top"><a id="a8842afbd75bfa9f997c9f92eaaf56896"></a>
 <a class="el" href="classraylib_1_1_sound.html">Sound</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classraylib_1_1_sound.html">Sound</a> &amp;)=delete</td></tr>
 <tr class="separator:a8842afbd75bfa9f997c9f92eaaf56896"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,7 +167,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="fragment"><div class="line"><a class="code" href="classraylib_1_1_sound.html">raylib::Sound</a> boom(<span class="stringliteral">&quot;boom.wav&quot;</span>);</div>
 <div class="line">boom.Play();</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="_sound_8hpp_source.html#l00018">18</a> of file <a class="el" href="_sound_8hpp_source.html">Sound.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_sound_8hpp_source.html#l00019">19</a> of file <a class="el" href="_sound_8hpp_source.html">Sound.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af300841c8c1b12106c3533074cda2968"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af300841c8c1b12106c3533074cda2968">&#9670;&nbsp;</a></span>GetFrameCount()</h2>
@@ -195,7 +195,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the frameCount value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The frameCount value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_sound_8hpp_source.html#l00042">42</a> of file <a class="el" href="_sound_8hpp_source.html">Sound.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_sound_8hpp_source.html#l00049">49</a> of file <a class="el" href="_sound_8hpp_source.html">Sound.hpp</a>.</p>
 
 </div>
 </div>
@@ -225,12 +225,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the stream value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The stream value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_sound_8hpp_source.html#l00043">43</a> of file <a class="el" href="_sound_8hpp_source.html">Sound.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_sound_8hpp_source.html#l00050">50</a> of file <a class="el" href="_sound_8hpp_source.html">Sound.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a55f2f36627d5251f37f009147d18d7a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55f2f36627d5251f37f009147d18d7a2">&#9670;&nbsp;</a></span>IsLoaded()</h2>
+<a id="a0cb0bd9183fa40233f42dae15240abf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb0bd9183fa40233f42dae15240abf9">&#9670;&nbsp;</a></span>IsReady()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -239,7 +239,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool raylib::Sound::IsLoaded </td>
+          <td class="memname">bool raylib::Sound::IsReady </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -255,7 +255,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieve whether or not the <a class="el" href="classraylib_1_1_sound.html" title="Wave/Sound management functions.">Sound</a> buffer is loaded. </p>
 <dl class="section return"><dt>Returns</dt><dd>True or false depending on whether the <a class="el" href="classraylib_1_1_sound.html" title="Wave/Sound management functions.">Sound</a> buffer is loaded. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_sound_8hpp_source.html#l00157">157</a> of file <a class="el" href="_sound_8hpp_source.html">Sound.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_sound_8hpp_source.html#l00164">164</a> of file <a class="el" href="_sound_8hpp_source.html">Sound.hpp</a>.</p>
 
 </div>
 </div>
@@ -291,7 +291,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_sound_8hpp_source.html#l00042">42</a> of file <a class="el" href="_sound_8hpp_source.html">Sound.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_sound_8hpp_source.html#l00049">49</a> of file <a class="el" href="_sound_8hpp_source.html">Sound.hpp</a>.</p>
 
 </div>
 </div>
@@ -327,14 +327,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_sound_8hpp_source.html#l00043">43</a> of file <a class="el" href="_sound_8hpp_source.html">Sound.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_sound_8hpp_source.html#l00050">50</a> of file <a class="el" href="_sound_8hpp_source.html">Sound.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_sound_8hpp_source.html#l00077">Unload()</a>.</p>
+<p class="reference">References <a class="el" href="_sound_8hpp_source.html#l00084">Unload()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aclassraylib_1_1_sound_html"><div class="ttname"><a href="classraylib_1_1_sound.html">raylib::Sound</a></div><div class="ttdoc">Wave/Sound management functions.</div><div class="ttdef"><b>Definition:</b> <a href="_sound_8hpp_source.html#l00018">Sound.hpp:18</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_sound_html"><div class="ttname"><a href="classraylib_1_1_sound.html">raylib::Sound</a></div><div class="ttdoc">Wave/Sound management functions.</div><div class="ttdef"><b>Definition:</b> <a href="_sound_8hpp_source.html#l00019">Sound.hpp:19</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

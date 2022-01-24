@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['raylib_480',['raylib',['../namespaceraylib.html',1,'']]]
+  ['raylib_481',['raylib',['../namespaceraylib.html',1,'']]]
 ];

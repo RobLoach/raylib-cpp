@@ -134,6 +134,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray_collision.html">RayCollision</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raycast hit information.  <a href="classraylib_1_1_ray_collision.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_raylib_exception.html">RaylibException</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception used for most raylib-related exceptions.  <a href="classraylib_1_1_raylib_exception.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classraylib_1_1_rectangle.html" title="Rectangle type.">Rectangle</a> type.  <a href="classraylib_1_1_rectangle.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -316,17 +319,13 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a85b0e8952631936155bae8979cbf2aed">TakeScreenshot</a> (const std::string &amp;fileName)</td></tr>
 <tr class="memdesc:a85b0e8952631936155bae8979cbf2aed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a screenshot of current screen (saved a .png) <br /></td></tr>
 <tr class="separator:a85b0e8952631936155bae8979cbf2aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55886a9f2aa8047bfb1af236f38a15c1"><td class="memItemLeft" align="right" valign="top"><a id="a55886a9f2aa8047bfb1af236f38a15c1"></a>
-RLAPI void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a55886a9f2aa8047bfb1af236f38a15c1">TextAppend</a> (const std::string &amp;text, const std::string &amp;append, int *position)</td></tr>
-<tr class="memdesc:a55886a9f2aa8047bfb1af236f38a15c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append text at specific position and move cursor! <br /></td></tr>
-<tr class="separator:a55886a9f2aa8047bfb1af236f38a15c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a326b43b5b209389b1b5ecf4adc9ea49d"><td class="memItemLeft" align="right" valign="top"><a id="a326b43b5b209389b1b5ecf4adc9ea49d"></a>
 RLAPI int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a326b43b5b209389b1b5ecf4adc9ea49d">TextFindIndex</a> (const std::string &amp;text, const std::string &amp;find)</td></tr>
 <tr class="memdesc:a326b43b5b209389b1b5ecf4adc9ea49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find first text occurrence within a string. <br /></td></tr>
 <tr class="separator:a326b43b5b209389b1b5ecf4adc9ea49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a957beb0de1bc12f1781b9f9af4e7d5a6"><td class="memItemLeft" align="right" valign="top"><a id="a957beb0de1bc12f1781b9f9af4e7d5a6"></a>
 RLAPI std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a957beb0de1bc12f1781b9f9af4e7d5a6">TextInsert</a> (const std::string &amp;text, const std::string &amp;insert, int position)</td></tr>
-<tr class="memdesc:a957beb0de1bc12f1781b9f9af4e7d5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert text in a position (WARNING: memory must be freed!) <br /></td></tr>
+<tr class="memdesc:a957beb0de1bc12f1781b9f9af4e7d5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert text in a position. <br /></td></tr>
 <tr class="separator:a957beb0de1bc12f1781b9f9af4e7d5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc1e3c933eb301bee7d42466a3ec5261"><td class="memItemLeft" align="right" valign="top"><a id="afc1e3c933eb301bee7d42466a3ec5261"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#afc1e3c933eb301bee7d42466a3ec5261">TextIsEqual</a> (const std::string &amp;text1, const std::string &amp;text2)</td></tr>
@@ -338,7 +337,7 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class=
 <tr class="separator:a3c5e254ed90864520fd592295941bbaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80f557311e1acab398ea456340db6566"><td class="memItemLeft" align="right" valign="top"><a id="a80f557311e1acab398ea456340db6566"></a>
 RLAPI std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a80f557311e1acab398ea456340db6566">TextReplace</a> (const std::string &amp;text, const std::string &amp;replace, const std::string &amp;by)</td></tr>
-<tr class="memdesc:a80f557311e1acab398ea456340db6566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace text string (WARNING: memory must be freed!) <br /></td></tr>
+<tr class="memdesc:a80f557311e1acab398ea456340db6566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace text string. <br /></td></tr>
 <tr class="separator:a80f557311e1acab398ea456340db6566"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56b3428d8e400e61dc30af5b5827bbd3"><td class="memItemLeft" align="right" valign="top"><a id="a56b3428d8e400e61dc30af5b5827bbd3"></a>
 RLAPI std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib.html#a56b3428d8e400e61dc30af5b5827bbd3">TextSubtext</a> (const std::string &amp;text, int position, int length)</td></tr>
