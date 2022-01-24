@@ -295,10 +295,11 @@ RLAPI inline std::string TextSubtext(const std::string& text, int position, int 
 }
 
 /**
- * Replace text string (WARNING: memory must be freed!)
+ * Replace text string
  */
 RLAPI inline std::string TextReplace(const std::string& text, const std::string& replace, const std::string& by) {
-    char* output = ::TextReplace((char*)text.c_str(), replace.c_str(), by.c_str());
+    const char* input = text.c_str();
+    char* output = ::TextReplace(const_cast<char*>(input), replace.c_str(), by.c_str());
     if (output != NULL) {
         std::string stringOutput(output);
         free(output);
@@ -308,7 +309,7 @@ RLAPI inline std::string TextReplace(const std::string& text, const std::string&
 }
 
 /**
- * Insert text in a position (WARNING: memory must be freed!)
+ * Insert text in a position
  */
 RLAPI inline std::string TextInsert(const std::string& text, const std::string& insert, int position) {
     char* output = ::TextInsert(text.c_str(), insert.c_str(), position);

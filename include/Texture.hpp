@@ -15,11 +15,10 @@ namespace raylib {
  */
 class Texture : public ::Texture {
  public:
-
     /**
      * Default constructor to create an empty Texture object.
      */
-    Texture() :id(0), width(0), height(0), mipmaps(0), format(0) {
+    Texture() : ::Texture{0, 0, 0, 0, 0} {
         // Nothing.
     }
 
