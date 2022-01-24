@@ -15,10 +15,26 @@ namespace raylib {
  */
 class Texture : public ::Texture {
  public:
+
+    /**
+     * Default constructor to create an empty Texture object.
+     */
+    Texture() :id(0), width(0), height(0), mipmaps(0), format(0) {
+        // Nothing.
+    }
+
+    /**
+     * Creates a texture object based on the given Texture struct data.
+     */
     Texture(const ::Texture& texture) {
         set(texture);
     }
 
+    /**
+     * Creates a texture from the given Image.
+     *
+     * @throws raylib::RaylibException Throws if failed to create the texture from the given image.
+     */
     Texture(const ::Image& image) {
         LoadFromImage(image);
         if (!IsReady()) {
@@ -28,6 +44,8 @@ class Texture : public ::Texture {
 
     /**
      * Load cubemap from image, multiple image cubemap layouts supported.
+     *
+     * @throws raylib::RaylibException Throws if failed to create the texture from the given cubemap.
      *
      * @see LoadTextureCubemap()
      */
@@ -40,6 +58,8 @@ class Texture : public ::Texture {
 
     /**
      * Load texture from file into GPU memory (VRAM)
+     *
+     * @throws raylib::RaylibException Throws if failed to create the texture from the given file.
      */
     Texture(const std::string& fileName) {
         Load(fileName);
