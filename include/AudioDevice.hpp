@@ -3,6 +3,7 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -17,7 +18,9 @@ class AudioDevice {
      */
     AudioDevice(bool lateInit = false) {
         if (!lateInit) {
-            Init();
+            if (!Init()) {
+                throw RaylibException("Failed to initialize AudioDevice");
+            }
         }
     }
 
@@ -31,9 +34,9 @@ class AudioDevice {
     /**
      * Initialize audio device and context.
      */
-    inline AudioDevice& Init() {
+    inline bool Init() {
         ::InitAudioDevice();
-        return *this;
+        return IsReady();
     }
 
     /**

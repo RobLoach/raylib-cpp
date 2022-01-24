@@ -4,6 +4,7 @@
 #include <string>
 
 #include "./raylib.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -17,7 +18,9 @@ class Window {
     Window(int width = 800, int height = 450, const std::string& title = "raylib",
             bool lateInit = false) {
         if (!lateInit) {
-            Init(width, height, title);
+            if (!Init(width, height, title)) {
+                throw RaylibException("Failed to create Window");
+            }
         }
     }
 
@@ -28,8 +31,14 @@ class Window {
         Close();
     }
 
-    void Init(int width = 800, int height = 450, const std::string& title = "raylib") {
+    /**
+     * Initializes the window.
+     *
+     * @return True or false, depending on if the Window initialized properly.
+     */
+    bool Init(int width = 800, int height = 450, const std::string& title = "raylib") {
         ::InitWindow(width, height, title.c_str());
+        return IsWindowReady();
     }
 
     /**

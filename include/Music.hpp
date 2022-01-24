@@ -13,6 +13,17 @@ namespace raylib {
  */
 class Music : public ::Music {
  public:
+    /**
+     * Default Music constructor to build an empty Music object.
+     */
+    Music() {
+        ctxType = 0;
+        ctxData = nullptr;
+        looping = false;
+        frameCount = 0;
+        stream.buffer = nullptr;
+    }
+
     Music(const ::Music& music) {
         set(music);
     }
@@ -21,8 +32,7 @@ class Music : public ::Music {
      * Load music stream from file
      */
     Music(const std::string& fileName) {
-        set(::LoadMusicStream(fileName.c_str()));
-        if (!IsReady()) {
+        if (!Load(fileName)) {
             throw RaylibException(TextFormat("Failed to load Music from file: %s", fileName.c_str()));
         }
     }
@@ -31,8 +41,7 @@ class Music : public ::Music {
      * Load music stream from memory
      */
     Music(const std::string& fileType, unsigned char* data, int dataSize) {
-        set(::LoadMusicStreamFromMemory(fileType.c_str(), data, dataSize));
-        if (!IsReady()) {
+        if (!Load(fileType, data, dataSize)) {
             throw RaylibException(TextFormat("Failed to load Music from %s file", fileType.c_str()));
         }
     }
@@ -176,6 +185,22 @@ class Music : public ::Music {
      */
     inline float GetTimePlayed() const {
         return ::GetMusicTimePlayed(*this);
+    }
+
+    /**
+     * Load music stream from file
+     */
+    bool Load(const std::string& fileName) {
+        set(::LoadMusicStream(fileName.c_str()));
+        return IsReady();
+    }
+
+    /**
+     * Load music stream from memory
+     */
+    bool Load(const std::string& fileType, unsigned char* data, int dataSize) {
+        set(::LoadMusicStreamFromMemory(fileType.c_str(), data, dataSize));
+        return IsReady();
     }
 
     /**

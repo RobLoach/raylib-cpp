@@ -5,6 +5,7 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -12,6 +13,15 @@ namespace raylib {
  */
 class Font : public ::Font {
  public:
+    Font(int baseSize,
+            int glyphCount,
+            int glyphPadding,
+            ::Texture2D texture,
+            ::Rectangle *recs = nullptr,
+            ::GlyphInfo *glyphs = nullptr) : ::Font{baseSize, glyphCount, glyphPadding, texture, recs, glyphs} {
+        // Nothing.
+    }
+
     Font() {
         set(::GetFontDefault());
     }
@@ -21,21 +31,28 @@ class Font : public ::Font {
     }
 
     Font(const std::string& fileName) {
-        set(::LoadFont(fileName.c_str()));
+        if (!Load(fileName)) {
+            throw RaylibException("Failed to load Font from file");
+        }
     }
 
     Font(const std::string& fileName, int fontSize, int* fontChars, int charCount)  {
-        set(::LoadFontEx(fileName.c_str(), fontSize, fontChars, charCount));
+        if (!Load(fileName, fontSize, fontChars, charCount)) {
+            throw RaylibException("Failed to load font from font with extras");
+        }
     }
 
     Font(const ::Image& image, ::Color key, int firstChar) {
-        set(::LoadFontFromImage(image, key, firstChar));
+        if (!Load(image, key, firstChar)) {
+            throw RaylibException("Failed to load Texture from Image");
+        }
     }
 
     Font(const std::string& fileType, const unsigned char* fileData, int dataSize, int fontSize,
             int *fontChars, int charsCount)  {
-        set(::LoadFontFromMemory(fileType.c_str(), fileData, dataSize, fontSize, fontChars,
-            charsCount));
+        if (!Load(fileType, fileData, dataSize, fontSize, fontChars, charsCount)) {
+            throw RaylibException("Failed to load Texture from file data");
+        }
     }
 
     Font(const Font&) = delete;
@@ -89,6 +106,28 @@ class Font : public ::Font {
         other.glyphs = nullptr;
 
         return *this;
+    }
+
+    bool Load(const std::string& fileName) {
+        set(::LoadFont(fileName.c_str()));
+        return baseSize > 0;
+    }
+
+    bool Load(const std::string& fileName, int fontSize, int* fontChars, int charCount)  {
+        set(::LoadFontEx(fileName.c_str(), fontSize, fontChars, charCount));
+        return baseSize > 0;
+    }
+
+    bool Load(const ::Image& image, ::Color key, int firstChar) {
+        set(::LoadFontFromImage(image, key, firstChar));
+        return baseSize > 0;
+    }
+
+    bool Load(const std::string& fileType, const unsigned char* fileData, int dataSize, int fontSize,
+            int *fontChars, int charsCount)  {
+        set(::LoadFontFromMemory(fileType.c_str(), fileData, dataSize, fontSize, fontChars,
+            charsCount));
+        return baseSize > 0;
     }
 
     /**
