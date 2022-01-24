@@ -306,7 +306,7 @@ class Texture : public ::Texture {
      * @return True or false depending on whether the Texture has data.
      */
     bool IsReady() {
-        return width != 0;
+        return id != 0;
     }
 
  private:
