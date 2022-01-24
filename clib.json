@@ -43,6 +43,7 @@
     "include/Physics.hpp",
     "include/Ray.hpp",
     "include/RayCollision.hpp",
+    "include/RaylibException.hpp",
     "include/raylib-cpp-utils.hpp",
     "include/raylib-cpp.hpp",
     "include/raylib.hpp",

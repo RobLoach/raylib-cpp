@@ -3,6 +3,7 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -14,11 +15,22 @@ class AudioStream : public ::AudioStream {
         set(music);
     }
 
+    AudioStream(rAudioBuffer* buffer = nullptr,
+            unsigned int sampleRate = 0,
+            unsigned int sampleSize = 0,
+            unsigned int channels = 0) : ::AudioStream{buffer, sampleRate, sampleSize, channels} {
+        // Nothing.
+    }
+
     /**
      * Init audio stream (to stream raw audio pcm data)
+     *
+     * @throws raylib::RaylibException Throws if the AudioStream failed to load.
      */
     AudioStream(unsigned int SampleRate, unsigned int SampleSize, unsigned int Channels = 2) {
-        set(LoadAudioStream(SampleRate, SampleSize, Channels));
+        if (!Load(SampleRate, SampleSize, Channels)) {
+            throw RaylibException("Failed to create AudioStream");
+        }
     }
 
     AudioStream(const AudioStream&) = delete;
@@ -146,6 +158,23 @@ class AudioStream : public ::AudioStream {
      */
     inline static void SetBufferSizeDefault(int size) {
         ::SetAudioStreamBufferSizeDefault(size);
+    }
+
+    /**
+     * Retrieve whether or not the audio stream is ready.
+     */
+    bool IsReady() {
+        return channels > 0;
+    }
+
+    /**
+     * Init audio stream (to stream raw audio pcm data)
+     *
+     * @return True or false depending on if the audio stream initialized properly.
+     */
+    bool Load(unsigned int SampleRate, unsigned int SampleSize, unsigned int Channels = 2) {
+        set(::LoadAudioStream(SampleRate, SampleSize, Channels));
+        return IsReady();
     }
 
  private:

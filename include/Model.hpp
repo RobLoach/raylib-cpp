@@ -6,6 +6,7 @@
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./Mesh.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -18,11 +19,15 @@ class Model : public ::Model {
     }
 
     Model(const std::string& fileName) {
-        set(::LoadModel(fileName.c_str()));
+        if (!Load(fileName)) {
+            throw RaylibException("Failed to load Model from filename");
+        }
     }
 
     Model(const ::Mesh& mesh) {
-        set(::LoadModelFromMesh(mesh));
+        if (!Load(mesh)) {
+            throw RaylibException("Failed to load Model from Mesh");
+        }
     }
 
     ~Model() {
@@ -188,6 +193,20 @@ class Model : public ::Model {
         return ::GetModelBoundingBox(*this);
     }
 
+    bool IsReady() const {
+        return meshCount > 0 || materialCount > 0 || boneCount > 0;
+    }
+
+    bool Load(const std::string& fileName) {
+        set(::LoadModel(fileName.c_str()));
+        return IsReady();
+    }
+
+    bool Load(const ::Mesh& mesh) {
+        set(::LoadModelFromMesh(mesh));
+        return IsReady();
+    }
+
  private:
     inline void set(const ::Model& model) {
         transform = model.transform;
@@ -203,6 +222,7 @@ class Model : public ::Model {
         bindPose = model.bindPose;
     }
 };
+
 }  // namespace raylib
 
 #endif  // RAYLIB_CPP_INCLUDE_MODEL_HPP_

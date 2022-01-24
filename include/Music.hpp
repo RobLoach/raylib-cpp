@@ -5,6 +5,7 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -12,6 +13,17 @@ namespace raylib {
  */
 class Music : public ::Music {
  public:
+    /**
+     * Default Music constructor to build an empty Music object.
+     */
+    Music() {
+        ctxType = 0;
+        ctxData = nullptr;
+        looping = false;
+        frameCount = 0;
+        stream.buffer = nullptr;
+    }
+
     Music(const ::Music& music) {
         set(music);
     }
@@ -20,14 +32,18 @@ class Music : public ::Music {
      * Load music stream from file
      */
     Music(const std::string& fileName) {
-        set(::LoadMusicStream(fileName.c_str()));
+        if (!Load(fileName)) {
+            throw RaylibException(TextFormat("Failed to load Music from file: %s", fileName.c_str()));
+        }
     }
 
     /**
      * Load music stream from memory
      */
     Music(const std::string& fileType, unsigned char* data, int dataSize) {
-        set(::LoadMusicStreamFromMemory(fileType.c_str(), data, dataSize));
+        if (!Load(fileType, data, dataSize)) {
+            throw RaylibException(TextFormat("Failed to load Music from %s file", fileType.c_str()));
+        }
     }
 
     Music(const Music&) = delete;
@@ -172,11 +188,27 @@ class Music : public ::Music {
     }
 
     /**
+     * Load music stream from file
+     */
+    bool Load(const std::string& fileName) {
+        set(::LoadMusicStream(fileName.c_str()));
+        return IsReady();
+    }
+
+    /**
+     * Load music stream from memory
+     */
+    bool Load(const std::string& fileType, unsigned char* data, int dataSize) {
+        set(::LoadMusicStreamFromMemory(fileType.c_str(), data, dataSize));
+        return IsReady();
+    }
+
+    /**
      * Retrieve whether or not the Music has been loaded.
      *
-     * @return True or false depending on whether the music has been loaded.
+     * @return True or false depending on whether the Music has been loaded.
      */
-    inline bool IsLoaded() const {
+    inline bool IsReady() const {
         return stream.buffer != nullptr;
     }
 

@@ -3,6 +3,7 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -10,6 +11,13 @@ namespace raylib {
  */
 class RenderTexture : public ::RenderTexture {
  public:
+    /**
+     * Default constructor to build an empty RenderTexture.
+     */
+    RenderTexture() {
+        id = 0;
+    }
+
     RenderTexture(const ::RenderTexture& renderTexture) {
         set(renderTexture);
     }
@@ -17,7 +25,9 @@ class RenderTexture : public ::RenderTexture {
     RenderTexture(unsigned int id, ::Texture texture, ::Texture depth) : ::RenderTexture{id, texture, depth} {}
 
     RenderTexture(int width, int height) {
-        set(LoadRenderTexture(width, height));
+        if (!Load(width, height)) {
+            throw RaylibException("Failed to create RenderTexture");
+        }
     }
 
     RenderTexture(const RenderTexture&) = delete;
@@ -78,6 +88,21 @@ class RenderTexture : public ::RenderTexture {
     inline RenderTexture& EndMode() {
         ::EndTextureMode();
         return *this;
+    }
+
+    /**
+     * Loads a render texture at the given width and height.
+     */
+    bool Load(int width, int height) {
+        set(::LoadRenderTexture(width, height));
+        return IsReady();
+    }
+
+    /**
+     * Retrieves whether or not the render texture is ready.
+     */
+    bool IsReady() const {
+        return id != 0;
     }
 
  private:

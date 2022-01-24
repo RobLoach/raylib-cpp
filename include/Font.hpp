@@ -5,6 +5,7 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -12,6 +13,15 @@ namespace raylib {
  */
 class Font : public ::Font {
  public:
+    Font(int baseSize,
+            int glyphCount,
+            int glyphPadding,
+            ::Texture2D texture,
+            ::Rectangle *recs = nullptr,
+            ::GlyphInfo *glyphs = nullptr) : ::Font{baseSize, glyphCount, glyphPadding, texture, recs, glyphs} {
+        // Nothing.
+    }
+
     Font() {
         set(::GetFontDefault());
     }
@@ -20,22 +30,45 @@ class Font : public ::Font {
         set(font);
     }
 
+    /**
+     * Loads a Font from the given file.
+     *
+     * @param fileName The file name of the font to load.
+     *
+     * @throws raylib::RaylibException Throws if the given font failed to initialize.
+     */
     Font(const std::string& fileName) {
-        set(::LoadFont(fileName.c_str()));
+        if (!Load(fileName)) {
+            throw RaylibException("Failed to load Font from file");
+        }
     }
 
+    /**
+     * Loads a Font from the given file, with generation parameters.
+     *
+     * @param fileName The file name of the font to load.
+     *
+     * @throws raylib::RaylibException Throws if the given font failed to initialize.
+     *
+     * @see ::LoadFontEx
+     */
     Font(const std::string& fileName, int fontSize, int* fontChars, int charCount)  {
-        set(::LoadFontEx(fileName.c_str(), fontSize, fontChars, charCount));
+        if (!Load(fileName, fontSize, fontChars, charCount)) {
+            throw RaylibException("Failed to load font from font with extras");
+        }
     }
 
     Font(const ::Image& image, ::Color key, int firstChar) {
-        set(::LoadFontFromImage(image, key, firstChar));
+        if (!Load(image, key, firstChar)) {
+            throw RaylibException("Failed to load Texture from Image");
+        }
     }
 
     Font(const std::string& fileType, const unsigned char* fileData, int dataSize, int fontSize,
             int *fontChars, int charsCount)  {
-        set(::LoadFontFromMemory(fileType.c_str(), fileData, dataSize, fontSize, fontChars,
-            charsCount));
+        if (!Load(fileType, fileData, dataSize, fontSize, fontChars, charsCount)) {
+            throw RaylibException("Failed to load Texture from file data");
+        }
     }
 
     Font(const Font&) = delete;
@@ -89,6 +122,47 @@ class Font : public ::Font {
         other.glyphs = nullptr;
 
         return *this;
+    }
+
+    /**
+     * Loads a font from a given file.
+     *
+     * @param fileName The filename of the font to load.
+     *
+     * @return True of false depending on if the font loaded successfully.
+     *
+     * @see ::LoadFont()
+     */
+    bool Load(const std::string& fileName) {
+        set(::LoadFont(fileName.c_str()));
+        return baseSize > 0;
+    }
+
+    /**
+     * Loads a font from a given file with generation parameters.
+     *
+     * @param fileName The filename of the font to load.
+     * @param fontSize The desired size of the font.
+     *
+     * @return True of false depending on if the font loaded successfully.
+     *
+     * @see ::LoadFontEx()
+     */
+    bool Load(const std::string& fileName, int fontSize, int* fontChars, int charCount)  {
+        set(::LoadFontEx(fileName.c_str(), fontSize, fontChars, charCount));
+        return baseSize > 0;
+    }
+
+    bool Load(const ::Image& image, ::Color key, int firstChar) {
+        set(::LoadFontFromImage(image, key, firstChar));
+        return baseSize > 0;
+    }
+
+    bool Load(const std::string& fileType, const unsigned char* fileData, int dataSize, int fontSize,
+            int *fontChars, int charsCount)  {
+        set(::LoadFontFromMemory(fileType.c_str(), fileData, dataSize, fontSize, fontChars,
+            charsCount));
+        return baseSize > 0;
     }
 
     /**

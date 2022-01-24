@@ -82,7 +82,21 @@ int main(int argc, char *argv[]) {
     // Sound
     {
         raylib::Wave wave(path + "/resources/weird.wav");
-        assert(wave.IsLoaded());
+        assert(wave.IsReady());
+    }
+
+    // RaylibException
+    {
+        bool passed = false;
+        try {
+            raylib::Texture texture("notfound.png");
+        }
+        catch (raylib::RaylibException& error) {
+            error.TraceLog(LOG_INFO);
+            passed = true;
+        }
+
+        assert(passed);
     }
 
     TraceLog(LOG_INFO, "TEST: raylib-cpp test complete");

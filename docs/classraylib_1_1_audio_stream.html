@@ -90,6 +90,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad8a74cd0657258f1fe495d2dc7fd6881"><td class="memItemLeft" align="right" valign="top"><a id="ad8a74cd0657258f1fe495d2dc7fd6881"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>AudioStream</b> (const <a class="el" href="classraylib_1_1_audio_stream.html">AudioStream</a> &amp;)=delete</td></tr>
 <tr class="separator:ad8a74cd0657258f1fe495d2dc7fd6881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8da5fee94a06fb1bf797d93e94472d9f"><td class="memItemLeft" align="right" valign="top"><a id="a8da5fee94a06fb1bf797d93e94472d9f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AudioStream</b> (rAudioBuffer *buffer=nullptr, unsigned int sampleRate=0, unsigned int sampleSize=0, unsigned int channels=0)</td></tr>
+<tr class="separator:a8da5fee94a06fb1bf797d93e94472d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b9b41b70df94999dfe71e52da6b19ba"><td class="memItemLeft" align="right" valign="top"><a id="a6b9b41b70df94999dfe71e52da6b19ba"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_audio_stream.html#a6b9b41b70df94999dfe71e52da6b19ba">AudioStream</a> (unsigned int SampleRate, unsigned int SampleSize, unsigned int Channels=2)</td></tr>
 <tr class="memdesc:a6b9b41b70df94999dfe71e52da6b19ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init audio stream (to stream raw audio pcm data) <br /></td></tr>
@@ -114,6 +117,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_audio_stream.html#a1c208447f698ea82fb3c51f5c9978251">IsProcessed</a> () const</td></tr>
 <tr class="memdesc:a1c208447f698ea82fb3c51f5c9978251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if any audio stream buffers requires refill. <br /></td></tr>
 <tr class="separator:a1c208447f698ea82fb3c51f5c9978251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add510560554e8b4929ffa47b2d714d1e"><td class="memItemLeft" align="right" valign="top"><a id="add510560554e8b4929ffa47b2d714d1e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_audio_stream.html#add510560554e8b4929ffa47b2d714d1e">IsReady</a> ()</td></tr>
+<tr class="memdesc:add510560554e8b4929ffa47b2d714d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve whether or not the audio stream is ready. <br /></td></tr>
+<tr class="separator:add510560554e8b4929ffa47b2d714d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8df65a9ea58da60b9f123b7f26b11c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_audio_stream.html#ad8df65a9ea58da60b9f123b7f26b11c8">Load</a> (unsigned int SampleRate, unsigned int SampleSize, unsigned int Channels=2)</td></tr>
+<tr class="memdesc:ad8df65a9ea58da60b9f123b7f26b11c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init audio stream (to stream raw audio pcm data)  <a href="classraylib_1_1_audio_stream.html#ad8df65a9ea58da60b9f123b7f26b11c8">More...</a><br /></td></tr>
+<tr class="separator:ad8df65a9ea58da60b9f123b7f26b11c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad66f79bbc8b651b5bb4b9f922ec3e9bd"><td class="memItemLeft" align="right" valign="top"><a id="ad66f79bbc8b651b5bb4b9f922ec3e9bd"></a>
 <a class="el" href="classraylib_1_1_audio_stream.html">AudioStream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classraylib_1_1_audio_stream.html">AudioStream</a> &amp;&amp;other)</td></tr>
 <tr class="separator:ad66f79bbc8b651b5bb4b9f922ec3e9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,7 +188,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classraylib_1_1_audio_stream.html" title="AudioStream management functions.">AudioStream</a> management functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00011">11</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00012">12</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="adea73b3b07652eb26bcaeb6e63f7ebb2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adea73b3b07652eb26bcaeb6e63f7ebb2">&#9670;&nbsp;</a></span>GetBuffer()</h2>
@@ -206,7 +216,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>Retrieves the buffer value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The buffer value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00039">39</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00049">49</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
 
 </div>
 </div>
@@ -236,7 +246,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>Retrieves the channels value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The channels value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00042">42</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00052">52</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
 
 </div>
 </div>
@@ -266,7 +276,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>Retrieves the sampleRate value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The sampleRate value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00040">40</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00050">50</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
 
 </div>
 </div>
@@ -296,7 +306,58 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>Retrieves the sampleSize value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The sampleSize value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00041">41</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00051">51</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad8df65a9ea58da60b9f123b7f26b11c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8df65a9ea58da60b9f123b7f26b11c8">&#9670;&nbsp;</a></span>Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool raylib::AudioStream::Load </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>SampleRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>SampleSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>Channels</em> = <code>2</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Init audio stream (to stream raw audio pcm data) </p>
+<dl class="section return"><dt>Returns</dt><dd>True or false depending on if the audio stream initialized properly. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00173">173</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_audio_stream_8hpp_source.html#l00164">IsReady()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_audio_stream_8hpp_source.html#l00028">AudioStream()</a>.</p>
 
 </div>
 </div>
@@ -332,7 +393,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00039">39</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00049">49</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
 
 </div>
 </div>
@@ -368,7 +429,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00042">42</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00052">52</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
 
 </div>
 </div>
@@ -404,7 +465,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00040">40</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00050">50</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
 
 </div>
 </div>
@@ -440,7 +501,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00041">41</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_audio_stream_8hpp_source.html#l00051">51</a> of file <a class="el" href="_audio_stream_8hpp_source.html">AudioStream.hpp</a>.</p>
 
 </div>
 </div>

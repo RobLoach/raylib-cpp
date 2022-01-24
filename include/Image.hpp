@@ -5,6 +5,7 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -14,28 +15,77 @@ namespace raylib {
  */
 class Image : public ::Image {
  public:
+    Image(void* data = nullptr,
+            int width = 0,
+            int height = 0,
+            int mipmaps = 0,
+            int format = 0) : ::Image{data, width, height, mipmaps, format} {
+        // Nothing.
+    }
+
     Image(const ::Image& image) {
         set(image);
     }
 
+    /**
+     * Load an image from the given file.
+     *
+     * @throws raylib::RaylibException Thrown if the image failed to load from the file.
+     *
+     * @see Load()
+     */
     Image(const std::string& fileName) {
-        Load(fileName);
+        if (!Load(fileName)) {
+            throw RaylibException(TextFormat("Failed to load Image from file: %s", fileName.c_str()));
+        }
     }
 
+    /**
+     * Load a raw image from the given file, with the provided width, height, and formats.
+     *
+     * @throws raylib::RaylibException Thrown if the image failed to load from the file.
+     *
+     * @see LoadRaw()
+     */
     Image(const std::string& fileName, int width, int height, int format, int headerSize) {
-        LoadRaw(fileName, width, height, format, headerSize);
+        if (!Load(fileName, width, height, format, headerSize)) {
+            throw RaylibException(TextFormat("Failed to load Image from file: %s", fileName.c_str()));
+        }
     }
 
+    /**
+     * Load an animation image from the given file.
+     *
+     * @throws raylib::RaylibException Thrown if the image failed to load from the file.
+     *
+     * @see LoadAnim()
+     */
     Image(const std::string& fileName, int* frames) {
-        LoadAnim(fileName, frames);
+        if (!Load(fileName, frames)) {
+            throw RaylibException(TextFormat("Failed to load Image from animation: %s", fileName.c_str()));
+        }
     }
 
+    /**
+     * Load an image from the given file.
+     *
+     * @throws raylib::RaylibException Thrown if the image failed to load from the file.
+     */
     Image(const std::string& fileType, const unsigned char* fileData, int dataSize) {
-        LoadFromMemory(fileType, fileData, dataSize);
+        if (!Load(fileType, fileData, dataSize)) {
+            throw RaylibException("Failed to load Image from memory");
+        }
     }
 
+    /**
+     * Load an image from the given file.
+     *
+     * @throws raylib::RaylibException Thrown if the image failed to load from the file.
+     */
     Image(const ::Texture2D& texture) {
-        set(::LoadImageFromTexture(texture));
+        if (!Load(texture)) {
+            throw RaylibException("Failed to load Image from Texture");
+        }
     }
 
     Image(int width, int height, ::Color color = {255, 255, 255, 255}) {
@@ -172,33 +222,65 @@ class Image : public ::Image {
 
     /**
      * Load image from file into CPU memory (RAM)
+     *
+     * @return Whether or not the image was loaded successfully.
+     *
+     * @see ::LoadImage()
      */
-    void Load(const std::string& fileName) {
+    bool Load(const std::string& fileName) {
         set(::LoadImage(fileName.c_str()));
+        return IsReady();
     }
 
     /**
      * Load image from RAW file data.
+     *
+     * @return Whether or not the raw image data was loaded successfully.
+     *
+     * @see ::LoadImageRaw()
      */
-    void LoadRaw(const std::string& fileName, int width, int height, int format, int headerSize) {
+    bool Load(const std::string& fileName, int width, int height, int format, int headerSize) {
         set(::LoadImageRaw(fileName.c_str(), width, height, format, headerSize));
+        return IsReady();
     }
 
     /**
      * Load image sequence from file (frames appended to image.data).
+     *
+     * @return Whether or not the image animation was loaded successfully.
+     *
+     * @see ::LoadImageAnim()
      */
-    void LoadAnim(const std::string& fileName, int* frames) {
+    bool Load(const std::string& fileName, int* frames) {
         set(::LoadImageAnim(fileName.c_str(), frames));
+        return IsReady();
     }
 
     /**
      * Load image from memory buffer, fileType refers to extension: i.e. "png".
+     *
+     * @return Whether or not the image data was loaded successfully.
+     *
+     * @see ::LoadImageFromMemory()
      */
-    void LoadFromMemory(
+    bool Load(
             const std::string& fileType,
             const unsigned char *fileData,
             int dataSize) {
         set(::LoadImageFromMemory(fileType.c_str(), fileData, dataSize));
+        return IsReady();
+    }
+
+    /**
+     * Load an image from the given file.
+     *
+     * @return True or false depending on whether or not the image was loaded from the texture.
+     *
+     * @see ::LoadImageFromTexture()
+     */
+    bool Load(const ::Texture2D& texture) {
+        set(::LoadImageFromTexture(texture));
+        return IsReady();
     }
 
     /**
@@ -349,7 +431,7 @@ class Image : public ::Image {
     /**
      * Resize canvas and fill with color
      */
-    inline Image& ResizeCanvas(int newWidth, int newHeight, int offsetX, int offsetY,
+    inline Image& ResizeCanvas(int newWidth, int newHeight, int offsetX = 0, int offsetY = 0,
             ::Color color = {255, 255, 255, 255}) {
         ::ImageResizeCanvas(this, newWidth, newHeight, offsetX, offsetY, color);
         return *this;
@@ -621,9 +703,9 @@ class Image : public ::Image {
     /**
      * Retrieve whether or not the Image has been loaded.
      *
-     * @return True or false depending on whether the image has been loaded.
+     * @return True or false depending on whether the Image has been loaded.
      */
-    inline bool IsLoaded() const {
+    inline bool IsReady() const {
         return data != nullptr;
     }
 

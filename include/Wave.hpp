@@ -5,6 +5,7 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./RaylibException.hpp"
 
 namespace raylib {
 /**
@@ -21,20 +22,26 @@ class Wave : public ::Wave {
             unsigned int sampleRate = 0,
             unsigned int sampleSize = 0,
             unsigned int channels = 0,
-            void *data = nullptr) : ::Wave{frameCount, sampleRate, sampleSize, channels, data} { }
+            void *data = nullptr) : ::Wave{frameCount, sampleRate, sampleSize, channels, data} {
+        // Nothing.
+    }
 
     /**
      * Load wave data from file
      */
     Wave(const std::string& fileName) {
-        set(::LoadWave(fileName.c_str()));
+        if (!Load(fileName)) {
+            throw RaylibException(TextFormat("Failed to load Wave from file: %s", fileName.c_str()));
+        }
     }
 
     /**
      * Load wave from memory buffer, fileType refers to extension: i.e. "wav"
      */
     Wave(const std::string& fileType, const unsigned char *fileData, int dataSize) {
-        set(::LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
+        if (!Load(fileType, fileData, dataSize)) {
+            throw RaylibException("Failed to load Wave from memory");
+        }
     }
 
     Wave(const Wave& other) {
@@ -175,11 +182,27 @@ class Wave : public ::Wave {
     }
 
     /**
+     * Load wave data from file
+     */
+    bool Load(const std::string& fileName) {
+        set(::LoadWave(fileName.c_str()));
+        return IsReady();
+    }
+
+    /**
+     * Load wave from memory buffer, fileType refers to extension: i.e. "wav"
+     */
+    bool Load(const std::string& fileType, const unsigned char *fileData, int dataSize) {
+        set(::LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
+        return IsReady();
+    }
+
+    /**
      * Retrieve whether or not the Wave data has been loaded.
      *
      * @return True or false depending on whether the wave data has been loaded.
      */
-    inline bool IsLoaded() const {
+    inline bool IsReady() const {
         return data != nullptr;
     }
 
@@ -192,6 +215,7 @@ class Wave : public ::Wave {
         data = wave.data;
     }
 };
+
 }  // namespace raylib
 
 #endif  // RAYLIB_CPP_INCLUDE_WAVE_HPP_

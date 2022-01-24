@@ -26,6 +26,7 @@ install(FILES
     Physics.hpp
     Ray.hpp
     RayCollision.hpp
+    RaylibException.hpp
     raylib-cpp-utils.hpp
     raylib-cpp.hpp
     raylib.hpp

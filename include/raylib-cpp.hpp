@@ -49,6 +49,7 @@
 #include "./Mouse.hpp"
 #include "./Music.hpp"
 #include "./Ray.hpp"
+#include "./RaylibException.hpp"
 #include "./RayCollision.hpp"
 #include "./Rectangle.hpp"
 #include "./RenderTexture.hpp"
