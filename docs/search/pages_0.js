@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['raylib_2dcpp_912',['raylib-cpp',['../index.html',1,'']]]
+  ['raylib_2dcpp_906',['raylib-cpp',['../index.html',1,'']]]
 ];

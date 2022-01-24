@@ -101,6 +101,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afde2bd6bb51a7fe6fa02f4d9be73087f"><td class="memItemLeft" align="right" valign="top"><a id="afde2bd6bb51a7fe6fa02f4d9be73087f"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Font</b> (<a class="el" href="classraylib_1_1_font.html">Font</a> &amp;&amp;other)</td></tr>
 <tr class="separator:afde2bd6bb51a7fe6fa02f4d9be73087f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a748d8c50e914b82a1ad9ef1aea17cda3"><td class="memItemLeft" align="right" valign="top"><a id="a748d8c50e914b82a1ad9ef1aea17cda3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Font</b> (int baseSize, int glyphCount, int glyphPadding, ::<a class="el" href="classraylib_1_1_texture.html">Texture2D</a> texture, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> *recs=nullptr, ::GlyphInfo *glyphs=nullptr)</td></tr>
+<tr class="separator:a748d8c50e914b82a1ad9ef1aea17cda3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8303ddbb5cc0b1ca80921e4410c6fbd8"><td class="memItemLeft" align="right" valign="top"><a id="a8303ddbb5cc0b1ca80921e4410c6fbd8"></a>
 <a class="el" href="classraylib_1_1_font.html">Font</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const std::string &amp;text, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin, float rotation, float fontSize, float spacing, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint=WHITE)</td></tr>
 <tr class="separator:a8303ddbb5cc0b1ca80921e4410c6fbd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +141,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 inline ::<a class="el" href="classraylib_1_1_image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#afd68d404370d62e2a3573977e5bbeb22">ImageText</a> (const std::string &amp;text, float fontSize, float spacing, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint) const</td></tr>
 <tr class="memdesc:afd68d404370d62e2a3573977e5bbeb22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an image from text (custom sprite font) <br /></td></tr>
 <tr class="separator:afd68d404370d62e2a3573977e5bbeb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5609b3df50ef4099b37b5d80c297046"><td class="memItemLeft" align="right" valign="top"><a id="ac5609b3df50ef4099b37b5d80c297046"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image, ::<a class="el" href="classraylib_1_1_color.html">Color</a> key, int firstChar)</td></tr>
+<tr class="separator:ac5609b3df50ef4099b37b5d80c297046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56c1c9e3e74b6593ea1996f52c5d6adf"><td class="memItemLeft" align="right" valign="top"><a id="a56c1c9e3e74b6593ea1996f52c5d6adf"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const std::string &amp;fileName)</td></tr>
+<tr class="separator:a56c1c9e3e74b6593ea1996f52c5d6adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabc625ea2678b0b38462a910da19406d"><td class="memItemLeft" align="right" valign="top"><a id="aabc625ea2678b0b38462a910da19406d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const std::string &amp;fileName, int fontSize, int *fontChars, int charCount)</td></tr>
+<tr class="separator:aabc625ea2678b0b38462a910da19406d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae929ad00282f7fd0f527702039dd362"><td class="memItemLeft" align="right" valign="top"><a id="aae929ad00282f7fd0f527702039dd362"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const std::string &amp;fileType, const unsigned char *fileData, int dataSize, int fontSize, int *fontChars, int charsCount)</td></tr>
+<tr class="separator:aae929ad00282f7fd0f527702039dd362"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a230f1f02c3b77b1319316ab7d45d2553"><td class="memItemLeft" align="right" valign="top"><a id="a230f1f02c3b77b1319316ab7d45d2553"></a>
 <a class="el" href="classraylib_1_1_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_font.html#a230f1f02c3b77b1319316ab7d45d2553">MeasureText</a> (const std::string &amp;text, float fontSize, float spacing) const</td></tr>
 <tr class="memdesc:a230f1f02c3b77b1319316ab7d45d2553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measure string size for <a class="el" href="classraylib_1_1_font.html" title="Font type, includes texture and charSet array data.">Font</a>. <br /></td></tr>
@@ -176,7 +191,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classraylib_1_1_font.html" title="Font type, includes texture and charSet array data.">Font</a> type, includes texture and charSet array data. </p>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00013">13</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00014">14</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a944d3af1c94f00bbe39182307c26009c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a944d3af1c94f00bbe39182307c26009c">&#9670;&nbsp;</a></span>GetBaseSize()</h2>
@@ -204,7 +219,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 <p>Retrieves the baseSize value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The baseSize value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00062">62</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00079">79</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -234,7 +249,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 <p>Retrieves the glyphCount value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The glyphCount value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00063">63</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00080">80</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -264,7 +279,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 <p>Retrieves the glyphPadding value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The glyphPadding value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00064">64</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00081">81</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -294,7 +309,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 <p>Retrieves the glyphs value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The glyphs value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00067">67</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00084">84</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -324,7 +339,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 <p>Retrieves the recs value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The recs value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00066">66</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00083">83</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -354,7 +369,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 <p>Retrieves the texture value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The texture value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00065">65</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00082">82</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -390,7 +405,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00062">62</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00079">79</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -426,7 +441,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00063">63</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00080">80</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -462,7 +477,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00064">64</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00081">81</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -498,7 +513,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00067">67</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00084">84</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -534,7 +549,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00066">66</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00083">83</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>
@@ -570,7 +585,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00065">65</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_font_8hpp_source.html#l00082">82</a> of file <a class="el" href="_font_8hpp_source.html">Font.hpp</a>.</p>
 
 </div>
 </div>

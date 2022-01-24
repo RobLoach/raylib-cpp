@@ -186,17 +186,21 @@ $(function() {
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Shader&amp; shader) {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordtype">id</span> = shader.id;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        locs = shader.locs;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;};</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_SHADER_HPP_</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="classraylib_1_1_shader.html#ac3790f77c2e9154cc3fa5893105c0f0c">  168</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_shader.html#ac3790f77c2e9154cc3fa5893105c0f0c">IsReady</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">id</span> != 0 &amp;&amp; locs != <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Shader&amp; shader) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordtype">id</span> = shader.id;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        locs = shader.locs;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;};</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_SHADER_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00007">AudioDevice.hpp:7</a></div></div>
+<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00008">AudioDevice.hpp:8</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_shader_html_a37e4981ccc95df6b78efd21e8563d49d"><div class="ttname"><a href="classraylib_1_1_shader.html#a37e4981ccc95df6b78efd21e8563d49d">raylib::Shader::SetValue</a></div><div class="ttdeci">Shader &amp; SetValue(int uniformLoc, const void *value, int uniformType, int count)</div><div class="ttdoc">Set shader uniform value vector.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00140">Shader.hpp:140</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_shader_html_a95077cb1fd6b81a63605735b3f8d9253"><div class="ttname"><a href="classraylib_1_1_shader.html#a95077cb1fd6b81a63605735b3f8d9253">raylib::Shader::LoadFromMemory</a></div><div class="ttdeci">::Shader LoadFromMemory(const std::string &amp;vsCode, const std::string &amp;fsCode)</div><div class="ttdoc">Load a shader from memory.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00053">Shader.hpp:53</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_shader_html_adade0b76feffac6c439efb46586f4099"><div class="ttname"><a href="classraylib_1_1_shader.html#adade0b76feffac6c439efb46586f4099">raylib::Shader::SetValue</a></div><div class="ttdeci">Shader &amp; SetValue(int uniformLoc, const ::Matrix &amp;mat)</div><div class="ttdoc">Set shader uniform value (matrix 4x4)</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00150">Shader.hpp:150</a></div></div>
@@ -208,6 +212,7 @@ $(function() {
 <div class="ttc" id="aclassraylib_1_1_shader_html_a65feaccca849680bb3f0a4424309dc53"><div class="ttname"><a href="classraylib_1_1_shader.html#a65feaccca849680bb3f0a4424309dc53">raylib::Shader::Load</a></div><div class="ttdeci">::Shader Load(const std::string &amp;vsFileName, const std::string &amp;fsFileName)</div><div class="ttdoc">Load shader from files and bind default locations.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00044">Shader.hpp:44</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_shader_html_a7bbc8d326c377cee898bf772dda1fc1c"><div class="ttname"><a href="classraylib_1_1_shader.html#a7bbc8d326c377cee898bf772dda1fc1c">raylib::Shader::SetValue</a></div><div class="ttdeci">Shader &amp; SetValue(int uniformLoc, const ::Texture2D &amp;texture)</div><div class="ttdoc">Set shader uniform value for texture.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00160">Shader.hpp:160</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_shader_html_aee50d83bfae949b476ad994fa739b9a5"><div class="ttname"><a href="classraylib_1_1_shader.html#aee50d83bfae949b476ad994fa739b9a5">raylib::Shader::SetValue</a></div><div class="ttdeci">Shader &amp; SetValue(int uniformLoc, const void *value, int uniformType)</div><div class="ttdoc">Set shader uniform value.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00130">Shader.hpp:130</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_shader_html_ac3790f77c2e9154cc3fa5893105c0f0c"><div class="ttname"><a href="classraylib_1_1_shader.html#ac3790f77c2e9154cc3fa5893105c0f0c">raylib::Shader::IsReady</a></div><div class="ttdeci">bool IsReady() const</div><div class="ttdoc">Retrieves whether or not the shader is ready.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00168">Shader.hpp:168</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

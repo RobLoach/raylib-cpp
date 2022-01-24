@@ -150,6 +150,15 @@ Public Member Functions</h2></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_model.html#a4d9e6f4093c9afd36c8a882884b2e973">IsModelAnimationValid</a> (const ::<a class="el" href="classraylib_1_1_model_animation.html">ModelAnimation</a> &amp;anim) const</td></tr>
 <tr class="memdesc:a4d9e6f4093c9afd36c8a882884b2e973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check model animation skeleton match. <br /></td></tr>
 <tr class="separator:a4d9e6f4093c9afd36c8a882884b2e973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05a4df8c1ad0529055933671a6449b17"><td class="memItemLeft" align="right" valign="top"><a id="a05a4df8c1ad0529055933671a6449b17"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsReady</b> () const</td></tr>
+<tr class="separator:a05a4df8c1ad0529055933671a6449b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab48f1b21d11dd5705054f2ea6bdf11ac"><td class="memItemLeft" align="right" valign="top"><a id="ab48f1b21d11dd5705054f2ea6bdf11ac"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const ::<a class="el" href="classraylib_1_1_mesh.html">Mesh</a> &amp;mesh)</td></tr>
+<tr class="separator:ab48f1b21d11dd5705054f2ea6bdf11ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac645133deb7c02403c2ab60d2fb9aea7"><td class="memItemLeft" align="right" valign="top"><a id="ac645133deb7c02403c2ab60d2fb9aea7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const std::string &amp;fileName)</td></tr>
+<tr class="separator:ac645133deb7c02403c2ab60d2fb9aea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b1c866bc1ee4e55757067282ae49a00"><td class="memItemLeft" align="right" valign="top"><a id="a4b1c866bc1ee4e55757067282ae49a00"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_model.html#a4b1c866bc1ee4e55757067282ae49a00">operator BoundingBox</a> () const</td></tr>
 <tr class="memdesc:a4b1c866bc1ee4e55757067282ae49a00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute model bounding box limits (considers all meshes) <br /></td></tr>
@@ -210,7 +219,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classraylib_1_1_model.html" title="Model type.">Model</a> type. </p>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00014">14</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00015">15</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a73bac18d76533acd39ed4e5917c84d96"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a73bac18d76533acd39ed4e5917c84d96">&#9670;&nbsp;</a></span>GetBindPoe()</h2>
@@ -238,7 +247,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the bindPose value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The bindPose value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00054">54</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00059">59</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -268,7 +277,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the boneCount value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The boneCount value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00052">52</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00057">57</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -298,7 +307,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the bones value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The bones value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00053">53</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00058">58</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -328,7 +337,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the materialCount value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The materialCount value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00048">48</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00053">53</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -358,7 +367,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the materials value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The materials value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00050">50</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00055">55</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -388,7 +397,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the meshCount value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The meshCount value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00047">47</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00052">52</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -418,7 +427,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the meshes value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The meshes value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00049">49</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00054">54</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -448,7 +457,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the meshMaterial value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The meshMaterial value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00051">51</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00056">56</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -478,7 +487,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the transform value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The transform value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00046">46</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00051">51</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -514,7 +523,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00054">54</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00059">59</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -550,7 +559,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00052">52</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00057">57</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -586,7 +595,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00053">53</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00058">58</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -622,7 +631,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00048">48</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00053">53</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -658,7 +667,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00050">50</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00055">55</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -694,7 +703,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00047">47</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00052">52</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -730,7 +739,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00049">49</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00054">54</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -766,7 +775,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00051">51</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00056">56</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -802,7 +811,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00046">46</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00051">51</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
