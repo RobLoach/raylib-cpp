@@ -392,6 +392,13 @@ class Image : public ::Image {
     }
 
     /**
+     * Crop an image to a new given width and height.
+     */
+    inline Image& Crop(int newWidth, int newHeight) {
+        return Crop(0, 0, newWidth, newHeight);
+    }
+
+    /**
      * Crop an image to a new given width and height based on a vector.
      */
     inline Image& Crop(::Vector2 size) {
