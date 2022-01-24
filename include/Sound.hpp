@@ -169,12 +169,15 @@ class Sound : public ::Sound {
      * @return True or false depending on loading worked.
      */
     bool Load(const std::string& fileName) {
-        set(LoadSound(fileName.c_str()));
+        set(::LoadSound(fileName.c_str()));
         return IsReady();
     }
 
+    /**
+     * Loads the given Wave object into the Sound.
+     */
     bool Load(const ::Wave& wave) {
-        set(LoadSoundFromWave(wave));
+        set(::LoadSoundFromWave(wave));
         return IsReady();
     }
 
@@ -184,7 +187,7 @@ class Sound : public ::Sound {
      *
      * @return True or false depending on whether the Sound buffer is loaded.
      */
-    bool IsReady() {
+    bool IsReady() const {
         return stream.buffer != nullptr;
     }
 

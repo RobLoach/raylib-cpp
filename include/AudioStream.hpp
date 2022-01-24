@@ -158,12 +158,17 @@ class AudioStream : public ::AudioStream {
         ::SetAudioStreamBufferSizeDefault(size);
     }
 
+    /**
+     * Retrieve whether or not the audio stream is ready.
+     */
     bool IsReady() {
         return channels > 0;
     }
 
     /**
      * Init audio stream (to stream raw audio pcm data)
+     *
+     * @return True or false depending on if the audio stream initialized properly.
      */
     bool Load(unsigned int SampleRate, unsigned int SampleSize, unsigned int Channels = 2) {
         set(::LoadAudioStream(SampleRate, SampleSize, Channels));

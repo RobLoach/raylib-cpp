@@ -302,7 +302,7 @@ class Texture : public ::Texture {
      *
      * @return True or false depending on whether the Texture has data.
      */
-    bool IsReady() {
+    bool IsReady() const {
         return id != 0;
     }
 

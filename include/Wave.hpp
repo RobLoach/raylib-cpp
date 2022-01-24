@@ -22,7 +22,9 @@ class Wave : public ::Wave {
             unsigned int sampleRate = 0,
             unsigned int sampleSize = 0,
             unsigned int channels = 0,
-            void *data = nullptr) : ::Wave{frameCount, sampleRate, sampleSize, channels, data} { }
+            void *data = nullptr) : ::Wave{frameCount, sampleRate, sampleSize, channels, data} {
+        // Nothing.
+    }
 
     /**
      * Load wave data from file

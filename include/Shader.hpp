@@ -162,6 +162,13 @@ class Shader : public ::Shader {
         return *this;
     }
 
+    /**
+     * Retrieves whether or not the shader is ready.
+     */
+    bool IsReady() const {
+        return id != 0 && locs != nullptr;
+    }
+
  private:
     inline void set(const ::Shader& shader) {
         id = shader.id;

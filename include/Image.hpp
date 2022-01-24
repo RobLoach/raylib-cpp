@@ -413,7 +413,7 @@ class Image : public ::Image {
     /**
      * Resize canvas and fill with color
      */
-    inline Image& ResizeCanvas(int newWidth, int newHeight, int offsetX, int offsetY,
+    inline Image& ResizeCanvas(int newWidth, int newHeight, int offsetX = 0, int offsetY = 0,
             ::Color color = {255, 255, 255, 255}) {
         ::ImageResizeCanvas(this, newWidth, newHeight, offsetX, offsetY, color);
         return *this;

@@ -193,7 +193,7 @@ class Model : public ::Model {
         return ::GetModelBoundingBox(*this);
     }
 
-    bool IsReady() {
+    bool IsReady() const {
         return meshCount > 0 || materialCount > 0 || boneCount > 0;
     }
 

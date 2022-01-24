@@ -90,8 +90,18 @@ class RenderTexture : public ::RenderTexture {
         return *this;
     }
 
+    /**
+     * Loads a render texture at the given width and height.
+     */
     bool Load(int width, int height) {
         set(::LoadRenderTexture(width, height));
+        return IsReady();
+    }
+
+    /**
+     * Retrieves whether or not the render texture is ready.
+     */
+    bool IsReady() const {
         return id != 0;
     }
 

@@ -15,7 +15,9 @@ class RayCollision : public ::RayCollision {
     }
 
     RayCollision(bool hit, float distance,
-        ::Vector3 point, ::Vector3 normal) : ::RayCollision{hit, distance, point, normal} {}
+        ::Vector3 point, ::Vector3 normal) : ::RayCollision{hit, distance, point, normal} {
+        // Nothing.
+    }
 
     /**
      * Get collision info between ray and mesh
