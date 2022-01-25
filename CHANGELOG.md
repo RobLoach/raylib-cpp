@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Web-based example at [core_basic_window_web.cpp](examples/core/core_basic_window_web.cpp)
 - An [Exception](README.md#exceptions) is now thrown when assets fail to load during object construction (applies to Music, Texture, Image, Sound, etc)
 
+### Fixed
+- TextSubtext() address bounding by @RobLoach in https://github.com/RobLoach/raylib-cpp/pull/159
+
 ### Changed
 - Unit tests now use [raylib-assert](https://github.com/RobLoach/raylib-assert)
 
