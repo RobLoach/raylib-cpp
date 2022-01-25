@@ -14,6 +14,8 @@ class Window {
  public:
     /**
      * Initialize window and OpenGL context.
+     *
+     * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
     Window(int width = 800, int height = 450, const std::string& title = "raylib",
             bool lateInit = false) {

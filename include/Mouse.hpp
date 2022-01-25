@@ -59,30 +59,56 @@ class Mouse {
         ::SetMousePosition(x, y);
     }
 
-    static inline void SetOffset(int offsetX, int offsetY) {
+    static inline void SetPosition(::Vector2 position) {
+        ::SetMousePosition(static_cast<int>(position.x), static_cast<int>(position.y));
+    }
+
+    static inline void SetOffset(int offsetX = 0, int offsetY = 0) {
         ::SetMouseOffset(offsetX, offsetY);
     }
 
-    static inline void SetScale(float scaleX, float scaleY) {
+    static inline void SetOffset(::Vector2 offset) {
+        ::SetMouseOffset(static_cast<int>(offset.x), static_cast<int>(offset.y));
+    }
+
+    static inline void SetScale(float scaleX = 1.0f, float scaleY = 1.0f) {
         ::SetMouseScale(scaleX, scaleY);
+    }
+
+    static inline void SetScale(::Vector2 scale) {
+        ::SetMouseScale(scale.x, scale.y);
     }
 
     static inline float GetWheelMove() {
         return ::GetMouseWheelMove();
     }
 
-    static inline void SetCursor(int cursor) {
+    /**
+     * Sets the current mouse cursor icon.
+     *
+     * @see ::MouseCursor
+     */
+    static inline void SetCursor(int cursor = MOUSE_CURSOR_DEFAULT) {
         ::SetMouseCursor(cursor);
     }
 
+    /**
+     * Get touch position X for touch point 0 (relative to screen size)
+     */
     static inline int GetTouchX() {
         return ::GetTouchX();
     }
 
+    /**
+     * Get touch position Y for touch point 0 (relative to screen size)
+     */
     static inline int GetTouchY() {
         return ::GetTouchY();
     }
 
+    /**
+     * Get touch position XY for a touch point index (relative to screen size)
+     */
     static inline Vector2 GetTouchPosition(int index) {
         return ::GetTouchPosition(index);
     }

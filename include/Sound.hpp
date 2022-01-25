@@ -37,12 +37,22 @@ class Sound : public ::Sound {
         other.stream = { 0, 0, 0, 0 };
     }
 
+    /**
+     * Loads a sound from the given file.
+     *
+     * @throws raylib::RaylibException Throws if the Sound failed to load.
+     */
     Sound(const std::string& fileName) {
         if (!Load(fileName)) {
             throw RaylibException(TextFormat("Failed to load Sound from file: %s", fileName.c_str()));
         }
     }
 
+    /**
+     * Loads a sound from the given Wave.
+     *
+     * @throws raylib::RaylibException Throws if the Sound failed to load.
+     */
     Sound(const ::Wave& wave) {
         if (!Load(wave)) {
             throw RaylibException("Failed to load Sound from Wave");

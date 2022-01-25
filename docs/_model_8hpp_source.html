@@ -89,13 +89,13 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classraylib_1_1_model.html">Model</a>(<span class="keyword">const</span> std::string&amp; fileName) {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">if</span> (!Load(fileName)) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classraylib_1_1_model.html#ac645133deb7c02403c2ab60d2fb9aea7">Load</a>(fileName)) {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classraylib_1_1_raylib_exception.html">RaylibException</a>(<span class="stringliteral">&quot;Failed to load Model from filename&quot;</span>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classraylib_1_1_model.html">Model</a>(const ::Mesh&amp; mesh) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (!Load(mesh)) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classraylib_1_1_model.html#ac645133deb7c02403c2ab60d2fb9aea7">Load</a>(mesh)) {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classraylib_1_1_raylib_exception.html">RaylibException</a>(<span class="stringliteral">&quot;Failed to load Model from Mesh&quot;</span>);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
@@ -227,39 +227,39 @@ $(function() {
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        return ::GetModelBoundingBox(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">bool</span> IsReady()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">return</span> meshCount &gt; 0 || materialCount &gt; 0 || boneCount &gt; 0;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordtype">bool</span> Load(<span class="keyword">const</span> std::string&amp; fileName) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        set(::LoadModel(fileName.c_str()));</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">return</span> IsReady();</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordtype">bool</span> Load(const ::Mesh&amp; mesh) {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        set(::LoadModelFromMesh(mesh));</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">return</span> IsReady();</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Model&amp; model) {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        transform = model.transform;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        meshCount = model.meshCount;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        materialCount = model.materialCount;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        meshes = model.meshes;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        materials = model.materials;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        meshMaterial = model.meshMaterial;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        boneCount = model.boneCount;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        bones = model.bones;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        bindPose = model.bindPose;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;};</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_MODEL_HPP_</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="classraylib_1_1_model.html#a05a4df8c1ad0529055933671a6449b17">  199</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_model.html#a05a4df8c1ad0529055933671a6449b17">IsReady</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">return</span> meshCount &gt; 0 || materialCount &gt; 0 || boneCount &gt; 0;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="classraylib_1_1_model.html#ac645133deb7c02403c2ab60d2fb9aea7">  208</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_model.html#ac645133deb7c02403c2ab60d2fb9aea7">Load</a>(<span class="keyword">const</span> std::string&amp; fileName) {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        set(::LoadModel(fileName.c_str()));</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1_model.html#a05a4df8c1ad0529055933671a6449b17">IsReady</a>();</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="classraylib_1_1_model.html#ab48f1b21d11dd5705054f2ea6bdf11ac">  218</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_model.html#ab48f1b21d11dd5705054f2ea6bdf11ac">Load</a>(const ::Mesh&amp; mesh) {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        set(::LoadModelFromMesh(mesh));</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1_model.html#a05a4df8c1ad0529055933671a6449b17">IsReady</a>();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Model&amp; model) {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        transform = model.transform;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        meshCount = model.meshCount;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        materialCount = model.materialCount;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        meshes = model.meshes;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        materials = model.materials;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        meshMaterial = model.meshMaterial;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        boneCount = model.boneCount;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        bones = model.bones;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        bindPose = model.bindPose;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;};</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_MODEL_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00008">AudioDevice.hpp:8</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_matrix_html"><div class="ttname"><a href="classraylib_1_1_matrix.html">raylib::Matrix</a></div><div class="ttdoc">Matrix type (OpenGL style 4x4 - right handed, column major)</div><div class="ttdef"><b>Definition:</b> <a href="_matrix_8hpp_source.html#l00016">Matrix.hpp:16</a></div></div>
@@ -272,7 +272,10 @@ $(function() {
 <div class="ttc" id="aclassraylib_1_1_model_html_a4d9e6f4093c9afd36c8a882884b2e973"><div class="ttname"><a href="classraylib_1_1_model.html#a4d9e6f4093c9afd36c8a882884b2e973">raylib::Model::IsModelAnimationValid</a></div><div class="ttdeci">bool IsModelAnimationValid(const ::ModelAnimation &amp;anim) const</div><div class="ttdoc">Check model animation skeleton match.</div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00132">Model.hpp:132</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_vector3_html"><div class="ttname"><a href="classraylib_1_1_vector3.html">raylib::Vector3</a></div><div class="ttdoc">Vector3 type.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00016">Vector3.hpp:16</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_model_html_a6b2400a98189c50a0c01d9868f56c3e4"><div class="ttname"><a href="classraylib_1_1_model.html#a6b2400a98189c50a0c01d9868f56c3e4">raylib::Model::UpdateAnimation</a></div><div class="ttdeci">Model &amp; UpdateAnimation(const ::ModelAnimation &amp;anim, int frame)</div><div class="ttdoc">Update model animation pose.</div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00124">Model.hpp:124</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_model_html_a05a4df8c1ad0529055933671a6449b17"><div class="ttname"><a href="classraylib_1_1_model.html#a05a4df8c1ad0529055933671a6449b17">raylib::Model::IsReady</a></div><div class="ttdeci">bool IsReady() const</div><div class="ttdoc">Determines whether or not the Model has data in it.</div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00199">Model.hpp:199</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_model_html_ab48f1b21d11dd5705054f2ea6bdf11ac"><div class="ttname"><a href="classraylib_1_1_model.html#ab48f1b21d11dd5705054f2ea6bdf11ac">raylib::Model::Load</a></div><div class="ttdeci">bool Load(const ::Mesh &amp;mesh)</div><div class="ttdoc">Loads a Model from the given Mesh.</div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00218">Model.hpp:218</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html"><div class="ttname"><a href="classraylib_1_1_mesh.html">raylib::Mesh</a></div><div class="ttdoc">Vertex data definning a mesh.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00016">Mesh.hpp:16</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_model_html_ac645133deb7c02403c2ab60d2fb9aea7"><div class="ttname"><a href="classraylib_1_1_model.html#ac645133deb7c02403c2ab60d2fb9aea7">raylib::Model::Load</a></div><div class="ttdeci">bool Load(const std::string &amp;fileName)</div><div class="ttdoc">Loads a Model from the given file.</div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00208">Model.hpp:208</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_model_html_affdca7b9b3d9dd8f3c113bbb1300bf07"><div class="ttname"><a href="classraylib_1_1_model.html#affdca7b9b3d9dd8f3c113bbb1300bf07">raylib::Model::GetBoundingBox</a></div><div class="ttdeci">BoundingBox GetBoundingBox() const</div><div class="ttdoc">Compute model bounding box limits (considers all meshes)</div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00185">Model.hpp:185</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_color_html"><div class="ttname"><a href="classraylib_1_1_color.html">raylib::Color</a></div><div class="ttdoc">Color type, RGBA (32bit)</div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00014">Color.hpp:14</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_model_html"><div class="ttname"><a href="classraylib_1_1_model.html">raylib::Model</a></div><div class="ttdoc">Model type.</div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00015">Model.hpp:15</a></div></div>

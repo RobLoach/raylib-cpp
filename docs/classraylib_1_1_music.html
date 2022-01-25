@@ -90,13 +90,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae626afb93e3bbf3abd4410edbd316601"><td class="memItemLeft" align="right" valign="top"><a id="ae626afb93e3bbf3abd4410edbd316601"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Music</b> (const <a class="el" href="classraylib_1_1_music.html">Music</a> &amp;)=delete</td></tr>
 <tr class="separator:ae626afb93e3bbf3abd4410edbd316601"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cbc2287ba5c8e55ce16c47bbb640c60"><td class="memItemLeft" align="right" valign="top"><a id="a3cbc2287ba5c8e55ce16c47bbb640c60"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_music.html#a3cbc2287ba5c8e55ce16c47bbb640c60">Music</a> (const std::string &amp;fileName)</td></tr>
-<tr class="memdesc:a3cbc2287ba5c8e55ce16c47bbb640c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load music stream from file. <br /></td></tr>
+<tr class="memitem:a3cbc2287ba5c8e55ce16c47bbb640c60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_music.html#a3cbc2287ba5c8e55ce16c47bbb640c60">Music</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a3cbc2287ba5c8e55ce16c47bbb640c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load music stream from file.  <a href="classraylib_1_1_music.html#a3cbc2287ba5c8e55ce16c47bbb640c60">More...</a><br /></td></tr>
 <tr class="separator:a3cbc2287ba5c8e55ce16c47bbb640c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a894c193e31d956b4c8763698beae17c4"><td class="memItemLeft" align="right" valign="top"><a id="a894c193e31d956b4c8763698beae17c4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_music.html#a894c193e31d956b4c8763698beae17c4">Music</a> (const std::string &amp;fileType, unsigned char *data, int dataSize)</td></tr>
-<tr class="memdesc:a894c193e31d956b4c8763698beae17c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load music stream from memory. <br /></td></tr>
+<tr class="memitem:a894c193e31d956b4c8763698beae17c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_music.html#a894c193e31d956b4c8763698beae17c4">Music</a> (const std::string &amp;fileType, unsigned char *data, int dataSize)</td></tr>
+<tr class="memdesc:a894c193e31d956b4c8763698beae17c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load music stream from memory.  <a href="classraylib_1_1_music.html#a894c193e31d956b4c8763698beae17c4">More...</a><br /></td></tr>
 <tr class="separator:a894c193e31d956b4c8763698beae17c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dc7537cc6ea86a77b0e7c71b708d08f"><td class="memItemLeft" align="right" valign="top"><a id="a8dc7537cc6ea86a77b0e7c71b708d08f"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Music</b> (<a class="el" href="classraylib_1_1_music.html">Music</a> &amp;&amp;other)</td></tr>
@@ -208,7 +206,100 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="textblock"><p><a class="el" href="classraylib_1_1_music.html" title="Music stream type (audio file streaming from memory)">Music</a> stream type (audio file streaming from memory) </p>
 
 <p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00014">14</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3cbc2287ba5c8e55ce16c47bbb640c60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cbc2287ba5c8e55ce16c47bbb640c60">&#9670;&nbsp;</a></span>Music() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">raylib::Music::Music </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load music stream from file. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Throws if the music failed to load. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00036">36</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_music_8hpp_source.html#l00197">Load()</a>.</p>
+
+</div>
+</div>
+<a id="a894c193e31d956b4c8763698beae17c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a894c193e31d956b4c8763698beae17c4">&#9670;&nbsp;</a></span>Music() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">raylib::Music::Music </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dataSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load music stream from memory. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Throws if the music failed to load. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00047">47</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_music_8hpp_source.html#l00197">Load()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a349420428960e47afd4c69499b62eeac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a349420428960e47afd4c69499b62eeac">&#9670;&nbsp;</a></span>GetCtxData()</h2>
 
@@ -235,7 +326,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the ctxData value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The ctxData value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00072">72</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00076">76</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
 
 </div>
 </div>
@@ -265,7 +356,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the ctxType value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The ctxType value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00071">71</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00075">75</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
 
 </div>
 </div>
@@ -295,7 +386,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the frameCount value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The frameCount value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00069">69</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00073">73</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
 
 </div>
 </div>
@@ -325,7 +416,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the looping value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The looping value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00070">70</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00074">74</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
 
 </div>
 </div>
@@ -355,7 +446,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the stream value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The stream value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00068">68</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00072">72</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
 
 </div>
 </div>
@@ -385,9 +476,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieve whether or not the <a class="el" href="classraylib_1_1_music.html" title="Music stream type (audio file streaming from memory)">Music</a> has been loaded. </p>
 <dl class="section return"><dt>Returns</dt><dd>True or false depending on whether the <a class="el" href="classraylib_1_1_music.html" title="Music stream type (audio file streaming from memory)">Music</a> has been loaded. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00211">211</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00215">215</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_music_8hpp_source.html#l00193">Load()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_music_8hpp_source.html#l00197">Load()</a>.</p>
 
 </div>
 </div>
@@ -423,7 +514,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00072">72</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00076">76</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
 
 </div>
 </div>
@@ -459,7 +550,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00071">71</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00075">75</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
 
 </div>
 </div>
@@ -495,7 +586,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00069">69</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00073">73</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
 
 </div>
 </div>
@@ -531,7 +622,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00070">70</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00074">74</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
 
 </div>
 </div>
@@ -567,7 +658,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00068">68</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_music_8hpp_source.html#l00072">72</a> of file <a class="el" href="_music_8hpp_source.html">Music.hpp</a>.</p>
 
 </div>
 </div>

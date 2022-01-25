@@ -58,12 +58,28 @@ class Font : public ::Font {
         }
     }
 
+    /**
+     * Loads a Font from the given image with a color key.
+     *
+     * @param image The image to load the fond from.
+     *
+     * @throws raylib::RaylibException Throws if the given font failed to initialize.
+     *
+     * @see ::LoadFontFromImage()
+     */
     Font(const ::Image& image, ::Color key, int firstChar) {
         if (!Load(image, key, firstChar)) {
             throw RaylibException("Failed to load Texture from Image");
         }
     }
 
+    /**
+     * Loads a font from memory, based on the given file type and file data.
+     *
+     * @throws raylib::RaylibException Throws if the given font failed to initialize.
+     *
+     * @see ::LoadFontFromMemory()
+     */
     Font(const std::string& fileType, const unsigned char* fileData, int dataSize, int fontSize,
             int *fontChars, int charsCount)  {
         if (!Load(fileType, fileData, dataSize, fontSize, fontChars, charsCount)) {

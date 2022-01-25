@@ -182,7 +182,9 @@ class Wave : public ::Wave {
     }
 
     /**
-     * Load wave data from file
+     * Load wave data from file.
+     *
+     * @return True or false depending on if the Wave data was loaded properly.
      */
     bool Load(const std::string& fileName) {
         set(::LoadWave(fileName.c_str()));
@@ -191,6 +193,8 @@ class Wave : public ::Wave {
 
     /**
      * Load wave from memory buffer, fileType refers to extension: i.e. "wav"
+     *
+     * @return True or false depending on if the Wave data was loaded properly.
      */
     bool Load(const std::string& fileType, const unsigned char *fileData, int dataSize) {
         set(::LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
