@@ -4,9 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [4.0.5] - Unreleased
+## [4.1.0] - 2022-02-25
 ### Added
 - Web-based example at [core_basic_window_web.cpp](examples/core/core_basic_window_web.cpp)
+- An [Exception](README.md#exceptions) is now thrown when assets fail to load during object construction (applies to Music, Texture, Image, Sound, etc)
+
+### Changed
+- Unit tests now use [raylib-assert](https://github.com/RobLoach/raylib-assert)
 
 ## [4.0.4] - 2022-01-09
 ### Fixed

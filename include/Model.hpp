@@ -193,15 +193,28 @@ class Model : public ::Model {
         return ::GetModelBoundingBox(*this);
     }
 
+    /**
+     * Determines whether or not the Model has data in it.
+     */
     bool IsReady() const {
         return meshCount > 0 || materialCount > 0 || boneCount > 0;
     }
 
+    /**
+     * Loads a Model from the given file.
+     *
+     * @return True of false depending on whether or not the model was successfully loaded.
+     */
     bool Load(const std::string& fileName) {
         set(::LoadModel(fileName.c_str()));
         return IsReady();
     }
 
+    /**
+     * Loads a Model from the given Mesh.
+     *
+     * @return True of false depending on whether or not the model was successfully loaded.
+     */
     bool Load(const ::Mesh& mesh) {
         set(::LoadModelFromMesh(mesh));
         return IsReady();

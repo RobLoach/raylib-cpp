@@ -30,6 +30,8 @@ class Music : public ::Music {
 
     /**
      * Load music stream from file
+     *
+     * @throws raylib::RaylibException Throws if the music failed to load.
      */
     Music(const std::string& fileName) {
         if (!Load(fileName)) {
@@ -39,6 +41,8 @@ class Music : public ::Music {
 
     /**
      * Load music stream from memory
+     *
+     * @throws raylib::RaylibException Throws if the music failed to load.
      */
     Music(const std::string& fileType, unsigned char* data, int dataSize) {
         if (!Load(fileType, data, dataSize)) {

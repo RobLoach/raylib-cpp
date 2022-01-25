@@ -15,7 +15,9 @@ class Ray : public ::Ray {
         set(ray);
     }
 
-    Ray(::Vector3 position, ::Vector3 direction) : ::Ray{position, direction} {}
+    Ray(::Vector3 position, ::Vector3 direction = {0.0f, 0.0f, 0.0f}) : ::Ray{position, direction} {
+        // Nothing.
+    }
 
     Ray(::Vector2 mousePosition, ::Camera camera) {
         set(::GetMouseRay(mousePosition, camera));

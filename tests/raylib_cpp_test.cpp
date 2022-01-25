@@ -1,9 +1,10 @@
-#include <cassert>
 #include <string>
 #include <vector>
 #include "raylib-cpp.hpp"
+#include "raylib-assert.h"
 
 int main(int argc, char *argv[]) {
+    TraceLog(LOG_INFO, "---------------------");
     TraceLog(LOG_INFO, "TEST: raylib-cpp test");
 
     // Get a path to where the executable is so file loading is relative.
@@ -15,74 +16,88 @@ int main(int argc, char *argv[]) {
     // Vector
     {
         raylib::Vector2 position(50, 100);
-        assert(position.GetX() == position.x);
+        AssertEqual(position.GetX(), position.x);
         position.x = 150;
-        assert(position.GetX() == 150);
+        AssertEqual(position.GetX(), 150);
         position.SetX(300);
-        assert(position.GetX() == 300);
+        AssertEqual(position.GetX(), 300);
 
         raylib::Vector2 speed(10, 10);
         position += speed;
-        assert(position.x == 310);
-        assert(raylib::Window::IsReady() == false);
+        AssertEqual(position.x, 310);
+        AssertEqual(raylib::Window::IsReady(), false);
 
         raylib::Vector2 size{50,50};
         raylib::Vector2 halfsize = size / 2.0f;
 
-        assert(size.x == 50);
-        assert(halfsize.x == 25);
+        AssertEqual(size.x, 50);
+        AssertEqual(halfsize.x, 25);
 
         raylib::Vector2 doublesize = size * 2.0f;
-        assert(size.x == 50);
-        assert(doublesize.x == 100);
+        AssertEqual(size.x, 50);
+        AssertEqual(doublesize.x, 100);
     }
 
     // Color
     {
         raylib::Color color = RED;
-        assert(color.ToInt() == ::ColorToInt(RED));
+        AssertEqual(color.ToInt(), ::ColorToInt(RED));
         color = RAYWHITE;
-        assert(color.r == RAYWHITE.r);
+        ::Color raylibColor = RAYWHITE;
+        AssertEqual(color.r, raylibColor.r);
     }
 
     // Math
     {
         raylib::Vector2 direction(50, 50);
         raylib::Vector2 newDirection = direction.Rotate(30);
-        assert(((int)newDirection.x) == 57);
+        AssertEqual((int)newDirection.x, 57);
+    }
+
+    // Image
+    {
+        // Loading
+        raylib::Image image(path + "/resources/feynman.png");
+        Assert(image.IsReady());
+
+        // Chaining
+        image.Crop(100, 100)
+            .Resize(50, 50);
+        AssertEqual(image.GetWidth(), 50);
+        AssertEqual(image.GetHeight(), 50);
     }
 
     // raylib::GetDirectoryFiles()
     {
         std::vector<std::string> files = raylib::GetDirectoryFiles(::GetWorkingDirectory());
-        assert(files.size() > 3);
+        Assert(files.size() > 3);
     }
 
     // raylib::TextReplace()
     {
         std::string input = "Hello World!";
         std::string output = raylib::TextReplace(input, "World", "Moon");
-        assert(output == "Hello Moon!");
+        AssertEqual(output, "Hello Moon!");
     }
 
     // raylib::TextInsert()
     {
         std::string input = "Hello World!";
         std::string output = raylib::TextInsert(input, "Good!", 0);
-        assert(output == "Good! World!");
+        AssertEqual(output, "Good! World!");
     }
 
     // raylib::TextSubtext()
     {
         std::string input = "Hello World!";
         std::string output = raylib::TextSubtext(input, 6, 5);
-        assert(output == "World");
+        AssertEqual(output, "World");
     }
 
-    // Sound
+    // Wave
     {
         raylib::Wave wave(path + "/resources/weird.wav");
-        assert(wave.IsReady());
+        Assert(wave.IsReady(), "Expected wave to be loaded correctly");
     }
 
     // RaylibException
@@ -95,10 +110,10 @@ int main(int argc, char *argv[]) {
             error.TraceLog(LOG_INFO);
             passed = true;
         }
-
-        assert(passed);
+        Assert(passed, "Expected to have a RaylibException to be thrown");
     }
 
-    TraceLog(LOG_INFO, "TEST: raylib-cpp test complete");
+    TraceLog(LOG_INFO, "TEST: raylib-cpp test");
+    TraceLog(LOG_INFO, "---------------------");
     return 0;
 }

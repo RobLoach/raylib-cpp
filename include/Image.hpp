@@ -392,6 +392,13 @@ class Image : public ::Image {
     }
 
     /**
+     * Crop an image to a new given width and height.
+     */
+    inline Image& Crop(int newWidth, int newHeight) {
+        return Crop(0, 0, newWidth, newHeight);
+    }
+
+    /**
      * Crop an image to a new given width and height based on a vector.
      */
     inline Image& Crop(::Vector2 size) {
@@ -671,14 +678,16 @@ class Image : public ::Image {
     }
 
     /**
-     * Load texture from image data
+     * Load texture from image data.
      */
     inline ::Texture2D LoadTexture() const {
         return ::LoadTextureFromImage(*this);
     }
 
     /**
-     * Load texture from image data
+     * Loads a texture from the image data.
+     *
+     * @see LoadTexture()
      */
     inline operator ::Texture2D() {
         return LoadTexture();
@@ -692,7 +701,7 @@ class Image : public ::Image {
     }
 
     /**
-     * Returns the pixel data size of the image.
+     * Returns the pixel data size based on the current image.
      *
      * @return The pixel data size of the image.
      */
