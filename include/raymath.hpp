@@ -8,7 +8,10 @@
 extern "C" {
 #endif
 #ifndef RAYLIB_CPP_NO_MATH
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
 #include "raymath.h" // NOLINT
+#pragma GCC diagnostic pop
 #endif
 #ifdef __cplusplus
 }
