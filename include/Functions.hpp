@@ -61,6 +61,13 @@ RLCPPAPI inline void TakeScreenshot(const std::string& fileName) {
 }
 
 /**
+ * Get gamepad internal name id
+ */
+RLCPPAPI inline std::string GetGamepadName(int gamepad) {
+    return ::GetGamepadName(gamepad);
+}
+
+/**
  * Load text data from file (read)
  */
 [[maybe_unused]]
