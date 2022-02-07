@@ -337,6 +337,14 @@ class Window {
     }
 
     /**
+     * Draw current FPS
+     */
+    inline Window& DrawFPS(int posX = 10, int posY = 10) {
+        ::DrawFPS(posX, posY);
+        return *this;
+    }
+
+    /**
      * Returns time in seconds for last frame drawn
      */
     inline float GetFrameTime() const {
