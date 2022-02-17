@@ -27,21 +27,21 @@ endif()
 
 # This is the main part:
 set(SOURCES main.cpp)
-add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
-set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES CXX_STANDARD 11)
-target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC raylib raylib_cpp)
+add_executable(${PROJECT_NAME} ${SOURCES})
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 11)
+target_link_libraries(${PROJECT_NAME} PUBLIC raylib raylib_cpp)
 
 # Web Configurations
 if (${PLATFORM} STREQUAL "Web")
     # Tell Emscripten to build an example.html file.
-    set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES SUFFIX ".html")
+    set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".html")
 endif()
 
 # Checks if OSX and links appropriate frameworks (Only required on MacOS)
 if (APPLE)
-    target_link_libraries(${CMAKE_PROJECT_NAME} "-framework IOKit")
-    target_link_libraries(${CMAKE_PROJECT_NAME} "-framework Cocoa")
-    target_link_libraries(${CMAKE_PROJECT_NAME} "-framework OpenGL")
+    target_link_libraries(${PROJECT_NAME} "-framework IOKit")
+    target_link_libraries(${PROJECT_NAME} "-framework Cocoa")
+    target_link_libraries(${PROJECT_NAME} "-framework OpenGL")
 endif()
 
 # That's it! You should have an example executable that you can run. Have fun!
