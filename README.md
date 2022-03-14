@@ -2,7 +2,7 @@
 
 # raylib-cpp [![Tests](https://github.com/RobLoach/raylib-cpp/workflows/Tests/badge.svg)](https://github.com/RobLoach/raylib-cpp/actions?query=workflow%3ATests+branch%3Amaster) [![License](https://img.shields.io/badge/license-zlib%2Flibpng-blue.svg)](LICENSE)
 
-[raylib-cpp](https://github.com/robloach/raylib-cpp) is a C++ wrapper library for [raylib](https://www.raylib.com), a simple and easy-to-use library to enjoy videogames programming. This C++ header provides object-oriented wrappers around *raylib*'s struct interfaces. *raylib-cpp* is not required to use *raylib* in C++, but the classes do bring using the raylib API more inline with C++'s language pardigm.
+[raylib-cpp](https://github.com/robloach/raylib-cpp) is a C++ wrapper library for [raylib](https://www.raylib.com), a simple and easy-to-use library to enjoy videogames programming. This C++ header provides object-oriented wrappers around *raylib*'s struct interfaces. *raylib-cpp* is not required to use *raylib* in C++, but the classes do bring using the raylib API more inline with C++'s language paradigm.
 
 ## Example
 
@@ -86,7 +86,7 @@ texture.Draw(50, 50, WHITE);
 
 ### Optional Parameters
 
-Many methods have optional parameters with sane defaults.
+Many methods have optional parameters with the same defaults.
 
 ``` cpp
 // raylib
@@ -98,7 +98,7 @@ texture.Draw(50, 50); // WHITE is provided as the default tint.
 
 ### Object Destructors
 
-Objects will attempt to unload their respective raylib resources on destruction. This means no need to call Unload or Close methods. This applies to the window, textures, images, sounds, etc.
+Objects will attempt to unload their respective raylib resources on destruction. This means that there is no need to call Unload or Close methods. This applies to the window, textures, images, sounds, etc.
 
 ``` cpp
 // raylib
@@ -112,7 +112,7 @@ raylib::Window window(640, 480, "Hello World");
 
 ### Property Get/Set
 
-Properties can be assigned through getter and setter methods. You still have access to the internal properties, however.
+Properties can be assigned through getter and setter methods. However, you still have access to the internal properties.
 
 ``` cpp
 // raylib
@@ -208,7 +208,7 @@ for (auto& file : files) {
 
 ### String Functions
 
-Many of the raylib functions have `std::string`-related overrides to allow calling them directly with `std::string`s to save having to use the `.c_str()` method.
+Many of the raylib functions have `std::string`-related overrides to allow calling them directly with `std::string`s and avoid having to use the `.c_str()` method.
 
 ``` cpp
 // raylib
@@ -222,7 +222,7 @@ raylib::OpenURL(url);
 
 ### Exceptions
 
-When loading an asset fails, raylib will log a warning, but provide no other feedback for you to act upon. raylib-cpp will throw a [`RaylibException`](include/RaylibException.hpp) [runtime exception](https://en.cppreference.com/w/cpp/error/runtime_error), allowing to provide a safe method to catch failed loads.
+When loading an asset fails, raylib will log a warning, but provide no other feedback for you to act upon. raylib-cpp will throw a [`RaylibException`](include/RaylibException.hpp) [runtime exception](https://en.cppreference.com/w/cpp/error/runtime_error), allowing to provide a safe method for catching failed loads.
 
 ``` cpp
 // raylib
