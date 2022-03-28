@@ -36,6 +36,10 @@ class Vector2 : public ::Vector2 {
             && y == other.y;
     }
 
+    bool operator!=(const ::Vector2& other) {
+        return !(*this == other);
+    }
+
 #ifndef RAYLIB_CPP_NO_MATH
     Vector2 Add(const ::Vector2& vector2) const {
         return Vector2Add(*this, vector2);
