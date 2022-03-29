@@ -48,6 +48,10 @@ class Vector4 : public ::Vector4 {
             && w == other.w;
     }
 
+    bool operator!=(const ::Vector4& other) {
+        return !(*this == other);
+    }
+
     inline ::Rectangle ToRectangle() {
         return {x, y, z, w};
     }

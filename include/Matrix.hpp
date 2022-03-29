@@ -71,6 +71,10 @@ class Matrix : public ::Matrix {
             && m15 == other.m15;
     }
 
+    bool operator!=(const ::Matrix& other) {
+        return !(*this == other);
+    }
+
 #ifndef RAYLIB_CPP_NO_MATH
     /**
      * Returns the trace of the matrix (sum of the values along the diagonal)
