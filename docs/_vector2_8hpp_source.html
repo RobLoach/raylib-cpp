@@ -106,256 +106,260 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            &amp;&amp; y == other.y;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_NO_MATH</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    Vector2 Add(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> Vector2Add(*<span class="keyword">this</span>, vector2);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Vector2 operator+(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> operator!=(const ::Vector2&amp; other) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_NO_MATH</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Vector2 Add(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> Vector2Add(*<span class="keyword">this</span>, vector2);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    Vector2 Subtract(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> Vector2Subtract(*<span class="keyword">this</span>, vector2);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    Vector2 operator+(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> Vector2Add(*<span class="keyword">this</span>, vector2);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    Vector2 operator-(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    Vector2 Subtract(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> Vector2Subtract(*<span class="keyword">this</span>, vector2);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    Vector2 Negate()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> Vector2Negate(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    Vector2 operator-(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> Vector2Subtract(*<span class="keyword">this</span>, vector2);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Vector2 operator-()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Vector2 Negate()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> Vector2Negate(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    Vector2 Multiply(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> Vector2Multiply(*<span class="keyword">this</span>, vector2);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    Vector2 operator-()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> Vector2Negate(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Vector2 operator*(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Vector2 Multiply(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> Vector2Multiply(*<span class="keyword">this</span>, vector2);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Vector2 Scale(<span class="keyword">const</span> <span class="keywordtype">float</span> scale)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> Vector2Scale(*<span class="keyword">this</span>, scale);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Vector2 operator*(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> Vector2Multiply(*<span class="keyword">this</span>, vector2);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    Vector2 operator*(<span class="keyword">const</span> <span class="keywordtype">float</span> scale)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    Vector2 Scale(<span class="keyword">const</span> <span class="keywordtype">float</span> scale)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> Vector2Scale(*<span class="keyword">this</span>, scale);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    Vector2 Divide(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> Vector2Divide(*<span class="keyword">this</span>, vector2);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    Vector2 operator*(<span class="keyword">const</span> <span class="keywordtype">float</span> scale)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> Vector2Scale(*<span class="keyword">this</span>, scale);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    Vector2 operator/(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    Vector2 Divide(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> Vector2Divide(*<span class="keyword">this</span>, vector2);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    Vector2 Divide(<span class="keyword">const</span> <span class="keywordtype">float</span> div)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        return ::Vector2{x / div, y / div};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    Vector2 operator/(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> Vector2Divide(*<span class="keyword">this</span>, vector2);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    Vector2 operator/(<span class="keyword">const</span> <span class="keywordtype">float</span> div)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> Divide(div);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    Vector2 Divide(<span class="keyword">const</span> <span class="keywordtype">float</span> div)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        return ::Vector2{x / div, y / div};</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    Vector2&amp; operator+=(const ::Vector2&amp; vector2) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        set(Vector2Add(*<span class="keyword">this</span>, vector2));</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    Vector2&amp; operator-=(const ::Vector2&amp; vector2) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        set(Vector2Subtract(*<span class="keyword">this</span>, vector2));</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    Vector2 operator/(<span class="keyword">const</span> <span class="keywordtype">float</span> div)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> Divide(div);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    Vector2&amp; operator+=(const ::Vector2&amp; vector2) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        set(Vector2Add(*<span class="keyword">this</span>, vector2));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    Vector2&amp; operator-=(const ::Vector2&amp; vector2) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        set(Vector2Subtract(*<span class="keyword">this</span>, vector2));</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    Vector2&amp; operator*=(const ::Vector2&amp; vector2) {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        set(Vector2Multiply(*<span class="keyword">this</span>, vector2));</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    Vector2&amp; operator*=(<span class="keyword">const</span> <span class="keywordtype">float</span> scale) {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        set(Vector2Scale(*<span class="keyword">this</span>, scale));</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    Vector2&amp; operator/=(const ::Vector2&amp; vector2) {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        set(Vector2Divide(*<span class="keyword">this</span>, vector2));</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    Vector2&amp; operator/=(<span class="keyword">const</span> <span class="keywordtype">float</span> div) {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        this-&gt;x /= div;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        this-&gt;y /= div;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    Vector2&amp; operator*=(const ::Vector2&amp; vector2) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        set(Vector2Multiply(*<span class="keyword">this</span>, vector2));</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    Vector2&amp; operator*=(<span class="keyword">const</span> <span class="keywordtype">float</span> scale) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        set(Vector2Scale(*<span class="keyword">this</span>, scale));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    Vector2&amp; operator/=(const ::Vector2&amp; vector2) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        set(Vector2Divide(*<span class="keyword">this</span>, vector2));</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a31b7bc465faebf07ef894eee4291e725">  137</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_vector2.html#a31b7bc465faebf07ef894eee4291e725">Length</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">return</span> Vector2Length(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a3e68ca85bfbd5cbe8ebce0ad9e4688a4">  144</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_vector2.html#a3e68ca85bfbd5cbe8ebce0ad9e4688a4">LengthSqr</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">return</span> Vector2LengthSqr(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#aee50557d8a60c2633de106f66b3d6cd5">  151</a></span>&#160;    <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#aee50557d8a60c2633de106f66b3d6cd5">Normalize</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">return</span> Vector2Normalize(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a31c32996761d89b568102b2f6b60b745">  158</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_vector2.html#a31c32996761d89b568102b2f6b60b745">DotProduct</a>(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">return</span> Vector2DotProduct(*<span class="keyword">this</span>, vector2);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#af912d448e687a2a39fed158b4bf18a12">  165</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_vector2.html#af912d448e687a2a39fed158b4bf18a12">Angle</a>(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span> Vector2Angle(*<span class="keyword">this</span>, vector2);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a488a41369489998272b217d6385d6c37">  172</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_vector2.html#a488a41369489998272b217d6385d6c37">Distance</a>(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">return</span> Vector2Distance(*<span class="keyword">this</span>, vector2);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a295e4514f3a3842d83aee1106543e294">  179</a></span>&#160;    <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#a295e4514f3a3842d83aee1106543e294">Lerp</a>(const ::Vector2&amp; vector2, <span class="keywordtype">float</span> amount)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">return</span> Vector2Lerp(*<span class="keyword">this</span>, vector2, amount);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a8732abb90648f01e75480a0edf7292d7">  186</a></span>&#160;    <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#a8732abb90648f01e75480a0edf7292d7">Reflect</a>(const ::Vector2&amp; normal)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">return</span> Vector2Reflect(*<span class="keyword">this</span>, normal);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a32a17f0018071cec378b89edc1f6d696">  193</a></span>&#160;    <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#a32a17f0018071cec378b89edc1f6d696">Rotate</a>(<span class="keywordtype">float</span> degrees)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">return</span> Vector2Rotate(*<span class="keyword">this</span>, degrees);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a1daf7306af22e5f14c9ee6c08952194b">  200</a></span>&#160;    <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#a1daf7306af22e5f14c9ee6c08952194b">MoveTowards</a>(const ::Vector2&amp; target, <span class="keywordtype">float</span> maxDistance)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">return</span> Vector2MoveTowards(*<span class="keyword">this</span>, target, maxDistance);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a6fc574d57d45b21e36bffbd44ceb8989">  207</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#a6fc574d57d45b21e36bffbd44ceb8989">Zero</a>() {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">return</span> Vector2Zero();</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#ae0d880ae074014c100a342292ff85deb">  214</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#ae0d880ae074014c100a342292ff85deb">One</a>() {</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">return</span> Vector2One();</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a>&amp; DrawPixel(::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        ::DrawPixelV(*<span class="keyword">this</span>, color);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keyword">inline</span> Vector2&amp; DrawLine(::Vector2 endPos, ::Color color) {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        ::DrawLineV(*<span class="keyword">this</span>, endPos, color);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keyword">inline</span> Vector2&amp; DrawLine(::Vector2 endPos, <span class="keywordtype">float</span> thick, ::Color color) {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        ::DrawLineEx(*<span class="keyword">this</span>, endPos, thick, color);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    }</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keyword">inline</span> Vector2&amp; DrawLineBezier(::Vector2 endPos, <span class="keywordtype">float</span> thick, ::Color color) {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        ::DrawLineBezier(*<span class="keyword">this</span>, endPos, thick, color);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    }</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a75ad1e5906da8eb4ab23c12748b431cb">  242</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a>&amp; <a class="code" href="classraylib_1_1_vector2.html#a75ad1e5906da8eb4ab23c12748b431cb">DrawLineBezierQuad</a>(</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> endPos,</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> controlPos,</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordtype">float</span> thick,</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;       <a class="code" href="classraylib_1_1_vector2.html#a75ad1e5906da8eb4ab23c12748b431cb">::DrawLineBezierQuad</a>(*<span class="keyword">this</span>, endPos, controlPos, thick, color);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;       <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#ad13e3d98cc06a835db9dc605b090b15c">  254</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a>&amp; <a class="code" href="classraylib_1_1_vector2.html#ad13e3d98cc06a835db9dc605b090b15c">DrawCircle</a>(<span class="keywordtype">float</span> radius, ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        ::DrawCircleV(*<span class="keyword">this</span>, radius, color);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    }</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a>&amp; DrawRectangle(::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> size, ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        ::DrawRectangleV(*<span class="keyword">this</span>, size, color);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keyword">inline</span> Vector2&amp; DrawPoly(<span class="keywordtype">int</span> sides, <span class="keywordtype">float</span> radius, <span class="keywordtype">float</span> rotation, ::Color color) {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        ::DrawPoly(*<span class="keyword">this</span>, sides, radius, rotation, color);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    }</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00272"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a7dcfa1e305dca48ca72648a447228d47">  272</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector2.html#a7dcfa1e305dca48ca72648a447228d47">CheckCollisionCircle</a>(<span class="keywordtype">float</span> radius1, ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> center2, <span class="keywordtype">float</span> radius2)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        return ::CheckCollisionCircles(*<span class="keyword">this</span>, radius1, center2, radius2);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a6ed62656d9528f2a1b2924132576779e">  279</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector2.html#a6ed62656d9528f2a1b2924132576779e">CheckCollisionCircle</a>(<span class="keywordtype">float</span> radius, ::<a class="code" href="classraylib_1_1_rectangle.html">Rectangle</a> rec)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        return ::CheckCollisionCircleRec(*<span class="keyword">this</span>, radius, rec);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    }</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a23dfda9f721e98d3bf80de4eeccde18e">  286</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector2.html#a23dfda9f721e98d3bf80de4eeccde18e">CheckCollision</a>(::<a class="code" href="classraylib_1_1_rectangle.html">Rectangle</a> rec)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        return ::CheckCollisionPointRec(*<span class="keyword">this</span>, rec);</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    }</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00293"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a5a16075cb1de65199a8c810147658198">  293</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector2.html#a5a16075cb1de65199a8c810147658198">CheckCollision</a>(::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> center, <span class="keywordtype">float</span> radius)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        return ::CheckCollisionPointCircle(*<span class="keyword">this</span>, center, radius);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    }</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a10b07c009af9cf9723cd48a15f5044b6">  300</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector2.html#a10b07c009af9cf9723cd48a15f5044b6">CheckCollision</a>(::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> p1, ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> p2, ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> p3)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        return ::CheckCollisionPointTriangle(*<span class="keyword">this</span>, p1, p2, p3);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#adf2ac764f0a4b4c6d67dc1cfbb8d0df5">  307</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector2.html#adf2ac764f0a4b4c6d67dc1cfbb8d0df5">CheckCollisionLines</a>(</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> endPos1,</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> startPos2, ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> endPos2,</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> *collisionPoint)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        return ::CheckCollisionLines(*<span class="keyword">this</span>, endPos1, startPos2, endPos2, collisionPoint);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Vector2&amp; vec) {</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        x = vec.x;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        y = vec.y;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;};</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_VECTOR2_HPP_</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    Vector2&amp; operator/=(<span class="keyword">const</span> <span class="keywordtype">float</span> div) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        this-&gt;x /= div;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        this-&gt;y /= div;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a31b7bc465faebf07ef894eee4291e725">  141</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_vector2.html#a31b7bc465faebf07ef894eee4291e725">Length</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">return</span> Vector2Length(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a3e68ca85bfbd5cbe8ebce0ad9e4688a4">  148</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_vector2.html#a3e68ca85bfbd5cbe8ebce0ad9e4688a4">LengthSqr</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span> Vector2LengthSqr(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#aee50557d8a60c2633de106f66b3d6cd5">  155</a></span>&#160;    <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#aee50557d8a60c2633de106f66b3d6cd5">Normalize</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">return</span> Vector2Normalize(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a31c32996761d89b568102b2f6b60b745">  162</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_vector2.html#a31c32996761d89b568102b2f6b60b745">DotProduct</a>(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">return</span> Vector2DotProduct(*<span class="keyword">this</span>, vector2);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#af912d448e687a2a39fed158b4bf18a12">  169</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_vector2.html#af912d448e687a2a39fed158b4bf18a12">Angle</a>(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">return</span> Vector2Angle(*<span class="keyword">this</span>, vector2);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a488a41369489998272b217d6385d6c37">  176</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_vector2.html#a488a41369489998272b217d6385d6c37">Distance</a>(const ::Vector2&amp; vector2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">return</span> Vector2Distance(*<span class="keyword">this</span>, vector2);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a295e4514f3a3842d83aee1106543e294">  183</a></span>&#160;    <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#a295e4514f3a3842d83aee1106543e294">Lerp</a>(const ::Vector2&amp; vector2, <span class="keywordtype">float</span> amount)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">return</span> Vector2Lerp(*<span class="keyword">this</span>, vector2, amount);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a8732abb90648f01e75480a0edf7292d7">  190</a></span>&#160;    <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#a8732abb90648f01e75480a0edf7292d7">Reflect</a>(const ::Vector2&amp; normal)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">return</span> Vector2Reflect(*<span class="keyword">this</span>, normal);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a32a17f0018071cec378b89edc1f6d696">  197</a></span>&#160;    <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#a32a17f0018071cec378b89edc1f6d696">Rotate</a>(<span class="keywordtype">float</span> degrees)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">return</span> Vector2Rotate(*<span class="keyword">this</span>, degrees);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a1daf7306af22e5f14c9ee6c08952194b">  204</a></span>&#160;    <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#a1daf7306af22e5f14c9ee6c08952194b">MoveTowards</a>(const ::Vector2&amp; target, <span class="keywordtype">float</span> maxDistance)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">return</span> Vector2MoveTowards(*<span class="keyword">this</span>, target, maxDistance);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a6fc574d57d45b21e36bffbd44ceb8989">  211</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#a6fc574d57d45b21e36bffbd44ceb8989">Zero</a>() {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">return</span> Vector2Zero();</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#ae0d880ae074014c100a342292ff85deb">  218</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_vector2.html#ae0d880ae074014c100a342292ff85deb">One</a>() {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordflow">return</span> Vector2One();</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a>&amp; DrawPixel(::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        ::DrawPixelV(*<span class="keyword">this</span>, color);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keyword">inline</span> Vector2&amp; DrawLine(::Vector2 endPos, ::Color color) {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        ::DrawLineV(*<span class="keyword">this</span>, endPos, color);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keyword">inline</span> Vector2&amp; DrawLine(::Vector2 endPos, <span class="keywordtype">float</span> thick, ::Color color) {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        ::DrawLineEx(*<span class="keyword">this</span>, endPos, thick, color);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keyword">inline</span> Vector2&amp; DrawLineBezier(::Vector2 endPos, <span class="keywordtype">float</span> thick, ::Color color) {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        ::DrawLineBezier(*<span class="keyword">this</span>, endPos, thick, color);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    }</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a75ad1e5906da8eb4ab23c12748b431cb">  246</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a>&amp; <a class="code" href="classraylib_1_1_vector2.html#a75ad1e5906da8eb4ab23c12748b431cb">DrawLineBezierQuad</a>(</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> endPos,</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> controlPos,</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordtype">float</span> thick,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;       <a class="code" href="classraylib_1_1_vector2.html#a75ad1e5906da8eb4ab23c12748b431cb">::DrawLineBezierQuad</a>(*<span class="keyword">this</span>, endPos, controlPos, thick, color);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;       <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#ad13e3d98cc06a835db9dc605b090b15c">  258</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a>&amp; <a class="code" href="classraylib_1_1_vector2.html#ad13e3d98cc06a835db9dc605b090b15c">DrawCircle</a>(<span class="keywordtype">float</span> radius, ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        ::DrawCircleV(*<span class="keyword">this</span>, radius, color);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a>&amp; DrawRectangle(::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> size, ::<a class="code" href="classraylib_1_1_color.html">Color</a> color) {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        ::DrawRectangleV(*<span class="keyword">this</span>, size, color);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keyword">inline</span> Vector2&amp; DrawPoly(<span class="keywordtype">int</span> sides, <span class="keywordtype">float</span> radius, <span class="keywordtype">float</span> rotation, ::Color color) {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        ::DrawPoly(*<span class="keyword">this</span>, sides, radius, rotation, color);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a7dcfa1e305dca48ca72648a447228d47">  276</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector2.html#a7dcfa1e305dca48ca72648a447228d47">CheckCollisionCircle</a>(<span class="keywordtype">float</span> radius1, ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> center2, <span class="keywordtype">float</span> radius2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        return ::CheckCollisionCircles(*<span class="keyword">this</span>, radius1, center2, radius2);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a6ed62656d9528f2a1b2924132576779e">  283</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector2.html#a6ed62656d9528f2a1b2924132576779e">CheckCollisionCircle</a>(<span class="keywordtype">float</span> radius, ::<a class="code" href="classraylib_1_1_rectangle.html">Rectangle</a> rec)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        return ::CheckCollisionCircleRec(*<span class="keyword">this</span>, radius, rec);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a23dfda9f721e98d3bf80de4eeccde18e">  290</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector2.html#a23dfda9f721e98d3bf80de4eeccde18e">CheckCollision</a>(::<a class="code" href="classraylib_1_1_rectangle.html">Rectangle</a> rec)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        return ::CheckCollisionPointRec(*<span class="keyword">this</span>, rec);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a5a16075cb1de65199a8c810147658198">  297</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector2.html#a5a16075cb1de65199a8c810147658198">CheckCollision</a>(::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> center, <span class="keywordtype">float</span> radius)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        return ::CheckCollisionPointCircle(*<span class="keyword">this</span>, center, radius);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#a10b07c009af9cf9723cd48a15f5044b6">  304</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector2.html#a10b07c009af9cf9723cd48a15f5044b6">CheckCollision</a>(::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> p1, ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> p2, ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> p3)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        return ::CheckCollisionPointTriangle(*<span class="keyword">this</span>, p1, p2, p3);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    }</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector2.html#adf2ac764f0a4b4c6d67dc1cfbb8d0df5">  311</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector2.html#adf2ac764f0a4b4c6d67dc1cfbb8d0df5">CheckCollisionLines</a>(</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> endPos1,</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> startPos2, ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> endPos2,</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            ::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> *collisionPoint)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        return ::CheckCollisionLines(*<span class="keyword">this</span>, endPos1, startPos2, endPos2, collisionPoint);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set(const ::Vector2&amp; vec) {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        x = vec.x;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        y = vec.y;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    }</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;};</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="preprocessor">#endif  // RAYLIB_CPP_INCLUDE_VECTOR2_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a10b07c009af9cf9723cd48a15f5044b6"><div class="ttname"><a href="classraylib_1_1_vector2.html#a10b07c009af9cf9723cd48a15f5044b6">raylib::Vector2::CheckCollision</a></div><div class="ttdeci">bool CheckCollision(::Vector2 p1, ::Vector2 p2, ::Vector2 p3) const</div><div class="ttdoc">Check if point is inside a triangle.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00300">Vector2.hpp:300</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a10b07c009af9cf9723cd48a15f5044b6"><div class="ttname"><a href="classraylib_1_1_vector2.html#a10b07c009af9cf9723cd48a15f5044b6">raylib::Vector2::CheckCollision</a></div><div class="ttdeci">bool CheckCollision(::Vector2 p1, ::Vector2 p2, ::Vector2 p3) const</div><div class="ttdoc">Check if point is inside a triangle.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00304">Vector2.hpp:304</a></div></div>
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00008">AudioDevice.hpp:8</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a8732abb90648f01e75480a0edf7292d7"><div class="ttname"><a href="classraylib_1_1_vector2.html#a8732abb90648f01e75480a0edf7292d7">raylib::Vector2::Reflect</a></div><div class="ttdeci">Vector2 Reflect(const ::Vector2 &amp;normal) const</div><div class="ttdoc">Calculate reflected vector to normal.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00186">Vector2.hpp:186</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a1daf7306af22e5f14c9ee6c08952194b"><div class="ttname"><a href="classraylib_1_1_vector2.html#a1daf7306af22e5f14c9ee6c08952194b">raylib::Vector2::MoveTowards</a></div><div class="ttdeci">Vector2 MoveTowards(const ::Vector2 &amp;target, float maxDistance) const</div><div class="ttdoc">Move Vector towards target.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00200">Vector2.hpp:200</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a31b7bc465faebf07ef894eee4291e725"><div class="ttname"><a href="classraylib_1_1_vector2.html#a31b7bc465faebf07ef894eee4291e725">raylib::Vector2::Length</a></div><div class="ttdeci">float Length() const</div><div class="ttdoc">Calculate vector length.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00137">Vector2.hpp:137</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_aee50557d8a60c2633de106f66b3d6cd5"><div class="ttname"><a href="classraylib_1_1_vector2.html#aee50557d8a60c2633de106f66b3d6cd5">raylib::Vector2::Normalize</a></div><div class="ttdeci">Vector2 Normalize() const</div><div class="ttdoc">Normalize provided vector.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00151">Vector2.hpp:151</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a6fc574d57d45b21e36bffbd44ceb8989"><div class="ttname"><a href="classraylib_1_1_vector2.html#a6fc574d57d45b21e36bffbd44ceb8989">raylib::Vector2::Zero</a></div><div class="ttdeci">static Vector2 Zero()</div><div class="ttdoc">Vector with components value 0.0f.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00207">Vector2.hpp:207</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a23dfda9f721e98d3bf80de4eeccde18e"><div class="ttname"><a href="classraylib_1_1_vector2.html#a23dfda9f721e98d3bf80de4eeccde18e">raylib::Vector2::CheckCollision</a></div><div class="ttdeci">bool CheckCollision(::Rectangle rec) const</div><div class="ttdoc">Check if point is inside rectangle.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00286">Vector2.hpp:286</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a5a16075cb1de65199a8c810147658198"><div class="ttname"><a href="classraylib_1_1_vector2.html#a5a16075cb1de65199a8c810147658198">raylib::Vector2::CheckCollision</a></div><div class="ttdeci">bool CheckCollision(::Vector2 center, float radius) const</div><div class="ttdoc">Check if point is inside circle.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00293">Vector2.hpp:293</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a295e4514f3a3842d83aee1106543e294"><div class="ttname"><a href="classraylib_1_1_vector2.html#a295e4514f3a3842d83aee1106543e294">raylib::Vector2::Lerp</a></div><div class="ttdeci">Vector2 Lerp(const ::Vector2 &amp;vector2, float amount) const</div><div class="ttdoc">Calculate linear interpolation between two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00179">Vector2.hpp:179</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_ae0d880ae074014c100a342292ff85deb"><div class="ttname"><a href="classraylib_1_1_vector2.html#ae0d880ae074014c100a342292ff85deb">raylib::Vector2::One</a></div><div class="ttdeci">static Vector2 One()</div><div class="ttdoc">Vector with components value 1.0f.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00214">Vector2.hpp:214</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a3e68ca85bfbd5cbe8ebce0ad9e4688a4"><div class="ttname"><a href="classraylib_1_1_vector2.html#a3e68ca85bfbd5cbe8ebce0ad9e4688a4">raylib::Vector2::LengthSqr</a></div><div class="ttdeci">float LengthSqr() const</div><div class="ttdoc">Calculate vector square length.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00144">Vector2.hpp:144</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a8732abb90648f01e75480a0edf7292d7"><div class="ttname"><a href="classraylib_1_1_vector2.html#a8732abb90648f01e75480a0edf7292d7">raylib::Vector2::Reflect</a></div><div class="ttdeci">Vector2 Reflect(const ::Vector2 &amp;normal) const</div><div class="ttdoc">Calculate reflected vector to normal.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00190">Vector2.hpp:190</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a1daf7306af22e5f14c9ee6c08952194b"><div class="ttname"><a href="classraylib_1_1_vector2.html#a1daf7306af22e5f14c9ee6c08952194b">raylib::Vector2::MoveTowards</a></div><div class="ttdeci">Vector2 MoveTowards(const ::Vector2 &amp;target, float maxDistance) const</div><div class="ttdoc">Move Vector towards target.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00204">Vector2.hpp:204</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a31b7bc465faebf07ef894eee4291e725"><div class="ttname"><a href="classraylib_1_1_vector2.html#a31b7bc465faebf07ef894eee4291e725">raylib::Vector2::Length</a></div><div class="ttdeci">float Length() const</div><div class="ttdoc">Calculate vector length.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00141">Vector2.hpp:141</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_aee50557d8a60c2633de106f66b3d6cd5"><div class="ttname"><a href="classraylib_1_1_vector2.html#aee50557d8a60c2633de106f66b3d6cd5">raylib::Vector2::Normalize</a></div><div class="ttdeci">Vector2 Normalize() const</div><div class="ttdoc">Normalize provided vector.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00155">Vector2.hpp:155</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a6fc574d57d45b21e36bffbd44ceb8989"><div class="ttname"><a href="classraylib_1_1_vector2.html#a6fc574d57d45b21e36bffbd44ceb8989">raylib::Vector2::Zero</a></div><div class="ttdeci">static Vector2 Zero()</div><div class="ttdoc">Vector with components value 0.0f.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00211">Vector2.hpp:211</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a23dfda9f721e98d3bf80de4eeccde18e"><div class="ttname"><a href="classraylib_1_1_vector2.html#a23dfda9f721e98d3bf80de4eeccde18e">raylib::Vector2::CheckCollision</a></div><div class="ttdeci">bool CheckCollision(::Rectangle rec) const</div><div class="ttdoc">Check if point is inside rectangle.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00290">Vector2.hpp:290</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a5a16075cb1de65199a8c810147658198"><div class="ttname"><a href="classraylib_1_1_vector2.html#a5a16075cb1de65199a8c810147658198">raylib::Vector2::CheckCollision</a></div><div class="ttdeci">bool CheckCollision(::Vector2 center, float radius) const</div><div class="ttdoc">Check if point is inside circle.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00297">Vector2.hpp:297</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a295e4514f3a3842d83aee1106543e294"><div class="ttname"><a href="classraylib_1_1_vector2.html#a295e4514f3a3842d83aee1106543e294">raylib::Vector2::Lerp</a></div><div class="ttdeci">Vector2 Lerp(const ::Vector2 &amp;vector2, float amount) const</div><div class="ttdoc">Calculate linear interpolation between two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00183">Vector2.hpp:183</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_ae0d880ae074014c100a342292ff85deb"><div class="ttname"><a href="classraylib_1_1_vector2.html#ae0d880ae074014c100a342292ff85deb">raylib::Vector2::One</a></div><div class="ttdeci">static Vector2 One()</div><div class="ttdoc">Vector with components value 1.0f.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00218">Vector2.hpp:218</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a3e68ca85bfbd5cbe8ebce0ad9e4688a4"><div class="ttname"><a href="classraylib_1_1_vector2.html#a3e68ca85bfbd5cbe8ebce0ad9e4688a4">raylib::Vector2::LengthSqr</a></div><div class="ttdeci">float LengthSqr() const</div><div class="ttdoc">Calculate vector square length.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00148">Vector2.hpp:148</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_rectangle_html"><div class="ttname"><a href="classraylib_1_1_rectangle.html">raylib::Rectangle</a></div><div class="ttdoc">Rectangle type.</div><div class="ttdef"><b>Definition:</b> <a href="_rectangle_8hpp_source.html#l00012">Rectangle.hpp:12</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_vector2_html"><div class="ttname"><a href="classraylib_1_1_vector2.html">raylib::Vector2</a></div><div class="ttdoc">Vector2 type.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00016">Vector2.hpp:16</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a75ad1e5906da8eb4ab23c12748b431cb"><div class="ttname"><a href="classraylib_1_1_vector2.html#a75ad1e5906da8eb4ab23c12748b431cb">raylib::Vector2::DrawLineBezierQuad</a></div><div class="ttdeci">Vector2 &amp; DrawLineBezierQuad(::Vector2 endPos, ::Vector2 controlPos, float thick, ::Color color)</div><div class="ttdoc">Draw line using quadratic bezier curves with a control point.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00242">Vector2.hpp:242</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a7dcfa1e305dca48ca72648a447228d47"><div class="ttname"><a href="classraylib_1_1_vector2.html#a7dcfa1e305dca48ca72648a447228d47">raylib::Vector2::CheckCollisionCircle</a></div><div class="ttdeci">bool CheckCollisionCircle(float radius1, ::Vector2 center2, float radius2) const</div><div class="ttdoc">Check collision between two circles.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00272">Vector2.hpp:272</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a75ad1e5906da8eb4ab23c12748b431cb"><div class="ttname"><a href="classraylib_1_1_vector2.html#a75ad1e5906da8eb4ab23c12748b431cb">raylib::Vector2::DrawLineBezierQuad</a></div><div class="ttdeci">Vector2 &amp; DrawLineBezierQuad(::Vector2 endPos, ::Vector2 controlPos, float thick, ::Color color)</div><div class="ttdoc">Draw line using quadratic bezier curves with a control point.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00246">Vector2.hpp:246</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a7dcfa1e305dca48ca72648a447228d47"><div class="ttname"><a href="classraylib_1_1_vector2.html#a7dcfa1e305dca48ca72648a447228d47">raylib::Vector2::CheckCollisionCircle</a></div><div class="ttdeci">bool CheckCollisionCircle(float radius1, ::Vector2 center2, float radius2) const</div><div class="ttdoc">Check collision between two circles.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00276">Vector2.hpp:276</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_color_html"><div class="ttname"><a href="classraylib_1_1_color.html">raylib::Color</a></div><div class="ttdoc">Color type, RGBA (32bit)</div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00014">Color.hpp:14</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a6ed62656d9528f2a1b2924132576779e"><div class="ttname"><a href="classraylib_1_1_vector2.html#a6ed62656d9528f2a1b2924132576779e">raylib::Vector2::CheckCollisionCircle</a></div><div class="ttdeci">bool CheckCollisionCircle(float radius, ::Rectangle rec) const</div><div class="ttdoc">Check collision between circle and rectangle.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00279">Vector2.hpp:279</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a32a17f0018071cec378b89edc1f6d696"><div class="ttname"><a href="classraylib_1_1_vector2.html#a32a17f0018071cec378b89edc1f6d696">raylib::Vector2::Rotate</a></div><div class="ttdeci">Vector2 Rotate(float degrees) const</div><div class="ttdoc">Rotate Vector by float in Degrees.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00193">Vector2.hpp:193</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a488a41369489998272b217d6385d6c37"><div class="ttname"><a href="classraylib_1_1_vector2.html#a488a41369489998272b217d6385d6c37">raylib::Vector2::Distance</a></div><div class="ttdeci">float Distance(const ::Vector2 &amp;vector2) const</div><div class="ttdoc">Calculate distance between two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00172">Vector2.hpp:172</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_af912d448e687a2a39fed158b4bf18a12"><div class="ttname"><a href="classraylib_1_1_vector2.html#af912d448e687a2a39fed158b4bf18a12">raylib::Vector2::Angle</a></div><div class="ttdeci">float Angle(const ::Vector2 &amp;vector2) const</div><div class="ttdoc">Calculate angle from two vectors in X-axis.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00165">Vector2.hpp:165</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_a31c32996761d89b568102b2f6b60b745"><div class="ttname"><a href="classraylib_1_1_vector2.html#a31c32996761d89b568102b2f6b60b745">raylib::Vector2::DotProduct</a></div><div class="ttdeci">float DotProduct(const ::Vector2 &amp;vector2) const</div><div class="ttdoc">Calculate two vectors dot product.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00158">Vector2.hpp:158</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_ad13e3d98cc06a835db9dc605b090b15c"><div class="ttname"><a href="classraylib_1_1_vector2.html#ad13e3d98cc06a835db9dc605b090b15c">raylib::Vector2::DrawCircle</a></div><div class="ttdeci">Vector2 &amp; DrawCircle(float radius, ::Color color)</div><div class="ttdoc">Draw a color-filled circle (Vector version)</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00254">Vector2.hpp:254</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html_adf2ac764f0a4b4c6d67dc1cfbb8d0df5"><div class="ttname"><a href="classraylib_1_1_vector2.html#adf2ac764f0a4b4c6d67dc1cfbb8d0df5">raylib::Vector2::CheckCollisionLines</a></div><div class="ttdeci">bool CheckCollisionLines(::Vector2 endPos1, ::Vector2 startPos2, ::Vector2 endPos2, ::Vector2 *collisionPoint) const</div><div class="ttdoc">Check the collision between two lines defined by two points each, returns collision point by referenc...</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00307">Vector2.hpp:307</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a6ed62656d9528f2a1b2924132576779e"><div class="ttname"><a href="classraylib_1_1_vector2.html#a6ed62656d9528f2a1b2924132576779e">raylib::Vector2::CheckCollisionCircle</a></div><div class="ttdeci">bool CheckCollisionCircle(float radius, ::Rectangle rec) const</div><div class="ttdoc">Check collision between circle and rectangle.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00283">Vector2.hpp:283</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a32a17f0018071cec378b89edc1f6d696"><div class="ttname"><a href="classraylib_1_1_vector2.html#a32a17f0018071cec378b89edc1f6d696">raylib::Vector2::Rotate</a></div><div class="ttdeci">Vector2 Rotate(float degrees) const</div><div class="ttdoc">Rotate Vector by float in Degrees.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00197">Vector2.hpp:197</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a488a41369489998272b217d6385d6c37"><div class="ttname"><a href="classraylib_1_1_vector2.html#a488a41369489998272b217d6385d6c37">raylib::Vector2::Distance</a></div><div class="ttdeci">float Distance(const ::Vector2 &amp;vector2) const</div><div class="ttdoc">Calculate distance between two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00176">Vector2.hpp:176</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_af912d448e687a2a39fed158b4bf18a12"><div class="ttname"><a href="classraylib_1_1_vector2.html#af912d448e687a2a39fed158b4bf18a12">raylib::Vector2::Angle</a></div><div class="ttdeci">float Angle(const ::Vector2 &amp;vector2) const</div><div class="ttdoc">Calculate angle from two vectors in X-axis.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00169">Vector2.hpp:169</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_a31c32996761d89b568102b2f6b60b745"><div class="ttname"><a href="classraylib_1_1_vector2.html#a31c32996761d89b568102b2f6b60b745">raylib::Vector2::DotProduct</a></div><div class="ttdeci">float DotProduct(const ::Vector2 &amp;vector2) const</div><div class="ttdoc">Calculate two vectors dot product.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00162">Vector2.hpp:162</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_ad13e3d98cc06a835db9dc605b090b15c"><div class="ttname"><a href="classraylib_1_1_vector2.html#ad13e3d98cc06a835db9dc605b090b15c">raylib::Vector2::DrawCircle</a></div><div class="ttdeci">Vector2 &amp; DrawCircle(float radius, ::Color color)</div><div class="ttdoc">Draw a color-filled circle (Vector version)</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00258">Vector2.hpp:258</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html_adf2ac764f0a4b4c6d67dc1cfbb8d0df5"><div class="ttname"><a href="classraylib_1_1_vector2.html#adf2ac764f0a4b4c6d67dc1cfbb8d0df5">raylib::Vector2::CheckCollisionLines</a></div><div class="ttdeci">bool CheckCollisionLines(::Vector2 endPos1, ::Vector2 startPos2, ::Vector2 endPos2, ::Vector2 *collisionPoint) const</div><div class="ttdoc">Check the collision between two lines defined by two points each, returns collision point by referenc...</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00311">Vector2.hpp:311</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
