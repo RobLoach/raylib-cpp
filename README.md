@@ -130,9 +130,9 @@ position.x = 50;
 position.y = 100;
 ```
 
-### Method Overrides
+### Function Overloading
 
-Many similar raylib method names have different name suffixes based on what arguments they take. With raylib-cpp, these cases use [method overriding](https://en.wikipedia.org/wiki/Method_overriding) to allow using the same method names.
+Many similar raylib method names have different name suffixes based on what arguments they take. With raylib-cpp, these cases use [function overloading](https://en.wikipedia.org/wiki/Function_overloading) to allow using the same method names.
 
 ``` cpp
 // raylib
@@ -169,7 +169,7 @@ cat.Crop(100, 10, 280, 380)
 
 ### Operators
 
-There are operator overrides for objects.
+There are [operator overloads](https://en.wikipedia.org/wiki/Operator_overloading) implemented for objects.
 
 ``` cpp
 // raylib
