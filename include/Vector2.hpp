@@ -36,6 +36,16 @@ class Vector2 : public ::Vector2 {
             && y == other.y;
     }
 
+    bool operator<=(const ::Vector2& other) {
+        return x <= other.x
+            && y <= other.y;
+    }
+
+    bool operator>=(const ::Vector2& other) {
+        return x >= other.x
+            && y >= other.y;
+    }
+
     bool operator!=(const ::Vector2& other) {
         return !(*this == other);
     }

@@ -43,6 +43,18 @@ class Vector3 : public ::Vector3 {
             && z == other.z;
     }
 
+    bool operator<=(const ::Vector3& other) {
+        return x <= other.x
+            && y <= other.y
+            && z <= other.z;
+    }
+
+    bool operator>=(const ::Vector3& other) {
+        return x >= other.x
+            && y >= other.y
+            && z >= other.z;
+    }
+
     bool operator!=(const ::Vector3& other) {
         return !(*this == other);
     }

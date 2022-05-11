@@ -48,6 +48,20 @@ class Vector4 : public ::Vector4 {
             && w == other.w;
     }
 
+    bool operator<=(const ::Vector4& other) {
+        return x <= other.x
+            && y <= other.y
+            && z <= other.z
+            && w <= other.w;
+    }
+
+    bool operator>=(const ::Vector4& other) {
+        return x >= other.x
+            && y >= other.y
+            && z >= other.z
+            && w >= other.w;
+    }
+
     bool operator!=(const ::Vector4& other) {
         return !(*this == other);
     }
