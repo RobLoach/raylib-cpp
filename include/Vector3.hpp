@@ -5,6 +5,8 @@
 #include <cmath>
 #endif
 
+#include <limits> // std::numeric_limits
+
 #include "./raylib.hpp"
 #include "./raymath.hpp"
 #include "./raylib-cpp-utils.hpp"
@@ -37,22 +39,25 @@ class Vector3 : public ::Vector3 {
         return *this;
     }
 
+    bool operator<(const ::Vector3& other) {
+        return sqrt((x*x)+(y*y)+(z*z)) < sqrt((other.x*other.x)+(other.y*other.y)+(other.z*other.z));
+    }
+
+    bool operator>(const ::Vector3& other) {
+        return sqrt((x*x)+(y*y)+(z*z)) > sqrt((other.x*other.x)+(other.y*other.y)+(other.z*other.z));
+    }
+
     bool operator==(const ::Vector3& other) {
-        return x == other.x
-            && y == other.y
-            && z == other.z;
+        const auto &&epsilon = std::numeric_limits<float>::epsilon();
+        return fabs(sqrt((x*x)+(y*y)+(z*z)) - sqrt((other.x*other.x)+(other.y*other.y)+(other.z*other.z))) <= epsilon;
     }
 
     bool operator<=(const ::Vector3& other) {
-        return x <= other.x
-            && y <= other.y
-            && z <= other.z;
+        return sqrt((x*x)+(y*y)+(z*z)) <= sqrt((other.x*other.x)+(other.y*other.y)+(other.z*other.z));
     }
 
     bool operator>=(const ::Vector3& other) {
-        return x >= other.x
-            && y >= other.y
-            && z >= other.z;
+        return sqrt((x*x)+(y*y)+(z*z)) >= sqrt((other.x*other.x)+(other.y*other.y)+(other.z*other.z));
     }
 
     bool operator!=(const ::Vector3& other) {

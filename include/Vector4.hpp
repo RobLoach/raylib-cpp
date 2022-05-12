@@ -6,6 +6,8 @@
 #include <utility>
 #endif
 
+#include <limits> // std::numeric_limits
+
 #include "./raylib.hpp"
 #include "./raymath.hpp"
 #include "./raylib-cpp-utils.hpp"
@@ -41,25 +43,25 @@ class Vector4 : public ::Vector4 {
         return *this;
     }
 
+    bool operator<(const ::Vector4& other) {
+        return sqrt((x*x)+(y*y)+(z*z)+(w*w)) < sqrt((other.x*other.x)+(other.y*other.y)+(other.z*other.z)+(other.w*other.w));
+    }
+
+    bool operator>(const ::Vector4& other) {
+        return sqrt((x*x)+(y*y)+(z*z)+(w*w)) > sqrt((other.x*other.x)+(other.y*other.y)+(other.z*other.z)+(other.w*other.w));
+    }
+
     bool operator==(const ::Vector4& other) {
-        return x == other.x
-            && y == other.y
-            && z == other.z
-            && w == other.w;
+        const auto &&epsilon = std::numeric_limits<float>::epsilon();
+        return fabs(sqrt((x*x)+(y*y)+(z*z)+(w*w)) - sqrt((other.x*other.x)+(other.y*other.y)+(other.z*other.z)+(other.w*other.w))) <= epsilon;
     }
 
     bool operator<=(const ::Vector4& other) {
-        return x <= other.x
-            && y <= other.y
-            && z <= other.z
-            && w <= other.w;
+        return sqrt((x*x)+(y*y)+(z*z)+(w*w)) <= sqrt((other.x*other.x)+(other.y*other.y)+(other.z*other.z)+(other.w*other.w));
     }
 
     bool operator>=(const ::Vector4& other) {
-        return x >= other.x
-            && y >= other.y
-            && z >= other.z
-            && w >= other.w;
+        return sqrt((x*x)+(y*y)+(z*z)+(w*w)) >= sqrt((other.x*other.x)+(other.y*other.y)+(other.z*other.z)+(other.w*other.w));
     }
 
     bool operator!=(const ::Vector4& other) {

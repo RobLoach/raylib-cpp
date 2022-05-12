@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+
 #include "raylib-cpp.hpp"
 #include "raylib-assert.h"
 
@@ -13,7 +14,7 @@ int main(int argc, char *argv[]) {
         path = GetDirectoryPath(argv[0]);
     }
 
-    // Vector
+    // Vector2
     {
         raylib::Vector2 position(50, 100);
         AssertEqual(position.GetX(), position.x);
@@ -36,6 +37,66 @@ int main(int argc, char *argv[]) {
         raylib::Vector2 doublesize = size * 2.0f;
         AssertEqual(size.x, 50);
         AssertEqual(doublesize.x, 100);
+
+        raylib::Vector2 vectequal(50, 100);
+        raylib::Vector2 vectequal2(50, 100);
+        AssertEqual(vectequal == vectequal2, true);
+
+        raylib::Vector2 vectenotqual(50, 100);
+        raylib::Vector2 vectenotqual2(30, 20);
+        AssertEqual(vectenotqual == vectenotqual2, false);
+
+        raylib::Vector2 vectsup(-50, 50);
+        raylib::Vector2 vectsup2(50, 200);
+        AssertEqual(vectsup <= vectsup2, true);
+        AssertEqual(vectsup < vectsup2, true);
+
+        raylib::Vector2 vectlow(-20, -100);
+        raylib::Vector2 vectlow2(50, 70);
+        AssertEqual(vectlow >= vectlow2, true);
+        AssertEqual(vectlow > vectlow2, true);
+    }
+
+    // Vector3
+    {
+        raylib::Vector3 vectequal(50, 100, 150);
+        raylib::Vector3 vectequal2(50, 100, 150);
+        AssertEqual(vectequal == vectequal2, true);
+
+        raylib::Vector3 vectenotqual(50, 100, 10);
+        raylib::Vector3 vectenotqual2(30, 20, 10);
+        AssertEqual(vectenotqual == vectenotqual2, false);
+
+        raylib::Vector3 vectsup(-50, 50, 20);
+        raylib::Vector3 vectsup2(50, 200, 25);
+        AssertEqual(vectsup <= vectsup2, true);
+        AssertEqual(vectsup < vectsup2, true);
+
+        raylib::Vector3 vectlow(-20, -100, -10);
+        raylib::Vector3 vectlow2(50, 70, 10);
+        AssertEqual(vectlow >= vectlow2, true);
+        AssertEqual(vectlow > vectlow2, true);
+    }
+
+    // Vector4
+    {
+        raylib::Vector4 vectequal(50, 100, 150, 20);
+        raylib::Vector4 vectequal2(50, 100, 150, 20);
+        AssertEqual(vectequal == vectequal2, true);
+
+        raylib::Vector4 vectenotqual(50, 100, 10, 15);
+        raylib::Vector4 vectenotqual2(30, 20, 10, 5);
+        AssertEqual(vectenotqual == vectenotqual2, false);
+
+        raylib::Vector4 vectsup(-50, 50, 20, 10);
+        raylib::Vector4 vectsup2(50, 200, 25, 10);
+        AssertEqual(vectsup <= vectsup2, true);
+        AssertEqual(vectsup < vectsup2, true);
+
+        raylib::Vector4 vectlow(-20, -100, -10, 30);
+        raylib::Vector4 vectlow2(50, 70, 10, 15);
+        AssertEqual(vectlow >= vectlow2, true);
+        AssertEqual(vectlow > vectlow2, true);
     }
 
     // Color
