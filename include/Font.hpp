@@ -122,7 +122,7 @@ class Font : public ::Font {
 
     Font& operator=(const Font&) = delete;
 
-    Font& operator=(Font&& other) {
+    Font& operator=(Font&& other) noexcept {
         if (this == &other) {
             return *this;
         }

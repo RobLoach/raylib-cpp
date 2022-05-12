@@ -161,7 +161,7 @@ class Mesh : public ::Mesh {
 
     Mesh& operator=(const Mesh&) = delete;
 
-    Mesh& operator=(Mesh&& other) {
+    Mesh& operator=(Mesh&& other) noexcept {
         if (this == &other) {
             return *this;
         }

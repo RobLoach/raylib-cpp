@@ -58,7 +58,7 @@ class ModelAnimation : public ::ModelAnimation {
 
     ModelAnimation& operator=(const ModelAnimation&) = delete;
 
-    ModelAnimation& operator=(ModelAnimation&& other) {
+    ModelAnimation& operator=(ModelAnimation&& other) noexcept {
         if (this == &other) {
             return *this;
         }

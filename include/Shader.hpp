@@ -64,7 +64,7 @@ class Shader : public ::Shader {
 
     Shader& operator=(const Shader&) = delete;
 
-    Shader& operator=(Shader&& other) {
+    Shader& operator=(Shader&& other) noexcept {
         if (this == &other) {
             return *this;
         }

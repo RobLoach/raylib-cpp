@@ -203,7 +203,7 @@ class Image : public ::Image {
         return *this;
     }
 
-    Image& operator=(Image&& other) {
+    Image& operator=(Image&& other) noexcept {
         if (this == &other) {
             return *this;
         }

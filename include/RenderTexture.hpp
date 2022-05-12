@@ -51,7 +51,7 @@ class RenderTexture : public ::RenderTexture {
 
     RenderTexture& operator=(const RenderTexture&) = delete;
 
-    RenderTexture& operator=(RenderTexture&& other) {
+    RenderTexture& operator=(RenderTexture&& other) noexcept {
         if (this == &other) {
             return *this;
         }

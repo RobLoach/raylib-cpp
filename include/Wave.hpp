@@ -87,7 +87,7 @@ class Wave : public ::Wave {
         return *this;
     }
 
-    Wave& operator=(Wave&& other) {
+    Wave& operator=(Wave&& other) noexcept {
         if (this != &other) {
             return *this;
         }
