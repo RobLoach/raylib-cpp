@@ -13,7 +13,7 @@ on:
 
 jobs:
   build:
-    name: ${{ matrix.platform.name }} ${{ matrix.config.name }} ${{ matrix.type.name }}
+    name: ${{ matrix.platform.os }} ${{ matrix.config.name }} ${{ matrix.type.name }}
     runs-on: ${{ matrix.platform.os }}
 
     strategy:
@@ -44,9 +44,7 @@ jobs:
       run: sudo apt-get install xorg-dev libglu1-mesa-dev -y
 
     - name: Configure
-      run: |
-          cmake -B build -S . -DBUILD_TESTING=ON -DCMAKE_CXX_FLAGS="-Wall -Wextra -Wpedantic" 
-          ${{ matrix.platform.flags }} ${{ matrix.type.flags }} ${{ matrix.config.flags }}
+      run: cmake -B build -S . -DBUILD_TESTING=ON -DCMAKE_CXX_FLAGS="-Wall -Wextra -Wpedantic" ${{ matrix.platform.flags }} ${{ matrix.type.flags }} ${{ matrix.config.flags }}
 
     - name: Build
       run: cmake --build build
