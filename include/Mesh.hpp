@@ -162,7 +162,7 @@ class Mesh : public ::Mesh {
     Mesh& operator=(const Mesh&) = delete;
 
     Mesh& operator=(Mesh&& other) {
-        if (this != &other) {
+        if (this == &other) {
             return *this;
         }
 

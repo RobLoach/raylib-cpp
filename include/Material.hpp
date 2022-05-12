@@ -60,7 +60,7 @@ class Material : public ::Material {
     Material& operator=(const Material&) = delete;
 
     Material& operator=(Material&& other) {
-        if (this != &other) {
+        if (this == &other) {
             return *this;
         }
 

@@ -66,7 +66,7 @@ class Model : public ::Model {
     Model& operator=(const Model&) = delete;
 
     Model& operator=(Model&& other) {
-        if (this != &other) {
+        if (this == &other) {
             return *this;
         }
 
