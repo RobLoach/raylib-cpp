@@ -77,7 +77,7 @@ class Wave : public ::Wave {
     }
 
     Wave& operator=(const Wave& other) {
-        if (&other != this) {
+        if (this == &other) {
             return *this;
         }
 
@@ -87,7 +87,7 @@ class Wave : public ::Wave {
         return *this;
     }
 
-    Wave& operator=(Wave&& other) {
+    Wave& operator=(Wave&& other) noexcept {
         if (this != &other) {
             return *this;
         }

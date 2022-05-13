@@ -60,7 +60,7 @@ class AudioStream : public ::AudioStream {
 
     AudioStream& operator=(const AudioStream&) = delete;
 
-    AudioStream& operator=(AudioStream&& other) {
+    AudioStream& operator=(AudioStream&& other) noexcept {
         if (this == &other) {
             return *this;
         }
