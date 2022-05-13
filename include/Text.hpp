@@ -79,6 +79,10 @@ class Text {
     int GetPosY() const { return _posY; }
     void SetPosY(int posY) { _posY = posY; }
 
+    Text& operator=(const Text& text) {
+        return *this;
+    }
+
     /**
      * Draw text using font and color
      *
@@ -125,4 +129,4 @@ class Text {
 };
 }  // namespace raylib
 
-#endif  // RAYLIB_CPP_INCLUDE_WINDOW_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_TEXT_HPP_
