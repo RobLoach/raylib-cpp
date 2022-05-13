@@ -76,9 +76,9 @@ int main() {
             DrawRectangle(10, 10, 220, 70, raylib::Color::SkyBlue().Fade(0.5f));
             DrawRectangleLines(10, 10, 220, 70, BLUE);
 
-            DrawText("First person camera default controls:", 20, 20, 10, BLACK);
-            DrawText("- Move with keys: W, A, S, D", 40, 40, 10, DARKGRAY);
-            DrawText("- Mouse move to look around", 40, 60, 10, DARKGRAY);
+            raylib::DrawText("First person camera default controls:", 20, 20, 10, BLACK);
+            raylib::DrawText("- Move with keys: W, A, S, D", 40, 40, 10, DARKGRAY);
+            raylib::DrawText("- Mouse move to look around", 40, 60, 10, DARKGRAY);
         }
         EndDrawing();
         //----------------------------------------------------------------------------------

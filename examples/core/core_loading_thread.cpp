@@ -97,19 +97,19 @@ int main(void)
             switch (state)
             {
                 case STATE_WAITING:
-                    DrawText("PRESS ENTER to START LOADING DATA",
+                    raylib::DrawText("PRESS ENTER to START LOADING DATA",
                               150, 170, 20, DARKGRAY);
                     break;
 
                 case STATE_LOADING:
                     DrawRectangle(150, 200, dataProgress, 60, SKYBLUE);
                     if ((framesCounter/15)%2)
-                        DrawText("LOADING DATA...", 240, 210, 40, DARKBLUE);
+                        raylib::DrawText("LOADING DATA...", 240, 210, 40, DARKBLUE);
                     break;
 
                 case STATE_FINISHED:
                     DrawRectangle(150, 200, 500, 60, LIME);
-                    DrawText("DATA LOADED!", 250, 210, 40, GREEN);
+                    raylib::DrawText("DATA LOADED!", 250, 210, 40, GREEN);
                     break;
             }
 
