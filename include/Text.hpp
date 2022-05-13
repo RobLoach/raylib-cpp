@@ -30,25 +30,44 @@ class Text {
      * @param posY Y position of the text.
      * @return void.
      */
-    Text(const std::string& text, const int posX, const int posY)
+    Text(const std::string& text, const float posX, const float posY)
     {
-        SetText(text);
-        SetPosX(posX);
-        SetPosY(posY);
+        _text = text;
+        _position.x = posX;
+        _position.y = posY;
     }
 
     /**
      * Initializes a new Text object.
      * @param text Text to initialize.
-     * @param position Vector2 position of the text.
+     * @param posX X position of the text.
+     * @param posY Y position of the text.
      * @return void.
      */
     Text(const std::string& text, const ::Vector2& position)
     {
-        SetText(text);
-        SetPosX(static_cast<int>(position.x));
-        SetPosY(static_cast<int>(position.y));
+        _text = text;
+        _position = position;
     }
+
+    /**
+     * Initializes a new Text object.
+     * @param font Font to initialize.
+     * @param text Text to initialize.
+     * @param posX X position of the text.
+     * @param posY Y position of the text.
+     * @return void.
+     */
+    Text(const ::Font& font, const std::string& text, const ::Vector2& position, const float fontSize, const float spacing, const ::Color& color)
+    {
+        _font = font;
+        _text = text;
+        _position = position;
+        _fontSize = fontSize;
+        _spacing = spacing;
+        _color = color;
+    }
+    
 
     ~Text() {
     }
@@ -58,26 +77,32 @@ class Text {
      * 
      */
     void DrawText() {
-        ::DrawText(_text.c_str(), _posX, _posY, _fontSize, _color);
+        ::DrawTextEx(_font, _text.c_str(), _position, _fontSize, _spacing, _color);
     }
   
     std::string GetText() const { return _text; }
     void SetText(const std::string& text) { _text = text; }
 
-    int GetFontSize() const { return _fontSize; }
-    void SetFontSize(int fontSize) { _fontSize = fontSize; }
+    float GetFontSize() const { return _fontSize; }
+    void SetFontSize(float fontSize) { _fontSize = fontSize; }
 
-    // Font GetFont() const { return _font; }
-    // void SetFont(const Font& font) { _font = font; }
+    //Font GetFont() const { return _font; }
+    void SetFont(const ::Font& font) { _font = font; }
 
     Color GetColor() const { return _color; }
-    void SetColor(const Color& color) { _color = color; }
+    void SetColor(const ::Color& color) { _color = color; }
 
-    int GetPosX() const { return _posX; }
-    void SetPosX(int posX) { _posX = posX; }
+    float GetPosX() const { return _position.GetX(); }
+    void SetPosX(float posX) { _position.SetX(posX); }
 
-    int GetPosY() const { return _posY; }
-    void SetPosY(int posY) { _posY = posY; }
+    float GetPosY() const { return _position.GetY(); }
+    void SetPosY(float posY) { _position.SetY(posY); }
+
+    Vector2 GetPosition() const { return _position; }
+    void SetPosition(const ::Vector2& position) { _position = position; }
+
+    float GetSpacing() const { return _spacing; }
+    void SetSpacing(float spacing) { _spacing = spacing; }
 
     Text& operator=(const Text& text) {
         return *this;
@@ -106,7 +131,7 @@ class Text {
      *
      * @see ::DrawTextEx
      */
-    static inline void DrawTextEx(const Font& font, const std::string& text, const ::Vector2& position, const float fontSize, const float spacing, const ::Color& color) {
+    static inline void DrawTextEx(const ::Font& font, const std::string& text, const ::Vector2& position, const float fontSize, const float spacing, const ::Color& color) {
         ::DrawTextEx(font, text.c_str(), position, fontSize, spacing, color);
     }
 
@@ -115,17 +140,17 @@ class Text {
      *
      * @see ::DrawTextPro
      */
-    static inline void DrawTextPro(const Font& font, const std::string& text, const ::Vector2& position, const ::Vector2& origin, const float rotation, const float fontSize, const float spacing, const ::Color& color) {
+    static inline void DrawTextPro(const ::Font& font, const std::string& text, const ::Vector2& position, const ::Vector2& origin, const float rotation, const float fontSize, const float spacing, const ::Color& color) {
         ::DrawTextPro(font, text.c_str(), position, origin, rotation, fontSize, spacing, color);
     }
 
   private:
     std::string _text = "";
-    int _fontSize = 10;
-    // Font _font;
+    float _fontSize = 10;
+    Font _font = ::GetFontDefault();
     Color _color = WHITE;
-    int _posX = 0;
-    int _posY = 0;
+    Vector2 _position = {0.0, 0.0};
+    float _spacing = 0;
 };
 }  // namespace raylib
 
