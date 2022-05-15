@@ -79,6 +79,14 @@ class Text {
     void Draw() {
         ::DrawTextEx(_font, _text.c_str(), _position, _fontSize, _spacing, _color);
     }
+
+    /**
+     * @brief Draw text with values in class.
+     * 
+     */
+    void Draw(const ::Vector2& position) {
+        ::DrawTextEx(_font, _text.c_str(), position, _fontSize, _spacing, _color);
+    }
   
     std::string GetText() const { return _text; }
     void SetText(const std::string& text) { _text = text; }
