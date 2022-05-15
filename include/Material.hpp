@@ -59,8 +59,8 @@ class Material : public ::Material {
 
     Material& operator=(const Material&) = delete;
 
-    Material& operator=(Material&& other) {
-        if (this != &other) {
+    Material& operator=(Material&& other) noexcept {
+        if (this == &other) {
             return *this;
         }
 

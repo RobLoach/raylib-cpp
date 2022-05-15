@@ -97,7 +97,7 @@ class Texture : public ::Texture {
 
     Texture& operator=(const Texture&) = delete;
 
-    Texture& operator=(Texture&& other) {
+    Texture& operator=(Texture&& other) noexcept {
         if (this == &other) {
             return *this;
         }

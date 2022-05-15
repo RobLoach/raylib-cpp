@@ -66,7 +66,7 @@ class Sound : public ::Sound {
     GETTERSETTER(unsigned int, FrameCount, frameCount)
     GETTERSETTER(::AudioStream, Stream, stream)
 
-    Sound& operator=(Sound&& other) {
+    Sound& operator=(Sound&& other) noexcept {
         if (this == &other) {
             return *this;
         }

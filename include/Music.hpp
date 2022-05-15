@@ -82,7 +82,7 @@ class Music : public ::Music {
 
     Music& operator=(const Music&) = delete;
 
-    Music& operator=(Music&& other) {
+    Music& operator=(Music&& other) noexcept {
         if (this == &other) {
             return *this;
         }
