@@ -48,7 +48,7 @@ int main(void)
     {
         // Update
         //----------------------------------------------------------------------------------
-        msg.SetFontSize(msg.GetFontSize() + GetMouseWheelMove() * 4.0f);
+        msg.fontSize += GetMouseWheelMove() * 4.0f;
 
         // Choose font texture filter method
         if (IsKeyPressed(KEY_ONE))
@@ -76,8 +76,7 @@ int main(void)
         // Load a dropped TTF file dynamically (at current fontSize)
         for (const auto& file : raylib::GetDroppedFiles()) {
             if (raylib::IsFileExtension(file, ".ttf")) {
-                font = raylib::Font(file, font.GetBaseSize());
-                msg.SetFont(font);
+                msg.font = font = raylib::Font(file, font.GetBaseSize());
             }
         }
         //----------------------------------------------------------------------------------

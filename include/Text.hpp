@@ -64,7 +64,7 @@ class Text {
      *
      * @see DrawTextPro()
      */
-    inline void Draw(const ::Vector2& position, const Vector2& origin, float rotation = 0) {
+    inline void Draw(const ::Vector2& position, float rotation, const Vector2& origin = {0, 0}) {
         ::DrawTextPro(font, text.c_str(), position, origin, rotation, fontSize, spacing, color);
     }
 
