@@ -132,11 +132,11 @@ class Text {
         ::DrawTextPro(font, text.c_str(), position, origin, rotation, fontSize, spacing, color);
     }
 
-    std::string text;
-    float fontSize;
-    ::Color color;
-    ::Font font;
-    float spacing;
+    std::string text = "";
+    float fontSize = 10;
+    ::Color color = WHITE;
+    ::Font font = ::GetFontDefault();
+    float spacing = 0;
 };
 }  // namespace raylib
 
