@@ -274,21 +274,10 @@ RLCPPAPI inline void DrawTextPro(const Font& font, const std::string& text, Vect
 }
 
 /**
- * Get default font
- */
-RLCPPAPI inline ::Font GetFontDefault() {
-    return ::GetFontDefault();
-}
-
-/**
  * Load font from file (filename must include file extension)
  */
 RLCPPAPI inline ::Font LoadFont(const std::string& fileName) {
     return ::LoadFont(fileName.c_str());
-}
-
-RLCPPAPI inline ::Font LoadFontFromImage(const Image& image, ::Color key, int firstChar) {
-    return ::LoadFontFromImage(image, key, firstChar);
 }
 
 /**
