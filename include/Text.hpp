@@ -14,6 +14,31 @@ namespace raylib {
 class Text {
  public:
     /**
+     * The internal text.
+     */
+    std::string text;
+
+    /**
+     * The size of the text.
+     */
+    float fontSize;
+
+    /**
+     * The color of the text.
+     */
+    ::Color color;
+
+    /**
+     * The internal raylib font to use for the text.
+     */
+    ::Font font;
+
+    /**
+     * The character spacing for the text.
+     */
+    float spacing;
+
+    /**
      * Initializes a new Text object.
      *
      * @param text Text to initialize.
@@ -22,7 +47,17 @@ class Text {
      * @param font Font to initialize.
      * @param spacing The spacing of the text.
      */
-    Text(const std::string& text = "", float fontSize = 10, const ::Color& color = WHITE, const ::Font& font = ::GetFontDefault(), float spacing = 0) : text(text), fontSize(fontSize), color(color), font(font), spacing(spacing) {
+    Text(
+            const std::string& text = "",
+            float fontSize = 10,
+            const ::Color& color = WHITE,
+            const ::Font& font = ::GetFontDefault(),
+            float spacing = 0) :
+            text(text),
+            fontSize(fontSize),
+            color(color),
+            font(font),
+            spacing(spacing) {
         // Nothing.
     }
 
@@ -35,7 +70,17 @@ class Text {
      * @param spacing The spacing of the text.
      * @param color The color of the font.
      */
-    Text(const ::Font& font, const std::string& text = "", float fontSize = 10, float spacing = 0, const ::Color& color = WHITE) : font(font), text(text), fontSize(fontSize), spacing(spacing), color(color)  {
+    Text(
+            const ::Font& font,
+            const std::string& text = "",
+            float fontSize = 10,
+            float spacing = 0,
+            const ::Color& color = WHITE) :
+            text(text),
+            fontSize(fontSize),
+            color(color),
+            font(font),
+            spacing(spacing) {
         // Nothing.
     }
 
@@ -56,7 +101,12 @@ class Text {
      * Draw text with values in class.
      */
     inline void Draw(int posX, int posY) {
-        ::DrawTextEx(font, text.c_str(), {static_cast<float>(posX), static_cast<float>(posY)}, fontSize, spacing, color);
+        ::DrawTextEx(font,
+            text.c_str(),
+            { static_cast<float>(posX), static_cast<float>(posY) },
+            fontSize,
+            spacing,
+            color);
     }
 
     /**
@@ -101,7 +151,12 @@ class Text {
      *
      * @see ::DrawText
      */
-    static inline void Draw(const std::string& text, const int posX, const int posY, const int fontSize, const ::Color& color) {
+    static inline void Draw(
+            const std::string& text,
+            const int posX,
+            const int posY,
+            const int fontSize,
+            const ::Color& color) {
         ::DrawText(text.c_str(), posX, posY, fontSize, color);
     }
 
@@ -110,7 +165,11 @@ class Text {
      *
      * @see ::DrawText
      */
-    static inline void Draw(const std::string& text, const ::Vector2& pos, const int fontSize, const ::Color& color) {
+    static inline void Draw(
+            const std::string& text,
+            const ::Vector2& pos,
+            const int fontSize,
+            const ::Color& color) {
         ::DrawText(text.c_str(), static_cast<int>(pos.x), static_cast<int>(pos.y), fontSize, color);
     }
 
@@ -119,7 +178,13 @@ class Text {
      *
      * @see ::DrawTextEx
      */
-    static inline void Draw(const ::Font& font, const std::string& text, const ::Vector2& position, const float fontSize, const float spacing, const ::Color& color) {
+    static inline void Draw(
+            const ::Font& font,
+            const std::string& text,
+            const ::Vector2& position,
+            const float fontSize,
+            const float spacing,
+            const ::Color& color) {
         ::DrawTextEx(font, text.c_str(), position, fontSize, spacing, color);
     }
 
@@ -128,15 +193,17 @@ class Text {
      *
      * @see ::DrawTextPro
      */
-    static inline void Draw(const ::Font& font, const std::string& text, const ::Vector2& position, const ::Vector2& origin, const float rotation, const float fontSize, const float spacing, const ::Color& color) {
+    static inline void Draw(
+            const ::Font& font,
+            const std::string& text,
+            const ::Vector2& position,
+            const ::Vector2& origin,
+            const float rotation,
+            const float fontSize,
+            const float spacing,
+            const ::Color& color) {
         ::DrawTextPro(font, text.c_str(), position, origin, rotation, fontSize, spacing, color);
     }
-
-    std::string text = "";
-    float fontSize = 10;
-    ::Color color = WHITE;
-    ::Font font = ::GetFontDefault();
-    float spacing = 0;
 };
 }  // namespace raylib
 
