@@ -119,12 +119,12 @@ int main(void)
                 }
             }
 
-            DrawText("Left mouse button to create a polygon", 10, 10, 10, WHITE);
-            DrawText("Right mouse button to create a circle", 10, 25, 10, WHITE);
-            DrawText("Press 'R' to reset example", 10, 40, 10, WHITE);
+            raylib::DrawText("Left mouse button to create a polygon", 10, 10, 10, WHITE);
+            raylib::DrawText("Right mouse button to create a circle", 10, 25, 10, WHITE);
+            raylib::DrawText("Press 'R' to reset example", 10, 40, 10, WHITE);
 
-            DrawText("Physac", logoX, logoY, 30, WHITE);
-            DrawText("Powered by", logoX + 50, logoY - 7, 10, WHITE);
+            raylib::DrawText("Physac", logoX, logoY, 30, WHITE);
+            raylib::DrawText("Powered by", logoX + 50, logoY - 7, 10, WHITE);
         }
         EndDrawing();
         //----------------------------------------------------------------------------------

@@ -41,9 +41,9 @@ int main() {
 
             // Check if there are files to process.
             if (droppedFiles.empty()) {
-                DrawText("Drop your files to this window!", 100, 40, 20, DARKGRAY);
+                raylib::DrawText("Drop your files to this window!", 100, 40, 20, DARKGRAY);
             } else {
-                DrawText("Dropped files:", 100, 40, 20, DARKGRAY);
+                raylib::DrawText("Dropped files:", 100, 40, 20, DARKGRAY);
 
                 // Iterate through all the dropped files.
                 for (int i = 0; i < droppedFiles.size(); i++) {
@@ -53,10 +53,10 @@ int main() {
                         DrawRectangle(0, 85 + 40*i, screenWidth, 40, Fade(LIGHTGRAY, 0.3f));
 
                     // Display the path to the dropped file.
-                    DrawText(droppedFiles[i].c_str(), 120, 100 + 40 * i, 10, GRAY);
+                    raylib::DrawText(droppedFiles[i].c_str(), 120, 100 + 40 * i, 10, GRAY);
                 }
 
-                DrawText("Drop new files...", 100, 110 + 40 * droppedFiles.size(), 20, DARKGRAY);
+                raylib::DrawText("Drop new files...", 100, 110 + 40 * droppedFiles.size(), 20, DARKGRAY);
             }
         }
         EndDrawing();

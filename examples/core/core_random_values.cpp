@@ -45,9 +45,9 @@ int main() {
         {
             window.ClearBackground(RAYWHITE);
 
-            DrawText("Every 2 seconds a new random value is generated:", 130, 100, 20, MAROON);
+            raylib::DrawText("Every 2 seconds a new random value is generated:", 130, 100, 20, MAROON);
 
-            DrawText(TextFormat("%i", randValue), 360, 180, 80, LIGHTGRAY);
+            raylib::DrawText(TextFormat("%i", randValue), 360, 180, 80, LIGHTGRAY);
         }
         EndDrawing();
         //----------------------------------------------------------------------------------

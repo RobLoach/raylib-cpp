@@ -62,17 +62,17 @@ int main() {
 
             window.ClearBackground(RAYWHITE);
 
-            DrawText("Hold SPACE to use TTF generated font", 20, 20, 20, LIGHTGRAY);
+            raylib::DrawText("Hold SPACE to use TTF generated font", 20, 20, 20, LIGHTGRAY);
 
             if (!useTtf)
             {
                 fontBm.DrawText(msg, Vector2{ 20.0f, 100.0f }, fontBm.baseSize, 2, MAROON);
-                DrawText("Using BMFont (Angelcode) imported", 20, GetScreenHeight() - 30, 20, GRAY);
+                raylib::DrawText("Using BMFont (Angelcode) imported", 20, GetScreenHeight() - 30, 20, GRAY);
             }
             else
             {
                 fontTtf.DrawText(msg, Vector2{ 20.0f, 100.0f }, fontTtf.baseSize, 2, LIME);
-                DrawText("Using TTF font generated", 20, GetScreenHeight() - 30, 20, GRAY);
+                raylib::DrawText("Using TTF font generated", 20, GetScreenHeight() - 30, 20, GRAY);
             }
         }
         window.EndDrawing();
