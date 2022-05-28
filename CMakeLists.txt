@@ -62,7 +62,9 @@ endif()
 # ---- Examples ----
 
 if(PROJECT_IS_TOP_LEVEL)
-  option(BUILD_EXAMPLES "Build examples tree." "${raylib_cpp_DEVELOPER_MODE}")
+  # option(BUILD_EXAMPLES "Build examples tree." "${raylib_cpp_DEVELOPER_MODE}")
+  set(BUILD_EXAMPLES "${raylib_cpp_DEVELOPER_MODE}" CACHE BOOL "BUILD_EXAMPLES Option" FORCE)
+  
   if(BUILD_EXAMPLES)
     add_subdirectory(example)
   endif()
