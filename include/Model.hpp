@@ -112,13 +112,6 @@ class Model : public ::Model {
     }
 
     /**
-     * Get collision info between ray and model
-     */
-    inline RayCollision GetCollision(const ::Ray& ray) const {
-        return ::GetRayCollisionModel(ray, *this);
-    }
-
-    /**
      * Update model animation pose
      */
     inline Model& UpdateAnimation(const ::ModelAnimation& anim, int frame) {

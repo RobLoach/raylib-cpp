@@ -61,13 +61,6 @@ class Ray : public ::Ray {
     }
 
     /**
-     * Get collision info between ray and model
-     */
-    inline RayCollision GetCollision(const ::Model& model) const {
-        return GetRayCollisionModel(*this, model);
-    }
-
-    /**
      * Get collision information between ray and mesh
      */
     inline RayCollision GetCollision(const ::Mesh& mesh, const ::Matrix& transform) const {
