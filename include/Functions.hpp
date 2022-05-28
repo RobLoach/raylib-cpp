@@ -274,6 +274,20 @@ RLCPPAPI inline void DrawTextPro(const Font& font, const std::string& text, Vect
 }
 
 /**
+ * Load font from file (filename must include file extension)
+ */
+RLCPPAPI inline ::Font LoadFont(const std::string& fileName) {
+    return ::LoadFont(fileName.c_str());
+}
+
+/**
+ * Load font from file (filename must include file extension)
+ */
+RLCPPAPI inline ::Font LoadFontEx(const std::string& fileName, int fontSize, int *fontChars, int charsCount) {
+    return ::LoadFontEx(fileName.c_str(), fontSize, fontChars, charsCount);
+}
+
+/**
  * Measure string width for default font
  */
 RLCPPAPI inline int MeasureText(const std::string& text, int fontSize) {

@@ -1,6 +1,9 @@
-build
-/.vscode
-package-lock.json
-node_modules
-cmake-build-debug
-.idea
+.idea/
+.vs/
+.vscode/
+build/
+cmake/open-cpp-coverage.cmake
+cmake-build-*/
+prefix/
+CMakeLists.txt.user
+CMakeUserPresets.json
