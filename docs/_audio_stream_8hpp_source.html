@@ -125,7 +125,7 @@ $(function() {
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classraylib_1_1_audio_stream.html">AudioStream</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classraylib_1_1_audio_stream.html">AudioStream</a>&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classraylib_1_1_audio_stream.html">AudioStream</a>&amp; operator=(<a class="code" href="classraylib_1_1_audio_stream.html">AudioStream</a>&amp;&amp; other) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classraylib_1_1_audio_stream.html">AudioStream</a>&amp; operator=(<a class="code" href="classraylib_1_1_audio_stream.html">AudioStream</a>&amp;&amp; other) noexcept {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">this</span> == &amp;other) {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>

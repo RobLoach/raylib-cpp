@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['number_1214',['number',['../classraylib_1_1_gamepad.html#a66632b63f6edf508a980e9198f60a8f3',1,'raylib::Gamepad']]]
+  ['color_953',['color',['../classraylib_1_1_text.html#ac379780ee0cc613cca6f8aaa07cf83db',1,'raylib::Text']]]
 ];

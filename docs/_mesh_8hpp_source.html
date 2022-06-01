@@ -198,8 +198,8 @@ $(function() {
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="classraylib_1_1_mesh.html">Mesh</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classraylib_1_1_mesh.html">Mesh</a>&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="classraylib_1_1_mesh.html">Mesh</a>&amp; operator=(<a class="code" href="classraylib_1_1_mesh.html">Mesh</a>&amp;&amp; other) {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other) {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="classraylib_1_1_mesh.html">Mesh</a>&amp; operator=(<a class="code" href="classraylib_1_1_mesh.html">Mesh</a>&amp;&amp; other) noexcept {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">this</span> == &amp;other) {</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
