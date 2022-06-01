@@ -4,7 +4,7 @@ include(cmake/prelude.cmake)
 
 project(
     raylib_cpp
-    VERSION 4.2.1
+    VERSION 4.2.2
     DESCRIPTION "C++ Object Oriented Wrapper for raylib"
     HOMEPAGE_URL "https://github.com/RobLoach/raylib_cpp"
     LANGUAGES NONE

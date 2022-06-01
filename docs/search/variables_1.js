@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['number_1223',['number',['../classraylib_1_1_gamepad.html#a66632b63f6edf508a980e9198f60a8f3',1,'raylib::Gamepad']]]
+  ['font_954',['font',['../classraylib_1_1_text.html#a8a99e50ad71f0f18c56ecc20681703ba',1,'raylib::Text']]],
+  ['fontsize_955',['fontSize',['../classraylib_1_1_text.html#a1638fd4886e46c564b4cac9c912aed4e',1,'raylib::Text']]]
 ];
