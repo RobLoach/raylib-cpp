@@ -16,9 +16,10 @@ class AudioStream : public ::AudioStream {
     }
 
     AudioStream(rAudioBuffer* buffer = nullptr,
+            rAudioProcessor *processor = nullptr,
             unsigned int sampleRate = 0,
             unsigned int sampleSize = 0,
-            unsigned int channels = 0) : ::AudioStream{buffer, sampleRate, sampleSize, channels} {
+            unsigned int channels = 0) : ::AudioStream{buffer, processor, sampleRate, sampleSize, channels} {
         // Nothing.
     }
 
@@ -39,6 +40,7 @@ class AudioStream : public ::AudioStream {
         set(other);
 
         other.buffer = nullptr;
+        other.processor = nullptr;
         other.sampleRate = 0;
         other.sampleSize = 0;
         other.channels = 0;
@@ -49,6 +51,7 @@ class AudioStream : public ::AudioStream {
     }
 
     GETTERSETTER(rAudioBuffer *, Buffer, buffer)
+    GETTERSETTER(rAudioProcessor *, Processor, processor)
     GETTERSETTER(unsigned int, SampleRate, sampleRate)
     GETTERSETTER(unsigned int, SampleSize, sampleSize)
     GETTERSETTER(unsigned int, Channels, channels)
@@ -69,6 +72,7 @@ class AudioStream : public ::AudioStream {
         set(other);
 
         other.buffer = nullptr;
+        other.processor = nullptr;
         other.sampleRate = 0;
         other.sampleSize = 0;
         other.channels = 0;
@@ -180,6 +184,7 @@ class AudioStream : public ::AudioStream {
  private:
     inline void set(const ::AudioStream& stream) {
         buffer = stream.buffer;
+        processor = stream.processor;
         sampleRate = stream.sampleRate;
         sampleSize = stream.sampleSize;
         channels = stream.channels;

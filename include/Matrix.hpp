@@ -94,10 +94,6 @@ class Matrix : public ::Matrix {
         return ::MatrixInvert(*this);
     }
 
-    inline Matrix Normalize() const {
-        return ::MatrixNormalize(*this);
-    }
-
     static Matrix Identity() {
         return ::MatrixIdentity();
     }
