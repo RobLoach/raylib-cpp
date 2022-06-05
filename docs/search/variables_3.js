@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['text_957',['text',['../classraylib_1_1_text.html#ac7e1846f0d3d23a43e020dcf402213fe',1,'raylib::Text']]]
+  ['spacing_0',['spacing',['../classraylib_1_1_text.html#a489d962f442b9d4f0bc9a2927f4515c0',1,'raylib::Text']]]
 ];
