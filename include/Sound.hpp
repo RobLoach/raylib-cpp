@@ -202,7 +202,7 @@ class Sound : public ::Sound {
     }
 
  private:
-    inline void set(const ::Sound& sound) {
+    void set(const ::Sound& sound) {
         frameCount = sound.frameCount;
         stream = sound.stream;
     }

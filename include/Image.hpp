@@ -719,7 +719,7 @@ class Image : public ::Image {
     }
 
  private:
-    inline void set(const ::Image& image) {
+    void set(const ::Image& image) {
         data = image.data;
         width = image.width;
         height = image.height;

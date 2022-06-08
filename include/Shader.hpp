@@ -170,7 +170,7 @@ class Shader : public ::Shader {
     }
 
  private:
-    inline void set(const ::Shader& shader) {
+    void set(const ::Shader& shader) {
         id = shader.id;
         locs = shader.locs;
     }

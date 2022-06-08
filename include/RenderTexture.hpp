@@ -106,7 +106,7 @@ class RenderTexture : public ::RenderTexture {
     }
 
  private:
-    inline void set(const ::RenderTexture& renderTexture) {
+    void set(const ::RenderTexture& renderTexture) {
         id = renderTexture.id;
         texture = renderTexture.texture;
         depth = renderTexture.depth;

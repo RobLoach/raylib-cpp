@@ -217,7 +217,7 @@ class Music : public ::Music {
     }
 
  private:
-    inline void set(const ::Music& music) {
+    void set(const ::Music& music) {
         ctxType = music.ctxType;
         ctxData = music.ctxData;
         looping = music.looping;

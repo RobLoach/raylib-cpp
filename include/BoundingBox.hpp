@@ -69,7 +69,7 @@ class BoundingBox : public ::BoundingBox {
     }
 
  private:
-    inline void set(const ::BoundingBox& box) {
+    void set(const ::BoundingBox& box) {
         min = box.min;
         max = box.max;
     }

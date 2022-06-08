@@ -316,7 +316,7 @@ class Vector2 : public ::Vector2 {
     }
 
  private:
-    inline void set(const ::Vector2& vec) {
+    void set(const ::Vector2& vec) {
         x = vec.x;
         y = vec.y;
     }

@@ -159,7 +159,7 @@ class Rectangle : public ::Rectangle {
     }
 
  private:
-    inline void set(const ::Rectangle& rect) {
+    void set(const ::Rectangle& rect) {
         x = rect.x;
         y = rect.y;
         width = rect.width;

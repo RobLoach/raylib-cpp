@@ -108,7 +108,7 @@ class Material : public ::Material {
     }
 
  private:
-    inline void set(const ::Material& material) {
+    void set(const ::Material& material) {
         shader = material.shader;
         maps = material.maps;
         params[0] = material.params[0];

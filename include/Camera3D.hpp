@@ -149,7 +149,7 @@ class Camera3D : public ::Camera3D {
     }
 
  private:
-    inline void set(const ::Camera3D& camera) {
+    void set(const ::Camera3D& camera) {
         position = camera.position;
         target = camera.target;
         up = camera.up;
