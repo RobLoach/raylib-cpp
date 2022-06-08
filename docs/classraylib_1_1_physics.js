@@ -1,0 +1,26 @@
+var classraylib_1_1_physics =
+[
+    [ "Physics", "classraylib_1_1_physics.html#ab6fe48c3f1ccc583d78898d3946b3096", null ],
+    [ "Physics", "classraylib_1_1_physics.html#a9638fbedf8f35acd23bb5c502c9ddac7", null ],
+    [ "Physics", "classraylib_1_1_physics.html#abe69671cb0e5e5e765c6de48cccb0111", null ],
+    [ "~Physics", "classraylib_1_1_physics.html#a0629ca80510dec5e652457f0f6af2531", null ],
+    [ "AddForce", "classraylib_1_1_physics.html#afb38fb0c3a3bebd5c5ff0e76d5204d6d", null ],
+    [ "AddTorque", "classraylib_1_1_physics.html#a7a663b83d1f9c7af8fcfbda8fefc9682", null ],
+    [ "Close", "classraylib_1_1_physics.html#a00177830e684f2a584b8a5df3ada3b51", null ],
+    [ "CreateBodyCircle", "classraylib_1_1_physics.html#a436c99fb21784b33ed039a713b927023", null ],
+    [ "CreateBodyPolygon", "classraylib_1_1_physics.html#a9cbab4c8c8682f30924e4f7e85d37482", null ],
+    [ "CreateBodyRectangle", "classraylib_1_1_physics.html#aca1bd6e53ddbf8c64a3225ce32f1c3cc", null ],
+    [ "DestroyBody", "classraylib_1_1_physics.html#a7bae4d018888a1b52e6f94cf7101b964", null ],
+    [ "GetBodiesCount", "classraylib_1_1_physics.html#aff7aed721273fb7e990974dbc9854974", null ],
+    [ "GetBody", "classraylib_1_1_physics.html#ac0d23dc143aec4b2aac7570ecaa34e55", null ],
+    [ "GetShapeType", "classraylib_1_1_physics.html#ab317acc20d9cf36c110672a4c6ae7390", null ],
+    [ "GetShapeVertex", "classraylib_1_1_physics.html#a899af94cbe7a5c4709993c9ab9638192", null ],
+    [ "GetShapeVerticesCount", "classraylib_1_1_physics.html#a9ff5c0328462f0976dbef73b75978079", null ],
+    [ "Init", "classraylib_1_1_physics.html#a49b05856f79dd475228923160069714e", null ],
+    [ "Reset", "classraylib_1_1_physics.html#af6425119eec9dbcca53e8f6029e54276", null ],
+    [ "SetBodyRotation", "classraylib_1_1_physics.html#a2e92f697147cea7ca3f3f86150c5fa8d", null ],
+    [ "SetGravity", "classraylib_1_1_physics.html#ab3c2e951985d4b08520f441c3d7d1864", null ],
+    [ "SetTimeStep", "classraylib_1_1_physics.html#ad6c385b11a461c2138c581393bbabf44", null ],
+    [ "Shatter", "classraylib_1_1_physics.html#a9a05e7f4aac933ff44a4a89c8674cd84", null ],
+    [ "Update", "classraylib_1_1_physics.html#a65685532dc9ded1d67a2b9c75e29547c", null ]
+];

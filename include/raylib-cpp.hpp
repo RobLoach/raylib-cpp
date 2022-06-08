@@ -1,5 +1,5 @@
 /**
- * raylib-cpp is a C++ wrapper library for raylib, a simple and easy-to-use library to enjoy videogames programming. This C++ header provides object-oriented wrappers around raylib's struct interfaces.
+ * [raylib-cpp](https://github.com/RobLoach/raylib-cpp) is a C++ wrapper library for raylib, a simple and easy-to-use library to enjoy videogames programming. This C++ header provides object-oriented wrappers around raylib's struct interfaces.
  *
  * @see raylib namespace for a list of all available classes.
  * @mainpage raylib-cpp
