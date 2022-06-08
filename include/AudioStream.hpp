@@ -53,8 +53,6 @@ class AudioStream : public ::AudioStream {
     GETTERSETTER(unsigned int, SampleSize, sampleSize)
     GETTERSETTER(unsigned int, Channels, channels)
 
-    /**
-     *
     AudioStream& operator=(const ::AudioStream& stream) {
         set(stream);
         return *this;

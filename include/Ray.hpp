@@ -89,7 +89,7 @@ class Ray : public ::Ray {
     }
 
  private:
-    void set(const ::Ray& ray) {
+    inline void set(const ::Ray& ray) {
         position = ray.position;
         direction = ray.direction;
     }
