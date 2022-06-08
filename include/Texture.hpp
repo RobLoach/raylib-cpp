@@ -307,7 +307,7 @@ class Texture : public ::Texture {
     }
 
  private:
-    inline void set(const ::Texture& texture) {
+    void set(const ::Texture& texture) {
         id = texture.id;
         width = texture.width;
         height = texture.height;

@@ -211,7 +211,7 @@ class Wave : public ::Wave {
     }
 
  private:
-    inline void set(const ::Wave& wave) {
+    void set(const ::Wave& wave) {
         frameCount = wave.frameCount;
         sampleRate = wave.sampleRate;
         sampleSize = wave.sampleSize;

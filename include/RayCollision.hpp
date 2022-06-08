@@ -51,7 +51,7 @@ class RayCollision : public ::RayCollision {
     GETTERSETTER(::Vector3, Normal, normal)
 
  private:
-    inline void set(const ::RayCollision& ray) {
+    void set(const ::RayCollision& ray) {
         hit = ray.hit;
         distance = ray.distance;
         point = ray.point;

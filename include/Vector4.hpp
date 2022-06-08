@@ -154,7 +154,7 @@ class Vector4 : public ::Vector4 {
     }
 
  private:
-    inline void set(const ::Vector4& vec4) {
+    void set(const ::Vector4& vec4) {
         x = vec4.x;
         y = vec4.y;
         z = vec4.z;

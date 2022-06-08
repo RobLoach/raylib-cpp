@@ -299,7 +299,7 @@ class Vector3 : public ::Vector3 {
     }
 
  private:
-    inline void set(const ::Vector3& vec) {
+    void set(const ::Vector3& vec) {
         x = vec.x;
         y = vec.y;
         z = vec.z;
