@@ -26,108 +26,176 @@ class Vector2 : public ::Vector2 {
     GETTERSETTER(float, X, x)
     GETTERSETTER(float, Y, y)
 
+    /**
+     * Set the Vector2 to the same as the given Vector2.
+     */
     Vector2& operator=(const ::Vector2& vector2) {
         set(vector2);
         return *this;
     }
 
+    /**
+     * Determine whether or not the vectors are equal.
+     */
     bool operator==(const ::Vector2& other) {
         return x == other.x
             && y == other.y;
     }
 
+    /**
+     * Determines if the vectors are not equal.
+     */
     bool operator!=(const ::Vector2& other) {
         return !(*this == other);
     }
 
 #ifndef RAYLIB_CPP_NO_MATH
-    Vector2 Add(const ::Vector2& vector2) const {
+    /**
+     * Add two vectors (v1 + v2)
+     */
+    inline Vector2 Add(const ::Vector2& vector2) const {
         return Vector2Add(*this, vector2);
     }
 
-    Vector2 operator+(const ::Vector2& vector2) const {
+    /**
+     * Add two vectors (v1 + v2)
+     */
+    inline Vector2 operator+(const ::Vector2& vector2) const {
         return Vector2Add(*this, vector2);
     }
 
-    Vector2 Subtract(const ::Vector2& vector2) const {
-        return Vector2Subtract(*this, vector2);
-    }
-
-    Vector2 operator-(const ::Vector2& vector2) const {
-        return Vector2Subtract(*this, vector2);
-    }
-
-    Vector2 Negate() const {
-        return Vector2Negate(*this);
-    }
-
-    Vector2 operator-() const {
-        return Vector2Negate(*this);
-    }
-
-    Vector2 Multiply(const ::Vector2& vector2) const {
-        return Vector2Multiply(*this, vector2);
-    }
-
-    Vector2 operator*(const ::Vector2& vector2) const {
-        return Vector2Multiply(*this, vector2);
-    }
-
-    Vector2 Scale(const float scale) const {
-        return Vector2Scale(*this, scale);
-    }
-
-    Vector2 operator*(const float scale) const {
-        return Vector2Scale(*this, scale);
-    }
-
-    Vector2 Divide(const ::Vector2& vector2) const {
-        return Vector2Divide(*this, vector2);
-    }
-
-    Vector2 operator/(const ::Vector2& vector2) const {
-        return Vector2Divide(*this, vector2);
-    }
-
-    Vector2 Divide(const float div) const {
-        return ::Vector2{x / div, y / div};
-    }
-
-    Vector2 operator/(const float div) const {
-        return Divide(div);
-    }
-
+    /**
+     * Add two vectors (v1 + v2)
+     */
     Vector2& operator+=(const ::Vector2& vector2) {
         set(Vector2Add(*this, vector2));
 
         return *this;
     }
 
+    /**
+     * Subtract two vectors (v1 - v2)
+     */
+    inline Vector2 Subtract(const ::Vector2& vector2) const {
+        return Vector2Subtract(*this, vector2);
+    }
+
+    /**
+     * Subtract two vectors (v1 - v2)
+     */
+    inline Vector2 operator-(const ::Vector2& vector2) const {
+        return Vector2Subtract(*this, vector2);
+    }
+
+    /**
+     * Add two vectors (v1 + v2)
+     */
     Vector2& operator-=(const ::Vector2& vector2) {
         set(Vector2Subtract(*this, vector2));
 
         return *this;
     }
 
+    /**
+     * Negate vector
+     */
+    inline Vector2 Negate() const {
+        return Vector2Negate(*this);
+    }
 
+    /**
+     * Negate vector
+     */
+    inline Vector2 operator-() const {
+        return Vector2Negate(*this);
+    }
+
+    /**
+     * Multiply vector by vector
+     */
+    inline Vector2 Multiply(const ::Vector2& vector2) const {
+        return Vector2Multiply(*this, vector2);
+    }
+
+    /**
+     * Multiply vector by vector
+     */
+    inline Vector2 operator*(const ::Vector2& vector2) const {
+        return Vector2Multiply(*this, vector2);
+    }
+
+    /**
+     * Multiply vector by vector
+     */
     Vector2& operator*=(const ::Vector2& vector2) {
         set(Vector2Multiply(*this, vector2));
 
         return *this;
     }
 
+    /**
+     * Scale vector (multiply by value)
+     */
+    inline Vector2 Scale(const float scale) const {
+        return Vector2Scale(*this, scale);
+    }
+
+    /**
+     * Scale vector (multiply by value)
+     */
+    inline Vector2 operator*(const float scale) const {
+        return Vector2Scale(*this, scale);
+    }
+
+    /**
+     * Scale vector (multiply by value)
+     */
     Vector2& operator*=(const float scale) {
         set(Vector2Scale(*this, scale));
 
         return *this;
     }
 
+    /**
+     * Divide vector by vector
+     */
+    inline Vector2 Divide(const ::Vector2& vector2) const {
+        return Vector2Divide(*this, vector2);
+    }
+
+    /**
+     * Divide vector by vector
+     */
+    inline Vector2 operator/(const ::Vector2& vector2) const {
+        return Vector2Divide(*this, vector2);
+    }
+
+    /**
+     * Divide vector by vector
+     */
     Vector2& operator/=(const ::Vector2& vector2) {
         set(Vector2Divide(*this, vector2));
 
         return *this;
     }
 
+    /**
+     * Divide vector by value
+     */
+    inline Vector2 Divide(const float div) const {
+        return ::Vector2{x / div, y / div};
+    }
+
+    /**
+     * Divide vector by value
+     */
+    inline Vector2 operator/(const float div) const {
+        return Divide(div);
+    }
+
+    /**
+     * Divide vector by value
+     */
     Vector2& operator/=(const float div) {
         this->x /= div;
         this->y /= div;
@@ -138,84 +206,84 @@ class Vector2 : public ::Vector2 {
     /**
      * Calculate vector length
      */
-    float Length() const {
+    inline float Length() const {
         return Vector2Length(*this);
     }
 
     /**
      * Calculate vector square length
      */
-    float LengthSqr() const {
+    inline float LengthSqr() const {
         return Vector2LengthSqr(*this);
     }
 
     /**
      * Normalize provided vector
      */
-    Vector2 Normalize() const {
+    inline Vector2 Normalize() const {
         return Vector2Normalize(*this);
     }
 
     /**
      * Calculate two vectors dot product
      */
-    float DotProduct(const ::Vector2& vector2) const {
+    inline float DotProduct(const ::Vector2& vector2) const {
         return Vector2DotProduct(*this, vector2);
     }
 
     /**
      * Calculate angle from two vectors in X-axis
      */
-    float Angle(const ::Vector2& vector2) const {
+    inline float Angle(const ::Vector2& vector2) const {
         return Vector2Angle(*this, vector2);
     }
 
     /**
      * Calculate distance between two vectors
      */
-    float Distance(const ::Vector2& vector2) const {
+    inline float Distance(const ::Vector2& vector2) const {
         return Vector2Distance(*this, vector2);
     }
 
     /**
      * Calculate linear interpolation between two vectors
      */
-    Vector2 Lerp(const ::Vector2& vector2, float amount) const {
+    inline Vector2 Lerp(const ::Vector2& vector2, float amount) const {
         return Vector2Lerp(*this, vector2, amount);
     }
 
     /**
      * Calculate reflected vector to normal
      */
-    Vector2 Reflect(const ::Vector2& normal) const {
+    inline Vector2 Reflect(const ::Vector2& normal) const {
         return Vector2Reflect(*this, normal);
     }
 
     /**
      * Rotate Vector by float in Degrees
      */
-    Vector2 Rotate(float degrees) const {
+    inline Vector2 Rotate(float degrees) const {
         return Vector2Rotate(*this, degrees);
     }
 
     /**
      * Move Vector towards target
      */
-    Vector2 MoveTowards(const ::Vector2& target, float maxDistance) const {
+    inline Vector2 MoveTowards(const ::Vector2& target, float maxDistance) const {
         return Vector2MoveTowards(*this, target, maxDistance);
     }
 
     /**
      * Vector with components value 0.0f
      */
-    static Vector2 Zero() {
+    static inline Vector2 Zero() {
         return Vector2Zero();
     }
 
     /**
      * Vector with components value 1.0f
      */
-    static Vector2 One() {
+    static inline Vector2 One() {
         return Vector2One();
     }
 #endif
