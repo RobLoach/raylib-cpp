@@ -1,16 +1,12 @@
 # raylib-cpp Doxygen
 
-To build the docs, your first need the `doxygen-awesome` css theme:
+The documentation uses the [`doxygen-awesome-css`](https://github.com/jothepro/doxygen-awesome-css) theme.
+
+## Build
+
+To build the documentation with [Doxygen](https://www.doxygen.nl), run the following command from raylib-cpp's root directory.
 
 ```sh
-# At the root of the project
-git submodule add https://github.com/jothepro/doxygen-awesome-css.git
-cd doxygen-awesome-css
-git checkout v2.0.3
-```
-
-Then you can just build the docs
-```sh
-# Also at the root of the project
+git submodule update --init
 doxygen projects/Doxygen/Doxyfile
 ```

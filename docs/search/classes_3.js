@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['font_0',['Font',['../class_font.html',1,'Font'],['../classraylib_1_1_font.html',1,'raylib::Font']]]
+  ['font_475',['Font',['../classraylib_1_1_font.html',1,'raylib']]]
 ];
