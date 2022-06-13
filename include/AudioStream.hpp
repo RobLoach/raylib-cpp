@@ -182,7 +182,7 @@ class AudioStream : public ::AudioStream {
     }
 
  private:
-    inline void set(const ::AudioStream& stream) {
+    void set(const ::AudioStream& stream) {
         buffer = stream.buffer;
         processor = stream.processor;
         sampleRate = stream.sampleRate;

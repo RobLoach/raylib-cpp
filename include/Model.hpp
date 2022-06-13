@@ -214,7 +214,7 @@ class Model : public ::Model {
     }
 
  private:
-    inline void set(const ::Model& model) {
+    void set(const ::Model& model) {
         transform = model.transform;
 
         meshCount = model.meshCount;

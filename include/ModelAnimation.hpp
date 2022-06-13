@@ -97,7 +97,7 @@ class ModelAnimation : public ::ModelAnimation {
     }
 
  private:
-    inline void set(const ::ModelAnimation& model) {
+    void set(const ::ModelAnimation& model) {
         boneCount = model.boneCount;
         bones = model.bones;
         frameCount = model.frameCount;

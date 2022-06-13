@@ -20,10 +20,38 @@ class RayCollision : public ::RayCollision {
     }
 
     /**
+     * Get collision info between ray and bounding box
+     */
+    RayCollision(const ::Ray& ray, const ::BoundingBox& box) {
+        set(::GetRayCollisionBox(ray, box));
+    }
+
+    /**
      * Get collision info between ray and mesh
      */
     RayCollision(const ::Ray& ray, const ::Mesh& mesh, const ::Matrix& transform) {
         set(::GetRayCollisionMesh(ray, mesh, transform));
+    }
+
+    /**
+     * Get collision info between ray and model
+     */
+    RayCollision(const ::Ray& ray, const ::Model& model) {
+        set(::GetRayCollisionModel(ray, model));
+    }
+
+    /**
+     * Get collision info between ray and quad
+     */
+    RayCollision(const ::Ray& ray, ::Vector3 p1, ::Vector3 p2, ::Vector3 p3, ::Vector3 p4) {
+        set(::GetRayCollisionQuad(ray, p1, p2, p3, p4));
+    }
+
+    /**
+     * Get collision info between ray and sphere
+     */
+    RayCollision(const ::Ray& ray, ::Vector3 center, float radius) {
+        set(::GetRayCollisionSphere(ray, center, radius));
     }
 
     /**
@@ -44,7 +72,7 @@ class RayCollision : public ::RayCollision {
     GETTERSETTER(::Vector3, Normal, normal)
 
  private:
-    inline void set(const ::RayCollision& ray) {
+    void set(const ::RayCollision& ray) {
         hit = ray.hit;
         distance = ray.distance;
         point = ray.point;

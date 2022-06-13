@@ -321,6 +321,7 @@ See [`core_basic_window_web.html`](examples/core/resources/core_basic_window_web
 To build the document with [Doxygen](http://www.doxygen.nl/), use...
 
 ```
+git submodule update --init
 doxygen projects/Doxygen/Doxyfile
 ```
 

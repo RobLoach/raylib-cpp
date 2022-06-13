@@ -187,7 +187,7 @@ class Matrix : public ::Matrix {
 #endif
 
  private:
-    inline void set(const ::Matrix& mat) {
+    void set(const ::Matrix& mat) {
         m0 = mat.m0;
         m1 = mat.m1;
         m2 = mat.m2;

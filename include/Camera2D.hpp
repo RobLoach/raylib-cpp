@@ -61,7 +61,7 @@ class Camera2D : public ::Camera2D {
     }
 
  private:
-    inline void set(const ::Camera2D& camera) {
+    void set(const ::Camera2D& camera) {
         offset = camera.offset;
         target = camera.target;
         rotation = camera.rotation;
