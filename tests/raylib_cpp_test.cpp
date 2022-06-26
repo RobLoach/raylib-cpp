@@ -94,6 +94,12 @@ int main(int argc, char *argv[]) {
         AssertEqual(output, "World");
     }
 
+    {
+        std::vector<std::string> output = raylib::TextSplit("Hello|How|Are|You", '|');
+        AssertEqual(output.size(), 4);
+        AssertEqual(output[1], "How");
+    }
+
     // Wave
     {
         raylib::Wave wave(path + "/resources/weird.wav");
