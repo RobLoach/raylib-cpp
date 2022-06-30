@@ -84,10 +84,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af3d7481a683da26a5bc761de88048e39"><td class="memItemLeft" align="right" valign="top"><a id="af3d7481a683da26a5bc761de88048e39"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>RayCollision</b> (bool hit, float distance, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> point, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> normal)</td></tr>
 <tr class="separator:af3d7481a683da26a5bc761de88048e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe1b683d72b7de2fc4dadc05fca2d82b"><td class="memItemLeft" align="right" valign="top"><a id="afe1b683d72b7de2fc4dadc05fca2d82b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray_collision.html#afe1b683d72b7de2fc4dadc05fca2d82b">RayCollision</a> (const ::<a class="el" href="classraylib_1_1_ray.html">Ray</a> &amp;ray, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> center, float radius)</td></tr>
+<tr class="memdesc:afe1b683d72b7de2fc4dadc05fca2d82b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision info between ray and sphere. <br /></td></tr>
+<tr class="separator:afe1b683d72b7de2fc4dadc05fca2d82b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3aad99fa07398e0315e8cae9b57b14c0"><td class="memItemLeft" align="right" valign="top"><a id="a3aad99fa07398e0315e8cae9b57b14c0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray_collision.html#a3aad99fa07398e0315e8cae9b57b14c0">RayCollision</a> (const ::<a class="el" href="classraylib_1_1_ray.html">Ray</a> &amp;ray, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p1, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p2, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p3)</td></tr>
 <tr class="memdesc:a3aad99fa07398e0315e8cae9b57b14c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision info between ray and triangle. <br /></td></tr>
 <tr class="separator:a3aad99fa07398e0315e8cae9b57b14c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a702bd678593171faed68bf96079d5233"><td class="memItemLeft" align="right" valign="top"><a id="a702bd678593171faed68bf96079d5233"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray_collision.html#a702bd678593171faed68bf96079d5233">RayCollision</a> (const ::<a class="el" href="classraylib_1_1_ray.html">Ray</a> &amp;ray, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p1, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p2, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p3, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p4)</td></tr>
+<tr class="memdesc:a702bd678593171faed68bf96079d5233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision info between ray and quad. <br /></td></tr>
+<tr class="separator:a702bd678593171faed68bf96079d5233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50e76ebbce10933ee9e499837fcbe3ba"><td class="memItemLeft" align="right" valign="top"><a id="a50e76ebbce10933ee9e499837fcbe3ba"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray_collision.html#a50e76ebbce10933ee9e499837fcbe3ba">RayCollision</a> (const ::<a class="el" href="classraylib_1_1_ray.html">Ray</a> &amp;ray, const ::<a class="el" href="classraylib_1_1_bounding_box.html">BoundingBox</a> &amp;box)</td></tr>
+<tr class="memdesc:a50e76ebbce10933ee9e499837fcbe3ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision info between ray and bounding box. <br /></td></tr>
+<tr class="separator:a50e76ebbce10933ee9e499837fcbe3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a083a89a5a88e73e6b9b76a341c1fdbc4"><td class="memItemLeft" align="right" valign="top"><a id="a083a89a5a88e73e6b9b76a341c1fdbc4"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray_collision.html#a083a89a5a88e73e6b9b76a341c1fdbc4">RayCollision</a> (const ::<a class="el" href="classraylib_1_1_ray.html">Ray</a> &amp;ray, const ::<a class="el" href="classraylib_1_1_mesh.html">Mesh</a> &amp;mesh, const ::<a class="el" href="classraylib_1_1_matrix.html">Matrix</a> &amp;transform)</td></tr>
 <tr class="memdesc:a083a89a5a88e73e6b9b76a341c1fdbc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision info between ray and mesh. <br /></td></tr>
@@ -158,7 +170,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieves the distance value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The distance value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00049">49</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00070">70</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
 
 </div>
 </div>
@@ -188,7 +200,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieves the hit value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The hit value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00048">48</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00069">69</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
 
 </div>
 </div>
@@ -218,7 +230,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieves the normal value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The normal value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00051">51</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00072">72</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
 
 </div>
 </div>
@@ -248,7 +260,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieves the point value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The point value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00050">50</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00071">71</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
 
 </div>
 </div>
@@ -284,7 +296,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00049">49</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00070">70</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
 
 </div>
 </div>
@@ -320,7 +332,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00048">48</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00069">69</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
 
 </div>
 </div>
@@ -356,7 +368,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00051">51</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00072">72</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
 
 </div>
 </div>
@@ -392,7 +404,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00050">50</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_collision_8hpp_source.html#l00071">71</a> of file <a class="el" href="_ray_collision_8hpp_source.html">RayCollision.hpp</a>.</p>
 
 </div>
 </div>
