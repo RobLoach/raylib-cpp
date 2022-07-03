@@ -56,7 +56,7 @@ class Model : public ::Model {
     GETTERSETTER(int *, MeshMaterial, meshMaterial)
     GETTERSETTER(int, BoneCount, boneCount)
     GETTERSETTER(::BoneInfo *, Bones, bones)
-    GETTERSETTER(::Transform *, BindPoe, bindPose)
+    GETTERSETTER(::Transform *, BindPose, bindPose)
 
     Model& operator=(const ::Model& model) {
         set(model);
