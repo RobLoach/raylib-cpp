@@ -321,5 +321,8 @@ typedef Texture Texture2D;
 typedef Texture TextureCubemap;
 
 }  // namespace raylib
+using RTexture = raylib::Texture;
+using RTexture2D = raylib::Texture2D;
+using RTextureCubemap = raylib::TextureCubemap;
 
 #endif  // RAYLIB_CPP_INCLUDE_TEXTURE_HPP_

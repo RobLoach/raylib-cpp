@@ -66,5 +66,6 @@ class AudioDevice {
     }
 };
 }  // namespace raylib
+using RAudioDevice = raylib::AudioDevice;
 
 #endif  // RAYLIB_CPP_INCLUDE_AUDIODEVICE_HPP_

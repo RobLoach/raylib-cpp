@@ -359,5 +359,6 @@ class Window {
     }
 };
 }  // namespace raylib
+using RWindow = raylib::Window;
 
 #endif  // RAYLIB_CPP_INCLUDE_WINDOW_HPP_

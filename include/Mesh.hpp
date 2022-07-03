@@ -302,5 +302,6 @@ class Mesh : public ::Mesh {
     }
 };
 }  // namespace raylib
+using RMesh = raylib::Mesh;
 
 #endif  // RAYLIB_CPP_INCLUDE_MESH_HPP_

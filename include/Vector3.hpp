@@ -362,5 +362,6 @@ class Vector3 : public ::Vector3 {
     }
 };
 }  // namespace raylib
+using RVector3 = raylib::Vector3;
 
 #endif  // RAYLIB_CPP_INCLUDE_VECTOR3_HPP_

@@ -117,5 +117,6 @@ class Physics {
     }
 };
 }  // namespace raylib
+using RPhysics = raylib::Physics;
 
 #endif  // RAYLIB_CPP_INCLUDE_PHYSICS_HPP_

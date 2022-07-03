@@ -728,5 +728,6 @@ class Image : public ::Image {
     }
 };
 }  // namespace raylib
+using RImage = raylib::Image;
 
 #endif  // RAYLIB_CPP_INCLUDE_IMAGE_HPP_

@@ -221,5 +221,6 @@ class Wave : public ::Wave {
 };
 
 }  // namespace raylib
+using RWave = raylib::Wave;
 
 #endif  // RAYLIB_CPP_INCLUDE_WAVE_HPP_

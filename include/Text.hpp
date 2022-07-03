@@ -206,5 +206,6 @@ class Text {
     }
 };
 }  // namespace raylib
+using RText = raylib::Text;
 
 #endif  // RAYLIB_CPP_INCLUDE_TEXT_HPP_

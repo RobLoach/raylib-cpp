@@ -391,5 +391,6 @@ class Vector2 : public ::Vector2 {
 };
 
 }  // namespace raylib
+using RVector2 = raylib::Vector2;
 
 #endif  // RAYLIB_CPP_INCLUDE_VECTOR2_HPP_

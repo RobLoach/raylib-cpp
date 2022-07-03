@@ -167,5 +167,6 @@ class Rectangle : public ::Rectangle {
     }
 };
 }  // namespace raylib
+using RRectangle = raylib::Rectangle;
 
 #endif  // RAYLIB_CPP_INCLUDE_RECTANGLE_HPP_
