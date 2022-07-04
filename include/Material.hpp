@@ -118,5 +118,6 @@ class Material : public ::Material {
     }
 };
 }  // namespace raylib
+using RMaterial = raylib::Material;
 
 #endif  // RAYLIB_CPP_INCLUDE_MATERIAL_HPP_

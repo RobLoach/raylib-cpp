@@ -105,5 +105,6 @@ class ModelAnimation : public ::ModelAnimation {
     }
 };
 }  // namespace raylib
+using RModelAnimation = raylib::ModelAnimation;
 
 #endif  // RAYLIB_CPP_INCLUDE_MODELANIMATION_HPP_

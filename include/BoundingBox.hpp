@@ -75,5 +75,6 @@ class BoundingBox : public ::BoundingBox {
     }
 };
 }  // namespace raylib
+using RBoundingBox = raylib::BoundingBox;
 
 #endif  // RAYLIB_CPP_INCLUDE_BOUNDINGBOX_HPP_

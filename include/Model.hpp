@@ -237,5 +237,6 @@ class Model : public ::Model {
 };
 
 }  // namespace raylib
+using RModel = raylib::Model;
 
 #endif  // RAYLIB_CPP_INCLUDE_MODEL_HPP_

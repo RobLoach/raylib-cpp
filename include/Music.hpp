@@ -226,5 +226,6 @@ class Music : public ::Music {
     }
 };
 }  // namespace raylib
+using RMusic = raylib::Music;
 
 #endif  // RAYLIB_CPP_INCLUDE_MUSIC_HPP_

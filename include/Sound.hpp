@@ -208,5 +208,6 @@ class Sound : public ::Sound {
     }
 };
 }  // namespace raylib
+using RSound = raylib::Sound;
 
 #endif  // RAYLIB_CPP_INCLUDE_SOUND_HPP_

@@ -176,5 +176,6 @@ class Shader : public ::Shader {
     }
 };
 }  // namespace raylib
+using RShader = raylib::Shader;
 
 #endif  // RAYLIB_CPP_INCLUDE_SHADER_HPP_
