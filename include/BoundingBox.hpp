@@ -14,7 +14,7 @@ public:
      * Set the bounding box to default: min (0, 0, 0) and max (0, 0, 0).
      */
     BoundingBox() {
-        set(Vector3(0, 0, 0), Vector3(0, 0, 0));
+        set(Vector3{ 0, 0, 0 }, Vector3{ 0, 0, 0 });
     }
 
     /*
