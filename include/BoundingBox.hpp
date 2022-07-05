@@ -83,7 +83,7 @@ private:
         min = box.min;
         max = box.max;
     }
-    void set(const Vector3& _min, const Vector3& _max) {
+    void set(const ::Vector3& _min, const ::Vector3& _max) {
         min = _min;
         max = _max;
     }
