@@ -9,7 +9,17 @@ namespace raylib {
  * Bounding box type
  */
 class BoundingBox : public ::BoundingBox {
- public:
+public:
+    /*
+     * Set the bounding box to default: min (0, 0, 0) and max (0, 0, 0).
+     */
+    BoundingBox() {
+        set(::Vector3{ 0, 0, 0 }, ::Vector3{ 0, 0, 0 });
+    }
+
+    /*
+     * Copy a bounding box from another bounding box.
+     */
     BoundingBox(const ::BoundingBox& box) {
         set(box);
     }
@@ -68,10 +78,14 @@ class BoundingBox : public ::BoundingBox {
         return GetRayCollisionBox(ray, *this);
     }
 
- private:
+private:
     void set(const ::BoundingBox& box) {
         min = box.min;
         max = box.max;
+    }
+    void set(const ::Vector3& _min, const ::Vector3& _max) {
+        min = _min;
+        max = _max;
     }
 };
 }  // namespace raylib

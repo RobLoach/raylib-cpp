@@ -13,21 +13,29 @@ namespace raylib {
  * Model type
  */
 class Model : public ::Model {
- public:
+public:
+    Model() {
+    }
+
+    /*
+     * Copy a model from another model.
+     */
     Model(const ::Model& model) {
         set(model);
     }
 
+    /*
+     * Load a model from a file.
+     */
     Model(const std::string& fileName) {
-        if (!Load(fileName)) {
-            throw RaylibException("Failed to load Model from filename");
-        }
+        Load(fileName);
     }
 
+    /*
+     * Load a model from a mesh.
+     */
     Model(const ::Mesh& mesh) {
-        if (!Load(mesh)) {
-            throw RaylibException("Failed to load Model from Mesh");
-        }
+        Load(mesh);
     }
 
     ~Model() {
@@ -51,12 +59,12 @@ class Model : public ::Model {
     GETTERSETTER(::Matrix, Transform, transform)
     GETTERSETTER(int, MeshCount, meshCount)
     GETTERSETTER(int, MaterialCount, materialCount)
-    GETTERSETTER(::Mesh *, Meshes, meshes)
-    GETTERSETTER(::Material *, Materials, materials)
-    GETTERSETTER(int *, MeshMaterial, meshMaterial)
+    GETTERSETTER(::Mesh*, Meshes, meshes)
+    GETTERSETTER(::Material*, Materials, materials)
+    GETTERSETTER(int*, MeshMaterial, meshMaterial)
     GETTERSETTER(int, BoneCount, boneCount)
-    GETTERSETTER(::BoneInfo *, Bones, bones)
-    GETTERSETTER(::Transform *, BindPose, bindPose)
+    GETTERSETTER(::BoneInfo*, Bones, bones)
+    GETTERSETTER(::Transform*, BindPose, bindPose)
 
     Model& operator=(const ::Model& model) {
         set(model);
@@ -207,6 +215,9 @@ class Model : public ::Model {
      */
     bool Load(const std::string& fileName) {
         set(::LoadModel(fileName.c_str()));
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Model from " + fileName);
+        }
         return IsReady();
     }
 
@@ -217,10 +228,13 @@ class Model : public ::Model {
      */
     bool Load(const ::Mesh& mesh) {
         set(::LoadModelFromMesh(mesh));
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Model from Mesh");
+        }
         return IsReady();
     }
 
- private:
+private:
     void set(const ::Model& model) {
         transform = model.transform;
 
