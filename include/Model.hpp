@@ -13,8 +13,9 @@ namespace raylib {
  * Model type
  */
 class Model : public ::Model {
-public:
+ public:
     Model() {
+        // Nothing.
     }
 
     /*
@@ -47,12 +48,12 @@ public:
     Model(Model&& other) {
         set(other);
 
-        other.bones = nullptr;
-        other.boneCount = 0;
         other.materials = nullptr;
         other.materialCount = 0;
         other.meshes = nullptr;
         other.meshCount = 0;
+        other.bones = nullptr;
+        other.boneCount = 0;
         other.bindPose = nullptr;
     }
 
@@ -234,7 +235,7 @@ public:
         return IsReady();
     }
 
-private:
+ private:
     void set(const ::Model& model) {
         transform = model.transform;
 

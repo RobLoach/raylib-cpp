@@ -11,11 +11,11 @@ namespace raylib {
  * Window and Graphics Device Functions.
  */
 class Window {
-public:
-	Window() {
-		// need to create it manually with Init().
-	}
-	
+ public:
+    Window() {
+        // need to create it manually with Init().
+    }
+
     /**
      * Initialize window and OpenGL context.
      */
@@ -38,7 +38,7 @@ public:
      */
     void Init(int width = 800, int height = 450, const std::string& title = "raylib") {
         ::InitWindow(width, height, title.c_str());
-		if (!IsWindowReady()) {
+        if (!IsWindowReady()) {
             throw RaylibException("Failed to create Window");
         }
     }

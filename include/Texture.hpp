@@ -14,19 +14,21 @@ namespace raylib {
  * Texture type
  */
 class Texture : public ::Texture {
-public:
+ public:
     /**
      * Default texture constructor.
      */
-    Texture() {
-        set(::Texture{0, 0, 0, 0, 0});
+    Texture() : ::Texture{0, 0, 0, 0, 0} {
+        // Nothing.
     }
-	
-	/**
+
+    /**
      * Move/Create a texture structure manually.
      */
-	Texture(unsigned int id, int width, int height, int mipmaps, int format) {
-        set(::Texture{id, width, height, mipmaps, format});
+    Texture(unsigned int id, int width, int height,
+            int mipmaps = 1, int format = PIXELFORMAT_UNCOMPRESSED_R8G8B8A8)
+            : ::Texture{id, width, height, mipmaps, format} {
+        // Nothing.
     }
 
     /**
@@ -309,7 +311,7 @@ public:
         return id != 0;
     }
 
-private:
+ private:
     void set(const ::Texture& texture) {
         id = texture.id;
         width = texture.width;

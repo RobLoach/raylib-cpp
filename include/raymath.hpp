@@ -12,7 +12,7 @@ extern "C" {
 #define RAYMATH_STATIC_INLINE
 #endif
 #ifdef __GNUC__
-#pragma GCC diagnostic push // these throw a warning on visual studio, need to check if __GNUC__ is defined to use it.
+#pragma GCC diagnostic push  // These throw a warnings on visual studio, need to check if __GNUC__ is defined to use it.
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
 #endif
 #include "raymath.h" // NOLINT

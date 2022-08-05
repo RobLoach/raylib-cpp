@@ -18,8 +18,8 @@ class Image : public ::Image {
     Image(void* data = nullptr,
             int width = 0,
             int height = 0,
-            int mipmaps = 0,
-            int format = 0) : ::Image{data, width, height, mipmaps, format} {
+            int mipmaps = 1,
+            int format = PIXELFORMAT_UNCOMPRESSED_R8G8B8A8) : ::Image{data, width, height, mipmaps, format} {
         // Nothing.
     }
 
