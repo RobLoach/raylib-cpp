@@ -343,6 +343,15 @@ RLAPI inline std::string TextInsert(const std::string& text, const std::string& 
 }
 
 /**
+ * Split text into multiple strings
+ */
+RLAPI inline std::vector<std::string> TextSplit(const std::string& text, char delimiter) {
+    int count;
+    const char** split = ::TextSplit(text.c_str(), delimiter, &count);
+    return std::vector<std::string>(split, split + count);
+}
+
+/**
  * Find first text occurrence within a string
  */
 RLAPI inline int TextFindIndex(const std::string& text, const std::string& find) {

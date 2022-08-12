@@ -114,5 +114,6 @@ class Gamepad {
     }
 };
 }  // namespace raylib
+using RGamepad = raylib::Gamepad;
 
 #endif  // RAYLIB_CPP_INCLUDE_GAMEPAD_HPP_

@@ -10,8 +10,18 @@ namespace raylib {
  */
 class BoundingBox : public ::BoundingBox {
  public:
-    BoundingBox(const ::BoundingBox& box) {
-        set(box);
+    /*
+     * Set the bounding box to default: min (0, 0, 0) and max (0, 0, 0).
+     */
+    BoundingBox() : ::BoundingBox{::Vector3{0, 0, 0}, ::Vector3{ 0, 0, 0 }} {
+        // Nothing.
+    }
+
+    /*
+     * Copy a bounding box from another bounding box.
+     */
+    BoundingBox(const ::BoundingBox& box) : ::BoundingBox{box.min, box.max} {
+        // Nothing.
     }
 
     /**
@@ -73,7 +83,12 @@ class BoundingBox : public ::BoundingBox {
         min = box.min;
         max = box.max;
     }
+    void set(const ::Vector3& _min, const ::Vector3& _max) {
+        min = _min;
+        max = _max;
+    }
 };
 }  // namespace raylib
+using RBoundingBox = raylib::BoundingBox;
 
 #endif  // RAYLIB_CPP_INCLUDE_BOUNDINGBOX_HPP_

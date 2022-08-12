@@ -88,5 +88,6 @@ class Ray : public ::Ray {
     }
 };
 }  // namespace raylib
+using RRay = raylib::Ray;
 
 #endif  // RAYLIB_CPP_INCLUDE_RAY_HPP_

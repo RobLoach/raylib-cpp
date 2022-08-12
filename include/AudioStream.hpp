@@ -191,5 +191,6 @@ class AudioStream : public ::AudioStream {
     }
 };
 }  // namespace raylib
+using RAudioStream = raylib::AudioStream;
 
 #endif  // RAYLIB_CPP_INCLUDE_AUDIOSTREAM_HPP_

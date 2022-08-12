@@ -247,5 +247,6 @@ class Font : public ::Font {
     }
 };
 }  // namespace raylib
+using RFont = raylib::Font;
 
 #endif  // RAYLIB_CPP_INCLUDE_FONT_HPP_

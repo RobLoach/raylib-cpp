@@ -254,5 +254,6 @@ class Color : public ::Color {
 };
 
 }  // namespace raylib
+using RColor = raylib::Color;
 
 #endif  // RAYLIB_CPP_INCLUDE_COLOR_HPP_

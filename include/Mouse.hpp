@@ -114,5 +114,6 @@ class Mouse {
     }
 };
 }  // namespace raylib
+using RMouse = raylib::Mouse;
 
 #endif  // RAYLIB_CPP_INCLUDE_MOUSE_HPP_

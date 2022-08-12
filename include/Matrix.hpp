@@ -207,6 +207,6 @@ class Matrix : public ::Matrix {
     }
 };
 }  // namespace raylib
-
+using RMatrix = raylib::Matrix;
 
 #endif  // RAYLIB_CPP_INCLUDE_MATRIX_HPP_

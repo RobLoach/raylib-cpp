@@ -12,18 +12,15 @@ namespace raylib {
  */
 class Window {
  public:
+    Window() {
+        // need to create it manually with Init().
+    }
+
     /**
      * Initialize window and OpenGL context.
-     *
-     * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    Window(int width = 800, int height = 450, const std::string& title = "raylib",
-            bool lateInit = false) {
-        if (!lateInit) {
-            if (!Init(width, height, title)) {
-                throw RaylibException("Failed to create Window");
-            }
-        }
+    Window(int width, int height, const std::string& title) {
+        Init(width, height, title);
     }
 
     /**
@@ -36,11 +33,14 @@ class Window {
     /**
      * Initializes the window.
      *
+     * @throws raylib::RaylibException Thrown if the window failed to initiate.
      * @return True or false, depending on if the Window initialized properly.
      */
-    bool Init(int width = 800, int height = 450, const std::string& title = "raylib") {
+    void Init(int width = 800, int height = 450, const std::string& title = "raylib") {
         ::InitWindow(width, height, title.c_str());
-        return IsWindowReady();
+        if (!IsWindowReady()) {
+            throw RaylibException("Failed to create Window");
+        }
     }
 
     /**
@@ -359,5 +359,6 @@ class Window {
     }
 };
 }  // namespace raylib
+using RWindow = raylib::Window;
 
 #endif  // RAYLIB_CPP_INCLUDE_WINDOW_HPP_

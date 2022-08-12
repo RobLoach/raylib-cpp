@@ -14,20 +14,29 @@ namespace raylib {
  */
 class Model : public ::Model {
  public:
+    Model() {
+        // Nothing.
+    }
+
+    /*
+     * Copy a model from another model.
+     */
     Model(const ::Model& model) {
         set(model);
     }
 
+    /*
+     * Load a model from a file.
+     */
     Model(const std::string& fileName) {
-        if (!Load(fileName)) {
-            throw RaylibException("Failed to load Model from filename");
-        }
+        Load(fileName);
     }
 
+    /*
+     * Load a model from a mesh.
+     */
     Model(const ::Mesh& mesh) {
-        if (!Load(mesh)) {
-            throw RaylibException("Failed to load Model from Mesh");
-        }
+        Load(mesh);
     }
 
     ~Model() {
@@ -39,24 +48,24 @@ class Model : public ::Model {
     Model(Model&& other) {
         set(other);
 
-        other.bones = nullptr;
-        other.boneCount = 0;
         other.materials = nullptr;
         other.materialCount = 0;
         other.meshes = nullptr;
         other.meshCount = 0;
+        other.bones = nullptr;
+        other.boneCount = 0;
         other.bindPose = nullptr;
     }
 
     GETTERSETTER(::Matrix, Transform, transform)
     GETTERSETTER(int, MeshCount, meshCount)
     GETTERSETTER(int, MaterialCount, materialCount)
-    GETTERSETTER(::Mesh *, Meshes, meshes)
-    GETTERSETTER(::Material *, Materials, materials)
-    GETTERSETTER(int *, MeshMaterial, meshMaterial)
+    GETTERSETTER(::Mesh*, Meshes, meshes)
+    GETTERSETTER(::Material*, Materials, materials)
+    GETTERSETTER(int*, MeshMaterial, meshMaterial)
     GETTERSETTER(int, BoneCount, boneCount)
-    GETTERSETTER(::BoneInfo *, Bones, bones)
-    GETTERSETTER(::Transform *, BindPoe, bindPose)
+    GETTERSETTER(::BoneInfo*, Bones, bones)
+    GETTERSETTER(::Transform*, BindPose, bindPose)
 
     Model& operator=(const ::Model& model) {
         set(model);
@@ -200,6 +209,9 @@ class Model : public ::Model {
      */
     bool Load(const std::string& fileName) {
         set(::LoadModel(fileName.c_str()));
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Model from " + fileName);
+        }
         return IsReady();
     }
 
@@ -210,6 +222,9 @@ class Model : public ::Model {
      */
     bool Load(const ::Mesh& mesh) {
         set(::LoadModelFromMesh(mesh));
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Model from Mesh");
+        }
         return IsReady();
     }
 
@@ -230,5 +245,6 @@ class Model : public ::Model {
 };
 
 }  // namespace raylib
+using RModel = raylib::Model;
 
 #endif  // RAYLIB_CPP_INCLUDE_MODEL_HPP_

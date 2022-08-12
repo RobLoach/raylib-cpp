@@ -72,5 +72,6 @@ class VrStereoConfig : public ::VrStereoConfig  {
     }
 };
 }  // namespace raylib
+using RVrStereoConfig = raylib::VrStereoConfig;
 
 #endif  // RAYLIB_CPP_INCLUDE_VRSTEREOCONFIG_HPP_
