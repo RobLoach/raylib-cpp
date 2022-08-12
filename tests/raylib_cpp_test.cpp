@@ -67,9 +67,9 @@ int main(int argc, char *argv[]) {
         AssertEqual(image.GetHeight(), 50);
     }
 
-    // raylib::GetDirectoryFiles()
+    // raylib::LoadDirectoryFiles()
     {
-        std::vector<std::string> files = raylib::GetDirectoryFiles(::GetWorkingDirectory());
+        std::vector<std::string> files = raylib::LoadDirectoryFiles(::GetWorkingDirectory());
         Assert(files.size() > 3);
     }
 

@@ -33,8 +33,8 @@ class Sound : public ::Sound {
     Sound(Sound&& other) {
         set(other);
 
+        other.stream = { 0, 0, 0, 0, 0 };
         other.frameCount = 0;
-        other.stream = { 0, 0, 0, 0 };
     }
 
     /**

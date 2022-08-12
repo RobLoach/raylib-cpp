@@ -152,11 +152,10 @@ RLCPPAPI inline std::string GetWorkingDirectory() {
  * Get filenames in a directory path
  */
 [[maybe_unused]]
-RLCPPAPI std::vector<std::string> GetDirectoryFiles(const std::string& dirPath) {
-    int count;
-    char** files = ::GetDirectoryFiles(dirPath.c_str(), &count);
-    std::vector<std::string> output(files, files + count);
-    ::ClearDirectoryFiles();
+RLCPPAPI std::vector<std::string> LoadDirectoryFiles(const std::string& dirPath) {
+    FilePathList files = ::LoadDirectoryFiles(dirPath.c_str());
+    std::vector<std::string> output(files.paths, files.paths + files.count);
+    ::UnloadDirectoryFiles(files);
     return output;
 }
 
@@ -171,14 +170,13 @@ RLCPPAPI inline bool ChangeDirectory(const std::string& dir) {
  * Get dropped files names
  */
 [[maybe_unused]]
-RLCPPAPI std::vector<std::string> GetDroppedFiles() {
+RLCPPAPI std::vector<std::string> LoadDroppedFiles() {
     if (!::IsFileDropped()) {
         return std::vector<std::string>();
     }
-    int count;
-    char** files = ::GetDroppedFiles(&count);
-    std::vector<std::string> output(files, files + count);
-    ::ClearDroppedFiles();
+    FilePathList files = ::LoadDroppedFiles();
+    std::vector<std::string> output(files.paths, files.paths + files.count);
+    ::UnloadDroppedFiles(files);
     return output;
 }
 

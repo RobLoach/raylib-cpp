@@ -261,14 +261,6 @@ class Mesh : public ::Mesh {
     }
 
     /**
-     * Compute mesh binormals (aka bitangent)
-     */
-    inline Mesh& GenBinormals() {
-        ::GenMeshBinormals(this);
-        return *this;
-    }
-
-    /**
      * Load model from generated mesh
      */
     inline raylib::Model LoadModelFrom() const {

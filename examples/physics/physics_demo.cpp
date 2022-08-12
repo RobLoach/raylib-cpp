@@ -19,6 +19,7 @@
 
 #define PHYSAC_IMPLEMENTATION
 #define PHYSAC_NO_THREADS
+#include "physac.h"
 #include "Physics.hpp"
 
 int main(void)
@@ -55,7 +56,7 @@ int main(void)
         // Update
         //----------------------------------------------------------------------------------
         // Delay initialization of variables due to physics reset async
-        physics.Update();
+        physics.RunStep();
 
         if (needsReset)
         {
@@ -66,13 +67,6 @@ int main(void)
             circle->enabled = false;
 
             needsReset = false;
-        }
-
-        // Reset physics input
-        if (IsKeyPressed('R'))
-        {
-            physics.Reset();
-            needsReset = true;
         }
 
         // Physics body creation inputs
@@ -121,7 +115,6 @@ int main(void)
 
             raylib::DrawText("Left mouse button to create a polygon", 10, 10, 10, WHITE);
             raylib::DrawText("Right mouse button to create a circle", 10, 25, 10, WHITE);
-            raylib::DrawText("Press 'R' to reset example", 10, 40, 10, WHITE);
 
             raylib::DrawText("Physac", logoX, logoY, 30, WHITE);
             raylib::DrawText("Powered by", logoX + 50, logoY - 7, 10, WHITE);
