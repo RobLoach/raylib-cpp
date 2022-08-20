@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['shader_516',['Shader',['../classraylib_1_1_shader.html',1,'raylib']]],
-  ['sound_517',['Sound',['../classraylib_1_1_sound.html',1,'raylib']]]
+  ['text_534',['Text',['../classraylib_1_1_text.html',1,'raylib']]],
+  ['texture_535',['Texture',['../classraylib_1_1_texture.html',1,'raylib']]],
+  ['touch_536',['Touch',['../classraylib_1_1_touch.html',1,'raylib']]]
 ];

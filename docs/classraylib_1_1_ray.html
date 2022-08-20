@@ -70,6 +70,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classraylib_1_1_ray-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">raylib::Ray Class Reference</div>  </div>
@@ -81,23 +82,15 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acc6259ea6bd75add00e7529ef5903024"><td class="memItemLeft" align="right" valign="top"><a id="acc6259ea6bd75add00e7529ef5903024"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Ray</b> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> mousePosition, ::<a class="el" href="classraylib_1_1_camera3_d.html">Camera</a> camera)</td></tr>
-<tr class="separator:acc6259ea6bd75add00e7529ef5903024"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3a7660c5b87be0ce2c6e03269e7d87e"><td class="memItemLeft" align="right" valign="top"><a id="ab3a7660c5b87be0ce2c6e03269e7d87e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Ray</b> (::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> position, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> direction={0.0f, 0.0f, 0.0f})</td></tr>
-<tr class="separator:ab3a7660c5b87be0ce2c6e03269e7d87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e76710ac026e177b6c3b8062eb57be2"><td class="memItemLeft" align="right" valign="top"><a id="a7e76710ac026e177b6c3b8062eb57be2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Ray</b> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> mousePosition, const ::<a class="el" href="classraylib_1_1_camera3_d.html">Camera</a> &amp;camera)</td></tr>
+<tr class="separator:a7e76710ac026e177b6c3b8062eb57be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af90d1152b20e87f66fb5dec1be3375de"><td class="memItemLeft" align="right" valign="top"><a id="af90d1152b20e87f66fb5dec1be3375de"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Ray</b> (::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> position={0.0f, 0.0f, 0.0f}, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> direction={0.0f, 0.0f, 0.0f})</td></tr>
+<tr class="separator:af90d1152b20e87f66fb5dec1be3375de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f7f848de7bebccc4dbda328dc8056b1"><td class="memItemLeft" align="right" valign="top"><a id="a6f7f848de7bebccc4dbda328dc8056b1"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Ray</b> (const ::<a class="el" href="classraylib_1_1_ray.html">Ray</a> &amp;ray)</td></tr>
 <tr class="separator:a6f7f848de7bebccc4dbda328dc8056b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0423741c40f27573139f30d05b39a77"><td class="memItemLeft" align="right" valign="top"><a id="ad0423741c40f27573139f30d05b39a77"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray.html#ad0423741c40f27573139f30d05b39a77">CheckCollision</a> (const ::<a class="el" href="classraylib_1_1_bounding_box.html">BoundingBox</a> &amp;box) const</td></tr>
-<tr class="memdesc:ad0423741c40f27573139f30d05b39a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect collision between ray and box. <br /></td></tr>
-<tr class="separator:ad0423741c40f27573139f30d05b39a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3190f8eb00e4d06b841580201115eed8"><td class="memItemLeft" align="right" valign="top"><a id="a3190f8eb00e4d06b841580201115eed8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray.html#a3190f8eb00e4d06b841580201115eed8">CheckCollisionSphere</a> (::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> center, float radius) const</td></tr>
-<tr class="memdesc:a3190f8eb00e4d06b841580201115eed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect collision between ray and sphere. <br /></td></tr>
-<tr class="separator:a3190f8eb00e4d06b841580201115eed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84586f1f5ce6627b1d0224fad287787b"><td class="memItemLeft" align="right" valign="top"><a id="a84586f1f5ce6627b1d0224fad287787b"></a>
 <a class="el" href="classraylib_1_1_ray.html">Ray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray.html#a84586f1f5ce6627b1d0224fad287787b">Draw</a> (::<a class="el" href="classraylib_1_1_color.html">Color</a> color)</td></tr>
 <tr class="memdesc:a84586f1f5ce6627b1d0224fad287787b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a ray line. <br /></td></tr>
@@ -110,18 +103,18 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a class="el" href="classraylib_1_1_ray_collision.html">RayCollision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray.html#a8629f9098a9e4df52d6606121131360a">GetCollision</a> (::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p1, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p2, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p3) const</td></tr>
 <tr class="memdesc:a8629f9098a9e4df52d6606121131360a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision info between ray and triangle. <br /></td></tr>
 <tr class="separator:a8629f9098a9e4df52d6606121131360a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a576e54e9926824a639235aeafb64a06c"><td class="memItemLeft" align="right" valign="top"><a id="a576e54e9926824a639235aeafb64a06c"></a>
+<a class="el" href="classraylib_1_1_ray_collision.html">RayCollision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray.html#a576e54e9926824a639235aeafb64a06c">GetCollision</a> (::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p1, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p2, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p3, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p4) const</td></tr>
+<tr class="memdesc:a576e54e9926824a639235aeafb64a06c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision info between ray and quad. <br /></td></tr>
+<tr class="separator:a576e54e9926824a639235aeafb64a06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc1e0cffcf355d177dee6f2b8f43fc0d"><td class="memItemLeft" align="right" valign="top"><a id="acc1e0cffcf355d177dee6f2b8f43fc0d"></a>
+<a class="el" href="classraylib_1_1_ray_collision.html">RayCollision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray.html#acc1e0cffcf355d177dee6f2b8f43fc0d">GetCollision</a> (const ::<a class="el" href="classraylib_1_1_bounding_box.html">BoundingBox</a> &amp;box) const</td></tr>
+<tr class="memdesc:acc1e0cffcf355d177dee6f2b8f43fc0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect collision between ray and box. <br /></td></tr>
+<tr class="separator:acc1e0cffcf355d177dee6f2b8f43fc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8797e988864b005cdd5b6c275b57f4d"><td class="memItemLeft" align="right" valign="top"><a id="ac8797e988864b005cdd5b6c275b57f4d"></a>
 <a class="el" href="classraylib_1_1_ray_collision.html">RayCollision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray.html#ac8797e988864b005cdd5b6c275b57f4d">GetCollision</a> (const ::<a class="el" href="classraylib_1_1_mesh.html">Mesh</a> &amp;mesh, const ::<a class="el" href="classraylib_1_1_matrix.html">Matrix</a> &amp;transform) const</td></tr>
 <tr class="memdesc:ac8797e988864b005cdd5b6c275b57f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision information between ray and mesh. <br /></td></tr>
 <tr class="separator:ac8797e988864b005cdd5b6c275b57f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d1bdb9be9cb47ca4aa0c228374c3d38"><td class="memItemLeft" align="right" valign="top"><a id="a0d1bdb9be9cb47ca4aa0c228374c3d38"></a>
-<a class="el" href="classraylib_1_1_ray_collision.html">RayCollision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray.html#a0d1bdb9be9cb47ca4aa0c228374c3d38">GetCollision</a> (const ::<a class="el" href="classraylib_1_1_model.html">Model</a> &amp;model) const</td></tr>
-<tr class="memdesc:a0d1bdb9be9cb47ca4aa0c228374c3d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision info between ray and model. <br /></td></tr>
-<tr class="separator:a0d1bdb9be9cb47ca4aa0c228374c3d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad22b121408edb1e249f55b2c1f9b523e"><td class="memItemLeft" align="right" valign="top"><a id="ad22b121408edb1e249f55b2c1f9b523e"></a>
-<a class="el" href="classraylib_1_1_ray_collision.html">RayCollision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray.html#ad22b121408edb1e249f55b2c1f9b523e">GetCollision</a> (<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p1, <a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p2, <a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p3, <a class="el" href="classraylib_1_1_vector3.html">Vector3</a> p4) const</td></tr>
-<tr class="memdesc:ad22b121408edb1e249f55b2c1f9b523e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision info between ray and quad. <br /></td></tr>
-<tr class="separator:ad22b121408edb1e249f55b2c1f9b523e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee371fba13716967b132d6cfa7fcee74"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray.html#aee371fba13716967b132d6cfa7fcee74">GetDirection</a> () const</td></tr>
 <tr class="memdesc:aee371fba13716967b132d6cfa7fcee74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the direction value for the object.  <a href="classraylib_1_1_ray.html#aee371fba13716967b132d6cfa7fcee74">More...</a><br /></td></tr>
 <tr class="separator:aee371fba13716967b132d6cfa7fcee74"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,6 +130,17 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a58e766e005e207f9d8162afe7a35939e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray.html#a58e766e005e207f9d8162afe7a35939e">SetPosition</a> (::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> value)</td></tr>
 <tr class="memdesc:a58e766e005e207f9d8162afe7a35939e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the position value for the object.  <a href="classraylib_1_1_ray.html#a58e766e005e207f9d8162afe7a35939e">More...</a><br /></td></tr>
 <tr class="separator:a58e766e005e207f9d8162afe7a35939e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a71ed42f62ed21b18de311a5958fb2f90"><td class="memItemLeft" align="right" valign="top"><a id="a71ed42f62ed21b18de311a5958fb2f90"></a>
+static <a class="el" href="classraylib_1_1_ray.html">Ray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray.html#a71ed42f62ed21b18de311a5958fb2f90">GetMouse</a> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> mousePosition, const ::<a class="el" href="classraylib_1_1_camera3_d.html">Camera</a> &amp;camera)</td></tr>
+<tr class="memdesc:a71ed42f62ed21b18de311a5958fb2f90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a ray trace from mouse position. <br /></td></tr>
+<tr class="separator:a71ed42f62ed21b18de311a5958fb2f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc9387233e34d74c668382a2ec206239"><td class="memItemLeft" align="right" valign="top"><a id="abc9387233e34d74c668382a2ec206239"></a>
+static <a class="el" href="classraylib_1_1_ray.html">Ray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_ray.html#abc9387233e34d74c668382a2ec206239">GetMouse</a> (const ::<a class="el" href="classraylib_1_1_camera3_d.html">Camera</a> &amp;camera)</td></tr>
+<tr class="memdesc:abc9387233e34d74c668382a2ec206239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a ray trace from mouse position. <br /></td></tr>
+<tr class="separator:abc9387233e34d74c668382a2ec206239"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classraylib_1_1_ray.html" title="Ray type (useful for raycast)">Ray</a> type (useful for raycast) </p>
@@ -169,7 +173,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the direction value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The direction value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ray_8hpp_source.html#l00032">32</a> of file <a class="el" href="_ray_8hpp_source.html">Ray.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_8hpp_source.html#l00033">33</a> of file <a class="el" href="_ray_8hpp_source.html">Ray.hpp</a>.</p>
 
 </div>
 </div>
@@ -199,7 +203,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the position value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The position value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ray_8hpp_source.html#l00031">31</a> of file <a class="el" href="_ray_8hpp_source.html">Ray.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_8hpp_source.html#l00032">32</a> of file <a class="el" href="_ray_8hpp_source.html">Ray.hpp</a>.</p>
 
 </div>
 </div>
@@ -235,7 +239,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ray_8hpp_source.html#l00032">32</a> of file <a class="el" href="_ray_8hpp_source.html">Ray.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_8hpp_source.html#l00033">33</a> of file <a class="el" href="_ray_8hpp_source.html">Ray.hpp</a>.</p>
 
 </div>
 </div>
@@ -271,7 +275,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ray_8hpp_source.html#l00031">31</a> of file <a class="el" href="_ray_8hpp_source.html">Ray.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ray_8hpp_source.html#l00032">32</a> of file <a class="el" href="_ray_8hpp_source.html">Ray.hpp</a>.</p>
 
 </div>
 </div>

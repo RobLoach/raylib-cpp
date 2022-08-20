@@ -206,7 +206,9 @@ class Font : public ::Font {
      */
     inline Font& DrawText(const std::string& text, int posX, int posY, float fontSize,
             float spacing, ::Color tint = WHITE) {
-        ::DrawTextEx(*this, text.c_str(), {static_cast<float>(posX), static_cast<float>(posY)},  fontSize,  spacing,  tint);
+        ::DrawTextEx(*this, text.c_str(),
+            { static_cast<float>(posX), static_cast<float>(posY) },
+            fontSize, spacing, tint);
         return *this;
     }
 
@@ -218,7 +220,10 @@ class Font : public ::Font {
             float fontSize,
             float spacing,
             ::Color tint = WHITE) {
-        ::DrawTextPro(*this, text.c_str(), position, origin, rotation, fontSize, spacing, tint);
+        ::DrawTextPro(*this, text.c_str(),
+            position, origin,
+            rotation, fontSize,
+            spacing, tint);
         return *this;
     }
 
@@ -236,8 +241,14 @@ class Font : public ::Font {
     /**
      * Draw multiple character (codepoint)
      */
-    inline Font& DrawText(const int *codepoints, int count, ::Vector2 position, float fontSize, float spacing, ::Color tint = { 255, 255, 255, 255 }) {
-        ::DrawTextCodepoints(*this, codepoints, count, position, fontSize, spacing, tint);
+    inline Font& DrawText(const int *codepoints,
+            int count, ::Vector2 position,
+            float fontSize, float spacing,
+            ::Color tint = { 255, 255, 255, 255 }) {
+        ::DrawTextCodepoints(*this,
+            codepoints, count,
+            position, fontSize,
+            spacing, tint);
         return *this;
     }
 

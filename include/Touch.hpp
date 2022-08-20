@@ -48,4 +48,4 @@ class Touch {
 
 using RTouch = raylib::Touch;
 
-#endif  // RAYLIB_CPP_INCLUDE_MOUSE_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_TOUCH_HPP_

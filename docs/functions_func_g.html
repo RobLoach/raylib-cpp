@@ -67,9 +67,6 @@ $(function() {
 &#160;
 
 <h3><a id="index_g"></a>- g -</h3><ul>
-<li>GenBinormals()
-: <a class="el" href="classraylib_1_1_mesh.html#a03d6628373c096452cbfafafca166d21">raylib::Mesh</a>
-</li>
 <li>GenMipmaps()
 : <a class="el" href="classraylib_1_1_texture.html#a2f895f3a629cf1a74fe88d05b1dd3003">raylib::Texture</a>
 </li>
@@ -130,14 +127,17 @@ $(function() {
 : <a class="el" href="classraylib_1_1_audio_stream.html#ac29300e1a5c6b984824c2717313c7d7f">raylib::AudioStream</a>
 , <a class="el" href="classraylib_1_1_wave.html#ab6940575496f381bea5097cb716cdbff">raylib::Wave</a>
 </li>
+<li>GetClipboardText()
+: <a class="el" href="classraylib_1_1_window.html#a645c59ebb2d815cd37abd5db6e21e80e">raylib::Window</a>
+</li>
 <li>GetCollision()
 : <a class="el" href="classraylib_1_1_bounding_box.html#a75c1287b1fd3b4fb7a67b099fc8d629e">raylib::BoundingBox</a>
-, <a class="el" href="classraylib_1_1_model.html#adfd34b995d2e7c21f8ae41199a094b7d">raylib::Model</a>
-, <a class="el" href="classraylib_1_1_ray.html#a0d1bdb9be9cb47ca4aa0c228374c3d38">raylib::Ray</a>
+, <a class="el" href="classraylib_1_1_ray.html#a576e54e9926824a639235aeafb64a06c">raylib::Ray</a>
 , <a class="el" href="classraylib_1_1_rectangle.html#a645b482ae3a4faa035507506be4f4260">raylib::Rectangle</a>
 </li>
 <li>GetColor()
-: <a class="el" href="classraylib_1_1_text.html#a4f2bfda860845f32810860527a66498f">raylib::Text</a>
+: <a class="el" href="classraylib_1_1_image.html#a963ffd4ae257684022ffaa48d66e5c20">raylib::Image</a>
+, <a class="el" href="classraylib_1_1_text.html#a4f2bfda860845f32810860527a66498f">raylib::Text</a>
 </li>
 <li>GetColors()
 : <a class="el" href="classraylib_1_1_mesh.html#a142e31381d248fbcdeeef46fd1f208ed">raylib::Mesh</a>
@@ -152,6 +152,9 @@ $(function() {
 : <a class="el" href="classraylib_1_1_image.html#a3144e343f963e5b206e1050be54b4187">raylib::Image</a>
 , <a class="el" href="classraylib_1_1_texture.html#a3afee0767b1b7ca54e5477667761f5ed">raylib::Texture</a>
 , <a class="el" href="classraylib_1_1_wave.html#a8e7edd178a2ec7dc11f2474b29771d90">raylib::Wave</a>
+</li>
+<li>GetDelta()
+: <a class="el" href="classraylib_1_1_mouse.html#af289f6259f77657bebb4bc6d303b678e">raylib::Mouse</a>
 </li>
 <li>GetDepth()
 : <a class="el" href="classraylib_1_1_render_texture.html#af14f685bcdb22071df1b48baed8a98ee">raylib::RenderTexture</a>
@@ -317,6 +320,9 @@ $(function() {
 : <a class="el" href="classraylib_1_1_image.html#aa0e7c5adcbaf91924c141a085ed2317a">raylib::Image</a>
 , <a class="el" href="classraylib_1_1_texture.html#a221e1324dcca1092597692d6c71f3711">raylib::Texture</a>
 </li>
+<li>GetMouse()
+: <a class="el" href="classraylib_1_1_ray.html#a71ed42f62ed21b18de311a5958fb2f90">raylib::Ray</a>
+</li>
 <li>GetMouseRay()
 : <a class="el" href="classraylib_1_1_camera3_d.html#ac59decb87b851c16adee7c2c742f8961">raylib::Camera3D</a>
 </li>
@@ -338,11 +344,24 @@ $(function() {
 <li>GetPixelDataSize()
 : <a class="el" href="classraylib_1_1_image.html#aa432e9f4e1b7a5e31a70447e3efd979d">raylib::Image</a>
 </li>
+<li>GetPlaying()
+: <a class="el" href="classraylib_1_1_sound.html#a4b665deede8cd92fb0e3dd79193a1c27">raylib::Sound</a>
+</li>
+<li>GetPointCount()
+: <a class="el" href="classraylib_1_1_touch.html#ab8237b88ca4e91466b2bf8ac0518dd21">raylib::Touch</a>
+</li>
+<li>GetPointId()
+: <a class="el" href="classraylib_1_1_touch.html#ac8f4025e43da8339bdfcd70fa1b690fa">raylib::Touch</a>
+</li>
 <li>GetPosition()
 : <a class="el" href="classraylib_1_1_camera3_d.html#a8de66de053eac614313c0912aff2b755">raylib::Camera3D</a>
 , <a class="el" href="classraylib_1_1_ray.html#a13d000fd9369b90b44dffcbc63eb5475">raylib::Ray</a>
 , <a class="el" href="classraylib_1_1_ray_collision.html#a3b8389ef3c49c53613472a3fde16e4a3">raylib::RayCollision</a>
-, <a class="el" href="classraylib_1_1_window.html#a3b1ba3352da1660ebc3528abba28347c">raylib::Window</a>
+, <a class="el" href="classraylib_1_1_touch.html#a4e980e79595488f2899795ff76c8989d">raylib::Touch</a>
+, <a class="el" href="classraylib_1_1_window.html#a3be14707970a3af16d8dd212c27635a0">raylib::Window</a>
+</li>
+<li>GetProcessor()
+: <a class="el" href="classraylib_1_1_audio_stream.html#a03bb4e9a8f7f4465a21af713147e7d5f">raylib::AudioStream</a>
 </li>
 <li>GetProjection()
 : <a class="el" href="classraylib_1_1_camera3_d.html#a2886f1e2b41524fcc7e43862460201ce">raylib::Camera3D</a>
@@ -350,8 +369,17 @@ $(function() {
 <li>GetR()
 : <a class="el" href="classraylib_1_1_color.html#aff509b4643d1a176ba62622fc33fce06">raylib::Color</a>
 </li>
+<li>GetRay()
+: <a class="el" href="classraylib_1_1_mouse.html#ac65597d5676ed34d2ef02868451871a3">raylib::Mouse</a>
+</li>
 <li>GetRecs()
 : <a class="el" href="classraylib_1_1_font.html#a396cae69c0d0c46bf76fc3879d5219e1">raylib::Font</a>
+</li>
+<li>GetRenderHeight()
+: <a class="el" href="classraylib_1_1_window.html#a135515c9f786676a4e8e1f72ab279e59">raylib::Window</a>
+</li>
+<li>GetRenderWidth()
+: <a class="el" href="classraylib_1_1_window.html#a06a01230bfa32291f585f1aa63e04e88">raylib::Window</a>
 </li>
 <li>GetRotation()
 : <a class="el" href="classraylib_1_1_camera2_d.html#a182bb47e65f422ee3b0d9dc27ba1cd6e">raylib::Camera2D</a>
@@ -365,7 +393,7 @@ $(function() {
 , <a class="el" href="classraylib_1_1_wave.html#acae6daf3fa261c114bdb37a34a08428b">raylib::Wave</a>
 </li>
 <li>GetScaleDPI()
-: <a class="el" href="classraylib_1_1_window.html#ab8907b1b25a7b9d42ca32e085dde1a07">raylib::Window</a>
+: <a class="el" href="classraylib_1_1_window.html#a361fe3405b75feef86fe621a0480e10d">raylib::Window</a>
 </li>
 <li>GetScreenToWorld()
 : <a class="el" href="classraylib_1_1_camera2_d.html#a1eed5bde73d8c1a227250b6caaefcb42">raylib::Camera2D</a>
@@ -447,6 +475,12 @@ $(function() {
 <li>GetW()
 : <a class="el" href="classraylib_1_1_vector4.html#ab2b62fd149f3a5fe52785d2a2a4fb594">raylib::Vector4</a>
 </li>
+<li>GetWheelMove()
+: <a class="el" href="classraylib_1_1_mouse.html#afb094f45ac8964ae24e068af0595eea9">raylib::Mouse</a>
+</li>
+<li>GetWheelMoveV()
+: <a class="el" href="classraylib_1_1_mouse.html#ad7f3a408bf64d5af809c9f798eb96d51">raylib::Mouse</a>
+</li>
 <li>GetWidth()
 : <a class="el" href="classraylib_1_1_image.html#a686e411bd7dca746367039925e00ff0c">raylib::Image</a>
 , <a class="el" href="classraylib_1_1_rectangle.html#a6abb0a899eba4c0cf64abe335cf9524f">raylib::Rectangle</a>
@@ -459,12 +493,14 @@ $(function() {
 </li>
 <li>GetX()
 : <a class="el" href="classraylib_1_1_rectangle.html#ac8e285bfedece7690efecc848f866488">raylib::Rectangle</a>
+, <a class="el" href="classraylib_1_1_touch.html#aeaad71fb64dd384ab1fa6a844c21b5c9">raylib::Touch</a>
 , <a class="el" href="classraylib_1_1_vector2.html#a8f3caf893df8b295287b9d38db071f7b">raylib::Vector2</a>
 , <a class="el" href="classraylib_1_1_vector3.html#adf04670ef541569bb6f059e0882ef6e6">raylib::Vector3</a>
 , <a class="el" href="classraylib_1_1_vector4.html#aeccdd03d26e614a2e8b24d09df48c46f">raylib::Vector4</a>
 </li>
 <li>GetY()
 : <a class="el" href="classraylib_1_1_rectangle.html#a0d56937d314f4d6772e5c315c0c8804a">raylib::Rectangle</a>
+, <a class="el" href="classraylib_1_1_touch.html#add32d0ca76f297d9f793d2e9028eaf78">raylib::Touch</a>
 , <a class="el" href="classraylib_1_1_vector2.html#afc302ffc39c6a27208bc51f347614c6d">raylib::Vector2</a>
 , <a class="el" href="classraylib_1_1_vector3.html#a4a0ea2c9f7370ad1b84d7ac354828b04">raylib::Vector3</a>
 , <a class="el" href="classraylib_1_1_vector4.html#af056e11e295b76b9a411bdd28ca9f0ab">raylib::Vector4</a>

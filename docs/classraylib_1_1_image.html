@@ -100,9 +100,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a77cc09422677c409385be887ec642d21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a77cc09422677c409385be887ec642d21">Image</a> (const std::string &amp;fileName, int *frames)</td></tr>
 <tr class="memdesc:a77cc09422677c409385be887ec642d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load an animation image from the given file.  <a href="classraylib_1_1_image.html#a77cc09422677c409385be887ec642d21">More...</a><br /></td></tr>
 <tr class="separator:a77cc09422677c409385be887ec642d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47b88b08b963f803ba0f821fb7cd882b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a47b88b08b963f803ba0f821fb7cd882b">Image</a> (const std::string &amp;fileName, int width, int height, int format, int headerSize)</td></tr>
-<tr class="memdesc:a47b88b08b963f803ba0f821fb7cd882b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a raw image from the given file, with the provided width, height, and formats.  <a href="classraylib_1_1_image.html#a47b88b08b963f803ba0f821fb7cd882b">More...</a><br /></td></tr>
-<tr class="separator:a47b88b08b963f803ba0f821fb7cd882b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1712a7b876e26241634d57221371460a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a1712a7b876e26241634d57221371460a">Image</a> (const std::string &amp;fileName, int width, int height, int format, int headerSize=0)</td></tr>
+<tr class="memdesc:a1712a7b876e26241634d57221371460a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a raw image from the given file, with the provided width, height, and formats.  <a href="classraylib_1_1_image.html#a1712a7b876e26241634d57221371460a">More...</a><br /></td></tr>
+<tr class="separator:a1712a7b876e26241634d57221371460a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3269afe64885389663a144dbc24cc4f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a3269afe64885389663a144dbc24cc4f8">Image</a> (const std::string &amp;fileType, const unsigned char *fileData, int dataSize)</td></tr>
 <tr class="memdesc:a3269afe64885389663a144dbc24cc4f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load an image from the given file.  <a href="classraylib_1_1_image.html#a3269afe64885389663a144dbc24cc4f8">More...</a><br /></td></tr>
 <tr class="separator:a3269afe64885389663a144dbc24cc4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -227,14 +227,12 @@ inline ::<a class="el" href="classraylib_1_1_image.html">Image</a>&#160;</td><td
 <tr class="memitem:a557adfa161d643b0aaf3db41282b07b2"><td class="memItemLeft" align="right" valign="top"><a id="a557adfa161d643b0aaf3db41282b07b2"></a>
 <a class="el" href="classraylib_1_1_image.html">Image</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const std::string &amp;text, int x, int y, int fontSize, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color={255, 255, 255, 255})</td></tr>
 <tr class="separator:a557adfa161d643b0aaf3db41282b07b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51b6e05e27db567528729a62b9ebbf43"><td class="memItemLeft" align="right" valign="top"><a id="a51b6e05e27db567528729a62b9ebbf43"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a51b6e05e27db567528729a62b9ebbf43">Export</a> (const std::string &amp;fileName) const</td></tr>
-<tr class="memdesc:a51b6e05e27db567528729a62b9ebbf43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export image data to file, returns true on success. <br /></td></tr>
-<tr class="separator:a51b6e05e27db567528729a62b9ebbf43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfc2eded6288b1cf763722ac5ad7004e"><td class="memItemLeft" align="right" valign="top"><a id="adfc2eded6288b1cf763722ac5ad7004e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#adfc2eded6288b1cf763722ac5ad7004e">ExportAsCode</a> (const std::string &amp;fileName) const</td></tr>
-<tr class="memdesc:adfc2eded6288b1cf763722ac5ad7004e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export image as code file defining an array of bytes, returns true on success. <br /></td></tr>
-<tr class="separator:adfc2eded6288b1cf763722ac5ad7004e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc2213c23d1b05bc0dc46ece4aa2a1d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#acc2213c23d1b05bc0dc46ece4aa2a1d9">Export</a> (const std::string &amp;fileName) const</td></tr>
+<tr class="memdesc:acc2213c23d1b05bc0dc46ece4aa2a1d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export image data to file, returns true on success.  <a href="classraylib_1_1_image.html#acc2213c23d1b05bc0dc46ece4aa2a1d9">More...</a><br /></td></tr>
+<tr class="separator:acc2213c23d1b05bc0dc46ece4aa2a1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad12fc30d3b858e4c8a1abcac92d4483e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#ad12fc30d3b858e4c8a1abcac92d4483e">ExportAsCode</a> (const std::string &amp;fileName) const</td></tr>
+<tr class="memdesc:ad12fc30d3b858e4c8a1abcac92d4483e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export image as code file defining an array of bytes, returns true on success.  <a href="classraylib_1_1_image.html#ad12fc30d3b858e4c8a1abcac92d4483e">More...</a><br /></td></tr>
+<tr class="separator:ad12fc30d3b858e4c8a1abcac92d4483e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d8f596d36077f4b8c24512a2df73e65"><td class="memItemLeft" align="right" valign="top"><a id="a5d8f596d36077f4b8c24512a2df73e65"></a>
 <a class="el" href="classraylib_1_1_image.html">Image</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a5d8f596d36077f4b8c24512a2df73e65">FlipHorizontal</a> ()</td></tr>
 <tr class="memdesc:a5d8f596d36077f4b8c24512a2df73e65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flip image horizontally. <br /></td></tr>
@@ -254,6 +252,14 @@ inline ::<a class="el" href="classraylib_1_1_image.html">Image</a>&#160;</td><td
 <tr class="memitem:a3eb64b4c59b8dee647b4aa66b6bbdf68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a3eb64b4c59b8dee647b4aa66b6bbdf68">GetAlphaBorder</a> (float threshold) const</td></tr>
 <tr class="memdesc:a3eb64b4c59b8dee647b4aa66b6bbdf68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get image alpha border rectangle.  <a href="classraylib_1_1_image.html#a3eb64b4c59b8dee647b4aa66b6bbdf68">More...</a><br /></td></tr>
 <tr class="separator:a3eb64b4c59b8dee647b4aa66b6bbdf68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59621864f70ce41a014133ae323d5f8f"><td class="memItemLeft" align="right" valign="top"><a id="a59621864f70ce41a014133ae323d5f8f"></a>
+<a class="el" href="classraylib_1_1_color.html">raylib::Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a59621864f70ce41a014133ae323d5f8f">GetColor</a> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position) const</td></tr>
+<tr class="memdesc:a59621864f70ce41a014133ae323d5f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get image pixel color at vector position. <br /></td></tr>
+<tr class="separator:a59621864f70ce41a014133ae323d5f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a963ffd4ae257684022ffaa48d66e5c20"><td class="memItemLeft" align="right" valign="top"><a id="a963ffd4ae257684022ffaa48d66e5c20"></a>
+<a class="el" href="classraylib_1_1_color.html">raylib::Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a963ffd4ae257684022ffaa48d66e5c20">GetColor</a> (int x=0, int y=0) const</td></tr>
+<tr class="memdesc:a963ffd4ae257684022ffaa48d66e5c20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get image pixel color at (x, y) position. <br /></td></tr>
+<tr class="separator:a963ffd4ae257684022ffaa48d66e5c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3144e343f963e5b206e1050be54b4187"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a3144e343f963e5b206e1050be54b4187">GetData</a> () const</td></tr>
 <tr class="memdesc:a3144e343f963e5b206e1050be54b4187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the data value for the object.  <a href="classraylib_1_1_image.html#a3144e343f963e5b206e1050be54b4187">More...</a><br /></td></tr>
 <tr class="separator:a3144e343f963e5b206e1050be54b4187"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -279,21 +285,21 @@ inline ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a>&#160;</td
 <tr class="memitem:a59d31473c20102852665e3210bb4818b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a59d31473c20102852665e3210bb4818b">IsReady</a> () const</td></tr>
 <tr class="memdesc:a59d31473c20102852665e3210bb4818b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve whether or not the <a class="el" href="classraylib_1_1_image.html" title="Image type, bpp always RGBA (32bit)">Image</a> has been loaded.  <a href="classraylib_1_1_image.html#a59d31473c20102852665e3210bb4818b">More...</a><br /></td></tr>
 <tr class="separator:a59d31473c20102852665e3210bb4818b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c2e7cf47b1a06b0bca08a54241321f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a8c2e7cf47b1a06b0bca08a54241321f8">Load</a> (const ::<a class="el" href="classraylib_1_1_texture.html">Texture2D</a> &amp;texture)</td></tr>
-<tr class="memdesc:a8c2e7cf47b1a06b0bca08a54241321f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load an image from the given file.  <a href="classraylib_1_1_image.html#a8c2e7cf47b1a06b0bca08a54241321f8">More...</a><br /></td></tr>
-<tr class="separator:a8c2e7cf47b1a06b0bca08a54241321f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1698d0aeb0855a6a37394e8818687c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#ab1698d0aeb0855a6a37394e8818687c8">Load</a> (const std::string &amp;fileName)</td></tr>
-<tr class="memdesc:ab1698d0aeb0855a6a37394e8818687c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load image from file into CPU memory (RAM)  <a href="classraylib_1_1_image.html#ab1698d0aeb0855a6a37394e8818687c8">More...</a><br /></td></tr>
-<tr class="separator:ab1698d0aeb0855a6a37394e8818687c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3eb410f98058b887fe2b53129f3bdb6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#ac3eb410f98058b887fe2b53129f3bdb6">Load</a> (const std::string &amp;fileName, int *frames)</td></tr>
-<tr class="memdesc:ac3eb410f98058b887fe2b53129f3bdb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load image sequence from file (frames appended to image.data).  <a href="classraylib_1_1_image.html#ac3eb410f98058b887fe2b53129f3bdb6">More...</a><br /></td></tr>
-<tr class="separator:ac3eb410f98058b887fe2b53129f3bdb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65352c6d3acd0c4ae1c0bf47f46adb0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a65352c6d3acd0c4ae1c0bf47f46adb0e">Load</a> (const std::string &amp;fileName, int width, int height, int format, int headerSize)</td></tr>
-<tr class="memdesc:a65352c6d3acd0c4ae1c0bf47f46adb0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load image from RAW file data.  <a href="classraylib_1_1_image.html#a65352c6d3acd0c4ae1c0bf47f46adb0e">More...</a><br /></td></tr>
-<tr class="separator:a65352c6d3acd0c4ae1c0bf47f46adb0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4509e4b8d0ae59c60c7eb198f49b81d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a4509e4b8d0ae59c60c7eb198f49b81d1">Load</a> (const std::string &amp;fileType, const unsigned char *fileData, int dataSize)</td></tr>
-<tr class="memdesc:a4509e4b8d0ae59c60c7eb198f49b81d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load image from memory buffer, fileType refers to extension: i.e.  <a href="classraylib_1_1_image.html#a4509e4b8d0ae59c60c7eb198f49b81d1">More...</a><br /></td></tr>
-<tr class="separator:a4509e4b8d0ae59c60c7eb198f49b81d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ad53284abbe6bb4ce56906a737ea7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a31ad53284abbe6bb4ce56906a737ea7b">Load</a> (const ::<a class="el" href="classraylib_1_1_texture.html">Texture2D</a> &amp;texture)</td></tr>
+<tr class="memdesc:a31ad53284abbe6bb4ce56906a737ea7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load an image from the given file.  <a href="classraylib_1_1_image.html#a31ad53284abbe6bb4ce56906a737ea7b">More...</a><br /></td></tr>
+<tr class="separator:a31ad53284abbe6bb4ce56906a737ea7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a399564cc57fbee6d5055c3adf0da6ac7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a399564cc57fbee6d5055c3adf0da6ac7">Load</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a399564cc57fbee6d5055c3adf0da6ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load image from file into CPU memory (RAM)  <a href="classraylib_1_1_image.html#a399564cc57fbee6d5055c3adf0da6ac7">More...</a><br /></td></tr>
+<tr class="separator:a399564cc57fbee6d5055c3adf0da6ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02e6bf50845e864750bd54eaf83d68c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a02e6bf50845e864750bd54eaf83d68c8">Load</a> (const std::string &amp;fileName, int *frames)</td></tr>
+<tr class="memdesc:a02e6bf50845e864750bd54eaf83d68c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load image sequence from file (frames appended to image.data).  <a href="classraylib_1_1_image.html#a02e6bf50845e864750bd54eaf83d68c8">More...</a><br /></td></tr>
+<tr class="separator:a02e6bf50845e864750bd54eaf83d68c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f5badb0420aaa6620b39ec665669c85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a1f5badb0420aaa6620b39ec665669c85">Load</a> (const std::string &amp;fileName, int width, int height, int format, int headerSize)</td></tr>
+<tr class="memdesc:a1f5badb0420aaa6620b39ec665669c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load image from RAW file data.  <a href="classraylib_1_1_image.html#a1f5badb0420aaa6620b39ec665669c85">More...</a><br /></td></tr>
+<tr class="separator:a1f5badb0420aaa6620b39ec665669c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9695f5ea51c98a9bda031744a94b82b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a9695f5ea51c98a9bda031744a94b82b7">Load</a> (const std::string &amp;fileType, const unsigned char *fileData, int dataSize)</td></tr>
+<tr class="memdesc:a9695f5ea51c98a9bda031744a94b82b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load image from memory buffer, fileType refers to extension: i.e.  <a href="classraylib_1_1_image.html#a9695f5ea51c98a9bda031744a94b82b7">More...</a><br /></td></tr>
+<tr class="separator:a9695f5ea51c98a9bda031744a94b82b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d338c20d5bd42e64dc7bc5227d4f8ac"><td class="memItemLeft" align="right" valign="top"><a id="a6d338c20d5bd42e64dc7bc5227d4f8ac"></a>
 inline ::<a class="el" href="classraylib_1_1_color.html">Color</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_image.html#a6d338c20d5bd42e64dc7bc5227d4f8ac">LoadColors</a> () const</td></tr>
 <tr class="memdesc:a6d338c20d5bd42e64dc7bc5227d4f8ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load color data from image as a <a class="el" href="classraylib_1_1_color.html" title="Color type, RGBA (32bit)">Color</a> array (RGBA - 32bit) <br /></td></tr>
@@ -422,7 +428,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <div class="textblock"><p><a class="el" href="classraylib_1_1_image.html" title="Image type, bpp always RGBA (32bit)">Image</a> type, bpp always RGBA (32bit) </p>
 <p>Data stored in CPU memory (RAM) </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00016">16</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00017">17</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a81b1f8aa618c6302a03edcc8c03ddaef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81b1f8aa618c6302a03edcc8c03ddaef">&#9670;&nbsp;</a></span>Image() <span class="overload">[1/5]</span></h2>
@@ -455,16 +461,16 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classraylib_1_1_image.html#ab1698d0aeb0855a6a37394e8818687c8" title="Load image from file into CPU memory (RAM)">Load()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classraylib_1_1_image.html#a399564cc57fbee6d5055c3adf0da6ac7" title="Load image from file into CPU memory (RAM)">Load()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00037">37</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00038">38</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00230">Load()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00221">Load()</a>.</p>
 
 </div>
 </div>
-<a id="a47b88b08b963f803ba0f821fb7cd882b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47b88b08b963f803ba0f821fb7cd882b">&#9670;&nbsp;</a></span>Image() <span class="overload">[2/5]</span></h2>
+<a id="a1712a7b876e26241634d57221371460a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1712a7b876e26241634d57221371460a">&#9670;&nbsp;</a></span>Image() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,7 +506,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>headerSize</em>&#160;</td>
+          <td class="paramname"><em>headerSize</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -524,9 +530,9 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </dl>
 <dl class="section see"><dt>See also</dt><dd>LoadRaw() </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00050">50</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00049">49</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00230">Load()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00221">Load()</a>.</p>
 
 </div>
 </div>
@@ -573,9 +579,9 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </dl>
 <dl class="section see"><dt>See also</dt><dd>LoadAnim() </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00063">63</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00060">60</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00230">Load()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00221">Load()</a>.</p>
 
 </div>
 </div>
@@ -627,9 +633,9 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00074">74</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00069">69</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00230">Load()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00221">Load()</a>.</p>
 
 </div>
 </div>
@@ -665,9 +671,9 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00085">85</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00078">78</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00230">Load()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00221">Load()</a>.</p>
 
 </div>
 </div>
@@ -715,7 +721,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Generate image: cellular algorithm. </p>
 <p>Bigger tileSize means bigger cells </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00182">182</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00173">173</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -751,7 +757,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00534">534</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00542">542</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -787,7 +793,83 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00524">524</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00532">532</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+
+</div>
+</div>
+<a id="acc2213c23d1b05bc0dc46ece4aa2a1d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc2213c23d1b05bc0dc46ece4aa2a1d9">&#9670;&nbsp;</a></span>Export()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void raylib::Image::Export </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Export image data to file, returns true on success. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Thrown if the image failed to load from the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00302">302</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_functions_8hpp_source.html#l00237">raylib::ExportImage()</a>.</p>
+
+</div>
+</div>
+<a id="ad12fc30d3b858e4c8a1abcac92d4483e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad12fc30d3b858e4c8a1abcac92d4483e">&#9670;&nbsp;</a></span>ExportAsCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void raylib::Image::ExportAsCode </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Export image as code file defining an array of bytes, returns true on success. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Thrown if the image failed to load from the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00313">313</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_functions_8hpp_source.html#l00244">raylib::ExportImageAsCode()</a>.</p>
 
 </div>
 </div>
@@ -823,7 +905,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00552">552</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00560">560</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -853,7 +935,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Retrieves the data value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The data value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00311">311</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00319">319</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -883,7 +965,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Retrieves the format value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The format value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00315">315</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00323">323</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -913,7 +995,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Retrieves the height value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The height value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00313">313</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00321">321</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -943,7 +1025,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Retrieves the mipmaps value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The mipmaps value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00314">314</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00322">322</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -973,7 +1055,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Returns the pixel data size based on the current image. </p>
 <dl class="section return"><dt>Returns</dt><dd>The pixel data size of the image. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00708">708</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00730">730</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1003,7 +1085,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Retrieves the width value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The width value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00312">312</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00320">320</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1033,14 +1115,14 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Retrieve whether or not the <a class="el" href="classraylib_1_1_image.html" title="Image type, bpp always RGBA (32bit)">Image</a> has been loaded. </p>
 <dl class="section return"><dt>Returns</dt><dd>True or false depending on whether the <a class="el" href="classraylib_1_1_image.html" title="Image type, bpp always RGBA (32bit)">Image</a> has been loaded. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00717">717</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00739">739</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_image_8hpp_source.html#l00230">Load()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_image_8hpp_source.html#l00221">Load()</a>.</p>
 
 </div>
 </div>
-<a id="a8c2e7cf47b1a06b0bca08a54241321f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c2e7cf47b1a06b0bca08a54241321f8">&#9670;&nbsp;</a></span>Load() <span class="overload">[1/5]</span></h2>
+<a id="a31ad53284abbe6bb4ce56906a737ea7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ad53284abbe6bb4ce56906a737ea7b">&#9670;&nbsp;</a></span>Load() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1049,7 +1131,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool raylib::Image::Load </td>
+          <td class="memname">void raylib::Image::Load </td>
           <td>(</td>
           <td class="paramtype">const ::<a class="el" href="classraylib_1_1_texture.html">Texture2D</a> &amp;&#160;</td>
           <td class="paramname"><em>texture</em></td><td>)</td>
@@ -1064,17 +1146,22 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </div><div class="memdoc">
 
 <p>Load an image from the given file. </p>
-<dl class="section return"><dt>Returns</dt><dd>True or false depending on whether or not the image was loaded from the texture.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Thrown if the image animation to load from the file.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section see"><dt>See also</dt><dd>::LoadImageFromTexture() </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00281">281</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00280">280</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00717">IsReady()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00739">IsReady()</a>.</p>
 
 </div>
 </div>
-<a id="ab1698d0aeb0855a6a37394e8818687c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1698d0aeb0855a6a37394e8818687c8">&#9670;&nbsp;</a></span>Load() <span class="overload">[2/5]</span></h2>
+<a id="a399564cc57fbee6d5055c3adf0da6ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a399564cc57fbee6d5055c3adf0da6ac7">&#9670;&nbsp;</a></span>Load() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1083,7 +1170,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool raylib::Image::Load </td>
+          <td class="memname">void raylib::Image::Load </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>fileName</em></td><td>)</td>
@@ -1098,19 +1185,24 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </div><div class="memdoc">
 
 <p>Load image from file into CPU memory (RAM) </p>
-<dl class="section return"><dt>Returns</dt><dd>Whether or not the image was loaded successfully.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Thrown if the image failed to load from the file.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceraylib.html#a2ef2826f77c7b5ef61bc23b7bdd0c90f" title="Load an image.">LoadImage()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00230">230</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00221">221</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00717">IsReady()</a>, and <a class="el" href="_functions_8hpp_source.html#l00210">raylib::LoadImage()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00739">IsReady()</a>, and <a class="el" href="_functions_8hpp_source.html#l00205">raylib::LoadImage()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_image_8hpp_source.html#l00037">Image()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_image_8hpp_source.html#l00038">Image()</a>.</p>
 
 </div>
 </div>
-<a id="ac3eb410f98058b887fe2b53129f3bdb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3eb410f98058b887fe2b53129f3bdb6">&#9670;&nbsp;</a></span>Load() <span class="overload">[3/5]</span></h2>
+<a id="a02e6bf50845e864750bd54eaf83d68c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02e6bf50845e864750bd54eaf83d68c8">&#9670;&nbsp;</a></span>Load() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1119,7 +1211,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool raylib::Image::Load </td>
+          <td class="memname">void raylib::Image::Load </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>fileName</em>, </td>
@@ -1144,17 +1236,22 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </div><div class="memdoc">
 
 <p>Load image sequence from file (frames appended to image.data). </p>
-<dl class="section return"><dt>Returns</dt><dd>Whether or not the image animation was loaded successfully.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Thrown if the image animation to load from the file.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceraylib.html#aad76b2bedb25cb9636e9de5078d82df9" title="Load animated image data.">LoadImageAnim()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00254">254</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00249">249</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00717">IsReady()</a>, and <a class="el" href="_functions_8hpp_source.html#l00226">raylib::LoadImageAnim()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00739">IsReady()</a>, and <a class="el" href="_functions_8hpp_source.html#l00221">raylib::LoadImageAnim()</a>.</p>
 
 </div>
 </div>
-<a id="a65352c6d3acd0c4ae1c0bf47f46adb0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65352c6d3acd0c4ae1c0bf47f46adb0e">&#9670;&nbsp;</a></span>Load() <span class="overload">[4/5]</span></h2>
+<a id="a1f5badb0420aaa6620b39ec665669c85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f5badb0420aaa6620b39ec665669c85">&#9670;&nbsp;</a></span>Load() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1163,7 +1260,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool raylib::Image::Load </td>
+          <td class="memname">void raylib::Image::Load </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>fileName</em>, </td>
@@ -1206,17 +1303,22 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </div><div class="memdoc">
 
 <p>Load image from RAW file data. </p>
-<dl class="section return"><dt>Returns</dt><dd>Whether or not the raw image data was loaded successfully.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Thrown if the image failed to load from the file.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceraylib.html#acc7e1f187de00bc85f7dcd153f0d740e" title="Load an image from RAW file data.">LoadImageRaw()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00242">242</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00235">235</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00717">IsReady()</a>, and <a class="el" href="_functions_8hpp_source.html#l00217">raylib::LoadImageRaw()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00739">IsReady()</a>, and <a class="el" href="_functions_8hpp_source.html#l00212">raylib::LoadImageRaw()</a>.</p>
 
 </div>
 </div>
-<a id="a4509e4b8d0ae59c60c7eb198f49b81d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4509e4b8d0ae59c60c7eb198f49b81d1">&#9670;&nbsp;</a></span>Load() <span class="overload">[5/5]</span></h2>
+<a id="a9695f5ea51c98a9bda031744a94b82b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9695f5ea51c98a9bda031744a94b82b7">&#9670;&nbsp;</a></span>Load() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1225,7 +1327,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool raylib::Image::Load </td>
+          <td class="memname">void raylib::Image::Load </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>fileType</em>, </td>
@@ -1257,12 +1359,17 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 
 <p>Load image from memory buffer, fileType refers to extension: i.e. </p>
 <p>"png".</p>
-<dl class="section return"><dt>Returns</dt><dd>Whether or not the image data was loaded successfully.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Thrown if the image animation to load from the file.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceraylib.html#a72b081f8ea1aed3e888a33e5f20b9430" title="Load image from memory buffer, fileType refers to extension like &quot;png&quot;.">LoadImageFromMemory()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00266">266</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00263">263</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00717">IsReady()</a>, and <a class="el" href="_functions_8hpp_source.html#l00233">raylib::LoadImageFromMemory()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00739">IsReady()</a>, and <a class="el" href="_functions_8hpp_source.html#l00228">raylib::LoadImageFromMemory()</a>.</p>
 
 </div>
 </div>
@@ -1292,9 +1399,9 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <p>Loads a texture from the image data. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classraylib_1_1_image.html#aa0f721d9a6f48834bf726225128a8da1" title="Load texture from image data.">LoadTexture()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00692">692</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00714">714</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00683">LoadTexture()</a>.</p>
+<p class="reference">References <a class="el" href="_image_8hpp_source.html#l00705">LoadTexture()</a>.</p>
 
 </div>
 </div>
@@ -1330,7 +1437,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00311">311</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00319">319</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1366,7 +1473,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00315">315</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00323">323</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1402,7 +1509,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00313">313</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00321">321</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1438,7 +1545,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00314">314</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00322">322</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -1474,7 +1581,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00312">312</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00320">320</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>

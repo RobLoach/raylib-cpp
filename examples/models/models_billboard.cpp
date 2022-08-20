@@ -51,7 +51,7 @@ int main() {
             camera.BeginMode();
             {
                 DrawGrid(10, 1.0f);        // Draw a grid
-                camera.DrawBillboard(bill, billPosition, 2.0f, WHITE);
+                bill.DrawBillboard(camera, billPosition, 2.0f);
             }
             camera.EndMode();
 

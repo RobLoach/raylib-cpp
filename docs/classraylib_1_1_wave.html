@@ -70,6 +70,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classraylib_1_1_wave-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">raylib::Wave Class Reference</div>  </div>
@@ -84,9 +85,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4643a642d42434c4eb39c6888688d495"><td class="memItemLeft" align="right" valign="top"><a id="a4643a642d42434c4eb39c6888688d495"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Wave</b> (const ::<a class="el" href="classraylib_1_1_wave.html">Wave</a> &amp;wave)</td></tr>
 <tr class="separator:a4643a642d42434c4eb39c6888688d495"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5144b906b92b84d95f8ce192ce9f86b"><td class="memItemLeft" align="right" valign="top"><a id="ad5144b906b92b84d95f8ce192ce9f86b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#ad5144b906b92b84d95f8ce192ce9f86b">Wave</a> (const std::string &amp;fileName)</td></tr>
-<tr class="memdesc:ad5144b906b92b84d95f8ce192ce9f86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load wave data from file. <br /></td></tr>
+<tr class="memitem:ad5144b906b92b84d95f8ce192ce9f86b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#ad5144b906b92b84d95f8ce192ce9f86b">Wave</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:ad5144b906b92b84d95f8ce192ce9f86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load wave data from file.  <a href="classraylib_1_1_wave.html#ad5144b906b92b84d95f8ce192ce9f86b">More...</a><br /></td></tr>
 <tr class="separator:ad5144b906b92b84d95f8ce192ce9f86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31b96adb8009137b02529f3b8b95918d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a31b96adb8009137b02529f3b8b95918d">Wave</a> (const std::string &amp;fileType, const unsigned char *fileData, int dataSize)</td></tr>
 <tr class="memdesc:a31b96adb8009137b02529f3b8b95918d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load wave from memory buffer, fileType refers to extension: i.e.  <a href="classraylib_1_1_wave.html#a31b96adb8009137b02529f3b8b95918d">More...</a><br /></td></tr>
@@ -142,12 +142,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a9f714404699bcf17b4ccfe6248691a7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a9f714404699bcf17b4ccfe6248691a7a">IsReady</a> () const</td></tr>
 <tr class="memdesc:a9f714404699bcf17b4ccfe6248691a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve whether or not the <a class="el" href="classraylib_1_1_wave.html" title="Wave type, defines audio wave data.">Wave</a> data has been loaded.  <a href="classraylib_1_1_wave.html#a9f714404699bcf17b4ccfe6248691a7a">More...</a><br /></td></tr>
 <tr class="separator:a9f714404699bcf17b4ccfe6248691a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ec80fbd3c64646f6a360f8759633a36"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a1ec80fbd3c64646f6a360f8759633a36">Load</a> (const std::string &amp;fileName)</td></tr>
-<tr class="memdesc:a1ec80fbd3c64646f6a360f8759633a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load wave data from file.  <a href="classraylib_1_1_wave.html#a1ec80fbd3c64646f6a360f8759633a36">More...</a><br /></td></tr>
-<tr class="separator:a1ec80fbd3c64646f6a360f8759633a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af04e630aaac5b0b13c8b371c36407745"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#af04e630aaac5b0b13c8b371c36407745">Load</a> (const std::string &amp;fileType, const unsigned char *fileData, int dataSize)</td></tr>
-<tr class="memdesc:af04e630aaac5b0b13c8b371c36407745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load wave from memory buffer, fileType refers to extension: i.e.  <a href="classraylib_1_1_wave.html#af04e630aaac5b0b13c8b371c36407745">More...</a><br /></td></tr>
-<tr class="separator:af04e630aaac5b0b13c8b371c36407745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84bb98eb9f24cf352dce7c1bd5661da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#ae84bb98eb9f24cf352dce7c1bd5661da">Load</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:ae84bb98eb9f24cf352dce7c1bd5661da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load wave data from file.  <a href="classraylib_1_1_wave.html#ae84bb98eb9f24cf352dce7c1bd5661da">More...</a><br /></td></tr>
+<tr class="separator:ae84bb98eb9f24cf352dce7c1bd5661da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fccdb0e506c2dbacb84c32ff5ff3231"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a2fccdb0e506c2dbacb84c32ff5ff3231">Load</a> (const std::string &amp;fileType, const unsigned char *fileData, int dataSize)</td></tr>
+<tr class="memdesc:a2fccdb0e506c2dbacb84c32ff5ff3231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load wave from memory buffer, fileType refers to extension: i.e.  <a href="classraylib_1_1_wave.html#a2fccdb0e506c2dbacb84c32ff5ff3231">More...</a><br /></td></tr>
+<tr class="separator:a2fccdb0e506c2dbacb84c32ff5ff3231"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac42dd244534663a8fb1da305006c9f3a"><td class="memItemLeft" align="right" valign="top"><a id="ac42dd244534663a8fb1da305006c9f3a"></a>
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#ac42dd244534663a8fb1da305006c9f3a">LoadSamples</a> ()</td></tr>
 <tr class="memdesc:ac42dd244534663a8fb1da305006c9f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load samples data from wave as a floats array. <br /></td></tr>
@@ -188,18 +188,59 @@ inline ::<a class="el" href="classraylib_1_1_sound.html">Sound</a>&#160;</td><td
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#a6a143fc632271958e5ee2899338ec5bc">Unload</a> ()</td></tr>
 <tr class="memdesc:a6a143fc632271958e5ee2899338ec5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unload wave data. <br /></td></tr>
 <tr class="separator:a6a143fc632271958e5ee2899338ec5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf7aaa265fec9183ef60c276a740d138"><td class="memItemLeft" align="right" valign="top"><a id="adf7aaa265fec9183ef60c276a740d138"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#adf7aaa265fec9183ef60c276a740d138">UnloadSamples</a> (float *samples)</td></tr>
-<tr class="memdesc:adf7aaa265fec9183ef60c276a740d138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unload samples data loaded with LoadWaveSamples() <br /></td></tr>
-<tr class="separator:adf7aaa265fec9183ef60c276a740d138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ad4deb1b67bef7706f29804e00e83d4f0"><td class="memItemLeft" align="right" valign="top"><a id="ad4deb1b67bef7706f29804e00e83d4f0"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_wave.html#ad4deb1b67bef7706f29804e00e83d4f0">UnloadSamples</a> (float *samples)</td></tr>
+<tr class="memdesc:ad4deb1b67bef7706f29804e00e83d4f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unload samples data loaded with LoadWaveSamples() <br /></td></tr>
+<tr class="separator:ad4deb1b67bef7706f29804e00e83d4f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classraylib_1_1_wave.html" title="Wave type, defines audio wave data.">Wave</a> type, defines audio wave data. </p>
 
 <p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00014">14</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad5144b906b92b84d95f8ce192ce9f86b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5144b906b92b84d95f8ce192ce9f86b">&#9670;&nbsp;</a></span>Wave() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">raylib::Wave::Wave </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load wave data from file. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Throws if the <a class="el" href="classraylib_1_1_wave.html" title="Wave type, defines audio wave data.">Wave</a> failed to load. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00034">34</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00189">Load()</a>.</p>
+
+</div>
+</div>
 <a id="a31b96adb8009137b02529f3b8b95918d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31b96adb8009137b02529f3b8b95918d">&#9670;&nbsp;</a></span>Wave()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a31b96adb8009137b02529f3b8b95918d">&#9670;&nbsp;</a></span>Wave() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -239,9 +280,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Load wave from memory buffer, fileType refers to extension: i.e. </p>
-<p>"wav" </p>
+<p>"wav"</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Throws if the <a class="el" href="classraylib_1_1_wave.html" title="Wave type, defines audio wave data.">Wave</a> failed to load. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00041">41</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00043">43</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00189">Load()</a>.</p>
 
@@ -424,14 +471,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieve whether or not the <a class="el" href="classraylib_1_1_wave.html" title="Wave type, defines audio wave data.">Wave</a> data has been loaded. </p>
 <dl class="section return"><dt>Returns</dt><dd>True or false depending on whether the wave data has been loaded. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00209">209</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00213">213</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_wave_8hpp_source.html#l00189">Load()</a>.</p>
 
 </div>
 </div>
-<a id="a1ec80fbd3c64646f6a360f8759633a36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ec80fbd3c64646f6a360f8759633a36">&#9670;&nbsp;</a></span>Load() <span class="overload">[1/2]</span></h2>
+<a id="ae84bb98eb9f24cf352dce7c1bd5661da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae84bb98eb9f24cf352dce7c1bd5661da">&#9670;&nbsp;</a></span>Load() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -440,7 +487,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool raylib::Wave::Load </td>
+          <td class="memname">void raylib::Wave::Load </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>fileName</em></td><td>)</td>
@@ -455,18 +502,23 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Load wave data from file. </p>
-<dl class="section return"><dt>Returns</dt><dd>True or false depending on if the <a class="el" href="classraylib_1_1_wave.html" title="Wave type, defines audio wave data.">Wave</a> data was loaded properly. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Throws if the <a class="el" href="classraylib_1_1_wave.html" title="Wave type, defines audio wave data.">Wave</a> failed to load. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00189">189</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00209">IsReady()</a>.</p>
+<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00213">IsReady()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_wave_8hpp_source.html#l00032">Wave()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_wave_8hpp_source.html#l00034">Wave()</a>.</p>
 
 </div>
 </div>
-<a id="af04e630aaac5b0b13c8b371c36407745"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af04e630aaac5b0b13c8b371c36407745">&#9670;&nbsp;</a></span>Load() <span class="overload">[2/2]</span></h2>
+<a id="a2fccdb0e506c2dbacb84c32ff5ff3231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fccdb0e506c2dbacb84c32ff5ff3231">&#9670;&nbsp;</a></span>Load() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -475,7 +527,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool raylib::Wave::Load </td>
+          <td class="memname">void raylib::Wave::Load </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>fileType</em>, </td>
@@ -507,11 +559,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Load wave from memory buffer, fileType refers to extension: i.e. </p>
 <p>"wav"</p>
-<dl class="section return"><dt>Returns</dt><dd>True or false depending on if the <a class="el" href="classraylib_1_1_wave.html" title="Wave type, defines audio wave data.">Wave</a> data was loaded properly. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Throws if the <a class="el" href="classraylib_1_1_wave.html" title="Wave type, defines audio wave data.">Wave</a> failed to load. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00199">199</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wave_8hpp_source.html#l00201">201</a> of file <a class="el" href="_wave_8hpp_source.html">Wave.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00209">IsReady()</a>.</p>
+<p class="reference">References <a class="el" href="_wave_8hpp_source.html#l00213">IsReady()</a>.</p>
 
 </div>
 </div>

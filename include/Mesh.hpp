@@ -19,38 +19,6 @@ class Mesh : public ::Mesh {
         set(mesh);
     }
 
-    Mesh(int vertexCount = 0,
-        int triangleCount = 0,
-        float *vertices = nullptr,
-        float *texcoords = nullptr,
-        float *texcoords2 = nullptr,
-        float *normals = nullptr,
-        float *tangents = nullptr,
-        unsigned char *colors = nullptr,
-        unsigned short *indices = nullptr,
-        float *animVertices = nullptr,
-        float *animNormals = nullptr,
-        unsigned char *boneIds = nullptr,
-        float *boneWeights = nullptr,
-        unsigned int vaoId = 0,
-        unsigned int *vboId = nullptr) : ::Mesh{
-            vertexCount,
-            triangleCount,
-            vertices,
-            texcoords,
-            texcoords2,
-            normals,
-            tangents,
-            colors,
-            indices,
-            animVertices,
-            animNormals,
-            boneIds,
-            boneWeights,
-            vaoId,
-            vboId
-        } {}
-
     /**
      * Load meshes from model file
      */
