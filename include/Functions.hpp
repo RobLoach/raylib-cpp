@@ -70,7 +70,6 @@ RLCPPAPI inline std::string GetGamepadName(int gamepad) {
 /**
  * Load text data from file (read)
  */
-[[maybe_unused]]
 RLCPPAPI std::string LoadFileText(const std::string& fileName) {
     char* text = ::LoadFileText(fileName.c_str());
     std::string output(text);
@@ -151,7 +150,6 @@ RLCPPAPI inline std::string GetWorkingDirectory() {
 /**
  * Get filenames in a directory path
  */
-[[maybe_unused]]
 RLCPPAPI std::vector<std::string> LoadDirectoryFiles(const std::string& dirPath) {
     FilePathList files = ::LoadDirectoryFiles(dirPath.c_str());
     std::vector<std::string> output(files.paths, files.paths + files.count);
@@ -169,7 +167,6 @@ RLCPPAPI inline bool ChangeDirectory(const std::string& dir) {
 /**
  * Get dropped files names
  */
-[[maybe_unused]]
 RLCPPAPI std::vector<std::string> LoadDroppedFiles() {
     if (!::IsFileDropped()) {
         return std::vector<std::string>();

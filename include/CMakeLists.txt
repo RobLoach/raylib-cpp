@@ -23,7 +23,6 @@ install(FILES
     Mouse.hpp
     Music.hpp
     physac.hpp
-    Physics.hpp
     Ray.hpp
     RayCollision.hpp
     RaylibException.hpp
