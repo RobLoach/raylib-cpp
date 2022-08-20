@@ -28,10 +28,8 @@ class AudioStream : public ::AudioStream {
      *
      * @throws raylib::RaylibException Throws if the AudioStream failed to load.
      */
-    AudioStream(unsigned int SampleRate, unsigned int SampleSize, unsigned int Channels = 2) {
-        if (!Load(SampleRate, SampleSize, Channels)) {
-            throw RaylibException("Failed to create AudioStream");
-        }
+    AudioStream(unsigned int sampleRate, unsigned int sampleSize, unsigned int channels = 2) {
+        Load(sampleRate, sampleSize, channels);
     }
 
     AudioStream(const AudioStream&) = delete;
@@ -144,7 +142,7 @@ class AudioStream : public ::AudioStream {
     /**
      * Set volume for audio stream (1.0 is max level)
      */
-    inline AudioStream& SetVolume(float volume) {
+    inline AudioStream& SetVolume(float volume = 1.0f) {
         ::SetAudioStreamVolume(*this, volume);
         return *this;
     }
@@ -158,10 +156,39 @@ class AudioStream : public ::AudioStream {
     }
 
     /**
+     * Set pan for audio stream (0.5 is centered)
+     */
+    inline AudioStream& SetPan(float pan = 0.5f) {
+        ::SetAudioStreamPitch(*this, pan);
+        return *this;
+    }
+
+    /**
      * Default size for new audio streams
      */
     inline static void SetBufferSizeDefault(int size) {
         ::SetAudioStreamBufferSizeDefault(size);
+    }
+
+    /**
+     * Audio thread callback to request new data
+     */
+    inline void SetCallback(::AudioCallback callback) {
+        ::SetAudioStreamCallback(*this, callback);
+    }
+
+    /**
+     * Attach audio stream processor to stream
+     */
+    inline void AttachProcessor(::AudioCallback processor) {
+        ::SetAudioStreamCallback(*this, processor);
+    }
+
+    /**
+     * Detach audio stream processor from stream
+     */
+    inline void DetachProcessor(::AudioCallback processor) {
+        ::SetAudioStreamCallback(*this, processor);
     }
 
     /**
@@ -172,13 +199,16 @@ class AudioStream : public ::AudioStream {
     }
 
     /**
-     * Init audio stream (to stream raw audio pcm data)
+     * Load audio stream (to stream raw audio pcm data)
      *
-     * @return True or false depending on if the audio stream initialized properly.
+     * @throws raylib::RaylibException Throws if the AudioStream failed to load.
      */
-    bool Load(unsigned int SampleRate, unsigned int SampleSize, unsigned int Channels = 2) {
+    void Load(unsigned int SampleRate, unsigned int SampleSize, unsigned int Channels = 2) {
+        Unload();
         set(::LoadAudioStream(SampleRate, SampleSize, Channels));
-        return IsReady();
+        if (!IsReady()) {
+            throw RaylibException("Failed to load audio stream");
+        }
     }
 
  private:
@@ -191,6 +221,7 @@ class AudioStream : public ::AudioStream {
     }
 };
 }  // namespace raylib
+
 using RAudioStream = raylib::AudioStream;
 
 #endif  // RAYLIB_CPP_INCLUDE_AUDIOSTREAM_HPP_

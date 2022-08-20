@@ -73,6 +73,7 @@ class RayCollision : public ::RayCollision {
     }
 };
 }  // namespace raylib
+
 using RRayCollision = raylib::RayCollision;
 
 #endif  // RAYLIB_CPP_INCLUDE_RAYCOLLISION_HPP_

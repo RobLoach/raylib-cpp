@@ -11,13 +11,6 @@ namespace raylib {
 class BoundingBox : public ::BoundingBox {
  public:
     /*
-     * Set the bounding box to default: min (0, 0, 0) and max (0, 0, 0).
-     */
-    BoundingBox() : ::BoundingBox{::Vector3{0, 0, 0}, ::Vector3{ 0, 0, 0 }} {
-        // Nothing.
-    }
-
-    /*
      * Copy a bounding box from another bounding box.
      */
     BoundingBox(const ::BoundingBox& box) : ::BoundingBox{box.min, box.max} {
@@ -31,7 +24,7 @@ class BoundingBox : public ::BoundingBox {
         set(::GetMeshBoundingBox(mesh));
     }
 
-    BoundingBox(::Vector3 minMax) : ::BoundingBox{minMax, minMax} {}
+    BoundingBox(::Vector3 minMax = ::Vector3{0.0f, 0.0f, 0.0f}) : ::BoundingBox{minMax, minMax} {}
     BoundingBox(::Vector3 min, ::Vector3 max) : ::BoundingBox{min, max} {}
 
     GETTERSETTER(::Vector3, Min, min)
@@ -46,7 +39,7 @@ class BoundingBox : public ::BoundingBox {
      * Draw a bounding box with wires
      */
     inline BoundingBox& Draw(::Color color = {255, 255, 255, 255}) {
-        DrawBoundingBox(*this, color);
+        ::DrawBoundingBox(*this, color);
         return *this;
     }
 
@@ -89,6 +82,7 @@ class BoundingBox : public ::BoundingBox {
     }
 };
 }  // namespace raylib
+
 using RBoundingBox = raylib::BoundingBox;
 
 #endif  // RAYLIB_CPP_INCLUDE_BOUNDINGBOX_HPP_

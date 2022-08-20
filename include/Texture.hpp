@@ -25,8 +25,10 @@ class Texture : public ::Texture {
     /**
      * Move/Create a texture structure manually.
      */
-    Texture(unsigned int id, int width, int height,
-            int mipmaps = 1, int format = PIXELFORMAT_UNCOMPRESSED_R8G8B8A8)
+    Texture(unsigned int id,
+            int width, int height,
+            int mipmaps = 1,
+            int format = PIXELFORMAT_UNCOMPRESSED_R8G8B8A8)
             : ::Texture{id, width, height, mipmaps, format} {
         // Nothing.
     }
@@ -242,18 +244,6 @@ class Texture : public ::Texture {
         return *this;
     }
 
-    inline Texture& Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin = {0, 0},
-            float rotation = 0, ::Color tint = {255, 255, 255, 255}) {
-        ::DrawTexturePro(*this, sourceRec, destRec, origin, rotation, tint);
-        return *this;
-    }
-
-    inline Texture& Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin = {0, 0},
-            float rotation = 0, ::Color tint = {255, 255, 255, 255}) {
-        ::DrawTextureNPatch(*this, nPatchInfo, destRec, origin, rotation, tint);
-        return *this;
-    }
-
     inline Texture& Draw(::Vector3 position, float width, float height, float length,
             ::Color tint = {255, 255, 255, 255}) {
         ::DrawCubeTexture(*this, position, width, height, length, tint);
@@ -266,10 +256,53 @@ class Texture : public ::Texture {
         return *this;
     }
 
-    inline Texture& DrawPoly(Vector2 center, Vector2 *points,
-            Vector2 *texcoords, int pointsCount,
-            Color tint = {255, 255, 255, 255}) {
+    inline Texture& Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin = {0, 0},
+            float rotation = 0, ::Color tint = {255, 255, 255, 255}) {
+        ::DrawTexturePro(*this, sourceRec, destRec, origin, rotation, tint);
+        return *this;
+    }
+
+    inline Texture& Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin = {0, 0},
+            float rotation = 0, ::Color tint = {255, 255, 255, 255}) {
+        ::DrawTextureNPatch(*this, nPatchInfo, destRec, origin, rotation, tint);
+        return *this;
+    }
+
+    inline Texture& DrawPoly(::Vector2 center, ::Vector2 *points,
+            ::Vector2 *texcoords, int pointsCount,
+            ::Color tint = {255, 255, 255, 255}) {
         ::DrawTexturePoly(*this, center, points, texcoords, pointsCount, tint);
+        return *this;
+    }
+
+    /**
+     * Draw a billboard texture
+     */
+    inline Texture& DrawBillboard(const ::Camera& camera,
+            ::Vector3 position, float size,
+            ::Color tint = {255, 255, 255, 255}) {
+        ::DrawBillboard(camera, *this, position, size, tint);
+        return *this;
+    }
+
+    /**
+     * Draw a billboard texture defined by source
+     */
+    inline Texture&  DrawBillboard(const ::Camera& camera,
+            ::Rectangle source, ::Vector3 position, ::Vector2 size,
+            ::Color tint = {255, 255, 255, 255}) {
+        DrawBillboardRec(camera, *this, source, position, size, tint);
+        return *this;
+    }
+
+    /**
+     * Draw a billboard texture defined by source and rotation
+     */
+    inline Texture&  DrawBillboard(const ::Camera& camera,
+            ::Rectangle source, Vector3 position,
+            ::Vector3 up, Vector2 size, Vector2 origin, float rotation,
+            ::Color tint = {255, 255, 255, 255}) {
+        DrawBillboardPro(camera, *this, source, position, up, size, origin, rotation, tint);
         return *this;
     }
 
@@ -326,6 +359,7 @@ typedef Texture Texture2D;
 typedef Texture TextureCubemap;
 
 }  // namespace raylib
+
 using RTexture = raylib::Texture;
 using RTexture2D = raylib::Texture2D;
 using RTextureCubemap = raylib::TextureCubemap;

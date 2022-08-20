@@ -49,11 +49,8 @@ class Color : public ::Color {
         set(::GetColor(hexValue));
     }
 
-    /**
-     * Returns Color from normalized values [0..1]
-     */
-    Color(::Vector4 normalized) {
-        set(::ColorFromNormalized(normalized));
+    Color(void *srcPtr, int format) {
+        set(::GetPixelColor(srcPtr, format));
     }
 
     /**
@@ -82,6 +79,13 @@ class Color : public ::Color {
      */
     Vector4 Normalize() const {
         return ::ColorNormalize(*this);
+    }
+
+    /**
+     * Returns Color from normalized values [0..1]
+     */
+    Color(::Vector4 normalized) {
+        set(::ColorFromNormalized(normalized));
     }
 
     /**
@@ -254,6 +258,7 @@ class Color : public ::Color {
 };
 
 }  // namespace raylib
+
 using RColor = raylib::Color;
 
 #endif  // RAYLIB_CPP_INCLUDE_COLOR_HPP_

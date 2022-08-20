@@ -63,6 +63,13 @@ class Mouse {
         ::SetMousePosition(static_cast<int>(position.x), static_cast<int>(position.y));
     }
 
+    /**
+     * Get mouse delta between frames
+     */
+    static inline Vector2 GetDelta() {
+        return ::GetMouseDelta();
+    }
+
     static inline void SetOffset(int offsetX = 0, int offsetY = 0) {
         ::SetMouseOffset(offsetX, offsetY);
     }
@@ -79,8 +86,20 @@ class Mouse {
         ::SetMouseScale(scale.x, scale.y);
     }
 
+    /**
+     * Get mouse wheel movement for X or Y, whichever is larger
+     */
     static inline float GetWheelMove() {
         return ::GetMouseWheelMove();
+    }
+
+    /**
+     * Get mouse wheel movement for both X and Y
+     *
+     * @see ::GetMouseWheelMoveV()
+     */
+    static inline Vector2 GetWheelMoveV() {
+        return GetMouseWheelMoveV();
     }
 
     /**
@@ -112,8 +131,23 @@ class Mouse {
     static inline Vector2 GetTouchPosition(int index) {
         return ::GetTouchPosition(index);
     }
+
+    /**
+     * Get a ray trace from mouse position
+     */
+    static inline Ray GetRay(::Vector2 mousePosition, const ::Camera& camera) {
+        return ::GetMouseRay(mousePosition, camera);
+    }
+
+    /**
+     * Get a ray trace from mouse position
+     */
+    static inline Ray GetRay(const ::Camera& camera) {
+        return ::GetMouseRay(::GetMousePosition(), camera);
+    }
 };
 }  // namespace raylib
+
 using RMouse = raylib::Mouse;
 
 #endif  // RAYLIB_CPP_INCLUDE_MOUSE_HPP_

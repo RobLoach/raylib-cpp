@@ -5,6 +5,7 @@
 
 #include "./raylib.hpp"
 #include "./RaylibException.hpp"
+#include "./Vector2.hpp"
 
 namespace raylib {
 /**
@@ -12,14 +13,21 @@ namespace raylib {
  */
 class Window {
  public:
+    /**
+     * Build a Window object, but defer the initialization. Ensure you call Init() manually.
+     *
+     * @see Init()
+     */
     Window() {
-        // need to create it manually with Init().
+        // Nothing.
     }
 
     /**
      * Initialize window and OpenGL context.
+     *
+     * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    Window(int width, int height, const std::string& title) {
+    Window(int width, int height, const std::string& title = "raylib") {
         Init(width, height, title);
     }
 
@@ -257,6 +265,14 @@ class Window {
     }
 
     /**
+     * Set window opacity [0.0f..1.0f] (only PLATFORM_DESKTOP)
+     */
+    inline Window& SetOpacity(float opacity) {
+        ::SetWindowOpacity(opacity);
+        return *this;
+    }
+
+    /**
      * Set window dimensions
      */
     inline Window& SetSize(const ::Vector2& size) {
@@ -308,17 +324,45 @@ class Window {
     }
 
     /**
+     * Get current render width (it considers HiDPI)
+     */
+    inline int GetRenderWidth() const {
+        return ::GetRenderWidth();
+    }
+
+    /**
+     * Get current render height (it considers HiDPI)
+     */
+    inline int GetRenderHeight() const {
+        return ::GetRenderHeight();
+    }
+
+    /**
      * Get window position XY on monitor
      */
-    inline ::Vector2 GetPosition() const {
+    inline Vector2 GetPosition() const {
         return ::GetWindowPosition();
     }
 
     /**
      * Get window scale DPI factor
      */
-    inline ::Vector2 GetScaleDPI() const {
+    inline Vector2 GetScaleDPI() const {
         return ::GetWindowScaleDPI();
+    }
+
+    /**
+     * Set clipboard text content
+     */
+    inline void SetClipboardText(const std::string& text) {
+        SetClipboardText(text.c_str());
+    }
+
+    /**
+     * Get clipboard text content
+     */
+    inline const std::string& GetClipboardText() {
+        return GetClipboardText();
     }
 
     /**
@@ -359,6 +403,7 @@ class Window {
     }
 };
 }  // namespace raylib
+
 using RWindow = raylib::Window;
 
 #endif  // RAYLIB_CPP_INCLUDE_WINDOW_HPP_

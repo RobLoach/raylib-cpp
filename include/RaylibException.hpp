@@ -32,6 +32,7 @@ class RaylibException : public std::runtime_error {
 };
 
 }  // namespace raylib
+
 using RRaylibException = raylib::RaylibException;
 
 #endif  // RAYLIB_CPP_INCLUDE_RAYLIBEXCEPTION_HPP_
