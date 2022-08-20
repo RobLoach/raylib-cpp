@@ -86,7 +86,7 @@ texture.Draw(50, 50, WHITE);
 
 ### Optional Parameters
 
-Many methods have optional parameters with the same defaults.
+Many methods have optional parameters with sane defaults.
 
 ``` cpp
 // raylib
@@ -145,13 +145,13 @@ DrawPixelV(position, color); // Extra V in method name.
 raylib::Color color = raylib::Color::Gray();
 color.DrawPixel(50, 50);
 Vector2 position(50.0f, 50.0f);
-color.DrawPixel(position); // No more V in method name.
+color.DrawPixel(position); // No V in method name.
 position.DrawPixel(color); // Alternatively
 ```
 
 ### Method Chaining
 
-When there's a method that doesn't return anything, it'll instead return the object itself, allowing [method chaining](https://en.wikipedia.org/wiki/Method_chaining).
+When there's a method that doesn't return anything, in most cases it'll return the object itself, allowing [method chaining](https://en.wikipedia.org/wiki/Method_chaining).
 
 ``` cpp
 // raylib
@@ -191,12 +191,12 @@ When there is a function that would return a pointer-array, there is a wrapper t
 ``` cpp
 // raylib
 int count;
-char** files = GetDirectoryFiles(".", &count);
-printf("Count: %i\n", count);
+FilePathList files = LoadDirectoryFiles(".");
+printf("Count: %i\n", files.count);
 for (int i = 0; i < count; i++) {
-    printf("File: %s\n", files[i]);
+    printf("File: %s\n", files.paths[i]);
 }
-ClearDirectoryFiles();
+UnloadDirectoryFiles(files);
 
 // raylib-cpp
 std::vector<std::string> files = raylib::GetDirectoryFiles(".");
@@ -236,7 +236,7 @@ try {
     raylib::Texture texture("FileNotFound.png");
 }
 catch (raylib::RaylibException& error) {
-    error.TraceLog(LOG_ERROR);
+    TraceLog(LOG_ERROR, "Texture failed to load!");
 }
 ```
 
