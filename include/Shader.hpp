@@ -78,10 +78,16 @@ class Shader : public ::Shader {
         return *this;
     }
 
+    /**
+     * Unload shader from GPU memory (VRAM)
+     */
     ~Shader() {
         Unload();
     }
 
+    /**
+     * Unload shader from GPU memory (VRAM)
+     */
     void Unload() {
         if (locs != nullptr) {
             ::UnloadShader(*this);
@@ -176,6 +182,7 @@ class Shader : public ::Shader {
     }
 };
 }  // namespace raylib
+
 using RShader = raylib::Shader;
 
 #endif  // RAYLIB_CPP_INCLUDE_SHADER_HPP_

@@ -19,24 +19,6 @@ class Mesh : public ::Mesh {
         set(mesh);
     }
 
-    Mesh(int vertexCount, int triangleCount) : ::Mesh{
-            vertexCount,
-            triangleCount,
-            nullptr,
-            nullptr,
-            nullptr,
-            nullptr,
-            nullptr,
-            nullptr,
-            nullptr,
-            nullptr,
-            nullptr,
-            nullptr,
-            nullptr,
-            0,
-            nullptr
-        } {}
-
     /**
      * Load meshes from model file
      */
@@ -108,6 +90,13 @@ class Mesh : public ::Mesh {
      */
     static ::Mesh Cylinder(float radius, float height, int slices) {
         return ::GenMeshCylinder(radius, height, slices);
+    }
+
+    /**
+     * Generate cone/pyramid mesh
+     */
+    static ::Mesh Cone(float radius, float height, int slices) {
+        return ::GenMeshCone(radius, height, slices);
     }
 
     /**
@@ -222,10 +211,13 @@ class Mesh : public ::Mesh {
 
     /**
      * Export mesh data to file
+     *
+     * @throws raylib::RaylibException Throws if failed to export the Mesh.
      */
-    inline bool Export(const std::string& fileName) {
-        // TODO(RobLoach): Switch to an exception when failed.
-        return ExportMesh(*this, fileName.c_str());
+    inline void Export(const std::string& fileName) {
+        if (!::ExportMesh(*this, fileName.c_str())) {
+            throw new RaylibException("Failed to export the Mesh");
+        }
     }
 
     /**
@@ -257,14 +249,6 @@ class Mesh : public ::Mesh {
      */
     inline Mesh& GenTangents() {
         ::GenMeshTangents(this);
-        return *this;
-    }
-
-    /**
-     * Compute mesh binormals (aka bitangent)
-     */
-    inline Mesh& GenBinormals() {
-        ::GenMeshBinormals(this);
         return *this;
     }
 
@@ -302,6 +286,7 @@ class Mesh : public ::Mesh {
     }
 };
 }  // namespace raylib
+
 using RMesh = raylib::Mesh;
 
 #endif  // RAYLIB_CPP_INCLUDE_MESH_HPP_

@@ -1,5 +1,5 @@
 # Get the sources together
-set(example_dirs audio core models physics shaders shapes text textures)
+set(example_dirs audio core models shaders shapes text textures)
 set(example_sources)
 set(example_resources)
 
@@ -15,7 +15,7 @@ if (NOT raylib_FOUND)
         FetchContent_Declare(
         raylib
         GIT_REPOSITORY https://github.com/raysan5/raylib.git
-        GIT_TAG 4.0.0
+        GIT_TAG 4.2.0
     )
     FetchContent_GetProperties(raylib)
     if (NOT raylib_POPULATED) # Have we downloaded raylib yet?

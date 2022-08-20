@@ -27,6 +27,8 @@ class Model : public ::Model {
 
     /*
      * Load a model from a file.
+     *
+     * @throws raylib::RaylibException Throws if failed to load the Modal.
      */
     Model(const std::string& fileName) {
         Load(fileName);
@@ -34,6 +36,8 @@ class Model : public ::Model {
 
     /*
      * Load a model from a mesh.
+     *
+     * @throws raylib::RaylibException Throws if failed to load the Modal.
      */
     Model(const ::Mesh& mesh) {
         Load(mesh);
@@ -48,12 +52,13 @@ class Model : public ::Model {
     Model(Model&& other) {
         set(other);
 
-        other.materials = nullptr;
+        other.meshCount = 0;
         other.materialCount = 0;
         other.meshes = nullptr;
-        other.meshCount = 0;
-        other.bones = nullptr;
+        other.materials = nullptr;
+        other.meshMaterial = nullptr;
         other.boneCount = 0;
+        other.bones = nullptr;
         other.bindPose = nullptr;
     }
 
@@ -82,12 +87,13 @@ class Model : public ::Model {
         Unload();
         set(other);
 
-        other.bones = nullptr;
-        other.boneCount = 0;
-        other.materials = nullptr;
+        other.meshCount = 0;
         other.materialCount = 0;
         other.meshes = nullptr;
-        other.meshCount = 0;
+        other.materials = nullptr;
+        other.meshMaterial = nullptr;
+        other.boneCount = 0;
+        other.bones = nullptr;
         other.bindPose = nullptr;
 
         return *this;
@@ -118,13 +124,6 @@ class Model : public ::Model {
     inline Model& SetMeshMaterial(int meshId, int materialId) {
         ::SetModelMeshMaterial(this, meshId, materialId);
         return *this;
-    }
-
-    /**
-     * Get collision info between ray and model
-     */
-    inline RayCollision GetCollision(const ::Ray& ray) const {
-        return ::GetRayCollisionModel(ray, *this);
     }
 
     /**
@@ -212,27 +211,25 @@ class Model : public ::Model {
     /**
      * Loads a Model from the given file.
      *
-     * @return True of false depending on whether or not the model was successfully loaded.
+     * @throws raylib::RaylibException Throws if failed to load the Modal.
      */
-    bool Load(const std::string& fileName) {
+    void Load(const std::string& fileName) {
         set(::LoadModel(fileName.c_str()));
         if (!IsReady()) {
             throw RaylibException("Failed to load Model from " + fileName);
         }
-        return IsReady();
     }
 
     /**
      * Loads a Model from the given Mesh.
      *
-     * @return True of false depending on whether or not the model was successfully loaded.
+     * @throws raylib::RaylibException Throws if failed to load the Modal.
      */
-    bool Load(const ::Mesh& mesh) {
+    void Load(const ::Mesh& mesh) {
         set(::LoadModelFromMesh(mesh));
         if (!IsReady()) {
             throw RaylibException("Failed to load Model from Mesh");
         }
-        return IsReady();
     }
 
  private:
@@ -252,6 +249,7 @@ class Model : public ::Model {
 };
 
 }  // namespace raylib
+
 using RModel = raylib::Model;
 
 #endif  // RAYLIB_CPP_INCLUDE_MODEL_HPP_

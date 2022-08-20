@@ -114,6 +114,7 @@ class RenderTexture : public ::RenderTexture {
 };
 typedef RenderTexture RenderTexture2D;
 }  // namespace raylib
+
 using RRenderTexture = raylib::RenderTexture;
 using RRenderTexture2D = raylib::RenderTexture2D;
 

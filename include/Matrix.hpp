@@ -94,10 +94,6 @@ class Matrix : public ::Matrix {
         return ::MatrixInvert(*this);
     }
 
-    inline Matrix Normalize() const {
-        return ::MatrixNormalize(*this);
-    }
-
     static Matrix Identity() {
         return ::MatrixIdentity();
     }
@@ -183,9 +179,17 @@ class Matrix : public ::Matrix {
     /**
      * Set shader uniform value (matrix 4x4)
      */
-    inline Matrix& SetShaderValue(::Shader shader, int uniformLoc) {
+    inline Matrix& SetShaderValue(const ::Shader& shader, int uniformLoc) {
         ::SetShaderValueMatrix(shader, uniformLoc, *this);
         return *this;
+    }
+
+    inline static Matrix GetCamera(const ::Camera& camera) {
+        return ::GetCameraMatrix(camera);
+    }
+
+    inline static Matrix GetCamera(const ::Camera2D& camera) {
+        return ::GetCameraMatrix2D(camera);
     }
 
 #endif
@@ -211,6 +215,7 @@ class Matrix : public ::Matrix {
     }
 };
 }  // namespace raylib
+
 using RMatrix = raylib::Matrix;
 
 #endif  // RAYLIB_CPP_INCLUDE_MATRIX_HPP_

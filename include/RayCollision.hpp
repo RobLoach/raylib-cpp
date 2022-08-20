@@ -34,13 +34,6 @@ class RayCollision : public ::RayCollision {
     }
 
     /**
-     * Get collision info between ray and model
-     */
-    RayCollision(const ::Ray& ray, const ::Model& model) {
-        set(::GetRayCollisionModel(ray, model));
-    }
-
-    /**
      * Get collision info between ray and quad
      */
     RayCollision(const ::Ray& ray, ::Vector3 p1, ::Vector3 p2, ::Vector3 p3, ::Vector3 p4) {
@@ -80,6 +73,7 @@ class RayCollision : public ::RayCollision {
     }
 };
 }  // namespace raylib
+
 using RRayCollision = raylib::RayCollision;
 
 #endif  // RAYLIB_CPP_INCLUDE_RAYCOLLISION_HPP_

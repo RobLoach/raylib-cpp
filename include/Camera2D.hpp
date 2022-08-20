@@ -69,6 +69,7 @@ class Camera2D : public ::Camera2D {
     }
 };
 }  // namespace raylib
+
 using RCamera2D = raylib::Camera2D;
 
 #endif  // RAYLIB_CPP_INCLUDE_CAMERA2D_HPP_

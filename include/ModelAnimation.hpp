@@ -24,8 +24,8 @@ class ModelAnimation : public ::ModelAnimation {
         set(other);
 
         other.boneCount = 0;
-        other.bones = nullptr;
         other.frameCount = 0;
+        other.bones = nullptr;
         other.framePoses = nullptr;
     }
 
@@ -67,8 +67,8 @@ class ModelAnimation : public ::ModelAnimation {
         set(other);
 
         other.boneCount = 0;
-        other.bones = nullptr;
         other.frameCount = 0;
+        other.bones = nullptr;
         other.framePoses = nullptr;
 
         return *this;
@@ -99,12 +99,13 @@ class ModelAnimation : public ::ModelAnimation {
  private:
     void set(const ::ModelAnimation& model) {
         boneCount = model.boneCount;
-        bones = model.bones;
         frameCount = model.frameCount;
+        bones = model.bones;
         framePoses = model.framePoses;
     }
 };
 }  // namespace raylib
+
 using RModelAnimation = raylib::ModelAnimation;
 
 #endif  // RAYLIB_CPP_INCLUDE_MODELANIMATION_HPP_

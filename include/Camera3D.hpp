@@ -60,7 +60,7 @@ class Camera3D : public ::Camera3D {
     }
 
     /**
-     * Get transform matrix for camera
+     * Get camera transform matrix (view matrix)
      */
     inline Matrix GetMatrix() const {
         return ::GetCameraMatrix(*this);
@@ -159,7 +159,9 @@ class Camera3D : public ::Camera3D {
 };
 
 typedef Camera3D Camera;
+
 }  // namespace raylib
+
 using RCamera = raylib::Camera;
 using RCamera3D = raylib::Camera3D;
 

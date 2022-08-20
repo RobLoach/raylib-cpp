@@ -108,12 +108,17 @@ class Gamepad {
         return ::GetGamepadAxisMovement(number, axis);
     }
 
+    inline int SetMappings(const std::string& mappings) {
+        return SetGamepadMappings(mappings.c_str());
+    }
+
  private:
     inline void set(int gamepadNumber) {
         number = gamepadNumber;
     }
 };
 }  // namespace raylib
+
 using RGamepad = raylib::Gamepad;
 
 #endif  // RAYLIB_CPP_INCLUDE_GAMEPAD_HPP_

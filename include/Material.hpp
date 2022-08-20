@@ -31,6 +31,10 @@ class Material : public ::Material {
 
         other.maps = nullptr;
         other.shader = {};
+        other.params[0] = 0.0f;
+        other.params[1] = 0.0f;
+        other.params[2] = 0.0f;
+        other.params[3] = 0.0f;
     }
 
     ~Material() {
@@ -118,6 +122,7 @@ class Material : public ::Material {
     }
 };
 }  // namespace raylib
+
 using RMaterial = raylib::Material;
 
 #endif  // RAYLIB_CPP_INCLUDE_MATERIAL_HPP_

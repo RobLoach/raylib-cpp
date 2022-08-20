@@ -74,7 +74,7 @@ int main(void)
         else if (IsKeyDown(KEY_RIGHT)) fontPosition.x += 10;
 
         // Load a dropped TTF file dynamically (at current fontSize)
-        for (const auto& file : raylib::GetDroppedFiles()) {
+        for (const auto& file : raylib::LoadDroppedFiles()) {
             if (raylib::IsFileExtension(file, ".ttf")) {
                 msg.font = font = raylib::Font(file, font.GetBaseSize());
             }

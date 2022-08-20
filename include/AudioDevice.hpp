@@ -20,9 +20,7 @@ class AudioDevice {
      */
     AudioDevice(bool lateInit = false) {
         if (!lateInit) {
-            if (!Init()) {
-                throw RaylibException("Failed to initialize AudioDevice");
-            }
+            Init();
         }
     }
 
@@ -35,10 +33,14 @@ class AudioDevice {
 
     /**
      * Initialize audio device and context.
+     *
+     * @throws raylib::RaylibException Throws if the AudioDevice failed to initialize.
      */
-    inline bool Init() {
+    inline void Init() {
         ::InitAudioDevice();
-        return IsReady();
+        if (!IsReady()) {
+            throw RaylibException("Failed to initialize AudioDevice");
+        }
     }
 
     /**
@@ -66,6 +68,7 @@ class AudioDevice {
     }
 };
 }  // namespace raylib
+
 using RAudioDevice = raylib::AudioDevice;
 
 #endif  // RAYLIB_CPP_INCLUDE_AUDIODEVICE_HPP_

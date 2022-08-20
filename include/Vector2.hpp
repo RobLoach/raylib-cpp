@@ -288,22 +288,22 @@ class Vector2 : public ::Vector2 {
     }
 #endif
 
-    inline Vector2& DrawPixel(::Color color) {
+    inline Vector2& DrawPixel(::Color color = {0, 0, 0, 255}) {
         ::DrawPixelV(*this, color);
         return *this;
     }
 
-    inline Vector2& DrawLine(::Vector2 endPos, ::Color color) {
+    inline Vector2& DrawLine(::Vector2 endPos, ::Color color = {0, 0, 0, 255}) {
         ::DrawLineV(*this, endPos, color);
         return *this;
     }
 
-    inline Vector2& DrawLine(::Vector2 endPos, float thick, ::Color color) {
+    inline Vector2& DrawLine(::Vector2 endPos, float thick, ::Color color = {0, 0, 0, 255}) {
         ::DrawLineEx(*this, endPos, thick, color);
         return *this;
     }
 
-    inline Vector2& DrawLineBezier(::Vector2 endPos, float thick, ::Color color) {
+    inline Vector2& DrawLineBezier(::Vector2 endPos, float thick, ::Color color = {0, 0, 0, 255}) {
         ::DrawLineBezier(*this, endPos, thick, color);
         return *this;
     }
@@ -315,7 +315,7 @@ class Vector2 : public ::Vector2 {
             ::Vector2 endPos,
             ::Vector2 controlPos,
             float thick,
-            ::Color color) {
+            ::Color color = {0, 0, 0, 255}) {
        ::DrawLineBezierQuad(*this, endPos, controlPos, thick, color);
        return *this;
     }
@@ -323,17 +323,17 @@ class Vector2 : public ::Vector2 {
     /**
      * Draw a color-filled circle (Vector version)
      */
-    inline Vector2& DrawCircle(float radius, ::Color color) {
+    inline Vector2& DrawCircle(float radius, ::Color color = {0, 0, 0, 255}) {
         ::DrawCircleV(*this, radius, color);
         return *this;
     }
 
-    inline Vector2& DrawRectangle(::Vector2 size, ::Color color) {
+    inline Vector2& DrawRectangle(::Vector2 size, ::Color color = {0, 0, 0, 255}) {
         ::DrawRectangleV(*this, size, color);
         return *this;
     }
 
-    inline Vector2& DrawPoly(int sides, float radius, float rotation, ::Color color) {
+    inline Vector2& DrawPoly(int sides, float radius, float rotation, ::Color color = {0, 0, 0, 255}) {
         ::DrawPoly(*this, sides, radius, rotation, color);
         return *this;
     }
@@ -383,6 +383,13 @@ class Vector2 : public ::Vector2 {
         return ::CheckCollisionLines(*this, endPos1, startPos2, endPos2, collisionPoint);
     }
 
+    /**
+     * Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
+     */
+    inline bool CheckCollisionPointLine(::Vector2 p1, ::Vector2 p2, int threshold = 1) {
+        return ::CheckCollisionPointLine(*this, p1, p2, threshold);
+    }
+
  private:
     void set(const ::Vector2& vec) {
         x = vec.x;
@@ -391,6 +398,7 @@ class Vector2 : public ::Vector2 {
 };
 
 }  // namespace raylib
+
 using RVector2 = raylib::Vector2;
 
 #endif  // RAYLIB_CPP_INCLUDE_VECTOR2_HPP_

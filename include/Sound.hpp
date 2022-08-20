@@ -22,8 +22,8 @@ class Sound : public ::Sound {
     Sound& operator=(const Sound&) = delete;
 
     Sound() {
+        stream = { nullptr, nullptr, 0, 0, 0 };
         frameCount = 0;
-        stream.buffer = nullptr;
     }
 
     Sound(::AudioStream stream, unsigned int frameCount) : ::Sound{stream, frameCount} {
@@ -33,8 +33,8 @@ class Sound : public ::Sound {
     Sound(Sound&& other) {
         set(other);
 
+        other.stream = { nullptr, nullptr, 0, 0, 0 };
         other.frameCount = 0;
-        other.stream = { 0, 0, 0, 0 };
     }
 
     /**
@@ -43,9 +43,7 @@ class Sound : public ::Sound {
      * @throws raylib::RaylibException Throws if the Sound failed to load.
      */
     Sound(const std::string& fileName) {
-        if (!Load(fileName)) {
-            throw RaylibException(TextFormat("Failed to load Sound from file: %s", fileName.c_str()));
-        }
+        Load(fileName);
     }
 
     /**
@@ -54,9 +52,7 @@ class Sound : public ::Sound {
      * @throws raylib::RaylibException Throws if the Sound failed to load.
      */
     Sound(const ::Wave& wave) {
-        if (!Load(wave)) {
-            throw RaylibException("Failed to load Sound from Wave");
-        }
+        Load(wave);
     }
 
     ~Sound() {
@@ -74,7 +70,7 @@ class Sound : public ::Sound {
         Unload();
         set(other);
         other.frameCount = 0;
-        other.stream = { 0, 0, 0, 0 };
+        other.stream = { nullptr, nullptr, 0, 0, 0 };
 
         return *this;
     }
@@ -174,23 +170,36 @@ class Sound : public ::Sound {
     }
 
     /**
+     * Set pan for a sound (0.5 is center)
+     */
+    inline Sound& SetPan(float pan = 0.5f) {
+        ::SetSoundPan(*this, pan);
+        return *this;
+    }
+
+    /**
      * Load a sound from the given file.
      *
-     * @return True or false depending on loading worked.
+     * @throws raylib::RaylibException Throws if the Sound failed to load.
      */
-    bool Load(const std::string& fileName) {
+    void Load(const std::string& fileName) {
         set(::LoadSound(fileName.c_str()));
-        return IsReady();
+        if (!IsReady()) {
+            throw new RaylibException("Failed to load Sound from file");
+        }
     }
 
     /**
      * Loads the given Wave object into the Sound.
+     *
+     * @throws raylib::RaylibException Throws if the Sound failed to load.
      */
-    bool Load(const ::Wave& wave) {
+    void Load(const ::Wave& wave) {
         set(::LoadSoundFromWave(wave));
-        return IsReady();
+        if (!IsReady()) {
+            throw new RaylibException("Failed to load Wave");
+        }
     }
-
 
     /**
      * Retrieve whether or not the Sound buffer is loaded.
@@ -201,6 +210,13 @@ class Sound : public ::Sound {
         return stream.buffer != nullptr;
     }
 
+    /**
+     * Get number of sounds playing in the multichannel
+     */
+    int GetPlaying() {
+        return ::GetSoundsPlaying();
+    }
+
  private:
     void set(const ::Sound& sound) {
         frameCount = sound.frameCount;
@@ -208,6 +224,7 @@ class Sound : public ::Sound {
     }
 };
 }  // namespace raylib
+
 using RSound = raylib::Sound;
 
 #endif  // RAYLIB_CPP_INCLUDE_SOUND_HPP_

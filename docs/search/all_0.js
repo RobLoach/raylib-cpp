@@ -8,6 +8,7 @@ var searchData=
   ['alphamask_5',['AlphaMask',['../classraylib_1_1_image.html#a3bbcbb96834c526b6b789a804078d472',1,'raylib::Image']]],
   ['alphapremultiply_6',['AlphaPremultiply',['../classraylib_1_1_image.html#ace3ef45495b17bf2e5a645931b792483',1,'raylib::Image']]],
   ['angle_7',['Angle',['../classraylib_1_1_vector2.html#af912d448e687a2a39fed158b4bf18a12',1,'raylib::Vector2']]],
-  ['audiodevice_8',['AudioDevice',['../classraylib_1_1_audio_device.html#ada9e1459186cb8658b28c1fbeec0f261',1,'raylib::AudioDevice::AudioDevice()'],['../classraylib_1_1_audio_device.html',1,'raylib::AudioDevice']]],
-  ['audiostream_9',['AudioStream',['../classraylib_1_1_audio_stream.html#a6b9b41b70df94999dfe71e52da6b19ba',1,'raylib::AudioStream::AudioStream()'],['../classraylib_1_1_audio_stream.html',1,'raylib::AudioStream']]]
+  ['attachprocessor_8',['AttachProcessor',['../classraylib_1_1_audio_stream.html#a4442ef0d6ba9c3ac03354c10ab62dd4a',1,'raylib::AudioStream']]],
+  ['audiodevice_9',['AudioDevice',['../classraylib_1_1_audio_device.html#ada9e1459186cb8658b28c1fbeec0f261',1,'raylib::AudioDevice::AudioDevice()'],['../classraylib_1_1_audio_device.html',1,'raylib::AudioDevice']]],
+  ['audiostream_10',['AudioStream',['../classraylib_1_1_audio_stream.html#a8dd9cb9c1d176a3ff8518cd1e5fbe3b2',1,'raylib::AudioStream::AudioStream()'],['../classraylib_1_1_audio_stream.html',1,'raylib::AudioStream']]]
 ];

@@ -6,6 +6,7 @@
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./RaylibException.hpp"
+#include "./Color.hpp"
 
 namespace raylib {
 /**
@@ -35,9 +36,7 @@ class Image : public ::Image {
      * @see Load()
      */
     Image(const std::string& fileName) {
-        if (!Load(fileName)) {
-            throw RaylibException(TextFormat("Failed to load Image from file: %s", fileName.c_str()));
-        }
+        Load(fileName);
     }
 
     /**
@@ -47,10 +46,8 @@ class Image : public ::Image {
      *
      * @see LoadRaw()
      */
-    Image(const std::string& fileName, int width, int height, int format, int headerSize) {
-        if (!Load(fileName, width, height, format, headerSize)) {
-            throw RaylibException(TextFormat("Failed to load Image from file: %s", fileName.c_str()));
-        }
+    Image(const std::string& fileName, int width, int height, int format, int headerSize = 0) {
+        Load(fileName, width, height, format, headerSize);
     }
 
     /**
@@ -61,9 +58,7 @@ class Image : public ::Image {
      * @see LoadAnim()
      */
     Image(const std::string& fileName, int* frames) {
-        if (!Load(fileName, frames)) {
-            throw RaylibException(TextFormat("Failed to load Image from animation: %s", fileName.c_str()));
-        }
+        Load(fileName, frames);
     }
 
     /**
@@ -72,9 +67,7 @@ class Image : public ::Image {
      * @throws raylib::RaylibException Thrown if the image failed to load from the file.
      */
     Image(const std::string& fileType, const unsigned char* fileData, int dataSize) {
-        if (!Load(fileType, fileData, dataSize)) {
-            throw RaylibException("Failed to load Image from memory");
-        }
+        Load(fileType, fileData, dataSize);
     }
 
     /**
@@ -83,9 +76,7 @@ class Image : public ::Image {
      * @throws raylib::RaylibException Thrown if the image failed to load from the file.
      */
     Image(const ::Texture2D& texture) {
-        if (!Load(texture)) {
-            throw RaylibException("Failed to load Image from Texture");
-        }
+        Load(texture);
     }
 
     Image(int width, int height, ::Color color = {255, 255, 255, 255}) {
@@ -223,64 +214,74 @@ class Image : public ::Image {
     /**
      * Load image from file into CPU memory (RAM)
      *
-     * @return Whether or not the image was loaded successfully.
+     * @throws raylib::RaylibException Thrown if the image failed to load from the file.
      *
      * @see ::LoadImage()
      */
-    bool Load(const std::string& fileName) {
+    void Load(const std::string& fileName) {
         set(::LoadImage(fileName.c_str()));
-        return IsReady();
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Image from file: " + fileName);
+        }
     }
 
     /**
      * Load image from RAW file data.
      *
-     * @return Whether or not the raw image data was loaded successfully.
+     * @throws raylib::RaylibException Thrown if the image failed to load from the file.
      *
      * @see ::LoadImageRaw()
      */
-    bool Load(const std::string& fileName, int width, int height, int format, int headerSize) {
+    void Load(const std::string& fileName, int width, int height, int format, int headerSize) {
         set(::LoadImageRaw(fileName.c_str(), width, height, format, headerSize));
-        return IsReady();
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Image from file: " + fileName);
+        }
     }
 
     /**
      * Load image sequence from file (frames appended to image.data).
      *
-     * @return Whether or not the image animation was loaded successfully.
+     * @throws raylib::RaylibException Thrown if the image animation to load from the file.
      *
      * @see ::LoadImageAnim()
      */
-    bool Load(const std::string& fileName, int* frames) {
+    void Load(const std::string& fileName, int* frames) {
         set(::LoadImageAnim(fileName.c_str(), frames));
-        return IsReady();
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Image from file: " + fileName);
+        }
     }
 
     /**
      * Load image from memory buffer, fileType refers to extension: i.e. "png".
      *
-     * @return Whether or not the image data was loaded successfully.
+     * @throws raylib::RaylibException Thrown if the image animation to load from the file.
      *
      * @see ::LoadImageFromMemory()
      */
-    bool Load(
+    void Load(
             const std::string& fileType,
             const unsigned char *fileData,
             int dataSize) {
         set(::LoadImageFromMemory(fileType.c_str(), fileData, dataSize));
-        return IsReady();
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Image data with file type: " + fileType);
+        }
     }
 
     /**
      * Load an image from the given file.
      *
-     * @return True or false depending on whether or not the image was loaded from the texture.
+     * @throws raylib::RaylibException Thrown if the image animation to load from the file.
      *
      * @see ::LoadImageFromTexture()
      */
-    bool Load(const ::Texture2D& texture) {
+    void Load(const ::Texture2D& texture) {
         set(::LoadImageFromTexture(texture));
-        return IsReady();
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Image from texture.");
+        }
     }
 
     /**
@@ -295,17 +296,24 @@ class Image : public ::Image {
 
     /**
      * Export image data to file, returns true on success
+     *
+     * @throws raylib::RaylibException Thrown if the image failed to load from the file.
      */
-    inline bool Export(const std::string& fileName) const {
-        // TODO(RobLoach): Switch to an invalid loading exception on false.
-        return ::ExportImage(*this, fileName.c_str());
+    inline void Export(const std::string& fileName) const {
+        if (!::ExportImage(*this, fileName.c_str())) {
+            throw RaylibException(TextFormat("Failed to export Image to file: %s", fileName.c_str()));
+        }
     }
 
     /**
      * Export image as code file defining an array of bytes, returns true on success
+     *
+     * @throws raylib::RaylibException Thrown if the image failed to load from the file.
      */
-    inline bool ExportAsCode(const std::string& fileName) const {
-        return ::ExportImageAsCode(*this, fileName.c_str());
+    inline void ExportAsCode(const std::string& fileName) const {
+        if (!::ExportImageAsCode(*this, fileName.c_str())) {
+            throw RaylibException(TextFormat("Failed to export Image code to file: %s", fileName.c_str()));
+        }
     }
 
     GETTERSETTER(void*, Data, data)
@@ -336,6 +344,14 @@ class Image : public ::Image {
     }
 
     /**
+     * Convert image data to desired format
+     */
+    inline Image& Format(int newFormat) {
+        ::ImageFormat(this, newFormat);
+        return *this;
+    }
+
+    /**
      * Convert image to POT (power-of-two)
      */
     inline Image& ToPOT(::Color fillColor) {
@@ -344,10 +360,10 @@ class Image : public ::Image {
     }
 
     /**
-     * Convert image data to desired format
+     * Crop an image to area defined by a rectangle
      */
-    inline Image& Format(int newFormat) {
-        ::ImageFormat(this, newFormat);
+    inline Image& Crop(::Rectangle crop) {
+        ::ImageCrop(this, crop);
         return *this;
     }
 
@@ -380,14 +396,6 @@ class Image : public ::Image {
      */
     inline Image& AlphaPremultiply() {
         ::ImageAlphaPremultiply(this);
-        return *this;
-    }
-
-    /**
-     * Crop an image to area defined by a rectangle
-     */
-    inline Image& Crop(::Rectangle crop) {
-        ::ImageCrop(this, crop);
         return *this;
     }
 
@@ -551,6 +559,20 @@ class Image : public ::Image {
      */
     inline Rectangle GetAlphaBorder(float threshold) const {
         return ::GetImageAlphaBorder(*this, threshold);
+    }
+
+    /**
+     * Get image pixel color at (x, y) position
+     */
+    inline raylib::Color GetColor(int x = 0, int y = 0) const {
+        return ::GetImageColor(*this, x, y);
+    }
+
+    /**
+     * Get image pixel color at vector position
+     */
+    inline raylib::Color GetColor(::Vector2 position) const {
+        return ::GetImageColor(*this, static_cast<int>(position.x), static_cast<int>(position.y));
     }
 
     /**
@@ -728,6 +750,7 @@ class Image : public ::Image {
     }
 };
 }  // namespace raylib
+
 using RImage = raylib::Image;
 
 #endif  // RAYLIB_CPP_INCLUDE_IMAGE_HPP_

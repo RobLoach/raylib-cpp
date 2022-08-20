@@ -15,11 +15,12 @@ class Ray : public ::Ray {
         set(ray);
     }
 
-    Ray(::Vector3 position, ::Vector3 direction = {0.0f, 0.0f, 0.0f}) : ::Ray{position, direction} {
+    Ray(::Vector3 position = {0.0f, 0.0f, 0.0f}, ::Vector3 direction = {0.0f, 0.0f, 0.0f}) :
+            ::Ray{position, direction} {
         // Nothing.
     }
 
-    Ray(::Vector2 mousePosition, ::Camera camera) {
+    Ray(::Vector2 mousePosition, const ::Camera& camera) {
         set(::GetMouseRay(mousePosition, camera));
     }
 
@@ -40,52 +41,52 @@ class Ray : public ::Ray {
     }
 
     /**
-     * Detect collision between ray and sphere
-     */
-    inline bool CheckCollisionSphere(::Vector3 center, float radius) const {
-        return GetRayCollisionSphere(*this, center, radius).hit;
-    }
-
-    /**
      * Get collision information between ray and sphere
      */
     inline RayCollision GetCollision(::Vector3 center, float radius) const {
-        return GetRayCollisionSphere(*this, center, radius);
+        return ::GetRayCollisionSphere(*this, center, radius);
     }
 
     /**
      * Detect collision between ray and box
      */
-    inline bool CheckCollision(const ::BoundingBox& box) const {
-        return GetRayCollisionBox(*this, box).hit;
-    }
-
-    /**
-     * Get collision info between ray and model
-     */
-    inline RayCollision GetCollision(const ::Model& model) const {
-        return GetRayCollisionModel(*this, model);
+    inline RayCollision GetCollision(const ::BoundingBox& box) const {
+        return ::GetRayCollisionBox(*this, box);
     }
 
     /**
      * Get collision information between ray and mesh
      */
     inline RayCollision GetCollision(const ::Mesh& mesh, const ::Matrix& transform) const {
-        return GetRayCollisionMesh(*this, mesh, transform);
+        return ::GetRayCollisionMesh(*this, mesh, transform);
     }
 
     /**
      * Get collision info between ray and triangle
      */
     inline RayCollision GetCollision(::Vector3 p1, ::Vector3 p2, ::Vector3 p3) const {
-        return GetRayCollisionTriangle(*this, p1, p2, p3);
+        return ::GetRayCollisionTriangle(*this, p1, p2, p3);
     }
 
     /**
      * Get collision info between ray and quad
      */
-    inline RayCollision GetCollision(Vector3 p1, Vector3 p2, Vector3 p3, Vector3 p4) const {
-        return GetRayCollisionQuad(*this, p1, p2, p3, p4);
+    inline RayCollision GetCollision(::Vector3 p1, ::Vector3 p2, ::Vector3 p3, ::Vector3 p4) const {
+        return ::GetRayCollisionQuad(*this, p1, p2, p3, p4);
+    }
+
+    /**
+     * Get a ray trace from mouse position
+     */
+    inline static Ray GetMouse(::Vector2 mousePosition, const ::Camera& camera) {
+        return ::GetMouseRay(mousePosition, camera);
+    }
+
+    /**
+     * Get a ray trace from mouse position
+     */
+    inline static Ray GetMouse(const ::Camera& camera) {
+        return ::GetMouseRay(::GetMousePosition(), camera);
     }
 
  private:
@@ -95,6 +96,7 @@ class Ray : public ::Ray {
     }
 };
 }  // namespace raylib
+
 using RRay = raylib::Ray;
 
 #endif  // RAYLIB_CPP_INCLUDE_RAY_HPP_

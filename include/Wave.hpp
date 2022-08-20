@@ -28,20 +28,20 @@ class Wave : public ::Wave {
 
     /**
      * Load wave data from file
+     *
+     * @throws raylib::RaylibException Throws if the Wave failed to load.
      */
     Wave(const std::string& fileName) {
-        if (!Load(fileName)) {
-            throw RaylibException(TextFormat("Failed to load Wave from file: %s", fileName.c_str()));
-        }
+        Load(fileName);
     }
 
     /**
      * Load wave from memory buffer, fileType refers to extension: i.e. "wav"
+     *
+     * @throws raylib::RaylibException Throws if the Wave failed to load.
      */
     Wave(const std::string& fileType, const unsigned char *fileData, int dataSize) {
-        if (!Load(fileType, fileData, dataSize)) {
-            throw RaylibException("Failed to load Wave from memory");
-        }
+        Load(fileType, fileData, dataSize);
     }
 
     Wave(const Wave& other) {
@@ -105,14 +105,6 @@ class Wave : public ::Wave {
     }
 
     /**
-     * Convert wave data to desired format
-     */
-    inline Wave& Format(int SampleRate, int SampleSize, int Channels = 2) {
-        ::WaveFormat(this, SampleRate, SampleSize, Channels);
-        return *this;
-    }
-
-    /**
      * Copy a wave to a new wave
      */
     inline ::Wave Copy() const {
@@ -128,6 +120,14 @@ class Wave : public ::Wave {
     }
 
     /**
+     * Convert wave data to desired format
+     */
+    inline Wave& Format(int SampleRate, int SampleSize, int Channels = 2) {
+        ::WaveFormat(this, SampleRate, SampleSize, Channels);
+        return *this;
+    }
+
+    /**
      * Load samples data from wave as a floats array
      */
     inline float* LoadSamples() {
@@ -137,7 +137,7 @@ class Wave : public ::Wave {
     /**
      * Unload samples data loaded with LoadWaveSamples()
      */
-    inline void UnloadSamples(float *samples) {
+    inline static void UnloadSamples(float *samples) {
         ::UnloadWaveSamples(samples);
     }
 
@@ -184,21 +184,25 @@ class Wave : public ::Wave {
     /**
      * Load wave data from file.
      *
-     * @return True or false depending on if the Wave data was loaded properly.
+     * @throws raylib::RaylibException Throws if the Wave failed to load.
      */
-    bool Load(const std::string& fileName) {
+    void Load(const std::string& fileName) {
         set(::LoadWave(fileName.c_str()));
-        return IsReady();
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Wave from file: " + fileName);
+        }
     }
 
     /**
      * Load wave from memory buffer, fileType refers to extension: i.e. "wav"
      *
-     * @return True or false depending on if the Wave data was loaded properly.
+     * @throws raylib::RaylibException Throws if the Wave failed to load.
      */
-    bool Load(const std::string& fileType, const unsigned char *fileData, int dataSize) {
+    void Load(const std::string& fileType, const unsigned char *fileData, int dataSize) {
         set(::LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
-        return IsReady();
+        if (!IsReady()) {
+            throw RaylibException("Failed to load Wave from file data of type: " + fileType);
+        }
     }
 
     /**
@@ -221,6 +225,7 @@ class Wave : public ::Wave {
 };
 
 }  // namespace raylib
+
 using RWave = raylib::Wave;
 
 #endif  // RAYLIB_CPP_INCLUDE_WAVE_HPP_
