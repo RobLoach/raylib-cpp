@@ -22,12 +22,13 @@ class RenderTexture : public ::RenderTexture {
         set(renderTexture);
     }
 
-    RenderTexture(unsigned int id, ::Texture texture, ::Texture depth) : ::RenderTexture{id, texture, depth} {}
+    RenderTexture(unsigned int id, const ::Texture& texture, const ::Texture& depth) : ::RenderTexture{id, texture, depth} {}
 
+    /**
+     * Load texture for rendering (framebuffer)
+     */
     RenderTexture(int width, int height) {
-        if (!Load(width, height)) {
-            throw RaylibException("Failed to create RenderTexture");
-        }
+        set(::LoadRenderTexture(width, height));
     }
 
     RenderTexture(const RenderTexture&) = delete;
@@ -91,11 +92,10 @@ class RenderTexture : public ::RenderTexture {
     }
 
     /**
-     * Loads a render texture at the given width and height.
+     * Load texture for rendering (framebuffer)
      */
-    bool Load(int width, int height) {
-        set(::LoadRenderTexture(width, height));
-        return IsReady();
+    static RenderTexture Load(int width, int height) {
+        return ::LoadRenderTexture(width, height);
     }
 
     /**

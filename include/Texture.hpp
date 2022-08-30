@@ -36,9 +36,8 @@ class Texture : public ::Texture {
     /**
      * Creates a texture object based on the given Texture struct data.
      */
-    Texture(const ::Texture& texture) {
-        set(texture);
-    }
+    Texture(const ::Texture& texture) :
+            ::Texture{texture.id, texture.width, texture.height, texture.mipmaps, texture.format} {}
 
     /**
      * Creates a texture from the given Image.

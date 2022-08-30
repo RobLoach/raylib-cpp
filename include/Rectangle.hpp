@@ -11,9 +11,7 @@ namespace raylib {
  */
 class Rectangle : public ::Rectangle {
  public:
-    Rectangle(const ::Rectangle& vec) {
-        set(vec);
-    }
+    Rectangle(const ::Rectangle& rect) : ::Rectangle{rect.x, rect.y, rect.width, rect.height} {}
 
     Rectangle(float x, float y, float width, float height) : ::Rectangle{x, y, width, height} {}
     Rectangle(float x, float y, float width) : ::Rectangle{x, y, width, 0} {}
