@@ -13,9 +13,7 @@ namespace raylib {
  */
 class Color : public ::Color {
  public:
-    Color(const ::Color& color) {
-        set(color);
-    }
+    Color(const ::Color& color) : ::Color{color.r, color.g, color.b, color.a} {}
 
     Color(
             unsigned char red,

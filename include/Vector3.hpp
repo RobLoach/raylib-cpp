@@ -15,9 +15,7 @@ namespace raylib {
  */
 class Vector3 : public ::Vector3 {
  public:
-    Vector3(const ::Vector3& vec) {
-        set(vec);
-    }
+    Vector3(const ::Vector3& vec) : ::Vector3{vec.x, vec.y, vec.z} {}
 
     Vector3(float x, float y, float z) : ::Vector3{x, y, z} {}
     Vector3(float x, float y) : ::Vector3{x, y, 0} {}

@@ -19,6 +19,7 @@ class Matrix : public ::Matrix {
         set(mat);
     }
 
+    // TODO: Fix the ordering of the Matrix properties.
     Matrix(
             float m0 = 0, float m1 = 0, float m2 = 0, float m3 = 0, float m4 = 0, float m5 = 0,
             float m6 = 0, float m7 = 0, float m8 = 0, float m9 = 0, float m10 = 0, float m11 = 0,
