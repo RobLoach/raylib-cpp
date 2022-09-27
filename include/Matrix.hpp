@@ -15,8 +15,12 @@ namespace raylib {
  */
 class Matrix : public ::Matrix {
  public:
-    Matrix(const ::Matrix& mat) {
-        set(mat);
+    Matrix(const ::Matrix& mat) : ::Matrix{
+            mat.m0, mat.m4, mat.m8, mat.m12,
+            mat.m1, mat.m5, mat.m9, mat.m13,
+            mat.m2, mat.m6, mat.m10, mat.m14,
+            mat.m3, mat.m7, mat.m11, mat.m15} {
+        // Nothing.
     }
 
     Matrix(
@@ -28,7 +32,9 @@ class Matrix : public ::Matrix {
             m0, m4, m8, m12,
             m1, m5, m9, m13,
             m2, m6, m10, m14,
-            m3, m7, m11, m15} {}
+            m3, m7, m11, m15} {
+        // Nothing.
+    }
 
     GETTERSETTER(float, M0, m0)
     GETTERSETTER(float, M1, m1)
