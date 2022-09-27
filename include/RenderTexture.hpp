@@ -4,6 +4,7 @@
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./RaylibException.hpp"
+#include "./TextureUnmanaged.hpp"
 
 namespace raylib {
 /**
@@ -22,7 +23,8 @@ class RenderTexture : public ::RenderTexture {
         set(renderTexture);
     }
 
-    RenderTexture(unsigned int id, const ::Texture& texture, const ::Texture& depth) : ::RenderTexture{id, texture, depth} {}
+    RenderTexture(unsigned int id, const ::Texture& texture, const ::Texture& depth) :
+        ::RenderTexture{id, texture, depth} {}
 
     /**
      * Load texture for rendering (framebuffer)
@@ -42,18 +44,25 @@ class RenderTexture : public ::RenderTexture {
     }
 
     GETTERSETTER(unsigned int, Id, id)
-    //GETTERSETTER(::Texture2D, Texture, texture)
-    //GETTERSETTER(::Texture2D, Depth, depth)
 
+    /**
+     * Get the color buffer attachment texture.
+     */
     inline TextureUnmanaged GetTexture() {
         return texture;
     }
+
     inline void SetTexture(const ::Texture& newTexture) {
         texture = newTexture;
     }
+
+    /**
+     * Depth buffer attachment texture
+     */
     inline TextureUnmanaged GetDepth() {
         return depth;
     }
+
     inline void SetDepth(const ::Texture& newDepth) {
         depth = newDepth;
     }

@@ -107,14 +107,19 @@ class Font : public ::Font {
     GETTERSETTER(int, BaseSize, baseSize)
     GETTERSETTER(int, GlyphCount, glyphCount)
     GETTERSETTER(int, GlyphPadding, glyphPadding)
-    //GETTERSETTER(::Texture2D, Texture, texture)
     GETTERSETTER(::Rectangle*, Recs, recs)
     GETTERSETTER(::GlyphInfo*, Glyphs, glyphs)
 
+    /**
+     * Get the texture atlas containing the glyphs.
+     */
     inline TextureUnmanaged GetTexture() {
         return texture;
     }
 
+    /**
+     * Set the texture atlas containing the glyphs.
+     */
     inline void SetTexture(const ::Texture& newTexture) {
         texture = newTexture;
     }
