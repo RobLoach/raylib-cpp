@@ -42,8 +42,21 @@ class RenderTexture : public ::RenderTexture {
     }
 
     GETTERSETTER(unsigned int, Id, id)
-    GETTERSETTER(::Texture2D, Texture, texture)
-    GETTERSETTER(::Texture2D, Depth, depth)
+    //GETTERSETTER(::Texture2D, Texture, texture)
+    //GETTERSETTER(::Texture2D, Depth, depth)
+
+    inline TextureUnmanaged GetTexture() {
+        return texture;
+    }
+    inline void SetTexture(const ::Texture& newTexture) {
+        texture = newTexture;
+    }
+    inline TextureUnmanaged GetDepth() {
+        return depth;
+    }
+    inline void SetDepth(const ::Texture& newDepth) {
+        depth = newDepth;
+    }
 
     RenderTexture& operator=(const ::RenderTexture& texture) {
         set(texture);

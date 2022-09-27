@@ -29,7 +29,7 @@ int main(void)
 
     // Generate mipmap levels to use trilinear filtering
     // NOTE: On 2D drawing it won't be noticeable, it looks like FILTER_BILINEAR
-    GenTextureMipmaps(&font.texture);
+    font.GetTexture().GenMipmaps();
 
     raylib::Text msg("Loaded Font", font.GetBaseSize(), BLACK, font);
 
@@ -37,7 +37,7 @@ int main(void)
     Vector2 textSize = { 0.0f, 0.0f };
 
     // Setup texture scaling filter
-    SetTextureFilter(font.texture, TEXTURE_FILTER_POINT);
+    font.GetTexture().SetFilter(TEXTURE_FILTER_POINT);
     int currentFontFilter = 0;      // TEXTURE_FILTER_POINT
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
@@ -53,18 +53,18 @@ int main(void)
         // Choose font texture filter method
         if (IsKeyPressed(KEY_ONE))
         {
-            SetTextureFilter(font.texture, TEXTURE_FILTER_POINT);
+            font.GetTexture().SetFilter(TEXTURE_FILTER_POINT);
             currentFontFilter = 0;
         }
         else if (IsKeyPressed(KEY_TWO))
         {
-            SetTextureFilter(font.texture, TEXTURE_FILTER_BILINEAR);
+            font.GetTexture().SetFilter(TEXTURE_FILTER_BILINEAR);
             currentFontFilter = 1;
         }
         else if (IsKeyPressed(KEY_THREE))
         {
             // NOTE: Trilinear filter won't be noticed on 2D drawing
-            SetTextureFilter(font.texture, TEXTURE_FILTER_TRILINEAR);
+            font.GetTexture().SetFilter(TEXTURE_FILTER_TRILINEAR);
             currentFontFilter = 2;
         }
 

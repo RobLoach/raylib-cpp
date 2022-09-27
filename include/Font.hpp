@@ -6,6 +6,7 @@
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./RaylibException.hpp"
+#include "./TextureUnmanaged.hpp"
 
 namespace raylib {
 /**
@@ -106,9 +107,17 @@ class Font : public ::Font {
     GETTERSETTER(int, BaseSize, baseSize)
     GETTERSETTER(int, GlyphCount, glyphCount)
     GETTERSETTER(int, GlyphPadding, glyphPadding)
-    GETTERSETTER(::Texture2D, Texture, texture)
+    //GETTERSETTER(::Texture2D, Texture, texture)
     GETTERSETTER(::Rectangle*, Recs, recs)
     GETTERSETTER(::GlyphInfo*, Glyphs, glyphs)
+
+    inline TextureUnmanaged GetTexture() {
+        return texture;
+    }
+
+    inline void SetTexture(const ::Texture& newTexture) {
+        texture = newTexture;
+    }
 
     Font& operator=(const ::Font& font) {
         Unload();
