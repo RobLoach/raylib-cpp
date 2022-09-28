@@ -34,6 +34,7 @@ class Texture : public TextureUnmanaged {
             return *this;
         }
 
+        Unload();
         set(other);
 
         other.id = 0;

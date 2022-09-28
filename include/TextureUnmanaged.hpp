@@ -42,7 +42,9 @@ class TextureUnmanaged : public ::Texture {
      * Creates a texture object based on the given Texture struct data.
      */
     TextureUnmanaged(const ::Texture& texture) :
-            ::Texture{texture.id, texture.width, texture.height, texture.mipmaps, texture.format} {}
+            ::Texture{texture.id, texture.width, texture.height, texture.mipmaps, texture.format} {
+        // Nothing.
+    }
 
     /**
      * Creates a texture from the given Image.
@@ -73,8 +75,9 @@ class TextureUnmanaged : public ::Texture {
         Load(fileName);
     }
 
-    TextureUnmanaged(::Texture&& other) {
-        set(other);
+    TextureUnmanaged(::Texture&& other) :
+            ::Texture{other.id, other.width, other.height, other.mipmaps, other.format} {
+        // Nothing.
     }
 
     GETTERSETTER(unsigned int, Id, id)
