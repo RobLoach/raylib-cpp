@@ -36,6 +36,7 @@ install(FILES
     Sound.hpp
     Text.hpp
     Texture.hpp
+    TextureUnmanaged.hpp
     Touch.hpp
     Vector2.hpp
     Vector3.hpp
