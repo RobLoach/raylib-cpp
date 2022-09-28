@@ -190,19 +190,18 @@ When there is a function that would return a pointer-array, there is a wrapper t
 
 ``` cpp
 // raylib
-int count;
 FilePathList files = LoadDirectoryFiles(".");
-printf("Count: %i\n", files.count);
-for (int i = 0; i < count; i++) {
-    printf("File: %s\n", files.paths[i]);
+TraceLog(LOG_INFO, "Count: %i", files.count);
+for (int i = 0; i < files.count; i++) {
+    TraceLog(LOG_INFO, "File: %s", files.paths[i]);
 }
 UnloadDirectoryFiles(files);
 
 // raylib-cpp
 std::vector<std::string> files = raylib::GetDirectoryFiles(".");
-std::cout << "Count: " << files.size() << std::endl;
+TraceLog(LOG_INFO, "Count: %i", files.size());
 for (auto& file : files) {
-    std::cout << "File: " << file << std::endl;
+    TraceLog(LOG_INFO, "File: %s", file.c_str());
 }
 ```
 
@@ -259,7 +258,7 @@ raylib::Vector2 newDirection = direction.Rotate(30);
 *raylib-cpp* is a header-only library. This means in order to use it, you must link your project to [raylib](https://www.raylib.com/), and then include [`raylib-cpp.hpp`](raylib-cpp/include/raylib-cpp.hpp).
 
 1. Set up a *raylib* project using the [build and install instructions](https://github.com/raysan5/raylib#build-and-installation)
-2. Ensure C++ files are compiled with C++
+2. Ensure `.cpp` files are compiled with C++
 3. Download *raylib-cpp*
 4. Include [`include/raylib-cpp.hpp`](include/raylib-cpp.hpp)
     ``` cpp
