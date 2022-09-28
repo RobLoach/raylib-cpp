@@ -15,16 +15,26 @@ namespace raylib {
  */
 class Matrix : public ::Matrix {
  public:
-    Matrix(const ::Matrix& mat) {
-        set(mat);
+    Matrix(const ::Matrix& mat) : ::Matrix{
+            mat.m0, mat.m4, mat.m8, mat.m12,
+            mat.m1, mat.m5, mat.m9, mat.m13,
+            mat.m2, mat.m6, mat.m10, mat.m14,
+            mat.m3, mat.m7, mat.m11, mat.m15} {
+        // Nothing.
     }
 
-    // TODO: Fix the ordering of the Matrix properties.
     Matrix(
-            float m0 = 0, float m1 = 0, float m2 = 0, float m3 = 0, float m4 = 0, float m5 = 0,
-            float m6 = 0, float m7 = 0, float m8 = 0, float m9 = 0, float m10 = 0, float m11 = 0,
-            float m12 = 0, float m13 = 0, float m14 = 0,
-            float m15 = 0) : ::Matrix{m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15} {}
+            float m0 = 0, float m4 = 0, float m8 = 0, float m12 = 0,
+            float m1 = 0, float m5 = 0, float m9 = 0, float m13 = 0,
+            float m2 = 0, float m6 = 0, float m10 = 0, float m14 = 0,
+            float m3 = 0, float m7 = 0, float m11 = 0, float m15 = 0) :
+        ::Matrix{
+            m0, m4, m8, m12,
+            m1, m5, m9, m13,
+            m2, m6, m10, m14,
+            m3, m7, m11, m15} {
+        // Nothing.
+    }
 
     GETTERSETTER(float, M0, m0)
     GETTERSETTER(float, M1, m1)
