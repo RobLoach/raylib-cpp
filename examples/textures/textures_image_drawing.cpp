@@ -33,9 +33,9 @@ int main(void) {
     // Draw one image over the other with a scaling of 1.5f
     parrots
         .Draw(cat,
-        raylib::Rectangle(0, 0, cat.GetWidth(), cat.GetHeight()),
-            raylib::Rectangle(30, 40, cat.GetWidth() * 1.5f, cat.GetHeight() * 1.5f))
-        .Crop(raylib::Rectangle(0, 50, parrots.GetWidth(), parrots.GetHeight() - 100));  // Crop resulting image
+            raylib::Rectangle(0, 0, cat.GetWidth(), cat.GetHeight()),
+            raylib::Rectangle(30, 40, cat.GetWidth() * 1.5f, cat.GetHeight() * 1.5f));
+    parrots.Crop(raylib::Rectangle(0, 50, parrots.GetWidth(), parrots.GetHeight() - 100));  // Crop resulting image
 
     // Load custom font for frawing on image
     raylib::Font font("resources/custom_jupiter_crash.png");

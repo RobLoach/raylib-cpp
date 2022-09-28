@@ -264,85 +264,71 @@ class Vector3 : public ::Vector3 {
     }
 #endif
 
-    inline Vector3& DrawLine3D(const ::Vector3& endPos, ::Color color) {
+    inline void DrawLine3D(const ::Vector3& endPos, ::Color color) const {
         ::DrawLine3D(*this, endPos, color);
-        return *this;
     }
 
-    inline Vector3& DrawPoint3D(::Color color) {
+    inline void DrawPoint3D(::Color color) const {
         ::DrawPoint3D(*this, color);
-        return *this;
     }
 
-    inline Vector3& DrawCircle3D(
+    inline void DrawCircle3D(
             float radius,
             const ::Vector3& rotationAxis,
             float rotationAngle,
-            Color color) {
+            Color color) const {
         ::DrawCircle3D(*this, radius, rotationAxis, rotationAngle, color);
-        return *this;
     }
 
-    inline Vector3& DrawCube(float width, float height, float length, ::Color color) {
+    inline void DrawCube(float width, float height, float length, ::Color color) const {
         ::DrawCube(*this, width, height, length, color);
-        return *this;
     }
 
-    inline Vector3& DrawCube(const ::Vector3& size, ::Color color) {
+    inline void DrawCube(const ::Vector3& size, ::Color color) const {
         ::DrawCubeV(*this, size, color);
-        return *this;
     }
 
-    inline Vector3& DrawCubeWires(float width, float height, float length, ::Color color) {
+    inline void DrawCubeWires(float width, float height, float length, ::Color color) const {
         ::DrawCubeWires(*this, width, height, length, color);
-        return *this;
     }
 
-    inline Vector3& DrawCubeWires(const ::Vector3& size, ::Color color) {
+    inline void DrawCubeWires(const ::Vector3& size, ::Color color) const {
         ::DrawCubeWiresV(*this, size, color);
-        return *this;
     }
 
-    inline Vector3& DrawCubeTexture(
+    inline void DrawCubeTexture(
             const ::Texture2D& texture,
             float width,
             float height,
             float length,
-            ::Color color) {
+            ::Color color) const {
         ::DrawCubeTexture(texture, *this, width, height, length, color);
-        return *this;
     }
 
-    inline Vector3& DrawSphere(float radius, ::Color color) {
+    inline void DrawSphere(float radius, ::Color color) const {
         ::DrawSphere(*this, radius, color);
-        return *this;
     }
 
-    inline Vector3& DrawSphere(float radius, int rings, int slices, ::Color color) {
+    inline void DrawSphere(float radius, int rings, int slices, ::Color color) const {
         ::DrawSphereEx(*this, radius, rings, slices, color);
-        return *this;
     }
 
-    inline Vector3& DrawSphereWires(float radius, int rings, int slices, ::Color color) {
+    inline void DrawSphereWires(float radius, int rings, int slices, ::Color color) const {
         ::DrawSphereWires(*this, radius, rings, slices, color);
-        return *this;
     }
 
-    inline Vector3& DrawCylinder(float radiusTop, float radiusBottom, float height,
-            int slices, Color color) {
+    inline void DrawCylinder(float radiusTop, float radiusBottom, float height,
+            int slices, ::Color color) const {
         ::DrawCylinder(*this, radiusTop, radiusBottom, height, slices, color);
-        return *this;
     }
 
-    inline Vector3& DrawCylinderWires(float radiusTop, float radiusBottom, float height,
-            int slices, Color color) {
+    inline void DrawCylinderWires(float radiusTop, float radiusBottom, float height,
+            int slices, ::Color color) const {
         ::DrawCylinderWires(*this, radiusTop, radiusBottom, height, slices, color);
-        return *this;
     }
 
-    inline Vector3& DrawPlane(const ::Vector2& size, ::Color color) {
+    inline void DrawPlane(const ::Vector2& size, ::Color color) const {
         ::DrawPlane(*this, size, color);
-        return *this;
     }
 
     /**

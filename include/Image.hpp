@@ -586,69 +586,58 @@ class Image : public ::Image {
     /**
      * Draw pixel within an image
      */
-    inline Image& DrawPixel(int posX, int posY, ::Color color = {255, 255, 255, 255}) {
+    inline void DrawPixel(int posX, int posY, ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawPixel(this, posX, posY, color);
-        return *this;
     }
 
-    inline Image& DrawPixel(::Vector2 position, ::Color color = {255, 255, 255, 255}) {
+    inline void DrawPixel(::Vector2 position, ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawPixelV(this, position, color);
-        return *this;
     }
 
-    inline Image& DrawLine(int startPosX, int startPosY, int endPosX, int endPosY,
+    inline void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY,
             ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawLine(this, startPosX, startPosY, endPosX, endPosY, color);
-        return *this;
     }
 
-    inline Image& DrawLine(::Vector2 start, ::Vector2 end, ::Color color = {255, 255, 255, 255}) {
+    inline void DrawLine(::Vector2 start, ::Vector2 end, ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawLineV(this, start, end, color);
-        return *this;
     }
 
-    inline Image& DrawCircle(int centerX, int centerY, int radius,
+    inline void DrawCircle(int centerX, int centerY, int radius,
             ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawCircle(this, centerX, centerY, radius, color);
-        return *this;
     }
 
-    inline Image& DrawCircle(::Vector2 center, int radius,
+    inline void DrawCircle(::Vector2 center, int radius,
             ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawCircleV(this, center, radius, color);
-        return *this;
     }
 
-    inline Image& DrawRectangle(int posX, int posY, int width, int height,
+    inline void DrawRectangle(int posX, int posY, int width, int height,
             ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawRectangle(this, posX, posY, width, height, color);
-        return *this;
     }
 
-    inline Image& DrawRectangle(Vector2 position, Vector2 size,
+    inline void DrawRectangle(Vector2 position, Vector2 size,
             ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawRectangleV(this, position, size, color);
-        return *this;
     }
 
-    inline Image& DrawRectangle(::Rectangle rec, ::Color color = {255, 255, 255, 255}) {
+    inline void DrawRectangle(::Rectangle rec, ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawRectangleRec(this, rec, color);
-        return *this;
     }
 
-    inline Image& DrawRectangleLines(::Rectangle rec, int thick = 1,
+    inline void DrawRectangleLines(::Rectangle rec, int thick = 1,
             ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawRectangleLines(this, rec, thick, color);
-        return *this;
     }
 
-    inline Image& Draw(const ::Image& src, ::Rectangle srcRec, ::Rectangle dstRec,
+    inline void Draw(const ::Image& src, ::Rectangle srcRec, ::Rectangle dstRec,
             ::Color tint = {255, 255, 255, 255}) {
         ::ImageDraw(this, src, srcRec, dstRec, tint);
-        return *this;
     }
 
-    inline Image& DrawText(const std::string& text, ::Vector2 position, int fontSize,
+    inline void DrawText(const std::string& text, ::Vector2 position, int fontSize,
             ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawText(this,
             text.c_str(),
@@ -656,19 +645,16 @@ class Image : public ::Image {
             static_cast<int>(position.y),
             fontSize,
             color);
-        return *this;
     }
 
-    inline Image& DrawText(const std::string& text, int x, int y, int fontSize,
+    inline void DrawText(const std::string& text, int x, int y, int fontSize,
             ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawText(this, text.c_str(), x, y, fontSize, color);
-        return *this;
     }
 
-    inline Image& DrawText(const ::Font& font, const std::string& text, ::Vector2 position,
+    inline void DrawText(const ::Font& font, const std::string& text, ::Vector2 position,
             float fontSize, float spacing, ::Color tint = {255, 255, 255, 255}) {
         ::ImageDrawTextEx(this, font, text.c_str(), position, fontSize, spacing, tint);
-        return *this;
     }
 
     /**

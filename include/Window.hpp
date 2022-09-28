@@ -384,9 +384,8 @@ class Window {
     /**
      * Draw current FPS
      */
-    inline Window& DrawFPS(int posX = 10, int posY = 10) {
+    inline void DrawFPS(int posX = 10, int posY = 10) const {
         ::DrawFPS(posX, posY);
-        return *this;
     }
 
     /**

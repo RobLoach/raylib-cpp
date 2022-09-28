@@ -35,9 +35,8 @@ class Ray : public ::Ray {
     /**
      * Draw a ray line
      */
-    inline Ray& Draw(::Color color) {
+    inline void Draw(::Color color) const {
         DrawRay(*this, color);
-        return *this;
     }
 
     /**
