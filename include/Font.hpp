@@ -209,61 +209,56 @@ class Font : public ::Font {
     /**
      * Draw text using font and additional parameters.
      */
-    inline Font& DrawText(const std::string& text, ::Vector2 position, float fontSize,
-            float spacing, ::Color tint = WHITE) {
+    inline void DrawText(const std::string& text, ::Vector2 position, float fontSize,
+            float spacing, ::Color tint = WHITE) const {
         ::DrawTextEx(*this, text.c_str(), position,  fontSize,  spacing,  tint);
-        return *this;
     }
 
     /**
      * Draw text using font and additional parameters.
      */
-    inline Font& DrawText(const std::string& text, int posX, int posY, float fontSize,
-            float spacing, ::Color tint = WHITE) {
+    inline void DrawText(const std::string& text, int posX, int posY, float fontSize,
+            float spacing, ::Color tint = WHITE) const {
         ::DrawTextEx(*this, text.c_str(),
             { static_cast<float>(posX), static_cast<float>(posY) },
             fontSize, spacing, tint);
-        return *this;
     }
 
-    inline Font& DrawText(
+    inline void DrawText(
             const std::string& text,
             ::Vector2 position,
             ::Vector2 origin,
             float rotation,
             float fontSize,
             float spacing,
-            ::Color tint = WHITE) {
+            ::Color tint = WHITE) const {
         ::DrawTextPro(*this, text.c_str(),
             position, origin,
             rotation, fontSize,
             spacing, tint);
-        return *this;
     }
 
     /**
      * Draw one character (codepoint)
      */
-    inline Font& DrawText(int codepoint,
+    inline void DrawText(int codepoint,
             ::Vector2 position,
             float fontSize,
-            ::Color tint = { 255, 255, 255, 255 }) {
+            ::Color tint = { 255, 255, 255, 255 }) const {
         ::DrawTextCodepoint(*this, codepoint, position, fontSize, tint);
-        return *this;
     }
 
     /**
      * Draw multiple character (codepoint)
      */
-    inline Font& DrawText(const int *codepoints,
+    inline void DrawText(const int *codepoints,
             int count, ::Vector2 position,
             float fontSize, float spacing,
-            ::Color tint = { 255, 255, 255, 255 }) {
+            ::Color tint = { 255, 255, 255, 255 }) const {
         ::DrawTextCodepoints(*this,
             codepoints, count,
             position, fontSize,
             spacing, tint);
-        return *this;
     }
 
     /**

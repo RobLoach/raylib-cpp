@@ -93,14 +93,14 @@ class Text {
     /**
      * Draw text with values in class.
      */
-    inline void Draw(const ::Vector2& position) {
+    inline void Draw(const ::Vector2& position) const {
         ::DrawTextEx(font, text.c_str(), position, fontSize, spacing, color);
     }
 
     /**
      * Draw text with values in class.
      */
-    inline void Draw(int posX, int posY) {
+    inline void Draw(int posX, int posY) const {
         ::DrawTextEx(font,
             text.c_str(),
             { static_cast<float>(posX), static_cast<float>(posY) },
@@ -114,7 +114,7 @@ class Text {
      *
      * @see DrawTextPro()
      */
-    inline void Draw(const ::Vector2& position, float rotation, const Vector2& origin = {0, 0}) {
+    inline void Draw(const ::Vector2& position, float rotation, const ::Vector2& origin = {0, 0}) const {
         ::DrawTextPro(font, text.c_str(), position, origin, rotation, fontSize, spacing, color);
     }
 

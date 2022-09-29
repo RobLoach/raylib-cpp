@@ -38,9 +38,8 @@ class BoundingBox : public ::BoundingBox {
     /**
      * Draw a bounding box with wires
      */
-    inline BoundingBox& Draw(::Color color = {255, 255, 255, 255}) {
+    inline void Draw(::Color color = {255, 255, 255, 255}) const {
         ::DrawBoundingBox(*this, color);
-        return *this;
     }
 
     /**

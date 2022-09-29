@@ -198,14 +198,14 @@ class Mesh : public ::Mesh {
     /**
      * Draw a 3d mesh with material and transform
      */
-    inline void Draw(const ::Material& material, const ::Matrix& transform) {
+    inline void Draw(const ::Material& material, const ::Matrix& transform) const {
         ::DrawMesh(*this, material, transform);
     }
 
     /**
      * Draw multiple mesh instances with material and different transforms
      */
-    inline void Draw(const ::Material& material, ::Matrix* transforms, int instances) {
+    inline void Draw(const ::Material& material, ::Matrix* transforms, int instances) const {
         ::DrawMeshInstanced(*this, material, transforms, instances);
     }
 

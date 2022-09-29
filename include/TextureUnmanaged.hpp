@@ -194,9 +194,8 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTexture()
      */
-    inline TextureUnmanaged& Draw(int posX = 0, int posY = 0, ::Color tint = {255, 255, 255, 255}) {
+    inline void Draw(int posX = 0, int posY = 0, ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTexture(*this, posX, posY, tint);
-        return *this;
     }
 
     /**
@@ -204,9 +203,8 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTextureV()
      */
-    inline TextureUnmanaged& Draw(::Vector2 position, ::Color tint = {255, 255, 255, 255}) {
+    inline void Draw(::Vector2 position, ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTextureV(*this, position, tint);
-        return *this;
     }
 
     /**
@@ -214,10 +212,9 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTextureEx()
      */
-    inline TextureUnmanaged& Draw(::Vector2 position, float rotation, float scale = 1.0f,
-            ::Color tint = {255, 255, 255, 255}) {
+    inline void Draw(::Vector2 position, float rotation, float scale = 1.0f,
+            ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTextureEx(*this, position, rotation, scale, tint);
-        return *this;
     }
 
     /**
@@ -225,10 +222,9 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTextureRec()
      */
-    inline TextureUnmanaged& Draw(::Rectangle sourceRec, ::Vector2 position = {0, 0},
-            ::Color tint = {255, 255, 255, 255}) {
+    inline void Draw(::Rectangle sourceRec, ::Vector2 position = {0, 0},
+            ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTextureRec(*this, sourceRec, position, tint);
-        return *this;
     }
 
     /**
@@ -236,10 +232,9 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTextureQuad()
      */
-    inline TextureUnmanaged& Draw(::Vector2 tiling, ::Vector2 offset, ::Rectangle quad,
-            ::Color tint = {255, 255, 255, 255}) {
+    inline void Draw(::Vector2 tiling, ::Vector2 offset, ::Rectangle quad,
+            ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTextureQuad(*this, tiling, offset, quad, tint);
-        return *this;
     }
 
     /**
@@ -247,10 +242,9 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTexturePro()
      */
-    inline TextureUnmanaged& Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin = {0, 0},
-            float rotation = 0, ::Color tint = {255, 255, 255, 255}) {
+    inline void Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin = {0, 0},
+            float rotation = 0, ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTexturePro(*this, sourceRec, destRec, origin, rotation, tint);
-        return *this;
     }
 
     /**
@@ -258,10 +252,9 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTextureNPatch()
      */
-    inline TextureUnmanaged& Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin = {0, 0},
-            float rotation = 0, ::Color tint = {255, 255, 255, 255}) {
+    inline void Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin = {0, 0},
+            float rotation = 0, ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTextureNPatch(*this, nPatchInfo, destRec, origin, rotation, tint);
-        return *this;
     }
 
     /**
@@ -269,10 +262,9 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTextureTiled()
      */
-    inline TextureUnmanaged& DrawTiled(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin = {0, 0},
-            float rotation = 0, float scale = 1, Color tint = {255, 255, 255, 255}) {
+    inline void DrawTiled(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin = {0, 0},
+            float rotation = 0, float scale = 1, Color tint = {255, 255, 255, 255}) const {
         ::DrawTextureTiled(*this, sourceRec, destRec, origin, rotation, scale, tint);
-        return *this;
     }
 
     /**
@@ -280,11 +272,10 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTexturePoly()
      */
-    inline TextureUnmanaged& DrawPoly(::Vector2 center, ::Vector2 *points,
+    inline void DrawPoly(::Vector2 center, ::Vector2 *points,
             ::Vector2 *texcoords, int pointsCount,
-            ::Color tint = {255, 255, 255, 255}) {
+            ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTexturePoly(*this, center, points, texcoords, pointsCount, tint);
-        return *this;
     }
 
     /**
@@ -292,11 +283,10 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawBillboard()
      */
-    inline TextureUnmanaged& DrawBillboard(const ::Camera& camera,
+    inline void DrawBillboard(const ::Camera& camera,
             ::Vector3 position, float size,
-            ::Color tint = {255, 255, 255, 255}) {
+            ::Color tint = {255, 255, 255, 255}) const {
         ::DrawBillboard(camera, *this, position, size, tint);
-        return *this;
     }
 
     /**
@@ -304,11 +294,10 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawBillboardRec()
      */
-    inline TextureUnmanaged& DrawBillboard(const ::Camera& camera,
+    inline void DrawBillboard(const ::Camera& camera,
             ::Rectangle source, ::Vector3 position, ::Vector2 size,
-            ::Color tint = {255, 255, 255, 255}) {
+            ::Color tint = {255, 255, 255, 255}) const {
         DrawBillboardRec(camera, *this, source, position, size, tint);
-        return *this;
     }
 
     /**
@@ -316,12 +305,11 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawBillboardPro()
      */
-    inline TextureUnmanaged& DrawBillboard(const ::Camera& camera,
+    inline void DrawBillboard(const ::Camera& camera,
             ::Rectangle source, Vector3 position,
             ::Vector3 up, Vector2 size, Vector2 origin, float rotation = 0.0f,
-            ::Color tint = {255, 255, 255, 255}) {
+            ::Color tint = {255, 255, 255, 255}) const {
         DrawBillboardPro(camera, *this, source, position, up, size, origin, rotation, tint);
-        return *this;
     }
 
     /**
@@ -329,10 +317,9 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawCubeTexture()
      */
-    inline TextureUnmanaged& DrawCube(::Vector3 position, float width, float height, float length,
-            ::Color color = {255, 255, 255, 255}) {
+    inline void DrawCube(::Vector3 position, float width, float height, float length,
+            ::Color color = {255, 255, 255, 255}) const {
         ::DrawCubeTexture(*this, position, width, height, length, color);
-        return *this;
     }
 
     /**
@@ -340,10 +327,9 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawCubeTexture()
      */
-    inline TextureUnmanaged& DrawCube(::Vector3 position, ::Vector3 dimensions,
-            ::Color color = {255, 255, 255, 255}) {
+    inline void DrawCube(::Vector3 position, ::Vector3 dimensions,
+            ::Color color = {255, 255, 255, 255}) const {
         ::DrawCubeTexture(*this, position, dimensions.x, dimensions.y, dimensions.z, color);
-        return *this;
     }
 
     /**
@@ -351,10 +337,9 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawCubeTextureRec()
      */
-    inline TextureUnmanaged& DrawCube(::Rectangle source, ::Vector3 position, float width, float height, float length,
-            ::Color color = {255, 255, 255, 255}) {
+    inline void DrawCube(::Rectangle source, ::Vector3 position, float width, float height, float length,
+            ::Color color = {255, 255, 255, 255}) const {
         ::DrawCubeTextureRec(*this, source, position, width, height, length, color);
-        return *this;
     }
 
     /**
@@ -362,10 +347,9 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawCubeTextureRec()
      */
-    inline TextureUnmanaged& DrawCube(::Rectangle source, ::Vector3 position, ::Vector3 dimensions,
-            ::Color color = {255, 255, 255, 255}) {
+    inline void DrawCube(::Rectangle source, ::Vector3 position, ::Vector3 dimensions,
+            ::Color color = {255, 255, 255, 255}) const {
         ::DrawCubeTextureRec(*this, source, position, dimensions.x, dimensions.y, dimensions.z, color);
-        return *this;
     }
 
     /**

@@ -45,54 +45,44 @@ class Rectangle : public ::Rectangle {
     /**
      * Draw a color-filled rectangle
      */
-    inline Rectangle& Draw(::Color color) {
-        ::DrawRectangle(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width),
-            static_cast<int>(height), color);
-        return *this;
+    inline void Draw(::Color color) const {
+        ::DrawRectangleRec(*this, color);
     }
 
-    inline Rectangle& Draw(::Vector2 origin, float rotation, ::Color color) {
+    inline void Draw(::Vector2 origin, float rotation, ::Color color) const {
         ::DrawRectanglePro(*this, origin, rotation, color);
-        return *this;
     }
 
-    inline Rectangle& DrawGradientV(::Color color1, ::Color color2) {
+    inline void DrawGradientV(::Color color1, ::Color color2) const {
         ::DrawRectangleGradientV(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width),
             static_cast<int>(height), color1, color2);
-        return *this;
     }
 
-    inline Rectangle& DrawGradientH(::Color color1, ::Color color2) {
+    inline void DrawGradientH(::Color color1, ::Color color2) const {
         ::DrawRectangleGradientH(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width),
             static_cast<int>(height), color1, color2);
-        return *this;
     }
 
-    inline Rectangle& DrawGradient(::Color col1, ::Color col2, ::Color col3, ::Color col4) {
+    inline void DrawGradient(::Color col1, ::Color col2, ::Color col3, ::Color col4) const {
         ::DrawRectangleGradientEx(*this, col1, col2, col3, col4);
-        return *this;
     }
 
-    inline Rectangle& DrawLines(::Color color) {
+    inline void DrawLines(::Color color) const {
         ::DrawRectangleLines(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width),
             static_cast<int>(height), color);
-        return *this;
     }
 
-    inline Rectangle& DrawLines(::Color color, float lineThick) {
+    inline void DrawLines(::Color color, float lineThick) const {
         ::DrawRectangleLinesEx(*this, lineThick, color);
-        return *this;
     }
 
-    inline Rectangle& DrawRounded(float roundness, int segments, ::Color color) {
+    inline void DrawRounded(float roundness, int segments, ::Color color) const {
         ::DrawRectangleRounded(*this, roundness, segments, color);
-        return *this;
     }
 
-    inline Rectangle& DrawRoundedLines(float roundness, int segments,
-            float lineThick, ::Color color) {
+    inline void DrawRoundedLines(float roundness, int segments,
+            float lineThick, ::Color color) const {
         ::DrawRectangleRoundedLines(*this, roundness, segments, lineThick, color);
-        return *this;
     }
 
     /**

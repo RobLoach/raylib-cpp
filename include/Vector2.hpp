@@ -286,54 +286,46 @@ class Vector2 : public ::Vector2 {
     }
 #endif
 
-    inline Vector2& DrawPixel(::Color color = {0, 0, 0, 255}) {
+    inline void DrawPixel(::Color color = {0, 0, 0, 255}) const {
         ::DrawPixelV(*this, color);
-        return *this;
     }
 
-    inline Vector2& DrawLine(::Vector2 endPos, ::Color color = {0, 0, 0, 255}) {
+    inline void DrawLine(::Vector2 endPos, ::Color color = {0, 0, 0, 255}) const {
         ::DrawLineV(*this, endPos, color);
-        return *this;
     }
 
-    inline Vector2& DrawLine(::Vector2 endPos, float thick, ::Color color = {0, 0, 0, 255}) {
+    inline void DrawLine(::Vector2 endPos, float thick, ::Color color = {0, 0, 0, 255}) const {
         ::DrawLineEx(*this, endPos, thick, color);
-        return *this;
     }
 
-    inline Vector2& DrawLineBezier(::Vector2 endPos, float thick, ::Color color = {0, 0, 0, 255}) {
+    inline void DrawLineBezier(::Vector2 endPos, float thick, ::Color color = {0, 0, 0, 255}) const {
         ::DrawLineBezier(*this, endPos, thick, color);
-        return *this;
     }
 
     /**
      * Draw line using quadratic bezier curves with a control point.
      */
-    inline Vector2& DrawLineBezierQuad(
+    inline void DrawLineBezierQuad(
             ::Vector2 endPos,
             ::Vector2 controlPos,
             float thick,
-            ::Color color = {0, 0, 0, 255}) {
+            ::Color color = {0, 0, 0, 255}) const {
        ::DrawLineBezierQuad(*this, endPos, controlPos, thick, color);
-       return *this;
     }
 
     /**
      * Draw a color-filled circle (Vector version)
      */
-    inline Vector2& DrawCircle(float radius, ::Color color = {0, 0, 0, 255}) {
+    inline void DrawCircle(float radius, ::Color color = {0, 0, 0, 255}) const {
         ::DrawCircleV(*this, radius, color);
-        return *this;
     }
 
-    inline Vector2& DrawRectangle(::Vector2 size, ::Color color = {0, 0, 0, 255}) {
+    inline void DrawRectangle(::Vector2 size, ::Color color = {0, 0, 0, 255}) const {
         ::DrawRectangleV(*this, size, color);
-        return *this;
     }
 
-    inline Vector2& DrawPoly(int sides, float radius, float rotation, ::Color color = {0, 0, 0, 255}) {
+    inline void DrawPoly(int sides, float radius, float rotation, ::Color color = {0, 0, 0, 255}) const {
         ::DrawPoly(*this, sides, radius, rotation, color);
-        return *this;
     }
 
     /**

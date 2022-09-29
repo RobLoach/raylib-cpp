@@ -111,98 +111,82 @@ class Color : public ::Color {
         return *this;
     }
 
-    inline Color& DrawPixel(int x, int y) {
+    inline void DrawPixel(int x, int y) const {
         ::DrawPixel(x, y, *this);
-        return *this;
     }
 
     /**
      * Draw a pixel
      */
-    inline Color& DrawPixel(::Vector2 pos) {
+    inline void DrawPixel(::Vector2 pos) const {
         ::DrawPixelV(pos, *this);
-        return *this;
     }
 
     /**
      * Draw a line
      */
-    inline Color& DrawLine(int startPosX, int startPosY, int endPosX, int endPosY) {
+    inline void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY) const {
         ::DrawLine(startPosX, startPosY, endPosX, endPosY, *this);
-        return *this;
     }
 
-    inline Color& DrawLine(::Vector2 startPos, ::Vector2 endPos) {
+    inline void DrawLine(::Vector2 startPos, ::Vector2 endPos) const {
         ::DrawLineV(startPos, endPos, *this);
-        return *this;
     }
 
-    inline Color& DrawLine(::Vector2 startPos, ::Vector2 endPos, float thick) {
+    inline void DrawLine(::Vector2 startPos, ::Vector2 endPos, float thick) const {
         ::DrawLineEx(startPos, endPos, thick, *this);
-        return *this;
     }
 
-    inline Color& DrawLineBezier(::Vector2 startPos, ::Vector2 endPos, float thick) {
+    inline void DrawLineBezier(::Vector2 startPos, ::Vector2 endPos, float thick) const {
         ::DrawLineBezier(startPos, endPos, thick, *this);
-        return *this;
     }
 
-    inline Color& DrawLineStrip(::Vector2 *points, int numPoints) {
+    inline void DrawLineStrip(::Vector2 *points, int numPoints) const {
         ::DrawLineStrip(points, numPoints, *this);
-        return *this;
     }
 
-    inline Color& DrawText(const std::string& text, int posX, int posY, int fontSize) {
+    inline void DrawText(const std::string& text, int posX, int posY, int fontSize) const {
         ::DrawText(text.c_str(), posX, posY, fontSize, *this);
-        return *this;
     }
 
-    inline Color& DrawText(const ::Font& font, const std::string& text, ::Vector2 position,
-            float fontSize, float spacing) {
+    inline void DrawText(const ::Font& font, const std::string& text, ::Vector2 position,
+            float fontSize, float spacing) const {
         ::DrawTextEx(font, text.c_str(), position, fontSize, spacing, *this);
-        return *this;
     }
 
-    inline Color& DrawText(
+    inline void DrawText(
             const ::Font& font,
             const std::string& text,
             ::Vector2 position,
             ::Vector2 origin,
             float rotation,
             float fontSize,
-            float spacing) {
+            float spacing) const {
         ::DrawTextPro(font, text.c_str(), position, origin, rotation, fontSize, spacing, *this);
-        return *this;
     }
 
-    inline Color& DrawRectangle(int posX, int posY, int width, int height) {
+    inline void DrawRectangle(int posX, int posY, int width, int height) const {
         ::DrawRectangle(posX, posY, width, height, *this);
-        return *this;
     }
 
-    inline Color& DrawRectangle(::Vector2 position, ::Vector2 size) {
+    inline void DrawRectangle(::Vector2 position, ::Vector2 size) const {
         ::DrawRectangleV(position, size, *this);
-        return *this;
     }
 
-    inline Color& DrawRectangle(::Rectangle rec) {
+    inline void DrawRectangle(::Rectangle rec) const {
         ::DrawRectangleRec(rec, *this);
-        return *this;
     }
 
-    inline Color& DrawRectangle(::Rectangle rec, ::Vector2 origin, float rotation) {
+    inline void DrawRectangle(::Rectangle rec, ::Vector2 origin, float rotation) const {
         ::DrawRectanglePro(rec, origin, rotation, *this);
-        return *this;
     }
 
-    inline Color& DrawRectangleLines(int posX, int posY, int width, int height) {
+    inline void DrawRectangleLines(int posX, int posY, int width, int height) const {
         ::DrawRectangleLines(posX, posY, width, height, *this);
-        return *this;
     }
 
-    inline Color& DrawRectangleLines(::Rectangle rec, float lineThick) {
+    inline void DrawRectangleLines(::Rectangle rec, float lineThick) const {
         ::DrawRectangleLinesEx(rec, lineThick, *this);
-        return *this;
     }
 
     /**
