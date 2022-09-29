@@ -70,6 +70,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classraylib_1_1_render_texture-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">raylib::RenderTexture Class Reference</div>  </div>
@@ -92,14 +93,15 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>RenderTexture</b> (const <a class="el" href="classraylib_1_1_render_texture.html">RenderTexture</a> &amp;)=delete</td></tr>
 <tr class="separator:acf580e3d1fe82531a24d5ae3e380dd1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add8d201aec938fe0a66ecedd304e2fd3"><td class="memItemLeft" align="right" valign="top"><a id="add8d201aec938fe0a66ecedd304e2fd3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RenderTexture</b> (int width, int height)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#add8d201aec938fe0a66ecedd304e2fd3">RenderTexture</a> (int width, int height)</td></tr>
+<tr class="memdesc:add8d201aec938fe0a66ecedd304e2fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load texture for rendering (framebuffer) <br /></td></tr>
 <tr class="separator:add8d201aec938fe0a66ecedd304e2fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39f48ce84105360408c0ff04b143bbc1"><td class="memItemLeft" align="right" valign="top"><a id="a39f48ce84105360408c0ff04b143bbc1"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>RenderTexture</b> (<a class="el" href="classraylib_1_1_render_texture.html">RenderTexture</a> &amp;&amp;other)</td></tr>
 <tr class="separator:a39f48ce84105360408c0ff04b143bbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27f118f32bd8083a183df7ab5f0d8285"><td class="memItemLeft" align="right" valign="top"><a id="a27f118f32bd8083a183df7ab5f0d8285"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RenderTexture</b> (unsigned int id, ::<a class="el" href="classraylib_1_1_texture.html">Texture</a> texture, ::<a class="el" href="classraylib_1_1_texture.html">Texture</a> depth)</td></tr>
-<tr class="separator:a27f118f32bd8083a183df7ab5f0d8285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a007a77c6cfce801e0bef8fef6dc0bdeb"><td class="memItemLeft" align="right" valign="top"><a id="a007a77c6cfce801e0bef8fef6dc0bdeb"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>RenderTexture</b> (unsigned int id, const ::<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;texture, const ::<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;depth)</td></tr>
+<tr class="separator:a007a77c6cfce801e0bef8fef6dc0bdeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d05e471bb2d7fc83094f7a9463d836f"><td class="memItemLeft" align="right" valign="top"><a id="a7d05e471bb2d7fc83094f7a9463d836f"></a>
 <a class="el" href="classraylib_1_1_render_texture.html">RenderTexture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#a7d05e471bb2d7fc83094f7a9463d836f">BeginMode</a> ()</td></tr>
 <tr class="memdesc:a7d05e471bb2d7fc83094f7a9463d836f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes render texture for drawing. <br /></td></tr>
@@ -108,23 +110,21 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="classraylib_1_1_render_texture.html">RenderTexture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#a2b742cd39ce046d2ac8e1cd0bb6ae4ff">EndMode</a> ()</td></tr>
 <tr class="memdesc:a2b742cd39ce046d2ac8e1cd0bb6ae4ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends drawing to render texture. <br /></td></tr>
 <tr class="separator:a2b742cd39ce046d2ac8e1cd0bb6ae4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af14f685bcdb22071df1b48baed8a98ee"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classraylib_1_1_texture.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#af14f685bcdb22071df1b48baed8a98ee">GetDepth</a> () const</td></tr>
-<tr class="memdesc:af14f685bcdb22071df1b48baed8a98ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the depth value for the object.  <a href="classraylib_1_1_render_texture.html#af14f685bcdb22071df1b48baed8a98ee">More...</a><br /></td></tr>
-<tr class="separator:af14f685bcdb22071df1b48baed8a98ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab57a4e6a2bef25e85c0942575b508806"><td class="memItemLeft" align="right" valign="top"><a id="ab57a4e6a2bef25e85c0942575b508806"></a>
+<a class="el" href="classraylib_1_1_texture_unmanaged.html">TextureUnmanaged</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#ab57a4e6a2bef25e85c0942575b508806">GetDepth</a> ()</td></tr>
+<tr class="memdesc:ab57a4e6a2bef25e85c0942575b508806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Depth buffer attachment texture. <br /></td></tr>
+<tr class="separator:ab57a4e6a2bef25e85c0942575b508806"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab33b547ed46ceea6960a7385b24bec06"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#ab33b547ed46ceea6960a7385b24bec06">GetId</a> () const</td></tr>
 <tr class="memdesc:ab33b547ed46ceea6960a7385b24bec06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the id value for the object.  <a href="classraylib_1_1_render_texture.html#ab33b547ed46ceea6960a7385b24bec06">More...</a><br /></td></tr>
 <tr class="separator:ab33b547ed46ceea6960a7385b24bec06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73993c0ac4c292634562f2bd2dffe400"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classraylib_1_1_texture.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#a73993c0ac4c292634562f2bd2dffe400">GetTexture</a> () const</td></tr>
-<tr class="memdesc:a73993c0ac4c292634562f2bd2dffe400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the texture value for the object.  <a href="classraylib_1_1_render_texture.html#a73993c0ac4c292634562f2bd2dffe400">More...</a><br /></td></tr>
-<tr class="separator:a73993c0ac4c292634562f2bd2dffe400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bda707cbc38cb5225e2fead089b2f92"><td class="memItemLeft" align="right" valign="top"><a id="a0bda707cbc38cb5225e2fead089b2f92"></a>
+<a class="el" href="classraylib_1_1_texture_unmanaged.html">TextureUnmanaged</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#a0bda707cbc38cb5225e2fead089b2f92">GetTexture</a> ()</td></tr>
+<tr class="memdesc:a0bda707cbc38cb5225e2fead089b2f92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the color buffer attachment texture. <br /></td></tr>
+<tr class="separator:a0bda707cbc38cb5225e2fead089b2f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a402ca7bd6f0131101739e4ee07229cf4"><td class="memItemLeft" align="right" valign="top"><a id="a402ca7bd6f0131101739e4ee07229cf4"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#a402ca7bd6f0131101739e4ee07229cf4">IsReady</a> () const</td></tr>
 <tr class="memdesc:a402ca7bd6f0131101739e4ee07229cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves whether or not the render texture is ready. <br /></td></tr>
 <tr class="separator:a402ca7bd6f0131101739e4ee07229cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab173ae2692e2b2646e0369af8c3e14a9"><td class="memItemLeft" align="right" valign="top"><a id="ab173ae2692e2b2646e0369af8c3e14a9"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#ab173ae2692e2b2646e0369af8c3e14a9">Load</a> (int width, int height)</td></tr>
-<tr class="memdesc:ab173ae2692e2b2646e0369af8c3e14a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a render texture at the given width and height. <br /></td></tr>
-<tr class="separator:ab173ae2692e2b2646e0369af8c3e14a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f037783cc05a1ce825032c1213f0565"><td class="memItemLeft" align="right" valign="top"><a id="a2f037783cc05a1ce825032c1213f0565"></a>
 <a class="el" href="classraylib_1_1_render_texture.html">RenderTexture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const ::<a class="el" href="classraylib_1_1_render_texture.html">RenderTexture</a> &amp;texture)</td></tr>
 <tr class="separator:a2f037783cc05a1ce825032c1213f0565"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,54 +134,31 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a386fcd98c70ab05ac32e0479c2d7fdab"><td class="memItemLeft" align="right" valign="top"><a id="a386fcd98c70ab05ac32e0479c2d7fdab"></a>
 <a class="el" href="classraylib_1_1_render_texture.html">RenderTexture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classraylib_1_1_render_texture.html">RenderTexture</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="separator:a386fcd98c70ab05ac32e0479c2d7fdab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab24569c92eea7bffe99354c54ddc5235"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#ab24569c92eea7bffe99354c54ddc5235">SetDepth</a> (::<a class="el" href="classraylib_1_1_texture.html">Texture2D</a> value)</td></tr>
-<tr class="memdesc:ab24569c92eea7bffe99354c54ddc5235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the depth value for the object.  <a href="classraylib_1_1_render_texture.html#ab24569c92eea7bffe99354c54ddc5235">More...</a><br /></td></tr>
-<tr class="separator:ab24569c92eea7bffe99354c54ddc5235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0292a0d1cf58287cce1c56f9d8dcc455"><td class="memItemLeft" align="right" valign="top"><a id="a0292a0d1cf58287cce1c56f9d8dcc455"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetDepth</b> (const ::<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;newDepth)</td></tr>
+<tr class="separator:a0292a0d1cf58287cce1c56f9d8dcc455"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a962803da3c2a50de3f4a337ebfd47fa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#a962803da3c2a50de3f4a337ebfd47fa2">SetId</a> (unsigned int value)</td></tr>
 <tr class="memdesc:a962803da3c2a50de3f4a337ebfd47fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the id value for the object.  <a href="classraylib_1_1_render_texture.html#a962803da3c2a50de3f4a337ebfd47fa2">More...</a><br /></td></tr>
 <tr class="separator:a962803da3c2a50de3f4a337ebfd47fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06acb5fa12b2404449f018978cef0f81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#a06acb5fa12b2404449f018978cef0f81">SetTexture</a> (::<a class="el" href="classraylib_1_1_texture.html">Texture2D</a> value)</td></tr>
-<tr class="memdesc:a06acb5fa12b2404449f018978cef0f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the texture value for the object.  <a href="classraylib_1_1_render_texture.html#a06acb5fa12b2404449f018978cef0f81">More...</a><br /></td></tr>
-<tr class="separator:a06acb5fa12b2404449f018978cef0f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f17e91ab6f9d58d0da2dd0d9091200d"><td class="memItemLeft" align="right" valign="top"><a id="a9f17e91ab6f9d58d0da2dd0d9091200d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetTexture</b> (const ::<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;newTexture)</td></tr>
+<tr class="separator:a9f17e91ab6f9d58d0da2dd0d9091200d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56b0bb42ae5ef981404b0fc1b28c2ed9"><td class="memItemLeft" align="right" valign="top"><a id="a56b0bb42ae5ef981404b0fc1b28c2ed9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></tr>
 <tr class="separator:a56b0bb42ae5ef981404b0fc1b28c2ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ac2842a1ce99b510d23cc3537119765d6"><td class="memItemLeft" align="right" valign="top"><a id="ac2842a1ce99b510d23cc3537119765d6"></a>
+static <a class="el" href="classraylib_1_1_render_texture.html">RenderTexture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_render_texture.html#ac2842a1ce99b510d23cc3537119765d6">Load</a> (int width, int height)</td></tr>
+<tr class="memdesc:ac2842a1ce99b510d23cc3537119765d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load texture for rendering (framebuffer) <br /></td></tr>
+<tr class="separator:ac2842a1ce99b510d23cc3537119765d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classraylib_1_1_render_texture.html" title="RenderTexture type, for texture rendering.">RenderTexture</a> type, for texture rendering. </p>
 
-<p class="definition">Definition at line <a class="el" href="_render_texture_8hpp_source.html#l00012">12</a> of file <a class="el" href="_render_texture_8hpp_source.html">RenderTexture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_render_texture_8hpp_source.html#l00013">13</a> of file <a class="el" href="_render_texture_8hpp_source.html">RenderTexture.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="af14f685bcdb22071df1b48baed8a98ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af14f685bcdb22071df1b48baed8a98ee">&#9670;&nbsp;</a></span>GetDepth()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">::<a class="el" href="classraylib_1_1_texture.html">Texture2D</a> raylib::RenderTexture::GetDepth </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Retrieves the depth value for the object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The depth value of the object. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_render_texture_8hpp_source.html#l00045">45</a> of file <a class="el" href="_render_texture_8hpp_source.html">RenderTexture.hpp</a>.</p>
-
-</div>
-</div>
 <a id="ab33b547ed46ceea6960a7385b24bec06"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab33b547ed46ceea6960a7385b24bec06">&#9670;&nbsp;</a></span>GetId()</h2>
 
@@ -208,73 +185,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
 <p>Retrieves the id value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The id value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_render_texture_8hpp_source.html#l00043">43</a> of file <a class="el" href="_render_texture_8hpp_source.html">RenderTexture.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a73993c0ac4c292634562f2bd2dffe400"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73993c0ac4c292634562f2bd2dffe400">&#9670;&nbsp;</a></span>GetTexture()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">::<a class="el" href="classraylib_1_1_texture.html">Texture2D</a> raylib::RenderTexture::GetTexture </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Retrieves the texture value for the object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The texture value of the object. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_render_texture_8hpp_source.html#l00044">44</a> of file <a class="el" href="_render_texture_8hpp_source.html">RenderTexture.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ab24569c92eea7bffe99354c54ddc5235"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab24569c92eea7bffe99354c54ddc5235">&#9670;&nbsp;</a></span>SetDepth()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void raylib::RenderTexture::SetDepth </td>
-          <td>(</td>
-          <td class="paramtype">::<a class="el" href="classraylib_1_1_texture.html">Texture2D</a>&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the depth value for the object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of which to set depth to. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_render_texture_8hpp_source.html#l00045">45</a> of file <a class="el" href="_render_texture_8hpp_source.html">RenderTexture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_render_texture_8hpp_source.html#l00046">46</a> of file <a class="el" href="_render_texture_8hpp_source.html">RenderTexture.hpp</a>.</p>
 
 </div>
 </div>
@@ -310,43 +221,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_render_texture_8hpp_source.html#l00043">43</a> of file <a class="el" href="_render_texture_8hpp_source.html">RenderTexture.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a06acb5fa12b2404449f018978cef0f81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06acb5fa12b2404449f018978cef0f81">&#9670;&nbsp;</a></span>SetTexture()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void raylib::RenderTexture::SetTexture </td>
-          <td>(</td>
-          <td class="paramtype">::<a class="el" href="classraylib_1_1_texture.html">Texture2D</a>&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the texture value for the object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of which to set texture to. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_render_texture_8hpp_source.html#l00044">44</a> of file <a class="el" href="_render_texture_8hpp_source.html">RenderTexture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_render_texture_8hpp_source.html#l00046">46</a> of file <a class="el" href="_render_texture_8hpp_source.html">RenderTexture.hpp</a>.</p>
 
 </div>
 </div>

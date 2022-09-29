@@ -6,13 +6,28 @@
 namespace raylib {
 /**
  * Texture type
+ *
+ * The texture will be unloaded on object destruction. Use raylib::TextureUnmanaged if you're looking to not unload.
+ *
+ * @see raylib::TextureUnmanaged
  */
 class Texture : public TextureUnmanaged {
  public:
     using TextureUnmanaged::TextureUnmanaged;
 
+    /**
+     * Explicitly forbid the copy constructor.
+     */
     Texture(const Texture&) = delete;
 
+    /**
+     * Explicitly forbid copy assignment.
+     */
+    Texture& operator=(const Texture&) = delete;
+
+    /**
+     * Move constructor.
+     */
     Texture(Texture&& other) {
         set(other);
 
@@ -23,12 +38,16 @@ class Texture : public TextureUnmanaged {
         other.format = 0;
     }
 
+    /**
+     * On destruction, unload the Texture.
+     */
     ~Texture() {
         Unload();
     }
 
-    Texture& operator=(const Texture&) = delete;
-
+    /**
+     * Move assignment.
+     */
     Texture& operator=(Texture&& other) noexcept {
         if (this == &other) {
             return *this;

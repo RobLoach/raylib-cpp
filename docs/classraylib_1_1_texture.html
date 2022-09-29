@@ -81,189 +81,239 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a78cb97ab050cbcd480d529c2fa9ce2b5"><td class="memItemLeft" align="right" valign="top"><a id="a78cb97ab050cbcd480d529c2fa9ce2b5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a78cb97ab050cbcd480d529c2fa9ce2b5">Texture</a> ()</td></tr>
-<tr class="memdesc:a78cb97ab050cbcd480d529c2fa9ce2b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default texture constructor. <br /></td></tr>
-<tr class="separator:a78cb97ab050cbcd480d529c2fa9ce2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40ea1411f0b39a78d36fc1a5a08a8fc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a40ea1411f0b39a78d36fc1a5a08a8fc3">Texture</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image)</td></tr>
-<tr class="memdesc:a40ea1411f0b39a78d36fc1a5a08a8fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture from the given <a class="el" href="classraylib_1_1_image.html" title="Image type, bpp always RGBA (32bit)">Image</a>.  <a href="classraylib_1_1_texture.html#a40ea1411f0b39a78d36fc1a5a08a8fc3">More...</a><br /></td></tr>
-<tr class="separator:a40ea1411f0b39a78d36fc1a5a08a8fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a125ac253e41ceaee8cecb7de8652da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a9a125ac253e41ceaee8cecb7de8652da">Texture</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image, int layout)</td></tr>
-<tr class="memdesc:a9a125ac253e41ceaee8cecb7de8652da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load cubemap from image, multiple image cubemap layouts supported.  <a href="classraylib_1_1_texture.html#a9a125ac253e41ceaee8cecb7de8652da">More...</a><br /></td></tr>
-<tr class="separator:a9a125ac253e41ceaee8cecb7de8652da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26856c78320052557b234ba318a408db"><td class="memItemLeft" align="right" valign="top"><a id="a26856c78320052557b234ba318a408db"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a26856c78320052557b234ba318a408db">Texture</a> (const ::<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;texture)</td></tr>
-<tr class="memdesc:a26856c78320052557b234ba318a408db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture object based on the given <a class="el" href="classraylib_1_1_texture.html" title="Texture type.">Texture</a> struct data. <br /></td></tr>
-<tr class="separator:a26856c78320052557b234ba318a408db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2697fd78772ce720f8dab323f9be97a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#aa2697fd78772ce720f8dab323f9be97a">Texture</a> (const std::string &amp;fileName)</td></tr>
-<tr class="memdesc:aa2697fd78772ce720f8dab323f9be97a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load texture from file into GPU memory (VRAM)  <a href="classraylib_1_1_texture.html#aa2697fd78772ce720f8dab323f9be97a">More...</a><br /></td></tr>
-<tr class="separator:aa2697fd78772ce720f8dab323f9be97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58e78588be53fc00096d37019fef9134"><td class="memItemLeft" align="right" valign="top"><a id="a58e78588be53fc00096d37019fef9134"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Texture</b> (const <a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;)=delete</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a58e78588be53fc00096d37019fef9134">Texture</a> (const <a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a58e78588be53fc00096d37019fef9134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly forbid the copy constructor. <br /></td></tr>
 <tr class="separator:a58e78588be53fc00096d37019fef9134"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7988e6f875f2f613d449325acf9f74be"><td class="memItemLeft" align="right" valign="top"><a id="a7988e6f875f2f613d449325acf9f74be"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Texture</b> (<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&amp;other)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a7988e6f875f2f613d449325acf9f74be">Texture</a> (<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&amp;other)</td></tr>
+<tr class="memdesc:a7988e6f875f2f613d449325acf9f74be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor. <br /></td></tr>
 <tr class="separator:a7988e6f875f2f613d449325acf9f74be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a23ce383a7603ef15431e1fe53a2275"><td class="memItemLeft" align="right" valign="top"><a id="a2a23ce383a7603ef15431e1fe53a2275"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a2a23ce383a7603ef15431e1fe53a2275">Texture</a> (unsigned int id, int width, int height, int mipmaps=1, int format=PIXELFORMAT_UNCOMPRESSED_R8G8B8A8)</td></tr>
-<tr class="memdesc:a2a23ce383a7603ef15431e1fe53a2275"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move/Create a texture structure manually. <br /></td></tr>
-<tr class="separator:a2a23ce383a7603ef15431e1fe53a2275"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c20937b396ec8fd2b1e5cd9ed498eb9"><td class="memItemLeft" align="right" valign="top"><a id="a2c20937b396ec8fd2b1e5cd9ed498eb9"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> (::NPatchInfo nPatchInfo, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> destRec, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin={0, 0}, float rotation=0, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
-<tr class="separator:a2c20937b396ec8fd2b1e5cd9ed498eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4abbef0e6bb34553c252891e89c3d51e"><td class="memItemLeft" align="right" valign="top"><a id="a4abbef0e6bb34553c252891e89c3d51e"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> sourceRec, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> destRec, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin={0, 0}, float rotation=0, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
-<tr class="separator:a4abbef0e6bb34553c252891e89c3d51e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dc177155c8f90b9fee8ee3d6ee46973"><td class="memItemLeft" align="right" valign="top"><a id="a9dc177155c8f90b9fee8ee3d6ee46973"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> sourceRec, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position={0, 0}, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
-<tr class="separator:a9dc177155c8f90b9fee8ee3d6ee46973"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6815dd9c04bb1bf1c36966379615e587"><td class="memItemLeft" align="right" valign="top"><a id="a6815dd9c04bb1bf1c36966379615e587"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
-<tr class="separator:a6815dd9c04bb1bf1c36966379615e587"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0409911c54949691ff3c572018034a24"><td class="memItemLeft" align="right" valign="top"><a id="a0409911c54949691ff3c572018034a24"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position, float rotation, float scale=1.0f, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
-<tr class="separator:a0409911c54949691ff3c572018034a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15e52cbece8d7ba1df57f425479e4802"><td class="memItemLeft" align="right" valign="top"><a id="a15e52cbece8d7ba1df57f425479e4802"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> tiling, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> offset, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> quad, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
-<tr class="separator:a15e52cbece8d7ba1df57f425479e4802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac868c13824fb270215760fed16733f5"><td class="memItemLeft" align="right" valign="top"><a id="aac868c13824fb270215760fed16733f5"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> (::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> position, float width, float height, float length, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
-<tr class="separator:aac868c13824fb270215760fed16733f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4110ec2a26c4c31da63fe89d2ed0eb79"><td class="memItemLeft" align="right" valign="top"><a id="a4110ec2a26c4c31da63fe89d2ed0eb79"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a4110ec2a26c4c31da63fe89d2ed0eb79">Draw</a> (int posX=0, int posY=0, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
-<tr class="memdesc:a4110ec2a26c4c31da63fe89d2ed0eb79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a Texture2D. <br /></td></tr>
-<tr class="separator:a4110ec2a26c4c31da63fe89d2ed0eb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a84e8c864fb51044f6fa9bf93334244"><td class="memItemLeft" align="right" valign="top"><a id="a9a84e8c864fb51044f6fa9bf93334244"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a9a84e8c864fb51044f6fa9bf93334244">DrawBillboard</a> (const ::<a class="el" href="classraylib_1_1_camera3_d.html">Camera</a> &amp;camera, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> source, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> position, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> size, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
-<tr class="memdesc:a9a84e8c864fb51044f6fa9bf93334244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a billboard texture defined by source. <br /></td></tr>
-<tr class="separator:a9a84e8c864fb51044f6fa9bf93334244"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14b0fb41a70c91f6f3bc668582f1b5d5"><td class="memItemLeft" align="right" valign="top"><a id="a14b0fb41a70c91f6f3bc668582f1b5d5"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a14b0fb41a70c91f6f3bc668582f1b5d5">DrawBillboard</a> (const ::<a class="el" href="classraylib_1_1_camera3_d.html">Camera</a> &amp;camera, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> source, <a class="el" href="classraylib_1_1_vector3.html">Vector3</a> position, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> up, <a class="el" href="classraylib_1_1_vector2.html">Vector2</a> size, <a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin, float rotation, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
-<tr class="memdesc:a14b0fb41a70c91f6f3bc668582f1b5d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a billboard texture defined by source and rotation. <br /></td></tr>
-<tr class="separator:a14b0fb41a70c91f6f3bc668582f1b5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a943f0d2a5062fb44c2a3377a0ad585ff"><td class="memItemLeft" align="right" valign="top"><a id="a943f0d2a5062fb44c2a3377a0ad585ff"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a943f0d2a5062fb44c2a3377a0ad585ff">DrawBillboard</a> (const ::<a class="el" href="classraylib_1_1_camera3_d.html">Camera</a> &amp;camera, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> position, float size, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
-<tr class="memdesc:a943f0d2a5062fb44c2a3377a0ad585ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a billboard texture. <br /></td></tr>
-<tr class="separator:a943f0d2a5062fb44c2a3377a0ad585ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d11bac7d5f00458c995089963e1e5ad"><td class="memItemLeft" align="right" valign="top"><a id="a6d11bac7d5f00458c995089963e1e5ad"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>DrawPoly</b> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> center, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> *points, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> *texcoords, int pointsCount, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
-<tr class="separator:a6d11bac7d5f00458c995089963e1e5ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53618923795979c12643310c1bff8444"><td class="memItemLeft" align="right" valign="top"><a id="a53618923795979c12643310c1bff8444"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>DrawTiled</b> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> sourceRec, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> destRec, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin={0, 0}, float rotation=0, float scale=1, <a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255})</td></tr>
-<tr class="separator:a53618923795979c12643310c1bff8444"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f895f3a629cf1a74fe88d05b1dd3003"><td class="memItemLeft" align="right" valign="top"><a id="a2f895f3a629cf1a74fe88d05b1dd3003"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a2f895f3a629cf1a74fe88d05b1dd3003">GenMipmaps</a> ()</td></tr>
-<tr class="memdesc:a2f895f3a629cf1a74fe88d05b1dd3003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate GPU mipmaps for a texture. <br /></td></tr>
-<tr class="separator:a2f895f3a629cf1a74fe88d05b1dd3003"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3afee0767b1b7ca54e5477667761f5ed"><td class="memItemLeft" align="right" valign="top"><a id="a3afee0767b1b7ca54e5477667761f5ed"></a>
-inline ::<a class="el" href="classraylib_1_1_image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a3afee0767b1b7ca54e5477667761f5ed">GetData</a> () const</td></tr>
-<tr class="memdesc:a3afee0767b1b7ca54e5477667761f5ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get pixel data from GPU texture and return an <a class="el" href="classraylib_1_1_image.html" title="Image type, bpp always RGBA (32bit)">Image</a>. <br /></td></tr>
-<tr class="separator:a3afee0767b1b7ca54e5477667761f5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98cd3a49f6b5e06137a72b2c4e9bced4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a98cd3a49f6b5e06137a72b2c4e9bced4">GetFormat</a> () const</td></tr>
-<tr class="memdesc:a98cd3a49f6b5e06137a72b2c4e9bced4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the format value for the object.  <a href="classraylib_1_1_texture.html#a98cd3a49f6b5e06137a72b2c4e9bced4">More...</a><br /></td></tr>
-<tr class="separator:a98cd3a49f6b5e06137a72b2c4e9bced4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17837a5f61a14abbba8135273595072f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a17837a5f61a14abbba8135273595072f">GetHeight</a> () const</td></tr>
-<tr class="memdesc:a17837a5f61a14abbba8135273595072f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the height value for the object.  <a href="classraylib_1_1_texture.html#a17837a5f61a14abbba8135273595072f">More...</a><br /></td></tr>
-<tr class="separator:a17837a5f61a14abbba8135273595072f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee47a39e0b5026f7e0e546d982a9c298"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#aee47a39e0b5026f7e0e546d982a9c298">GetId</a> () const</td></tr>
-<tr class="memdesc:aee47a39e0b5026f7e0e546d982a9c298"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the id value for the object.  <a href="classraylib_1_1_texture.html#aee47a39e0b5026f7e0e546d982a9c298">More...</a><br /></td></tr>
-<tr class="separator:aee47a39e0b5026f7e0e546d982a9c298"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a221e1324dcca1092597692d6c71f3711"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a221e1324dcca1092597692d6c71f3711">GetMipmaps</a> () const</td></tr>
-<tr class="memdesc:a221e1324dcca1092597692d6c71f3711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the mipmaps value for the object.  <a href="classraylib_1_1_texture.html#a221e1324dcca1092597692d6c71f3711">More...</a><br /></td></tr>
-<tr class="separator:a221e1324dcca1092597692d6c71f3711"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39dc7e91306b8216dde1445d3ba441ee"><td class="memItemLeft" align="right" valign="top"><a id="a39dc7e91306b8216dde1445d3ba441ee"></a>
-inline ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a39dc7e91306b8216dde1445d3ba441ee">GetSize</a> () const</td></tr>
-<tr class="memdesc:a39dc7e91306b8216dde1445d3ba441ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the width and height of the texture. <br /></td></tr>
-<tr class="separator:a39dc7e91306b8216dde1445d3ba441ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6f4693f5c6ed1f1bc75b264ad83fecc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#ab6f4693f5c6ed1f1bc75b264ad83fecc">GetWidth</a> () const</td></tr>
-<tr class="memdesc:ab6f4693f5c6ed1f1bc75b264ad83fecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the width value for the object.  <a href="classraylib_1_1_texture.html#ab6f4693f5c6ed1f1bc75b264ad83fecc">More...</a><br /></td></tr>
-<tr class="separator:ab6f4693f5c6ed1f1bc75b264ad83fecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fcfffa4d64f8887ecb7590ad29bff92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a5fcfffa4d64f8887ecb7590ad29bff92">IsReady</a> () const</td></tr>
-<tr class="memdesc:a5fcfffa4d64f8887ecb7590ad29bff92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether or not the <a class="el" href="classraylib_1_1_texture.html" title="Texture type.">Texture</a> has been loaded and is ready.  <a href="classraylib_1_1_texture.html#a5fcfffa4d64f8887ecb7590ad29bff92">More...</a><br /></td></tr>
-<tr class="separator:a5fcfffa4d64f8887ecb7590ad29bff92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f0597a1ddddf52797cd26e91194f1a7"><td class="memItemLeft" align="right" valign="top"><a id="a2f0597a1ddddf52797cd26e91194f1a7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a2f0597a1ddddf52797cd26e91194f1a7">Load</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image)</td></tr>
-<tr class="memdesc:a2f0597a1ddddf52797cd26e91194f1a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load texture from image data. <br /></td></tr>
-<tr class="separator:a2f0597a1ddddf52797cd26e91194f1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a259fb6e4e7c56306a50516d1a28b1c2e"><td class="memItemLeft" align="right" valign="top"><a id="a259fb6e4e7c56306a50516d1a28b1c2e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a259fb6e4e7c56306a50516d1a28b1c2e">Load</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image, int layoutType)</td></tr>
-<tr class="memdesc:a259fb6e4e7c56306a50516d1a28b1c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load cubemap from image, multiple image cubemap layouts supported. <br /></td></tr>
-<tr class="separator:a259fb6e4e7c56306a50516d1a28b1c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a564e265a684d713f0a77d54eb22542ab"><td class="memItemLeft" align="right" valign="top"><a id="a564e265a684d713f0a77d54eb22542ab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a564e265a684d713f0a77d54eb22542ab">Load</a> (const std::string &amp;fileName)</td></tr>
-<tr class="memdesc:a564e265a684d713f0a77d54eb22542ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load texture from file into GPU memory (VRAM) <br /></td></tr>
-<tr class="separator:a564e265a684d713f0a77d54eb22542ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d77c3831e3d01bb4ea33e4fcc7a6e1e"><td class="memItemLeft" align="right" valign="top"><a id="a7d77c3831e3d01bb4ea33e4fcc7a6e1e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a7d77c3831e3d01bb4ea33e4fcc7a6e1e">operator raylib::Image</a> ()</td></tr>
-<tr class="memdesc:a7d77c3831e3d01bb4ea33e4fcc7a6e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get pixel data from GPU texture and return an <a class="el" href="classraylib_1_1_image.html" title="Image type, bpp always RGBA (32bit)">Image</a>. <br /></td></tr>
-<tr class="separator:a7d77c3831e3d01bb4ea33e4fcc7a6e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40e2c73f742d6bbb9701d895d5f2af4a"><td class="memItemLeft" align="right" valign="top"><a id="a40e2c73f742d6bbb9701d895d5f2af4a"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const ::<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;texture)</td></tr>
-<tr class="separator:a40e2c73f742d6bbb9701d895d5f2af4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb52b2f43d5deb3e2e244205faa563ac"><td class="memItemLeft" align="right" valign="top"><a id="afb52b2f43d5deb3e2e244205faa563ac"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#afb52b2f43d5deb3e2e244205faa563ac">~Texture</a> ()</td></tr>
+<tr class="memdesc:afb52b2f43d5deb3e2e244205faa563ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">On destruction, unload the <a class="el" href="classraylib_1_1_texture.html" title="Texture type.">Texture</a>. <br /></td></tr>
+<tr class="separator:afb52b2f43d5deb3e2e244205faa563ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94c78b9b9f27a430dad001b0eb05fef8"><td class="memItemLeft" align="right" valign="top"><a id="a94c78b9b9f27a430dad001b0eb05fef8"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;)=delete</td></tr>
+<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a94c78b9b9f27a430dad001b0eb05fef8">operator=</a> (const <a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a94c78b9b9f27a430dad001b0eb05fef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly forbid copy assignment. <br /></td></tr>
 <tr class="separator:a94c78b9b9f27a430dad001b0eb05fef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7218067681e3e5509f22a481aa69a04"><td class="memItemLeft" align="right" valign="top"><a id="ad7218067681e3e5509f22a481aa69a04"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&amp;other) noexcept</td></tr>
+<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#ad7218067681e3e5509f22a481aa69a04">operator=</a> (<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:ad7218067681e3e5509f22a481aa69a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment. <br /></td></tr>
 <tr class="separator:ad7218067681e3e5509f22a481aa69a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f15e4f84badfdb2520133b645908bb7"><td class="memItemLeft" align="right" valign="top"><a id="a2f15e4f84badfdb2520133b645908bb7"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a2f15e4f84badfdb2520133b645908bb7">SetFilter</a> (int filterMode)</td></tr>
-<tr class="memdesc:a2f15e4f84badfdb2520133b645908bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set texture scaling filter mode. <br /></td></tr>
-<tr class="separator:a2f15e4f84badfdb2520133b645908bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3efcd6e96dc5fa815d4a301432cad0d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a3efcd6e96dc5fa815d4a301432cad0d6">SetFormat</a> (int value)</td></tr>
-<tr class="memdesc:a3efcd6e96dc5fa815d4a301432cad0d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the format value for the object.  <a href="classraylib_1_1_texture.html#a3efcd6e96dc5fa815d4a301432cad0d6">More...</a><br /></td></tr>
-<tr class="separator:a3efcd6e96dc5fa815d4a301432cad0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa535c1944927a0fc706651a2d69b04c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#aa535c1944927a0fc706651a2d69b04c6">SetHeight</a> (int value)</td></tr>
-<tr class="memdesc:aa535c1944927a0fc706651a2d69b04c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the height value for the object.  <a href="classraylib_1_1_texture.html#aa535c1944927a0fc706651a2d69b04c6">More...</a><br /></td></tr>
-<tr class="separator:aa535c1944927a0fc706651a2d69b04c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54089b8fa2ce1a13c0edcd4270990b1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a54089b8fa2ce1a13c0edcd4270990b1f">SetId</a> (unsigned int value)</td></tr>
-<tr class="memdesc:a54089b8fa2ce1a13c0edcd4270990b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the id value for the object.  <a href="classraylib_1_1_texture.html#a54089b8fa2ce1a13c0edcd4270990b1f">More...</a><br /></td></tr>
-<tr class="separator:a54089b8fa2ce1a13c0edcd4270990b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8667f5e1c478cfe06e48a1a98f3c1368"><td class="memItemLeft" align="right" valign="top"><a id="a8667f5e1c478cfe06e48a1a98f3c1368"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a8667f5e1c478cfe06e48a1a98f3c1368">SetMaterial</a> (::<a class="el" href="classraylib_1_1_material.html">Material</a> *material, int mapType=MATERIAL_MAP_NORMAL)</td></tr>
-<tr class="memdesc:a8667f5e1c478cfe06e48a1a98f3c1368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...) <br /></td></tr>
-<tr class="separator:a8667f5e1c478cfe06e48a1a98f3c1368"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79c27ad4ece3058ecc4475acdaf8856a"><td class="memItemLeft" align="right" valign="top"><a id="a79c27ad4ece3058ecc4475acdaf8856a"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>SetMaterial</b> (const ::<a class="el" href="classraylib_1_1_material.html">Material</a> &amp;material, int mapType=MATERIAL_MAP_NORMAL)</td></tr>
-<tr class="separator:a79c27ad4ece3058ecc4475acdaf8856a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a254383891cab574ba50751ad44e42c7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a254383891cab574ba50751ad44e42c7f">SetMipmaps</a> (int value)</td></tr>
-<tr class="memdesc:a254383891cab574ba50751ad44e42c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the mipmaps value for the object.  <a href="classraylib_1_1_texture.html#a254383891cab574ba50751ad44e42c7f">More...</a><br /></td></tr>
-<tr class="separator:a254383891cab574ba50751ad44e42c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae86f9e94bde8583bddc594a0bb3f57c6"><td class="memItemLeft" align="right" valign="top"><a id="ae86f9e94bde8583bddc594a0bb3f57c6"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#ae86f9e94bde8583bddc594a0bb3f57c6">SetShaderValue</a> (const ::<a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;shader, int locIndex)</td></tr>
-<tr class="memdesc:ae86f9e94bde8583bddc594a0bb3f57c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set shader uniform value for texture (sampler2d) <br /></td></tr>
-<tr class="separator:ae86f9e94bde8583bddc594a0bb3f57c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ed08c239b0b53d7ec89c9507514393a"><td class="memItemLeft" align="right" valign="top"><a id="a5ed08c239b0b53d7ec89c9507514393a"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a5ed08c239b0b53d7ec89c9507514393a">SetShapes</a> (const ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> &amp;source)</td></tr>
-<tr class="memdesc:a5ed08c239b0b53d7ec89c9507514393a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set texture and rectangle to be used on shapes drawing. <br /></td></tr>
-<tr class="separator:a5ed08c239b0b53d7ec89c9507514393a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee9315728f4c54b1e950e9b0380a83bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#aee9315728f4c54b1e950e9b0380a83bf">SetWidth</a> (int value)</td></tr>
-<tr class="memdesc:aee9315728f4c54b1e950e9b0380a83bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the width value for the object.  <a href="classraylib_1_1_texture.html#aee9315728f4c54b1e950e9b0380a83bf">More...</a><br /></td></tr>
-<tr class="separator:aee9315728f4c54b1e950e9b0380a83bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29ac6e7037bc2678159760744d4538a4"><td class="memItemLeft" align="right" valign="top"><a id="a29ac6e7037bc2678159760744d4538a4"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a29ac6e7037bc2678159760744d4538a4">SetWrap</a> (int wrapMode)</td></tr>
-<tr class="memdesc:a29ac6e7037bc2678159760744d4538a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set texture wrapping mode. <br /></td></tr>
-<tr class="separator:a29ac6e7037bc2678159760744d4538a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22ab79fcae5acbcb4a6c1f27c519a7ec"><td class="memItemLeft" align="right" valign="top"><a id="a22ab79fcae5acbcb4a6c1f27c519a7ec"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a22ab79fcae5acbcb4a6c1f27c519a7ec">Unload</a> ()</td></tr>
-<tr class="memdesc:a22ab79fcae5acbcb4a6c1f27c519a7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unload texture from GPU memory (VRAM) <br /></td></tr>
-<tr class="separator:a22ab79fcae5acbcb4a6c1f27c519a7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addb5534e675a196513976b21fa80f0a6"><td class="memItemLeft" align="right" valign="top"><a id="addb5534e675a196513976b21fa80f0a6"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#addb5534e675a196513976b21fa80f0a6">Update</a> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> rec, const void *pixels)</td></tr>
-<tr class="memdesc:addb5534e675a196513976b21fa80f0a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update GPU texture rectangle with new data. <br /></td></tr>
-<tr class="separator:addb5534e675a196513976b21fa80f0a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2be6ad3fbbff3141dc274b1b397902c"><td class="memItemLeft" align="right" valign="top"><a id="ad2be6ad3fbbff3141dc274b1b397902c"></a>
-<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#ad2be6ad3fbbff3141dc274b1b397902c">Update</a> (const void *pixels)</td></tr>
-<tr class="memdesc:ad2be6ad3fbbff3141dc274b1b397902c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update GPU texture with new data. <br /></td></tr>
-<tr class="separator:ad2be6ad3fbbff3141dc274b1b397902c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa860ea9d9af3a4a46c3f14a80bb68b35"><td class="memItemLeft" align="right" valign="top"><a id="aa860ea9d9af3a4a46c3f14a80bb68b35"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#aa860ea9d9af3a4a46c3f14a80bb68b35">TextureUnmanaged</a> ()</td></tr>
+<tr class="memdesc:aa860ea9d9af3a4a46c3f14a80bb68b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default texture constructor. <br /></td></tr>
+<tr class="separator:aa860ea9d9af3a4a46c3f14a80bb68b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a849e2c61ee4e0467801d6f50b34038f5"><td class="memItemLeft" align="right" valign="top"><a id="a849e2c61ee4e0467801d6f50b34038f5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TextureUnmanaged</b> (::<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&amp;other)</td></tr>
+<tr class="separator:a849e2c61ee4e0467801d6f50b34038f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeacead4a33d0e00540e171e7bc22d36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#aeeacead4a33d0e00540e171e7bc22d36">TextureUnmanaged</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image)</td></tr>
+<tr class="memdesc:aeeacead4a33d0e00540e171e7bc22d36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture from the given <a class="el" href="classraylib_1_1_image.html" title="Image type, bpp always RGBA (32bit)">Image</a>.  <a href="classraylib_1_1_texture.html#aeeacead4a33d0e00540e171e7bc22d36">More...</a><br /></td></tr>
+<tr class="separator:aeeacead4a33d0e00540e171e7bc22d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a492b656b2131ac680ec81ffdb12f6462"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a492b656b2131ac680ec81ffdb12f6462">TextureUnmanaged</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image, int layout)</td></tr>
+<tr class="memdesc:a492b656b2131ac680ec81ffdb12f6462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load cubemap from image, multiple image cubemap layouts supported.  <a href="classraylib_1_1_texture.html#a492b656b2131ac680ec81ffdb12f6462">More...</a><br /></td></tr>
+<tr class="separator:a492b656b2131ac680ec81ffdb12f6462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb865b1ffcd7263ea2f6e5d12c82bc51"><td class="memItemLeft" align="right" valign="top"><a id="aeb865b1ffcd7263ea2f6e5d12c82bc51"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#aeb865b1ffcd7263ea2f6e5d12c82bc51">TextureUnmanaged</a> (const ::<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;texture)</td></tr>
+<tr class="memdesc:aeb865b1ffcd7263ea2f6e5d12c82bc51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture object based on the given <a class="el" href="classraylib_1_1_texture.html" title="Texture type.">Texture</a> struct data. <br /></td></tr>
+<tr class="separator:aeb865b1ffcd7263ea2f6e5d12c82bc51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6abab33ac55a239296a820a3821091c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#ac6abab33ac55a239296a820a3821091c">TextureUnmanaged</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:ac6abab33ac55a239296a820a3821091c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load texture from file into GPU memory (VRAM)  <a href="classraylib_1_1_texture.html#ac6abab33ac55a239296a820a3821091c">More...</a><br /></td></tr>
+<tr class="separator:ac6abab33ac55a239296a820a3821091c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b3c6a126302ffb5f4109ed2b584644a"><td class="memItemLeft" align="right" valign="top"><a id="a5b3c6a126302ffb5f4109ed2b584644a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture.html#a5b3c6a126302ffb5f4109ed2b584644a">TextureUnmanaged</a> (unsigned int id, int width, int height, int mipmaps=1, int format=PIXELFORMAT_UNCOMPRESSED_R8G8B8A8)</td></tr>
+<tr class="memdesc:a5b3c6a126302ffb5f4109ed2b584644a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move/Create a texture structure manually. <br /></td></tr>
+<tr class="separator:a5b3c6a126302ffb5f4109ed2b584644a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classraylib_1_1_texture_unmanaged"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classraylib_1_1_texture_unmanaged')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classraylib_1_1_texture_unmanaged.html">raylib::TextureUnmanaged</a></td></tr>
+<tr class="memitem:aa860ea9d9af3a4a46c3f14a80bb68b35 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="aa860ea9d9af3a4a46c3f14a80bb68b35"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#aa860ea9d9af3a4a46c3f14a80bb68b35">TextureUnmanaged</a> ()</td></tr>
+<tr class="memdesc:aa860ea9d9af3a4a46c3f14a80bb68b35 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default texture constructor. <br /></td></tr>
+<tr class="separator:aa860ea9d9af3a4a46c3f14a80bb68b35 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a849e2c61ee4e0467801d6f50b34038f5 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a849e2c61ee4e0467801d6f50b34038f5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TextureUnmanaged</b> (::<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;&amp;other)</td></tr>
+<tr class="separator:a849e2c61ee4e0467801d6f50b34038f5 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeacead4a33d0e00540e171e7bc22d36 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#aeeacead4a33d0e00540e171e7bc22d36">TextureUnmanaged</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image)</td></tr>
+<tr class="memdesc:aeeacead4a33d0e00540e171e7bc22d36 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture from the given <a class="el" href="classraylib_1_1_image.html" title="Image type, bpp always RGBA (32bit)">Image</a>.  <a href="classraylib_1_1_texture_unmanaged.html#aeeacead4a33d0e00540e171e7bc22d36">More...</a><br /></td></tr>
+<tr class="separator:aeeacead4a33d0e00540e171e7bc22d36 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a492b656b2131ac680ec81ffdb12f6462 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a492b656b2131ac680ec81ffdb12f6462">TextureUnmanaged</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image, int layout)</td></tr>
+<tr class="memdesc:a492b656b2131ac680ec81ffdb12f6462 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load cubemap from image, multiple image cubemap layouts supported.  <a href="classraylib_1_1_texture_unmanaged.html#a492b656b2131ac680ec81ffdb12f6462">More...</a><br /></td></tr>
+<tr class="separator:a492b656b2131ac680ec81ffdb12f6462 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb865b1ffcd7263ea2f6e5d12c82bc51 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="aeb865b1ffcd7263ea2f6e5d12c82bc51"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#aeb865b1ffcd7263ea2f6e5d12c82bc51">TextureUnmanaged</a> (const ::<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;texture)</td></tr>
+<tr class="memdesc:aeb865b1ffcd7263ea2f6e5d12c82bc51 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture object based on the given <a class="el" href="classraylib_1_1_texture.html" title="Texture type.">Texture</a> struct data. <br /></td></tr>
+<tr class="separator:aeb865b1ffcd7263ea2f6e5d12c82bc51 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6abab33ac55a239296a820a3821091c inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#ac6abab33ac55a239296a820a3821091c">TextureUnmanaged</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:ac6abab33ac55a239296a820a3821091c inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load texture from file into GPU memory (VRAM)  <a href="classraylib_1_1_texture_unmanaged.html#ac6abab33ac55a239296a820a3821091c">More...</a><br /></td></tr>
+<tr class="separator:ac6abab33ac55a239296a820a3821091c inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b3c6a126302ffb5f4109ed2b584644a inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a5b3c6a126302ffb5f4109ed2b584644a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a5b3c6a126302ffb5f4109ed2b584644a">TextureUnmanaged</a> (unsigned int id, int width, int height, int mipmaps=1, int format=PIXELFORMAT_UNCOMPRESSED_R8G8B8A8)</td></tr>
+<tr class="memdesc:a5b3c6a126302ffb5f4109ed2b584644a inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move/Create a texture structure manually. <br /></td></tr>
+<tr class="separator:a5b3c6a126302ffb5f4109ed2b584644a inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dd8468b304980fe8795dd9f9b0d3723 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a4dd8468b304980fe8795dd9f9b0d3723">Draw</a> (::NPatchInfo nPatchInfo, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> destRec, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin={0, 0}, float rotation=0, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:a4dd8468b304980fe8795dd9f9b0d3723 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a texture (or part of it) that stretches or shrinks nicely.  <a href="classraylib_1_1_texture_unmanaged.html#a4dd8468b304980fe8795dd9f9b0d3723">More...</a><br /></td></tr>
+<tr class="separator:a4dd8468b304980fe8795dd9f9b0d3723 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66f30c9f9ed8ed26a215a0306db082a2 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a66f30c9f9ed8ed26a215a0306db082a2">Draw</a> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> sourceRec, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> destRec, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin={0, 0}, float rotation=0, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:a66f30c9f9ed8ed26a215a0306db082a2 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a part of a texture defined by a rectangle with 'pro' parameters.  <a href="classraylib_1_1_texture_unmanaged.html#a66f30c9f9ed8ed26a215a0306db082a2">More...</a><br /></td></tr>
+<tr class="separator:a66f30c9f9ed8ed26a215a0306db082a2 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aab2105c5f0d84b151c20ea8b8c747c inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a8aab2105c5f0d84b151c20ea8b8c747c">Draw</a> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> sourceRec, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position={0, 0}, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:a8aab2105c5f0d84b151c20ea8b8c747c inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a part of a texture defined by a rectangle.  <a href="classraylib_1_1_texture_unmanaged.html#a8aab2105c5f0d84b151c20ea8b8c747c">More...</a><br /></td></tr>
+<tr class="separator:a8aab2105c5f0d84b151c20ea8b8c747c inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92231c7ef084ded4958752c4196b6638 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a92231c7ef084ded4958752c4196b6638">Draw</a> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:a92231c7ef084ded4958752c4196b6638 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a Texture2D with position defined as <a class="el" href="classraylib_1_1_vector2.html" title="Vector2 type.">Vector2</a>.  <a href="classraylib_1_1_texture_unmanaged.html#a92231c7ef084ded4958752c4196b6638">More...</a><br /></td></tr>
+<tr class="separator:a92231c7ef084ded4958752c4196b6638 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1672e3692c36b71128cdfe2ffe718ce inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#aa1672e3692c36b71128cdfe2ffe718ce">Draw</a> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position, float rotation, float scale=1.0f, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:aa1672e3692c36b71128cdfe2ffe718ce inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a Texture2D with extended parameters.  <a href="classraylib_1_1_texture_unmanaged.html#aa1672e3692c36b71128cdfe2ffe718ce">More...</a><br /></td></tr>
+<tr class="separator:aa1672e3692c36b71128cdfe2ffe718ce inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e88bfec194e1798b736659c7cd1d4b inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a92e88bfec194e1798b736659c7cd1d4b">Draw</a> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> tiling, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> offset, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> quad, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:a92e88bfec194e1798b736659c7cd1d4b inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw texture quad with tiling and offset parameters.  <a href="classraylib_1_1_texture_unmanaged.html#a92e88bfec194e1798b736659c7cd1d4b">More...</a><br /></td></tr>
+<tr class="separator:a92e88bfec194e1798b736659c7cd1d4b inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80196875c325e6d7dae9e1f05915e8c2 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a80196875c325e6d7dae9e1f05915e8c2">Draw</a> (int posX=0, int posY=0, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:a80196875c325e6d7dae9e1f05915e8c2 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a Texture2D.  <a href="classraylib_1_1_texture_unmanaged.html#a80196875c325e6d7dae9e1f05915e8c2">More...</a><br /></td></tr>
+<tr class="separator:a80196875c325e6d7dae9e1f05915e8c2 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc9cb6a285acb93aa9c340360cb3f03e inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#afc9cb6a285acb93aa9c340360cb3f03e">DrawBillboard</a> (const ::<a class="el" href="classraylib_1_1_camera3_d.html">Camera</a> &amp;camera, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> source, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> position, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> size, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:afc9cb6a285acb93aa9c340360cb3f03e inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a billboard texture defined by source.  <a href="classraylib_1_1_texture_unmanaged.html#afc9cb6a285acb93aa9c340360cb3f03e">More...</a><br /></td></tr>
+<tr class="separator:afc9cb6a285acb93aa9c340360cb3f03e inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7641f72a49fdf05f417575822dfff92b inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a7641f72a49fdf05f417575822dfff92b">DrawBillboard</a> (const ::<a class="el" href="classraylib_1_1_camera3_d.html">Camera</a> &amp;camera, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> source, <a class="el" href="classraylib_1_1_vector3.html">Vector3</a> position, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> up, <a class="el" href="classraylib_1_1_vector2.html">Vector2</a> size, <a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin, float rotation=0.0f, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:a7641f72a49fdf05f417575822dfff92b inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a billboard texture defined by source and rotation.  <a href="classraylib_1_1_texture_unmanaged.html#a7641f72a49fdf05f417575822dfff92b">More...</a><br /></td></tr>
+<tr class="separator:a7641f72a49fdf05f417575822dfff92b inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a018bc6617635d2022fe966b581ceeae7 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a018bc6617635d2022fe966b581ceeae7">DrawBillboard</a> (const ::<a class="el" href="classraylib_1_1_camera3_d.html">Camera</a> &amp;camera, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> position, float size, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:a018bc6617635d2022fe966b581ceeae7 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a billboard texture.  <a href="classraylib_1_1_texture_unmanaged.html#a018bc6617635d2022fe966b581ceeae7">More...</a><br /></td></tr>
+<tr class="separator:a018bc6617635d2022fe966b581ceeae7 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5610339e89be5a13c0e1cfd018eedd4 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#ac5610339e89be5a13c0e1cfd018eedd4">DrawCube</a> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> source, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> position, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> dimensions, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:ac5610339e89be5a13c0e1cfd018eedd4 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw cube with a region of a texture, with dimensions.  <a href="classraylib_1_1_texture_unmanaged.html#ac5610339e89be5a13c0e1cfd018eedd4">More...</a><br /></td></tr>
+<tr class="separator:ac5610339e89be5a13c0e1cfd018eedd4 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad179ce6ca17df2c800faf0df2c5b18cb inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#ad179ce6ca17df2c800faf0df2c5b18cb">DrawCube</a> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> source, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> position, float width, float height, float length, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:ad179ce6ca17df2c800faf0df2c5b18cb inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw cube with a region of a texture.  <a href="classraylib_1_1_texture_unmanaged.html#ad179ce6ca17df2c800faf0df2c5b18cb">More...</a><br /></td></tr>
+<tr class="separator:ad179ce6ca17df2c800faf0df2c5b18cb inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dcb0ec62404dbb2bed6eb195bbfc059 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a4dcb0ec62404dbb2bed6eb195bbfc059">DrawCube</a> (::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> position, ::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> dimensions, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:a4dcb0ec62404dbb2bed6eb195bbfc059 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw cube textured, with dimensions.  <a href="classraylib_1_1_texture_unmanaged.html#a4dcb0ec62404dbb2bed6eb195bbfc059">More...</a><br /></td></tr>
+<tr class="separator:a4dcb0ec62404dbb2bed6eb195bbfc059 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0777ad1fd9578342c2e45e450c7052f inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#ae0777ad1fd9578342c2e45e450c7052f">DrawCube</a> (::<a class="el" href="classraylib_1_1_vector3.html">Vector3</a> position, float width, float height, float length, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:ae0777ad1fd9578342c2e45e450c7052f inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw cube textured.  <a href="classraylib_1_1_texture_unmanaged.html#ae0777ad1fd9578342c2e45e450c7052f">More...</a><br /></td></tr>
+<tr class="separator:ae0777ad1fd9578342c2e45e450c7052f inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d18c29ef4a1e7471193ac92d67f0167 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a3d18c29ef4a1e7471193ac92d67f0167">DrawPoly</a> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> center, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> *points, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> *texcoords, int pointsCount, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:a3d18c29ef4a1e7471193ac92d67f0167 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a textured polygon.  <a href="classraylib_1_1_texture_unmanaged.html#a3d18c29ef4a1e7471193ac92d67f0167">More...</a><br /></td></tr>
+<tr class="separator:a3d18c29ef4a1e7471193ac92d67f0167 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa1fc9e74514fd239162b490fd3f38d4 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#aaa1fc9e74514fd239162b490fd3f38d4">DrawTiled</a> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> sourceRec, ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> destRec, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin={0, 0}, float rotation=0, float scale=1, <a class="el" href="classraylib_1_1_color.html">Color</a> tint={255, 255, 255, 255}) const</td></tr>
+<tr class="memdesc:aaa1fc9e74514fd239162b490fd3f38d4 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw part of a texture (defined by a rectangle) with rotation and scale tiled into dest.  <a href="classraylib_1_1_texture_unmanaged.html#aaa1fc9e74514fd239162b490fd3f38d4">More...</a><br /></td></tr>
+<tr class="separator:aaa1fc9e74514fd239162b490fd3f38d4 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a36b99ad434f7f6aa831260f9a9a3db inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a8a36b99ad434f7f6aa831260f9a9a3db"></a>
+<a class="el" href="classraylib_1_1_texture_unmanaged.html">TextureUnmanaged</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a8a36b99ad434f7f6aa831260f9a9a3db">GenMipmaps</a> ()</td></tr>
+<tr class="memdesc:a8a36b99ad434f7f6aa831260f9a9a3db inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate GPU mipmaps for a texture. <br /></td></tr>
+<tr class="separator:a8a36b99ad434f7f6aa831260f9a9a3db inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d6348f1aa633559046de27145b44a75 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a2d6348f1aa633559046de27145b44a75"></a>
+inline ::<a class="el" href="classraylib_1_1_image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a2d6348f1aa633559046de27145b44a75">GetData</a> () const</td></tr>
+<tr class="memdesc:a2d6348f1aa633559046de27145b44a75 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get pixel data from GPU texture and return an <a class="el" href="classraylib_1_1_image.html" title="Image type, bpp always RGBA (32bit)">Image</a>. <br /></td></tr>
+<tr class="separator:a2d6348f1aa633559046de27145b44a75 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675f52bdb426855011e5c7febfd679b1 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a675f52bdb426855011e5c7febfd679b1">GetFormat</a> () const</td></tr>
+<tr class="memdesc:a675f52bdb426855011e5c7febfd679b1 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the format value for the object.  <a href="classraylib_1_1_texture_unmanaged.html#a675f52bdb426855011e5c7febfd679b1">More...</a><br /></td></tr>
+<tr class="separator:a675f52bdb426855011e5c7febfd679b1 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cdedece1cb41c7cf93ed49e45245379 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a0cdedece1cb41c7cf93ed49e45245379">GetHeight</a> () const</td></tr>
+<tr class="memdesc:a0cdedece1cb41c7cf93ed49e45245379 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the height value for the object.  <a href="classraylib_1_1_texture_unmanaged.html#a0cdedece1cb41c7cf93ed49e45245379">More...</a><br /></td></tr>
+<tr class="separator:a0cdedece1cb41c7cf93ed49e45245379 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf91be34b2c2500a8930f39a83050922 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#acf91be34b2c2500a8930f39a83050922">GetId</a> () const</td></tr>
+<tr class="memdesc:acf91be34b2c2500a8930f39a83050922 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the id value for the object.  <a href="classraylib_1_1_texture_unmanaged.html#acf91be34b2c2500a8930f39a83050922">More...</a><br /></td></tr>
+<tr class="separator:acf91be34b2c2500a8930f39a83050922 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c7983ed1a0434bd60c744155aacca59 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a5c7983ed1a0434bd60c744155aacca59">GetMipmaps</a> () const</td></tr>
+<tr class="memdesc:a5c7983ed1a0434bd60c744155aacca59 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the mipmaps value for the object.  <a href="classraylib_1_1_texture_unmanaged.html#a5c7983ed1a0434bd60c744155aacca59">More...</a><br /></td></tr>
+<tr class="separator:a5c7983ed1a0434bd60c744155aacca59 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cf82d2185a819bf7e1cbb2ba0d74372 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a8cf82d2185a819bf7e1cbb2ba0d74372"></a>
+inline ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a8cf82d2185a819bf7e1cbb2ba0d74372">GetSize</a> () const</td></tr>
+<tr class="memdesc:a8cf82d2185a819bf7e1cbb2ba0d74372 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the width and height of the texture. <br /></td></tr>
+<tr class="separator:a8cf82d2185a819bf7e1cbb2ba0d74372 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643a62489bf02008ad964f3681a2e0bf inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a643a62489bf02008ad964f3681a2e0bf">GetWidth</a> () const</td></tr>
+<tr class="memdesc:a643a62489bf02008ad964f3681a2e0bf inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the width value for the object.  <a href="classraylib_1_1_texture_unmanaged.html#a643a62489bf02008ad964f3681a2e0bf">More...</a><br /></td></tr>
+<tr class="separator:a643a62489bf02008ad964f3681a2e0bf inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8c0f98228733827086ea0b89db8bf4 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a5d8c0f98228733827086ea0b89db8bf4">IsReady</a> () const</td></tr>
+<tr class="memdesc:a5d8c0f98228733827086ea0b89db8bf4 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether or not the <a class="el" href="classraylib_1_1_texture.html" title="Texture type.">Texture</a> has been loaded and is ready.  <a href="classraylib_1_1_texture_unmanaged.html#a5d8c0f98228733827086ea0b89db8bf4">More...</a><br /></td></tr>
+<tr class="separator:a5d8c0f98228733827086ea0b89db8bf4 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f26bb84c03b611f0c949e60d9aa2fe6 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a5f26bb84c03b611f0c949e60d9aa2fe6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a5f26bb84c03b611f0c949e60d9aa2fe6">Load</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image)</td></tr>
+<tr class="memdesc:a5f26bb84c03b611f0c949e60d9aa2fe6 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load texture from image data. <br /></td></tr>
+<tr class="separator:a5f26bb84c03b611f0c949e60d9aa2fe6 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26e02437029caa0c637053778cc5d38c inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a26e02437029caa0c637053778cc5d38c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a26e02437029caa0c637053778cc5d38c">Load</a> (const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;image, int layoutType)</td></tr>
+<tr class="memdesc:a26e02437029caa0c637053778cc5d38c inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load cubemap from image, multiple image cubemap layouts supported. <br /></td></tr>
+<tr class="separator:a26e02437029caa0c637053778cc5d38c inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a647e7603b96f1d97acb8ef5dafcaf9 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a7a647e7603b96f1d97acb8ef5dafcaf9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a7a647e7603b96f1d97acb8ef5dafcaf9">Load</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a7a647e7603b96f1d97acb8ef5dafcaf9 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load texture from file into GPU memory (VRAM) <br /></td></tr>
+<tr class="separator:a7a647e7603b96f1d97acb8ef5dafcaf9 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ca04773c348cb63e0ae04f1a15ad559 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a4ca04773c348cb63e0ae04f1a15ad559"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a4ca04773c348cb63e0ae04f1a15ad559">operator Image</a> ()</td></tr>
+<tr class="memdesc:a4ca04773c348cb63e0ae04f1a15ad559 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get pixel data from GPU texture and return an <a class="el" href="classraylib_1_1_image.html" title="Image type, bpp always RGBA (32bit)">Image</a>. <br /></td></tr>
+<tr class="separator:a4ca04773c348cb63e0ae04f1a15ad559 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e7fdcf303fb7683109e13dfa534bdf inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a62e7fdcf303fb7683109e13dfa534bdf"></a>
+<a class="el" href="classraylib_1_1_texture_unmanaged.html">TextureUnmanaged</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const ::<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;texture)</td></tr>
+<tr class="separator:a62e7fdcf303fb7683109e13dfa534bdf inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1836f13313db416d34a8c79ef723e47b inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a1836f13313db416d34a8c79ef723e47b"></a>
+<a class="el" href="classraylib_1_1_texture_unmanaged.html">TextureUnmanaged</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a1836f13313db416d34a8c79ef723e47b">SetFilter</a> (int filterMode)</td></tr>
+<tr class="memdesc:a1836f13313db416d34a8c79ef723e47b inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set texture scaling filter mode. <br /></td></tr>
+<tr class="separator:a1836f13313db416d34a8c79ef723e47b inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a438ae75a5d6486360f1d7ff6e7184ca8 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a438ae75a5d6486360f1d7ff6e7184ca8">SetFormat</a> (int value)</td></tr>
+<tr class="memdesc:a438ae75a5d6486360f1d7ff6e7184ca8 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the format value for the object.  <a href="classraylib_1_1_texture_unmanaged.html#a438ae75a5d6486360f1d7ff6e7184ca8">More...</a><br /></td></tr>
+<tr class="separator:a438ae75a5d6486360f1d7ff6e7184ca8 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db8ff20c38b884a2cc28227afb2cf03 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a9db8ff20c38b884a2cc28227afb2cf03">SetHeight</a> (int value)</td></tr>
+<tr class="memdesc:a9db8ff20c38b884a2cc28227afb2cf03 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the height value for the object.  <a href="classraylib_1_1_texture_unmanaged.html#a9db8ff20c38b884a2cc28227afb2cf03">More...</a><br /></td></tr>
+<tr class="separator:a9db8ff20c38b884a2cc28227afb2cf03 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a74b91321e534aedcd8dcc325a774a inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a62a74b91321e534aedcd8dcc325a774a">SetId</a> (unsigned int value)</td></tr>
+<tr class="memdesc:a62a74b91321e534aedcd8dcc325a774a inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the id value for the object.  <a href="classraylib_1_1_texture_unmanaged.html#a62a74b91321e534aedcd8dcc325a774a">More...</a><br /></td></tr>
+<tr class="separator:a62a74b91321e534aedcd8dcc325a774a inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8699a9de805c43779cadf52ac1c3ad49 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a8699a9de805c43779cadf52ac1c3ad49"></a>
+<a class="el" href="classraylib_1_1_texture_unmanaged.html">TextureUnmanaged</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a8699a9de805c43779cadf52ac1c3ad49">SetMaterial</a> (::<a class="el" href="classraylib_1_1_material.html">Material</a> *material, int mapType=MATERIAL_MAP_NORMAL)</td></tr>
+<tr class="memdesc:a8699a9de805c43779cadf52ac1c3ad49 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...) <br /></td></tr>
+<tr class="separator:a8699a9de805c43779cadf52ac1c3ad49 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad56aa888616ab4b6ca80a351d8735a9f inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="ad56aa888616ab4b6ca80a351d8735a9f"></a>
+<a class="el" href="classraylib_1_1_texture_unmanaged.html">TextureUnmanaged</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>SetMaterial</b> (const ::<a class="el" href="classraylib_1_1_material.html">Material</a> &amp;material, int mapType=MATERIAL_MAP_NORMAL)</td></tr>
+<tr class="separator:ad56aa888616ab4b6ca80a351d8735a9f inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabfdcae0f545eab0b2d77586ecea98dc inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#aabfdcae0f545eab0b2d77586ecea98dc">SetMipmaps</a> (int value)</td></tr>
+<tr class="memdesc:aabfdcae0f545eab0b2d77586ecea98dc inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the mipmaps value for the object.  <a href="classraylib_1_1_texture_unmanaged.html#aabfdcae0f545eab0b2d77586ecea98dc">More...</a><br /></td></tr>
+<tr class="separator:aabfdcae0f545eab0b2d77586ecea98dc inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380af0696999a558ea57354d7a3f8e9f inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a380af0696999a558ea57354d7a3f8e9f"></a>
+<a class="el" href="classraylib_1_1_texture_unmanaged.html">TextureUnmanaged</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a380af0696999a558ea57354d7a3f8e9f">SetShaderValue</a> (const ::<a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;shader, int locIndex)</td></tr>
+<tr class="memdesc:a380af0696999a558ea57354d7a3f8e9f inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set shader uniform value for texture (sampler2d) <br /></td></tr>
+<tr class="separator:a380af0696999a558ea57354d7a3f8e9f inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af944a028069f85422065a1c71f0d661d inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="af944a028069f85422065a1c71f0d661d"></a>
+<a class="el" href="classraylib_1_1_texture_unmanaged.html">TextureUnmanaged</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#af944a028069f85422065a1c71f0d661d">SetShapes</a> (const ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> &amp;source)</td></tr>
+<tr class="memdesc:af944a028069f85422065a1c71f0d661d inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set texture and rectangle to be used on shapes drawing. <br /></td></tr>
+<tr class="separator:af944a028069f85422065a1c71f0d661d inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c9c2010a1899678a8702b6fa142810 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a73c9c2010a1899678a8702b6fa142810">SetWidth</a> (int value)</td></tr>
+<tr class="memdesc:a73c9c2010a1899678a8702b6fa142810 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the width value for the object.  <a href="classraylib_1_1_texture_unmanaged.html#a73c9c2010a1899678a8702b6fa142810">More...</a><br /></td></tr>
+<tr class="separator:a73c9c2010a1899678a8702b6fa142810 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2c496550bb53555414dd7f49078ec7b inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="ab2c496550bb53555414dd7f49078ec7b"></a>
+<a class="el" href="classraylib_1_1_texture_unmanaged.html">TextureUnmanaged</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#ab2c496550bb53555414dd7f49078ec7b">SetWrap</a> (int wrapMode)</td></tr>
+<tr class="memdesc:ab2c496550bb53555414dd7f49078ec7b inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set texture wrapping mode. <br /></td></tr>
+<tr class="separator:ab2c496550bb53555414dd7f49078ec7b inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca5cc649538043b521ce77073c367eb3 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="aca5cc649538043b521ce77073c367eb3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#aca5cc649538043b521ce77073c367eb3">Unload</a> ()</td></tr>
+<tr class="memdesc:aca5cc649538043b521ce77073c367eb3 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unload texture from GPU memory (VRAM) <br /></td></tr>
+<tr class="separator:aca5cc649538043b521ce77073c367eb3 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d3924f17f8d9b86bc190e837599348d inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a1d3924f17f8d9b86bc190e837599348d"></a>
+<a class="el" href="classraylib_1_1_texture_unmanaged.html">TextureUnmanaged</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a1d3924f17f8d9b86bc190e837599348d">Update</a> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> rec, const void *pixels)</td></tr>
+<tr class="memdesc:a1d3924f17f8d9b86bc190e837599348d inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update GPU texture rectangle with new data. <br /></td></tr>
+<tr class="separator:a1d3924f17f8d9b86bc190e837599348d inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b4068f21fc78ec60f8d3c696442f300 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="a2b4068f21fc78ec60f8d3c696442f300"></a>
+<a class="el" href="classraylib_1_1_texture_unmanaged.html">TextureUnmanaged</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_texture_unmanaged.html#a2b4068f21fc78ec60f8d3c696442f300">Update</a> (const void *pixels)</td></tr>
+<tr class="memdesc:a2b4068f21fc78ec60f8d3c696442f300 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update GPU texture with new data. <br /></td></tr>
+<tr class="separator:a2b4068f21fc78ec60f8d3c696442f300 inherit pub_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classraylib_1_1_texture_unmanaged"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classraylib_1_1_texture_unmanaged')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classraylib_1_1_texture_unmanaged.html">raylib::TextureUnmanaged</a></td></tr>
+<tr class="memitem:aada92f85160c4d1bbf6942e260f591f4 inherit pro_methods_classraylib_1_1_texture_unmanaged"><td class="memItemLeft" align="right" valign="top"><a id="aada92f85160c4d1bbf6942e260f591f4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ::<a class="el" href="classraylib_1_1_texture.html">Texture</a> &amp;texture)</td></tr>
+<tr class="separator:aada92f85160c4d1bbf6942e260f591f4 inherit pro_methods_classraylib_1_1_texture_unmanaged"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classraylib_1_1_texture.html" title="Texture type.">Texture</a> type. </p>
+<p>The texture will be unloaded on object destruction. Use <a class="el" href="classraylib_1_1_texture_unmanaged.html" title="A Texture that is not managed by the C++ garbage collector.">raylib::TextureUnmanaged</a> if you're looking to not unload.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classraylib_1_1_texture_unmanaged.html" title="A Texture that is not managed by the C++ garbage collector.">raylib::TextureUnmanaged</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00016">16</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a40ea1411f0b39a78d36fc1a5a08a8fc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40ea1411f0b39a78d36fc1a5a08a8fc3">&#9670;&nbsp;</a></span>Texture() <span class="overload">[1/3]</span></h2>
+<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00014">14</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aeeacead4a33d0e00540e171e7bc22d36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeacead4a33d0e00540e171e7bc22d36">&#9670;&nbsp;</a></span>TextureUnmanaged() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -272,11 +322,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">raylib::Texture::Texture </td>
-          <td>(</td>
-          <td class="paramtype">const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;&#160;</td>
-          <td class="paramname"><em>image</em></td><td>)</td>
-          <td></td>
+          <td class="memname">raylib::TextureUnmanaged::TextureUnmanaged</td>
         </tr>
       </table>
   </td>
@@ -294,14 +340,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00048">48</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="_texture_8hpp_source.html#l00128">Load()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture_unmanaged_8hpp_source.html#l00054">54</a> of file <a class="el" href="_texture_unmanaged_8hpp_source.html">TextureUnmanaged.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a9a125ac253e41ceaee8cecb7de8652da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a125ac253e41ceaee8cecb7de8652da">&#9670;&nbsp;</a></span>Texture() <span class="overload">[2/3]</span></h2>
+<a id="a492b656b2131ac680ec81ffdb12f6462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a492b656b2131ac680ec81ffdb12f6462">&#9670;&nbsp;</a></span>TextureUnmanaged() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,21 +354,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">raylib::Texture::Texture </td>
-          <td>(</td>
-          <td class="paramtype">const ::<a class="el" href="classraylib_1_1_image.html">Image</a> &amp;&#160;</td>
-          <td class="paramname"><em>image</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>layout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">raylib::TextureUnmanaged::TextureUnmanaged</td>
         </tr>
       </table>
   </td>
@@ -343,14 +373,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section see"><dt>See also</dt><dd>LoadTextureCubemap() </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00059">59</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="_texture_8hpp_source.html#l00128">Load()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture_unmanaged_8hpp_source.html#l00065">65</a> of file <a class="el" href="_texture_unmanaged_8hpp_source.html">TextureUnmanaged.hpp</a>.</p>
 
 </div>
 </div>
-<a id="aa2697fd78772ce720f8dab323f9be97a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2697fd78772ce720f8dab323f9be97a">&#9670;&nbsp;</a></span>Texture() <span class="overload">[3/3]</span></h2>
+<a id="ac6abab33ac55a239296a820a3821091c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6abab33ac55a239296a820a3821091c">&#9670;&nbsp;</a></span>TextureUnmanaged() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -359,11 +387,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">raylib::Texture::Texture </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>fileName</em></td><td>)</td>
-          <td></td>
+          <td class="memname">raylib::TextureUnmanaged::TextureUnmanaged</td>
         </tr>
       </table>
   </td>
@@ -381,372 +405,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00068">68</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="_texture_8hpp_source.html#l00128">Load()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a98cd3a49f6b5e06137a72b2c4e9bced4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98cd3a49f6b5e06137a72b2c4e9bced4">&#9670;&nbsp;</a></span>GetFormat()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int raylib::Texture::GetFormat </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Retrieves the format value for the object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The format value of the object. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00092">92</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a17837a5f61a14abbba8135273595072f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17837a5f61a14abbba8135273595072f">&#9670;&nbsp;</a></span>GetHeight()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int raylib::Texture::GetHeight </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Retrieves the height value for the object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The height value of the object. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00090">90</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aee47a39e0b5026f7e0e546d982a9c298"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee47a39e0b5026f7e0e546d982a9c298">&#9670;&nbsp;</a></span>GetId()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int raylib::Texture::GetId </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Retrieves the id value for the object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The id value of the object. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00088">88</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a221e1324dcca1092597692d6c71f3711"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a221e1324dcca1092597692d6c71f3711">&#9670;&nbsp;</a></span>GetMipmaps()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int raylib::Texture::GetMipmaps </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Retrieves the mipmaps value for the object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The mipmaps value of the object. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00091">91</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ab6f4693f5c6ed1f1bc75b264ad83fecc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6f4693f5c6ed1f1bc75b264ad83fecc">&#9670;&nbsp;</a></span>GetWidth()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int raylib::Texture::GetWidth </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Retrieves the width value for the object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The width value of the object. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00089">89</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a5fcfffa4d64f8887ecb7590ad29bff92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fcfffa4d64f8887ecb7590ad29bff92">&#9670;&nbsp;</a></span>IsReady()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool raylib::Texture::IsReady </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Determines whether or not the <a class="el" href="classraylib_1_1_texture.html" title="Texture type.">Texture</a> has been loaded and is ready. </p>
-<dl class="section return"><dt>Returns</dt><dd>True or false depending on whether the <a class="el" href="classraylib_1_1_texture.html" title="Texture type.">Texture</a> has data. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00343">343</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_texture_8hpp_source.html#l00128">Load()</a>.</p>
-
-</div>
-</div>
-<a id="a3efcd6e96dc5fa815d4a301432cad0d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3efcd6e96dc5fa815d4a301432cad0d6">&#9670;&nbsp;</a></span>SetFormat()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void raylib::Texture::SetFormat </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the format value for the object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of which to set format to. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00092">92</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aa535c1944927a0fc706651a2d69b04c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa535c1944927a0fc706651a2d69b04c6">&#9670;&nbsp;</a></span>SetHeight()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void raylib::Texture::SetHeight </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the height value for the object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of which to set height to. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00090">90</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a54089b8fa2ce1a13c0edcd4270990b1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54089b8fa2ce1a13c0edcd4270990b1f">&#9670;&nbsp;</a></span>SetId()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void raylib::Texture::SetId </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the id value for the object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of which to set id to. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00088">88</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a254383891cab574ba50751ad44e42c7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a254383891cab574ba50751ad44e42c7f">&#9670;&nbsp;</a></span>SetMipmaps()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void raylib::Texture::SetMipmaps </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the mipmaps value for the object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of which to set mipmaps to. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00091">91</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aee9315728f4c54b1e950e9b0380a83bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee9315728f4c54b1e950e9b0380a83bf">&#9670;&nbsp;</a></span>SetWidth()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void raylib::Texture::SetWidth </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the width value for the object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of which to set width to. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_texture_8hpp_source.html#l00089">89</a> of file <a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture_unmanaged_8hpp_source.html#l00074">74</a> of file <a class="el" href="_texture_unmanaged_8hpp_source.html">TextureUnmanaged.hpp</a>.</p>
 
 </div>
 </div>

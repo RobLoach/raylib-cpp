@@ -129,15 +129,21 @@ class Color : public ::Color {
         ::DrawLine(startPosX, startPosY, endPosX, endPosY, *this);
     }
 
+    /**
+     * Draw a line using Vector points
+     */
     inline void DrawLine(::Vector2 startPos, ::Vector2 endPos) const {
         ::DrawLineV(startPos, endPos, *this);
     }
 
+    /**
+     * Draw a line using Vector points, with a given thickness
+     */
     inline void DrawLine(::Vector2 startPos, ::Vector2 endPos, float thick) const {
         ::DrawLineEx(startPos, endPos, thick, *this);
     }
 
-    inline void DrawLineBezier(::Vector2 startPos, ::Vector2 endPos, float thick) const {
+    inline void DrawLineBezier(::Vector2 startPos, ::Vector2 endPos, float thick = 1.0f) const {
         ::DrawLineBezier(startPos, endPos, thick, *this);
     }
 
@@ -145,7 +151,7 @@ class Color : public ::Color {
         ::DrawLineStrip(points, numPoints, *this);
     }
 
-    inline void DrawText(const std::string& text, int posX, int posY, int fontSize) const {
+    inline void DrawText(const std::string& text, int posX = 0, int posY = 0, int fontSize = 10.0f) const {
         ::DrawText(text.c_str(), posX, posY, fontSize, *this);
     }
 

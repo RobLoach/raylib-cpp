@@ -22,8 +22,8 @@ class Vector4 : public ::Vector4 {
     Vector4(float x, float y, float z) : ::Vector4{x, y, z, 0} {}
     Vector4(float x, float y) : ::Vector4{x, y, 0, 0} {}
     Vector4(float x) : ::Vector4{x, 0, 0, 0} {}
-    Vector4() {}
-    Vector4(::Rectangle rect) : ::Vector4{rect.x, rect.y, rect.width, rect.height} {}
+    Vector4() : ::Vector4{0, 0, 0, 0} {}
+    Vector4(::Rectangle rectangle) : ::Vector4{rectangle.x, rectangle.y, rectangle.width, rectangle.height} {}
 
     Vector4(::Color color) {
         set(ColorNormalize(color));

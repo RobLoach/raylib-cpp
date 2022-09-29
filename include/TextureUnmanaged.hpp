@@ -400,7 +400,7 @@ class TextureUnmanaged : public ::Texture {
     }
 };
 
-// Create the Texture aliases.
+// Create the TextureUnmanaged aliases.
 typedef TextureUnmanaged Texture2DUnmanaged;
 typedef TextureUnmanaged TextureCubemapUnmanaged;
 

@@ -113,7 +113,7 @@ class Rectangle : public ::Rectangle {
         return ::CheckCollisionCircleRec(center, radius, *this);
     }
 
-    inline ::Vector2 GetSize() {
+    inline Vector2 GetSize() {
         return {width, height};
     }
 
@@ -132,7 +132,7 @@ class Rectangle : public ::Rectangle {
         return *this;
     }
 
-    inline ::Vector2 GetPosition() {
+    inline Vector2 GetPosition() {
         return {x, y};
     }
 
