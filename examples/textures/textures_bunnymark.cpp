@@ -9,15 +9,13 @@
 *
 ********************************************************************************************/
 
-#include "raylib-cpp.hpp"
+#include <list>
 
-#define MAX_BUNNIES       100000    // 100K bunnies limit
+#include "raylib-cpp.hpp"
 
 // This is the maximum amount of elements (quads) per batch
 // NOTE: This value is defined in [rlgl] module and can be changed there
 #define MAX_BATCH_ELEMENTS  8192
-
-#include <vector>
 
 class Bunny {
  public:
@@ -58,7 +56,7 @@ int main(void)
     // Load bunny texture
     raylib::Texture2D texBunny("resources/wabbit_alpha.png");
 
-    std::vector<Bunny> bunnies;
+    std::list<Bunny> bunnies;
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
@@ -67,15 +65,10 @@ int main(void)
     while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
-        if (IsMouseButtonDown(MOUSE_LEFT_BUTTON))
-        {
+        if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
             // Create more bunnies
-            for (int i = 0; i < 100; i++)
-            {
-                if (bunnies.size() < MAX_BUNNIES)
-                {
-                    bunnies.emplace_back();
-                }
+            for (int i = 0; i < 100; i++) {
+                bunnies.emplace_back();
             }
         }
 
@@ -92,14 +85,14 @@ int main(void)
         {
             window.ClearBackground(RAYWHITE);
 
-            for (Bunny& bunny: bunnies) {
+            for (Bunny& bunny : bunnies) {
                 // NOTE: When internal batch buffer limit is reached (MAX_BATCH_ELEMENTS),
                 // a draw call is launched and buffer starts being filled again;
                 // before issuing a draw call, updated vertex data from internal CPU buffer is send to GPU...
                 // Process of sending data is costly and it could happen that GPU data has not been completely
                 // processed for drawing while new data is tried to be sent (updating current in-use buffers)
                 // it could generates a stall and consequently a frame drop, limiting the number of drawn bunnies
-                texBunny.Draw(bunny.position.x, bunny.position.y, bunny.color);
+                texBunny.Draw(bunny.position, bunny.color);
             }
 
             DrawRectangle(0, 0, screenWidth, 40, BLACK);
