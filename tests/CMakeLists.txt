@@ -13,6 +13,7 @@ endif()
 target_link_libraries(raylib_cpp_test raylib_cpp raylib)
 
 # Test
+list(APPEND CMAKE_CTEST_ARGUMENTS "--output-on-failure")
 add_test(NAME raylib_cpp_test COMMAND raylib_cpp_test)
 
 # Copy all the resources
