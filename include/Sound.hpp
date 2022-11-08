@@ -95,7 +95,11 @@ class Sound : public ::Sound {
      * Unload sound
      */
     inline void Unload() {
-        ::UnloadSound(*this);
+        // Protect against calling UnloadSound() twice.
+        if (frameCount != 0) {
+            ::UnloadSound(*this);
+            frameCount = 0;
+        }
     }
 
     /**
