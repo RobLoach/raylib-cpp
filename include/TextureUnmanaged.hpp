@@ -132,7 +132,11 @@ class TextureUnmanaged : public ::Texture {
      * Unload texture from GPU memory (VRAM)
      */
     inline void Unload() {
-        ::UnloadTexture(*this);
+        // Protect against calling UnloadTexture() twice.
+        if (id != 0) {
+            ::UnloadTexture(*this);
+            id = 0;
+        }
     }
 
     /**

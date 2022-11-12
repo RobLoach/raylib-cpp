@@ -161,6 +161,7 @@ class Wave : public ::Wave {
      * Unload wave data
      */
     void Unload() {
+        // Protect against calling UnloadWave() twice.
         if (data != nullptr) {
             ::UnloadWave(*this);
             data = nullptr;
