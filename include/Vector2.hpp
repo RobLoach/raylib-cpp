@@ -202,20 +202,6 @@ class Vector2 : public ::Vector2 {
     }
 
     /**
-     * Calculate vector length
-     */
-    inline float Length() const {
-        return Vector2Length(*this);
-    }
-
-    /**
-     * Calculate vector square length
-     */
-    inline float LengthSqr() const {
-        return Vector2LengthSqr(*this);
-    }
-
-    /**
      * Normalize provided vector
      */
     inline Vector2 Normalize() const {
@@ -223,24 +209,10 @@ class Vector2 : public ::Vector2 {
     }
 
     /**
-     * Calculate two vectors dot product
+     * Transforms a Vector2 by a given Matrix
      */
-    inline float DotProduct(const ::Vector2& vector2) const {
-        return Vector2DotProduct(*this, vector2);
-    }
-
-    /**
-     * Calculate angle from two vectors in X-axis
-     */
-    inline float Angle(const ::Vector2& vector2) const {
-        return Vector2Angle(*this, vector2);
-    }
-
-    /**
-     * Calculate distance between two vectors
-     */
-    inline float Distance(const ::Vector2& vector2) const {
-        return Vector2Distance(*this, vector2);
+    inline Vector2 Transform(::Matrix mat) {
+        return ::Vector2Transform(*this, mat);
     }
 
     /**
@@ -269,6 +241,76 @@ class Vector2 : public ::Vector2 {
      */
     inline Vector2 MoveTowards(const ::Vector2& target, float maxDistance) const {
         return Vector2MoveTowards(*this, target, maxDistance);
+    }
+
+    /**
+     * Invert the given vector
+     */
+    inline Vector2 Invert() {
+        return ::Vector2Invert(*this);
+    }
+
+    /**
+     * Clamp the components of the vector between
+     */
+    inline Vector2 Clamp(::Vector2 min, ::Vector2 max) {
+        return ::Vector2Clamp(*this, min, max);
+    }
+
+    /**
+     * // Clamp the magnitude of the vector between two min and max values
+     */
+    inline Vector2 Clamp(float min, float max) {
+        return ::Vector2ClampValue(*this, min, max);
+    }
+
+    /**
+     * Check whether two given vectors are almost equal
+     */
+    inline int Equals(::Vector2 q) {
+        return ::Vector2Equals(*this, q);
+    }
+
+    /**
+     * Calculate vector length
+     */
+    inline float Length() const {
+        return Vector2Length(*this);
+    }
+
+    /**
+     * Calculate vector square length
+     */
+    inline float LengthSqr() const {
+        return Vector2LengthSqr(*this);
+    }
+
+    /**
+     * Calculate two vectors dot product
+     */
+    inline float DotProduct(const ::Vector2& vector2) const {
+        return Vector2DotProduct(*this, vector2);
+    }
+
+    /**
+     * Calculate distance between two vectors
+     */
+    inline float Distance(const ::Vector2& vector2) const {
+        return Vector2Distance(*this, vector2);
+    }
+
+    /**
+     * Calculate square distance between two vectors
+     */
+    inline float DistanceSqr(::Vector2 v2) {
+        return ::Vector2DistanceSqr(*this, v2);
+    }
+
+    /**
+     * Calculate angle from two vectors in X-axis
+     */
+    inline float Angle(const ::Vector2& vector2) const {
+        return Vector2Angle(*this, vector2);
     }
 
     /**
