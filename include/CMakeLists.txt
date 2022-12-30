@@ -22,7 +22,6 @@ install(FILES
     ModelAnimation.hpp
     Mouse.hpp
     Music.hpp
-    physac.hpp
     Ray.hpp
     RayCollision.hpp
     RaylibException.hpp
