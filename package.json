@@ -1,0 +1,34 @@
+{
+  "name": "raylib-cpp",
+  "version": "4.2.7",
+  "description": "raylib-cpp: C++ Object-Oriented Wrapper for raylib",
+  "main": "index.js",
+  "private": true,
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "prebuild": "cmake -S . -B build",
+    "build": "cmake --build build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d docs",
+    "predeploy": "npm run docs",
+    "docs": "doxygen projects/Doxygen/Doxyfile",
+    "predocs": "git submodule update --init"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobLoach/raylib-cpp.git"
+  },
+  "author": "Rob Loach (https://robloach.net)",
+  "license": "Zlib",
+  "bugs": {
+    "url": "https://github.com/RobLoach/raylib-cpp/issues"
+  },
+  "homepage": "https://github.com/RobLoach/raylib-cpp#readme",
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
