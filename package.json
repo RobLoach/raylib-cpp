@@ -12,7 +12,8 @@
   "scripts": {
     "prebuild": "cmake -S . -B build",
     "build": "cmake --build build",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "build/tests/raylib_cpp_test",
+    "pretest": "npm run build",
     "deploy": "gh-pages -d docs",
     "predeploy": "npm run docs",
     "docs": "doxygen projects/Doxygen/Doxyfile",
