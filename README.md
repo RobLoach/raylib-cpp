@@ -324,6 +324,12 @@ git submodule update --init
 doxygen projects/Doxygen/Doxyfile
 ```
 
+To publish the documentation to GitHub Pages, use...
+
+```
+npm run deploy
+```
+
 ### Coding Standards
 
 This uses cpplint to adopt coding standards.
