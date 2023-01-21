@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -309,57 +310,48 @@ $(function() {
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        ::DrawCubeWiresV(*<span class="keyword">this</span>, size, color);</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> DrawCubeTexture(</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            const ::Texture2D&amp; texture,</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="keywordtype">float</span> width,</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <span class="keywordtype">float</span> height,</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <span class="keywordtype">float</span> length,</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            ::Color color)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        ::DrawCubeTexture(texture, *<span class="keyword">this</span>, width, height, length, color);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    }</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> DrawSphere(<span class="keywordtype">float</span> radius, ::Color color)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        ::DrawSphere(*<span class="keyword">this</span>, radius, color);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    }</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> DrawSphere(<span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> rings, <span class="keywordtype">int</span> slices, ::Color color)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        ::DrawSphereEx(*<span class="keyword">this</span>, radius, rings, slices, color);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> DrawSphere(<span class="keywordtype">float</span> radius, ::Color color)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        ::DrawSphere(*<span class="keyword">this</span>, radius, color);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> DrawSphere(<span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> rings, <span class="keywordtype">int</span> slices, ::Color color)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        ::DrawSphereEx(*<span class="keyword">this</span>, radius, rings, slices, color);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    }</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> DrawSphereWires(<span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> rings, <span class="keywordtype">int</span> slices, ::Color color)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        ::DrawSphereWires(*<span class="keyword">this</span>, radius, rings, slices, color);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> DrawCylinder(<span class="keywordtype">float</span> radiusTop, <span class="keywordtype">float</span> radiusBottom, <span class="keywordtype">float</span> height,</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordtype">int</span> slices, ::Color color)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        ::DrawCylinder(*<span class="keyword">this</span>, radiusTop, radiusBottom, height, slices, color);</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    }</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> DrawSphereWires(<span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> rings, <span class="keywordtype">int</span> slices, ::Color color)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        ::DrawSphereWires(*<span class="keyword">this</span>, radius, rings, slices, color);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> DrawCylinder(<span class="keywordtype">float</span> radiusTop, <span class="keywordtype">float</span> radiusBottom, <span class="keywordtype">float</span> height,</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            <span class="keywordtype">int</span> slices, ::Color color)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        ::DrawCylinder(*<span class="keyword">this</span>, radiusTop, radiusBottom, height, slices, color);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> DrawCylinderWires(<span class="keywordtype">float</span> radiusTop, <span class="keywordtype">float</span> radiusBottom, <span class="keywordtype">float</span> height,</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="keywordtype">int</span> slices, ::Color color)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        ::DrawCylinderWires(*<span class="keyword">this</span>, radiusTop, radiusBottom, height, slices, color);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> DrawPlane(const ::Vector2&amp; size, ::Color color)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        ::DrawPlane(*<span class="keyword">this</span>, size, color);</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    }</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> DrawCylinderWires(<span class="keywordtype">float</span> radiusTop, <span class="keywordtype">float</span> radiusBottom, <span class="keywordtype">float</span> height,</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordtype">int</span> slices, ::Color color)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        ::DrawCylinderWires(*<span class="keyword">this</span>, radiusTop, radiusBottom, height, slices, color);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> DrawPlane(const ::Vector2&amp; size, ::Color color)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        ::DrawPlane(*<span class="keyword">this</span>, size, color);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">  337</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">CheckCollision</a>(<span class="keywordtype">float</span> radius1, const ::Vector3&amp; center2, <span class="keywordtype">float</span> radius2) {</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">return</span> CheckCollisionSpheres(*<span class="keyword">this</span>, radius1, center2, radius2);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    }</div>
+<div class="line"><a name="l00328"></a><span class="lineno"><a class="line" href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">  328</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">CheckCollision</a>(<span class="keywordtype">float</span> radius1, const ::Vector3&amp; center2, <span class="keywordtype">float</span> radius2) {</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span> CheckCollisionSpheres(*<span class="keyword">this</span>, radius1, center2, radius2);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordtype">void</span> set(const ::Vector3&amp; vec) {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        x = vec.x;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        y = vec.y;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        z = vec.z;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    }</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;};</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;}  <span class="comment">// namespace raylib</span></div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordtype">void</span> set(const ::Vector3&amp; vec) {</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        x = vec.x;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        y = vec.y;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        z = vec.z;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;};</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keyword">using</span> <a class="code" href="classraylib_1_1_vector3.html">RVector3</a> = <a class="code" href="classraylib_1_1_vector3.html">raylib::Vector3</a>;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// RAYLIB_CPP_INCLUDE_VECTOR3_HPP_</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="keyword">using</span> <a class="code" href="classraylib_1_1_vector3.html">RVector3</a> = <a class="code" href="classraylib_1_1_vector3.html">raylib::Vector3</a>;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// RAYLIB_CPP_INCLUDE_VECTOR3_HPP_</span></div>
 <div class="ttc" id="aclassraylib_1_1_color_html"><div class="ttname"><a href="classraylib_1_1_color.html">raylib::Color</a></div><div class="ttdoc">Color type, RGBA (32bit)</div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00014">Color.hpp:14</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_vector3_html"><div class="ttname"><a href="classraylib_1_1_vector3.html">raylib::Vector3</a></div><div class="ttdoc">Vector3 type.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00016">Vector3.hpp:16</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_vector3_html_a085a75924d1635c674f444988bcc7ebb"><div class="ttname"><a href="classraylib_1_1_vector3.html#a085a75924d1635c674f444988bcc7ebb">raylib::Vector3::operator/</a></div><div class="ttdeci">Vector3 operator/(const ::Vector3 &amp;vector3) const</div><div class="ttdoc">Divide vector by vector.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00159">Vector3.hpp:159</a></div></div>
@@ -370,7 +362,7 @@ $(function() {
 <div class="ttc" id="aclassraylib_1_1_vector3_html_a4564e8aa7532966eed679cd730c39c36"><div class="ttname"><a href="classraylib_1_1_vector3.html#a4564e8aa7532966eed679cd730c39c36">raylib::Vector3::operator+</a></div><div class="ttdeci">Vector3 operator+(const ::Vector3 &amp;vector3)</div><div class="ttdoc">Add two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00059">Vector3.hpp:59</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_vector3_html_a475ed42613db507afa6f7fdcec14a25c"><div class="ttname"><a href="classraylib_1_1_vector3.html#a475ed42613db507afa6f7fdcec14a25c">raylib::Vector3::Negate</a></div><div class="ttdeci">Vector3 Negate()</div><div class="ttdoc">Negate provided vector (invert direction)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00092">Vector3.hpp:92</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_vector3_html_a640c5d01ab7d004830de1f7609abfdd2"><div class="ttname"><a href="classraylib_1_1_vector3.html#a640c5d01ab7d004830de1f7609abfdd2">raylib::Vector3::Add</a></div><div class="ttdeci">Vector3 Add(const ::Vector3 &amp;vector3)</div><div class="ttdoc">Add two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00052">Vector3.hpp:52</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html_a7b325f85196b92450b76c3f1925cf205"><div class="ttname"><a href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">raylib::Vector3::CheckCollision</a></div><div class="ttdeci">bool CheckCollision(float radius1, const ::Vector3 &amp;center2, float radius2)</div><div class="ttdoc">Detect collision between two spheres.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00337">Vector3.hpp:337</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector3_html_a7b325f85196b92450b76c3f1925cf205"><div class="ttname"><a href="classraylib_1_1_vector3.html#a7b325f85196b92450b76c3f1925cf205">raylib::Vector3::CheckCollision</a></div><div class="ttdeci">bool CheckCollision(float radius1, const ::Vector3 &amp;center2, float radius2)</div><div class="ttdoc">Detect collision between two spheres.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00328">Vector3.hpp:328</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_vector3_html_a836612125a59668d0654010cacf76e92"><div class="ttname"><a href="classraylib_1_1_vector3.html#a836612125a59668d0654010cacf76e92">raylib::Vector3::Scale</a></div><div class="ttdeci">Vector3 Scale(const float scaler) const</div><div class="ttdoc">Multiply vector by scalar.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00129">Vector3.hpp:129</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_vector3_html_a843267dd14d8a706106dd5258cfa6676"><div class="ttname"><a href="classraylib_1_1_vector3.html#a843267dd14d8a706106dd5258cfa6676">raylib::Vector3::operator-</a></div><div class="ttdeci">Vector3 operator-(const ::Vector3 &amp;vector3)</div><div class="ttdoc">Subtract two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00079">Vector3.hpp:79</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_vector3_html_a8a34da2f9489bb78d4862cdedd14cd5e"><div class="ttname"><a href="classraylib_1_1_vector3.html#a8a34da2f9489bb78d4862cdedd14cd5e">raylib::Vector3::Length</a></div><div class="ttdeci">float Length() const</div><div class="ttdoc">Calculate vector length.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00202">Vector3.hpp:202</a></div></div>
