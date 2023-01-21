@@ -296,15 +296,6 @@ class Vector3 : public ::Vector3 {
         ::DrawCubeWiresV(*this, size, color);
     }
 
-    inline void DrawCubeTexture(
-            const ::Texture2D& texture,
-            float width,
-            float height,
-            float length,
-            ::Color color) const {
-        ::DrawCubeTexture(texture, *this, width, height, length, color);
-    }
-
     inline void DrawSphere(float radius, ::Color color) const {
         ::DrawSphere(*this, radius, color);
     }

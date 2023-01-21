@@ -232,16 +232,6 @@ class TextureUnmanaged : public ::Texture {
     }
 
     /**
-     * Draw texture quad with tiling and offset parameters
-     *
-     * @see ::DrawTextureQuad()
-     */
-    inline void Draw(::Vector2 tiling, ::Vector2 offset, ::Rectangle quad,
-            ::Color tint = {255, 255, 255, 255}) const {
-        ::DrawTextureQuad(*this, tiling, offset, quad, tint);
-    }
-
-    /**
      * Draw a part of a texture defined by a rectangle with 'pro' parameters
      *
      * @see ::DrawTexturePro()
@@ -259,27 +249,6 @@ class TextureUnmanaged : public ::Texture {
     inline void Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin = {0, 0},
             float rotation = 0, ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTextureNPatch(*this, nPatchInfo, destRec, origin, rotation, tint);
-    }
-
-    /**
-     * Draw part of a texture (defined by a rectangle) with rotation and scale tiled into dest.
-     *
-     * @see ::DrawTextureTiled()
-     */
-    inline void DrawTiled(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin = {0, 0},
-            float rotation = 0, float scale = 1, Color tint = {255, 255, 255, 255}) const {
-        ::DrawTextureTiled(*this, sourceRec, destRec, origin, rotation, scale, tint);
-    }
-
-    /**
-     * Draw a textured polygon
-     *
-     * @see ::DrawTexturePoly()
-     */
-    inline void DrawPoly(::Vector2 center, ::Vector2 *points,
-            ::Vector2 *texcoords, int pointsCount,
-            ::Color tint = {255, 255, 255, 255}) const {
-        ::DrawTexturePoly(*this, center, points, texcoords, pointsCount, tint);
     }
 
     /**
@@ -314,46 +283,6 @@ class TextureUnmanaged : public ::Texture {
             ::Vector3 up, Vector2 size, Vector2 origin, float rotation = 0.0f,
             ::Color tint = {255, 255, 255, 255}) const {
         DrawBillboardPro(camera, *this, source, position, up, size, origin, rotation, tint);
-    }
-
-    /**
-     * Draw cube textured
-     *
-     * @see ::DrawCubeTexture()
-     */
-    inline void DrawCube(::Vector3 position, float width, float height, float length,
-            ::Color color = {255, 255, 255, 255}) const {
-        ::DrawCubeTexture(*this, position, width, height, length, color);
-    }
-
-    /**
-     * Draw cube textured, with dimensions
-     *
-     * @see ::DrawCubeTexture()
-     */
-    inline void DrawCube(::Vector3 position, ::Vector3 dimensions,
-            ::Color color = {255, 255, 255, 255}) const {
-        ::DrawCubeTexture(*this, position, dimensions.x, dimensions.y, dimensions.z, color);
-    }
-
-    /**
-     * Draw cube with a region of a texture
-     *
-     * @see ::DrawCubeTextureRec()
-     */
-    inline void DrawCube(::Rectangle source, ::Vector3 position, float width, float height, float length,
-            ::Color color = {255, 255, 255, 255}) const {
-        ::DrawCubeTextureRec(*this, source, position, width, height, length, color);
-    }
-
-    /**
-     * Draw cube with a region of a texture, with dimensions
-     *
-     * @see ::DrawCubeTextureRec()
-     */
-    inline void DrawCube(::Rectangle source, ::Vector3 position, ::Vector3 dimensions,
-            ::Color color = {255, 255, 255, 255}) const {
-        ::DrawCubeTextureRec(*this, source, position, dimensions.x, dimensions.y, dimensions.z, color);
     }
 
     /**
