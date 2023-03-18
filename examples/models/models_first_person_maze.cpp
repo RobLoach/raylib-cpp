@@ -40,8 +40,6 @@ int main(void)
     raylib::Vector3 mapPosition(-16.0f, 0.0f, -8.0f);   // Set model position
     raylib::Vector3 playerPosition(camera.position);    // Set player position
 
-    camera.SetMode(CAMERA_FIRST_PERSON);                // Set camera mode
-
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
@@ -51,7 +49,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         raylib::Vector3 oldCamPos(camera.position);    // Store old camera position
 
-        camera.Update();        // Update camera
+        camera.Update(CAMERA_FIRST_PERSON);        // Update camera
 
         // Check player collision (we simplify to 2D collision detection)
         raylib::Vector2 playerPos(camera.position.x, camera.position.z);

@@ -123,8 +123,8 @@ class RenderTexture : public ::RenderTexture {
     /**
      * Retrieves whether or not the render texture is ready.
      */
-    bool IsReady() const {
-        return id != 0;
+    inline bool IsReady() const {
+        return ::IsRenderTextureReady(*this);
     }
 
  private:

@@ -47,17 +47,17 @@ class Camera2D : public ::Camera2D {
     }
 
     /**
-     * Returns the screen space position for a 3d world space position
-     */
-    inline Vector2 GetWorldToScreen(::Vector2 position) const {
-        return ::GetWorldToScreen2D(position, *this);
-    }
-
-    /**
      * Returns the world space position for a 2d camera screen space position
      */
     inline Vector2 GetScreenToWorld(::Vector2 position) const {
         return ::GetScreenToWorld2D(position, *this);
+    }
+
+    /**
+     * Returns the screen space position for a 3d world space position
+     */
+    inline Vector2 GetWorldToScreen(::Vector2 position) const {
+        return ::GetWorldToScreen2D(position, *this);
     }
 
  private:

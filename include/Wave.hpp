@@ -212,7 +212,7 @@ class Wave : public ::Wave {
      * @return True or false depending on whether the wave data has been loaded.
      */
     inline bool IsReady() const {
-        return data != nullptr;
+        return ::IsWaveReady(*this);
     }
 
  private:

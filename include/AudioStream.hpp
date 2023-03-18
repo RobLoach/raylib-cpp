@@ -195,7 +195,7 @@ class AudioStream : public ::AudioStream {
      * Retrieve whether or not the audio stream is ready.
      */
     bool IsReady() {
-        return channels > 0;
+        return ::IsAudioStreamReady(*this);
     }
 
     /**

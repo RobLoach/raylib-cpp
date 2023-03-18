@@ -207,7 +207,7 @@ class Font : public ::Font {
      * Returns if the font is ready to be used.
      */
     bool IsReady() {
-        return baseSize > 0;
+        return ::IsFontReady(*this);
     }
 
     /**

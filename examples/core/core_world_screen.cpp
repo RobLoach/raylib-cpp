@@ -30,8 +30,6 @@ int main() {
     Vector3 cubePosition;
     Vector2 cubeScreenPosition;
 
-    camera.SetMode(CAMERA_FREE);        // Set a free camera mode
-
     SetTargetFPS(60);                   // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
@@ -39,7 +37,7 @@ int main() {
     while (!window.ShouldClose()) {     // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
-        camera.Update();                // Update camera
+        camera.Update(CAMERA_THIRD_PERSON);                // Update camera
 
         // Calculate cube screen space position (with a little offset to be in top)
         cubeScreenPosition = GetWorldToScreen(Vector3{cubePosition.x, cubePosition.y + 2.5f, cubePosition.z}, camera);

@@ -109,6 +109,13 @@ class Material : public ::Material {
         ::DrawMeshInstanced(mesh, *this, transforms, instances);
     }
 
+    /**
+     * Check if material is ready
+     */
+    inline bool IsReady() {
+        return ::IsMaterialReady(*this);
+    }
+
  private:
     void set(const ::Material& material) {
         shader = material.shader;
