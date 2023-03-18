@@ -213,7 +213,7 @@ $(function() {
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
 <div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_stream.html#add510560554e8b4929ffa47b2d714d1e">  197</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_audio_stream.html#add510560554e8b4929ffa47b2d714d1e">IsReady</a>() {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">return</span> channels &gt; 0;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        return ::IsAudioStreamReady(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_stream.html#a5a5c4cad697bfd65ae5e87843699e7e7">  206</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_audio_stream.html#a5a5c4cad697bfd65ae5e87843699e7e7">Load</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> SampleRate, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> SampleSize, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Channels = 2) {</div>

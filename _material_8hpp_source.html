@@ -162,21 +162,25 @@ $(function() {
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        ::DrawMeshInstanced(mesh, *<span class="keyword">this</span>, transforms, instances);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> set(const ::Material&amp; material) {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        shader = material.shader;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        maps = material.maps;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        params[0] = material.params[0];</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        params[1] = material.params[1];</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        params[2] = material.params[2];</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        params[3] = material.params[3];</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">using</span> <a class="code" href="classraylib_1_1_material.html">RMaterial</a> = <a class="code" href="classraylib_1_1_material.html">raylib::Material</a>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// RAYLIB_CPP_INCLUDE_MATERIAL_HPP_</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classraylib_1_1_material.html#ae9ace1ed9c2a9bccb652cc90ed84547c">  115</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_material.html#ae9ace1ed9c2a9bccb652cc90ed84547c">IsReady</a>() {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        return ::IsMaterialReady(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span> set(const ::Material&amp; material) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        shader = material.shader;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        maps = material.maps;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        params[0] = material.params[0];</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        params[1] = material.params[1];</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        params[2] = material.params[2];</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        params[3] = material.params[3];</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;};</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keyword">using</span> <a class="code" href="classraylib_1_1_material.html">RMaterial</a> = <a class="code" href="classraylib_1_1_material.html">raylib::Material</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// RAYLIB_CPP_INCLUDE_MATERIAL_HPP_</span></div>
 <div class="ttc" id="aclassraylib_1_1_material_html"><div class="ttname"><a href="classraylib_1_1_material.html">raylib::Material</a></div><div class="ttdoc">Material type (generic)</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00014">Material.hpp:14</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_material_html_a563a153517435efba319c750d7bd0379"><div class="ttname"><a href="classraylib_1_1_material.html#a563a153517435efba319c750d7bd0379">raylib::Material::SetTexture</a></div><div class="ttdeci">Material &amp; SetTexture(int mapType, const ::Texture2D &amp;texture)</div><div class="ttdoc">Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00093">Material.hpp:93</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_material_html_a67962efd02fd7f59cb14cda929e599cc"><div class="ttname"><a href="classraylib_1_1_material.html#a67962efd02fd7f59cb14cda929e599cc">raylib::Material::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdoc">Unload material from memory.</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00083">Material.hpp:83</a></div></div>
@@ -184,6 +188,7 @@ $(function() {
 <div class="ttc" id="aclassraylib_1_1_material_html_aa339541c681d718e46dd3ecde1887b52"><div class="ttname"><a href="classraylib_1_1_material.html#aa339541c681d718e46dd3ecde1887b52">raylib::Material::DrawMesh</a></div><div class="ttdeci">void DrawMesh(const ::Mesh &amp;mesh, ::Matrix *transforms, int instances) const</div><div class="ttdoc">Draw multiple mesh instances with material and different transforms.</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00108">Material.hpp:108</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_material_html_ab34a9e08028190db1aad10c9c10859c2"><div class="ttname"><a href="classraylib_1_1_material.html#ab34a9e08028190db1aad10c9c10859c2">raylib::Material::DrawMesh</a></div><div class="ttdeci">void DrawMesh(const ::Mesh &amp;mesh, ::Matrix transform) const</div><div class="ttdoc">Draw a 3d mesh with material and transform.</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00101">Material.hpp:101</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_material_html_ac482f46142b5ecc9eea4206aced73e26"><div class="ttname"><a href="classraylib_1_1_material.html#ac482f46142b5ecc9eea4206aced73e26">raylib::Material::Load</a></div><div class="ttdeci">static std::vector&lt; Material &gt; Load(const std::string &amp;fileName)</div><div class="ttdoc">Load materials from model file.</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00047">Material.hpp:47</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_material_html_ae9ace1ed9c2a9bccb652cc90ed84547c"><div class="ttname"><a href="classraylib_1_1_material.html#ae9ace1ed9c2a9bccb652cc90ed84547c">raylib::Material::IsReady</a></div><div class="ttdeci">bool IsReady()</div><div class="ttdoc">Check if material is ready.</div><div class="ttdef"><b>Definition:</b> <a href="_material_8hpp_source.html#l00115">Material.hpp:115</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_matrix_html"><div class="ttname"><a href="classraylib_1_1_matrix.html">raylib::Matrix</a></div><div class="ttdoc">Matrix type (OpenGL style 4x4 - right handed, column major)</div><div class="ttdef"><b>Definition:</b> <a href="_matrix_8hpp_source.html#l00016">Matrix.hpp:16</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_shader_html"><div class="ttname"><a href="classraylib_1_1_shader.html">raylib::Shader</a></div><div class="ttdoc">Shader type (generic)</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00014">Shader.hpp:14</a></div></div>
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00008">AudioDevice.hpp:8</a></div></div>
