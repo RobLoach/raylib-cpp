@@ -111,14 +111,6 @@ class Model : public ::Model {
     }
 
     /**
-     * Unload model (but not meshes) from memory (RAM and/or VRAM)
-     */
-    inline Model& UnloadKeepMeshes() {
-        ::UnloadModelKeepMeshes(*this);
-        return *this;
-    }
-
-    /**
      * Set material for a mesh
      */
     inline Model& SetMeshMaterial(int meshId, int materialId) {
@@ -201,7 +193,7 @@ class Model : public ::Model {
      * Determines whether or not the Model has data in it.
      */
     bool IsReady() const {
-        return meshCount > 0 || materialCount > 0 || boneCount > 0;
+        return ::IsModelReady(*this);
     }
 
     /**

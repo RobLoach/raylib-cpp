@@ -192,14 +192,6 @@ RLCPPAPI inline void OpenURL(const std::string& url) {
 }
 
 /**
- * Update camera depending on selected mode
- */
-RLCPPAPI inline void UpdateCamera(const ::Camera& camera) {
-    ::Camera* cameraPointer = (::Camera*)&camera;
-    ::UpdateCamera(cameraPointer);
-}
-
-/**
  * Load an image.
  */
 RLCPPAPI inline ::Image LoadImage(const std::string& fileName) {

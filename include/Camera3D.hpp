@@ -67,45 +67,18 @@ class Camera3D : public ::Camera3D {
     }
 
     /**
-     * Set camera mode (multiple camera modes available)
-     */
-    inline Camera3D& SetMode(int mode) {
-        ::SetCameraMode(*this, mode);
-        return *this;
-    }
-
-    /**
-     * Set camera alt key to combine with mouse movement (free camera)
-     */
-    inline Camera3D& SetAltControl(int altKey) {
-        ::SetCameraAltControl(altKey);
-        return *this;
-    }
-
-    /**
-     * Set camera smooth zoom key to combine with mouse (free camera)
-     */
-    inline Camera3D& SetSmoothZoomControl(int szKey) {
-        ::SetCameraSmoothZoomControl(szKey);
-        return *this;
-    }
-
-    /**
-     * Set camera move controls (1st person and 3rd person cameras)
-     */
-    inline Camera3D& SetMoveControls(
-            int frontKey, int backKey,
-            int rightKey, int leftKey,
-            int upKey, int downKey) {
-        ::SetCameraMoveControls(frontKey, backKey, rightKey, leftKey, upKey, downKey);
-        return *this;
-    }
-
-    /**
      * Update camera position for selected mode
      */
-    inline Camera3D& Update() {
-        ::UpdateCamera(this);
+    inline Camera3D& Update(int mode) {
+        ::UpdateCamera(this, mode);
+        return *this;
+    }
+
+    /**
+     * Update camera movement/rotation
+     */
+    inline Camera3D& Update(::Vector3 movement, ::Vector3 rotation, float zoom = 1.0f) {
+        ::UpdateCameraPro(this, movement, rotation, zoom);
         return *this;
     }
 

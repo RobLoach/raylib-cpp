@@ -30,8 +30,6 @@ int main() {
     raylib::Texture2D bill("resources/billboard.png");     // Our texture billboard
     raylib::Vector3 billPosition(0.0f, 2.0f, 0.0f);                // Position where draw billboard
 
-    camera.SetMode(CAMERA_ORBITAL);  // Set an orbital camera mode
-
     SetTargetFPS(60);                       // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
@@ -39,7 +37,7 @@ int main() {
     while (!window.ShouldClose()) {    // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
-        camera.Update();              // Update camera
+        camera.Update(CAMERA_ORBITAL);              // Update camera
         //----------------------------------------------------------------------------------
 
         // Draw
