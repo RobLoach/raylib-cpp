@@ -43,7 +43,7 @@ int main(void)
 
     raylib::Color colors[10] = { 0 };
     for (int i = 0; i < 10; i++) {
-        colors[i] = raylib::Color((unsigned int)GetRandomValue(100, 250), (unsigned int)GetRandomValue(50, 150), (unsigned int)GetRandomValue(10, 100), 255);
+        colors[i] = raylib::Color((unsigned char)GetRandomValue(100, 250), (unsigned char)GetRandomValue(50, 150), (unsigned char)GetRandomValue(10, 100), 255);
     }
 
     window.SetTargetFPS(60);                   // Set our game to run at 60 frames-per-second
@@ -60,7 +60,7 @@ int main(void)
         if (IsKeyPressed(KEY_SPACE))
         {
             // Recalculate random colors for the bars
-            for (int i = 0; i < 10; i++) colors[i] = (Color){ (unsigned int)GetRandomValue(100, 250), (unsigned int)GetRandomValue(50, 150), (unsigned int)GetRandomValue(10, 100), 255 };
+            for (int i = 0; i < 10; i++) colors[i] = (Color){ (unsigned char)GetRandomValue(100, 250), (unsigned char)GetRandomValue(50, 150), (unsigned char)GetRandomValue(10, 100), 255 };
         }
 
         // Update virtual mouse (clamped mouse value behind game screen)
@@ -69,7 +69,7 @@ int main(void)
             (mouse.x - (GetScreenWidth() - (gameScreenWidth*scale))*0.5f)/scale,
             (mouse.y - (GetScreenHeight() - (gameScreenHeight*scale))*0.5f)/scale
         );
-        virtualMouse = virtualMouse.Clamp((Vector2){ 0, 0 }, (Vector2){ (float)gameScreenWidth, (float)gameScreenHeight });
+        virtualMouse = virtualMouse.Clamp(raylib::Vector2::Zero(), raylib::Vector2(gameScreenWidth, gameScreenHeight));
 
         // Apply the same transformation as the virtual mouse to the real mouse (i.e. to work with raygui)
         //SetMouseOffset(-(GetScreenWidth() - (gameScreenWidth*scale))*0.5f, -(GetScreenHeight() - (gameScreenHeight*scale))*0.5f);
@@ -93,9 +93,13 @@ int main(void)
             ClearBackground(BLACK);     // Clear screen background
 
             // Draw render texture to screen, properly scaled
-            target.GetTexture().Draw((Rectangle){ 0.0f, 0.0f, (float)target.texture.width, (float)-target.texture.height },
-                           (Rectangle){ (GetScreenWidth() - ((float)gameScreenWidth*scale))*0.5f, (GetScreenHeight() - ((float)gameScreenHeight*scale))*0.5f,
-                           (float)gameScreenWidth*scale, (float)gameScreenHeight*scale }, (Vector2){ 0, 0 }, 0.0f, WHITE);
+            target.GetTexture().Draw(raylib::Rectangle(0.0f, 0.0f, target.texture.width, -target.texture.height),
+                raylib::Rectangle(
+                    (GetScreenWidth() - (gameScreenWidth*scale))*0.5f,
+                    (GetScreenHeight() - (gameScreenHeight*scale))*0.5f,
+                    gameScreenWidth*scale, gameScreenHeight*scale
+                ),
+                raylib::Vector2::Zero(), 0.0f, WHITE);
         EndDrawing();
         //--------------------------------------------------------------------------------------
     }
