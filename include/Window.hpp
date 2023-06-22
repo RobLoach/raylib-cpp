@@ -27,8 +27,8 @@ class Window {
      *
      * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    Window(int width, int height, const std::string& title = "raylib") {
-        Init(width, height, title);
+    Window(int width, int height, const std::string& title = "raylib", unsigned int flags = 0) {
+        Init(width, height, title, flags);
     }
 
     /**
@@ -43,7 +43,10 @@ class Window {
      *
      * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    inline void Init(int width = 800, int height = 450, const std::string& title = "raylib") {
+    inline void Init(int width = 800, int height = 450, const std::string& title = "raylib", unsigned int flags = 0) {
+        if (flags != 0) {
+            SetConfigFlags(flags);
+        }
         ::InitWindow(width, height, title.c_str());
         if (!::IsWindowReady()) {
             throw RaylibException("Failed to create Window");
@@ -400,6 +403,10 @@ class Window {
      */
     inline static bool IsReady() {
         return ::IsWindowReady();
+    }
+
+    inline void SetConfigFlags(unsigned int flags) {
+        ::SetConfigFlags(flags);
     }
 };
 }  // namespace raylib
