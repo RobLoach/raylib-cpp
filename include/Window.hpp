@@ -25,10 +25,18 @@ class Window {
     /**
      * Initialize window and OpenGL context.
      *
+     * @param width The width of the window.
+     * @param height The height of the window.
+     * @param title The desired title of the window.
+     * @param flags The ConfigFlags to set prior to initializing the window. See SetConfigFlags for more details.
+     *
+     * @see ::SetConfigFlags()
+     * @see ConfigFlags
+     *
      * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    Window(int width, int height, const std::string& title = "raylib") {
-        Init(width, height, title);
+    Window(int width, int height, const std::string& title = "raylib", unsigned int flags = 0) {
+        Init(width, height, title, flags);
     }
 
     /**
@@ -41,9 +49,20 @@ class Window {
     /**
      * Initializes the window.
      *
+     * @param width The width of the window.
+     * @param height The height of the window.
+     * @param title The desired title of the window.
+     * @param flags The ConfigFlags to set prior to initializing the window. See SetConfigFlags for more details.
+     *
+     * @see ::SetConfigFlags()
+     * @see ConfigFlags
+     *
      * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    inline void Init(int width = 800, int height = 450, const std::string& title = "raylib") {
+    inline void Init(int width = 800, int height = 450, const std::string& title = "raylib", unsigned int flags = 0) {
+        if (flags != 0) {
+            ::SetConfigFlags(flags);
+        }
         ::InitWindow(width, height, title.c_str());
         if (!::IsWindowReady()) {
             throw RaylibException("Failed to create Window");
@@ -400,6 +419,17 @@ class Window {
      */
     inline static bool IsReady() {
         return ::IsWindowReady();
+    }
+
+    /**
+     * Sets the configuration flags for raylib.
+     *
+     * @param flags The ConfigFlags to apply to the configuration.
+     *
+     * @see ::SetConfigFlags
+     */
+    inline void SetConfigFlags(unsigned int flags) {
+        ::SetConfigFlags(flags);
     }
 };
 }  // namespace raylib
