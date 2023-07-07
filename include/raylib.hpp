@@ -18,6 +18,10 @@ extern "C" {
 #error "raylib-cpp requires at least raylib 4.5.0"
 #endif
 
+#if RAYLIB_VERSION_MINOR > 5
+#error "raylib-cpp targets raylib 4.5. Use the `next` branch for the next version of raylib."
+#endif
+
 #ifdef __cplusplus
 }
 #endif
