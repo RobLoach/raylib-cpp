@@ -15,7 +15,7 @@ if (NOT raylib_FOUND)
         FetchContent_Declare(
         raylib
         GIT_REPOSITORY https://github.com/raysan5/raylib.git
-        GIT_TAG 5e1a81555ca130e2c6544add0e2391a8763e7e2a
+        GIT_TAG 334e96d470c5cb09d154e1c849d04adb721a7a8c
     )
     FetchContent_GetProperties(raylib)
     if (NOT raylib_POPULATED) # Have we downloaded raylib yet?

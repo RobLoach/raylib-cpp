@@ -223,6 +223,14 @@ class Window {
     }
 
     /**
+     * Set icon for window (multiple images, RGBA 32bit, only PLATFORM_DESKTOP)
+     */
+    inline Window& SetIcons(Image* images, int count) {
+        ::SetWindowIcons(images, count);
+        return *this;
+    }
+
+    /**
      * Set title for window
      */
     inline Window& SetTitle(const std::string& title) {
@@ -282,6 +290,14 @@ class Window {
      */
     inline Window& SetOpacity(float opacity) {
         ::SetWindowOpacity(opacity);
+        return *this;
+    }
+
+    /**
+     * Set window focused (only PLATFORM_DESKTOP)
+     */
+    inline Window& SetFocused() {
+        ::SetWindowFocused();
         return *this;
     }
 

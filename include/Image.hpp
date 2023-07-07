@@ -299,6 +299,13 @@ class Image : public ::Image {
     }
 
     /**
+     * Export image to memory buffer
+     */
+    inline unsigned char* ExportToMemory(const char *fileType, int *fileSize) {
+        return ::ExportImageToMemory(*this, fileType, fileSize);
+    }
+
+    /**
      * Export image as code file defining an array of bytes, returns true on success
      *
      * @throws raylib::RaylibException Thrown if the image failed to load from the file.
@@ -474,6 +481,14 @@ class Image : public ::Image {
      */
     inline Image& FlipHorizontal() {
         ::ImageFlipHorizontal(this);
+        return *this;
+    }
+
+    /**
+     * Rotate image by input angle in degrees (-359 to 359)
+     */
+    inline Image& Rotate(int degrees) {
+        ::ImageRotate(this, degrees);
         return *this;
     }
 
