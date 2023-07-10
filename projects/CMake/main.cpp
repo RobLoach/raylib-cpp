@@ -71,7 +71,7 @@ void UpdateDrawFrame(void)
 
         ClearBackground(RAYWHITE);
 
-        DrawText("Congrats! You created your first raylib-cpp window!", 190, 200, 20, LIGHTGRAY);
+        DrawText("Congrats! You created your first raylib-cpp window!", 160, 200, 20, LIGHTGRAY);
 
     EndDrawing();
     //----------------------------------------------------------------------------------
