@@ -39,18 +39,18 @@ class Vector4 : public ::Vector4 {
         return *this;
     }
 
-    bool operator==(const ::Vector4& other) {
+    bool operator==(const ::Vector4& other) const {
         return x == other.x
             && y == other.y
             && z == other.z
             && w == other.w;
     }
 
-    bool operator!=(const ::Vector4& other) {
+    bool operator!=(const ::Vector4& other) const {
         return !(*this == other);
     }
 
-    inline ::Rectangle ToRectangle() {
+    inline ::Rectangle ToRectangle() const {
         return {x, y, z, w};
     }
 
@@ -95,14 +95,14 @@ class Vector4 : public ::Vector4 {
         return QuaternionInvert(*this);
     }
 
-    inline void ToAxisAngle(::Vector3 *outAxis, float *outAngle) {
+    inline void ToAxisAngle(::Vector3 *outAxis, float *outAngle) const {
         QuaternionToAxisAngle(*this, outAxis, outAngle);
     }
 
     /**
      * Get the rotation angle and axis for a given quaternion
      */
-    std::pair<Vector3, float> ToAxisAngle() {
+    std::pair<Vector3, float> ToAxisAngle() const {
         Vector3 outAxis;
         float outAngle;
         QuaternionToAxisAngle(*this, &outAxis, &outAngle);
@@ -110,7 +110,7 @@ class Vector4 : public ::Vector4 {
         return std::pair<Vector3, float>(outAxis, outAngle);
     }
 
-    inline Vector4 Transform(const ::Matrix& matrix) {
+    inline Vector4 Transform(const ::Matrix& matrix) const {
         return ::QuaternionTransform(*this, matrix);
     }
 
@@ -138,7 +138,7 @@ class Vector4 : public ::Vector4 {
         return ::QuaternionFromEuler(vector3.x, vector3.y, vector3.z);
     }
 
-    inline Vector3 ToEuler() {
+    inline Vector3 ToEuler() const {
         return ::QuaternionToEuler(*this);
     }
 #endif
@@ -147,7 +147,7 @@ class Vector4 : public ::Vector4 {
         return ::ColorFromNormalized(*this);
     }
 
-    operator Color() {
+    operator Color() const {
         return ColorFromNormalized();
     }
 

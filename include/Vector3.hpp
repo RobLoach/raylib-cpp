@@ -35,13 +35,13 @@ class Vector3 : public ::Vector3 {
         return *this;
     }
 
-    bool operator==(const ::Vector3& other) {
+    bool operator==(const ::Vector3& other) const {
         return x == other.x
             && y == other.y
             && z == other.z;
     }
 
-    bool operator!=(const ::Vector3& other) {
+    bool operator!=(const ::Vector3& other) const {
         return !(*this == other);
     }
 
@@ -49,14 +49,14 @@ class Vector3 : public ::Vector3 {
     /**
      * Add two vectors
      */
-    inline Vector3 Add(const ::Vector3& vector3) {
+    inline Vector3 Add(const ::Vector3& vector3) const {
         return Vector3Add(*this, vector3);
     }
 
     /**
      * Add two vectors
      */
-    inline Vector3 operator+(const ::Vector3& vector3) {
+    inline Vector3 operator+(const ::Vector3& vector3) const {
         return Vector3Add(*this, vector3);
     }
 
@@ -69,14 +69,14 @@ class Vector3 : public ::Vector3 {
     /**
      * Subtract two vectors.
      */
-    inline Vector3 Subtract(const ::Vector3& vector3) {
+    inline Vector3 Subtract(const ::Vector3& vector3) const {
         return Vector3Subtract(*this, vector3);
     }
 
     /**
      * Subtract two vectors.
      */
-    inline Vector3 operator-(const ::Vector3& vector3) {
+    inline Vector3 operator-(const ::Vector3& vector3) const {
         return Vector3Subtract(*this, vector3);
     }
 
@@ -89,14 +89,14 @@ class Vector3 : public ::Vector3 {
     /**
      * Negate provided vector (invert direction)
      */
-    inline Vector3 Negate() {
+    inline Vector3 Negate() const {
         return Vector3Negate(*this);
     }
 
     /**
      * Negate provided vector (invert direction)
      */
-    inline Vector3 operator-() {
+    inline Vector3 operator-() const {
         return Vector3Negate(*this);
     }
 
@@ -207,7 +207,7 @@ class Vector3 : public ::Vector3 {
         return Vector3Normalize(*this);
     }
 
-    inline float DotProduct(const ::Vector3& vector3) {
+    inline float DotProduct(const ::Vector3& vector3) const {
         return Vector3DotProduct(*this, vector3);
     }
 
@@ -235,7 +235,7 @@ class Vector3 : public ::Vector3 {
         return Vector3Transform(*this, matrix);
     }
 
-    inline Vector3 RotateByQuaternion(const ::Quaternion& quaternion) {
+    inline Vector3 RotateByQuaternion(const ::Quaternion& quaternion) const {
         return Vector3RotateByQuaternion(*this, quaternion);
     }
 
@@ -243,15 +243,15 @@ class Vector3 : public ::Vector3 {
         return Vector3Reflect(*this, normal);
     }
 
-    inline Vector3 Min(const ::Vector3& vector3) {
+    inline Vector3 Min(const ::Vector3& vector3) const {
         return Vector3Min(*this, vector3);
     }
 
-    inline Vector3 Max(const ::Vector3& vector3) {
+    inline Vector3 Max(const ::Vector3& vector3) const {
         return Vector3Max(*this, vector3);
     }
 
-    inline Vector3 Barycenter(const ::Vector3& a, const ::Vector3& b, const ::Vector3& c) {
+    inline Vector3 Barycenter(const ::Vector3& a, const ::Vector3& b, const ::Vector3& c) const {
         return Vector3Barycenter(*this, a, b, c);
     }
 
@@ -325,7 +325,7 @@ class Vector3 : public ::Vector3 {
     /**
      * Detect collision between two spheres
      */
-    inline bool CheckCollision(float radius1, const ::Vector3& center2, float radius2) {
+    inline bool CheckCollision(float radius1, const ::Vector3& center2, float radius2) const {
         return CheckCollisionSpheres(*this, radius1, center2, radius2);
     }
 
