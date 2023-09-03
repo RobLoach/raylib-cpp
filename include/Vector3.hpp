@@ -47,6 +47,16 @@ class Vector3 : public ::Vector3 {
         return !(*this == other);
     }
 
+    inline std::string ToString() const {
+        std::ostringstream oss;
+        oss << "Vector3(" << x << ", " << y << ", " << z << ")";
+        return oss.str();
+    }
+
+    inline operator std::string() const {
+        return ToString();
+    }
+
 #ifndef RAYLIB_CPP_NO_MATH
     /**
      * Add two vectors
@@ -329,13 +339,6 @@ class Vector3 : public ::Vector3 {
      */
     inline bool CheckCollision(float radius1, const ::Vector3& center2, float radius2) {
         return CheckCollisionSpheres(*this, radius1, center2, radius2);
-    }
-
-    inline std::string ToString() const
-    {
-        std::ostringstream oss;
-        oss << "Vector3(" << x << ", " << y << ", " << z << ")";
-        return oss.str();
     }
 
  private:

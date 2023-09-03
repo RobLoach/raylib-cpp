@@ -49,6 +49,16 @@ class Vector2 : public ::Vector2 {
         return !(*this == other);
     }
 
+    inline std::string ToString() const {
+        std::ostringstream oss;
+        oss << "Vector2(" << x << ", " << y << ")";
+        return oss.str();
+    }
+
+    inline operator std::string() const {
+        return ToString();
+    }
+
 #ifndef RAYLIB_CPP_NO_MATH
     /**
      * Add two vectors (v1 + v2)
@@ -422,13 +432,6 @@ class Vector2 : public ::Vector2 {
      */
     inline bool CheckCollisionPointLine(::Vector2 p1, ::Vector2 p2, int threshold = 1) {
         return ::CheckCollisionPointLine(*this, p1, p2, threshold);
-    }
-
-    inline std::string ToString() const
-    {
-        std::ostringstream oss;
-        oss << "Vector2(" << x << ", " << y << ")";
-        return oss.str();
     }
 
  private:

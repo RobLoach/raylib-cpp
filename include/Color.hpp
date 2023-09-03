@@ -66,6 +66,16 @@ class Color : public ::Color {
         return ::ColorToInt(*this);
     }
 
+    inline std::string ToString() const {
+        std::ostringstream oss;
+        oss << "Color(" << r << ", " << g << ", " << b << ", " << a << ")";
+        return oss.str();
+    }
+
+    inline operator std::string() const {
+        return ToString();
+    }
+
     /**
      * Returns color with alpha applied, alpha goes from 0.0f to 1.0f
      */
@@ -208,13 +218,6 @@ class Color : public ::Color {
      */
     Color AlphaBlend(::Color dst, ::Color tint) const {
         return ::ColorAlphaBlend(dst, *this, tint);
-    }
-
-    inline std::string ToString() const
-    {
-        std::ostringstream oss;
-        oss << "Color(" << r << ", " << g << ", " << b << ", " << a << ")";
-        return oss.str();
     }
 
     inline static Color LightGray() { return LIGHTGRAY; }

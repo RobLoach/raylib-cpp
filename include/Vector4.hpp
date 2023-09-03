@@ -60,6 +60,16 @@ class Vector4 : public ::Vector4 {
         return {x, y, z, w};
     }
 
+    inline std::string ToString() const {
+        std::ostringstream oss;
+        oss << "Vector4(" << x << ", " << y << ", " << z << ", " << w << ")";
+        return oss.str();
+    }
+
+    inline operator std::string() const {
+        return ToString();
+    }
+
 #ifndef RAYLIB_CPP_NO_MATH
     inline Vector4 Multiply(const ::Vector4& vector4) const {
         return QuaternionMultiply(*this, vector4);
@@ -151,13 +161,6 @@ class Vector4 : public ::Vector4 {
 
     operator Color() {
         return ColorFromNormalized();
-    }
-
-    inline std::string ToString() const
-    {
-        std::ostringstream oss;
-        oss << "Vector4(" << x << ", " << y << ", " << z << ", " << w << ")";
-        return oss.str();
     }
 
  private:
