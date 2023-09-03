@@ -47,6 +47,14 @@ class Vector2 : public ::Vector2 {
         return !(*this == other);
     }
 
+    inline std::string ToString() const {
+        return TextFormat("Vector2(%f, %f)", x, y);
+    }
+
+    inline operator std::string() const {
+        return ToString();
+    }
+
 #ifndef RAYLIB_CPP_NO_MATH
     /**
      * Add two vectors (v1 + v2)

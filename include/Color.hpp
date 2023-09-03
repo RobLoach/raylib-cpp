@@ -65,6 +65,14 @@ class Color : public ::Color {
         return ::ColorToInt(*this);
     }
 
+    inline std::string ToString() const {
+        return TextFormat("Color(%d, %d, %d, %d)", r, g, b, a);
+    }
+
+    inline operator std::string() const {
+        return ToString();
+    }
+
     /**
      * Returns color with alpha applied, alpha goes from 0.0f to 1.0f
      */
