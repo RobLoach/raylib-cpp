@@ -1,7 +1,6 @@
 #ifndef RAYLIB_CPP_INCLUDE_COLOR_HPP_
 #define RAYLIB_CPP_INCLUDE_COLOR_HPP_
 
-#include <sstream>
 #include <string>
 
 #include "./raylib.hpp"
@@ -67,9 +66,7 @@ class Color : public ::Color {
     }
 
     inline std::string ToString() const {
-        std::ostringstream oss;
-        oss << "Color(" << r << ", " << g << ", " << b << ", " << a << ")";
-        return oss.str();
+        return TextFormat("Color(%d, %d, %d, %d)", r, g, b, a);
     }
 
     inline operator std::string() const {

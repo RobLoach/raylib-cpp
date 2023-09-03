@@ -5,8 +5,6 @@
 #include <cmath>
 #endif
 
-#include <sstream>
-
 #include "./raylib.hpp"
 #include "./raymath.hpp"
 #include "./raylib-cpp-utils.hpp"
@@ -50,9 +48,7 @@ class Vector2 : public ::Vector2 {
     }
 
     inline std::string ToString() const {
-        std::ostringstream oss;
-        oss << "Vector2(" << x << ", " << y << ")";
-        return oss.str();
+        return TextFormat("Vector2(%f, %f)", x, y);
     }
 
     inline operator std::string() const {
