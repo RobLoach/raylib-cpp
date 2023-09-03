@@ -6,6 +6,8 @@
 #include <utility>
 #endif
 
+#include <sstream>
+
 #include "./raylib.hpp"
 #include "./raymath.hpp"
 #include "./raylib-cpp-utils.hpp"
@@ -149,6 +151,13 @@ class Vector4 : public ::Vector4 {
 
     operator Color() {
         return ColorFromNormalized();
+    }
+
+    inline std::string ToString() const
+    {
+        std::ostringstream oss;
+        oss << "Vector4(" << x << ", " << y << ", " << z << ", " << w << ")";
+        return oss.str();
     }
 
  private:

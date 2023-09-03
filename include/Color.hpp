@@ -1,6 +1,7 @@
 #ifndef RAYLIB_CPP_INCLUDE_COLOR_HPP_
 #define RAYLIB_CPP_INCLUDE_COLOR_HPP_
 
+#include <sstream>
 #include <string>
 
 #include "./raylib.hpp"
@@ -207,6 +208,13 @@ class Color : public ::Color {
      */
     Color AlphaBlend(::Color dst, ::Color tint) const {
         return ::ColorAlphaBlend(dst, *this, tint);
+    }
+
+    inline std::string ToString() const
+    {
+        std::ostringstream oss;
+        oss << "Color(" << r << ", " << g << ", " << b << ", " << a << ")";
+        return oss.str();
     }
 
     inline static Color LightGray() { return LIGHTGRAY; }

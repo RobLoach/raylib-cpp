@@ -5,6 +5,8 @@
 #include <cmath>
 #endif
 
+#include <sstream>
+
 #include "./raylib.hpp"
 #include "./raymath.hpp"
 #include "./raylib-cpp-utils.hpp"
@@ -420,6 +422,13 @@ class Vector2 : public ::Vector2 {
      */
     inline bool CheckCollisionPointLine(::Vector2 p1, ::Vector2 p2, int threshold = 1) {
         return ::CheckCollisionPointLine(*this, p1, p2, threshold);
+    }
+
+    inline std::string ToString() const
+    {
+        std::ostringstream oss;
+        oss << "Vector2(" << x << ", " << y << ")";
+        return oss.str();
     }
 
  private:
