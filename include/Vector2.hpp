@@ -5,6 +5,8 @@
 #include <cmath>
 #endif
 
+#include <string>
+
 #include "./raylib.hpp"
 #include "./raymath.hpp"
 #include "./raylib-cpp-utils.hpp"
