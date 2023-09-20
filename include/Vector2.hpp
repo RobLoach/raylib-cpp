@@ -287,11 +287,18 @@ class Vector2 : public ::Vector2 {
     inline float Length() const {
         return Vector2Length(*this);
     }
+    inline float Magnitude() const {
+        return Vector2Length(*this);
+    }
+
 
     /**
      * Calculate vector square length
      */
     inline float LengthSqr() const {
+        return Vector2LengthSqr(*this);
+    }
+    inline float MagnitudeSqr() const {
         return Vector2LengthSqr(*this);
     }
 
