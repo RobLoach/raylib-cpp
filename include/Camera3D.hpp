@@ -119,7 +119,7 @@ class Camera3D : public ::Camera3D {
         ::DrawBillboardRec(*this, texture, sourceRec, center, size, tint);
     }
 
- private:
+ protected:
     void set(const ::Camera3D& camera) {
         position = camera.position;
         target = camera.target;

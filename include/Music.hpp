@@ -223,7 +223,7 @@ class Music : public ::Music {
         return ::IsMusicReady(*this);
     }
 
- private:
+ protected:
     void set(const ::Music& music) {
         stream = music.stream;
         frameCount = music.frameCount;

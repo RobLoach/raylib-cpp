@@ -220,7 +220,7 @@ class Model : public ::Model {
         }
     }
 
- private:
+ protected:
     void set(const ::Model& model) {
         transform = model.transform;
 

@@ -432,7 +432,7 @@ class Vector2 : public ::Vector2 {
         return ::CheckCollisionPointLine(*this, p1, p2, threshold);
     }
 
- private:
+ protected:
     void set(const ::Vector2& vec) {
         x = vec.x;
         y = vec.y;

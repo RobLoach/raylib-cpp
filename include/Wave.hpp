@@ -215,7 +215,7 @@ class Wave : public ::Wave {
         return ::IsWaveReady(*this);
     }
 
- private:
+ protected:
     void set(const ::Wave& wave) {
         frameCount = wave.frameCount;
         sampleRate = wave.sampleRate;

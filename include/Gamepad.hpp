@@ -112,7 +112,7 @@ class Gamepad {
         return SetGamepadMappings(mappings.c_str());
     }
 
- private:
+ protected:
     inline void set(int gamepadNumber) {
         number = gamepadNumber;
     }

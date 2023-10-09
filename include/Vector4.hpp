@@ -161,7 +161,7 @@ class Vector4 : public ::Vector4 {
         return ColorFromNormalized();
     }
 
- private:
+ protected:
     void set(const ::Vector4& vec4) {
         x = vec4.x;
         y = vec4.y;

@@ -96,7 +96,7 @@ class ModelAnimation : public ::ModelAnimation {
         return ::IsModelAnimationValid(model, *this);
     }
 
- private:
+ protected:
     void set(const ::ModelAnimation& model) {
         boneCount = model.boneCount;
         frameCount = model.frameCount;

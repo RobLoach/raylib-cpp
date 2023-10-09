@@ -726,7 +726,7 @@ class Image : public ::Image {
         return ::IsImageReady(*this);
     }
 
- private:
+ protected:
     void set(const ::Image& image) {
         data = image.data;
         width = image.width;
