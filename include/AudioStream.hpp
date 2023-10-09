@@ -211,7 +211,7 @@ class AudioStream : public ::AudioStream {
         }
     }
 
- private:
+ protected:
     void set(const ::AudioStream& stream) {
         buffer = stream.buffer;
         processor = stream.processor;

@@ -244,7 +244,7 @@ class Color : public ::Color {
     inline static Color Magenta() { return MAGENTA; }
     inline static Color RayWhite() { return RAYWHITE; }
 
- private:
+ protected:
     void set(const ::Color& color) {
         r = color.r;
         g = color.g;

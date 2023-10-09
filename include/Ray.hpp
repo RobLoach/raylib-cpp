@@ -88,7 +88,7 @@ class Ray : public ::Ray {
         return ::GetMouseRay(::GetMousePosition(), camera);
     }
 
- private:
+ protected:
     inline void set(const ::Ray& ray) {
         position = ray.position;
         direction = ray.direction;

@@ -51,7 +51,7 @@ class VrStereoConfig : public ::VrStereoConfig  {
         ::UnloadVrStereoConfig(*this);
     }
 
- private:
+ protected:
     void set(const ::VrStereoConfig& config) {
         projection[0] = config.projection[0];
         projection[1] = config.projection[1];

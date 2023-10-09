@@ -146,7 +146,7 @@ class Rectangle : public ::Rectangle {
         return SetPosition(position.x, position.y);
     }
 
- private:
+ protected:
     void set(const ::Rectangle& rect) {
         x = rect.x;
         y = rect.y;

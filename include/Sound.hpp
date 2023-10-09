@@ -198,7 +198,7 @@ class Sound : public ::Sound {
         return ::IsSoundReady(*this);
     }
 
- private:
+ protected:
     void set(const ::Sound& sound) {
         frameCount = sound.frameCount;
         stream = sound.stream;

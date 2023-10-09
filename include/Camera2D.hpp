@@ -60,7 +60,7 @@ class Camera2D : public ::Camera2D {
         return ::GetWorldToScreen2D(position, *this);
     }
 
- private:
+ protected:
     void set(const ::Camera2D& camera) {
         offset = camera.offset;
         target = camera.target;

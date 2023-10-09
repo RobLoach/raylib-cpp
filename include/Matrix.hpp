@@ -205,7 +205,7 @@ class Matrix : public ::Matrix {
 
 #endif
 
- private:
+ protected:
     void set(const ::Matrix& mat) {
         m0 = mat.m0;
         m1 = mat.m1;

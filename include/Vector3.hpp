@@ -339,7 +339,7 @@ class Vector3 : public ::Vector3 {
         return CheckCollisionSpheres(*this, radius1, center2, radius2);
     }
 
- private:
+ protected:
     void set(const ::Vector3& vec) {
         x = vec.x;
         y = vec.y;

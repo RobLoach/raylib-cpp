@@ -127,7 +127,7 @@ class RenderTexture : public ::RenderTexture {
         return ::IsRenderTextureReady(*this);
     }
 
- private:
+ protected:
     void set(const ::RenderTexture& renderTexture) {
         id = renderTexture.id;
         texture = renderTexture.texture;

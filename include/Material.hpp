@@ -116,7 +116,7 @@ class Material : public ::Material {
         return ::IsMaterialReady(*this);
     }
 
- private:
+ protected:
     void set(const ::Material& material) {
         shader = material.shader;
         maps = material.maps;

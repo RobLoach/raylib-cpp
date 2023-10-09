@@ -183,7 +183,7 @@ class Shader : public ::Shader {
         return id != 0 && locs != nullptr;
     }
 
- private:
+ protected:
     void set(const ::Shader& shader) {
         id = shader.id;
         locs = shader.locs;
