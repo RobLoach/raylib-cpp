@@ -206,7 +206,7 @@ class Font : public ::Font {
     /**
      * Returns if the font is ready to be used.
      */
-    bool IsReady() {
+    bool IsReady() const {
         return ::IsFontReady(*this);
     }
 
