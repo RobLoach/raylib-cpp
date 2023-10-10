@@ -112,7 +112,7 @@ class Material : public ::Material {
     /**
      * Check if material is ready
      */
-    inline bool IsReady() {
+    inline bool IsReady() const {
         return ::IsMaterialReady(*this);
     }
 

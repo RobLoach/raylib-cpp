@@ -194,7 +194,7 @@ class AudioStream : public ::AudioStream {
     /**
      * Retrieve whether or not the audio stream is ready.
      */
-    bool IsReady() {
+    bool IsReady() const {
         return ::IsAudioStreamReady(*this);
     }
 
