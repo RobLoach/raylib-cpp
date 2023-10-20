@@ -5,10 +5,10 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
-#include "./Mesh.hpp"
 #include "./RaylibException.hpp"
 
 namespace raylib {
+class Mesh;
 /**
  * Model type
  */
