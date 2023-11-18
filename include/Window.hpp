@@ -191,6 +191,14 @@ class Window {
     }
 
     /**
+     * Toggle window state: borderless/windowed
+    */
+    inline Window& ToggleBorderless() {
+        ::ToggleBorderlessWindowed();
+        return *this;
+    }
+
+    /**
      * Set window state: maximized, if resizable (only PLATFORM_DESKTOP)
      */
     inline Window& Maximize() {
@@ -219,6 +227,14 @@ class Window {
      */
     inline Window& SetIcon(const ::Image& image) {
         ::SetWindowIcon(image);
+        return *this;
+    }
+
+    /**
+     * Set icon for window (multiple images, RGBA 32bit, only PLATFORM_DESKTOP)
+     */
+    inline Window& SetIcons(Image* images, int count) {
+        ::SetWindowIcons(images, count);
         return *this;
     }
 
@@ -282,6 +298,14 @@ class Window {
      */
     inline Window& SetOpacity(float opacity) {
         ::SetWindowOpacity(opacity);
+        return *this;
+    }
+
+    /**
+     * Set window focused (only PLATFORM_DESKTOP)
+     */
+    inline Window& SetFocused() {
+        ::SetWindowFocused();
         return *this;
     }
 

@@ -355,17 +355,6 @@ class Vector2 : public ::Vector2 {
     }
 
     /**
-     * Draw line using quadratic bezier curves with a control point.
-     */
-    inline void DrawLineBezierQuad(
-            ::Vector2 endPos,
-            ::Vector2 controlPos,
-            float thick,
-            ::Color color = {0, 0, 0, 255}) const {
-       ::DrawLineBezierQuad(*this, endPos, controlPos, thick, color);
-    }
-
-    /**
      * Draw a color-filled circle (Vector version)
      */
     inline void DrawCircle(float radius, ::Color color = {0, 0, 0, 255}) const {
