@@ -45,6 +45,10 @@ class Shader : public ::Shader {
         return ::LoadShader(vsFileName.c_str(), fsFileName.c_str());
     }
 
+    static ::Shader Load(const char* vsFileName, const char* fsFileName) {
+        return ::LoadShader(vsFileName, fsFileName);
+    }
+
     /**
      * Load a shader from memory.
      *
@@ -52,6 +56,10 @@ class Shader : public ::Shader {
      */
     static ::Shader LoadFromMemory(const std::string& vsCode, const std::string& fsCode) {
         return ::LoadShaderFromMemory(vsCode.c_str(), fsCode.c_str());
+    }
+
+    static ::Shader LoadFromMemory(const char* vsCode, const char* fsCode) {
+        return ::LoadShaderFromMemory(vsCode, fsCode);
     }
 
     GETTERSETTER(unsigned int, Id, id)
@@ -175,7 +183,7 @@ class Shader : public ::Shader {
         return id != 0 && locs != nullptr;
     }
 
- private:
+ protected:
     void set(const ::Shader& shader) {
         id = shader.id;
         locs = shader.locs;

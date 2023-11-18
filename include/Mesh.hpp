@@ -266,7 +266,7 @@ class Mesh : public ::Mesh {
         return ::LoadModelFromMesh(*this);
     }
 
- private:
+ protected:
     void set(const ::Mesh& mesh) {
         vertexCount = mesh.vertexCount;
         triangleCount = mesh.triangleCount;

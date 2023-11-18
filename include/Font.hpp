@@ -206,7 +206,7 @@ class Font : public ::Font {
     /**
      * Returns if the font is ready to be used.
      */
-    bool IsReady() {
+    bool IsReady() const {
         return ::IsFontReady(*this);
     }
 
@@ -287,7 +287,7 @@ class Font : public ::Font {
         return ::ImageTextEx(*this, text.c_str(), fontSize, spacing, tint);
     }
 
- private:
+ protected:
     void set(const ::Font& font) {
         baseSize = font.baseSize;
         glyphCount = font.glyphCount;

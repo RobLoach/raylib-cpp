@@ -5,10 +5,10 @@
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
-#include "./Mesh.hpp"
 #include "./RaylibException.hpp"
 
 namespace raylib {
+class Mesh;
 /**
  * Model type
  */
@@ -220,7 +220,7 @@ class Model : public ::Model {
         }
     }
 
- private:
+ protected:
     void set(const ::Model& model) {
         transform = model.transform;
 

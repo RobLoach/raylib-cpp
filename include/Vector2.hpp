@@ -5,6 +5,8 @@
 #include <cmath>
 #endif
 
+#include <string>
+
 #include "./raylib.hpp"
 #include "./raymath.hpp"
 #include "./raylib-cpp-utils.hpp"
@@ -35,7 +37,7 @@ class Vector2 : public ::Vector2 {
     /**
      * Determine whether or not the vectors are equal.
      */
-    bool operator==(const ::Vector2& other) {
+    bool operator==(const ::Vector2& other) const {
         return x == other.x
             && y == other.y;
     }
@@ -43,8 +45,16 @@ class Vector2 : public ::Vector2 {
     /**
      * Determines if the vectors are not equal.
      */
-    bool operator!=(const ::Vector2& other) {
+    bool operator!=(const ::Vector2& other) const {
         return !(*this == other);
+    }
+
+    inline std::string ToString() const {
+        return TextFormat("Vector2(%f, %f)", x, y);
+    }
+
+    inline operator std::string() const {
+        return ToString();
     }
 
 #ifndef RAYLIB_CPP_NO_MATH
@@ -211,7 +221,7 @@ class Vector2 : public ::Vector2 {
     /**
      * Transforms a Vector2 by a given Matrix
      */
-    inline Vector2 Transform(::Matrix mat) {
+    inline Vector2 Transform(::Matrix mat) const {
         return ::Vector2Transform(*this, mat);
     }
 
@@ -246,28 +256,28 @@ class Vector2 : public ::Vector2 {
     /**
      * Invert the given vector
      */
-    inline Vector2 Invert() {
+    inline Vector2 Invert() const {
         return ::Vector2Invert(*this);
     }
 
     /**
      * Clamp the components of the vector between
      */
-    inline Vector2 Clamp(::Vector2 min, ::Vector2 max) {
+    inline Vector2 Clamp(::Vector2 min, ::Vector2 max) const {
         return ::Vector2Clamp(*this, min, max);
     }
 
     /**
      * // Clamp the magnitude of the vector between two min and max values
      */
-    inline Vector2 Clamp(float min, float max) {
+    inline Vector2 Clamp(float min, float max) const {
         return ::Vector2ClampValue(*this, min, max);
     }
 
     /**
      * Check whether two given vectors are almost equal
      */
-    inline int Equals(::Vector2 q) {
+    inline int Equals(::Vector2 q) const {
         return ::Vector2Equals(*this, q);
     }
 
@@ -302,7 +312,7 @@ class Vector2 : public ::Vector2 {
     /**
      * Calculate square distance between two vectors
      */
-    inline float DistanceSqr(::Vector2 v2) {
+    inline float DistanceSqr(::Vector2 v2) const {
         return ::Vector2DistanceSqr(*this, v2);
     }
 
@@ -418,11 +428,11 @@ class Vector2 : public ::Vector2 {
     /**
      * Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
      */
-    inline bool CheckCollisionPointLine(::Vector2 p1, ::Vector2 p2, int threshold = 1) {
+    inline bool CheckCollisionPointLine(::Vector2 p1, ::Vector2 p2, int threshold = 1) const {
         return ::CheckCollisionPointLine(*this, p1, p2, threshold);
     }
 
- private:
+ protected:
     void set(const ::Vector2& vec) {
         x = vec.x;
         y = vec.y;

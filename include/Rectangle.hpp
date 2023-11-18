@@ -109,11 +109,11 @@ class Rectangle : public ::Rectangle {
     /**
      * Check collision between circle and rectangle
      */
-    inline bool CheckCollision(::Vector2 center, float radius) {
+    inline bool CheckCollision(::Vector2 center, float radius) const {
         return ::CheckCollisionCircleRec(center, radius, *this);
     }
 
-    inline Vector2 GetSize() {
+    inline Vector2 GetSize() const {
         return {width, height};
     }
 
@@ -132,7 +132,7 @@ class Rectangle : public ::Rectangle {
         return *this;
     }
 
-    inline Vector2 GetPosition() {
+    inline Vector2 GetPosition() const {
         return {x, y};
     }
 
@@ -146,7 +146,7 @@ class Rectangle : public ::Rectangle {
         return SetPosition(position.x, position.y);
     }
 
- private:
+ protected:
     void set(const ::Rectangle& rect) {
         x = rect.x;
         y = rect.y;

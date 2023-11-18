@@ -112,11 +112,11 @@ class Material : public ::Material {
     /**
      * Check if material is ready
      */
-    inline bool IsReady() {
+    inline bool IsReady() const {
         return ::IsMaterialReady(*this);
     }
 
- private:
+ protected:
     void set(const ::Material& material) {
         shader = material.shader;
         maps = material.maps;

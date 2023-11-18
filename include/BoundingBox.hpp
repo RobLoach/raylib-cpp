@@ -70,7 +70,7 @@ class BoundingBox : public ::BoundingBox {
         return GetRayCollisionBox(ray, *this);
     }
 
- private:
+ protected:
     void set(const ::BoundingBox& box) {
         min = box.min;
         max = box.max;

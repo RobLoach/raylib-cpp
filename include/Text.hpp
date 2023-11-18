@@ -121,14 +121,14 @@ class Text {
     /**
      * Measure string width for default font
      */
-    inline int Measure() {
+    inline int Measure() const {
         return ::MeasureText(text.c_str(), static_cast<int>(fontSize));
     }
 
     /**
      * Measure string size for Font
      */
-    inline Vector2 MeasureEx() {
+    inline Vector2 MeasureEx() const {
         return ::MeasureTextEx(font, text.c_str(), fontSize, spacing);
     }
 

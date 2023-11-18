@@ -191,6 +191,14 @@ class Window {
     }
 
     /**
+     * Toggle window state: borderless/windowed
+    */
+    inline Window& ToggleBorderless() {
+        ::ToggleBorderlessWindowed();
+        return *this;
+    }
+
+    /**
      * Set window state: maximized, if resizable (only PLATFORM_DESKTOP)
      */
     inline Window& Maximize() {
