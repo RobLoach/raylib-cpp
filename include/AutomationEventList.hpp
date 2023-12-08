@@ -112,7 +112,8 @@ class AutomationEventList : public ::AutomationEventList {
     }
 
     inline void Play() {
-        ::StopAutomationEventRecording();
+        Set();
+        ::PlayAutomationEventRecording();
     }
 
  protected:
