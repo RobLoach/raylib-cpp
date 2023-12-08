@@ -99,6 +99,7 @@ class AutomationEventList : public ::AutomationEventList {
     }
 
     inline void SetBaseFrame(int frame) {
+        Set();
         ::SetAutomationEventBaseFrame(frame);
     }
 
@@ -108,6 +109,7 @@ class AutomationEventList : public ::AutomationEventList {
     }
 
     inline void StopRecording() {
+        Set();
         ::StopAutomationEventRecording();
     }
 
