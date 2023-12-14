@@ -240,10 +240,10 @@ class Vector2 : public ::Vector2 {
     }
 
     /**
-     * Rotate Vector by float in Degrees
+     * Rotate Vector by float in radians
      */
-    inline Vector2 Rotate(float degrees) const {
-        return Vector2Rotate(*this, degrees);
+    inline Vector2 Rotate(float angle) const {
+        return Vector2Rotate(*this, angle);
     }
 
     /**
