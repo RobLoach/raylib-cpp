@@ -113,9 +113,14 @@ class AutomationEventList : public ::AutomationEventList {
         ::StopAutomationEventRecording();
     }
 
-    inline void Play() {
+    inline void Play(int index) {
+        if (index < 0 || index >= this->count) {
+            return;
+        }
+
         Set();
-        ::PlayAutomationEventRecording();
+        AutomationEvent event = this->events[index];
+        ::PlayAutomationEventRecording(event);
     }
 
  protected:
