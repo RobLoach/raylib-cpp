@@ -33,6 +33,7 @@
 
 #include "./AudioDevice.hpp"
 #include "./AudioStream.hpp"
+#include "./AutomationEventList.hpp"
 #include "./BoundingBox.hpp"
 #include "./Camera2D.hpp"
 #include "./Camera3D.hpp"
