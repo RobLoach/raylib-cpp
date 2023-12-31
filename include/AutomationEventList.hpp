@@ -119,8 +119,7 @@ class AutomationEventList : public ::AutomationEventList {
         }
 
         Set();
-        AutomationEvent event = this->events[index];
-        ::PlayAutomationEventRecording(event);
+        ::PlayAutomationEvent(this->events[index]);
     }
 
  protected:
