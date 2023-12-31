@@ -7,6 +7,7 @@ target_include_directories(raylib_cpp INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/)
 install(FILES
     AudioDevice.hpp
     AudioStream.hpp
+    AutomationEventList.hpp
     BoundingBox.hpp
     Camera2D.hpp
     Camera3D.hpp
