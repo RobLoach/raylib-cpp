@@ -94,7 +94,7 @@ class TextureUnmanaged : public ::Texture {
     /**
      * Retrieve the width and height of the texture.
      */
-    inline ::Vector2 GetSize() const {
+    ::Vector2 GetSize() const {
         return {static_cast<float>(width), static_cast<float>(height)};
     }
 
@@ -131,7 +131,7 @@ class TextureUnmanaged : public ::Texture {
     /**
      * Unload texture from GPU memory (VRAM)
      */
-    inline void Unload() {
+    void Unload() {
         // Protect against calling UnloadTexture() twice.
         if (id != 0) {
             ::UnloadTexture(*this);
@@ -142,7 +142,7 @@ class TextureUnmanaged : public ::Texture {
     /**
      * Update GPU texture with new data
      */
-    inline TextureUnmanaged& Update(const void *pixels) {
+    TextureUnmanaged& Update(const void *pixels) {
         ::UpdateTexture(*this, pixels);
         return *this;
     }
@@ -150,7 +150,7 @@ class TextureUnmanaged : public ::Texture {
     /**
      * Update GPU texture rectangle with new data
      */
-    inline TextureUnmanaged& Update(::Rectangle rec, const void *pixels) {
+    TextureUnmanaged& Update(::Rectangle rec, const void *pixels) {
         UpdateTextureRec(*this, rec, pixels);
         return *this;
     }
@@ -158,21 +158,21 @@ class TextureUnmanaged : public ::Texture {
     /**
      * Get pixel data from GPU texture and return an Image
      */
-    inline ::Image GetData() const {
+    ::Image GetData() const {
         return ::LoadImageFromTexture(*this);
     }
 
     /**
      * Get pixel data from GPU texture and return an Image
      */
-    inline operator Image() {
+    operator Image() {
         return GetData();
     }
 
     /**
      * Generate GPU mipmaps for a texture
      */
-    inline TextureUnmanaged& GenMipmaps() {
+    TextureUnmanaged& GenMipmaps() {
         ::GenTextureMipmaps(this);
         return *this;
     }
@@ -180,7 +180,7 @@ class TextureUnmanaged : public ::Texture {
     /**
      * Set texture scaling filter mode
      */
-    inline TextureUnmanaged& SetFilter(int filterMode) {
+    TextureUnmanaged& SetFilter(int filterMode) {
         ::SetTextureFilter(*this, filterMode);
         return *this;
     }
@@ -188,7 +188,7 @@ class TextureUnmanaged : public ::Texture {
     /**
      * Set texture wrapping mode
      */
-    inline TextureUnmanaged& SetWrap(int wrapMode) {
+    TextureUnmanaged& SetWrap(int wrapMode) {
         ::SetTextureWrap(*this, wrapMode);
         return *this;
     }
@@ -198,7 +198,7 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTexture()
      */
-    inline void Draw(int posX = 0, int posY = 0, ::Color tint = {255, 255, 255, 255}) const {
+    void Draw(int posX = 0, int posY = 0, ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTexture(*this, posX, posY, tint);
     }
 
@@ -207,7 +207,7 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTextureV()
      */
-    inline void Draw(::Vector2 position, ::Color tint = {255, 255, 255, 255}) const {
+    void Draw(::Vector2 position, ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTextureV(*this, position, tint);
     }
 
@@ -216,7 +216,7 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTextureEx()
      */
-    inline void Draw(::Vector2 position, float rotation, float scale = 1.0f,
+    void Draw(::Vector2 position, float rotation, float scale = 1.0f,
             ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTextureEx(*this, position, rotation, scale, tint);
     }
@@ -226,7 +226,7 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTextureRec()
      */
-    inline void Draw(::Rectangle sourceRec, ::Vector2 position = {0, 0},
+    void Draw(::Rectangle sourceRec, ::Vector2 position = {0, 0},
             ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTextureRec(*this, sourceRec, position, tint);
     }
@@ -236,7 +236,7 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTexturePro()
      */
-    inline void Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin = {0, 0},
+    void Draw(::Rectangle sourceRec, ::Rectangle destRec, ::Vector2 origin = {0, 0},
             float rotation = 0, ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTexturePro(*this, sourceRec, destRec, origin, rotation, tint);
     }
@@ -246,7 +246,7 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawTextureNPatch()
      */
-    inline void Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin = {0, 0},
+    void Draw(::NPatchInfo nPatchInfo, ::Rectangle destRec, ::Vector2 origin = {0, 0},
             float rotation = 0, ::Color tint = {255, 255, 255, 255}) const {
         ::DrawTextureNPatch(*this, nPatchInfo, destRec, origin, rotation, tint);
     }
@@ -256,7 +256,7 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawBillboard()
      */
-    inline void DrawBillboard(const ::Camera& camera,
+    void DrawBillboard(const ::Camera& camera,
             ::Vector3 position, float size,
             ::Color tint = {255, 255, 255, 255}) const {
         ::DrawBillboard(camera, *this, position, size, tint);
@@ -267,7 +267,7 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawBillboardRec()
      */
-    inline void DrawBillboard(const ::Camera& camera,
+    void DrawBillboard(const ::Camera& camera,
             ::Rectangle source, ::Vector3 position, ::Vector2 size,
             ::Color tint = {255, 255, 255, 255}) const {
         DrawBillboardRec(camera, *this, source, position, size, tint);
@@ -278,7 +278,7 @@ class TextureUnmanaged : public ::Texture {
      *
      * @see ::DrawBillboardPro()
      */
-    inline void DrawBillboard(const ::Camera& camera,
+    void DrawBillboard(const ::Camera& camera,
             ::Rectangle source, Vector3 position,
             ::Vector3 up, Vector2 size, Vector2 origin, float rotation = 0.0f,
             ::Color tint = {255, 255, 255, 255}) const {
@@ -288,12 +288,12 @@ class TextureUnmanaged : public ::Texture {
     /**
      * Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)
      */
-    inline TextureUnmanaged& SetMaterial(::Material *material, int mapType = MATERIAL_MAP_NORMAL) {
+    TextureUnmanaged& SetMaterial(::Material *material, int mapType = MATERIAL_MAP_NORMAL) {
         ::SetMaterialTexture(material, mapType, *this);
         return *this;
     }
 
-    inline TextureUnmanaged& SetMaterial(const ::Material& material, int mapType = MATERIAL_MAP_NORMAL) {
+    TextureUnmanaged& SetMaterial(const ::Material& material, int mapType = MATERIAL_MAP_NORMAL) {
         ::SetMaterialTexture((::Material*)(&material), mapType, *this);
         return *this;
     }
@@ -301,7 +301,7 @@ class TextureUnmanaged : public ::Texture {
     /**
      * Set texture and rectangle to be used on shapes drawing.
      */
-    inline TextureUnmanaged& SetShapes(const ::Rectangle& source) {
+    TextureUnmanaged& SetShapes(const ::Rectangle& source) {
         ::SetShapesTexture(*this, source);
         return *this;
     }
@@ -309,7 +309,7 @@ class TextureUnmanaged : public ::Texture {
     /**
      * Set shader uniform value for texture (sampler2d)
      */
-    inline TextureUnmanaged& SetShaderValue(const ::Shader& shader, int locIndex) {
+    TextureUnmanaged& SetShaderValue(const ::Shader& shader, int locIndex) {
         ::SetShaderValueTexture(shader, locIndex, *this);
         return *this;
     }

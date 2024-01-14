@@ -90,18 +90,18 @@ class Matrix : public ::Matrix {
     /**
      * Returns the trace of the matrix (sum of the values along the diagonal)
      */
-    inline float Trace() const {
+    float Trace() const {
         return ::MatrixTrace(*this);
     }
 
     /**
      * Transposes provided matrix
      */
-    inline Matrix Transpose() const {
+    Matrix Transpose() const {
         return ::MatrixTranspose(*this);
     }
 
-    inline Matrix Invert() const {
+    Matrix Invert() const {
         return ::MatrixInvert(*this);
     }
 
@@ -179,7 +179,7 @@ class Matrix : public ::Matrix {
         return ::MatrixLookAt(eye, target, up);
     }
 
-    inline float16 ToFloatV() const {
+    float16 ToFloatV() const {
         return ::MatrixToFloatV(*this);
     }
 
@@ -190,16 +190,16 @@ class Matrix : public ::Matrix {
     /**
      * Set shader uniform value (matrix 4x4)
      */
-    inline Matrix& SetShaderValue(const ::Shader& shader, int uniformLoc) {
+    Matrix& SetShaderValue(const ::Shader& shader, int uniformLoc) {
         ::SetShaderValueMatrix(shader, uniformLoc, *this);
         return *this;
     }
 
-    inline static Matrix GetCamera(const ::Camera& camera) {
+    static Matrix GetCamera(const ::Camera& camera) {
         return ::GetCameraMatrix(camera);
     }
 
-    inline static Matrix GetCamera(const ::Camera2D& camera) {
+    static Matrix GetCamera(const ::Camera2D& camera) {
         return ::GetCameraMatrix2D(camera);
     }
 

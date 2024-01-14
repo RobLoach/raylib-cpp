@@ -34,7 +34,7 @@ class Rectangle : public ::Rectangle {
         return *this;
     }
 
-    inline ::Vector4 ToVector4() {
+    ::Vector4 ToVector4() {
         return {x, y, width, height};
     }
 
@@ -45,42 +45,42 @@ class Rectangle : public ::Rectangle {
     /**
      * Draw a color-filled rectangle
      */
-    inline void Draw(::Color color) const {
+    void Draw(::Color color) const {
         ::DrawRectangleRec(*this, color);
     }
 
-    inline void Draw(::Vector2 origin, float rotation, ::Color color) const {
+    void Draw(::Vector2 origin, float rotation, ::Color color) const {
         ::DrawRectanglePro(*this, origin, rotation, color);
     }
 
-    inline void DrawGradientV(::Color color1, ::Color color2) const {
+    void DrawGradientV(::Color color1, ::Color color2) const {
         ::DrawRectangleGradientV(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width),
             static_cast<int>(height), color1, color2);
     }
 
-    inline void DrawGradientH(::Color color1, ::Color color2) const {
+    void DrawGradientH(::Color color1, ::Color color2) const {
         ::DrawRectangleGradientH(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width),
             static_cast<int>(height), color1, color2);
     }
 
-    inline void DrawGradient(::Color col1, ::Color col2, ::Color col3, ::Color col4) const {
+    void DrawGradient(::Color col1, ::Color col2, ::Color col3, ::Color col4) const {
         ::DrawRectangleGradientEx(*this, col1, col2, col3, col4);
     }
 
-    inline void DrawLines(::Color color) const {
+    void DrawLines(::Color color) const {
         ::DrawRectangleLines(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width),
             static_cast<int>(height), color);
     }
 
-    inline void DrawLines(::Color color, float lineThick) const {
+    void DrawLines(::Color color, float lineThick) const {
         ::DrawRectangleLinesEx(*this, lineThick, color);
     }
 
-    inline void DrawRounded(float roundness, int segments, ::Color color) const {
+    void DrawRounded(float roundness, int segments, ::Color color) const {
         ::DrawRectangleRounded(*this, roundness, segments, color);
     }
 
-    inline void DrawRoundedLines(float roundness, int segments,
+    void DrawRoundedLines(float roundness, int segments,
             float lineThick, ::Color color) const {
         ::DrawRectangleRoundedLines(*this, roundness, segments, lineThick, color);
     }
@@ -88,61 +88,61 @@ class Rectangle : public ::Rectangle {
     /**
      * Check collision between two rectangles
      */
-    inline bool CheckCollision(::Rectangle rec2) const {
+    bool CheckCollision(::Rectangle rec2) const {
         return ::CheckCollisionRecs(*this, rec2);
     }
 
     /**
      * Get collision rectangle for two rectangles collision
      */
-    inline ::Rectangle GetCollision(::Rectangle rec2) const {
+    ::Rectangle GetCollision(::Rectangle rec2) const {
         return ::GetCollisionRec(*this, rec2);
     }
 
     /**
      * Check if point is inside rectangle
      */
-    inline bool CheckCollision(::Vector2 point) const {
+    bool CheckCollision(::Vector2 point) const {
         return ::CheckCollisionPointRec(point, *this);
     }
 
     /**
      * Check collision between circle and rectangle
      */
-    inline bool CheckCollision(::Vector2 center, float radius) const {
+    bool CheckCollision(::Vector2 center, float radius) const {
         return ::CheckCollisionCircleRec(center, radius, *this);
     }
 
-    inline Vector2 GetSize() const {
+    Vector2 GetSize() const {
         return {width, height};
     }
 
-    inline Rectangle& SetSize(float newWidth, float newHeight) {
+    Rectangle& SetSize(float newWidth, float newHeight) {
         width = newWidth;
         height = newHeight;
         return *this;
     }
 
-    inline Rectangle& SetSize(const ::Vector2& size) {
+    Rectangle& SetSize(const ::Vector2& size) {
         return SetSize(size.x, size.y);
     }
 
-    inline Rectangle& SetShapesTexture(const ::Texture2D& texture) {
+    Rectangle& SetShapesTexture(const ::Texture2D& texture) {
         ::SetShapesTexture(texture, *this);
         return *this;
     }
 
-    inline Vector2 GetPosition() const {
+    Vector2 GetPosition() const {
         return {x, y};
     }
 
-    inline Rectangle& SetPosition(float newX, float newY) {
+    Rectangle& SetPosition(float newX, float newY) {
         x = newX;
         y = newY;
         return *this;
     }
 
-    inline Rectangle& SetPosition(const ::Vector2& position) {
+    Rectangle& SetPosition(const ::Vector2& position) {
         return SetPosition(position.x, position.y);
     }
 

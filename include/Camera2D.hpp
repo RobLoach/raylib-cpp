@@ -19,12 +19,12 @@ class Camera2D : public ::Camera2D {
     Camera2D(::Vector2 offset, ::Vector2 target,
             float rotation = 0.0f, float zoom = 1.0f) : ::Camera2D{offset, target, rotation, zoom} {}
 
-    inline Camera2D& BeginMode() {
+    Camera2D& BeginMode() {
         ::BeginMode2D(*this);
         return *this;
     }
 
-    inline Camera2D& EndMode() {
+    Camera2D& EndMode() {
         ::EndMode2D();
         return *this;
     }
@@ -42,21 +42,21 @@ class Camera2D : public ::Camera2D {
     /**
      * Returns camera 2d transform matrix
      */
-    inline Matrix GetMatrix() const {
+    Matrix GetMatrix() const {
         return ::GetCameraMatrix2D(*this);
     }
 
     /**
      * Returns the world space position for a 2d camera screen space position
      */
-    inline Vector2 GetScreenToWorld(::Vector2 position) const {
+    Vector2 GetScreenToWorld(::Vector2 position) const {
         return ::GetScreenToWorld2D(position, *this);
     }
 
     /**
      * Returns the screen space position for a 3d world space position
      */
-    inline Vector2 GetWorldToScreen(::Vector2 position) const {
+    Vector2 GetWorldToScreen(::Vector2 position) const {
         return ::GetWorldToScreen2D(position, *this);
     }
 

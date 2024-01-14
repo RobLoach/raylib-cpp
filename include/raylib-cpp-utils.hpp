@@ -14,9 +14,9 @@
  */
 #define GETTERSETTER(type, method, name) \
     /** Retrieves the name value for the object. @return The name value of the object. */ \
-    inline type Get##method() const { return name; }  \
+    type Get##method() const { return name; }  \
     /** Sets the name value for the object. @param value The value of which to set name to. */ \
-    inline void Set##method(type value) { name = value; }
+    void Set##method(type value) { name = value; }
 #endif
 
 #endif  // RAYLIB_CPP_INCLUDE_RAYLIB_CPP_UTILS_HPP_

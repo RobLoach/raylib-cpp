@@ -34,14 +34,14 @@ class Gamepad {
     /**
      * Detect if a gamepad is available
      */
-    inline bool IsAvailable() const {
+    bool IsAvailable() const {
         return ::IsGamepadAvailable(number);
     }
 
     /**
      * Detect if a gamepad is available
      */
-    static inline bool IsAvailable(int number) {
+    static bool IsAvailable(int number) {
         return ::IsGamepadAvailable(number);
     }
 
@@ -62,58 +62,58 @@ class Gamepad {
     /**
      * Detect if a gamepad button has been pressed once
      */
-    inline bool IsButtonPressed(int button) const {
+    bool IsButtonPressed(int button) const {
         return ::IsGamepadButtonPressed(number, button);
     }
 
     /**
      * Detect if a gamepad button is being pressed
      */
-    inline bool IsButtonDown(int button) const {
+    bool IsButtonDown(int button) const {
         return ::IsGamepadButtonDown(number, button);
     }
 
     /**
      * Detect if a gamepad button has been released once
      */
-    inline bool IsButtonReleased(int button) const {
+    bool IsButtonReleased(int button) const {
         return ::IsGamepadButtonReleased(number, button);
     }
 
     /**
      * Detect if a gamepad button is NOT being pressed
      */
-    inline bool IsButtonUp(int button) const {
+    bool IsButtonUp(int button) const {
         return ::IsGamepadButtonUp(number, button);
     }
 
     /**
      * Get the last gamepad button pressed
      */
-    inline int GetButtonPressed() const {
+    int GetButtonPressed() const {
         return ::GetGamepadButtonPressed();
     }
 
     /**
      * Return gamepad axis count for a gamepad
      */
-    inline int GetAxisCount() const {
+    int GetAxisCount() const {
         return ::GetGamepadAxisCount(number);
     }
 
     /**
      * Return axis movement value for a gamepad axis
      */
-    inline float GetAxisMovement(int axis) const {
+    float GetAxisMovement(int axis) const {
         return ::GetGamepadAxisMovement(number, axis);
     }
 
-    inline int SetMappings(const std::string& mappings) {
+    int SetMappings(const std::string& mappings) {
         return SetGamepadMappings(mappings.c_str());
     }
 
  protected:
-    inline void set(int gamepadNumber) {
+    void set(int gamepadNumber) {
         number = gamepadNumber;
     }
 };

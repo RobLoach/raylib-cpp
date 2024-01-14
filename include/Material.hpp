@@ -80,7 +80,7 @@ class Material : public ::Material {
     /**
      * Unload material from memory
      */
-    inline void Unload() {
+    void Unload() {
         if (maps != nullptr) {
             ::UnloadMaterial(*this);
             maps = nullptr;
@@ -90,7 +90,7 @@ class Material : public ::Material {
     /**
      * Set texture for a material map type (MAP_DIFFUSE, MAP_SPECULAR...)
      */
-    inline Material& SetTexture(int mapType, const ::Texture2D& texture) {
+    Material& SetTexture(int mapType, const ::Texture2D& texture) {
         ::SetMaterialTexture(this, mapType, texture);
         return *this;
     }
@@ -98,21 +98,21 @@ class Material : public ::Material {
     /**
      * Draw a 3d mesh with material and transform
      */
-    inline void DrawMesh(const ::Mesh& mesh, ::Matrix transform) const {
+    void DrawMesh(const ::Mesh& mesh, ::Matrix transform) const {
         ::DrawMesh(mesh, *this, transform);
     }
 
     /**
      * Draw multiple mesh instances with material and different transforms
      */
-    inline void DrawMesh(const ::Mesh& mesh, ::Matrix* transforms, int instances) const {
+    void DrawMesh(const ::Mesh& mesh, ::Matrix* transforms, int instances) const {
         ::DrawMeshInstanced(mesh, *this, transforms, instances);
     }
 
     /**
      * Check if material is ready
      */
-    inline bool IsReady() const {
+    bool IsReady() const {
         return ::IsMaterialReady(*this);
     }
 

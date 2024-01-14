@@ -93,14 +93,14 @@ class Text {
     /**
      * Draw text with values in class.
      */
-    inline void Draw(const ::Vector2& position) const {
+    void Draw(const ::Vector2& position) const {
         ::DrawTextEx(font, text.c_str(), position, fontSize, spacing, color);
     }
 
     /**
      * Draw text with values in class.
      */
-    inline void Draw(int posX, int posY) const {
+    void Draw(int posX, int posY) const {
         ::DrawTextEx(font,
             text.c_str(),
             { static_cast<float>(posX), static_cast<float>(posY) },
@@ -114,21 +114,21 @@ class Text {
      *
      * @see DrawTextPro()
      */
-    inline void Draw(const ::Vector2& position, float rotation, const ::Vector2& origin = {0, 0}) const {
+    void Draw(const ::Vector2& position, float rotation, const ::Vector2& origin = {0, 0}) const {
         ::DrawTextPro(font, text.c_str(), position, origin, rotation, fontSize, spacing, color);
     }
 
     /**
      * Measure string width for default font
      */
-    inline int Measure() const {
+    int Measure() const {
         return ::MeasureText(text.c_str(), static_cast<int>(fontSize));
     }
 
     /**
      * Measure string size for Font
      */
-    inline Vector2 MeasureEx() const {
+    Vector2 MeasureEx() const {
         return ::MeasureTextEx(font, text.c_str(), fontSize, spacing);
     }
 
@@ -151,7 +151,7 @@ class Text {
      *
      * @see ::DrawText
      */
-    static inline void Draw(
+    static void Draw(
             const std::string& text,
             const int posX,
             const int posY,
@@ -165,7 +165,7 @@ class Text {
      *
      * @see ::DrawText
      */
-    static inline void Draw(
+    static void Draw(
             const std::string& text,
             const ::Vector2& pos,
             const int fontSize,
@@ -178,7 +178,7 @@ class Text {
      *
      * @see ::DrawTextEx
      */
-    static inline void Draw(
+    static void Draw(
             const ::Font& font,
             const std::string& text,
             const ::Vector2& position,
@@ -193,7 +193,7 @@ class Text {
      *
      * @see ::DrawTextPro
      */
-    static inline void Draw(
+    static void Draw(
             const ::Font& font,
             const std::string& text,
             const ::Vector2& position,

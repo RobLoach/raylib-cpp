@@ -117,14 +117,14 @@ class Font : public ::Font {
     /**
      * Get the texture atlas containing the glyphs.
      */
-    inline TextureUnmanaged GetTexture() {
+    TextureUnmanaged GetTexture() {
         return texture;
     }
 
     /**
      * Set the texture atlas containing the glyphs.
      */
-    inline void SetTexture(const ::Texture& newTexture) {
+    void SetTexture(const ::Texture& newTexture) {
         texture = newTexture;
     }
 
@@ -213,7 +213,7 @@ class Font : public ::Font {
     /**
      * Draw text using font and additional parameters.
      */
-    inline void DrawText(const std::string& text, ::Vector2 position, float fontSize,
+    void DrawText(const std::string& text, ::Vector2 position, float fontSize,
             float spacing, ::Color tint = WHITE) const {
         ::DrawTextEx(*this, text.c_str(), position,  fontSize,  spacing,  tint);
     }
@@ -221,14 +221,14 @@ class Font : public ::Font {
     /**
      * Draw text using font and additional parameters.
      */
-    inline void DrawText(const std::string& text, int posX, int posY, float fontSize,
+    void DrawText(const std::string& text, int posX, int posY, float fontSize,
             float spacing, ::Color tint = WHITE) const {
         ::DrawTextEx(*this, text.c_str(),
             { static_cast<float>(posX), static_cast<float>(posY) },
             fontSize, spacing, tint);
     }
 
-    inline void DrawText(
+    void DrawText(
             const std::string& text,
             ::Vector2 position,
             ::Vector2 origin,
@@ -245,7 +245,7 @@ class Font : public ::Font {
     /**
      * Draw one character (codepoint)
      */
-    inline void DrawText(int codepoint,
+    void DrawText(int codepoint,
             ::Vector2 position,
             float fontSize,
             ::Color tint = { 255, 255, 255, 255 }) const {
@@ -255,7 +255,7 @@ class Font : public ::Font {
     /**
      * Draw multiple character (codepoint)
      */
-    inline void DrawText(const int *codepoints,
+    void DrawText(const int *codepoints,
             int count, ::Vector2 position,
             float fontSize, float spacing,
             ::Color tint = { 255, 255, 255, 255 }) const {
@@ -268,21 +268,21 @@ class Font : public ::Font {
     /**
      * Measure string size for Font
      */
-    inline Vector2 MeasureText(const std::string& text, float fontSize, float spacing) const {
+    Vector2 MeasureText(const std::string& text, float fontSize, float spacing) const {
         return ::MeasureTextEx(*this, text.c_str(), fontSize, spacing);
     }
 
     /**
      * Get index position for a unicode character on font
      */
-    inline int GetGlyphIndex(int character) const {
+    int GetGlyphIndex(int character) const {
         return ::GetGlyphIndex(*this, character);
     }
 
     /**
      * Create an image from text (custom sprite font)
      */
-    inline ::Image ImageText(const std::string& text, float fontSize,
+    ::Image ImageText(const std::string& text, float fontSize,
             float spacing, ::Color tint) const {
         return ::ImageTextEx(*this, text.c_str(), fontSize, spacing, tint);
     }

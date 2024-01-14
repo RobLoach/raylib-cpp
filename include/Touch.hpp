@@ -12,35 +12,35 @@ class Touch {
     /**
      * Get touch position X for touch point 0 (relative to screen size)
      */
-    inline static int GetX() {
+    static int GetX() {
         return ::GetTouchX();
     }
 
     /**
      * Get touch position Y for touch point 0 (relative to screen size)
      */
-    inline static int GetY() {
+    static int GetY() {
         return ::GetTouchY();
     }
 
     /**
      * Get touch position XY for a touch point index (relative to screen size)
      */
-    inline static Vector2 GetPosition(int index) {
+    static Vector2 GetPosition(int index) {
         return ::GetTouchPosition(index);
     }
 
     /**
      * Get touch point identifier for given index
      */
-    inline static int GetPointId(int index) {
+    static int GetPointId(int index) {
         return ::GetTouchPointId(index);
     }
 
     /**
      * Get number of touch points
      */
-    inline static int GetPointCount() {
+    static int GetPointCount() {
         return ::GetTouchPointCount();
     }
 };
