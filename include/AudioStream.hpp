@@ -81,7 +81,7 @@ class AudioStream : public ::AudioStream {
     /**
      * Update audio stream buffers with data
      */
-    inline AudioStream& Update(const void *data, int samplesCount) {
+    AudioStream& Update(const void *data, int samplesCount) {
         ::UpdateAudioStream(*this, data, samplesCount);
         return *this;
     }
@@ -89,21 +89,21 @@ class AudioStream : public ::AudioStream {
     /**
      * Unload audio stream and free memory
      */
-    inline void Unload() {
+    void Unload() {
         ::UnloadAudioStream(*this);
     }
 
     /**
      * Check if any audio stream buffers requires refill
      */
-    inline bool IsProcessed() const {
+    bool IsProcessed() const {
         return ::IsAudioStreamProcessed(*this);
     }
 
     /**
      * Play audio stream
      */
-    inline AudioStream& Play() {
+    AudioStream& Play() {
         ::PlayAudioStream(*this);
         return *this;
     }
@@ -111,7 +111,7 @@ class AudioStream : public ::AudioStream {
     /**
      * Pause audio stream
      */
-    inline AudioStream& Pause() {
+    AudioStream& Pause() {
         ::PauseAudioStream(*this);
         return *this;
     }
@@ -119,7 +119,7 @@ class AudioStream : public ::AudioStream {
     /**
      * Resume audio stream
      */
-    inline AudioStream& Resume() {
+    AudioStream& Resume() {
         ::ResumeAudioStream(*this);
         return *this;
     }
@@ -127,14 +127,14 @@ class AudioStream : public ::AudioStream {
     /**
      * Check if audio stream is playing
      */
-    inline bool IsPlaying() const {
+    bool IsPlaying() const {
         return ::IsAudioStreamPlaying(*this);
     }
 
     /**
      * Stop audio stream
      */
-    inline AudioStream& Stop() {
+    AudioStream& Stop() {
         ::StopAudioStream(*this);
         return *this;
     }
@@ -142,7 +142,7 @@ class AudioStream : public ::AudioStream {
     /**
      * Set volume for audio stream (1.0 is max level)
      */
-    inline AudioStream& SetVolume(float volume = 1.0f) {
+    AudioStream& SetVolume(float volume = 1.0f) {
         ::SetAudioStreamVolume(*this, volume);
         return *this;
     }
@@ -150,7 +150,7 @@ class AudioStream : public ::AudioStream {
     /**
      * Set pitch for audio stream (1.0 is base level)
      */
-    inline AudioStream& SetPitch(float pitch) {
+    AudioStream& SetPitch(float pitch) {
         ::SetAudioStreamPitch(*this, pitch);
         return *this;
     }
@@ -158,7 +158,7 @@ class AudioStream : public ::AudioStream {
     /**
      * Set pan for audio stream (0.5 is centered)
      */
-    inline AudioStream& SetPan(float pan = 0.5f) {
+    AudioStream& SetPan(float pan = 0.5f) {
         ::SetAudioStreamPitch(*this, pan);
         return *this;
     }
@@ -166,28 +166,28 @@ class AudioStream : public ::AudioStream {
     /**
      * Default size for new audio streams
      */
-    inline static void SetBufferSizeDefault(int size) {
+    static void SetBufferSizeDefault(int size) {
         ::SetAudioStreamBufferSizeDefault(size);
     }
 
     /**
      * Audio thread callback to request new data
      */
-    inline void SetCallback(::AudioCallback callback) {
+    void SetCallback(::AudioCallback callback) {
         ::SetAudioStreamCallback(*this, callback);
     }
 
     /**
      * Attach audio stream processor to stream
      */
-    inline void AttachProcessor(::AudioCallback processor) {
+    void AttachProcessor(::AudioCallback processor) {
         ::SetAudioStreamCallback(*this, processor);
     }
 
     /**
      * Detach audio stream processor from stream
      */
-    inline void DetachProcessor(::AudioCallback processor) {
+    void DetachProcessor(::AudioCallback processor) {
         ::SetAudioStreamCallback(*this, processor);
     }
 

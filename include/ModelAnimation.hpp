@@ -77,14 +77,14 @@ class ModelAnimation : public ::ModelAnimation {
     /**
      * Unload animation data
      */
-    inline void Unload() {
+    void Unload() {
         ::UnloadModelAnimation(*this);
     }
 
     /**
      * Update model animation pose
      */
-    inline ModelAnimation& Update(const ::Model& model, int frame) {
+    ModelAnimation& Update(const ::Model& model, int frame) {
         ::UpdateModelAnimation(model, *this, frame);
         return *this;
     }
@@ -92,7 +92,7 @@ class ModelAnimation : public ::ModelAnimation {
     /**
      * Check model animation skeleton match
      */
-    inline bool IsValid(const ::Model& model) const {
+    bool IsValid(const ::Model& model) const {
         return ::IsModelAnimationValid(model, *this);
     }
 

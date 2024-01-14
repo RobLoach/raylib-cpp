@@ -36,7 +36,7 @@ class AudioDevice {
      *
      * @throws raylib::RaylibException Throws if the AudioDevice failed to initialize.
      */
-    inline void Init() {
+    void Init() {
         ::InitAudioDevice();
         if (!IsReady()) {
             throw RaylibException("Failed to initialize AudioDevice");
@@ -46,14 +46,14 @@ class AudioDevice {
     /**
      * Close the audio device and context.
      */
-    inline void Close() {
+    void Close() {
         ::CloseAudioDevice();
     }
 
     /**
      * Check if audio device has been initialized successfully.
      */
-    inline bool IsReady() const {
+    bool IsReady() const {
         return ::IsAudioDeviceReady();
     }
 
@@ -62,7 +62,7 @@ class AudioDevice {
      *
      * @param volume The desired volume to set.
      */
-    inline AudioDevice& SetVolume(float volume) {
+    AudioDevice& SetVolume(float volume) {
         ::SetMasterVolume(volume);
         return *this;
     }

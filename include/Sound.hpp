@@ -78,7 +78,7 @@ class Sound : public ::Sound {
     /**
      * Update sound buffer with new data
      */
-    inline Sound& Update(const void *data, int samplesCount) {
+    Sound& Update(const void *data, int samplesCount) {
         ::UpdateSound(*this, data, samplesCount);
         return *this;
     }
@@ -86,7 +86,7 @@ class Sound : public ::Sound {
     /**
      * Update sound buffer with new data, assuming it's the same sample count.
      */
-    inline Sound& Update(const void *data) {
+    Sound& Update(const void *data) {
         ::UpdateSound(*this, data, static_cast<int>(frameCount));
         return *this;
     }
@@ -94,7 +94,7 @@ class Sound : public ::Sound {
     /**
      * Unload sound
      */
-    inline void Unload() {
+    void Unload() {
         // Protect against calling UnloadSound() twice.
         if (frameCount != 0) {
             ::UnloadSound(*this);
@@ -105,7 +105,7 @@ class Sound : public ::Sound {
     /**
      * Play a sound
      */
-    inline Sound& Play() {
+    Sound& Play() {
         ::PlaySound(*this);
         return *this;
     }
@@ -113,7 +113,7 @@ class Sound : public ::Sound {
     /**
      * Stop playing a sound
      */
-    inline Sound& Stop() {
+    Sound& Stop() {
         ::StopSound(*this);
         return *this;
     }
@@ -121,7 +121,7 @@ class Sound : public ::Sound {
     /**
      * Pause a sound
      */
-    inline Sound& Pause() {
+    Sound& Pause() {
         ::PauseSound(*this);
         return *this;
     }
@@ -129,7 +129,7 @@ class Sound : public ::Sound {
     /**
      * Resume a paused sound
      */
-    inline Sound& Resume() {
+    Sound& Resume() {
         ::ResumeSound(*this);
         return *this;
     }
@@ -137,14 +137,14 @@ class Sound : public ::Sound {
     /**
      * Check if a sound is currently playing
      */
-    inline bool IsPlaying() const {
+    bool IsPlaying() const {
         return ::IsSoundPlaying(*this);
     }
 
     /**
      * Set volume for a sound (1.0 is max level)
      */
-    inline Sound& SetVolume(float volume) {
+    Sound& SetVolume(float volume) {
         ::SetSoundVolume(*this, volume);
         return *this;
     }
@@ -152,7 +152,7 @@ class Sound : public ::Sound {
     /**
      * Set pitch for a sound (1.0 is base level)
      */
-    inline Sound& SetPitch(float pitch) {
+    Sound& SetPitch(float pitch) {
         ::SetSoundPitch(*this, pitch);
         return *this;
     }
@@ -160,7 +160,7 @@ class Sound : public ::Sound {
     /**
      * Set pan for a sound (0.5 is center)
      */
-    inline Sound& SetPan(float pan = 0.5f) {
+    Sound& SetPan(float pan = 0.5f) {
         ::SetSoundPan(*this, pan);
         return *this;
     }

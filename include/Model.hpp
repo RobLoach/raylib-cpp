@@ -102,7 +102,7 @@ class Model : public ::Model {
     /**
      * Unload model (including meshes) from memory (RAM and/or VRAM)
      */
-    inline void Unload() {
+    void Unload() {
         if (meshes != nullptr || materials != nullptr) {
             ::UnloadModel(*this);
             meshes = nullptr;
@@ -113,7 +113,7 @@ class Model : public ::Model {
     /**
      * Set material for a mesh
      */
-    inline Model& SetMeshMaterial(int meshId, int materialId) {
+    Model& SetMeshMaterial(int meshId, int materialId) {
         ::SetModelMeshMaterial(this, meshId, materialId);
         return *this;
     }
@@ -121,7 +121,7 @@ class Model : public ::Model {
     /**
      * Update model animation pose
      */
-    inline Model& UpdateAnimation(const ::ModelAnimation& anim, int frame) {
+    Model& UpdateAnimation(const ::ModelAnimation& anim, int frame) {
         ::UpdateModelAnimation(*this, anim, frame);
         return *this;
     }
@@ -129,14 +129,14 @@ class Model : public ::Model {
     /**
      * Check model animation skeleton match
      */
-    inline bool IsModelAnimationValid(const ::ModelAnimation& anim) const {
+    bool IsModelAnimationValid(const ::ModelAnimation& anim) const {
         return ::IsModelAnimationValid(*this, anim);
     }
 
     /**
      * Draw a model (with texture if set)
      */
-    inline void Draw(::Vector3 position,
+    void Draw(::Vector3 position,
             float scale = 1.0f,
             ::Color tint = {255, 255, 255, 255}) const {
         ::DrawModel(*this, position, scale, tint);
@@ -145,7 +145,7 @@ class Model : public ::Model {
     /**
      * Draw a model with extended parameters
      */
-    inline void Draw(
+    void Draw(
             ::Vector3 position,
             ::Vector3 rotationAxis,
             float rotationAngle = 0.0f,
@@ -157,7 +157,7 @@ class Model : public ::Model {
     /**
      * Draw a model wires (with texture if set)
      */
-    inline void DrawWires(::Vector3 position,
+    void DrawWires(::Vector3 position,
             float scale = 1.0f,
             ::Color tint = {255, 255, 255, 255}) const {
         ::DrawModelWires(*this, position, scale, tint);
@@ -166,7 +166,7 @@ class Model : public ::Model {
     /**
      * Draw a model wires (with texture if set) with extended parameters
      */
-    inline void DrawWires(
+    void DrawWires(
             ::Vector3 position,
             ::Vector3 rotationAxis,
             float rotationAngle = 0.0f,
@@ -178,7 +178,7 @@ class Model : public ::Model {
     /**
      * Compute model bounding box limits (considers all meshes)
      */
-    inline BoundingBox GetBoundingBox() const {
+    BoundingBox GetBoundingBox() const {
         return ::GetModelBoundingBox(*this);
     }
 

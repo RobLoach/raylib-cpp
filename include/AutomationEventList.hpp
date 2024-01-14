@@ -81,39 +81,39 @@ class AutomationEventList : public ::AutomationEventList {
     /**
      * Update audio stream buffers with data
      */
-    inline AutomationEventList& Unload() {
+    AutomationEventList& Unload() {
         ::UnloadAutomationEventList(this);
         return *this;
     }
 
-    inline bool IsReady() {
+    bool IsReady() {
         return events != nullptr;
     }
 
-    inline bool Export(const char* fileName) {
+    bool Export(const char* fileName) {
         return ::ExportAutomationEventList(*this, fileName);
     }
 
-    inline void Set() {
+    void Set() {
         ::SetAutomationEventList(this);
     }
 
-    inline void SetBaseFrame(int frame) {
+    void SetBaseFrame(int frame) {
         Set();
         ::SetAutomationEventBaseFrame(frame);
     }
 
-    inline void StartRecording() {
+    void StartRecording() {
         Set();
         ::StartAutomationEventRecording();
     }
 
-    inline void StopRecording() {
+    void StopRecording() {
         Set();
         ::StopAutomationEventRecording();
     }
 
-    inline void Play(int index) {
+    void Play(int index) {
         if (index < 0 || index >= this->count) {
             return;
         }

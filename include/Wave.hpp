@@ -107,14 +107,14 @@ class Wave : public ::Wave {
     /**
      * Copy a wave to a new wave
      */
-    inline ::Wave Copy() const {
+    ::Wave Copy() const {
         return ::WaveCopy(*this);
     }
 
     /**
      * Crop a wave to defined samples range
      */
-    inline Wave& Crop(int initSample, int finalSample) {
+    Wave& Crop(int initSample, int finalSample) {
         ::WaveCrop(this, initSample, finalSample);
         return *this;
     }
@@ -122,7 +122,7 @@ class Wave : public ::Wave {
     /**
      * Convert wave data to desired format
      */
-    inline Wave& Format(int SampleRate, int SampleSize, int Channels = 2) {
+    Wave& Format(int SampleRate, int SampleSize, int Channels = 2) {
         ::WaveFormat(this, SampleRate, SampleSize, Channels);
         return *this;
     }
@@ -130,21 +130,21 @@ class Wave : public ::Wave {
     /**
      * Load samples data from wave as a floats array
      */
-    inline float* LoadSamples() {
+    float* LoadSamples() {
         return ::LoadWaveSamples(*this);
     }
 
     /**
      * Unload samples data loaded with LoadWaveSamples()
      */
-    inline static void UnloadSamples(float *samples) {
+    static void UnloadSamples(float *samples) {
         ::UnloadWaveSamples(samples);
     }
 
     /**
      * Export wave data to file, returns true on success
      */
-    inline bool Export(const std::string& fileName) {
+    bool Export(const std::string& fileName) {
         // TODO(RobLoach): Throw exception on error.
         return ::ExportWave(*this, fileName.c_str());
     }
@@ -152,7 +152,7 @@ class Wave : public ::Wave {
     /**
      * Export wave sample data to code (.h), returns true on success
      */
-    inline bool ExportAsCode(const std::string& fileName) {
+    bool ExportAsCode(const std::string& fileName) {
         // TODO(RobLoach): Throw exception on error.
         return ::ExportWaveAsCode(*this, fileName.c_str());
     }
@@ -171,14 +171,14 @@ class Wave : public ::Wave {
     /**
      * Load sound from wave data
      */
-    inline ::Sound LoadSound() {
+    ::Sound LoadSound() {
         return ::LoadSoundFromWave(*this);
     }
 
     /**
      * Load sound from wave data
      */
-    inline operator ::Sound() {
+    operator ::Sound() {
         return LoadSound();
     }
 
@@ -211,7 +211,7 @@ class Wave : public ::Wave {
      *
      * @return True or false depending on whether the wave data has been loaded.
      */
-    inline bool IsReady() const {
+    bool IsReady() const {
         return ::IsWaveReady(*this);
     }
 

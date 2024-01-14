@@ -59,7 +59,7 @@ class Window {
      *
      * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    inline void Init(int width = 800, int height = 450, const std::string& title = "raylib", unsigned int flags = 0) {
+    void Init(int width = 800, int height = 450, const std::string& title = "raylib", unsigned int flags = 0) {
         if (flags != 0) {
             ::SetConfigFlags(flags);
         }
@@ -72,14 +72,14 @@ class Window {
     /**
      * Check if KEY_ESCAPE pressed or Close icon pressed
      */
-    inline bool ShouldClose() const {
+    bool ShouldClose() const {
         return ::WindowShouldClose();
     }
 
     /**
      * Close window and unload OpenGL context
      */
-    inline void Close() {
+    void Close() {
         if (::IsWindowReady()) {
             ::CloseWindow();
         }
@@ -88,63 +88,63 @@ class Window {
     /**
      * Check if cursor is on the current screen
      */
-    inline bool IsCursorOnScreen() const {
+    bool IsCursorOnScreen() const {
         return ::IsCursorOnScreen();
     }
 
     /**
      * Check if window is currently fullscreen
      */
-    inline bool IsFullscreen() const {
+    bool IsFullscreen() const {
         return ::IsWindowFullscreen();
     }
 
     /**
      * Check if window is currently hidden
      */
-    inline bool IsHidden() const {
+    bool IsHidden() const {
         return ::IsWindowHidden();
     }
 
     /**
      * Check if window is currently minimized
      */
-    inline bool IsMinimized() const {
+    bool IsMinimized() const {
         return ::IsWindowMinimized();
     }
 
     /**
      * Check if window is currently minimized
      */
-    inline bool IsMaximized() const {
+    bool IsMaximized() const {
         return ::IsWindowMaximized();
     }
 
     /**
      * Check if window is currently focused
      */
-    inline bool IsFocused() const {
+    bool IsFocused() const {
         return ::IsWindowFocused();
     }
 
     /**
      * Check if window has been resized last frame
      */
-    inline bool IsResized() const {
+    bool IsResized() const {
         return ::IsWindowResized();
     }
 
     /**
      * Check if one specific window flag is enabled
      */
-    inline bool IsState(unsigned int flag) const {
+    bool IsState(unsigned int flag) const {
         return ::IsWindowState(flag);
     }
 
     /**
      * Set window configuration state using flags
      */
-    inline Window& SetState(unsigned int flag) {
+    Window& SetState(unsigned int flag) {
         ::SetWindowState(flag);
         return *this;
     }
@@ -152,7 +152,7 @@ class Window {
     /**
      * Clear window configuration state flags
      */
-    inline Window& ClearState(unsigned int flag) {
+    Window& ClearState(unsigned int flag) {
         ::ClearWindowState(flag);
         return *this;
     }
@@ -160,7 +160,7 @@ class Window {
     /**
      * Clear window with given color.
      */
-    inline Window& ClearBackground(const ::Color& color = BLACK) {
+    Window& ClearBackground(const ::Color& color = BLACK) {
         ::ClearBackground(color);
         return *this;
     }
@@ -168,7 +168,7 @@ class Window {
     /**
      * Toggle window state: fullscreen/windowed
      */
-    inline Window& ToggleFullscreen() {
+    Window& ToggleFullscreen() {
         ::ToggleFullscreen();
         return *this;
     }
@@ -176,7 +176,7 @@ class Window {
     /**
      * Set whether or not the application should be fullscreen.
      */
-    inline Window& SetFullscreen(bool fullscreen) {
+    Window& SetFullscreen(bool fullscreen) {
         if (fullscreen) {
             if (!IsFullscreen()) {
                 ToggleFullscreen();
@@ -193,7 +193,7 @@ class Window {
     /**
      * Toggle window state: borderless/windowed
     */
-    inline Window& ToggleBorderless() {
+    Window& ToggleBorderless() {
         ::ToggleBorderlessWindowed();
         return *this;
     }
@@ -201,7 +201,7 @@ class Window {
     /**
      * Set window state: maximized, if resizable (only PLATFORM_DESKTOP)
      */
-    inline Window& Maximize() {
+    Window& Maximize() {
         ::MaximizeWindow();
         return *this;
     }
@@ -209,7 +209,7 @@ class Window {
     /**
      * Set window state: minimized, if resizable (only PLATFORM_DESKTOP)
      */
-    inline Window& Minimize() {
+    Window& Minimize() {
         ::MinimizeWindow();
         return *this;
     }
@@ -217,7 +217,7 @@ class Window {
     /**
      * Set window state: not minimized/maximized (only PLATFORM_DESKTOP)
      */
-    inline Window& Restore() {
+    Window& Restore() {
         ::RestoreWindow();
         return *this;
     }
@@ -225,7 +225,7 @@ class Window {
     /**
      * Set icon for window
      */
-    inline Window& SetIcon(const ::Image& image) {
+    Window& SetIcon(const ::Image& image) {
         ::SetWindowIcon(image);
         return *this;
     }
@@ -233,7 +233,7 @@ class Window {
     /**
      * Set icon for window (multiple images, RGBA 32bit, only PLATFORM_DESKTOP)
      */
-    inline Window& SetIcons(Image* images, int count) {
+    Window& SetIcons(Image* images, int count) {
         ::SetWindowIcons(images, count);
         return *this;
     }
@@ -241,7 +241,7 @@ class Window {
     /**
      * Set title for window
      */
-    inline Window& SetTitle(const std::string& title) {
+    Window& SetTitle(const std::string& title) {
         ::SetWindowTitle(title.c_str());
         return *this;
     }
@@ -249,7 +249,7 @@ class Window {
     /**
      * Set window position on screen
      */
-    inline Window& SetPosition(int x, int y) {
+    Window& SetPosition(int x, int y) {
         ::SetWindowPosition(x, y);
         return *this;
     }
@@ -257,14 +257,14 @@ class Window {
     /**
      * Set window position on screen
      */
-    inline Window& SetPosition(const ::Vector2& position) {
+    Window& SetPosition(const ::Vector2& position) {
         return SetPosition(static_cast<int>(position.x), static_cast<int>(position.y));
     }
 
     /**
      * Set monitor for the current window
      */
-    inline Window& SetMonitor(int monitor) {
+    Window& SetMonitor(int monitor) {
         ::SetWindowMonitor(monitor);
         return *this;
     }
@@ -272,7 +272,7 @@ class Window {
     /**
      * Set window minimum dimensions
      */
-    inline Window& SetMinSize(int width, int height) {
+    Window& SetMinSize(int width, int height) {
         ::SetWindowMinSize(width, height);
         return *this;
     }
@@ -280,7 +280,7 @@ class Window {
     /**
      * Set window minimum dimensions
      */
-    inline Window& SetMinSize(const ::Vector2& size) {
+    Window& SetMinSize(const ::Vector2& size) {
         ::SetWindowMinSize(static_cast<int>(size.x), static_cast<int>(size.y));
         return *this;
     }
@@ -288,7 +288,7 @@ class Window {
     /**
      * Set window dimensions
      */
-    inline Window& SetSize(int width, int height) {
+    Window& SetSize(int width, int height) {
         ::SetWindowSize(width, height);
         return *this;
     }
@@ -296,7 +296,7 @@ class Window {
     /**
      * Set window opacity [0.0f..1.0f] (only PLATFORM_DESKTOP)
      */
-    inline Window& SetOpacity(float opacity) {
+    Window& SetOpacity(float opacity) {
         ::SetWindowOpacity(opacity);
         return *this;
     }
@@ -304,7 +304,7 @@ class Window {
     /**
      * Set window focused (only PLATFORM_DESKTOP)
      */
-    inline Window& SetFocused() {
+    Window& SetFocused() {
         ::SetWindowFocused();
         return *this;
     }
@@ -312,28 +312,28 @@ class Window {
     /**
      * Set window dimensions
      */
-    inline Window& SetSize(const ::Vector2& size) {
+    Window& SetSize(const ::Vector2& size) {
         return SetSize(static_cast<int>(size.x), static_cast<int>(size.y));
     }
 
     /**
      * Get the screen's width and height.
      */
-    inline Vector2 GetSize() const {
+    Vector2 GetSize() const {
         return {static_cast<float>(GetWidth()), static_cast<float>(GetHeight())};
     }
 
     /**
      * Get native window handle
      */
-    inline void* GetHandle() const {
+    void* GetHandle() const {
         return ::GetWindowHandle();
     }
 
     /**
      * Setup canvas (framebuffer) to start drawing
      */
-    inline Window& BeginDrawing() {
+    Window& BeginDrawing() {
         ::BeginDrawing();
         return *this;
     }
@@ -341,7 +341,7 @@ class Window {
     /**
      * End canvas drawing and swap buffers (double buffering)
      */
-    inline Window& EndDrawing() {
+    Window& EndDrawing() {
         ::EndDrawing();
         return *this;
     }
@@ -349,63 +349,63 @@ class Window {
     /**
      * Get current screen width
      */
-    inline int GetWidth() const {
+    int GetWidth() const {
         return ::GetScreenWidth();
     }
 
     /**
      * Get current screen height
      */
-    inline int GetHeight() const {
+    int GetHeight() const {
         return ::GetScreenHeight();
     }
 
     /**
      * Get current render width (it considers HiDPI)
      */
-    inline int GetRenderWidth() const {
+    int GetRenderWidth() const {
         return ::GetRenderWidth();
     }
 
     /**
      * Get current render height (it considers HiDPI)
      */
-    inline int GetRenderHeight() const {
+    int GetRenderHeight() const {
         return ::GetRenderHeight();
     }
 
     /**
      * Get window position XY on monitor
      */
-    inline Vector2 GetPosition() const {
+    Vector2 GetPosition() const {
         return ::GetWindowPosition();
     }
 
     /**
      * Get window scale DPI factor
      */
-    inline Vector2 GetScaleDPI() const {
+    Vector2 GetScaleDPI() const {
         return ::GetWindowScaleDPI();
     }
 
     /**
      * Set clipboard text content
      */
-    inline void SetClipboardText(const std::string& text) {
+    void SetClipboardText(const std::string& text) {
         ::SetClipboardText(text.c_str());
     }
 
     /**
      * Get clipboard text content
      */
-    inline const std::string GetClipboardText() {
+    const std::string GetClipboardText() {
         return ::GetClipboardText();
     }
 
     /**
      * Set target FPS (maximum)
      */
-    inline Window& SetTargetFPS(int fps) {
+    Window& SetTargetFPS(int fps) {
         ::SetTargetFPS(fps);
         return *this;
     }
@@ -413,35 +413,35 @@ class Window {
     /**
      * Returns current FPS
      */
-    inline int GetFPS() const {
+    int GetFPS() const {
         return ::GetFPS();
     }
 
     /**
      * Draw current FPS
      */
-    inline void DrawFPS(int posX = 10, int posY = 10) const {
+    void DrawFPS(int posX = 10, int posY = 10) const {
         ::DrawFPS(posX, posY);
     }
 
     /**
      * Returns time in seconds for last frame drawn
      */
-    inline float GetFrameTime() const {
+    float GetFrameTime() const {
         return ::GetFrameTime();
     }
 
     /**
      * Returns elapsed time in seconds since InitWindow()
      */
-    inline double GetTime() const {
+    double GetTime() const {
         return ::GetTime();
     }
 
     /**
      * Check if window has been initialized successfully
      */
-    inline static bool IsReady() {
+    static bool IsReady() {
         return ::IsWindowReady();
     }
 
@@ -452,7 +452,7 @@ class Window {
      *
      * @see ::SetConfigFlags
      */
-    inline void SetConfigFlags(unsigned int flags) {
+    void SetConfigFlags(unsigned int flags) {
         ::SetConfigFlags(flags);
     }
 };

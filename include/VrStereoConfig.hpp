@@ -17,7 +17,7 @@ class VrStereoConfig : public ::VrStereoConfig  {
     /**
      * Load VR stereo config for VR simulator device parameters
      */
-    inline void Load(const ::VrDeviceInfo& info) {
+    void Load(const ::VrDeviceInfo& info) {
         set(LoadVrStereoConfig(info));
     }
 
@@ -31,7 +31,7 @@ class VrStereoConfig : public ::VrStereoConfig  {
     /**
      * Begin stereo rendering
      */
-    inline VrStereoConfig& BeginMode() {
+    VrStereoConfig& BeginMode() {
         ::BeginVrStereoMode(*this);
         return *this;
     }
@@ -39,7 +39,7 @@ class VrStereoConfig : public ::VrStereoConfig  {
     /**
      * End stereo rendering
      */
-    inline VrStereoConfig& EndMode() {
+    VrStereoConfig& EndMode() {
         ::EndVrStereoMode();
         return *this;
     }
@@ -47,7 +47,7 @@ class VrStereoConfig : public ::VrStereoConfig  {
     /**
      * Unload VR stereo config
      */
-    inline void Unload() {
+    void Unload() {
         ::UnloadVrStereoConfig(*this);
     }
 

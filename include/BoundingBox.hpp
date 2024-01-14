@@ -38,35 +38,35 @@ class BoundingBox : public ::BoundingBox {
     /**
      * Draw a bounding box with wires
      */
-    inline void Draw(::Color color = {255, 255, 255, 255}) const {
+    void Draw(::Color color = {255, 255, 255, 255}) const {
         ::DrawBoundingBox(*this, color);
     }
 
     /**
      * Detect collision between two boxes
      */
-    inline bool CheckCollision(const ::BoundingBox& box2) const {
+    bool CheckCollision(const ::BoundingBox& box2) const {
         return CheckCollisionBoxes(*this, box2);
     }
 
     /**
      * Detect collision between box and sphere
      */
-    inline bool CheckCollision(::Vector3 center, float radius) const {
+    bool CheckCollision(::Vector3 center, float radius) const {
         return CheckCollisionBoxSphere(*this, center, radius);
     }
 
     /**
      * Detect collision between ray and bounding box
      */
-    inline bool CheckCollision(const ::Ray& ray) const {
+    bool CheckCollision(const ::Ray& ray) const {
         return GetRayCollisionBox(ray, *this).hit;
     }
 
     /**
      * Get collision information between ray and bounding box
      */
-    inline RayCollision GetCollision(const ::Ray& ray) const {
+    RayCollision GetCollision(const ::Ray& ray) const {
         return GetRayCollisionBox(ray, *this);
     }
 
