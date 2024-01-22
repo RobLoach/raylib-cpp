@@ -27,11 +27,13 @@ int main(int argc, char *argv[]) {
         AssertEqual(position.x, 310);
         AssertEqual(raylib::Window::IsReady(), false);
 
-        raylib::Vector2 size{50,50};
+        raylib::Vector2 size{50, 100};
         raylib::Vector2 halfsize = size / 2.0f;
 
         AssertEqual(size.x, 50);
+        AssertEqual(size.y, 100);
         AssertEqual(halfsize.x, 25);
+        AssertEqual(halfsize.y, 50);
 
         raylib::Vector2 doublesize = size * 2.0f;
         AssertEqual(size.x, 50);
