@@ -16,6 +16,7 @@ install(FILES
     Functions.hpp
     Gamepad.hpp
     Image.hpp
+    Keyboard.hpp
     Material.hpp
     Matrix.hpp
     Mesh.hpp
