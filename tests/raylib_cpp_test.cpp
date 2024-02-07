@@ -69,6 +69,11 @@ int main(int argc, char *argv[]) {
         AssertEqual(image.GetHeight(), 50);
     }
 
+    // Keyboard
+    {
+        AssertNot(raylib::Keyboard::GetKeyPressed(KEY_MINUS));
+    }
+
     // raylib::LoadDirectoryFiles()
     {
         std::vector<std::string> files = raylib::LoadDirectoryFiles(::GetWorkingDirectory());
