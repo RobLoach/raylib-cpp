@@ -79,8 +79,8 @@ class Window {
     /**
      * Set a custom key to exit program (default is ESC)
      */
-    bool SetExitKey(int key) {
-        return ::SetExitKey(key);
+    void SetExitKey(int key) {
+        ::SetExitKey(key);
     }
 
     /**
