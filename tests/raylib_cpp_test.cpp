@@ -71,7 +71,7 @@ int main(int argc, char *argv[]) {
 
     // Keyboard
     {
-        AssertNot(raylib::Keyboard::GetKeyPressed(KEY_MINUS));
+        AssertNot(raylib::Keyboard::IsKeyPressed(KEY_MINUS));
     }
 
     // raylib::LoadDirectoryFiles()
