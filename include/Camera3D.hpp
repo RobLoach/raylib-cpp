@@ -62,14 +62,14 @@ class Camera3D : public ::Camera3D {
     /**
      * Get camera transform matrix (view matrix)
      */
-    inline Matrix GetMatrix() const {
+    Matrix GetMatrix() const {
         return ::GetCameraMatrix(*this);
     }
 
     /**
      * Update camera position for selected mode
      */
-    inline Camera3D& Update(int mode) {
+    Camera3D& Update(int mode) {
         ::UpdateCamera(this, mode);
         return *this;
     }
@@ -77,7 +77,7 @@ class Camera3D : public ::Camera3D {
     /**
      * Update camera movement/rotation
      */
-    inline Camera3D& Update(::Vector3 movement, ::Vector3 rotation, float zoom = 1.0f) {
+    Camera3D& Update(::Vector3 movement, ::Vector3 rotation, float zoom = 1.0f) {
         ::UpdateCameraPro(this, movement, rotation, zoom);
         return *this;
     }
@@ -85,21 +85,21 @@ class Camera3D : public ::Camera3D {
     /**
      * Returns a ray trace from mouse position
      */
-    inline Ray GetMouseRay(::Vector2 mousePosition) const {
+    Ray GetMouseRay(::Vector2 mousePosition) const {
         return ::GetMouseRay(mousePosition, *this);
     }
 
     /**
      * Returns the screen space position for a 3d world space position
      */
-    inline Vector2 GetWorldToScreen(::Vector3 position) const {
+    Vector2 GetWorldToScreen(::Vector3 position) const {
         return ::GetWorldToScreen(position, *this);
     }
 
     /**
      * Draw a billboard texture.
      */
-    inline void DrawBillboard(
+    void DrawBillboard(
             const ::Texture2D& texture,
             ::Vector3 center,
             float size,
@@ -110,7 +110,7 @@ class Camera3D : public ::Camera3D {
     /**
      * Draw a billboard texture defined by source.
      */
-    inline void DrawBillboard(
+    void DrawBillboard(
             const ::Texture2D& texture,
             ::Rectangle sourceRec,
             ::Vector3 center,

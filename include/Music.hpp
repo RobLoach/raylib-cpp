@@ -93,14 +93,14 @@ class Music : public ::Music {
     /**
      * Unload music stream
      */
-    inline void Unload() {
+    void Unload() {
         ::UnloadMusicStream(*this);
     }
 
     /**
      * Start music playing
      */
-    inline Music& Play() {
+    Music& Play() {
         ::PlayMusicStream(*this);
         return *this;
     }
@@ -108,7 +108,7 @@ class Music : public ::Music {
     /**
      * Updates buffers for music streaming
      */
-    inline Music& Update() {
+    Music& Update() {
         ::UpdateMusicStream(*this);
         return *this;
     }
@@ -116,7 +116,7 @@ class Music : public ::Music {
     /**
      * Stop music playing
      */
-    inline Music& Stop() {
+    Music& Stop() {
         ::StopMusicStream(*this);
         return *this;
     }
@@ -124,7 +124,7 @@ class Music : public ::Music {
     /**
      * Pause music playing
      */
-    inline Music& Pause() {
+    Music& Pause() {
         ::PauseMusicStream(*this);
         return *this;
     }
@@ -132,7 +132,7 @@ class Music : public ::Music {
     /**
      * Resume music playing
      */
-    inline Music& Resume() {
+    Music& Resume() {
         ::ResumeMusicStream(*this);
         return *this;
     }
@@ -140,7 +140,7 @@ class Music : public ::Music {
     /**
      * Seek music to a position (in seconds)
      */
-    inline Music& Seek(float position) {
+    Music& Seek(float position) {
         SeekMusicStream(*this, position);
         return *this;
     }
@@ -148,14 +148,14 @@ class Music : public ::Music {
     /**
      * Check if music is playing
      */
-    inline bool IsPlaying() const {
+    bool IsPlaying() const {
         return ::IsMusicStreamPlaying(*this);
     }
 
     /**
      * Set volume for music
      */
-    inline Music& SetVolume(float volume) {
+    Music& SetVolume(float volume) {
         ::SetMusicVolume(*this, volume);
         return *this;
     }
@@ -163,7 +163,7 @@ class Music : public ::Music {
     /**
      * Set pitch for music
      */
-    inline Music& SetPitch(float pitch) {
+    Music& SetPitch(float pitch) {
         ::SetMusicPitch(*this, pitch);
         return *this;
     }
@@ -171,7 +171,7 @@ class Music : public ::Music {
     /**
      * Set pan for a music (0.5 is center)
      */
-    inline Music& SetPan(float pan = 0.5f) {
+    Music& SetPan(float pan = 0.5f) {
         ::SetMusicPan(*this, pan);
         return *this;
     }
@@ -179,14 +179,14 @@ class Music : public ::Music {
     /**
      * Get music time length (in seconds)
      */
-    inline float GetTimeLength() const {
+    float GetTimeLength() const {
         return ::GetMusicTimeLength(*this);
     }
 
     /**
      * Get current music time played (in seconds)
      */
-    inline float GetTimePlayed() const {
+    float GetTimePlayed() const {
         return ::GetMusicTimePlayed(*this);
     }
 
@@ -219,7 +219,7 @@ class Music : public ::Music {
      *
      * @return True or false depending on whether the Music has been loaded.
      */
-    inline bool IsReady() const {
+    bool IsReady() const {
         return ::IsMusicReady(*this);
     }
 

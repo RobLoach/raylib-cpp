@@ -184,28 +184,28 @@ class Mesh : public ::Mesh {
     /**
      * Upload mesh vertex data to GPU (VRAM)
      */
-    inline void Upload(bool dynamic = false) {
+    void Upload(bool dynamic = false) {
         ::UploadMesh(this, dynamic);
     }
 
     /**
      * Upload mesh vertex data to GPU (VRAM)
      */
-    inline void UpdateBuffer(int index, void *data, int dataSize, int offset = 0) {
+    void UpdateBuffer(int index, void *data, int dataSize, int offset = 0) {
         ::UpdateMeshBuffer(*this, index, data, dataSize, offset);
     }
 
     /**
      * Draw a 3d mesh with material and transform
      */
-    inline void Draw(const ::Material& material, const ::Matrix& transform) const {
+    void Draw(const ::Material& material, const ::Matrix& transform) const {
         ::DrawMesh(*this, material, transform);
     }
 
     /**
      * Draw multiple mesh instances with material and different transforms
      */
-    inline void Draw(const ::Material& material, ::Matrix* transforms, int instances) const {
+    void Draw(const ::Material& material, ::Matrix* transforms, int instances) const {
         ::DrawMeshInstanced(*this, material, transforms, instances);
     }
 
@@ -214,7 +214,7 @@ class Mesh : public ::Mesh {
      *
      * @throws raylib::RaylibException Throws if failed to export the Mesh.
      */
-    inline void Export(const std::string& fileName) {
+    void Export(const std::string& fileName) {
         if (!::ExportMesh(*this, fileName.c_str())) {
             throw new RaylibException("Failed to export the Mesh");
         }
@@ -223,7 +223,7 @@ class Mesh : public ::Mesh {
     /**
      * Unload mesh from memory (RAM and/or VRAM)
      */
-    inline void Unload() {
+    void Unload() {
         if (vboId != nullptr) {
             ::UnloadMesh(*this);
             vboId = nullptr;
@@ -233,7 +233,7 @@ class Mesh : public ::Mesh {
     /**
      * Compute mesh bounding box limits
      */
-    inline raylib::BoundingBox BoundingBox() const {
+    raylib::BoundingBox BoundingBox() const {
         return ::GetMeshBoundingBox(*this);
     }
 
@@ -247,7 +247,7 @@ class Mesh : public ::Mesh {
     /**
      * Compute mesh tangents
      */
-    inline Mesh& GenTangents() {
+    Mesh& GenTangents() {
         ::GenMeshTangents(this);
         return *this;
     }
@@ -255,7 +255,7 @@ class Mesh : public ::Mesh {
     /**
      * Load model from generated mesh
      */
-    inline raylib::Model LoadModelFrom() const {
+    raylib::Model LoadModelFrom() const {
         return ::LoadModelFromMesh(*this);
     }
 
