@@ -81,9 +81,14 @@ class AutomationEventList : public ::AutomationEventList {
     /**
      * Update audio stream buffers with data
      */
-    AutomationEventList& Unload() {
+    void Unload() {
+        #if RAYLIB_VERSION_MAJOR >= 5
+        #if RAYLIB_VERSION_MINOR == 0
         ::UnloadAutomationEventList(this);
-        return *this;
+        #elif RAYLIB_VERSION_MINOR >= 1
+        ::UnloadAutomationEventList(*this);
+        #endif
+        #endif
     }
 
     bool IsReady() {
