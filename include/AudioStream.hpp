@@ -159,7 +159,7 @@ class AudioStream : public ::AudioStream {
      * Set pan for audio stream (0.5 is centered)
      */
     AudioStream& SetPan(float pan = 0.5f) {
-        ::SetAudioStreamPitch(*this, pan);
+        ::SetAudioStreamPan(*this, pan);
         return *this;
     }
 
@@ -181,14 +181,14 @@ class AudioStream : public ::AudioStream {
      * Attach audio stream processor to stream
      */
     void AttachProcessor(::AudioCallback processor) {
-        ::SetAudioStreamCallback(*this, processor);
+        ::AttachAudioStreamProcessor(*this, processor);
     }
 
     /**
      * Detach audio stream processor from stream
      */
     void DetachProcessor(::AudioCallback processor) {
-        ::SetAudioStreamCallback(*this, processor);
+        ::DetachAudioStreamProcessor(*this, processor);
     }
 
     /**
