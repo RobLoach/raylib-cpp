@@ -119,7 +119,7 @@ class AutomationEventList : public ::AutomationEventList {
     }
 
     void Play(int index) {
-        if (index < 0 || index >= this->count) {
+        if (index < 0 || static_cast<unsigned int>(index) >= this->count) {
             return;
         }
 
