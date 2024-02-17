@@ -8,8 +8,7 @@ namespace raylib {
 /**
  * Input-related functions: mouse
  */
-class Mouse {
- public:
+namespace Mouse {
     /**
      * Detect if a mouse button has been pressed once
      */
@@ -148,6 +147,6 @@ class Mouse {
 };
 }  // namespace raylib
 
-using RMouse = raylib::Mouse;
+namespace RMouse = raylib::Mouse;
 
 #endif  // RAYLIB_CPP_INCLUDE_MOUSE_HPP_

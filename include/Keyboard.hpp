@@ -7,8 +7,7 @@ namespace raylib {
 /**
  * Input-related functions: keyboard
  */
-class Keyboard {
- public:
+namespace Keyboard {
     /**
      * Detect if a key has been pressed once
      */
@@ -60,6 +59,6 @@ class Keyboard {
 };
 } // namespace raylib
 
-using RKeyboard = raylib::Keyboard;
+namespace RKeyboard = raylib::Keyboard;
 
 #endif // RAYLIB_CPP_INCLUDE_KEYBOARD_HPP_
