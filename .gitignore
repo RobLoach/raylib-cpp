@@ -5,3 +5,4 @@ node_modules
 cmake-build-debug
 .idea
 docs
+.cache

@@ -42,7 +42,7 @@ class Sound : public ::Sound {
      *
      * @throws raylib::RaylibException Throws if the Sound failed to load.
      */
-    Sound(const std::string& fileName) {
+    Sound(const char* fileName) {
         Load(fileName);
     }
 
@@ -170,8 +170,8 @@ class Sound : public ::Sound {
      *
      * @throws raylib::RaylibException Throws if the Sound failed to load.
      */
-    void Load(const std::string& fileName) {
-        set(::LoadSound(fileName.c_str()));
+    void Load(const char* fileName) {
+        set(::LoadSound(fileName));
         if (!IsReady()) {
             throw new RaylibException("Failed to load Sound from file");
         }

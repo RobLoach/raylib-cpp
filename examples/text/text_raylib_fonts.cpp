@@ -57,7 +57,7 @@ int main() {
 
     for (int i = 0; i < fonts.size(); i++)
     {
-        auto size = fonts[i].MeasureText(messages[i], fonts[i].baseSize * 2, spacings[i]);
+        auto size = fonts[i].MeasureText(messages[i].c_str(), fonts[i].baseSize * 2, spacings[i]);
         positions[i].x = screenWidth/2 - size.x/2;
         positions[i].y = 60 + fonts[i].baseSize + 45*i;
     }
@@ -88,7 +88,7 @@ int main() {
 
             for (int i = 0; i < fonts.size(); i++)
             {
-                fonts[i].DrawText(messages[i], positions[i], fonts[i].baseSize*2, spacings[i], colors[i]);
+                fonts[i].DrawText(messages[i].c_str(), positions[i], fonts[i].baseSize*2, spacings[i], colors[i]);
             }
         }
         EndDrawing();

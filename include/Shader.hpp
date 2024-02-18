@@ -73,9 +73,7 @@ class Shader : public ::Shader {
     Shader& operator=(const Shader&) = delete;
 
     Shader& operator=(Shader&& other) noexcept {
-        if (this == &other) {
-            return *this;
-        }
+        if (this == &other) return *this;
 
         Unload();
         set(other);
@@ -97,9 +95,7 @@ class Shader : public ::Shader {
      * Unload shader from GPU memory (VRAM)
      */
     void Unload() {
-        if (locs != nullptr) {
-            ::UnloadShader(*this);
-        }
+        if (locs != nullptr) ::UnloadShader(*this);
     }
 
     /**
@@ -123,8 +119,8 @@ class Shader : public ::Shader {
      *
      * @see GetShaderLocation()
      */
-    int GetLocation(const std::string& uniformName) const {
-        return ::GetShaderLocation(*this, uniformName.c_str());
+    int GetLocation(const char* uniformName) const {
+        return ::GetShaderLocation(*this, uniformName);
     }
 
     /**
@@ -132,8 +128,8 @@ class Shader : public ::Shader {
      *
      * @see GetShaderLocationAttrib()
      */
-    int GetLocationAttrib(const std::string& attribName) const {
-        return ::GetShaderLocationAttrib(*this, attribName.c_str());
+    int GetLocationAttrib(const char* attribName) const {
+        return ::GetShaderLocationAttrib(*this, attribName);
     }
 
     /**

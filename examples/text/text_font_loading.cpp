@@ -66,12 +66,12 @@ int main() {
 
             if (!useTtf)
             {
-                fontBm.DrawText(msg, Vector2{ 20.0f, 100.0f }, fontBm.baseSize, 2, MAROON);
+                fontBm.DrawText(msg.c_str(), Vector2{ 20.0f, 100.0f }, fontBm.baseSize, 2, MAROON);
                 raylib::DrawText("Using BMFont (Angelcode) imported", 20, GetScreenHeight() - 30, 20, GRAY);
             }
             else
             {
-                fontTtf.DrawText(msg, Vector2{ 20.0f, 100.0f }, fontTtf.baseSize, 2, LIME);
+                fontTtf.DrawText(msg.c_str(), Vector2{ 20.0f, 100.0f }, fontTtf.baseSize, 2, LIME);
                 raylib::DrawText("Using TTF font generated", 20, GetScreenHeight() - 30, 20, GRAY);
             }
         }

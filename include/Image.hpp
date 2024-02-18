@@ -35,7 +35,7 @@ class Image : public ::Image {
      *
      * @see Load()
      */
-    Image(const std::string& fileName) {
+    Image(const char* fileName) {
         Load(fileName);
     }
 
@@ -46,7 +46,7 @@ class Image : public ::Image {
      *
      * @see LoadRaw()
      */
-    Image(const std::string& fileName, int width, int height, int format, int headerSize = 0) {
+    Image(const char* fileName, int width, int height, int format, int headerSize = 0) {
         Load(fileName, width, height, format, headerSize);
     }
 
@@ -57,7 +57,7 @@ class Image : public ::Image {
      *
      * @see LoadAnim()
      */
-    Image(const std::string& fileName, int* frames) {
+    Image(const char* fileName, int* frames) {
         Load(fileName, frames);
     }
 
@@ -66,7 +66,7 @@ class Image : public ::Image {
      *
      * @throws raylib::RaylibException Thrown if the image failed to load from the file.
      */
-    Image(const std::string& fileType, const unsigned char* fileData, int dataSize) {
+    Image(const char* fileType, const unsigned char* fileData, int dataSize) {
         Load(fileType, fileData, dataSize);
     }
 
@@ -83,13 +83,13 @@ class Image : public ::Image {
         set(::GenImageColor(width, height, color));
     }
 
-    Image(const std::string& text, int fontSize, ::Color color = {255, 255, 255, 255}) {
-        set(::ImageText(text.c_str(), fontSize, color));
+    Image(const char* text, int fontSize, ::Color color = {255, 255, 255, 255}) {
+        set(::ImageText(text, fontSize, color));
     }
 
-    Image(const ::Font& font, const std::string& text, float fontSize, float spacing,
+    Image(const ::Font& font, const char* text, float fontSize, float spacing,
             ::Color tint = {255, 255, 255, 255}) {
-        set(::ImageTextEx(font, text.c_str(), fontSize, spacing, tint));
+        set(::ImageTextEx(font, text, fontSize, spacing, tint));
     }
 
     Image(const Image& other) {
@@ -106,14 +106,14 @@ class Image : public ::Image {
         other.format = 0;
     }
 
-    static ::Image Text(const std::string& text, int fontSize,
+    static ::Image Text(const char* text, int fontSize,
             ::Color color = {255, 255, 255, 255}) {
-        return ::ImageText(text.c_str(), fontSize, color);
+        return ::ImageText(text, fontSize, color);
     }
 
-    static ::Image Text(const ::Font& font, const std::string& text, float fontSize, float spacing,
+    static ::Image Text(const ::Font& font, const char* text, float fontSize, float spacing,
             ::Color tint = {255, 255, 255, 255}) {
-        return ::ImageTextEx(font, text.c_str(), fontSize, spacing, tint);
+        return ::ImageTextEx(font, text, fontSize, spacing, tint);
     }
 
     /**
@@ -211,10 +211,10 @@ class Image : public ::Image {
      *
      * @see ::LoadImage()
      */
-    void Load(const std::string& fileName) {
-        set(::LoadImage(fileName.c_str()));
+    void Load(const char* fileName) {
+        set(::LoadImage(fileName));
         if (!IsReady()) {
-            throw RaylibException("Failed to load Image from file: " + fileName);
+            throw RaylibException("Failed to load Image from file: ", fileName);
         }
     }
 
@@ -225,10 +225,10 @@ class Image : public ::Image {
      *
      * @see ::LoadImageRaw()
      */
-    void Load(const std::string& fileName, int width, int height, int format, int headerSize) {
-        set(::LoadImageRaw(fileName.c_str(), width, height, format, headerSize));
+    void Load(const char* fileName, int width, int height, int format, int headerSize) {
+        set(::LoadImageRaw(fileName, width, height, format, headerSize));
         if (!IsReady()) {
-            throw RaylibException("Failed to load Image from file: " + fileName);
+            throw RaylibException("Failed to load Image from file: ", fileName);
         }
     }
 
@@ -239,10 +239,10 @@ class Image : public ::Image {
      *
      * @see ::LoadImageAnim()
      */
-    void Load(const std::string& fileName, int* frames) {
-        set(::LoadImageAnim(fileName.c_str(), frames));
+    void Load(const char* fileName, int* frames) {
+        set(::LoadImageAnim(fileName, frames));
         if (!IsReady()) {
-            throw RaylibException("Failed to load Image from file: " + fileName);
+            throw RaylibException("Failed to load Image from file: ", fileName);
         }
     }
 
@@ -254,12 +254,12 @@ class Image : public ::Image {
      * @see ::LoadImageFromMemory()
      */
     void Load(
-            const std::string& fileType,
+            const char* fileType,
             const unsigned char *fileData,
             int dataSize) {
-        set(::LoadImageFromMemory(fileType.c_str(), fileData, dataSize));
+        set(::LoadImageFromMemory(fileType, fileData, dataSize));
         if (!IsReady()) {
-            throw RaylibException("Failed to load Image data with file type: " + fileType);
+            throw RaylibException("Failed to load Image data with file type: ", fileType);
         }
     }
 
@@ -292,9 +292,9 @@ class Image : public ::Image {
      *
      * @throws raylib::RaylibException Thrown if the image failed to load from the file.
      */
-    void Export(const std::string& fileName) const {
-        if (!::ExportImage(*this, fileName.c_str())) {
-            throw RaylibException(TextFormat("Failed to export Image to file: %s", fileName.c_str()));
+    void Export(const char* fileName) const {
+        if (!::ExportImage(*this, fileName)) {
+            throw RaylibException(TextFormat("Failed to export Image to file: %s", fileName));
         }
     }
 
@@ -310,9 +310,9 @@ class Image : public ::Image {
      *
      * @throws raylib::RaylibException Thrown if the image failed to load from the file.
      */
-    void ExportAsCode(const std::string& fileName) const {
-        if (!::ExportImageAsCode(*this, fileName.c_str())) {
-            throw RaylibException(TextFormat("Failed to export Image code to file: %s", fileName.c_str()));
+    void ExportAsCode(const char* fileName) const {
+        if (!::ExportImageAsCode(*this, fileName)) {
+            throw RaylibException(TextFormat("Failed to export Image code to file: %s", fileName));
         }
     }
 
@@ -645,24 +645,24 @@ class Image : public ::Image {
         ::ImageDraw(this, src, srcRec, dstRec, tint);
     }
 
-    void DrawText(const std::string& text, ::Vector2 position, int fontSize,
+    void DrawText(const char* text, ::Vector2 position, int fontSize,
             ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawText(this,
-            text.c_str(),
+            text,
             static_cast<int>(position.x),
             static_cast<int>(position.y),
             fontSize,
             color);
     }
 
-    void DrawText(const std::string& text, int x, int y, int fontSize,
+    void DrawText(const char* text, int x, int y, int fontSize,
             ::Color color = {255, 255, 255, 255}) {
-        ::ImageDrawText(this, text.c_str(), x, y, fontSize, color);
+        ::ImageDrawText(this, text, x, y, fontSize, color);
     }
 
-    void DrawText(const ::Font& font, const std::string& text, ::Vector2 position,
+    void DrawText(const ::Font& font, const char* text, ::Vector2 position,
             float fontSize, float spacing, ::Color tint = {255, 255, 255, 255}) {
-        ::ImageDrawTextEx(this, font, text.c_str(), position, fontSize, spacing, tint);
+        ::ImageDrawTextEx(this, font, text, position, fontSize, spacing, tint);
     }
 
     /**

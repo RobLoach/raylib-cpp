@@ -36,9 +36,9 @@ class ModelAnimation : public ::ModelAnimation {
     /**
      * Load model animations from file
      */
-    static std::vector<ModelAnimation> Load(const std::string& fileName) {
+    static std::vector<ModelAnimation> Load(const char* fileName) {
         int count = 0;
-        ::ModelAnimation* modelAnimations = ::LoadModelAnimations(fileName.c_str(), &count);
+        ::ModelAnimation* modelAnimations = ::LoadModelAnimations(fileName, &count);
         std::vector<ModelAnimation> mats(modelAnimations, modelAnimations + count);
 
         RL_FREE(modelAnimations);

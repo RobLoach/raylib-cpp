@@ -75,8 +75,8 @@ int main(void)
 
         // Load a dropped TTF file dynamically (at current fontSize)
         for (const auto& file : raylib::LoadDroppedFiles()) {
-            if (raylib::IsFileExtension(file, ".ttf")) {
-                msg.font = font = raylib::Font(file, font.GetBaseSize());
+            if (raylib::IsFileExtension(file.c_str(), ".ttf")) {
+                msg.font = font = raylib::Font(file.c_str(), font.GetBaseSize());
             }
         }
         //----------------------------------------------------------------------------------

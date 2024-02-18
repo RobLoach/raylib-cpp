@@ -31,7 +31,7 @@ class Wave : public ::Wave {
      *
      * @throws raylib::RaylibException Throws if the Wave failed to load.
      */
-    Wave(const std::string& fileName) {
+    Wave(const char* fileName) {
         Load(fileName);
     }
 
@@ -40,7 +40,7 @@ class Wave : public ::Wave {
      *
      * @throws raylib::RaylibException Throws if the Wave failed to load.
      */
-    Wave(const std::string& fileType, const unsigned char *fileData, int dataSize) {
+    Wave(const char* fileType, const unsigned char *fileData, int dataSize) {
         Load(fileType, fileData, dataSize);
     }
 
@@ -77,10 +77,7 @@ class Wave : public ::Wave {
     }
 
     Wave& operator=(const Wave& other) {
-        if (this == &other) {
-            return *this;
-        }
-
+        if (this == &other) return *this;
         Unload();
         set(other.Copy());
 
@@ -88,9 +85,7 @@ class Wave : public ::Wave {
     }
 
     Wave& operator=(Wave&& other) noexcept {
-        if (this != &other) {
-            return *this;
-        }
+        if (this == &other) return *this;
 
         Unload();
         set(other);
@@ -144,17 +139,17 @@ class Wave : public ::Wave {
     /**
      * Export wave data to file, returns true on success
      */
-    bool Export(const std::string& fileName) {
+    bool Export(const char* fileName) {
         // TODO(RobLoach): Throw exception on error.
-        return ::ExportWave(*this, fileName.c_str());
+        return ::ExportWave(*this, fileName);
     }
 
     /**
      * Export wave sample data to code (.h), returns true on success
      */
-    bool ExportAsCode(const std::string& fileName) {
+    bool ExportAsCode(const char* fileName) {
         // TODO(RobLoach): Throw exception on error.
-        return ::ExportWaveAsCode(*this, fileName.c_str());
+        return ::ExportWaveAsCode(*this, fileName);
     }
 
     /**
@@ -187,11 +182,9 @@ class Wave : public ::Wave {
      *
      * @throws raylib::RaylibException Throws if the Wave failed to load.
      */
-    void Load(const std::string& fileName) {
-        set(::LoadWave(fileName.c_str()));
-        if (!IsReady()) {
-            throw RaylibException("Failed to load Wave from file: " + fileName);
-        }
+    void Load(const char* fileName) {
+        set(::LoadWave(fileName));
+        if (!IsReady()) throw RaylibException("Failed to load Wave from file: ", fileName);
     }
 
     /**
@@ -199,11 +192,9 @@ class Wave : public ::Wave {
      *
      * @throws raylib::RaylibException Throws if the Wave failed to load.
      */
-    void Load(const std::string& fileType, const unsigned char *fileData, int dataSize) {
-        set(::LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
-        if (!IsReady()) {
-            throw RaylibException("Failed to load Wave from file data of type: " + fileType);
-        }
+    void Load(const char* fileType, const unsigned char *fileData, int dataSize) {
+        set(::LoadWaveFromMemory(fileType, fileData, dataSize));
+        if (!IsReady()) throw RaylibException("Failed to load Wave from file data of type: ", fileType);
     }
 
     /**

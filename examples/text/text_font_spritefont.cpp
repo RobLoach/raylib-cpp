@@ -56,9 +56,9 @@ int main(void)
         {
             window.ClearBackground(RAYWHITE);
 
-            font1.DrawText(msg1, fontPosition1, font1.baseSize, -3);
-            font2.DrawText(msg2, fontPosition2, font2.baseSize, -2);
-            font3.DrawText(msg3, fontPosition3, font3.baseSize, 2);
+            font1.DrawText(msg1.c_str(), fontPosition1, font1.baseSize, -3);
+            font2.DrawText(msg2.c_str(), fontPosition2, font2.baseSize, -2);
+            font3.DrawText(msg3.c_str(), fontPosition3, font3.baseSize, 2);
         }
         EndDrawing();
         //----------------------------------------------------------------------------------

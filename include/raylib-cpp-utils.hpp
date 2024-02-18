@@ -14,7 +14,7 @@
  */
 #define GETTERSETTER(type, method, name) \
     /** Retrieves the name value for the object. @return The name value of the object. */ \
-    type Get##method() const { return name; }  \
+    [[nodiscard]] type Get##method() const { return name; }  \
     /** Sets the name value for the object. @param value The value of which to set name to. */ \
     void Set##method(type value) { name = value; }
 #endif

@@ -108,8 +108,8 @@ class Gamepad {
         return ::GetGamepadAxisMovement(number, axis);
     }
 
-    int SetMappings(const std::string& mappings) {
-        return SetGamepadMappings(mappings.c_str());
+    int SetMappings(const char* mappings) {
+        return SetGamepadMappings(mappings);
     }
 
  protected:

@@ -71,7 +71,7 @@ class TextureUnmanaged : public ::Texture {
      *
      * @throws raylib::RaylibException Throws if failed to create the texture from the given file.
      */
-    TextureUnmanaged(const std::string& fileName) {
+    TextureUnmanaged(const char* fileName) {
         Load(fileName);
     }
 
@@ -121,10 +121,10 @@ class TextureUnmanaged : public ::Texture {
     /**
      * Load texture from file into GPU memory (VRAM)
      */
-    void Load(const std::string& fileName) {
-        set(::LoadTexture(fileName.c_str()));
+    void Load(const char* fileName) {
+        set(::LoadTexture(fileName));
         if (!IsReady()) {
-            throw RaylibException("Failed to load Texture from file: " + fileName);
+            throw RaylibException("Failed to load Texture from file: ", fileName);
         }
     }
 

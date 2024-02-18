@@ -59,7 +59,7 @@ int main(int argc, char *argv[]) {
     // Image
     {
         // Loading
-        raylib::Image image(path + "/resources/feynman.png");
+        raylib::Image image((path + "/resources/feynman.png").c_str());
         Assert(image.IsReady());
 
         // Chaining
@@ -83,21 +83,21 @@ int main(int argc, char *argv[]) {
     // raylib::TextReplace()
     {
         std::string input = "Hello World!";
-        std::string output = raylib::TextReplace(input, "World", "Moon");
+        std::string output = raylib::TextReplace(input.data(), "World", "Moon");
         AssertEqual(output, "Hello Moon!");
     }
 
     // raylib::TextInsert()
     {
         std::string input = "Hello World!";
-        std::string output = raylib::TextInsert(input, "Good!", 0);
+        std::string output = raylib::TextInsert(input.c_str(), "Good!", 0);
         AssertEqual(output, "Good! World!");
     }
 
     // raylib::TextSubtext()
     {
         std::string input = "Hello World!";
-        std::string output = raylib::TextSubtext(input, 6, 5);
+        std::string output = raylib::TextSubtext(input.c_str(), 6, 5);
         AssertEqual(output, "World");
     }
 
@@ -110,7 +110,7 @@ int main(int argc, char *argv[]) {
 
     // Wave
     {
-        raylib::Wave wave(path + "/resources/weird.wav");
+        raylib::Wave wave((path + "/resources/weird.wav").c_str());
         Assert(wave.IsReady(), "Expected wave to be loaded correctly");
     }
 

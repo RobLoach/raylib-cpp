@@ -30,7 +30,7 @@ class Model : public ::Model {
      *
      * @throws raylib::RaylibException Throws if failed to load the Modal.
      */
-    Model(const std::string& fileName) {
+    Model(const char* fileName) {
         Load(fileName);
     }
 
@@ -201,10 +201,10 @@ class Model : public ::Model {
      *
      * @throws raylib::RaylibException Throws if failed to load the Modal.
      */
-    void Load(const std::string& fileName) {
-        set(::LoadModel(fileName.c_str()));
+    void Load(const char* fileName) {
+        set(::LoadModel(fileName));
         if (!IsReady()) {
-            throw RaylibException("Failed to load Model from " + fileName);
+            throw RaylibException("Failed to load Model from ", fileName);
         }
     }
 

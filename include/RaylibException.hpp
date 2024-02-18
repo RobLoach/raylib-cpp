@@ -17,7 +17,8 @@ class RaylibException : public std::runtime_error {
      *
      * @param message The message to provide for the exception.
      */
-    RaylibException(std::string message) throw() : std::runtime_error(message) {
+    template<typename... Ts>
+    RaylibException(Ts&&... args) throw() : std::runtime_error((std::string("") + ... + args)) {
         // Nothing
     }
 

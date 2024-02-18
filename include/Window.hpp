@@ -35,7 +35,7 @@ class Window {
      *
      * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    Window(int width, int height, const std::string& title = "raylib", unsigned int flags = 0) {
+    Window(int width, int height, const char* title = "raylib", unsigned int flags = 0) {
         Init(width, height, title, flags);
     }
 
@@ -59,11 +59,11 @@ class Window {
      *
      * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    void Init(int width = 800, int height = 450, const std::string& title = "raylib", unsigned int flags = 0) {
+    void Init(int width = 800, int height = 450, const char* title = "raylib", unsigned int flags = 0) {
         if (flags != 0) {
             ::SetConfigFlags(flags);
         }
-        ::InitWindow(width, height, title.c_str());
+        ::InitWindow(width, height, title);
         if (!::IsWindowReady()) {
             throw RaylibException("Failed to create Window");
         }
@@ -248,8 +248,8 @@ class Window {
     /**
      * Set title for window
      */
-    Window& SetTitle(const std::string& title) {
-        ::SetWindowTitle(title.c_str());
+    Window& SetTitle(const char* title) {
+        ::SetWindowTitle(title);
         return *this;
     }
 
@@ -398,8 +398,8 @@ class Window {
     /**
      * Set clipboard text content
      */
-    void SetClipboardText(const std::string& text) {
-        ::SetClipboardText(text.c_str());
+    void SetClipboardText(const char* text) {
+        ::SetClipboardText(text);
     }
 
     /**
