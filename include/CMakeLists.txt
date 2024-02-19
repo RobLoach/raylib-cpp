@@ -1,6 +1,6 @@
 add_library(raylib_cpp INTERFACE)
 
-set(RAYLIB_CPP_SOURCES
+set(RAYLIB_CPP_HEADERS
   AudioDevice.hpp
   AudioStream.hpp
   AutomationEventList.hpp
@@ -47,6 +47,6 @@ target_include_directories(raylib_cpp INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/)
 
 # Set the header files as install files.
 install(FILES
-  ${RAYLIB_CPP_SOURCES}
+  ${RAYLIB_CPP_HEADERS}
   DESTINATION include
 )
