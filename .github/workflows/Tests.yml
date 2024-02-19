@@ -40,7 +40,7 @@ jobs:
         submodules: recursive
     - name: Install Linux Dependencies
       if: runner.os == 'Linux'
-      run: sudo apt-get install libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev -y
+      run: sudo apt-get update && sudo apt-get install -y libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev
 
     - name: Configure
       run: cmake -B build -S . -DBUILD_TESTING=ON -DCMAKE_CXX_FLAGS="-Wall -Wextra -Wpedantic" ${{ matrix.platform.flags }} ${{ matrix.type.flags }} ${{ matrix.config.flags }}
