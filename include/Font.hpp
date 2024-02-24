@@ -213,9 +213,27 @@ class Font : public ::Font {
     /**
      * Draw text using font and additional parameters.
      */
+    void DrawText(const char* text, ::Vector2 position, float fontSize,
+            float spacing, ::Color tint = WHITE) const {
+        ::DrawTextEx(*this, text, position,  fontSize,  spacing,  tint);
+    }
+
+    /**
+     * Draw text using font and additional parameters.
+     */
     void DrawText(const std::string& text, ::Vector2 position, float fontSize,
             float spacing, ::Color tint = WHITE) const {
         ::DrawTextEx(*this, text.c_str(), position,  fontSize,  spacing,  tint);
+    }
+
+    /**
+     * Draw text using font and additional parameters.
+     */
+    void DrawText(const char* text, int posX, int posY, float fontSize,
+            float spacing, ::Color tint = WHITE) const {
+        ::DrawTextEx(*this, text,
+            { static_cast<float>(posX), static_cast<float>(posY) },
+            fontSize, spacing, tint);
     }
 
     /**
@@ -226,6 +244,20 @@ class Font : public ::Font {
         ::DrawTextEx(*this, text.c_str(),
             { static_cast<float>(posX), static_cast<float>(posY) },
             fontSize, spacing, tint);
+    }
+
+    void DrawText(
+            const char* text,
+            ::Vector2 position,
+            ::Vector2 origin,
+            float rotation,
+            float fontSize,
+            float spacing,
+            ::Color tint = WHITE) const {
+        ::DrawTextPro(*this, text,
+            position, origin,
+            rotation, fontSize,
+            spacing, tint);
     }
 
     void DrawText(
@@ -268,6 +300,13 @@ class Font : public ::Font {
     /**
      * Measure string size for Font
      */
+    Vector2 MeasureText(const char* text, float fontSize, float spacing) const {
+        return ::MeasureTextEx(*this, text, fontSize, spacing);
+    }
+
+    /**
+     * Measure string size for Font
+     */
     Vector2 MeasureText(const std::string& text, float fontSize, float spacing) const {
         return ::MeasureTextEx(*this, text.c_str(), fontSize, spacing);
     }
@@ -277,6 +316,14 @@ class Font : public ::Font {
      */
     int GetGlyphIndex(int character) const {
         return ::GetGlyphIndex(*this, character);
+    }
+
+    /**
+     * Create an image from text (custom sprite font)
+     */
+    ::Image ImageText(const char* text, float fontSize,
+            float spacing, ::Color tint) const {
+        return ::ImageTextEx(*this, text, fontSize, spacing, tint);
     }
 
     /**

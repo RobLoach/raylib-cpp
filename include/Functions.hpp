@@ -240,16 +240,39 @@ namespace raylib {
 /**
  * Draw text (using default font)
  */
-    [[maybe_unused]] RLCPPAPI inline void DrawText(const std::string& text, int posX, int posY, int fontSize, ::Color color) {
+[[maybe_unused]] RLCPPAPI inline void DrawText(const char* text, int posX, int posY, int fontSize, ::Color color) {
+    ::DrawText(text, posX, posY, fontSize, color);
+}
+
+/**
+ * Draw text (using default font)
+ */
+[[maybe_unused]] RLCPPAPI inline void DrawText(const std::string& text, int posX, int posY, int fontSize, ::Color color) {
     ::DrawText(text.c_str(), posX, posY, fontSize, color);
 }
 
 /**
  * Draw text using font and additional parameters
  */
-    [[maybe_unused]] RLCPPAPI inline void DrawTextEx(const Font& font, const std::string& text, Vector2 position,
+[[maybe_unused]] RLCPPAPI inline void DrawTextEx(const Font& font, char* text, Vector2 position,
+        float fontSize, float spacing, ::Color tint) {
+    ::DrawTextEx(font, text, position, fontSize, spacing, tint);
+}
+
+/**
+ * Draw text using font and additional parameters
+ */
+[[maybe_unused]] RLCPPAPI inline void DrawTextEx(const Font& font, const std::string& text, Vector2 position,
         float fontSize, float spacing, ::Color tint) {
     ::DrawTextEx(font, text.c_str(), position, fontSize, spacing, tint);
+}
+
+/**
+ * Draw text using Font and pro parameters (rotation)
+ */
+[[maybe_unused]] RLCPPAPI inline void DrawTextPro(const Font& font, const char* text, Vector2 position,
+        Vector2 origin, float rotation, float fontSize, float spacing, ::Color tint) {
+    ::DrawTextPro(font, text, position, origin, rotation, fontSize, spacing, tint);
 }
 
 /**
@@ -277,8 +300,22 @@ namespace raylib {
 /**
  * Measure string width for default font
  */
-    [[maybe_unused]] RLCPPAPI inline int MeasureText(const std::string& text, int fontSize) {
+[[maybe_unused]] RLCPPAPI inline int MeasureText(const char* text, int fontSize) {
+    return ::MeasureText(text, fontSize);
+}
+
+/**
+ * Measure string width for default font
+ */
+[[maybe_unused]] RLCPPAPI inline int MeasureText(const std::string& text, int fontSize) {
     return ::MeasureText(text.c_str(), fontSize);
+}
+
+/**
+ * Check if two text string are equal
+ */
+[[maybe_unused]] RLCPPAPI inline bool TextIsEqual(const char* text1, const char* text2) {
+    return ::TextIsEqual(text1, text2);
 }
 
 /**
@@ -286,6 +323,13 @@ namespace raylib {
  */
 [[maybe_unused]] RLCPPAPI inline bool TextIsEqual(const std::string& text1, const std::string& text2) {
     return ::TextIsEqual(text1.c_str(), text2.c_str());
+}
+
+/**
+ * Check if two text string are equal
+ */
+[[maybe_unused]] RLCPPAPI inline unsigned int TextLength(const char* text) {
+    return ::TextLength(text);
 }
 
 /**

@@ -159,13 +159,33 @@ class Color : public ::Color {
         ::DrawLineStrip(points, numPoints, *this);
     }
 
+    void DrawText(const char* text, int posX = 0, int posY = 0, int fontSize = 10.0f) const {
+        ::DrawText(text, posX, posY, fontSize, *this);
+    }
+
     void DrawText(const std::string& text, int posX = 0, int posY = 0, int fontSize = 10.0f) const {
         ::DrawText(text.c_str(), posX, posY, fontSize, *this);
+    }
+
+    void DrawText(const ::Font& font, const char* text, ::Vector2 position,
+            float fontSize, float spacing) const {
+        ::DrawTextEx(font, text, position, fontSize, spacing, *this);
     }
 
     void DrawText(const ::Font& font, const std::string& text, ::Vector2 position,
             float fontSize, float spacing) const {
         ::DrawTextEx(font, text.c_str(), position, fontSize, spacing, *this);
+    }
+
+    void DrawText(
+            const ::Font& font,
+            const char* text,
+            ::Vector2 position,
+            ::Vector2 origin,
+            float rotation,
+            float fontSize,
+            float spacing) const {
+        ::DrawTextPro(font, text, position, origin, rotation, fontSize, spacing, *this);
     }
 
     void DrawText(

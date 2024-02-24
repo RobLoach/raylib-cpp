@@ -645,6 +645,16 @@ class Image : public ::Image {
         ::ImageDraw(this, src, srcRec, dstRec, tint);
     }
 
+    void DrawText(const char* text, ::Vector2 position, int fontSize,
+            ::Color color = {255, 255, 255, 255}) {
+        ::ImageDrawText(this,
+            text,
+            static_cast<int>(position.x),
+            static_cast<int>(position.y),
+            fontSize,
+            color);
+    }
+
     void DrawText(const std::string& text, ::Vector2 position, int fontSize,
             ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawText(this,
@@ -660,9 +670,19 @@ class Image : public ::Image {
         ::ImageDrawText(this, text.c_str(), x, y, fontSize, color);
     }
 
+    void DrawText(const char* text, int x, int y, int fontSize,
+            ::Color color = {255, 255, 255, 255}) {
+        ::ImageDrawText(this, text, x, y, fontSize, color);
+    }
+
     void DrawText(const ::Font& font, const std::string& text, ::Vector2 position,
             float fontSize, float spacing, ::Color tint = {255, 255, 255, 255}) {
         ::ImageDrawTextEx(this, font, text.c_str(), position, fontSize, spacing, tint);
+    }
+
+    void DrawText(const ::Font& font, const char* text, ::Vector2 position,
+            float fontSize, float spacing, ::Color tint = {255, 255, 255, 255}) {
+        ::ImageDrawTextEx(this, font, text, position, fontSize, spacing, tint);
     }
 
     /**
