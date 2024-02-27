@@ -90,7 +90,9 @@ class AudioStream : public ::AudioStream {
      * Unload audio stream and free memory
      */
     void Unload() {
-        ::UnloadAudioStream(*this);
+        if (IsReady()) {
+            ::UnloadAudioStream(*this);
+        }
     }
 
     /**
