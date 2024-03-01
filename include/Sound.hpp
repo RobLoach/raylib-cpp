@@ -173,7 +173,7 @@ class Sound : public ::Sound {
     void Load(const std::string& fileName) {
         set(::LoadSound(fileName.c_str()));
         if (!IsReady()) {
-            throw new RaylibException("Failed to load Sound from file");
+            throw RaylibException("Failed to load Sound from file");
         }
     }
 
@@ -185,7 +185,7 @@ class Sound : public ::Sound {
     void Load(const ::Wave& wave) {
         set(::LoadSoundFromWave(wave));
         if (!IsReady()) {
-            throw new RaylibException("Failed to load Wave");
+            throw RaylibException("Failed to load Wave");
         }
     }
 
