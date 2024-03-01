@@ -216,7 +216,7 @@ class Mesh : public ::Mesh {
      */
     void Export(const std::string& fileName) {
         if (!::ExportMesh(*this, fileName.c_str())) {
-            throw new RaylibException("Failed to export the Mesh");
+            throw RaylibException("Failed to export the Mesh");
         }
     }
 

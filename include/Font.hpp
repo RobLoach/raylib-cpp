@@ -166,7 +166,7 @@ class Font : public ::Font {
     void Load(const std::string& fileName) {
         set(::LoadFont(fileName.c_str()));
         if (!IsReady()) {
-            throw new RaylibException("Failed to load Font with from file: " + fileName);
+            throw RaylibException("Failed to load Font with from file: " + fileName);
         }
     }
 
@@ -183,14 +183,14 @@ class Font : public ::Font {
     void Load(const std::string& fileName, int fontSize, int* fontChars, int charCount)  {
         set(::LoadFontEx(fileName.c_str(), fontSize, fontChars, charCount));
         if (!IsReady()) {
-            throw new RaylibException("Failed to load Font with from file with font size: " + fileName);
+            throw RaylibException("Failed to load Font with from file with font size: " + fileName);
         }
     }
 
     void Load(const ::Image& image, ::Color key, int firstChar) {
         set(::LoadFontFromImage(image, key, firstChar));
         if (!IsReady()) {
-            throw new RaylibException("Failed to load Font with from image");
+            throw RaylibException("Failed to load Font with from image");
         }
     }
 
@@ -199,7 +199,7 @@ class Font : public ::Font {
         set(::LoadFontFromMemory(fileType.c_str(), fileData, dataSize, fontSize, fontChars,
             charsCount));
         if (!IsReady()) {
-            throw new RaylibException("Failed to load Font " + fileType + " with from file data");
+            throw RaylibException("Failed to load Font " + fileType + " with from file data");
         }
     }
 
