@@ -171,7 +171,8 @@ class Vector4 : public ::Vector4 {
 };
 
 // Alias the Vector4 as Quaternion.
-typedef Vector4 Quaternion;
+using Quaternion = Vector4;
+
 }  // namespace raylib
 
 using RVector4 = raylib::Vector4;

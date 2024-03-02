@@ -134,7 +134,9 @@ class RenderTexture : public ::RenderTexture {
         depth = renderTexture.depth;
     }
 };
-typedef RenderTexture RenderTexture2D;
+
+using RenderTexture2D = RenderTexture;
+
 }  // namespace raylib
 
 using RRenderTexture = raylib::RenderTexture;
