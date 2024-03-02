@@ -127,6 +127,19 @@ int main(int argc, char *argv[]) {
         Assert(passed, "Expected to have a RaylibException to be thrown");
     }
 
+    // Load FileData
+    {
+        raylib::FileData file(path + "/resources/weird.wav");
+        Assert(file.GetBytesRead() > 0, "Expected file to be loaded correctly");
+    }
+
+    // Load FileText
+    {
+        raylib::FileText text(path + "/resources/lorem.txt");
+        Assert(text.GetLength() > 0, "Expected file to be loaded correctly");
+        AssertEqual(text.ToString().substr(0, 5), "Lorem");
+    }
+
     TraceLog(LOG_INFO, "TEST: raylib-cpp test");
     TraceLog(LOG_INFO, "---------------------");
     return 0;

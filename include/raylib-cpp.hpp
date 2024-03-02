@@ -38,6 +38,8 @@
 #include "./Camera2D.hpp"
 #include "./Camera3D.hpp"
 #include "./Color.hpp"
+#include "./FileData.hpp"
+#include "./FileText.hpp"
 #include "./Font.hpp"
 #include "./Functions.hpp"
 #include "./Gamepad.hpp"
