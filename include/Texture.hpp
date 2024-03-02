@@ -67,8 +67,8 @@ class Texture : public TextureUnmanaged {
 };
 
 // Create the Texture aliases.
-typedef Texture Texture2D;
-typedef Texture TextureCubemap;
+using Texture2D = Texture;
+using TextureCubemap = Texture;
 
 }  // namespace raylib
 

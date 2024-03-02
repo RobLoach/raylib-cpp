@@ -334,8 +334,8 @@ class TextureUnmanaged : public ::Texture {
 };
 
 // Create the TextureUnmanaged aliases.
-typedef TextureUnmanaged Texture2DUnmanaged;
-typedef TextureUnmanaged TextureCubemapUnmanaged;
+using Texture2DUnmanaged = TextureUnmanaged;
+using TextureCubemapUnmanaged = TextureUnmanaged;
 
 }  // namespace raylib
 

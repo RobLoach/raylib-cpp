@@ -129,7 +129,7 @@ class Camera3D : public ::Camera3D {
     }
 };
 
-typedef Camera3D Camera;
+using Camera = Camera3D;
 
 }  // namespace raylib
 
