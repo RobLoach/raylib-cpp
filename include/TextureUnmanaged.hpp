@@ -12,7 +12,7 @@
 
 namespace raylib {
 /**
- * A Texture that is not managed by the C++ garbage collector.
+ * A Texture that is not managed by C++ RAII.
  *
  * Make sure to Unload() this if needed, otherwise use raylib::Texture.
  *
