@@ -43,6 +43,15 @@ class Model : public ::Model {
         Load(mesh);
     }
 
+    /**
+     * The Model constructor with a Mesh() is removed.
+     *
+     * Use `raylib::MeshUnmanaged` or `::Mesh` instead, as raylib will take ownership of the data.
+     *
+     * @see raylib::MeshUnmanaged
+     */
+    Model(const raylib::Mesh& mesh) = delete;
+
     ~Model() {
         Unload();
     }
