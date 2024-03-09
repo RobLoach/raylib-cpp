@@ -43,6 +43,15 @@ class Model : public ::Model {
         Load(mesh);
     }
 
+    /*
+     * Load a model from a mesh.
+     *
+     * @throws raylib::RaylibException Throws if failed to load the Modal.
+     */
+    Model(const raylib::Mesh& mesh) {
+        throw raylib::RaylibException("Model(mesh) constructor expects a ::Mesh or raylib::MeshUnmanaged, as it takes ownership of the Mesh itself.");
+    }
+
     ~Model() {
         Unload();
     }
