@@ -48,11 +48,11 @@ class AudioStream : public ::AudioStream {
         Unload();
     }
 
-    GETTERSETTER(rAudioBuffer *, Buffer, buffer)
-    GETTERSETTER(rAudioProcessor *, Processor, processor)
-    GETTERSETTER(unsigned int, SampleRate, sampleRate)
-    GETTERSETTER(unsigned int, SampleSize, sampleSize)
-    GETTERSETTER(unsigned int, Channels, channels)
+    GETTER(rAudioBuffer *, Buffer, buffer)
+    GETTER(rAudioProcessor *, Processor, processor)
+    GETTER(unsigned int, SampleRate, sampleRate)
+    GETTER(unsigned int, SampleSize, sampleSize)
+    GETTER(unsigned int, Channels, channels)
 
     AudioStream& operator=(const ::AudioStream& stream) {
         set(stream);

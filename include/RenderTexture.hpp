@@ -43,7 +43,7 @@ class RenderTexture : public ::RenderTexture {
         other.depth = {};
     }
 
-    GETTERSETTER(unsigned int, Id, id)
+    GETTER(unsigned int, Id, id)
 
     /**
      * Get the color buffer attachment texture.

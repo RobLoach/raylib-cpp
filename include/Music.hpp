@@ -60,11 +60,11 @@ class Music : public ::Music {
         Unload();
     }
 
-    GETTERSETTER(::AudioStream, Stream, stream)
-    GETTERSETTER(unsigned int, FrameCount, frameCount)
+    GETTER(::AudioStream, Stream, stream)
+    GETTER(unsigned int, FrameCount, frameCount)
     GETTERSETTER(bool, Looping, looping)
-    GETTERSETTER(int, CtxType, ctxType)
-    GETTERSETTER(void*, CtxData, ctxData)
+    GETTER(int, CtxType, ctxType)
+    GETTER(void*, CtxData, ctxData)
 
     Music& operator=(const ::Music& music) {
         set(music);

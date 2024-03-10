@@ -39,9 +39,9 @@ class AutomationEventList : public ::AutomationEventList {
         Unload();
     }
 
-    GETTERSETTER(unsigned int, Capacity, capacity)
-    GETTERSETTER(unsigned int, Count, count)
-    GETTERSETTER(AutomationEvent*, Events, events)
+    GETTER(unsigned int, Capacity, capacity)
+    GETTER(unsigned int, Count, count)
+    GETTER(AutomationEvent*, Events, events)
 
     AutomationEventList& operator=(const ::AutomationEventList& other) {
         set(other);

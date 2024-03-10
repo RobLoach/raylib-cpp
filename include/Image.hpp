@@ -316,11 +316,29 @@ class Image : public ::Image {
         }
     }
 
-    GETTERSETTER(void*, Data, data)
-    GETTERSETTER(int, Width, width)
-    GETTERSETTER(int, Height, height)
-    GETTERSETTER(int, Mipmaps, mipmaps)
-    GETTERSETTER(int, Format, format)
+    GETTER(void*, Data, data)
+    GETTER(int, Width, width)
+    GETTER(int, Height, height)
+    GETTER(int, Mipmaps, mipmaps)
+    GETTER(int, Format, format)
+
+    /**
+     * Set the width of the image canvas.
+     *
+     * @see ResizeCanvas
+     */
+    void SetWidth(int width, int offsetX = 0, int offsetY = 0, ::Color fill = {255, 255, 255, 255}) {
+        ResizeCanvas(width, height, offsetX, offsetY, fill);
+    }
+
+    /**
+     * Set the height of the image canvas.
+     *
+     * @see ResizeCanvas
+     */
+    void SetHeight(int height, int offsetX = 0, int offsetY = 0, ::Color fill = {255, 255, 255, 255}) {
+        ResizeCanvas(width, height, offsetX, offsetY, fill);
+    }
 
     /**
      * Retrieve the width and height of the image.
