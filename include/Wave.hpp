@@ -65,11 +65,11 @@ class Wave : public ::Wave {
         Unload();
     }
 
-    GETTERSETTER(unsigned int, FrameCount, frameCount)
-    GETTERSETTER(unsigned int, SampleRate, sampleRate)
-    GETTERSETTER(unsigned int, SampleSize, sampleSize)
-    GETTERSETTER(unsigned int, Channels, channels)
-    GETTERSETTER(void *, Data, data)
+    GETTER(unsigned int, FrameCount, frameCount)
+    GETTER(unsigned int, SampleRate, sampleRate)
+    GETTER(unsigned int, SampleSize, sampleSize)
+    GETTER(unsigned int, Channels, channels)
+    GETTER(void *, Data, data)
 
     Wave& operator=(const ::Wave& wave) {
         set(wave);

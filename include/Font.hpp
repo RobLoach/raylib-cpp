@@ -108,11 +108,11 @@ class Font : public ::Font {
         }
     }
 
-    GETTERSETTER(int, BaseSize, baseSize)
-    GETTERSETTER(int, GlyphCount, glyphCount)
-    GETTERSETTER(int, GlyphPadding, glyphPadding)
-    GETTERSETTER(::Rectangle*, Recs, recs)
-    GETTERSETTER(::GlyphInfo*, Glyphs, glyphs)
+    GETTER(int, BaseSize, baseSize)
+    GETTER(int, GlyphCount, glyphCount)
+    GETTER(int, GlyphPadding, glyphPadding)
+    GETTER(::Rectangle*, Recs, recs)
+    GETTER(::GlyphInfo*, Glyphs, glyphs)
 
     /**
      * Get the texture atlas containing the glyphs.

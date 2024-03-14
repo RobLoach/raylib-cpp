@@ -59,8 +59,8 @@ class Sound : public ::Sound {
         Unload();
     }
 
-    GETTERSETTER(unsigned int, FrameCount, frameCount)
-    GETTERSETTER(::AudioStream, Stream, stream)
+    GETTER(unsigned int, FrameCount, frameCount)
+    GETTER(::AudioStream, Stream, stream)
 
     Sound& operator=(Sound&& other) noexcept {
         if (this == &other) {

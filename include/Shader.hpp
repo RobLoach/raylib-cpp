@@ -62,8 +62,8 @@ class Shader : public ::Shader {
         return ::LoadShaderFromMemory(vsCode, fsCode);
     }
 
-    GETTERSETTER(unsigned int, Id, id)
-    GETTERSETTER(int*, Locs, locs)
+    GETTER(unsigned int, Id, id)
+    GETTER(int*, Locs, locs)
 
     Shader& operator=(const ::Shader& shader) {
         set(shader);

@@ -80,11 +80,11 @@ class TextureUnmanaged : public ::Texture {
         // Nothing.
     }
 
-    GETTERSETTER(unsigned int, Id, id)
-    GETTERSETTER(int, Width, width)
-    GETTERSETTER(int, Height, height)
-    GETTERSETTER(int, Mipmaps, mipmaps)
-    GETTERSETTER(int, Format, format)
+    GETTER(unsigned int, Id, id)
+    GETTER(int, Width, width)
+    GETTER(int, Height, height)
+    GETTER(int, Mipmaps, mipmaps)
+    GETTER(int, Format, format)
 
     TextureUnmanaged& operator=(const ::Texture& texture) {
         set(texture);
