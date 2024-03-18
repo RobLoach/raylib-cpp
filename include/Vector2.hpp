@@ -96,7 +96,7 @@ class Vector2 : public ::Vector2 {
     }
 
     /**
-     * Add two vectors (v1 + v2)
+     * Subtract two vectors (v1 - v2)
      */
     Vector2& operator-=(const ::Vector2& vector2) {
         set(Vector2Subtract(*this, vector2));
