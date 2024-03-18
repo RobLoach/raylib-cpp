@@ -43,6 +43,15 @@ class Model : public ::Model {
         Load(mesh);
     }
 
+    /*
+     * Overloaded constructor to catch when passing in a `raylib::Mesh`. It expects a `raylib::MeshUnmanaged or `::Mesh`.
+     *
+     * @throws raylib::RaylibException Since the model takes ownership of the Mesh, a `::Mesh` or `raylib::UnmanagedMesh` is required here.
+     */
+    Model(const raylib::Mesh& mesh) {
+        throw raylib::RaylibException("Model(mesh) constructor expects a ::Mesh or raylib::MeshUnmanaged, as it takes ownership of the Mesh itself.");
+    }
+
     ~Model() {
         Unload();
     }
