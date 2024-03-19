@@ -213,6 +213,13 @@ class Vector3 : public ::Vector3 {
         return Vector3Length(*this);
     }
 
+    /**
+     * Calculate vector square length
+     */
+    float LengthSqr() const {
+        return Vector3LengthSqr(*this);
+    }
+
     Vector3 Normalize() const {
         return Vector3Normalize(*this);
     }
