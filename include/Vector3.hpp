@@ -244,6 +244,14 @@ class Vector3 : public ::Vector3 {
         return Vector3Perpendicular(*this);
     }
 
+    Vector3 Project(const ::Vector3& vector3) const {
+        return Vector3Project(*this, vector3);
+    }
+
+    Vector3 Reject(const ::Vector3& vector3) const {
+        return Vector3Reject(*this, vector3);
+    }
+
     void OrthoNormalize(::Vector3* vector3) {
         Vector3OrthoNormalize(this, vector3);
     }
