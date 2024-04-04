@@ -17,13 +17,14 @@ endif()
 # raylib-cpp
 find_package(raylib_cpp QUIET)
 if (NOT raylib_cpp_FOUND)
-    set(RAYLIB_CPP_VERSION v5.0.1)
+    if (NOT DEFINED RAYLIB_CPP_VERSION)
+        set(RAYLIB_CPP_VERSION v5.0.1)
+    endif()
     include(FetchContent)
     FetchContent_Declare(
         raylib_cpp
         GIT_REPOSITORY https://github.com/RobLoach/raylib-cpp.git
         GIT_TAG ${RAYLIB_CPP_VERSION}
-        FIND_PACKAGE_ARGS NAMES raylib_cpp
     )
     FetchContent_MakeAvailable(raylib_cpp)
 endif()
