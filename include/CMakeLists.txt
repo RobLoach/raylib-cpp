@@ -8,6 +8,8 @@ set(RAYLIB_CPP_HEADERS
   Camera2D.hpp
   Camera3D.hpp
   Color.hpp
+  FileData.hpp
+  FileText.hpp
   Font.hpp
   Functions.hpp
   Gamepad.hpp
@@ -16,6 +18,7 @@ set(RAYLIB_CPP_HEADERS
   Material.hpp
   Matrix.hpp
   Mesh.hpp
+  MeshUnmanaged.hpp
   Model.hpp
   ModelAnimation.hpp
   Mouse.hpp
