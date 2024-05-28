@@ -10,7 +10,7 @@
 namespace raylib {
 
 class FileData {
-public:
+ public:
     FileData() = default;
     FileData(const FileData&) = delete;
     FileData(FileData&& other) noexcept : data(other.data), bytesRead(other.bytesRead) {
@@ -44,7 +44,7 @@ public:
         }
     }
 
-private:
+ private:
     unsigned char* data{nullptr};
     int bytesRead{0};
 };

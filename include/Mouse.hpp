@@ -144,7 +144,7 @@ namespace Mouse {
     [[maybe_unused]] RLCPPAPI inline Ray GetRay(const ::Camera& camera) {
         return ::GetMouseRay(::GetMousePosition(), camera);
     }
-};
+}  // namespace Mouse
 }  // namespace raylib
 
 namespace RMouse = raylib::Mouse;

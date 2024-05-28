@@ -10,7 +10,7 @@
 namespace raylib {
 
 class FileText {
-public:
+ public:
     FileText() = default;
     FileText(const FileText&) = delete;
     FileText(FileText&& other) noexcept : data(other.data), length(other.length) {
@@ -53,7 +53,7 @@ public:
         }
     }
 
-private:
+ private:
     char* data{nullptr};
     unsigned int length{0};
 };
