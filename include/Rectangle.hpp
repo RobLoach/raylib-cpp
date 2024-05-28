@@ -81,12 +81,20 @@ class Rectangle : public ::Rectangle {
     }
 
     void DrawRoundedLines(float roundness, int segments, ::Color color) const {
-        ::DrawRectangleRoundedLines(*this, roundness, segments, color);
+        #if RAYLIB_VERSION_MAJOR == 5 && RAYLIB_VERSION_MINOR == 0
+            ::DrawRectangleRoundedLines(*this, roundness, segments, 1.0f, color);
+        #else
+            ::DrawRectangleRoundedLines(*this, roundness, segments, color);
+        #endif
     }
 
     void DrawRoundedLines(float roundness, int segments,
             float lineThick, ::Color color) const {
-        ::DrawRectangleRoundedLinesEx(*this, roundness, segments, lineThick, color);
+        #if RAYLIB_VERSION_MAJOR == 5 && RAYLIB_VERSION_MINOR == 0
+            ::DrawRectangleRoundedLines(*this, roundness, segments, lineThick, color);
+        #else
+            DrawRectangleRoundedLinesEx(*this, roundness, segments, lineThick, color);
+        #endif
     }
 
     /**

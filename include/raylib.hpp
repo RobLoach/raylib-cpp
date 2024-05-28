@@ -27,7 +27,7 @@ extern "C" {
 #endif
 
 #if RAYLIB_VERSION_MINOR < 1
-#error "raylib-cpp targets raylib 5.1 or higher."
+    #error "raylib-cpp targets raylib 5.1 or higher."
 #endif
 
 #ifdef __cplusplus
