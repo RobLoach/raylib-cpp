@@ -15,12 +15,18 @@ class AutomationEventList : public ::AutomationEventList {
         set(automationEventList);
     }
 
-    AutomationEventList(unsigned int capacity = 16384,
-            unsigned int count = 0,
-            AutomationEvent *events = nullptr) : ::AutomationEventList{capacity, count, events} {
-        // Nothing.
+    /**
+     * Load an empty automation events list.
+     */
+    AutomationEventList() {
+        set(::LoadAutomationEventList(0));
     }
 
+    /**
+     * Load automation events list from file.
+     *
+     * @param fileName The file path to load the automation events list from.
+     */
     AutomationEventList(const char* fileName) {
         Load(fileName);
     }
@@ -82,12 +88,19 @@ class AutomationEventList : public ::AutomationEventList {
      * Update audio stream buffers with data
      */
     void Unload() {
-        #if RAYLIB_VERSION_MAJOR >= 5
-        #if RAYLIB_VERSION_MINOR == 0
-        ::UnloadAutomationEventList(this);
-        #elif RAYLIB_VERSION_MINOR >= 1
-        ::UnloadAutomationEventList(*this);
-        #endif
+        if (!IsReady()) {
+            return;
+        }
+
+        // The function signature of UnloadAutomationEventList() changes from raylib 5.0.
+        #if RAYLIB_VERSION_MAJOR == 5
+            #if RAYLIB_VERSION_MINOR == 0
+                ::UnloadAutomationEventList(this);
+            #elif RAYLIB_VERSION_MINOR >= 1
+                ::UnloadAutomationEventList(*this);
+            #endif
+        #else
+            ::UnloadAutomationEventList(*this);
         #endif
     }
 
