@@ -15,13 +15,15 @@ extern "C" {
 #include RAYLIB_H_FILE // NOLINT
 
 #if !defined(RAYLIB_VERSION_MAJOR) || !defined(RAYLIB_VERSION_MINOR)
-#if RAYLIB_VERSION_MAJOR < 5
-#error "raylib-cpp requires at least raylib 5.0.0"
+    #error "raylib-cpp requires raylib >= 5"
 #endif
+
+#if RAYLIB_VERSION_MAJOR < 5
+    #error "raylib-cpp requires raylib >= 5"
 #endif
 
 #if RAYLIB_VERSION_MAJOR > 5
-#error "raylib-cpp targets raylib 5. Use the `next` branch for the next version of raylib."
+    #error "raylib-cpp requires raylib ~5.0. Use the `next` branch for the next version of raylib."
 #endif
 
 #ifdef __cplusplus
