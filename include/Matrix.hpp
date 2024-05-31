@@ -58,11 +58,6 @@ class Matrix : public ::Matrix {
         return *this;
     }
 
-    Matrix& operator=(const Matrix& matrix) {
-        set(matrix);
-        return *this;
-    }
-
     bool operator==(const ::Matrix& other) {
         return m0 == other.m0
             && m1 == other.m1
