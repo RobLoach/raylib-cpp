@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <string>
-#include <cstring>
 
 #include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
@@ -103,7 +102,11 @@ class ModelAnimation : public ::ModelAnimation {
         frameCount = model.frameCount;
         bones = model.bones;
         framePoses = model.framePoses;
-        std::strcpy(name, model.name);
+
+        // Duplicate the name. TextCopy() uses the null terminator, which we ignore here.
+        for (int i = 0; i < 32; i++) {
+            name[i] = model.name[i];
+        }
     }
 };
 }  // namespace raylib
