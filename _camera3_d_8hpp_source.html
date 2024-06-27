@@ -115,29 +115,29 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#a1836faf8c5617c5efea6053c6bb77b4f">   65</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> <a class="code" href="classraylib_1_1_camera3_d.html#a1836faf8c5617c5efea6053c6bb77b4f">GetMatrix</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#a1836faf8c5617c5efea6053c6bb77b4f">   65</a></span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> <a class="code" href="classraylib_1_1_camera3_d.html#a1836faf8c5617c5efea6053c6bb77b4f">GetMatrix</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        return ::GetCameraMatrix(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#a6e5275c4493ac111f5f4b9b6261463ed">   72</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_camera3_d.html">Camera3D</a>&amp; <a class="code" href="classraylib_1_1_camera3_d.html#a6e5275c4493ac111f5f4b9b6261463ed">Update</a>(<span class="keywordtype">int</span> mode) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#a6e5275c4493ac111f5f4b9b6261463ed">   72</a></span>&#160;    <a class="code" href="classraylib_1_1_camera3_d.html">Camera3D</a>&amp; <a class="code" href="classraylib_1_1_camera3_d.html#a6e5275c4493ac111f5f4b9b6261463ed">Update</a>(<span class="keywordtype">int</span> mode) {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        ::UpdateCamera(<span class="keyword">this</span>, mode);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#aa32630c133c21c9090a46519eb68a161">   80</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_camera3_d.html">Camera3D</a>&amp; <a class="code" href="classraylib_1_1_camera3_d.html#aa32630c133c21c9090a46519eb68a161">Update</a>(::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> movement, ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> rotation, <span class="keywordtype">float</span> zoom = 1.0f) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#aa32630c133c21c9090a46519eb68a161">   80</a></span>&#160;    <a class="code" href="classraylib_1_1_camera3_d.html">Camera3D</a>&amp; <a class="code" href="classraylib_1_1_camera3_d.html#aa32630c133c21c9090a46519eb68a161">Update</a>(::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> movement, ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> rotation, <span class="keywordtype">float</span> zoom = 1.0f) {</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        ::UpdateCameraPro(<span class="keyword">this</span>, movement, rotation, zoom);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#ac59decb87b851c16adee7c2c742f8961">   88</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_ray.html">Ray</a> <a class="code" href="classraylib_1_1_camera3_d.html#ac59decb87b851c16adee7c2c742f8961">GetMouseRay</a>(::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> mousePosition)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#ac59decb87b851c16adee7c2c742f8961">   88</a></span>&#160;    <a class="code" href="classraylib_1_1_ray.html">Ray</a> <a class="code" href="classraylib_1_1_camera3_d.html#ac59decb87b851c16adee7c2c742f8961">GetMouseRay</a>(::<a class="code" href="classraylib_1_1_vector2.html">Vector2</a> mousePosition)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        return ::GetMouseRay(mousePosition, *<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#a6259d44a0a9b08d842fb30530dea19cc">   95</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_camera3_d.html#a6259d44a0a9b08d842fb30530dea19cc">GetWorldToScreen</a>(::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> position)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#a6259d44a0a9b08d842fb30530dea19cc">   95</a></span>&#160;    <a class="code" href="classraylib_1_1_vector2.html">Vector2</a> <a class="code" href="classraylib_1_1_camera3_d.html#a6259d44a0a9b08d842fb30530dea19cc">GetWorldToScreen</a>(::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> position)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        return ::GetWorldToScreen(position, *<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#a7858f66ab315f8fa6db756e072a2943a">  102</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_camera3_d.html#a7858f66ab315f8fa6db756e072a2943a">DrawBillboard</a>(</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#a7858f66ab315f8fa6db756e072a2943a">  102</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_camera3_d.html#a7858f66ab315f8fa6db756e072a2943a">DrawBillboard</a>(</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            const ::Texture2D&amp; texture,</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> center,</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordtype">float</span> size,</div>
@@ -145,7 +145,7 @@ $(function() {
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="classraylib_1_1_camera3_d.html#a7858f66ab315f8fa6db756e072a2943a">::DrawBillboard</a>(*<span class="keyword">this</span>, texture, center, size, tint);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#ae49055f2db670d584a2d404c9a17c777">  113</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_camera3_d.html#ae49055f2db670d584a2d404c9a17c777">DrawBillboard</a>(</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classraylib_1_1_camera3_d.html#ae49055f2db670d584a2d404c9a17c777">  113</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_camera3_d.html#ae49055f2db670d584a2d404c9a17c777">DrawBillboard</a>(</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            const ::Texture2D&amp; texture,</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            ::<a class="code" href="classraylib_1_1_rectangle.html">Rectangle</a> sourceRec,</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            ::<a class="code" href="classraylib_1_1_vector3.html">Vector3</a> center,</div>
@@ -154,7 +154,7 @@ $(function() {
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        ::DrawBillboardRec(*<span class="keyword">this</span>, texture, sourceRec, center, size, tint);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> set(const ::Camera3D&amp; camera) {</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        position = camera.position;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        target = camera.target;</div>
@@ -164,7 +164,7 @@ $(function() {
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;};</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">typedef</span> Camera3D Camera;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">using</span> Camera = Camera3D;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}  <span class="comment">// namespace raylib</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
@@ -187,8 +187,8 @@ $(function() {
 <div class="ttc" id="aclassraylib_1_1_matrix_html"><div class="ttname"><a href="classraylib_1_1_matrix.html">raylib::Matrix</a></div><div class="ttdoc">Matrix type (OpenGL style 4x4 - right handed, column major)</div><div class="ttdef"><b>Definition:</b> <a href="_matrix_8hpp_source.html#l00016">Matrix.hpp:16</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_ray_html"><div class="ttname"><a href="classraylib_1_1_ray.html">raylib::Ray</a></div><div class="ttdoc">Ray type (useful for raycast)</div><div class="ttdef"><b>Definition:</b> <a href="_ray_8hpp_source.html#l00012">Ray.hpp:12</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_rectangle_html"><div class="ttname"><a href="classraylib_1_1_rectangle.html">raylib::Rectangle</a></div><div class="ttdoc">Rectangle type.</div><div class="ttdef"><b>Definition:</b> <a href="_rectangle_8hpp_source.html#l00012">Rectangle.hpp:12</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector2_html"><div class="ttname"><a href="classraylib_1_1_vector2.html">raylib::Vector2</a></div><div class="ttdoc">Vector2 type.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00016">Vector2.hpp:16</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vector3_html"><div class="ttname"><a href="classraylib_1_1_vector3.html">raylib::Vector3</a></div><div class="ttdoc">Vector3 type.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00016">Vector3.hpp:16</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector2_html"><div class="ttname"><a href="classraylib_1_1_vector2.html">raylib::Vector2</a></div><div class="ttdoc">Vector2 type.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00018">Vector2.hpp:18</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vector3_html"><div class="ttname"><a href="classraylib_1_1_vector3.html">raylib::Vector3</a></div><div class="ttdoc">Vector3 type.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00018">Vector3.hpp:18</a></div></div>
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00008">AudioDevice.hpp:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

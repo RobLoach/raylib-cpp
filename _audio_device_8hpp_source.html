@@ -92,22 +92,22 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classraylib_1_1_audio_device.html#a04b39055a7d4dc12801f39f3429af9a0">Close</a>();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#a65bd0c0305c16fb70a0a6fb09e834224">   39</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_audio_device.html#a65bd0c0305c16fb70a0a6fb09e834224">Init</a>() {</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#a65bd0c0305c16fb70a0a6fb09e834224">   39</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_audio_device.html#a65bd0c0305c16fb70a0a6fb09e834224">Init</a>() {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        ::InitAudioDevice();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classraylib_1_1_audio_device.html#a5555c3a41868046ea8b6ff08195f21bc">IsReady</a>()) {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classraylib_1_1_raylib_exception.html">RaylibException</a>(<span class="stringliteral">&quot;Failed to initialize AudioDevice&quot;</span>);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#a04b39055a7d4dc12801f39f3429af9a0">   49</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_audio_device.html#a04b39055a7d4dc12801f39f3429af9a0">Close</a>() {</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#a04b39055a7d4dc12801f39f3429af9a0">   49</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_audio_device.html#a04b39055a7d4dc12801f39f3429af9a0">Close</a>() {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        ::CloseAudioDevice();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#a5555c3a41868046ea8b6ff08195f21bc">   56</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_audio_device.html#a5555c3a41868046ea8b6ff08195f21bc">IsReady</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#a5555c3a41868046ea8b6ff08195f21bc">   56</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_audio_device.html#a5555c3a41868046ea8b6ff08195f21bc">IsReady</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        return ::IsAudioDeviceReady();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#ae1e2ca6a0cd5a3b2cb6f4cfc5455a3f1">   65</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_audio_device.html">AudioDevice</a>&amp; <a class="code" href="classraylib_1_1_audio_device.html#ae1e2ca6a0cd5a3b2cb6f4cfc5455a3f1">SetVolume</a>(<span class="keywordtype">float</span> volume) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classraylib_1_1_audio_device.html#ae1e2ca6a0cd5a3b2cb6f4cfc5455a3f1">   65</a></span>&#160;    <a class="code" href="classraylib_1_1_audio_device.html">AudioDevice</a>&amp; <a class="code" href="classraylib_1_1_audio_device.html#ae1e2ca6a0cd5a3b2cb6f4cfc5455a3f1">SetVolume</a>(<span class="keywordtype">float</span> volume) {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        ::SetMasterVolume(volume);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>

@@ -158,15 +158,15 @@ $(function() {
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_NO_MATH</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a7ed7bc3003490c97c363ac2108aaa44b">   93</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_matrix.html#a7ed7bc3003490c97c363ac2108aaa44b">Trace</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a7ed7bc3003490c97c363ac2108aaa44b">   93</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_matrix.html#a7ed7bc3003490c97c363ac2108aaa44b">Trace</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        return ::MatrixTrace(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a7fc0f1d9225126201c4880a5052b8316">  100</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> <a class="code" href="classraylib_1_1_matrix.html#a7fc0f1d9225126201c4880a5052b8316">Transpose</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a7fc0f1d9225126201c4880a5052b8316">  100</a></span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> <a class="code" href="classraylib_1_1_matrix.html#a7fc0f1d9225126201c4880a5052b8316">Transpose</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        return ::MatrixTranspose(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> Invert()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> Invert()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        return ::MatrixInvert(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
@@ -244,7 +244,7 @@ $(function() {
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        return ::MatrixLookAt(eye, target, up);</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keyword">inline</span> float16 ToFloatV()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    float16 ToFloatV()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        return ::MatrixToFloatV(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
@@ -252,22 +252,22 @@ $(function() {
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">return</span> ToFloatV();</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a63d84439072b269a99cbf83608ceb387">  193</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>&amp; <a class="code" href="classraylib_1_1_matrix.html#a63d84439072b269a99cbf83608ceb387">SetShaderValue</a>(const ::Shader&amp; shader, <span class="keywordtype">int</span> uniformLoc) {</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a63d84439072b269a99cbf83608ceb387">  193</a></span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>&amp; <a class="code" href="classraylib_1_1_matrix.html#a63d84439072b269a99cbf83608ceb387">SetShaderValue</a>(const ::Shader&amp; shader, <span class="keywordtype">int</span> uniformLoc) {</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        ::SetShaderValueMatrix(shader, uniformLoc, *<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> GetCamera(const ::Camera&amp; camera) {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keyword">static</span> <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> GetCamera(const ::Camera&amp; camera) {</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        return ::GetCameraMatrix(camera);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keyword">inline</span> <span class="keyword">static</span> Matrix GetCamera(const ::Camera2D&amp; camera) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keyword">static</span> Matrix GetCamera(const ::Camera2D&amp; camera) {</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        return ::GetCameraMatrix2D(camera);</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">void</span> set(const ::Matrix&amp; mat) {</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        m0 = mat.m0;</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        m1 = mat.m1;</div>

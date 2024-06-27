@@ -118,11 +118,11 @@ $(function() {
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515">Unload</a>();</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a989d8aa3f23f0656ab3da9f24da40aa8">   63</a></span>&#160;    GETTERSETTER(::<a class="code" href="classraylib_1_1_audio_stream.html">AudioStream</a>, Stream, stream)</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#ace0dab529c9fad79d4ea659f45323ac5">   64</a></span>&#160;    GETTERSETTER(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, FrameCount, frameCount)</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a989d8aa3f23f0656ab3da9f24da40aa8">   63</a></span>&#160;    GETTER(::<a class="code" href="classraylib_1_1_audio_stream.html">AudioStream</a>, Stream, stream)</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#ace0dab529c9fad79d4ea659f45323ac5">   64</a></span>&#160;    GETTER(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, FrameCount, frameCount)</div>
 <div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a6b04c6ccd89175f40de2491846a8154e">   65</a></span>&#160;    GETTERSETTER(<span class="keywordtype">bool</span>, Looping, looping)</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#abbbad14fbc860d0e74f14c4b0a17a723">   66</a></span>&#160;    GETTERSETTER(<span class="keywordtype">int</span>, CtxType, ctxType)</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a349420428960e47afd4c69499b62eeac">   67</a></span>&#160;    GETTERSETTER(<span class="keywordtype">void</span>*, CtxData, ctxData)</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#abbbad14fbc860d0e74f14c4b0a17a723">   66</a></span>&#160;    GETTER(<span class="keywordtype">int</span>, CtxType, ctxType)</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a349420428960e47afd4c69499b62eeac">   67</a></span>&#160;    GETTER(<span class="keywordtype">void</span>*, CtxData, ctxData)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_music.html">Music</a>&amp; music) {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        set(music);</div>
@@ -148,64 +148,64 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515">   96</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515">Unload</a>() {</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515">   96</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_music.html#aeaec37b4d521dfca16f39ce141c12515">Unload</a>() {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        ::UnloadMusicStream(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a908ddb6c248c75bd1a3cabc1381a45fc">  103</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a908ddb6c248c75bd1a3cabc1381a45fc">Play</a>() {</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a908ddb6c248c75bd1a3cabc1381a45fc">  103</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a908ddb6c248c75bd1a3cabc1381a45fc">Play</a>() {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        ::PlayMusicStream(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a031bc82c19b51b29f5c507cacd9c2664">  111</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a031bc82c19b51b29f5c507cacd9c2664">Update</a>() {</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a031bc82c19b51b29f5c507cacd9c2664">  111</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a031bc82c19b51b29f5c507cacd9c2664">Update</a>() {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        ::UpdateMusicStream(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a6a6ed906b768631c86a006b23900d542">  119</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a6a6ed906b768631c86a006b23900d542">Stop</a>() {</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a6a6ed906b768631c86a006b23900d542">  119</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a6a6ed906b768631c86a006b23900d542">Stop</a>() {</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        ::StopMusicStream(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a810f0ae266f247237aa23574e1e31626">  127</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a810f0ae266f247237aa23574e1e31626">Pause</a>() {</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a810f0ae266f247237aa23574e1e31626">  127</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a810f0ae266f247237aa23574e1e31626">Pause</a>() {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        ::PauseMusicStream(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a5c5c67064aa37d2b3f3234a2a02230de">  135</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a5c5c67064aa37d2b3f3234a2a02230de">Resume</a>() {</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a5c5c67064aa37d2b3f3234a2a02230de">  135</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a5c5c67064aa37d2b3f3234a2a02230de">Resume</a>() {</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        ::ResumeMusicStream(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#ab2013c089ab1b10e6dcc70c9c350c0f2">  143</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#ab2013c089ab1b10e6dcc70c9c350c0f2">Seek</a>(<span class="keywordtype">float</span> position) {</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#ab2013c089ab1b10e6dcc70c9c350c0f2">  143</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#ab2013c089ab1b10e6dcc70c9c350c0f2">Seek</a>(<span class="keywordtype">float</span> position) {</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        SeekMusicStream(*<span class="keyword">this</span>, position);</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a020a0807b02878ce88eb72a51f93a7a8">  151</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_music.html#a020a0807b02878ce88eb72a51f93a7a8">IsPlaying</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a020a0807b02878ce88eb72a51f93a7a8">  151</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_music.html#a020a0807b02878ce88eb72a51f93a7a8">IsPlaying</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        return ::IsMusicStreamPlaying(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#acbcc821ca804c0c9783e96267b7c5ef9">  158</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#acbcc821ca804c0c9783e96267b7c5ef9">SetVolume</a>(<span class="keywordtype">float</span> volume) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#acbcc821ca804c0c9783e96267b7c5ef9">  158</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#acbcc821ca804c0c9783e96267b7c5ef9">SetVolume</a>(<span class="keywordtype">float</span> volume) {</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        ::SetMusicVolume(*<span class="keyword">this</span>, volume);</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a863348374483c4b9b01f6e2624f833e8">  166</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a863348374483c4b9b01f6e2624f833e8">SetPitch</a>(<span class="keywordtype">float</span> pitch) {</div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a863348374483c4b9b01f6e2624f833e8">  166</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#a863348374483c4b9b01f6e2624f833e8">SetPitch</a>(<span class="keywordtype">float</span> pitch) {</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        ::SetMusicPitch(*<span class="keyword">this</span>, pitch);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#ae64778c6d20a4ae931f8bfe81899bc28">  174</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#ae64778c6d20a4ae931f8bfe81899bc28">SetPan</a>(<span class="keywordtype">float</span> pan = 0.5f) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#ae64778c6d20a4ae931f8bfe81899bc28">  174</a></span>&#160;    <a class="code" href="classraylib_1_1_music.html">Music</a>&amp; <a class="code" href="classraylib_1_1_music.html#ae64778c6d20a4ae931f8bfe81899bc28">SetPan</a>(<span class="keywordtype">float</span> pan = 0.5f) {</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        ::SetMusicPan(*<span class="keyword">this</span>, pan);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#ad23d121ee312f31c3a8f1db201ac5f12">  182</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_music.html#ad23d121ee312f31c3a8f1db201ac5f12">GetTimeLength</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#ad23d121ee312f31c3a8f1db201ac5f12">  182</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_music.html#ad23d121ee312f31c3a8f1db201ac5f12">GetTimeLength</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        return ::GetMusicTimeLength(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a513dc0d09de1d51e1b961d4e59622ebb">  189</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_music.html#a513dc0d09de1d51e1b961d4e59622ebb">GetTimePlayed</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a513dc0d09de1d51e1b961d4e59622ebb">  189</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_music.html#a513dc0d09de1d51e1b961d4e59622ebb">GetTimePlayed</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        return ::GetMusicTimePlayed(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
@@ -223,11 +223,11 @@ $(function() {
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        }</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a42cbf0ab75ae78377c4f2dbb6ddc82e4">  222</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_music.html#a42cbf0ab75ae78377c4f2dbb6ddc82e4">IsReady</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="classraylib_1_1_music.html#a42cbf0ab75ae78377c4f2dbb6ddc82e4">  222</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classraylib_1_1_music.html#a42cbf0ab75ae78377c4f2dbb6ddc82e4">IsReady</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        return ::IsMusicReady(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    }</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordtype">void</span> set(const ::Music&amp; music) {</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        stream = music.stream;</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        frameCount = music.frameCount;</div>

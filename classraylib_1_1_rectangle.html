@@ -70,6 +70,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classraylib_1_1_rectangle-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">raylib::Rectangle Class Reference</div>  </div>
@@ -109,10 +110,10 @@ Public Member Functions</h2></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_rectangle.html#a4e0fe086b5e04a2810ea5ec31fee7cb7">CheckCollision</a> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> rec2) const</td></tr>
 <tr class="memdesc:a4e0fe086b5e04a2810ea5ec31fee7cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check collision between two rectangles. <br /></td></tr>
 <tr class="separator:a4e0fe086b5e04a2810ea5ec31fee7cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe80bafa896b885af41187d6611cd34b"><td class="memItemLeft" align="right" valign="top"><a id="abe80bafa896b885af41187d6611cd34b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_rectangle.html#abe80bafa896b885af41187d6611cd34b">CheckCollision</a> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> center, float radius)</td></tr>
-<tr class="memdesc:abe80bafa896b885af41187d6611cd34b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check collision between circle and rectangle. <br /></td></tr>
-<tr class="separator:abe80bafa896b885af41187d6611cd34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a871963238bcb6d4294685a8e79bd831e"><td class="memItemLeft" align="right" valign="top"><a id="a871963238bcb6d4294685a8e79bd831e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_rectangle.html#a871963238bcb6d4294685a8e79bd831e">CheckCollision</a> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> center, float radius) const</td></tr>
+<tr class="memdesc:a871963238bcb6d4294685a8e79bd831e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check collision between circle and rectangle. <br /></td></tr>
+<tr class="separator:a871963238bcb6d4294685a8e79bd831e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1cd92eb4d964c2f643500506a8103c4"><td class="memItemLeft" align="right" valign="top"><a id="ac1cd92eb4d964c2f643500506a8103c4"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_rectangle.html#ac1cd92eb4d964c2f643500506a8103c4">CheckCollision</a> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> point) const</td></tr>
 <tr class="memdesc:ac1cd92eb4d964c2f643500506a8103c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if point is inside rectangle. <br /></td></tr>
@@ -142,22 +143,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawLines</b> (::<a c
 <tr class="memitem:a539ee257118131643f5c7e75dc476ee8"><td class="memItemLeft" align="right" valign="top"><a id="a539ee257118131643f5c7e75dc476ee8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawRounded</b> (float roundness, int segments, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color) const</td></tr>
 <tr class="separator:a539ee257118131643f5c7e75dc476ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a593bd215aa62eb846d99c6660c1d8260"><td class="memItemLeft" align="right" valign="top"><a id="a593bd215aa62eb846d99c6660c1d8260"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawRoundedLines</b> (float roundness, int segments, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color) const</td></tr>
+<tr class="separator:a593bd215aa62eb846d99c6660c1d8260"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4de5fe9c53601c96dae1d24ce5c990f"><td class="memItemLeft" align="right" valign="top"><a id="af4de5fe9c53601c96dae1d24ce5c990f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawRoundedLines</b> (float roundness, int segments, float lineThick, ::<a class="el" href="classraylib_1_1_color.html">Color</a> color) const</td></tr>
 <tr class="separator:af4de5fe9c53601c96dae1d24ce5c990f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a645b482ae3a4faa035507506be4f4260"><td class="memItemLeft" align="right" valign="top"><a id="a645b482ae3a4faa035507506be4f4260"></a>
-inline ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_rectangle.html#a645b482ae3a4faa035507506be4f4260">GetCollision</a> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> rec2) const</td></tr>
-<tr class="memdesc:a645b482ae3a4faa035507506be4f4260"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision rectangle for two rectangles collision. <br /></td></tr>
-<tr class="separator:a645b482ae3a4faa035507506be4f4260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4410377eb77a1beb234098dfac7aceeb"><td class="memItemLeft" align="right" valign="top"><a id="a4410377eb77a1beb234098dfac7aceeb"></a>
+::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_rectangle.html#a4410377eb77a1beb234098dfac7aceeb">GetCollision</a> (::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> rec2) const</td></tr>
+<tr class="memdesc:a4410377eb77a1beb234098dfac7aceeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collision rectangle for two rectangles collision. <br /></td></tr>
+<tr class="separator:a4410377eb77a1beb234098dfac7aceeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a990c10a2ae6adcd19769957ee0e1859d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_rectangle.html#a990c10a2ae6adcd19769957ee0e1859d">GetHeight</a> () const</td></tr>
 <tr class="memdesc:a990c10a2ae6adcd19769957ee0e1859d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the height value for the object.  <a href="classraylib_1_1_rectangle.html#a990c10a2ae6adcd19769957ee0e1859d">More...</a><br /></td></tr>
 <tr class="separator:a990c10a2ae6adcd19769957ee0e1859d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebebededeb81e2e9aaf4023a755b3309"><td class="memItemLeft" align="right" valign="top"><a id="aebebededeb81e2e9aaf4023a755b3309"></a>
-<a class="el" href="classraylib_1_1_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetPosition</b> ()</td></tr>
-<tr class="separator:aebebededeb81e2e9aaf4023a755b3309"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae19e7004bb26152d5f92a2ffcddec494"><td class="memItemLeft" align="right" valign="top"><a id="ae19e7004bb26152d5f92a2ffcddec494"></a>
-<a class="el" href="classraylib_1_1_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetSize</b> ()</td></tr>
-<tr class="separator:ae19e7004bb26152d5f92a2ffcddec494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e4005ec8f95d9575a1fdc3a92e838e"><td class="memItemLeft" align="right" valign="top"><a id="ad8e4005ec8f95d9575a1fdc3a92e838e"></a>
+<a class="el" href="classraylib_1_1_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetPosition</b> () const</td></tr>
+<tr class="separator:ad8e4005ec8f95d9575a1fdc3a92e838e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac54f1ac0b96db5db87011b775415af6d"><td class="memItemLeft" align="right" valign="top"><a id="ac54f1ac0b96db5db87011b775415af6d"></a>
+<a class="el" href="classraylib_1_1_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetSize</b> () const</td></tr>
+<tr class="separator:ac54f1ac0b96db5db87011b775415af6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6abb0a899eba4c0cf64abe335cf9524f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_rectangle.html#a6abb0a899eba4c0cf64abe335cf9524f">GetWidth</a> () const</td></tr>
 <tr class="memdesc:a6abb0a899eba4c0cf64abe335cf9524f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the width value for the object.  <a href="classraylib_1_1_rectangle.html#a6abb0a899eba4c0cf64abe335cf9524f">More...</a><br /></td></tr>
 <tr class="separator:a6abb0a899eba4c0cf64abe335cf9524f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,9 +204,15 @@ inline ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a>&#160;
 <tr class="memitem:a779595ab1373baba2da38a4247bfd5f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_rectangle.html#a779595ab1373baba2da38a4247bfd5f7">SetY</a> (float value)</td></tr>
 <tr class="memdesc:a779595ab1373baba2da38a4247bfd5f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the y value for the object.  <a href="classraylib_1_1_rectangle.html#a779595ab1373baba2da38a4247bfd5f7">More...</a><br /></td></tr>
 <tr class="separator:a779595ab1373baba2da38a4247bfd5f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f559c46f78bbbdf21c81e9db6b4fb64"><td class="memItemLeft" align="right" valign="top"><a id="a7f559c46f78bbbdf21c81e9db6b4fb64"></a>
-inline ::<a class="el" href="classraylib_1_1_vector4.html">Vector4</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ToVector4</b> ()</td></tr>
-<tr class="separator:a7f559c46f78bbbdf21c81e9db6b4fb64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a973a2a693f04470602b6bad47dc887b0"><td class="memItemLeft" align="right" valign="top"><a id="a973a2a693f04470602b6bad47dc887b0"></a>
+::<a class="el" href="classraylib_1_1_vector4.html">Vector4</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ToVector4</b> ()</td></tr>
+<tr class="separator:a973a2a693f04470602b6bad47dc887b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aca20bf0d20c9d1091cb0e5f697a65e05"><td class="memItemLeft" align="right" valign="top"><a id="aca20bf0d20c9d1091cb0e5f697a65e05"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ::<a class="el" href="classraylib_1_1_rectangle.html">Rectangle</a> &amp;rect)</td></tr>
+<tr class="separator:aca20bf0d20c9d1091cb0e5f697a65e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classraylib_1_1_rectangle.html" title="Rectangle type.">Rectangle</a> type. </p>

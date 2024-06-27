@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['text_531',['Text',['../classraylib_1_1_text.html',1,'raylib']]],
-  ['texture_532',['Texture',['../classraylib_1_1_texture.html',1,'raylib']]],
-  ['textureunmanaged_533',['TextureUnmanaged',['../classraylib_1_1_texture_unmanaged.html',1,'raylib']]],
-  ['touch_534',['Touch',['../classraylib_1_1_touch.html',1,'raylib']]]
+  ['text_534',['Text',['../classraylib_1_1_text.html',1,'raylib']]],
+  ['texture_535',['Texture',['../classraylib_1_1_texture.html',1,'raylib']]],
+  ['textureunmanaged_536',['TextureUnmanaged',['../classraylib_1_1_texture_unmanaged.html',1,'raylib']]]
 ];

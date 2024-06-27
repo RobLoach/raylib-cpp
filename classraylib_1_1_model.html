@@ -70,6 +70,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classraylib_1_1_model-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">raylib::Model Class Reference</div>  </div>
@@ -90,6 +91,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab12ca5ce75a7fde88ed6f6aa472d42a0"><td class="memItemLeft" align="right" valign="top"><a id="ab12ca5ce75a7fde88ed6f6aa472d42a0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Model</b> (const <a class="el" href="classraylib_1_1_model.html">Model</a> &amp;)=delete</td></tr>
 <tr class="separator:ab12ca5ce75a7fde88ed6f6aa472d42a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af95dc4b56ff1b055bbc9a62e8ff11de1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_model.html#af95dc4b56ff1b055bbc9a62e8ff11de1">Model</a> (const <a class="el" href="classraylib_1_1_mesh.html">raylib::Mesh</a> &amp;mesh)=delete</td></tr>
+<tr class="memdesc:af95dc4b56ff1b055bbc9a62e8ff11de1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classraylib_1_1_model.html" title="Model type.">Model</a> constructor with a Mesh() is removed.  <a href="classraylib_1_1_model.html#af95dc4b56ff1b055bbc9a62e8ff11de1">More...</a><br /></td></tr>
+<tr class="separator:af95dc4b56ff1b055bbc9a62e8ff11de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa15ecaff51acb302ebd7058b920d9952"><td class="memItemLeft" align="right" valign="top"><a id="aa15ecaff51acb302ebd7058b920d9952"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Model</b> (const std::string &amp;fileName)</td></tr>
 <tr class="separator:aa15ecaff51acb302ebd7058b920d9952"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,7 +156,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a05a4df8c1ad0529055933671a6449b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether or not the <a class="el" href="classraylib_1_1_model.html" title="Model type.">Model</a> has data in it. <br /></td></tr>
 <tr class="separator:a05a4df8c1ad0529055933671a6449b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ecd0439157481f160413efb94d40812"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_model.html#a3ecd0439157481f160413efb94d40812">Load</a> (const ::<a class="el" href="classraylib_1_1_mesh.html">Mesh</a> &amp;mesh)</td></tr>
-<tr class="memdesc:a3ecd0439157481f160413efb94d40812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a <a class="el" href="classraylib_1_1_model.html" title="Model type.">Model</a> from the given <a class="el" href="classraylib_1_1_mesh.html" title="Vertex data definning a mesh.">Mesh</a>.  <a href="classraylib_1_1_model.html#a3ecd0439157481f160413efb94d40812">More...</a><br /></td></tr>
+<tr class="memdesc:a3ecd0439157481f160413efb94d40812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a <a class="el" href="classraylib_1_1_model.html" title="Model type.">Model</a> from the given <a class="el" href="classraylib_1_1_mesh.html" title="Vertex data defining a mesh.">Mesh</a>.  <a href="classraylib_1_1_model.html#a3ecd0439157481f160413efb94d40812">More...</a><br /></td></tr>
 <tr class="separator:a3ecd0439157481f160413efb94d40812"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b7a1b536850d4a921c7ddcd5d896475"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_model.html#a0b7a1b536850d4a921c7ddcd5d896475">Load</a> (const std::string &amp;fileName)</td></tr>
 <tr class="memdesc:a0b7a1b536850d4a921c7ddcd5d896475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a <a class="el" href="classraylib_1_1_model.html" title="Model type.">Model</a> from the given file.  <a href="classraylib_1_1_model.html#a0b7a1b536850d4a921c7ddcd5d896475">More...</a><br /></td></tr>
@@ -209,12 +213,51 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a class="el" href="classraylib_1_1_model.html">Model</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_model.html#a6b2400a98189c50a0c01d9868f56c3e4">UpdateAnimation</a> (const ::<a class="el" href="classraylib_1_1_model_animation.html">ModelAnimation</a> &amp;anim, int frame)</td></tr>
 <tr class="memdesc:a6b2400a98189c50a0c01d9868f56c3e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update model animation pose. <br /></td></tr>
 <tr class="separator:a6b2400a98189c50a0c01d9868f56c3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a0e8c7542e6c7e5b825ca3f1928081906"><td class="memItemLeft" align="right" valign="top"><a id="a0e8c7542e6c7e5b825ca3f1928081906"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ::<a class="el" href="classraylib_1_1_model.html">Model</a> &amp;model)</td></tr>
+<tr class="separator:a0e8c7542e6c7e5b825ca3f1928081906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classraylib_1_1_model.html" title="Model type.">Model</a> type. </p>
 
 <p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00015">15</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af95dc4b56ff1b055bbc9a62e8ff11de1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af95dc4b56ff1b055bbc9a62e8ff11de1">&#9670;&nbsp;</a></span>Model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">raylib::Model::Model </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classraylib_1_1_mesh.html">raylib::Mesh</a> &amp;&#160;</td>
+          <td class="paramname"><em>mesh</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The <a class="el" href="classraylib_1_1_model.html" title="Model type.">Model</a> constructor with a Mesh() is removed. </p>
+<p>Use <code><a class="el" href="classraylib_1_1_mesh_unmanaged.html" title="Vertex data defining a mesh, not managed by C++ RAII.">raylib::MeshUnmanaged</a></code> or <code>::Mesh</code> instead, as raylib will take ownership of the data.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classraylib_1_1_mesh_unmanaged.html" title="Vertex data defining a mesh, not managed by C++ RAII.">raylib::MeshUnmanaged</a> </dd></dl>
+
+<p class="reference">References <a class="el" href="_model_8hpp_source.html#l00114">Unload()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8012904ab28c4966752c7ab67014faa1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8012904ab28c4966752c7ab67014faa1">&#9670;&nbsp;</a></span>GetBindPose()</h2>
 
@@ -241,7 +284,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the bindPose value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The bindPose value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00073">73</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00082">82</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -271,7 +314,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the boneCount value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The boneCount value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00071">71</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00080">80</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -301,7 +344,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the bones value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The bones value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00072">72</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00081">81</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -331,7 +374,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the materialCount value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The materialCount value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00067">67</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00076">76</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -361,7 +404,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the materials value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The materials value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00069">69</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00078">78</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -391,7 +434,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the meshCount value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The meshCount value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00066">66</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00075">75</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -421,7 +464,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the meshes value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The meshes value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00068">68</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00077">77</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -451,7 +494,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the meshMaterial value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The meshMaterial value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00070">70</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00079">79</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -481,7 +524,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Retrieves the transform value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The transform value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00065">65</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00074">74</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -509,7 +552,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
-<p>Loads a <a class="el" href="classraylib_1_1_model.html" title="Model type.">Model</a> from the given <a class="el" href="classraylib_1_1_mesh.html" title="Vertex data definning a mesh.">Mesh</a>. </p>
+<p>Loads a <a class="el" href="classraylib_1_1_model.html" title="Model type.">Model</a> from the given <a class="el" href="classraylib_1_1_mesh.html" title="Vertex data defining a mesh.">Mesh</a>. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classraylib_1_1_raylib_exception.html" title="Exception used for most raylib-related exceptions.">raylib::RaylibException</a></td><td>Throws if failed to load the Modal. </td></tr>
@@ -517,9 +560,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00216">216</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00225">225</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_model_8hpp_source.html#l00195">IsReady()</a>.</p>
+<p class="reference">References <a class="el" href="_model_8hpp_source.html#l00204">IsReady()</a>.</p>
 
 </div>
 </div>
@@ -555,9 +598,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00204">204</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00213">213</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_model_8hpp_source.html#l00195">IsReady()</a>.</p>
+<p class="reference">References <a class="el" href="_model_8hpp_source.html#l00204">IsReady()</a>.</p>
 
 </div>
 </div>
@@ -593,7 +636,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00073">73</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00082">82</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -629,7 +672,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00071">71</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00080">80</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -665,7 +708,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00072">72</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00081">81</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -701,7 +744,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00067">67</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00076">76</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -737,7 +780,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00069">69</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00078">78</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -773,7 +816,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00066">66</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00075">75</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -809,7 +852,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00068">68</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00077">77</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -845,7 +888,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00070">70</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00079">79</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -881,7 +924,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00065">65</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_model_8hpp_source.html#l00074">74</a> of file <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>

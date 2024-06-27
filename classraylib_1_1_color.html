@@ -71,6 +71,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classraylib_1_1_color-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">raylib::Color Class Reference</div>  </div>
@@ -115,10 +116,18 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_color.html#a127c0c75e8f28b01b6861897c0c89c88">AlphaBlend</a> (::<a class="el" href="classraylib_1_1_color.html">Color</a> dst, ::<a class="el" href="classraylib_1_1_color.html">Color</a> tint) const</td></tr>
 <tr class="memdesc:a127c0c75e8f28b01b6861897c0c89c88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns src alpha-blended into dst color with tint. <br /></td></tr>
 <tr class="separator:a127c0c75e8f28b01b6861897c0c89c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7ea6fdee4f3a992aa226dae44e7b439"><td class="memItemLeft" align="right" valign="top"><a id="af7ea6fdee4f3a992aa226dae44e7b439"></a>
+<a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_color.html#af7ea6fdee4f3a992aa226dae44e7b439">Brightness</a> (float factor)</td></tr>
+<tr class="memdesc:af7ea6fdee4f3a992aa226dae44e7b439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get color with brightness correction, brightness factor goes from -1.0f to 1.0f. <br /></td></tr>
+<tr class="separator:af7ea6fdee4f3a992aa226dae44e7b439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace467f20d71ff4af44e0211d6aeea9b5"><td class="memItemLeft" align="right" valign="top"><a id="ace467f20d71ff4af44e0211d6aeea9b5"></a>
 <a class="el" href="classraylib_1_1_color.html">Color</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_color.html#ace467f20d71ff4af44e0211d6aeea9b5">ClearBackground</a> ()</td></tr>
 <tr class="memdesc:ace467f20d71ff4af44e0211d6aeea9b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set background color (framebuffer clear color) <br /></td></tr>
 <tr class="separator:ace467f20d71ff4af44e0211d6aeea9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ec34f3d0483d0c59b1cdce2edb58a82"><td class="memItemLeft" align="right" valign="top"><a id="a4ec34f3d0483d0c59b1cdce2edb58a82"></a>
+<a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_color.html#a4ec34f3d0483d0c59b1cdce2edb58a82">Contrast</a> (float contrast)</td></tr>
+<tr class="memdesc:a4ec34f3d0483d0c59b1cdce2edb58a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get color with contrast correction, contrast values between -1.0f and 1.0f. <br /></td></tr>
+<tr class="separator:a4ec34f3d0483d0c59b1cdce2edb58a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6333cda3646d05c183d7d90a7ea322e5"><td class="memItemLeft" align="right" valign="top"><a id="a6333cda3646d05c183d7d90a7ea322e5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_color.html#a6333cda3646d05c183d7d90a7ea322e5">DrawLine</a> (::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> startPos, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> endPos) const</td></tr>
 <tr class="memdesc:a6333cda3646d05c183d7d90a7ea322e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a line using Vector points. <br /></td></tr>
@@ -162,12 +171,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawRectangleLines</b
 <tr class="memitem:a287bedfb9add34912dc4923a083d40d5"><td class="memItemLeft" align="right" valign="top"><a id="a287bedfb9add34912dc4923a083d40d5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawRectangleLines</b> (int posX, int posY, int width, int height) const</td></tr>
 <tr class="separator:a287bedfb9add34912dc4923a083d40d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2428ce783b11d1019201ec6b52632d37"><td class="memItemLeft" align="right" valign="top"><a id="a2428ce783b11d1019201ec6b52632d37"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const ::<a class="el" href="classraylib_1_1_font.html">Font</a> &amp;font, const char *text, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin, float rotation, float fontSize, float spacing) const</td></tr>
+<tr class="separator:a2428ce783b11d1019201ec6b52632d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf56a4bac4727ea69beafa3a9439c724"><td class="memItemLeft" align="right" valign="top"><a id="acf56a4bac4727ea69beafa3a9439c724"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const ::<a class="el" href="classraylib_1_1_font.html">Font</a> &amp;font, const char *text, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position, float fontSize, float spacing) const</td></tr>
+<tr class="separator:acf56a4bac4727ea69beafa3a9439c724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94be9787fea6a99b380ec10145c9d423"><td class="memItemLeft" align="right" valign="top"><a id="a94be9787fea6a99b380ec10145c9d423"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const ::<a class="el" href="classraylib_1_1_font.html">Font</a> &amp;font, const std::string &amp;text, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> origin, float rotation, float fontSize, float spacing) const</td></tr>
 <tr class="separator:a94be9787fea6a99b380ec10145c9d423"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac978395e6f1022d1978e417fad5c4ea1"><td class="memItemLeft" align="right" valign="top"><a id="ac978395e6f1022d1978e417fad5c4ea1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const ::<a class="el" href="classraylib_1_1_font.html">Font</a> &amp;font, const std::string &amp;text, ::<a class="el" href="classraylib_1_1_vector2.html">Vector2</a> position, float fontSize, float spacing) const</td></tr>
 <tr class="separator:ac978395e6f1022d1978e417fad5c4ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a950233d00ade4916a6a61275846ed806"><td class="memItemLeft" align="right" valign="top"><a id="a950233d00ade4916a6a61275846ed806"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const char *text, int posX=0, int posY=0, int fontSize=10.0f) const</td></tr>
+<tr class="separator:a950233d00ade4916a6a61275846ed806"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34c4d2c9c842fa390f242eed4f9ebc3"><td class="memItemLeft" align="right" valign="top"><a id="ae34c4d2c9c842fa390f242eed4f9ebc3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const std::string &amp;text, int posX=0, int posY=0, int fontSize=10.0f) const</td></tr>
 <tr class="separator:ae34c4d2c9c842fa390f242eed4f9ebc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,6 +213,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const s
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_color.html#a569352de1fc298f320d0a5c503ad47bf">operator int</a> () const</td></tr>
 <tr class="memdesc:a569352de1fc298f320d0a5c503ad47bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns hexadecimal value for a <a class="el" href="classraylib_1_1_color.html" title="Color type, RGBA (32bit)">Color</a>. <br /></td></tr>
 <tr class="separator:a569352de1fc298f320d0a5c503ad47bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b9eb6de0b2b95bd8e9e3fe8935c644"><td class="memItemLeft" align="right" valign="top"><a id="a97b9eb6de0b2b95bd8e9e3fe8935c644"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>operator std::string</b> () const</td></tr>
+<tr class="separator:a97b9eb6de0b2b95bd8e9e3fe8935c644"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3e2c7b09e326476f0ff20bf4c7a84af"><td class="memItemLeft" align="right" valign="top"><a id="ae3e2c7b09e326476f0ff20bf4c7a84af"></a>
 <a class="el" href="classraylib_1_1_color.html">Color</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const ::<a class="el" href="classraylib_1_1_color.html">Color</a> &amp;color)</td></tr>
 <tr class="separator:ae3e2c7b09e326476f0ff20bf4c7a84af"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,6 +231,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const s
 <tr class="memitem:a5e3b3a2f7be0f5a314c8afcc25548515"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_color.html#a5e3b3a2f7be0f5a314c8afcc25548515">SetR</a> (unsigned char value)</td></tr>
 <tr class="memdesc:a5e3b3a2f7be0f5a314c8afcc25548515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the r value for the object.  <a href="classraylib_1_1_color.html#a5e3b3a2f7be0f5a314c8afcc25548515">More...</a><br /></td></tr>
 <tr class="separator:a5e3b3a2f7be0f5a314c8afcc25548515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52ddb5dd1aa56064e3e735022d4e199b"><td class="memItemLeft" align="right" valign="top"><a id="a52ddb5dd1aa56064e3e735022d4e199b"></a>
+<a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_color.html#a52ddb5dd1aa56064e3e735022d4e199b">Tint</a> (::<a class="el" href="classraylib_1_1_color.html">Color</a> tint)</td></tr>
+<tr class="memdesc:a52ddb5dd1aa56064e3e735022d4e199b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get color multiplied with another color. <br /></td></tr>
+<tr class="separator:a52ddb5dd1aa56064e3e735022d4e199b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab909853a3380e3cf4306a011caca7ec5"><td class="memItemLeft" align="right" valign="top"><a id="ab909853a3380e3cf4306a011caca7ec5"></a>
 <a class="el" href="classraylib_1_1_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_color.html#ab909853a3380e3cf4306a011caca7ec5">ToHSV</a> () const</td></tr>
 <tr class="memdesc:ab909853a3380e3cf4306a011caca7ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns HSV values for a <a class="el" href="classraylib_1_1_color.html" title="Color type, RGBA (32bit)">Color</a>. <br /></td></tr>
@@ -218,6 +243,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const s
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_color.html#a927ba04098ee1ba3a8e91374ed5d5606">ToInt</a> () const</td></tr>
 <tr class="memdesc:a927ba04098ee1ba3a8e91374ed5d5606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns hexadecimal value for a <a class="el" href="classraylib_1_1_color.html" title="Color type, RGBA (32bit)">Color</a>. <br /></td></tr>
 <tr class="separator:a927ba04098ee1ba3a8e91374ed5d5606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6792723d2a5f6dc857e8672ab7ed553"><td class="memItemLeft" align="right" valign="top"><a id="aa6792723d2a5f6dc857e8672ab7ed553"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ToString</b> () const</td></tr>
+<tr class="separator:aa6792723d2a5f6dc857e8672ab7ed553"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -303,6 +331,12 @@ static <a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td c
 <tr class="memitem:a3e7a0f02d796ca9b8845023c7fd0dbf5"><td class="memItemLeft" align="right" valign="top"><a id="a3e7a0f02d796ca9b8845023c7fd0dbf5"></a>
 static <a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Yellow</b> ()</td></tr>
 <tr class="separator:a3e7a0f02d796ca9b8845023c7fd0dbf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ac1332d649df4778eecbf24d80c5e0aeb"><td class="memItemLeft" align="right" valign="top"><a id="ac1332d649df4778eecbf24d80c5e0aeb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ::<a class="el" href="classraylib_1_1_color.html">Color</a> &amp;color)</td></tr>
+<tr class="separator:ac1332d649df4778eecbf24d80c5e0aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classraylib_1_1_color.html" title="Color type, RGBA (32bit)">Color</a> type, RGBA (32bit) </p>
@@ -335,7 +369,7 @@ static <a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td c
 <p>Retrieves the a value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The a value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00099">99</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00107">107</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -365,7 +399,7 @@ static <a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td c
 <p>Retrieves the b value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The b value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00098">98</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00106">106</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -395,7 +429,7 @@ static <a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td c
 <p>Retrieves the g value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The g value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00097">97</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00105">105</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -425,7 +459,7 @@ static <a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td c
 <p>Retrieves the r value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The r value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00096">96</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00104">104</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -461,7 +495,7 @@ static <a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td c
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00099">99</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00107">107</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -497,7 +531,7 @@ static <a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td c
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00098">98</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00106">106</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -533,7 +567,7 @@ static <a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td c
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00097">97</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00105">105</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -569,7 +603,7 @@ static <a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td c
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00096">96</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00104">104</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>

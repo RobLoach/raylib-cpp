@@ -71,6 +71,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classraylib_1_1_shader-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">raylib::Shader Class Reference</div>  </div>
@@ -137,12 +138,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:afe47f271c80fbb8d5d8c22a746e6c12f"><td class="memItemLeft" align="right" valign="top"><a id="afe47f271c80fbb8d5d8c22a746e6c12f"></a>
 <a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="separator:afe47f271c80fbb8d5d8c22a746e6c12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad989f72fce0403b1b01d88e1709de512"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#ad989f72fce0403b1b01d88e1709de512">SetId</a> (unsigned int value)</td></tr>
-<tr class="memdesc:ad989f72fce0403b1b01d88e1709de512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the id value for the object.  <a href="classraylib_1_1_shader.html#ad989f72fce0403b1b01d88e1709de512">More...</a><br /></td></tr>
-<tr class="separator:ad989f72fce0403b1b01d88e1709de512"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1ed2a53fbb669eb877c9f80ada02174"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#ac1ed2a53fbb669eb877c9f80ada02174">SetLocs</a> (int *value)</td></tr>
-<tr class="memdesc:ac1ed2a53fbb669eb877c9f80ada02174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the locs value for the object.  <a href="classraylib_1_1_shader.html#ac1ed2a53fbb669eb877c9f80ada02174">More...</a><br /></td></tr>
-<tr class="separator:ac1ed2a53fbb669eb877c9f80ada02174"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adade0b76feffac6c439efb46586f4099"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#adade0b76feffac6c439efb46586f4099">SetValue</a> (int uniformLoc, const ::<a class="el" href="classraylib_1_1_matrix.html">Matrix</a> &amp;mat)</td></tr>
 <tr class="memdesc:adade0b76feffac6c439efb46586f4099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set shader uniform value (matrix 4x4)  <a href="classraylib_1_1_shader.html#adade0b76feffac6c439efb46586f4099">More...</a><br /></td></tr>
 <tr class="separator:adade0b76feffac6c439efb46586f4099"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,12 +157,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a4b0eebd621fe601fb8ce0c5308f93fb4"><td class="memItemLeft" align="right" valign="top"><a id="a4b0eebd621fe601fb8ce0c5308f93fb4"></a>
+::<a class="el" href="classraylib_1_1_shader.html">Shader</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const char *vsFileName, const char *fsFileName)</td></tr>
+<tr class="separator:a4b0eebd621fe601fb8ce0c5308f93fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65feaccca849680bb3f0a4424309dc53"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classraylib_1_1_shader.html">Shader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a65feaccca849680bb3f0a4424309dc53">Load</a> (const std::string &amp;vsFileName, const std::string &amp;fsFileName)</td></tr>
 <tr class="memdesc:a65feaccca849680bb3f0a4424309dc53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load shader from files and bind default locations.  <a href="classraylib_1_1_shader.html#a65feaccca849680bb3f0a4424309dc53">More...</a><br /></td></tr>
 <tr class="separator:a65feaccca849680bb3f0a4424309dc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb081180a49d99009cc67e32e20105f"><td class="memItemLeft" align="right" valign="top"><a id="aabb081180a49d99009cc67e32e20105f"></a>
+::<a class="el" href="classraylib_1_1_shader.html">Shader</a>&#160;</td><td class="memItemRight" valign="bottom"><b>LoadFromMemory</b> (const char *vsCode, const char *fsCode)</td></tr>
+<tr class="separator:aabb081180a49d99009cc67e32e20105f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95077cb1fd6b81a63605735b3f8d9253"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classraylib_1_1_shader.html">Shader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_shader.html#a95077cb1fd6b81a63605735b3f8d9253">LoadFromMemory</a> (const std::string &amp;vsCode, const std::string &amp;fsCode)</td></tr>
 <tr class="memdesc:a95077cb1fd6b81a63605735b3f8d9253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a shader from memory.  <a href="classraylib_1_1_shader.html#a95077cb1fd6b81a63605735b3f8d9253">More...</a><br /></td></tr>
 <tr class="separator:a95077cb1fd6b81a63605735b3f8d9253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a608ffa93c160b52e0b563e99f8893759"><td class="memItemLeft" align="right" valign="top"><a id="a608ffa93c160b52e0b563e99f8893759"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ::<a class="el" href="classraylib_1_1_shader.html">Shader</a> &amp;shader)</td></tr>
+<tr class="separator:a608ffa93c160b52e0b563e99f8893759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classraylib_1_1_shader.html" title="Shader type (generic)">Shader</a> type (generic) </p>
@@ -200,7 +207,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Retrieves the id value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The id value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00057">57</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00065">65</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -231,7 +238,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Get shader uniform location. </p>
 <dl class="section see"><dt>See also</dt><dd>GetShaderLocation() </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00118">118</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00126">126</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -262,7 +269,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Get shader attribute location. </p>
 <dl class="section see"><dt>See also</dt><dd>GetShaderLocationAttrib() </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00127">127</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00135">135</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -292,7 +299,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Retrieves the locs value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The locs value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00058">58</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00066">66</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -374,79 +381,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Load a shader from memory. </p>
 <dl class="section see"><dt>See also</dt><dd>::LoadShaderFromMemory </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00053">53</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ad989f72fce0403b1b01d88e1709de512"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad989f72fce0403b1b01d88e1709de512">&#9670;&nbsp;</a></span>SetId()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void raylib::Shader::SetId </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the id value for the object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of which to set id to. </td></tr>
-  </table>
-  </dd>
-</dl>
-
 <p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00057">57</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ac1ed2a53fbb669eb877c9f80ada02174"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1ed2a53fbb669eb877c9f80ada02174">&#9670;&nbsp;</a></span>SetLocs()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void raylib::Shader::SetLocs </td>
-          <td>(</td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the locs value for the object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of which to set locs to. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00058">58</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -487,7 +422,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Set shader uniform value (matrix 4x4) </p>
 <dl class="section see"><dt>See also</dt><dd>SetShaderValueMatrix() </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00156">156</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00164">164</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -528,7 +463,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Set shader uniform value for texture. </p>
 <dl class="section see"><dt>See also</dt><dd>SetShaderValueTexture() </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00166">166</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00174">174</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -575,7 +510,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Set shader uniform value. </p>
 <dl class="section see"><dt>See also</dt><dd>SetShaderValue() </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00136">136</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00144">144</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -628,7 +563,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Set shader uniform value vector. </p>
 <dl class="section see"><dt>See also</dt><dd>SetShaderValueV() </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00146">146</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00154">154</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
