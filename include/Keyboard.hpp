@@ -46,19 +46,19 @@ namespace Keyboard {
     /**
      * Get key pressed (keycode), call it multiple times for keys queued, returns 0 when the queue is empty
      */
-    [[maybe_unused]] RLCPPAPI inline bool GetKeyPressed() {
+
+    [[maybe_unused]] RLCPPAPI inline int GetKeyPressed() {
         return ::GetKeyPressed();
     }
 
     /**
      * Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
      */
-    [[maybe_unused]] RLCPPAPI inline bool GetCharPressed() {
+    [[maybe_unused]] RLCPPAPI inline int GetCharPressed() {
         return ::GetCharPressed();
     }
 }  // namespace Keyboard
 }  // namespace raylib
-
 namespace RKeyboard = raylib::Keyboard;
 
 #endif  // RAYLIB_CPP_INCLUDE_KEYBOARD_HPP_
