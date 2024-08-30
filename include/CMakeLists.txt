@@ -32,6 +32,7 @@ set(RAYLIB_CPP_HEADERS
   raymath.hpp
   Rectangle.hpp
   RenderTexture.hpp
+  ShaderUnmanaged.hpp
   Shader.hpp
   Sound.hpp
   Text.hpp
