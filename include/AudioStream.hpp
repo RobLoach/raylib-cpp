@@ -1,25 +1,25 @@
 #ifndef RAYLIB_CPP_INCLUDE_AUDIOSTREAM_HPP_
 #define RAYLIB_CPP_INCLUDE_AUDIOSTREAM_HPP_
 
-#include "./raylib.hpp"
-#include "./raylib-cpp-utils.hpp"
 #include "./RaylibException.hpp"
+#include "./raylib-cpp-utils.hpp"
+#include "./raylib.hpp"
 
 namespace raylib {
 /**
  * AudioStream management functions
  */
 class AudioStream : public ::AudioStream {
- public:
-    AudioStream(const ::AudioStream& music) {
-        set(music);
-    }
+public:
+    AudioStream(const ::AudioStream& music) { set(music); }
 
-    AudioStream(rAudioBuffer* buffer = nullptr,
-            rAudioProcessor *processor = nullptr,
-            unsigned int sampleRate = 0,
-            unsigned int sampleSize = 0,
-            unsigned int channels = 0) : ::AudioStream{buffer, processor, sampleRate, sampleSize, channels} {
+    AudioStream(
+        rAudioBuffer* buffer = nullptr,
+        rAudioProcessor* processor = nullptr,
+        unsigned int sampleRate = 0,
+        unsigned int sampleSize = 0,
+        unsigned int channels = 0)
+        : ::AudioStream{buffer, processor, sampleRate, sampleSize, channels} {
         // Nothing.
     }
 
@@ -44,12 +44,10 @@ class AudioStream : public ::AudioStream {
         other.channels = 0;
     }
 
-    ~AudioStream() {
-        Unload();
-    }
+    ~AudioStream() { Unload(); }
 
-    GETTER(rAudioBuffer *, Buffer, buffer)
-    GETTER(rAudioProcessor *, Processor, processor)
+    GETTER(rAudioBuffer*, Buffer, buffer)
+    GETTER(rAudioProcessor*, Processor, processor)
     GETTER(unsigned int, SampleRate, sampleRate)
     GETTER(unsigned int, SampleSize, sampleSize)
     GETTER(unsigned int, Channels, channels)
@@ -81,7 +79,7 @@ class AudioStream : public ::AudioStream {
     /**
      * Update audio stream buffers with data
      */
-    AudioStream& Update(const void *data, int samplesCount) {
+    AudioStream& Update(const void* data, int samplesCount) {
         ::UpdateAudioStream(*this, data, samplesCount);
         return *this;
     }
@@ -98,9 +96,7 @@ class AudioStream : public ::AudioStream {
     /**
      * Check if any audio stream buffers requires refill
      */
-    bool IsProcessed() const {
-        return ::IsAudioStreamProcessed(*this);
-    }
+    bool IsProcessed() const { return ::IsAudioStreamProcessed(*this); }
 
     /**
      * Play audio stream
@@ -129,9 +125,7 @@ class AudioStream : public ::AudioStream {
     /**
      * Check if audio stream is playing
      */
-    bool IsPlaying() const {
-        return ::IsAudioStreamPlaying(*this);
-    }
+    bool IsPlaying() const { return ::IsAudioStreamPlaying(*this); }
 
     /**
      * Stop audio stream
@@ -168,37 +162,27 @@ class AudioStream : public ::AudioStream {
     /**
      * Default size for new audio streams
      */
-    static void SetBufferSizeDefault(int size) {
-        ::SetAudioStreamBufferSizeDefault(size);
-    }
+    static void SetBufferSizeDefault(int size) { ::SetAudioStreamBufferSizeDefault(size); }
 
     /**
      * Audio thread callback to request new data
      */
-    void SetCallback(::AudioCallback callback) {
-        ::SetAudioStreamCallback(*this, callback);
-    }
+    void SetCallback(::AudioCallback callback) { ::SetAudioStreamCallback(*this, callback); }
 
     /**
      * Attach audio stream processor to stream
      */
-    void AttachProcessor(::AudioCallback processor) {
-        ::AttachAudioStreamProcessor(*this, processor);
-    }
+    void AttachProcessor(::AudioCallback processor) { ::AttachAudioStreamProcessor(*this, processor); }
 
     /**
      * Detach audio stream processor from stream
      */
-    void DetachProcessor(::AudioCallback processor) {
-        ::DetachAudioStreamProcessor(*this, processor);
-    }
+    void DetachProcessor(::AudioCallback processor) { ::DetachAudioStreamProcessor(*this, processor); }
 
     /**
      * Retrieve whether or not the audio stream is ready.
      */
-    bool IsReady() const {
-        return ::IsAudioStreamReady(*this);
-    }
+    bool IsReady() const { return ::IsAudioStreamReady(*this); }
 
     /**
      * Load audio stream (to stream raw audio pcm data)
@@ -212,8 +196,7 @@ class AudioStream : public ::AudioStream {
             throw RaylibException("Failed to load audio stream");
         }
     }
-
- protected:
+protected:
     void set(const ::AudioStream& stream) {
         buffer = stream.buffer;
         processor = stream.processor;
@@ -222,8 +205,8 @@ class AudioStream : public ::AudioStream {
         channels = stream.channels;
     }
 };
-}  // namespace raylib
+} // namespace raylib
 
 using RAudioStream = raylib::AudioStream;
 
-#endif  // RAYLIB_CPP_INCLUDE_AUDIOSTREAM_HPP_
+#endif // RAYLIB_CPP_INCLUDE_AUDIOSTREAM_HPP_

@@ -1,6 +1,6 @@
 {
   "name": "raylib-cpp",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "raylib-cpp: C++ Object-Oriented Wrapper for raylib",
   "main": "index.js",
   "private": true,
@@ -30,6 +30,6 @@
   },
   "homepage": "https://github.com/RobLoach/raylib-cpp#readme",
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^6.1.1"
   }
 }

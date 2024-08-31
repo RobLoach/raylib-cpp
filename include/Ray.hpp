@@ -1,28 +1,24 @@
 #ifndef RAYLIB_CPP_INCLUDE_RAY_HPP_
 #define RAYLIB_CPP_INCLUDE_RAY_HPP_
 
-#include "./raylib.hpp"
-#include "./raylib-cpp-utils.hpp"
 #include "./RayCollision.hpp"
+#include "./raylib-cpp-utils.hpp"
+#include "./raylib.hpp"
 
 namespace raylib {
 /**
  * Ray type (useful for raycast)
  */
 class Ray : public ::Ray {
- public:
-    Ray(const ::Ray& ray) {
-        set(ray);
-    }
+public:
+    Ray(const ::Ray& ray) { set(ray); }
 
-    Ray(::Vector3 position = {0.0f, 0.0f, 0.0f}, ::Vector3 direction = {0.0f, 0.0f, 0.0f}) :
-            ::Ray{position, direction} {
+    Ray(::Vector3 position = {0.0f, 0.0f, 0.0f}, ::Vector3 direction = {0.0f, 0.0f, 0.0f})
+        : ::Ray{position, direction} {
         // Nothing.
     }
 
-    Ray(::Vector2 mousePosition, const ::Camera& camera) {
-        set(::GetMouseRay(mousePosition, camera));
-    }
+    Ray(::Vector2 mousePosition, const ::Camera& camera) { set(::GetMouseRay(mousePosition, camera)); }
 
     Ray& operator=(const ::Ray& ray) {
         set(ray);
@@ -35,9 +31,7 @@ class Ray : public ::Ray {
     /**
      * Draw a ray line
      */
-    void Draw(::Color color) const {
-        DrawRay(*this, color);
-    }
+    void Draw(::Color color) const { DrawRay(*this, color); }
 
     /**
      * Get collision information between ray and sphere
@@ -49,9 +43,7 @@ class Ray : public ::Ray {
     /**
      * Detect collision between ray and box
      */
-    RayCollision GetCollision(const ::BoundingBox& box) const {
-        return ::GetRayCollisionBox(*this, box);
-    }
+    RayCollision GetCollision(const ::BoundingBox& box) const { return ::GetRayCollisionBox(*this, box); }
 
     /**
      * Get collision information between ray and mesh
@@ -84,18 +76,15 @@ class Ray : public ::Ray {
     /**
      * Get a ray trace from mouse position
      */
-    static Ray GetMouse(const ::Camera& camera) {
-        return ::GetMouseRay(::GetMousePosition(), camera);
-    }
-
- protected:
+    static Ray GetMouse(const ::Camera& camera) { return ::GetMouseRay(::GetMousePosition(), camera); }
+protected:
     void set(const ::Ray& ray) {
         position = ray.position;
         direction = ray.direction;
     }
 };
-}  // namespace raylib
+} // namespace raylib
 
 using RRay = raylib::Ray;
 
-#endif  // RAYLIB_CPP_INCLUDE_RAY_HPP_
+#endif // RAYLIB_CPP_INCLUDE_RAY_HPP_
