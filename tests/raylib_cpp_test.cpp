@@ -1,9 +1,9 @@
+#include "raylib-assert.h"
+#include "raylib-cpp.hpp"
 #include <string>
 #include <vector>
-#include "raylib-cpp.hpp"
-#include "raylib-assert.h"
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     TraceLog(LOG_INFO, "---------------------");
     TraceLog(LOG_INFO, "TEST: raylib-cpp test");
 
@@ -63,16 +63,13 @@ int main(int argc, char *argv[]) {
         Assert(image.IsReady());
 
         // Chaining
-        image.Crop(100, 100)
-            .Resize(50, 50);
+        image.Crop(100, 100).Resize(50, 50);
         AssertEqual(image.GetWidth(), 50);
         AssertEqual(image.GetHeight(), 50);
     }
 
     // Keyboard
-    {
-        AssertNot(raylib::Keyboard::IsKeyPressed(KEY_MINUS));
-    }
+    { AssertNot(raylib::Keyboard::IsKeyPressed(KEY_MINUS)); }
 
     // raylib::LoadDirectoryFiles()
     {
@@ -119,8 +116,7 @@ int main(int argc, char *argv[]) {
         bool passed = false;
         try {
             raylib::Texture texture("notfound.png");
-        }
-        catch (raylib::RaylibException& error) {
+        } catch (raylib::RaylibException& error) {
             error.TraceLog(LOG_INFO);
             passed = true;
         }

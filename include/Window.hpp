@@ -3,16 +3,16 @@
 
 #include <string>
 
-#include "./raylib.hpp"
 #include "./RaylibException.hpp"
 #include "./Vector2.hpp"
+#include "./raylib.hpp"
 
 namespace raylib {
 /**
  * Window and Graphics Device Functions.
  */
 class Window {
- public:
+public:
     /**
      * Build a Window object, but defer the initialization. Ensure you call Init() manually.
      *
@@ -42,9 +42,7 @@ class Window {
     /**
      * Close window and unload OpenGL context
      */
-    ~Window() {
-        Close();
-    }
+    ~Window() { Close(); }
 
     /**
      * Initializes the window.
@@ -72,16 +70,12 @@ class Window {
     /**
      * Check if KEY_ESCAPE pressed or Close icon pressed
      */
-    bool ShouldClose() const {
-        return ::WindowShouldClose();
-    }
+    bool ShouldClose() const { return ::WindowShouldClose(); }
 
     /**
      * Set a custom key to exit program (default is ESC)
      */
-    void SetExitKey(int key) {
-        ::SetExitKey(key);
-    }
+    void SetExitKey(int key) { ::SetExitKey(key); }
 
     /**
      * Close window and unload OpenGL context
@@ -95,58 +89,42 @@ class Window {
     /**
      * Check if cursor is on the current screen
      */
-    bool IsCursorOnScreen() const {
-        return ::IsCursorOnScreen();
-    }
+    bool IsCursorOnScreen() const { return ::IsCursorOnScreen(); }
 
     /**
      * Check if window is currently fullscreen
      */
-    bool IsFullscreen() const {
-        return ::IsWindowFullscreen();
-    }
+    bool IsFullscreen() const { return ::IsWindowFullscreen(); }
 
     /**
      * Check if window is currently hidden
      */
-    bool IsHidden() const {
-        return ::IsWindowHidden();
-    }
+    bool IsHidden() const { return ::IsWindowHidden(); }
 
     /**
      * Check if window is currently minimized
      */
-    bool IsMinimized() const {
-        return ::IsWindowMinimized();
-    }
+    bool IsMinimized() const { return ::IsWindowMinimized(); }
 
     /**
      * Check if window is currently minimized
      */
-    bool IsMaximized() const {
-        return ::IsWindowMaximized();
-    }
+    bool IsMaximized() const { return ::IsWindowMaximized(); }
 
     /**
      * Check if window is currently focused
      */
-    bool IsFocused() const {
-        return ::IsWindowFocused();
-    }
+    bool IsFocused() const { return ::IsWindowFocused(); }
 
     /**
      * Check if window has been resized last frame
      */
-    bool IsResized() const {
-        return ::IsWindowResized();
-    }
+    bool IsResized() const { return ::IsWindowResized(); }
 
     /**
      * Check if one specific window flag is enabled
      */
-    bool IsState(unsigned int flag) const {
-        return ::IsWindowState(flag);
-    }
+    bool IsState(unsigned int flag) const { return ::IsWindowState(flag); }
 
     /**
      * Set window configuration state using flags
@@ -188,7 +166,8 @@ class Window {
             if (!IsFullscreen()) {
                 ToggleFullscreen();
             }
-        } else {
+        }
+        else {
             if (IsFullscreen()) {
                 ToggleFullscreen();
             }
@@ -199,7 +178,7 @@ class Window {
 
     /**
      * Toggle window state: borderless/windowed
-    */
+     */
     Window& ToggleBorderless() {
         ::ToggleBorderlessWindowed();
         return *this;
@@ -319,23 +298,17 @@ class Window {
     /**
      * Set window dimensions
      */
-    Window& SetSize(const ::Vector2& size) {
-        return SetSize(static_cast<int>(size.x), static_cast<int>(size.y));
-    }
+    Window& SetSize(const ::Vector2& size) { return SetSize(static_cast<int>(size.x), static_cast<int>(size.y)); }
 
     /**
      * Get the screen's width and height.
      */
-    Vector2 GetSize() const {
-        return {static_cast<float>(GetWidth()), static_cast<float>(GetHeight())};
-    }
+    Vector2 GetSize() const { return {static_cast<float>(GetWidth()), static_cast<float>(GetHeight())}; }
 
     /**
      * Get native window handle
      */
-    void* GetHandle() const {
-        return ::GetWindowHandle();
-    }
+    void* GetHandle() const { return ::GetWindowHandle(); }
 
     /**
      * Setup canvas (framebuffer) to start drawing
@@ -356,58 +329,42 @@ class Window {
     /**
      * Get current screen width
      */
-    int GetWidth() const {
-        return ::GetScreenWidth();
-    }
+    int GetWidth() const { return ::GetScreenWidth(); }
 
     /**
      * Get current screen height
      */
-    int GetHeight() const {
-        return ::GetScreenHeight();
-    }
+    int GetHeight() const { return ::GetScreenHeight(); }
 
     /**
      * Get current render width (it considers HiDPI)
      */
-    int GetRenderWidth() const {
-        return ::GetRenderWidth();
-    }
+    int GetRenderWidth() const { return ::GetRenderWidth(); }
 
     /**
      * Get current render height (it considers HiDPI)
      */
-    int GetRenderHeight() const {
-        return ::GetRenderHeight();
-    }
+    int GetRenderHeight() const { return ::GetRenderHeight(); }
 
     /**
      * Get window position XY on monitor
      */
-    Vector2 GetPosition() const {
-        return ::GetWindowPosition();
-    }
+    Vector2 GetPosition() const { return ::GetWindowPosition(); }
 
     /**
      * Get window scale DPI factor
      */
-    Vector2 GetScaleDPI() const {
-        return ::GetWindowScaleDPI();
-    }
+    Vector2 GetScaleDPI() const { return ::GetWindowScaleDPI(); }
 
     /**
      * Set clipboard text content
      */
-    void SetClipboardText(const std::string& text) {
-        ::SetClipboardText(text.c_str());
-    }
+    void SetClipboardText(const std::string& text) { ::SetClipboardText(text.c_str()); }
 
     /**
      * Get clipboard text content
      */
-    const std::string GetClipboardText() {
-        return ::GetClipboardText();
-    }
+    const std::string GetClipboardText() { return ::GetClipboardText(); }
 
     /**
      * Set target FPS (maximum)
@@ -420,37 +377,27 @@ class Window {
     /**
      * Returns current FPS
      */
-    int GetFPS() const {
-        return ::GetFPS();
-    }
+    int GetFPS() const { return ::GetFPS(); }
 
     /**
      * Draw current FPS
      */
-    void DrawFPS(int posX = 10, int posY = 10) const {
-        ::DrawFPS(posX, posY);
-    }
+    void DrawFPS(int posX = 10, int posY = 10) const { ::DrawFPS(posX, posY); }
 
     /**
      * Returns time in seconds for last frame drawn
      */
-    float GetFrameTime() const {
-        return ::GetFrameTime();
-    }
+    float GetFrameTime() const { return ::GetFrameTime(); }
 
     /**
      * Returns elapsed time in seconds since InitWindow()
      */
-    double GetTime() const {
-        return ::GetTime();
-    }
+    double GetTime() const { return ::GetTime(); }
 
     /**
      * Check if window has been initialized successfully
      */
-    static bool IsReady() {
-        return ::IsWindowReady();
-    }
+    static bool IsReady() { return ::IsWindowReady(); }
 
     /**
      * Sets the configuration flags for raylib.
@@ -459,12 +406,10 @@ class Window {
      *
      * @see ::SetConfigFlags
      */
-    void SetConfigFlags(unsigned int flags) {
-        ::SetConfigFlags(flags);
-    }
+    void SetConfigFlags(unsigned int flags) { ::SetConfigFlags(flags); }
 };
-}  // namespace raylib
+} // namespace raylib
 
 using RWindow = raylib::Window;
 
-#endif  // RAYLIB_CPP_INCLUDE_WINDOW_HPP_
+#endif // RAYLIB_CPP_INCLUDE_WINDOW_HPP_

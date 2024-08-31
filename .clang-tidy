@@ -1,0 +1,94 @@
+---
+Checks: "*,-fuchsia-*,-google-*,-zircon-*,-abseil-*,-linuxkernel*,-llvm*,-android-*,
+                  -modernize-use-trailing-return-type,
+                  -readability-magic-numbers,-cppcoreguidelines-avoid-magic-numbers,-readability-else-after-return,
+                  -readability-static-accessed-through-instance,
+                  -readability-avoid-const-params-in-decls,
+                  -cppcoreguidelines-non-private-member-variables-in-classes,
+                  -misc-non-private-member-variables-in-classes,
+                  -altera-struct-pack-align,
+                  -altera-unroll-loops,
+                  -altera-id-dependent-backward-branch,
+                  -readability-identifier-length,
+                  readability-identifier-naming,
+                  llvm-include-order,
+                  -llvm-header-guard,
+                  bugprone-*,
+                  cert-*,
+                  modernize-*
+                  -modernize-use-trailing-return-type,
+                  -readability-else-after-return,
+                  -readability-static-accessed-through-instance,
+                  -readability-avoid-const-params-in-decls,
+                  -readability-uppercase-literal-suffix,
+                  -cppcoreguidelines-non-private-member-variables-in-classes,
+                  -misc-non-private-member-variables-in-classes,
+                  *-uppercase-literal-suffix,
+"
+WarningsAsErrors: ''
+HeaderFilterRegex: ''
+FormatStyle: file
+
+CheckOptions:
+  - key: readability-identifier-naming.NamespaceCase
+    value: lower_case
+  - key: readability-identifier-naming.ClassCase
+    value: CamelCase
+  - key: readability-identifier-naming.EnumCase
+    value: CamelCase
+  - key: readability-identifier-naming.StructCase
+    value: CamelCase
+  - key: readability-identifier-naming.EnumConstantCase
+    value: CamelCase
+  - key: readability-identifier-naming.ScopedEnumConstantCase
+    value: CamelCase
+  - key: readability-identifier-naming.ClassMemberCase
+    value: camelBack
+  - key: readability-identifier-naming.PrivateMemberCase
+    value: camelBack
+  - key: readability-identifier-naming.ProtectedMemberCase
+    value: camelBack
+  - key: readability-identifier-naming.PublicMemberCase
+    value: camelBack
+  - key: readability-identifier-naming.StaticConstantCase
+    value: CamelCase
+  - key: readability-identifier-naming.ClassConstantCase
+    value: CamelCase
+  - key: readability-identifier-naming.ConstexprMethodCase
+    value: CamelCase
+  - key: readability-identifier-naming.ClassMethodCase
+    value: CamelCase
+  - key: readability-identifier-naming.PublicMethodCase
+    value: CamelCase
+  - key: readability-identifier-naming.PrivateMethodCase
+    value: CamelCase
+  - key: readability-identifier-naming.ProtectedMethodCase
+    value: CamelCase
+  - key: readability-identifier-naming.ConstexprMethodCase
+    value: CamelCase
+  - key: readability-identifier-naming.VariableCase
+    value: camelBack
+  - key: readability-identifier-naming.LocalVariableCase
+    value: camelBack
+  - key: readability-identifier-naming.ConstantParameterCase
+    value: camelBack
+  - key: readability-identifier-naming.ParameterPackCase
+    value: camelBack
+  - key: readability-identifier-naming.LocalConstantCase
+    value: camelBack
+  - key: readability-identifier-naming.ConstexprVariableCase
+    value: CamelCase
+  - key: readability-identifier-naming.TypedefCase
+    value: CamelCase
+  - key: readability-identifier-naming.TemplateParameterCase
+    value: CamelCase
+  - key: readability-identifier-naming.TemplateTemplateParameterCase
+    value: CamelCase
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.PrivateMemberPrefix
+    value: 'm_'
+  - key: readability-identifier-length.IgnoredVariableNames
+    value: 'i|j|k|x|y|z'
+  - key: readability-identifier-length.IgnoredParameterNames
+    value: 'i|j|k|x|y|z'

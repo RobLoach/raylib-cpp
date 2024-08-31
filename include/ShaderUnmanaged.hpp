@@ -4,9 +4,9 @@
 #include <rlgl.h>
 #include <string>
 
-#include "./raylib.hpp"
-#include "./raylib-cpp-utils.hpp"
 #include "Texture.hpp"
+#include "./raylib-cpp-utils.hpp"
+#include "./raylib.hpp"
 
 namespace raylib {
 
@@ -14,21 +14,17 @@ namespace raylib {
  * Shader type (generic), not managed by C++ RAII.
  */
 class ShaderUnmanaged : public ::Shader {
- public:
+public:
     ShaderUnmanaged() : ::Shader{rlGetShaderIdDefault(), rlGetShaderLocsDefault()} {}
 
-    ShaderUnmanaged(const ::Shader& shader) {
-        set(shader);
-    }
+    ShaderUnmanaged(const ::Shader& shader) { set(shader); }
 
     ShaderUnmanaged(unsigned int id, int* locs = nullptr) : ::Shader{id, locs} {}
 
     ShaderUnmanaged(const std::string& vsFileName, const std::string& fsFileName) {
         set(::LoadShader(vsFileName.c_str(), fsFileName.c_str()));
     }
-    ShaderUnmanaged(const char* vsFileName, const char* fsFileName) {
-        set(::LoadShader(vsFileName, fsFileName));
-    }
+    ShaderUnmanaged(const char* vsFileName, const char* fsFileName) { set(::LoadShader(vsFileName, fsFileName)); }
 
     /**
      * Load shader from files and bind default locations.
@@ -83,9 +79,7 @@ class ShaderUnmanaged : public ::Shader {
      *
      * @see GetShaderLocation()
      */
-    int GetLocation(const std::string& uniformName) const {
-        return ::GetShaderLocation(*this, uniformName.c_str());
-    }
+    int GetLocation(const std::string& uniformName) const { return ::GetShaderLocation(*this, uniformName.c_str()); }
 
     /**
      * Get shader attribute location
@@ -139,18 +133,15 @@ class ShaderUnmanaged : public ::Shader {
     /**
      * Retrieves whether or not the shader is ready.
      */
-    bool IsReady() const {
-        return id != 0 && locs != nullptr;
-    }
-
- protected:
+    bool IsReady() const { return id != 0 && locs != nullptr; }
+protected:
     void set(const ::Shader& shader) {
         id = shader.id;
         locs = shader.locs;
     }
 };
-}  // namespace raylib
+} // namespace raylib
 
 using RShaderUnmanaged = raylib::ShaderUnmanaged;
 
-#endif  // RAYLIB_CPP_INCLUDE_UNMANAGEDSHADER_HPP_
+#endif // RAYLIB_CPP_INCLUDE_UNMANAGEDSHADER_HPP_

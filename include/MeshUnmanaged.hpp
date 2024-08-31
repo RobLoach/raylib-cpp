@@ -4,10 +4,10 @@
 #include <string>
 #include <vector>
 
-#include "./raylib.hpp"
-#include "./raylib-cpp-utils.hpp"
 #include "./BoundingBox.hpp"
 #include "./Model.hpp"
+#include "./raylib-cpp-utils.hpp"
+#include "./raylib.hpp"
 
 namespace raylib {
 
@@ -19,7 +19,7 @@ namespace raylib {
  * @see raylib::Mesh
  */
 class MeshUnmanaged : public ::Mesh {
- public:
+public:
     /**
      * Default texture constructor.
      */
@@ -41,13 +41,9 @@ class MeshUnmanaged : public ::Mesh {
         vboId = nullptr;
     }
 
-    MeshUnmanaged(const ::Mesh& mesh) {
-        set(mesh);
-    }
+    MeshUnmanaged(const ::Mesh& mesh) { set(mesh); }
 
-    MeshUnmanaged(::Mesh&& mesh) {
-        set(mesh);
-    }
+    MeshUnmanaged(::Mesh&& mesh) { set(mesh); }
 
     /**
      * Load meshes from model file
@@ -61,9 +57,7 @@ class MeshUnmanaged : public ::Mesh {
     /**
      * Generate polygonal mesh
      */
-    static ::Mesh Poly(int sides, float radius) {
-        return ::GenMeshPoly(sides, radius);
-    }
+    static ::Mesh Poly(int sides, float radius) { return ::GenMeshPoly(sides, radius); }
 
     /**
      * Generate plane mesh (with subdivisions)
@@ -75,37 +69,27 @@ class MeshUnmanaged : public ::Mesh {
     /**
      * Generate cuboid mesh
      */
-    static ::Mesh Cube(float width, float height, float length) {
-        return ::GenMeshCube(width, height, length);
-    }
+    static ::Mesh Cube(float width, float height, float length) { return ::GenMeshCube(width, height, length); }
 
     /**
      * Generate sphere mesh (standard sphere)
      */
-    static ::Mesh Sphere(float radius, int rings, int slices) {
-        return ::GenMeshSphere(radius, rings, slices);
-    }
+    static ::Mesh Sphere(float radius, int rings, int slices) { return ::GenMeshSphere(radius, rings, slices); }
 
     /**
      * Generate half-sphere mesh (no bottom cap)
      */
-    static ::Mesh HemiSphere(float radius, int rings, int slices) {
-        return ::GenMeshHemiSphere(radius, rings, slices);
-    }
+    static ::Mesh HemiSphere(float radius, int rings, int slices) { return ::GenMeshHemiSphere(radius, rings, slices); }
 
     /**
      * Generate cylinder mesh
      */
-    static ::Mesh Cylinder(float radius, float height, int slices) {
-        return ::GenMeshCylinder(radius, height, slices);
-    }
+    static ::Mesh Cylinder(float radius, float height, int slices) { return ::GenMeshCylinder(radius, height, slices); }
 
     /**
      * Generate cone/pyramid mesh
      */
-    static ::Mesh Cone(float radius, float height, int slices) {
-        return ::GenMeshCone(radius, height, slices);
-    }
+    static ::Mesh Cone(float radius, float height, int slices) { return ::GenMeshCone(radius, height, slices); }
 
     /**
      * Generate torus mesh
@@ -124,9 +108,7 @@ class MeshUnmanaged : public ::Mesh {
     /**
      * Generate heightmap mesh from image data
      */
-    static ::Mesh Heightmap(const ::Image& heightmap, ::Vector3 size) {
-        return ::GenMeshHeightmap(heightmap, size);
-    }
+    static ::Mesh Heightmap(const ::Image& heightmap, ::Vector3 size) { return ::GenMeshHeightmap(heightmap, size); }
 
     /**
      * Generate cubes-based map mesh from image data
@@ -138,18 +120,18 @@ class MeshUnmanaged : public ::Mesh {
     GETTERSETTER(int, VertexCount, vertexCount)
     GETTERSETTER(int, TriangleCount, triangleCount)
     GETTERSETTER(float*, Vertices, vertices)
-    GETTERSETTER(float *, TexCoords, texcoords)
-    GETTERSETTER(float *, TexCoords2, texcoords2)
-    GETTERSETTER(float *, Normals, normals)
-    GETTERSETTER(float *, Tangents, tangents)
-    GETTERSETTER(unsigned char *, Colors, colors)
-    GETTERSETTER(unsigned short *, Indices, indices) // NOLINT
-    GETTERSETTER(float *, AnimVertices, animVertices)
-    GETTERSETTER(float *, AnimNormals, animNormals)
-    GETTERSETTER(unsigned char *, BoneIds, boneIds)
-    GETTERSETTER(float *, BoneWeights, boneWeights)
+    GETTERSETTER(float*, TexCoords, texcoords)
+    GETTERSETTER(float*, TexCoords2, texcoords2)
+    GETTERSETTER(float*, Normals, normals)
+    GETTERSETTER(float*, Tangents, tangents)
+    GETTERSETTER(unsigned char*, Colors, colors)
+    GETTERSETTER(unsigned short*, Indices, indices) // NOLINT
+    GETTERSETTER(float*, AnimVertices, animVertices)
+    GETTERSETTER(float*, AnimNormals, animNormals)
+    GETTERSETTER(unsigned char*, BoneIds, boneIds)
+    GETTERSETTER(float*, BoneWeights, boneWeights)
     GETTERSETTER(unsigned int, VaoId, vaoId)
-    GETTERSETTER(unsigned int *, VboId, vboId)
+    GETTERSETTER(unsigned int*, VboId, vboId)
 
     MeshUnmanaged& operator=(const ::Mesh& mesh) {
         set(mesh);
@@ -169,23 +151,19 @@ class MeshUnmanaged : public ::Mesh {
     /**
      * Upload mesh vertex data to GPU (VRAM)
      */
-    void Upload(bool dynamic = false) {
-        ::UploadMesh(this, dynamic);
-    }
+    void Upload(bool dynamic = false) { ::UploadMesh(this, dynamic); }
 
     /**
      * Upload mesh vertex data to GPU (VRAM)
      */
-    void UpdateBuffer(int index, void *data, int dataSize, int offset = 0) {
+    void UpdateBuffer(int index, void* data, int dataSize, int offset = 0) {
         ::UpdateMeshBuffer(*this, index, data, dataSize, offset);
     }
 
     /**
      * Draw a 3d mesh with material and transform
      */
-    void Draw(const ::Material& material, const ::Matrix& transform) const {
-        ::DrawMesh(*this, material, transform);
-    }
+    void Draw(const ::Material& material, const ::Matrix& transform) const { ::DrawMesh(*this, material, transform); }
 
     /**
      * Draw multiple mesh instances with material and different transforms
@@ -208,16 +186,12 @@ class MeshUnmanaged : public ::Mesh {
     /**
      * Compute mesh bounding box limits
      */
-    raylib::BoundingBox BoundingBox() const {
-        return ::GetMeshBoundingBox(*this);
-    }
+    raylib::BoundingBox BoundingBox() const { return ::GetMeshBoundingBox(*this); }
 
     /**
      * Compute mesh bounding box limits
      */
-    operator raylib::BoundingBox() {
-        return BoundingBox();
-    }
+    operator raylib::BoundingBox() { return BoundingBox(); }
 
     /**
      * Compute mesh tangents
@@ -230,18 +204,13 @@ class MeshUnmanaged : public ::Mesh {
     /**
      * Load model from generated mesh
      */
-    raylib::Model LoadModelFrom() const {
-        return ::LoadModelFromMesh(*this);
-    }
+    raylib::Model LoadModelFrom() const { return ::LoadModelFromMesh(*this); }
 
     /**
      * Load model from generated mesh
      */
-    operator raylib::Model() {
-        return ::LoadModelFromMesh(*this);
-    }
-
- protected:
+    operator raylib::Model() { return ::LoadModelFromMesh(*this); }
+protected:
     void set(const ::Mesh& mesh) {
         vertexCount = mesh.vertexCount;
         triangleCount = mesh.triangleCount;
@@ -260,8 +229,8 @@ class MeshUnmanaged : public ::Mesh {
         vboId = mesh.vboId;
     }
 };
-}  // namespace raylib
+} // namespace raylib
 
 using RMeshUnmanaged = raylib::MeshUnmanaged;
 
-#endif  // RAYLIB_CPP_INCLUDE_MESHUNMANAGED_HPP_
+#endif // RAYLIB_CPP_INCLUDE_MESHUNMANAGED_HPP_

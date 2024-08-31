@@ -1,30 +1,26 @@
 #ifndef RAYLIB_CPP_INCLUDE_RAYCOLLISION_HPP_
 #define RAYLIB_CPP_INCLUDE_RAYCOLLISION_HPP_
 
-#include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./raylib.hpp"
 
 namespace raylib {
 /**
  * Raycast hit information
  */
 class RayCollision : public ::RayCollision {
- public:
-    RayCollision(const ::RayCollision& ray) {
-        set(ray);
-    }
+public:
+    RayCollision(const ::RayCollision& ray) { set(ray); }
 
-    RayCollision(bool hit, float distance,
-        ::Vector3 point, ::Vector3 normal) : ::RayCollision{hit, distance, point, normal} {
+    RayCollision(bool hit, float distance, ::Vector3 point, ::Vector3 normal)
+        : ::RayCollision{hit, distance, point, normal} {
         // Nothing.
     }
 
     /**
      * Get collision info between ray and bounding box
      */
-    RayCollision(const ::Ray& ray, const ::BoundingBox& box) {
-        set(::GetRayCollisionBox(ray, box));
-    }
+    RayCollision(const ::Ray& ray, const ::BoundingBox& box) { set(::GetRayCollisionBox(ray, box)); }
 
     /**
      * Get collision info between ray and mesh
@@ -63,8 +59,7 @@ class RayCollision : public ::RayCollision {
     GETTERSETTER(float, Distance, distance)
     GETTERSETTER(::Vector3, Position, point)
     GETTERSETTER(::Vector3, Normal, normal)
-
- protected:
+protected:
     void set(const ::RayCollision& ray) {
         hit = ray.hit;
         distance = ray.distance;
@@ -72,8 +67,8 @@ class RayCollision : public ::RayCollision {
         normal = ray.normal;
     }
 };
-}  // namespace raylib
+} // namespace raylib
 
 using RRayCollision = raylib::RayCollision;
 
-#endif  // RAYLIB_CPP_INCLUDE_RAYCOLLISION_HPP_
+#endif // RAYLIB_CPP_INCLUDE_RAYCOLLISION_HPP_

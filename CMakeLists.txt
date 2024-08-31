@@ -32,4 +32,13 @@ if(BUILD_RAYLIB_CPP_EXAMPLES)
         )
         add_subdirectory(tests)
     endif()
+
+    if (RAYLIB_CPP_IS_MAIN)
+        # @TODO: add examples files
+        add_custom_target(format-tests
+                COMMAND clang-format
+                -i
+                ${CMAKE_CURRENT_SOURCE_DIR}/tests/raylib_cpp_test.cpp
+        )
+    endif()
 endif()

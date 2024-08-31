@@ -3,17 +3,17 @@
 
 #include <string>
 
-#include "./raylib.hpp"
-#include "./raylib-cpp-utils.hpp"
-#include "Texture.hpp"
 #include "ShaderUnmanaged.hpp"
+#include "Texture.hpp"
+#include "./raylib-cpp-utils.hpp"
+#include "./raylib.hpp"
 
 namespace raylib {
 /**
  * Shader type (generic)
  */
 class Shader : public ShaderUnmanaged {
- public:
+public:
     using ShaderUnmanaged::ShaderUnmanaged;
 
     Shader(const Shader&) = delete;
@@ -44,9 +44,7 @@ class Shader : public ShaderUnmanaged {
     /**
      * Unload shader from GPU memory (VRAM)
      */
-    ~Shader() {
-        Unload();
-    }
+    ~Shader() { Unload(); }
 
     /**
      * Unload shader from GPU memory (VRAM)
@@ -57,8 +55,8 @@ class Shader : public ShaderUnmanaged {
         }
     }
 };
-}  // namespace raylib
+} // namespace raylib
 
 using RShader = raylib::Shader;
 
-#endif  // RAYLIB_CPP_INCLUDE_SHADER_HPP_
+#endif // RAYLIB_CPP_INCLUDE_SHADER_HPP_

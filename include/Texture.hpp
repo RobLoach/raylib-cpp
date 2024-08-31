@@ -12,7 +12,7 @@ namespace raylib {
  * @see raylib::TextureUnmanaged
  */
 class Texture : public TextureUnmanaged {
- public:
+public:
     using TextureUnmanaged::TextureUnmanaged;
 
     /**
@@ -41,9 +41,7 @@ class Texture : public TextureUnmanaged {
     /**
      * On destruction, unload the Texture.
      */
-    ~Texture() {
-        Unload();
-    }
+    ~Texture() { Unload(); }
 
     /**
      * Move assignment.
@@ -70,10 +68,10 @@ class Texture : public TextureUnmanaged {
 using Texture2D = Texture;
 using TextureCubemap = Texture;
 
-}  // namespace raylib
+} // namespace raylib
 
 using RTexture = raylib::Texture;
 using RTexture2D = raylib::Texture2D;
 using RTextureCubemap = raylib::TextureCubemap;
 
-#endif  // RAYLIB_CPP_INCLUDE_TEXTURE_HPP_
+#endif // RAYLIB_CPP_INCLUDE_TEXTURE_HPP_

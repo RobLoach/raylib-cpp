@@ -1,19 +1,17 @@
 #ifndef RAYLIB_CPP_INCLUDE_CAMERA3D_HPP_
 #define RAYLIB_CPP_INCLUDE_CAMERA3D_HPP_
 
-#include "./raylib.hpp"
 #include "./Vector3.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./raylib.hpp"
 
 namespace raylib {
 /**
  * Camera type, defines a camera position/orientation in 3d space
  */
 class Camera3D : public ::Camera3D {
- public:
-    Camera3D(const ::Camera3D& camera) {
-        set(camera);
-    }
+public:
+    Camera3D(const ::Camera3D& camera) { set(camera); }
 
     /**
      * Create a new Camera3D.
@@ -21,14 +19,17 @@ class Camera3D : public ::Camera3D {
      * @param position Camera position
      * @param target Camera target it looks-at
      * @param up Camera up vector (rotation over its axis)
-     * @param fovy Camera field-of-view apperture in Y (degrees) in perspective, used as near plane width in orthographic
+     * @param fovy Camera field-of-view apperture in Y (degrees) in perspective, used as near plane width in
+     * orthographic
      * @param projection Camera projection: CAMERA_PERSPECTIVE or CAMERA_ORTHOGRAPHIC
      */
-    Camera3D(::Vector3 position,
-            ::Vector3 target = ::Vector3{0.0f, 0.0f, 0.0f},
-            ::Vector3 up = ::Vector3{0.0f, 1.0f, 0.0f},
-            float fovy = 0,
-            int projection = CAMERA_PERSPECTIVE) : ::Camera3D{position, target, up, fovy, projection} {}
+    Camera3D(
+        ::Vector3 position,
+        ::Vector3 target = ::Vector3{0.0f, 0.0f, 0.0f},
+        ::Vector3 up = ::Vector3{0.0f, 1.0f, 0.0f},
+        float fovy = 0,
+        int projection = CAMERA_PERSPECTIVE)
+        : ::Camera3D{position, target, up, fovy, projection} {}
 
     Camera3D() {}
 
@@ -62,9 +63,7 @@ class Camera3D : public ::Camera3D {
     /**
      * Get camera transform matrix (view matrix)
      */
-    Matrix GetMatrix() const {
-        return ::GetCameraMatrix(*this);
-    }
+    Matrix GetMatrix() const { return ::GetCameraMatrix(*this); }
 
     /**
      * Update camera position for selected mode
@@ -85,25 +84,18 @@ class Camera3D : public ::Camera3D {
     /**
      * Returns a ray trace from mouse position
      */
-    Ray GetMouseRay(::Vector2 mousePosition) const {
-        return ::GetMouseRay(mousePosition, *this);
-    }
+    Ray GetMouseRay(::Vector2 mousePosition) const { return ::GetMouseRay(mousePosition, *this); }
 
     /**
      * Returns the screen space position for a 3d world space position
      */
-    Vector2 GetWorldToScreen(::Vector3 position) const {
-        return ::GetWorldToScreen(position, *this);
-    }
+    Vector2 GetWorldToScreen(::Vector3 position) const { return ::GetWorldToScreen(position, *this); }
 
     /**
      * Draw a billboard texture.
      */
-    void DrawBillboard(
-            const ::Texture2D& texture,
-            ::Vector3 center,
-            float size,
-            ::Color tint = {255, 255, 255, 255}) const {
+    void
+    DrawBillboard(const ::Texture2D& texture, ::Vector3 center, float size, ::Color tint = {255, 255, 255, 255}) const {
         ::DrawBillboard(*this, texture, center, size, tint);
     }
 
@@ -111,15 +103,14 @@ class Camera3D : public ::Camera3D {
      * Draw a billboard texture defined by source.
      */
     void DrawBillboard(
-            const ::Texture2D& texture,
-            ::Rectangle sourceRec,
-            ::Vector3 center,
-            ::Vector2 size,
-            ::Color tint = {255, 255, 255, 255}) const {
+        const ::Texture2D& texture,
+        ::Rectangle sourceRec,
+        ::Vector3 center,
+        ::Vector2 size,
+        ::Color tint = {255, 255, 255, 255}) const {
         ::DrawBillboardRec(*this, texture, sourceRec, center, size, tint);
     }
-
- protected:
+protected:
     void set(const ::Camera3D& camera) {
         position = camera.position;
         target = camera.target;
@@ -131,9 +122,9 @@ class Camera3D : public ::Camera3D {
 
 using Camera = Camera3D;
 
-}  // namespace raylib
+} // namespace raylib
 
 using RCamera = raylib::Camera;
 using RCamera3D = raylib::Camera3D;
 
-#endif  // RAYLIB_CPP_INCLUDE_CAMERA3D_HPP_
+#endif // RAYLIB_CPP_INCLUDE_CAMERA3D_HPP_

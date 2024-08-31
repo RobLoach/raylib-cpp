@@ -11,7 +11,7 @@ namespace raylib {
  * Exception used for most raylib-related exceptions.
  */
 class RaylibException : public std::runtime_error {
- public:
+public:
     /**
      * Construct a runtime exception with the given message.
      *
@@ -26,13 +26,11 @@ class RaylibException : public std::runtime_error {
      *
      * @param logLevel The output status to use when outputing.
      */
-    void TraceLog(int logLevel = LOG_ERROR) {
-        ::TraceLog(logLevel, std::runtime_error::what());
-    }
+    void TraceLog(int logLevel = LOG_ERROR) { ::TraceLog(logLevel, std::runtime_error::what()); }
 };
 
-}  // namespace raylib
+} // namespace raylib
 
 using RRaylibException = raylib::RaylibException;
 
-#endif  // RAYLIB_CPP_INCLUDE_RAYLIBEXCEPTION_HPP_
+#endif // RAYLIB_CPP_INCLUDE_RAYLIBEXCEPTION_HPP_
