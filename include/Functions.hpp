@@ -201,25 +201,23 @@ namespace raylib {
 /**
  * Load an image from RAW file data
  */
-[[maybe_unused]] RLCPPAPI inline ::Image LoadImageRaw(const std::string& fileName,
-        int width, int height,
-        int format, int headerSize) {
+[[maybe_unused]] RLCPPAPI inline ::Image
+LoadImageRaw(const std::string& fileName, int width, int height, int format, int headerSize) {
     return ::LoadImageRaw(fileName.c_str(), width, height, format, headerSize);
 }
 
 /**
  * Load animated image data
  */
-[[maybe_unused]] RLCPPAPI inline ::Image LoadImageAnim(const std::string& fileName, int *frames) {
+[[maybe_unused]] RLCPPAPI inline ::Image LoadImageAnim(const std::string& fileName, int* frames) {
     return ::LoadImageAnim(fileName.c_str(), frames);
 }
 
 /**
  * Load image from memory buffer, fileType refers to extension like "png"
  */
-[[maybe_unused]] RLCPPAPI inline ::Image LoadImageFromMemory(const std::string& fileType,
-        const unsigned char *fileData,
-        int dataSize) {
+[[maybe_unused]] RLCPPAPI inline ::Image
+LoadImageFromMemory(const std::string& fileType, const unsigned char* fileData, int dataSize) {
     return ::LoadImageFromMemory(fileType.c_str(), fileData, dataSize);
 }
 
@@ -247,43 +245,54 @@ namespace raylib {
 /**
  * Draw text (using default font)
  */
-[[maybe_unused]] RLCPPAPI inline void DrawText(
-        const std::string& text,
-        int posX, int posY,
-        int fontSize,
-        ::Color color) {
+[[maybe_unused]] RLCPPAPI inline void
+DrawText(const std::string& text, int posX, int posY, int fontSize, ::Color color) {
     ::DrawText(text.c_str(), posX, posY, fontSize, color);
 }
 
 /**
  * Draw text using font and additional parameters
  */
-[[maybe_unused]] RLCPPAPI inline void DrawTextEx(const Font& font, char* text, Vector2 position,
-        float fontSize, float spacing, ::Color tint) {
+[[maybe_unused]] RLCPPAPI inline void
+DrawTextEx(const Font& font, char* text, Vector2 position, float fontSize, float spacing, ::Color tint) {
     ::DrawTextEx(font, text, position, fontSize, spacing, tint);
 }
 
 /**
  * Draw text using font and additional parameters
  */
-[[maybe_unused]] RLCPPAPI inline void DrawTextEx(const Font& font, const std::string& text, Vector2 position,
-        float fontSize, float spacing, ::Color tint) {
+[[maybe_unused]] RLCPPAPI inline void
+DrawTextEx(const Font& font, const std::string& text, Vector2 position, float fontSize, float spacing, ::Color tint) {
     ::DrawTextEx(font, text.c_str(), position, fontSize, spacing, tint);
 }
 
 /**
  * Draw text using Font and pro parameters (rotation)
  */
-[[maybe_unused]] RLCPPAPI inline void DrawTextPro(const Font& font, const char* text, Vector2 position,
-        Vector2 origin, float rotation, float fontSize, float spacing, ::Color tint) {
+[[maybe_unused]] RLCPPAPI inline void DrawTextPro(
+    const Font& font,
+    const char* text,
+    Vector2 position,
+    Vector2 origin,
+    float rotation,
+    float fontSize,
+    float spacing,
+    ::Color tint) {
     ::DrawTextPro(font, text, position, origin, rotation, fontSize, spacing, tint);
 }
 
 /**
  * Draw text using Font and pro parameters (rotation)
  */
-[[maybe_unused]] RLCPPAPI inline void DrawTextPro(const Font& font, const std::string& text, Vector2 position,
-        Vector2 origin, float rotation, float fontSize, float spacing, ::Color tint) {
+[[maybe_unused]] RLCPPAPI inline void DrawTextPro(
+    const Font& font,
+    const std::string& text,
+    Vector2 position,
+    Vector2 origin,
+    float rotation,
+    float fontSize,
+    float spacing,
+    ::Color tint) {
     ::DrawTextPro(font, text.c_str(), position, origin, rotation, fontSize, spacing, tint);
 }
 
@@ -297,10 +306,8 @@ namespace raylib {
 /**
  * Load font from file (filename must include file extension)
  */
-[[maybe_unused]] RLCPPAPI inline ::Font LoadFontEx(
-        const std::string& fileName,
-        int fontSize, int *fontChars,
-        int charsCount) {
+[[maybe_unused]] RLCPPAPI inline ::Font
+LoadFontEx(const std::string& fileName, int fontSize, int* fontChars, int charsCount) {
     return ::LoadFontEx(fileName.c_str(), fontSize, fontChars, charsCount);
 }
 
@@ -356,9 +363,8 @@ namespace raylib {
 /**
  * Replace text string
  */
-[[maybe_unused]] RLCPPAPI std::string TextReplace(
-        const std::string& text, const std::string& replace,
-        const std::string& by) {
+[[maybe_unused]] RLCPPAPI std::string
+TextReplace(const std::string& text, const std::string& replace, const std::string& by) {
     const char* input = text.c_str();
     char* output = ::TextReplace(const_cast<char*>(input), replace.c_str(), by.c_str());
     if (output != NULL) {
@@ -426,6 +432,6 @@ namespace raylib {
     return ::TextToInteger(text.c_str());
 }
 
-}  // namespace raylib
+} // namespace raylib
 
-#endif  // RAYLIB_CPP_INCLUDE_FUNCTIONS_HPP_
+#endif // RAYLIB_CPP_INCLUDE_FUNCTIONS_HPP_

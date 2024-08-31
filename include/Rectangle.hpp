@@ -1,16 +1,16 @@
 #ifndef RAYLIB_CPP_INCLUDE_RECTANGLE_HPP_
 #define RAYLIB_CPP_INCLUDE_RECTANGLE_HPP_
 
-#include "./raylib.hpp"
-#include "./raylib-cpp-utils.hpp"
 #include "./Vector2.hpp"
+#include "./raylib-cpp-utils.hpp"
+#include "./raylib.hpp"
 
 namespace raylib {
 /**
  * Rectangle type
  */
 class Rectangle : public ::Rectangle {
- public:
+public:
     Rectangle(const ::Rectangle& rect) : ::Rectangle{rect.x, rect.y, rect.width, rect.height} {}
 
     Rectangle(float x, float y, float width, float height) : ::Rectangle{x, y, width, height} {}
@@ -19,8 +19,7 @@ class Rectangle : public ::Rectangle {
     Rectangle(float x) : ::Rectangle{x, 0, 0, 0} {}
     Rectangle() : ::Rectangle{0, 0, 0, 0} {}
 
-    Rectangle(::Vector2 position, ::Vector2 size)
-            : ::Rectangle{position.x, position.y, size.x, size.y} {}
+    Rectangle(::Vector2 position, ::Vector2 size) : ::Rectangle{position.x, position.y, size.x, size.y} {}
     Rectangle(::Vector2 size) : ::Rectangle{0, 0, size.x, size.y} {}
     Rectangle(::Vector4 rect) : ::Rectangle{rect.x, rect.y, rect.z, rect.w} {}
 
@@ -34,33 +33,37 @@ class Rectangle : public ::Rectangle {
         return *this;
     }
 
-    ::Vector4 ToVector4() {
-        return {x, y, width, height};
-    }
+    ::Vector4 ToVector4() { return {x, y, width, height}; }
 
-    operator ::Vector4() const {
-        return {x, y, width, height};
-    }
+    operator ::Vector4() const { return {x, y, width, height}; }
 
     /**
      * Draw a color-filled rectangle
      */
-    void Draw(::Color color) const {
-        ::DrawRectangleRec(*this, color);
-    }
+    void Draw(::Color color) const { ::DrawRectangleRec(*this, color); }
 
     void Draw(::Vector2 origin, float rotation, ::Color color) const {
         ::DrawRectanglePro(*this, origin, rotation, color);
     }
 
     void DrawGradientV(::Color color1, ::Color color2) const {
-        ::DrawRectangleGradientV(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width),
-            static_cast<int>(height), color1, color2);
+        ::DrawRectangleGradientV(
+            static_cast<int>(x),
+            static_cast<int>(y),
+            static_cast<int>(width),
+            static_cast<int>(height),
+            color1,
+            color2);
     }
 
     void DrawGradientH(::Color color1, ::Color color2) const {
-        ::DrawRectangleGradientH(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width),
-            static_cast<int>(height), color1, color2);
+        ::DrawRectangleGradientH(
+            static_cast<int>(x),
+            static_cast<int>(y),
+            static_cast<int>(width),
+            static_cast<int>(height),
+            color1,
+            color2);
     }
 
     void DrawGradient(::Color col1, ::Color col2, ::Color col3, ::Color col4) const {
@@ -68,55 +71,50 @@ class Rectangle : public ::Rectangle {
     }
 
     void DrawLines(::Color color) const {
-        ::DrawRectangleLines(static_cast<int>(x), static_cast<int>(y), static_cast<int>(width),
-            static_cast<int>(height), color);
+        ::DrawRectangleLines(
+            static_cast<int>(x),
+            static_cast<int>(y),
+            static_cast<int>(width),
+            static_cast<int>(height),
+            color);
     }
 
-    void DrawLines(::Color color, float lineThick) const {
-        ::DrawRectangleLinesEx(*this, lineThick, color);
-    }
+    void DrawLines(::Color color, float lineThick) const { ::DrawRectangleLinesEx(*this, lineThick, color); }
 
     void DrawRounded(float roundness, int segments, ::Color color) const {
         ::DrawRectangleRounded(*this, roundness, segments, color);
     }
 
     void DrawRoundedLines(float roundness, int segments, ::Color color) const {
-        #if RAYLIB_VERSION_MAJOR == 5 && RAYLIB_VERSION_MINOR == 0
-            ::DrawRectangleRoundedLines(*this, roundness, segments, 1.0f, color);
-        #else
-            ::DrawRectangleRoundedLines(*this, roundness, segments, color);
-        #endif
+#if RAYLIB_VERSION_MAJOR == 5 && RAYLIB_VERSION_MINOR == 0
+        ::DrawRectangleRoundedLines(*this, roundness, segments, 1.0f, color);
+#else
+        ::DrawRectangleRoundedLines(*this, roundness, segments, color);
+#endif
     }
 
-    void DrawRoundedLines(float roundness, int segments,
-            float lineThick, ::Color color) const {
-        #if RAYLIB_VERSION_MAJOR == 5 && RAYLIB_VERSION_MINOR == 0
-            ::DrawRectangleRoundedLines(*this, roundness, segments, lineThick, color);
-        #else
-            DrawRectangleRoundedLinesEx(*this, roundness, segments, lineThick, color);
-        #endif
+    void DrawRoundedLines(float roundness, int segments, float lineThick, ::Color color) const {
+#if RAYLIB_VERSION_MAJOR == 5 && RAYLIB_VERSION_MINOR == 0
+        ::DrawRectangleRoundedLines(*this, roundness, segments, lineThick, color);
+#else
+        DrawRectangleRoundedLinesEx(*this, roundness, segments, lineThick, color);
+#endif
     }
 
     /**
      * Check collision between two rectangles
      */
-    bool CheckCollision(::Rectangle rec2) const {
-        return ::CheckCollisionRecs(*this, rec2);
-    }
+    bool CheckCollision(::Rectangle rec2) const { return ::CheckCollisionRecs(*this, rec2); }
 
     /**
      * Get collision rectangle for two rectangles collision
      */
-    ::Rectangle GetCollision(::Rectangle rec2) const {
-        return ::GetCollisionRec(*this, rec2);
-    }
+    ::Rectangle GetCollision(::Rectangle rec2) const { return ::GetCollisionRec(*this, rec2); }
 
     /**
      * Check if point is inside rectangle
      */
-    bool CheckCollision(::Vector2 point) const {
-        return ::CheckCollisionPointRec(point, *this);
-    }
+    bool CheckCollision(::Vector2 point) const { return ::CheckCollisionPointRec(point, *this); }
 
     /**
      * Check collision between circle and rectangle
@@ -125,9 +123,7 @@ class Rectangle : public ::Rectangle {
         return ::CheckCollisionCircleRec(center, radius, *this);
     }
 
-    Vector2 GetSize() const {
-        return {width, height};
-    }
+    Vector2 GetSize() const { return {width, height}; }
 
     Rectangle& SetSize(float newWidth, float newHeight) {
         width = newWidth;
@@ -135,18 +131,14 @@ class Rectangle : public ::Rectangle {
         return *this;
     }
 
-    Rectangle& SetSize(const ::Vector2& size) {
-        return SetSize(size.x, size.y);
-    }
+    Rectangle& SetSize(const ::Vector2& size) { return SetSize(size.x, size.y); }
 
     Rectangle& SetShapesTexture(const ::Texture2D& texture) {
         ::SetShapesTexture(texture, *this);
         return *this;
     }
 
-    Vector2 GetPosition() const {
-        return {x, y};
-    }
+    Vector2 GetPosition() const { return {x, y}; }
 
     Rectangle& SetPosition(float newX, float newY) {
         x = newX;
@@ -154,11 +146,8 @@ class Rectangle : public ::Rectangle {
         return *this;
     }
 
-    Rectangle& SetPosition(const ::Vector2& position) {
-        return SetPosition(position.x, position.y);
-    }
-
- protected:
+    Rectangle& SetPosition(const ::Vector2& position) { return SetPosition(position.x, position.y); }
+protected:
     void set(const ::Rectangle& rect) {
         x = rect.x;
         y = rect.y;
@@ -166,8 +155,8 @@ class Rectangle : public ::Rectangle {
         height = rect.height;
     }
 };
-}  // namespace raylib
+} // namespace raylib
 
 using RRectangle = raylib::Rectangle;
 
-#endif  // RAYLIB_CPP_INCLUDE_RECTANGLE_HPP_
+#endif // RAYLIB_CPP_INCLUDE_RECTANGLE_HPP_

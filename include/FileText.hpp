@@ -4,13 +4,13 @@
 #include <string>
 #include <utility>
 
-#include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./raylib.hpp"
 
 namespace raylib {
 
 class FileText {
- public:
+public:
     FileText() = default;
     FileText(const FileText&) = delete;
     FileText(FileText&& other) noexcept : data(other.data), length(other.length) {
@@ -25,9 +25,7 @@ class FileText {
     }
     ~FileText() { Unload(); }
 
-    explicit FileText(const std::string& fileName) {
-        Load(fileName);
-    }
+    explicit FileText(const std::string& fileName) { Load(fileName); }
 
     GETTER(const char*, Data, data)
     GETTER(unsigned int, Length, length)
@@ -35,9 +33,7 @@ class FileText {
     [[nodiscard]] const char* c_str() const { return data; }
 
     [[nodiscard]] std::string ToString() const { return data; }
-    explicit operator std::string() const {
-        return data;
-    }
+    explicit operator std::string() const { return data; }
 
     void Load(const std::string& fileName) { Load(fileName.c_str()); }
     void Load(const char* fileName) {
@@ -52,14 +48,13 @@ class FileText {
             length = 0;
         }
     }
-
- private:
+private:
     char* data{nullptr};
     unsigned int length{0};
 };
 
-}  // namespace raylib
+} // namespace raylib
 
 using RFileText = raylib::FileText;
 
-#endif  // RAYLIB_CPP_INCLUDE_FILETEXT_HPP_
+#endif // RAYLIB_CPP_INCLUDE_FILETEXT_HPP_

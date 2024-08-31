@@ -53,8 +53,8 @@
 #include "./Mouse.hpp"
 #include "./Music.hpp"
 #include "./Ray.hpp"
-#include "./RaylibException.hpp"
 #include "./RayCollision.hpp"
+#include "./RaylibException.hpp"
 #include "./Rectangle.hpp"
 #include "./RenderTexture.hpp"
 #include "./Shader.hpp"
@@ -74,7 +74,7 @@
  * All raylib-cpp classes and functions appear in the raylib namespace.
  */
 namespace raylib {
-    // Nothing.
-}  // namespace raylib
+// Nothing.
+} // namespace raylib
 
-#endif  // RAYLIB_CPP_INCLUDE_RAYLIB_CPP_HPP_
+#endif // RAYLIB_CPP_INCLUDE_RAYLIB_CPP_HPP_

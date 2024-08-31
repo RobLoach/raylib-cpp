@@ -4,25 +4,21 @@
 #include <string>
 #include <vector>
 
-#include "./raylib.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./raylib.hpp"
 
 namespace raylib {
 /**
  * Material type (generic)
  */
 class Material : public ::Material {
- public:
-    Material(const ::Material& material) {
-        set(material);
-    }
+public:
+    Material(const ::Material& material) { set(material); }
 
     /**
      * Load default material (Supports: DIFFUSE, SPECULAR, NORMAL maps)
      */
-    Material() {
-        set(LoadMaterialDefault());
-    }
+    Material() { set(LoadMaterialDefault()); }
 
     Material(const Material&) = delete;
 
@@ -37,9 +33,7 @@ class Material : public ::Material {
         other.params[3] = 0.0f;
     }
 
-    ~Material() {
-        Unload();
-    }
+    ~Material() { Unload(); }
 
     /**
      * Load materials from model file
@@ -98,9 +92,7 @@ class Material : public ::Material {
     /**
      * Draw a 3d mesh with material and transform
      */
-    void DrawMesh(const ::Mesh& mesh, ::Matrix transform) const {
-        ::DrawMesh(mesh, *this, transform);
-    }
+    void DrawMesh(const ::Mesh& mesh, ::Matrix transform) const { ::DrawMesh(mesh, *this, transform); }
 
     /**
      * Draw multiple mesh instances with material and different transforms
@@ -112,11 +104,8 @@ class Material : public ::Material {
     /**
      * Check if material is ready
      */
-    bool IsReady() const {
-        return ::IsMaterialReady(*this);
-    }
-
- protected:
+    bool IsReady() const { return ::IsMaterialReady(*this); }
+protected:
     void set(const ::Material& material) {
         shader = material.shader;
         maps = material.maps;
@@ -126,8 +115,8 @@ class Material : public ::Material {
         params[3] = material.params[3];
     }
 };
-}  // namespace raylib
+} // namespace raylib
 
 using RMaterial = raylib::Material;
 
-#endif  // RAYLIB_CPP_INCLUDE_MATERIAL_HPP_
+#endif // RAYLIB_CPP_INCLUDE_MATERIAL_HPP_

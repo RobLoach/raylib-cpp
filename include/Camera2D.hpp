@@ -1,23 +1,21 @@
 #ifndef RAYLIB_CPP_INCLUDE_CAMERA2D_HPP_
 #define RAYLIB_CPP_INCLUDE_CAMERA2D_HPP_
 
-#include "./raylib.hpp"
 #include "./Vector2.hpp"
 #include "./raylib-cpp-utils.hpp"
+#include "./raylib.hpp"
 
 namespace raylib {
 /**
  * Camera2D type, defines a 2d camera
  */
 class Camera2D : public ::Camera2D {
- public:
-    Camera2D(const ::Camera2D& camera) {
-        set(camera);
-    }
+public:
+    Camera2D(const ::Camera2D& camera) { set(camera); }
 
     Camera2D() {}
-    Camera2D(::Vector2 offset, ::Vector2 target,
-            float rotation = 0.0f, float zoom = 1.0f) : ::Camera2D{offset, target, rotation, zoom} {}
+    Camera2D(::Vector2 offset, ::Vector2 target, float rotation = 0.0f, float zoom = 1.0f)
+        : ::Camera2D{offset, target, rotation, zoom} {}
 
     Camera2D& BeginMode() {
         ::BeginMode2D(*this);
@@ -42,25 +40,18 @@ class Camera2D : public ::Camera2D {
     /**
      * Returns camera 2d transform matrix
      */
-    Matrix GetMatrix() const {
-        return ::GetCameraMatrix2D(*this);
-    }
+    Matrix GetMatrix() const { return ::GetCameraMatrix2D(*this); }
 
     /**
      * Returns the world space position for a 2d camera screen space position
      */
-    Vector2 GetScreenToWorld(::Vector2 position) const {
-        return ::GetScreenToWorld2D(position, *this);
-    }
+    Vector2 GetScreenToWorld(::Vector2 position) const { return ::GetScreenToWorld2D(position, *this); }
 
     /**
      * Returns the screen space position for a 3d world space position
      */
-    Vector2 GetWorldToScreen(::Vector2 position) const {
-        return ::GetWorldToScreen2D(position, *this);
-    }
-
- protected:
+    Vector2 GetWorldToScreen(::Vector2 position) const { return ::GetWorldToScreen2D(position, *this); }
+protected:
     void set(const ::Camera2D& camera) {
         offset = camera.offset;
         target = camera.target;
@@ -68,8 +59,8 @@ class Camera2D : public ::Camera2D {
         zoom = camera.zoom;
     }
 };
-}  // namespace raylib
+} // namespace raylib
 
 using RCamera2D = raylib::Camera2D;
 
-#endif  // RAYLIB_CPP_INCLUDE_CAMERA2D_HPP_
+#endif // RAYLIB_CPP_INCLUDE_CAMERA2D_HPP_
