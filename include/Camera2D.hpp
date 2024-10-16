@@ -48,7 +48,7 @@ public:
     Vector2 GetScreenToWorld(::Vector2 position) const { return ::GetScreenToWorld2D(position, *this); }
 
     /**
-     * Returns the screen space position for a 3d world space position
+     * Returns the screen space position for a 2d world space position
      */
     Vector2 GetWorldToScreen(::Vector2 position) const { return ::GetWorldToScreen2D(position, *this); }
 protected:
