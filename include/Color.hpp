@@ -122,7 +122,7 @@ public:
         ::DrawLineBezier(startPos, endPos, thick, *this);
     }
 
-    void DrawLineStrip(const ::Vector2* points, int numPoints) const { ::DrawLineStrip(points, numPoints, *this); }
+    void DrawLineStrip(::Vector2* points, int numPoints) const { ::DrawLineStrip(points, numPoints, *this); }
 
     void DrawText(const char* text, int posX = 0, int posY = 0, int fontSize = 10.0f) const {
         ::DrawText(text, posX, posY, fontSize, *this);
