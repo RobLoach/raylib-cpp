@@ -55,37 +55,9 @@ public:
     Vector2 Add(const ::Vector2& vector2) const { return Vector2Add(*this, vector2); }
 
     /**
-     * Add two vectors (v1 + v2)
-     */
-    Vector2 operator+(const ::Vector2& vector2) const { return Vector2Add(*this, vector2); }
-
-    /**
-     * Add two vectors (v1 + v2)
-     */
-    Vector2& operator+=(const ::Vector2& vector2) {
-        set(Vector2Add(*this, vector2));
-
-        return *this;
-    }
-
-    /**
      * Subtract two vectors (v1 - v2)
      */
     Vector2 Subtract(const ::Vector2& vector2) const { return Vector2Subtract(*this, vector2); }
-
-    /**
-     * Subtract two vectors (v1 - v2)
-     */
-    Vector2 operator-(const ::Vector2& vector2) const { return Vector2Subtract(*this, vector2); }
-
-    /**
-     * Subtract two vectors (v1 - v2)
-     */
-    Vector2& operator-=(const ::Vector2& vector2) {
-        set(Vector2Subtract(*this, vector2));
-
-        return *this;
-    }
 
     /**
      * Negate vector
@@ -93,28 +65,9 @@ public:
     Vector2 Negate() const { return Vector2Negate(*this); }
 
     /**
-     * Negate vector
-     */
-    Vector2 operator-() const { return Vector2Negate(*this); }
-
-    /**
      * Multiply vector by vector
      */
     Vector2 Multiply(const ::Vector2& vector2) const { return Vector2Multiply(*this, vector2); }
-
-    /**
-     * Multiply vector by vector
-     */
-    Vector2 operator*(const ::Vector2& vector2) const { return Vector2Multiply(*this, vector2); }
-
-    /**
-     * Multiply vector by vector
-     */
-    Vector2& operator*=(const ::Vector2& vector2) {
-        set(Vector2Multiply(*this, vector2));
-
-        return *this;
-    }
 
     /**
      * Scale vector (multiply by value)
@@ -122,57 +75,14 @@ public:
     Vector2 Scale(const float scale) const { return Vector2Scale(*this, scale); }
 
     /**
-     * Scale vector (multiply by value)
-     */
-    Vector2 operator*(const float scale) const { return Vector2Scale(*this, scale); }
-
-    /**
-     * Scale vector (multiply by value)
-     */
-    Vector2& operator*=(const float scale) {
-        set(Vector2Scale(*this, scale));
-
-        return *this;
-    }
-
-    /**
      * Divide vector by vector
      */
     Vector2 Divide(const ::Vector2& vector2) const { return Vector2Divide(*this, vector2); }
 
     /**
-     * Divide vector by vector
-     */
-    Vector2 operator/(const ::Vector2& vector2) const { return Vector2Divide(*this, vector2); }
-
-    /**
-     * Divide vector by vector
-     */
-    Vector2& operator/=(const ::Vector2& vector2) {
-        set(Vector2Divide(*this, vector2));
-
-        return *this;
-    }
-
-    /**
      * Divide vector by value
      */
     Vector2 Divide(const float div) const { return ::Vector2{x / div, y / div}; }
-
-    /**
-     * Divide vector by value
-     */
-    Vector2 operator/(const float div) const { return Divide(div); }
-
-    /**
-     * Divide vector by value
-     */
-    Vector2& operator/=(const float div) {
-        this->x /= div;
-        this->y /= div;
-
-        return *this;
-    }
 
     /**
      * Normalize provided vector

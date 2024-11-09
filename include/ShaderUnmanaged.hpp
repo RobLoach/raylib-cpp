@@ -133,7 +133,7 @@ public:
     /**
      * Retrieves whether or not the shader is ready.
      */
-    bool IsReady() const { return id != 0 && locs != nullptr; }
+    bool IsValid() const { return ::IsShaderValid(*this); }
 protected:
     void set(const ::Shader& shader) {
         id = shader.id;

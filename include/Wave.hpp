@@ -172,7 +172,7 @@ public:
      */
     void Load(const std::string& fileName) {
         set(::LoadWave(fileName.c_str()));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Wave from file: " + fileName);
         }
     }
@@ -184,7 +184,7 @@ public:
      */
     void Load(const std::string& fileType, const unsigned char* fileData, int dataSize) {
         set(::LoadWaveFromMemory(fileType.c_str(), fileData, dataSize));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Wave from file data of type: " + fileType);
         }
     }
@@ -194,7 +194,7 @@ public:
      *
      * @return True or false depending on whether the wave data has been loaded.
      */
-    bool IsReady() const { return ::IsWaveReady(*this); }
+    bool IsValid() const { return ::IsWaveValid(*this); }
 protected:
     void set(const ::Wave& wave) {
         frameCount = wave.frameCount;

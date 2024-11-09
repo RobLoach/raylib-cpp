@@ -183,7 +183,7 @@ public:
      */
     void Load(const std::string& fileName) {
         set(::LoadMusicStream(fileName.c_str()));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException(TextFormat("Failed to load Music from file: %s", fileName.c_str()));
         }
     }
@@ -195,7 +195,7 @@ public:
      */
     void Load(const std::string& fileType, unsigned char* data, int dataSize) {
         set(::LoadMusicStreamFromMemory(fileType.c_str(), data, dataSize));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException(TextFormat("Failed to load Music from %s file dat", fileType.c_str()));
         }
     }
@@ -205,7 +205,7 @@ public:
      *
      * @return True or false depending on whether the Music has been loaded.
      */
-    bool IsReady() const { return ::IsMusicReady(*this); }
+    bool IsValid() const { return ::IsMusicValid(*this); }
 protected:
     void set(const ::Music& music) {
         stream = music.stream;
