@@ -60,7 +60,7 @@ int main(int argc, char* argv[]) {
     {
         // Loading
         raylib::Image image(path + "/resources/feynman.png");
-        Assert(image.IsReady());
+        Assert(image.IsValid());
 
         // Chaining
         image.Crop(100, 100).Resize(50, 50);
@@ -108,7 +108,7 @@ int main(int argc, char* argv[]) {
     // Wave
     {
         raylib::Wave wave(path + "/resources/weird.wav");
-        Assert(wave.IsReady(), "Expected wave to be loaded correctly");
+        Assert(wave.IsValid(), "Expected wave to be loaded correctly");
     }
 
     // RaylibException
