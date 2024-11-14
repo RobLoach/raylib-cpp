@@ -183,7 +183,7 @@ public:
     /**
      * Determines whether or not the Model has data in it.
      */
-    bool IsReady() const { return ::IsModelReady(*this); }
+    bool IsValid() const { return ::IsModelValid(*this); }
 
     /**
      * Loads a Model from the given file.
@@ -192,7 +192,7 @@ public:
      */
     void Load(const std::string& fileName) {
         set(::LoadModel(fileName.c_str()));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Model from " + fileName);
         }
     }
@@ -204,7 +204,7 @@ public:
      */
     void Load(const ::Mesh& mesh) {
         set(::LoadModelFromMesh(mesh));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Model from Mesh");
         }
     }

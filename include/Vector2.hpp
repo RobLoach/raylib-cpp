@@ -140,6 +140,7 @@ public:
      */
     Vector2 Divide(const ::Vector2& vector2) const { return Vector2Divide(*this, vector2); }
 
+
     /**
      * Divide vector by vector
      */

@@ -104,7 +104,7 @@ public:
     /**
      * Check if material is ready
      */
-    bool IsReady() const { return ::IsMaterialReady(*this); }
+    bool IsValid() const { return ::IsMaterialValid(*this); }
 protected:
     void set(const ::Material& material) {
         shader = material.shader;

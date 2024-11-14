@@ -103,7 +103,7 @@ public:
     /**
      * Retrieves whether or not the render texture is ready.
      */
-    bool IsReady() const { return ::IsRenderTextureReady(*this); }
+    bool IsValid() const { return ::IsRenderTextureValid(*this); }
 protected:
     void set(const ::RenderTexture& renderTexture) {
         id = renderTexture.id;

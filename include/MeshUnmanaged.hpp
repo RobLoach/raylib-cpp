@@ -210,6 +210,12 @@ public:
      * Load model from generated mesh
      */
     operator raylib::Model() { return ::LoadModelFromMesh(*this); }
+
+    /**
+     * Returns whether or not the Mesh is valid.
+     */
+    bool IsValid() { return ::IsModelValid(*this); }
+
 protected:
     void set(const ::Mesh& mesh) {
         vertexCount = mesh.vertexCount;

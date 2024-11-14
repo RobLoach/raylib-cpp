@@ -8,7 +8,7 @@ if (NOT raylib_FOUND)
     FetchContent_Declare(
         raylib
         GIT_REPOSITORY https://github.com/raysan5/raylib.git
-        GIT_TAG 9b3d019
+        GIT_TAG 5e6cdf3
         GIT_SHALLOW 1
     )
     FetchContent_MakeAvailable(raylib)
@@ -18,7 +18,7 @@ endif()
 find_package(raylib_cpp QUIET)
 if (NOT raylib_cpp_FOUND)
     if (NOT DEFINED RAYLIB_CPP_VERSION)
-        set(RAYLIB_CPP_VERSION v5.0.2)
+        set(RAYLIB_CPP_VERSION next)
     endif()
     include(FetchContent)
     FetchContent_Declare(
