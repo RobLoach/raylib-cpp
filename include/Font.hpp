@@ -158,7 +158,7 @@ public:
      */
     void Load(const std::string& fileName) {
         set(::LoadFont(fileName.c_str()));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Font with from file: " + fileName);
         }
     }
@@ -175,14 +175,14 @@ public:
      */
     void Load(const std::string& fileName, int fontSize, int* fontChars, int charCount) {
         set(::LoadFontEx(fileName.c_str(), fontSize, fontChars, charCount));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Font with from file with font size: " + fileName);
         }
     }
 
     void Load(const ::Image& image, ::Color key, int firstChar) {
         set(::LoadFontFromImage(image, key, firstChar));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Font with from image");
         }
     }
@@ -195,7 +195,7 @@ public:
         int* fontChars,
         int charsCount) {
         set(::LoadFontFromMemory(fileType.c_str(), fileData, dataSize, fontSize, fontChars, charsCount));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Font " + fileType + " with from file data");
         }
     }
@@ -203,7 +203,7 @@ public:
     /**
      * Returns if the font is ready to be used.
      */
-    bool IsReady() const { return ::IsFontReady(*this); }
+    bool IsValid() const { return ::IsFontValid(*this); }
 
     /**
      * Draw text using font and additional parameters.

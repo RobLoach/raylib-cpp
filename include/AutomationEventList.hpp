@@ -71,7 +71,7 @@ public:
     void Load(const char* fileName) {
         Unload();
         set(::LoadAutomationEventList(fileName));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load automation event list");
         }
     }
@@ -80,7 +80,7 @@ public:
      * Update audio stream buffers with data
      */
     void Unload() {
-        if (!IsReady()) {
+        if (!IsValid()) {
             return;
         }
 
@@ -96,7 +96,7 @@ public:
 #endif
     }
 
-    bool IsReady() { return events != nullptr; }
+    bool IsValid() { return events != nullptr; }
 
     bool Export(const char* fileName) { return ::ExportAutomationEventList(*this, fileName); }
 

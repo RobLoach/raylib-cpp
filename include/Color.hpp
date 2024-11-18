@@ -181,6 +181,13 @@ public:
 
     void DrawRectangleLines(::Rectangle rec, float lineThick) const { ::DrawRectangleLinesEx(rec, lineThick, *this); }
 
+    bool IsEqual(::Color color) {
+        return ::ColorIsEqual(*this, color);
+    }
+
+    bool operator==(const ::Color& other) const { return ::ColorIsEqual(*this, other); }
+    bool operator!=(const ::Color& other) const { return !::ColorIsEqual(*this, other); }
+
     /**
      * Get color multiplied with another color
      */
@@ -200,6 +207,10 @@ public:
      * Returns color with alpha applied, alpha goes from 0.0f to 1.0f
      */
     Color Alpha(float alpha) const { return ::ColorAlpha(*this, alpha); }
+
+    Color Lerp(::Color color2, float factor) {
+        return ::ColorLerp(*this, color2, factor);
+    }
 
     /**
      * Returns src alpha-blended into dst color with tint

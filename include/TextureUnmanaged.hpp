@@ -96,7 +96,7 @@ public:
      */
     void Load(const ::Image& image) {
         set(::LoadTextureFromImage(image));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Texture from Image");
         }
     }
@@ -106,7 +106,7 @@ public:
      */
     void Load(const ::Image& image, int layoutType) {
         set(::LoadTextureCubemap(image, layoutType));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Texture from Cubemap");
         }
     }
@@ -116,7 +116,7 @@ public:
      */
     void Load(const std::string& fileName) {
         set(::LoadTexture(fileName.c_str()));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Texture from file: " + fileName);
         }
     }
@@ -319,7 +319,7 @@ public:
      *
      * @return True or false depending on whether the Texture has data.
      */
-    bool IsReady() const { return id != 0; }
+    bool IsValid() const { return IsTextureValid(*this); }
 protected:
     void set(const ::Texture& texture) {
         id = texture.id;

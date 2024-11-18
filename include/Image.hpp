@@ -164,6 +164,11 @@ public:
      */
     static ::Image Cellular(int width, int height, int tileSize) { return ::GenImageCellular(width, height, tileSize); }
 
+    /**
+     * Get clipboard image content.
+     */
+    static ::Image GetClipboard() { return ::GetClipboardImage(); }
+
     ~Image() { Unload(); }
 
     Image& operator=(const ::Image& image) {
@@ -208,7 +213,7 @@ public:
      */
     void Load(const std::string& fileName) {
         set(::LoadImage(fileName.c_str()));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Image from file: " + fileName);
         }
     }
@@ -222,7 +227,7 @@ public:
      */
     void Load(const std::string& fileName, int width, int height, int format, int headerSize) {
         set(::LoadImageRaw(fileName.c_str(), width, height, format, headerSize));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Image from file: " + fileName);
         }
     }
@@ -236,7 +241,7 @@ public:
      */
     void Load(const std::string& fileName, int* frames) {
         set(::LoadImageAnim(fileName.c_str(), frames));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Image from file: " + fileName);
         }
     }
@@ -250,7 +255,7 @@ public:
      */
     void Load(const std::string& fileType, const unsigned char* fileData, int dataSize) {
         set(::LoadImageFromMemory(fileType.c_str(), fileData, dataSize));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Image data with file type: " + fileType);
         }
     }
@@ -264,7 +269,7 @@ public:
      */
     void Load(const ::Texture2D& texture) {
         set(::LoadImageFromTexture(texture));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Image from texture.");
         }
     }
@@ -605,6 +610,13 @@ public:
         ::ImageDrawLineV(this, start, end, color);
     }
 
+    /**
+     * Description: Draw a line defining thickness within an image
+     */
+    void DrawLine(::Vector2 start, ::Vector2 end, int thick, ::Color color = {255, 255, 255, 255}) {
+        ImageDrawLineEx(this, start, end, thick, color);
+    }
+
     void DrawCircle(int centerX, int centerY, int radius, ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawCircle(this, centerX, centerY, radius, color);
     }
@@ -628,6 +640,8 @@ public:
     void DrawRectangleLines(::Rectangle rec, int thick = 1, ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawRectangleLines(this, rec, thick, color);
     }
+
+    // TODO: Add ImageDrawTriangle()
 
     void Draw(const ::Image& src, ::Rectangle srcRec, ::Rectangle dstRec, ::Color tint = {255, 255, 255, 255}) {
         ::ImageDraw(this, src, srcRec, dstRec, tint);
@@ -728,7 +742,19 @@ public:
      *
      * @return True or false depending on whether the Image has been loaded.
      */
-    bool IsReady() const { return ::IsImageReady(*this); }
+    bool IsValid() const { return ::IsImageValid(*this); }
+
+    /**
+     * Create an image from a selected channel of another image (GRAYSCALE)
+     */
+    ::Image Channel(int selectedChannel) { return ::ImageFromChannel(*this, selectedChannel); }
+
+    /**
+     * Apply custom square convolution kernel to image
+     */
+    void KernelConvolution(const float* kernel, int kernelSize) {
+        ::ImageKernelConvolution(this, kernel, kernelSize);
+    }
 protected:
     void set(const ::Image& image) {
         data = image.data;

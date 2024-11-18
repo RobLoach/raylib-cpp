@@ -1,6 +1,6 @@
 {
   "name": "raylib-cpp",
-  "version": "5.0.2",
+  "version": "5.5.0",
   "description": "raylib-cpp: C++ Object-Oriented Wrapper for raylib",
   "main": "index.js",
   "private": true,

@@ -85,6 +85,13 @@ public:
     float GetAxisMovement(int axis) const { return ::GetGamepadAxisMovement(number, axis); }
 
     int SetMappings(const std::string& mappings) { return SetGamepadMappings(mappings.c_str()); }
+
+    /**
+     * Set gamepad vibration for both motors (duration in seconds)
+     */
+    void SetVibration(float leftMotor, float rightMotor, float duration) {
+        ::SetGamepadVibration(number, leftMotor, rightMotor, duration);
+    }
 protected:
     void set(int gamepadNumber) { number = gamepadNumber; }
 };

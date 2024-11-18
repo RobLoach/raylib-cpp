@@ -92,6 +92,13 @@ public:
     Vector2 GetWorldToScreen(::Vector3 position) const { return ::GetWorldToScreen(position, *this); }
 
     /**
+     * Get a ray trace from screen position (i.e mouse) in a viewport
+     */
+    Ray GetScreenToWorldRay(::Vector2 position, int width, int height) {
+        return ::GetScreenToWorldRayEx(position, *this, width, height);
+    }
+
+    /**
      * Draw a billboard texture.
      */
     void

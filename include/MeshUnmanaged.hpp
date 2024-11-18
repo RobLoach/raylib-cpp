@@ -184,6 +184,17 @@ public:
     }
 
     /**
+     * Export mesh as code file (.h) defining multiple arrays of vertex attributes
+     *
+     * @throws raylib::RaylibException Throws if failed to export the Mesh.
+     */
+    void ExportCode(const std::string& fileName) {
+        if (!::ExportMeshAsCode(*this, fileName.c_str())) {
+            throw RaylibException("Failed to export the Mesh");
+        }
+    }
+
+    /**
      * Compute mesh bounding box limits
      */
     raylib::BoundingBox BoundingBox() const { return ::GetMeshBoundingBox(*this); }
@@ -210,6 +221,12 @@ public:
      * Load model from generated mesh
      */
     operator raylib::Model() { return ::LoadModelFromMesh(*this); }
+
+    /**
+     * Returns whether or not the Mesh is valid.
+     */
+    bool IsValid() { return ::IsModelValid(*this); }
+
 protected:
     void set(const ::Mesh& mesh) {
         vertexCount = mesh.vertexCount;

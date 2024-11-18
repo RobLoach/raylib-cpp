@@ -164,7 +164,7 @@ public:
      */
     void Load(const std::string& fileName) {
         set(::LoadSound(fileName.c_str()));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Sound from file");
         }
     }
@@ -176,7 +176,7 @@ public:
      */
     void Load(const ::Wave& wave) {
         set(::LoadSoundFromWave(wave));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Wave");
         }
     }
@@ -186,7 +186,7 @@ public:
      *
      * @return True or false depending on whether the Sound buffer is loaded.
      */
-    bool IsReady() const { return ::IsSoundReady(*this); }
+    bool IsValid() const { return ::IsSoundValid(*this); }
 protected:
     void set(const ::Sound& sound) {
         frameCount = sound.frameCount;

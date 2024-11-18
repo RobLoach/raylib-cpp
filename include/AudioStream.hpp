@@ -88,7 +88,7 @@ public:
      * Unload audio stream and free memory
      */
     void Unload() {
-        if (IsReady()) {
+        if (IsValid()) {
             ::UnloadAudioStream(*this);
         }
     }
@@ -182,7 +182,7 @@ public:
     /**
      * Retrieve whether or not the audio stream is ready.
      */
-    bool IsReady() const { return ::IsAudioStreamReady(*this); }
+    bool IsValid() const { return ::IsAudioStreamValid(*this); }
 
     /**
      * Load audio stream (to stream raw audio pcm data)
@@ -192,7 +192,7 @@ public:
     void Load(unsigned int SampleRate, unsigned int SampleSize, unsigned int Channels = 2) {
         Unload();
         set(::LoadAudioStream(SampleRate, SampleSize, Channels));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load audio stream");
         }
     }

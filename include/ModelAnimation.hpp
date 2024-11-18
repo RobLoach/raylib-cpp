@@ -84,6 +84,14 @@ public:
     }
 
     /**
+     * Update model animation mesh bone matrices (GPU skinning)
+     */
+    ModelAnimation& UpdateBones(const ::Model& model, int frame) {
+        ::UpdateModelAnimationBones(model, *this, frame);
+        return *this;
+    }
+
+    /**
      * Check model animation skeleton match
      */
     bool IsValid(const ::Model& model) const { return ::IsModelAnimationValid(model, *this); }

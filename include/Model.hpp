@@ -128,6 +128,14 @@ public:
     }
 
     /**
+     * Update model animation pose
+     */
+    Model& UpdateAnimationBones(const ::ModelAnimation& anim, int frame) {
+        ::UpdateModelAnimationBones(*this, anim, frame);
+        return *this;
+    }
+
+    /**
      * Check model animation skeleton match
      */
     bool IsModelAnimationValid(const ::ModelAnimation& anim) const { return ::IsModelAnimationValid(*this, anim); }
@@ -171,6 +179,20 @@ public:
     }
 
     /**
+     * Draw a model as points
+     */
+    void DrawPoints(::Vector3 position, float scale = 1.0f, ::Color tint = {255, 255, 255, 255}) {
+        ::DrawModelPoints(*this, position, scale, tint);
+    }
+
+    /**
+     * Draw a model as points
+     */
+    void DrawPoints(::Vector3 position, ::Vector3 rotationAxis, float rotationAngle = 0.0f, ::Vector3 scale = {1.0f, 1.0f, 1.0f}, ::Color tint = {255, 255, 255, 255}) {
+        ::DrawModelPointsEx(*this, position, rotationAxis, rotationAngle, scale, tint);
+    }
+
+    /**
      * Compute model bounding box limits (considers all meshes)
      */
     BoundingBox GetBoundingBox() const { return ::GetModelBoundingBox(*this); }
@@ -183,7 +205,7 @@ public:
     /**
      * Determines whether or not the Model has data in it.
      */
-    bool IsReady() const { return ::IsModelReady(*this); }
+    bool IsValid() const { return ::IsModelValid(*this); }
 
     /**
      * Loads a Model from the given file.
@@ -192,7 +214,7 @@ public:
      */
     void Load(const std::string& fileName) {
         set(::LoadModel(fileName.c_str()));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Model from " + fileName);
         }
     }
@@ -204,7 +226,7 @@ public:
      */
     void Load(const ::Mesh& mesh) {
         set(::LoadModelFromMesh(mesh));
-        if (!IsReady()) {
+        if (!IsValid()) {
             throw RaylibException("Failed to load Model from Mesh");
         }
     }
