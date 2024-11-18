@@ -164,6 +164,11 @@ public:
      */
     static ::Image Cellular(int width, int height, int tileSize) { return ::GenImageCellular(width, height, tileSize); }
 
+    /**
+     * Get clipboard image content.
+     */
+    static ::Image GetClipboard() { return ::GetClipboardImage(); }
+
     ~Image() { Unload(); }
 
     Image& operator=(const ::Image& image) {
@@ -605,6 +610,13 @@ public:
         ::ImageDrawLineV(this, start, end, color);
     }
 
+    /**
+     * Description: Draw a line defining thickness within an image
+     */
+    void DrawLine(::Vector2 start, ::Vector2 end, int thick, ::Color color = {255, 255, 255, 255}) {
+        ImageDrawLineEx(this, start, end, thick, color);
+    }
+
     void DrawCircle(int centerX, int centerY, int radius, ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawCircle(this, centerX, centerY, radius, color);
     }
@@ -628,6 +640,8 @@ public:
     void DrawRectangleLines(::Rectangle rec, int thick = 1, ::Color color = {255, 255, 255, 255}) {
         ::ImageDrawRectangleLines(this, rec, thick, color);
     }
+
+    // TODO: Add ImageDrawTriangle()
 
     void Draw(const ::Image& src, ::Rectangle srcRec, ::Rectangle dstRec, ::Color tint = {255, 255, 255, 255}) {
         ::ImageDraw(this, src, srcRec, dstRec, tint);
@@ -729,6 +743,18 @@ public:
      * @return True or false depending on whether the Image has been loaded.
      */
     bool IsValid() const { return ::IsImageValid(*this); }
+
+    /**
+     * Create an image from a selected channel of another image (GRAYSCALE)
+     */
+    ::Image Channel(int selectedChannel) { return ::ImageFromChannel(*this, selectedChannel); }
+
+    /**
+     * Apply custom square convolution kernel to image
+     */
+    void KernelConvolution(const float* kernel, int kernelSize) {
+        ::ImageKernelConvolution(this, kernel, kernelSize);
+    }
 protected:
     void set(const ::Image& image) {
         data = image.data;

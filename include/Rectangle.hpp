@@ -66,8 +66,8 @@ public:
             color2);
     }
 
-    void DrawGradient(::Color col1, ::Color col2, ::Color col3, ::Color col4) const {
-        ::DrawRectangleGradientEx(*this, col1, col2, col3, col4);
+    void DrawGradient(::Color topLeft, ::Color bottomLeft, ::Color topRight, ::Color bottomRight) const {
+        ::DrawRectangleGradientEx(*this, topLeft, bottomLeft, topRight, bottomRight);
     }
 
     void DrawLines(::Color color) const {
@@ -86,19 +86,11 @@ public:
     }
 
     void DrawRoundedLines(float roundness, int segments, ::Color color) const {
-#if RAYLIB_VERSION_MAJOR == 5 && RAYLIB_VERSION_MINOR == 0
-        ::DrawRectangleRoundedLines(*this, roundness, segments, 1.0f, color);
-#else
         ::DrawRectangleRoundedLines(*this, roundness, segments, color);
-#endif
     }
 
     void DrawRoundedLines(float roundness, int segments, float lineThick, ::Color color) const {
-#if RAYLIB_VERSION_MAJOR == 5 && RAYLIB_VERSION_MINOR == 0
-        ::DrawRectangleRoundedLines(*this, roundness, segments, lineThick, color);
-#else
         DrawRectangleRoundedLinesEx(*this, roundness, segments, lineThick, color);
-#endif
     }
 
     /**
