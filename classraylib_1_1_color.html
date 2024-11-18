@@ -205,6 +205,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const s
 <tr class="memitem:aff509b4643d1a176ba62622fc33fce06"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_color.html#aff509b4643d1a176ba62622fc33fce06">GetR</a> () const</td></tr>
 <tr class="memdesc:aff509b4643d1a176ba62622fc33fce06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the r value for the object.  <a href="classraylib_1_1_color.html#aff509b4643d1a176ba62622fc33fce06">More...</a><br /></td></tr>
 <tr class="separator:aff509b4643d1a176ba62622fc33fce06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aab57ee1237167e828ab753acaaa711"><td class="memItemLeft" align="right" valign="top"><a id="a2aab57ee1237167e828ab753acaaa711"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsEqual</b> (::<a class="el" href="classraylib_1_1_color.html">Color</a> color)</td></tr>
+<tr class="separator:a2aab57ee1237167e828ab753acaaa711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc19fe56095063d9dbd270228cc448ce"><td class="memItemLeft" align="right" valign="top"><a id="adc19fe56095063d9dbd270228cc448ce"></a>
+<a class="el" href="classraylib_1_1_color.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Lerp</b> (::<a class="el" href="classraylib_1_1_color.html">Color</a> color2, float factor)</td></tr>
+<tr class="separator:adc19fe56095063d9dbd270228cc448ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70c0b9f2b6bc92724df1c87553cbca32"><td class="memItemLeft" align="right" valign="top"><a id="a70c0b9f2b6bc92724df1c87553cbca32"></a>
 <a class="el" href="classraylib_1_1_vector4.html">Vector4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_color.html#a70c0b9f2b6bc92724df1c87553cbca32">Normalize</a> () const</td></tr>
 <tr class="memdesc:a70c0b9f2b6bc92724df1c87553cbca32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="classraylib_1_1_color.html" title="Color type, RGBA (32bit)">Color</a> normalized as float [0..1]. <br /></td></tr>
@@ -216,9 +222,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawText</b> (const s
 <tr class="memitem:a97b9eb6de0b2b95bd8e9e3fe8935c644"><td class="memItemLeft" align="right" valign="top"><a id="a97b9eb6de0b2b95bd8e9e3fe8935c644"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>operator std::string</b> () const</td></tr>
 <tr class="separator:a97b9eb6de0b2b95bd8e9e3fe8935c644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af54897d1d93f32d93924c9f968423434"><td class="memItemLeft" align="right" valign="top"><a id="af54897d1d93f32d93924c9f968423434"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const ::<a class="el" href="classraylib_1_1_color.html">Color</a> &amp;other) const</td></tr>
+<tr class="separator:af54897d1d93f32d93924c9f968423434"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3e2c7b09e326476f0ff20bf4c7a84af"><td class="memItemLeft" align="right" valign="top"><a id="ae3e2c7b09e326476f0ff20bf4c7a84af"></a>
 <a class="el" href="classraylib_1_1_color.html">Color</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const ::<a class="el" href="classraylib_1_1_color.html">Color</a> &amp;color)</td></tr>
 <tr class="separator:ae3e2c7b09e326476f0ff20bf4c7a84af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57364e51ff2767027d2845b3ad68c35b"><td class="memItemLeft" align="right" valign="top"><a id="a57364e51ff2767027d2845b3ad68c35b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const ::<a class="el" href="classraylib_1_1_color.html">Color</a> &amp;other) const</td></tr>
+<tr class="separator:a57364e51ff2767027d2845b3ad68c35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32317cff410007a6801f59d447e5f4d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1_color.html#a32317cff410007a6801f59d447e5f4d6">SetA</a> (unsigned char value)</td></tr>
 <tr class="memdesc:a32317cff410007a6801f59d447e5f4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the a value for the object.  <a href="classraylib_1_1_color.html#a32317cff410007a6801f59d447e5f4d6">More...</a><br /></td></tr>
 <tr class="separator:a32317cff410007a6801f59d447e5f4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -369,7 +381,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ::<a c
 <p>Retrieves the a value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The a value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00107">107</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00080">80</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -399,7 +411,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ::<a c
 <p>Retrieves the b value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The b value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00106">106</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00079">79</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -429,7 +441,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ::<a c
 <p>Retrieves the g value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The g value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00105">105</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00078">78</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -459,7 +471,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ::<a c
 <p>Retrieves the r value for the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The r value of the object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00104">104</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00077">77</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -495,7 +507,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ::<a c
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00107">107</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00080">80</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -531,7 +543,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ::<a c
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00106">106</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00079">79</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -567,7 +579,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ::<a c
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00105">105</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00078">78</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>
@@ -603,7 +615,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ::<a c
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00104">104</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_8hpp_source.html#l00077">77</a> of file <a class="el" href="_color_8hpp_source.html">Color.hpp</a>.</p>
 
 </div>
 </div>

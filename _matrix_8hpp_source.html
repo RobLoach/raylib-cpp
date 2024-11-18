@@ -75,8 +75,8 @@ $(function() {
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_MATRIX_HPP_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_MATRIX_HPP_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;./raymath.hpp&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_NO_MATH</span></div>
@@ -85,217 +85,177 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_matrix.html">Matrix</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_matrix.html">::Matrix</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>(const ::Matrix&amp; mat) : <a class="code" href="classraylib_1_1_matrix.html">::Matrix</a>{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            mat.m0, mat.m4, mat.m8, mat.m12,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            mat.m1, mat.m5, mat.m9, mat.m13,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            mat.m2, mat.m6, mat.m10, mat.m14,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            mat.m3, mat.m7, mat.m11, mat.m15} {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">// Nothing.</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>(</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordtype">float</span> m0 = 0, <span class="keywordtype">float</span> m4 = 0, <span class="keywordtype">float</span> m8 = 0, <span class="keywordtype">float</span> m12 = 0,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordtype">float</span> m1 = 0, <span class="keywordtype">float</span> m5 = 0, <span class="keywordtype">float</span> m9 = 0, <span class="keywordtype">float</span> m13 = 0,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordtype">float</span> m2 = 0, <span class="keywordtype">float</span> m6 = 0, <span class="keywordtype">float</span> m10 = 0, <span class="keywordtype">float</span> m14 = 0,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordtype">float</span> m3 = 0, <span class="keywordtype">float</span> m7 = 0, <span class="keywordtype">float</span> m11 = 0, <span class="keywordtype">float</span> m15 = 0) :</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classraylib_1_1_matrix.html">::Matrix</a>{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            m0, m4, m8, m12,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            m1, m5, m9, m13,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            m2, m6, m10, m14,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            m3, m7, m11, m15} {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>(const ::Matrix&amp; mat)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        : <a class="code" href="classraylib_1_1_matrix.html">::Matrix</a>{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;              mat.m0,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;              mat.m4,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;              mat.m8,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;              mat.m12,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;              mat.m1,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;              mat.m5,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;              mat.m9,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;              mat.m13,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;              mat.m2,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;              mat.m6,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;              mat.m10,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;              mat.m14,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;              mat.m3,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;              mat.m7,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;              mat.m11,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;              mat.m15} {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// Nothing.</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a6b78d7872779be3740adaa0a63c93871">   39</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M0, m0)</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#ae7316cec778f24e875a529ddd116eb06">   40</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M1, m1)</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#adbee9387da5a0c695b442c6bffb5ad44">   41</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M2, m2)</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a6fd210dab5f11e733d683d08ae9e0a00">   42</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M3, m3)</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a1b70d062e4ee8a4eb60154003a7778e1">   43</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M4, m4)</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a0a3e72416a11ddfabb4c8d671aff9347">   44</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M5, m5)</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a5fd355a3543ed7361699df2c7d0030ae">   45</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M6, m6)</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a986fde9e8b31d013b4f9a3e7d79a9721">   46</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M7, m7)</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a4f6a8abe84f2d4013869bb594e81f5b1">   47</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M8, m8)</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#afa3e0fa6ce3f3a886001d523cb2be127">   48</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M9, m9)</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a714e3b90607b5345c12f7e5991ccbef7">   49</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M10, m10)</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a25c4303138c8060bcac037d6bc78912a">   50</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M11, m11)</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a7fc1f01a4e4137f6cf7597b006bdaa05">   51</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M12, m12)</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#affca67e81632541bf08c743236a95790">   52</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M13, m13)</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#ac2aa01cccd0e67223d2e24ed62b4f3d2">   53</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M14, m14)</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#ac97c8f97e3f012c5c044fd941690ac8c">   54</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M15, m15)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_matrix.html">Matrix</a>&amp; matrix) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        set(matrix);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>&amp; matrix) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        set(matrix);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">bool</span> operator==(const ::Matrix&amp; other) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> m0 == other.m0</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            &amp;&amp; m1 == other.m1</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            &amp;&amp; m2 == other.m2</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            &amp;&amp; m3 == other.m3</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            &amp;&amp; m4 == other.m4</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            &amp;&amp; m5 == other.m5</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            &amp;&amp; m6 == other.m6</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            &amp;&amp; m7 == other.m7</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            &amp;&amp; m8 == other.m8</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            &amp;&amp; m9 == other.m9</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            &amp;&amp; m10 == other.m10</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            &amp;&amp; m11 == other.m11</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            &amp;&amp; m12 == other.m12</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            &amp;&amp; m13 == other.m13</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            &amp;&amp; m14 == other.m14</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            &amp;&amp; m15 == other.m15;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">bool</span> operator!=(const ::Matrix&amp; other) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_NO_MATH</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a7ed7bc3003490c97c363ac2108aaa44b">   93</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_matrix.html#a7ed7bc3003490c97c363ac2108aaa44b">Trace</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        return ::MatrixTrace(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a7fc0f1d9225126201c4880a5052b8316">  100</a></span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> <a class="code" href="classraylib_1_1_matrix.html#a7fc0f1d9225126201c4880a5052b8316">Transpose</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        return ::MatrixTranspose(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> Invert()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        return ::MatrixInvert(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">static</span> Matrix Identity() {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        return ::MatrixIdentity();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    Matrix Add(const ::Matrix&amp; right) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        return ::MatrixAdd(*<span class="keyword">this</span>, right);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    Matrix operator+(const ::Matrix&amp; matrix) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            return ::MatrixAdd(*<span class="keyword">this</span>, matrix);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    Matrix Subtract(const ::Matrix&amp; right) {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        return ::MatrixSubtract(*<span class="keyword">this</span>, right);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    Matrix operator-(const ::Matrix&amp; matrix) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        return ::MatrixSubtract(*<span class="keyword">this</span>, matrix);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">static</span> Matrix Translate(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        return ::MatrixTranslate(x, y, z);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keyword">static</span> Matrix Rotate(Vector3 axis, <span class="keywordtype">float</span> angle) {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        return ::MatrixRotate(axis, angle);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">static</span> Matrix RotateXYZ(Vector3 angle) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        return ::MatrixRotateXYZ(angle);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keyword">static</span> Matrix RotateX(<span class="keywordtype">float</span> angle) {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        return ::MatrixRotateX(angle);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keyword">static</span> Matrix RotateY(<span class="keywordtype">float</span> angle) {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        return ::MatrixRotateY(angle);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keyword">static</span> Matrix RotateZ(<span class="keywordtype">float</span> angle) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        return ::MatrixRotateZ(angle);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keyword">static</span> Matrix Scale(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z) {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        return ::MatrixScale(x, y, z);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    Matrix Multiply(const ::Matrix&amp; right)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        return ::MatrixMultiply(*<span class="keyword">this</span>, right);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    Matrix operator*(const ::Matrix&amp; matrix) {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        return ::MatrixMultiply(*<span class="keyword">this</span>, matrix);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">static</span> Matrix Frustum(<span class="keywordtype">double</span> left, <span class="keywordtype">double</span> right, <span class="keywordtype">double</span> bottom, <span class="keywordtype">double</span> top,</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordtype">double</span> near, <span class="keywordtype">double</span> far) {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        return ::MatrixFrustum(left, right, bottom, top, near, far);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keyword">static</span> Matrix Perspective(<span class="keywordtype">double</span> fovy, <span class="keywordtype">double</span> aspect, <span class="keywordtype">double</span> near, <span class="keywordtype">double</span> far) {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        return ::MatrixPerspective(fovy, aspect, near, far);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keyword">static</span> Matrix Ortho(<span class="keywordtype">double</span> left, <span class="keywordtype">double</span> right, <span class="keywordtype">double</span> bottom, <span class="keywordtype">double</span> top,</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="keywordtype">double</span> near, <span class="keywordtype">double</span> far) {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        return ::MatrixOrtho(left, right, bottom, top, near, far);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keyword">static</span> Matrix LookAt(Vector3 eye, Vector3 target, Vector3 up) {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        return ::MatrixLookAt(eye, target, up);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    float16 ToFloatV()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        return ::MatrixToFloatV(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keyword">operator</span> float16() {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">return</span> ToFloatV();</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>(</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">float</span> m0 = 0,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">float</span> m4 = 0,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">float</span> m8 = 0,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">float</span> m12 = 0,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">float</span> m1 = 0,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">float</span> m5 = 0,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">float</span> m9 = 0,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">float</span> m13 = 0,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">float</span> m2 = 0,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">float</span> m6 = 0,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">float</span> m10 = 0,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">float</span> m14 = 0,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">float</span> m3 = 0,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">float</span> m7 = 0,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">float</span> m11 = 0,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">float</span> m15 = 0)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        : <a class="code" href="classraylib_1_1_matrix.html">::Matrix</a>{m0, m4, m8, m12, m1, m5, m9, m13, m2, m6, m10, m14, m3, m7, m11, m15} {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// Nothing.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a6b78d7872779be3740adaa0a63c93871">   60</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M0, m0)</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#ae7316cec778f24e875a529ddd116eb06">   61</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M1, m1)</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#adbee9387da5a0c695b442c6bffb5ad44">   62</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M2, m2)</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a6fd210dab5f11e733d683d08ae9e0a00">   63</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M3, m3)</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a1b70d062e4ee8a4eb60154003a7778e1">   64</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M4, m4)</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a0a3e72416a11ddfabb4c8d671aff9347">   65</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M5, m5)</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a5fd355a3543ed7361699df2c7d0030ae">   66</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M6, m6)</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a986fde9e8b31d013b4f9a3e7d79a9721">   67</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M7, m7)</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a4f6a8abe84f2d4013869bb594e81f5b1">   68</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M8, m8)</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#afa3e0fa6ce3f3a886001d523cb2be127">   69</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M9, m9)</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a714e3b90607b5345c12f7e5991ccbef7">   70</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M10, m10)</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a25c4303138c8060bcac037d6bc78912a">   71</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M11, m11)</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a7fc1f01a4e4137f6cf7597b006bdaa05">   72</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M12, m12)</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#affca67e81632541bf08c743236a95790">   73</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M13, m13)</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#ac2aa01cccd0e67223d2e24ed62b4f3d2">   74</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M14, m14)</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#ac97c8f97e3f012c5c044fd941690ac8c">   75</a></span>&#160;    GETTERSETTER(<span class="keywordtype">float</span>, M15, m15)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>&amp; operator=(const ::<a class="code" href="classraylib_1_1_matrix.html">Matrix</a>&amp; matrix) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        set(matrix);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>&amp; matrix) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        set(matrix);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> operator==(const ::Matrix&amp; other) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> m0 == other.m0 &amp;&amp; m1 == other.m1 &amp;&amp; m2 == other.m2 &amp;&amp; m3 == other.m3 &amp;&amp; m4 == other.m4 &amp;&amp;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;               m5 == other.m5 &amp;&amp; m6 == other.m6 &amp;&amp; m7 == other.m7 &amp;&amp; m8 == other.m8 &amp;&amp; m9 == other.m9 &amp;&amp;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;               m10 == other.m10 &amp;&amp; m11 == other.m11 &amp;&amp; m12 == other.m12 &amp;&amp; m13 == other.m13 &amp;&amp; m14 == other.m14 &amp;&amp;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;               m15 == other.m15;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">bool</span> operator!=(const ::Matrix&amp; other) { <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other); }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_NO_MATH</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a7ed7bc3003490c97c363ac2108aaa44b">  100</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classraylib_1_1_matrix.html#a7ed7bc3003490c97c363ac2108aaa44b">Trace</a>()<span class="keyword"> const </span>{ return ::MatrixTrace(*<span class="keyword">this</span>); }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a7fc0f1d9225126201c4880a5052b8316">  105</a></span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> <a class="code" href="classraylib_1_1_matrix.html#a7fc0f1d9225126201c4880a5052b8316">Transpose</a>()<span class="keyword"> const </span>{ return ::MatrixTranspose(*<span class="keyword">this</span>); }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> Invert()<span class="keyword"> const </span>{ return ::MatrixInvert(*<span class="keyword">this</span>); }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">static</span> Matrix Identity() { return ::MatrixIdentity(); }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    Matrix Add(const ::Matrix&amp; right) { return ::MatrixAdd(*<span class="keyword">this</span>, right); }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    Matrix operator+(const ::Matrix&amp; matrix) { return ::MatrixAdd(*<span class="keyword">this</span>, matrix); }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    Matrix Subtract(const ::Matrix&amp; right) { return ::MatrixSubtract(*<span class="keyword">this</span>, right); }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    Matrix operator-(const ::Matrix&amp; matrix) { return ::MatrixSubtract(*<span class="keyword">this</span>, matrix); }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">static</span> Matrix Translate(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z) { return ::MatrixTranslate(x, y, z); }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">static</span> Matrix Rotate(Vector3 axis, <span class="keywordtype">float</span> angle) { return ::MatrixRotate(axis, angle); }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">static</span> Matrix RotateXYZ(Vector3 angle) { return ::MatrixRotateXYZ(angle); }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keyword">static</span> Matrix RotateX(<span class="keywordtype">float</span> angle) { return ::MatrixRotateX(angle); }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keyword">static</span> Matrix RotateY(<span class="keywordtype">float</span> angle) { return ::MatrixRotateY(angle); }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">static</span> Matrix RotateZ(<span class="keywordtype">float</span> angle) { return ::MatrixRotateZ(angle); }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">static</span> Matrix Scale(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z) { return ::MatrixScale(x, y, z); }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    Matrix Multiply(const ::Matrix&amp; right)<span class="keyword"> const </span>{ return ::MatrixMultiply(*<span class="keyword">this</span>, right); }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    Matrix operator*(const ::Matrix&amp; matrix) { return ::MatrixMultiply(*<span class="keyword">this</span>, matrix); }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">static</span> Matrix Frustum(<span class="keywordtype">double</span> left, <span class="keywordtype">double</span> right, <span class="keywordtype">double</span> bottom, <span class="keywordtype">double</span> top, <span class="keywordtype">double</span> near, <span class="keywordtype">double</span> far) {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        return ::MatrixFrustum(left, right, bottom, top, near, far);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keyword">static</span> Matrix Perspective(<span class="keywordtype">double</span> fovy, <span class="keywordtype">double</span> aspect, <span class="keywordtype">double</span> near, <span class="keywordtype">double</span> far) {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        return ::MatrixPerspective(fovy, aspect, near, far);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keyword">static</span> Matrix Ortho(<span class="keywordtype">double</span> left, <span class="keywordtype">double</span> right, <span class="keywordtype">double</span> bottom, <span class="keywordtype">double</span> top, <span class="keywordtype">double</span> near, <span class="keywordtype">double</span> far) {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        return ::MatrixOrtho(left, right, bottom, top, near, far);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keyword">static</span> Matrix LookAt(Vector3 eye, Vector3 target, Vector3 up) { return ::MatrixLookAt(eye, target, up); }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    float16 ToFloatV()<span class="keyword"> const </span>{ return ::MatrixToFloatV(*<span class="keyword">this</span>); }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keyword">operator</span> float16() { <span class="keywordflow">return</span> ToFloatV(); }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a63d84439072b269a99cbf83608ceb387">  158</a></span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>&amp; <a class="code" href="classraylib_1_1_matrix.html#a63d84439072b269a99cbf83608ceb387">SetShaderValue</a>(const ::Shader&amp; shader, <span class="keywordtype">int</span> uniformLoc) {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        ::SetShaderValueMatrix(shader, uniformLoc, *<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keyword">static</span> <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> GetCamera(const ::Camera&amp; camera) { return ::GetCameraMatrix(camera); }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keyword">static</span> Matrix GetCamera(const ::Camera2D&amp; camera) { return ::GetCameraMatrix2D(camera); }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">void</span> set(const ::Matrix&amp; mat) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        m0 = mat.m0;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        m1 = mat.m1;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        m2 = mat.m2;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        m3 = mat.m3;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        m4 = mat.m4;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        m5 = mat.m5;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        m6 = mat.m6;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        m7 = mat.m7;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        m8 = mat.m8;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        m9 = mat.m9;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        m10 = mat.m10;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        m11 = mat.m11;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        m12 = mat.m12;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        m13 = mat.m13;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        m14 = mat.m14;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        m15 = mat.m15;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;};</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;} <span class="comment">// namespace raylib</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classraylib_1_1_matrix.html#a63d84439072b269a99cbf83608ceb387">  193</a></span>&#160;    <a class="code" href="classraylib_1_1_matrix.html">Matrix</a>&amp; <a class="code" href="classraylib_1_1_matrix.html#a63d84439072b269a99cbf83608ceb387">SetShaderValue</a>(const ::Shader&amp; shader, <span class="keywordtype">int</span> uniformLoc) {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        ::SetShaderValueMatrix(shader, uniformLoc, *<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keyword">static</span> <a class="code" href="classraylib_1_1_matrix.html">Matrix</a> GetCamera(const ::Camera&amp; camera) {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        return ::GetCameraMatrix(camera);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keyword">static</span> Matrix GetCamera(const ::Camera2D&amp; camera) {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        return ::GetCameraMatrix2D(camera);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">void</span> set(const ::Matrix&amp; mat) {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        m0 = mat.m0;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        m1 = mat.m1;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        m2 = mat.m2;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        m3 = mat.m3;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        m4 = mat.m4;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        m5 = mat.m5;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        m6 = mat.m6;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        m7 = mat.m7;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        m8 = mat.m8;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        m9 = mat.m9;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        m10 = mat.m10;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        m11 = mat.m11;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        m12 = mat.m12;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        m13 = mat.m13;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        m14 = mat.m14;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        m15 = mat.m15;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;};</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keyword">using</span> <a class="code" href="classraylib_1_1_matrix.html">RMatrix</a> = <a class="code" href="classraylib_1_1_matrix.html">raylib::Matrix</a>;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// RAYLIB_CPP_INCLUDE_MATRIX_HPP_</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="keyword">using</span> <a class="code" href="classraylib_1_1_matrix.html">RMatrix</a> = <a class="code" href="classraylib_1_1_matrix.html">raylib::Matrix</a>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// RAYLIB_CPP_INCLUDE_MATRIX_HPP_</span></div>
 <div class="ttc" id="aclassraylib_1_1_matrix_html"><div class="ttname"><a href="classraylib_1_1_matrix.html">raylib::Matrix</a></div><div class="ttdoc">Matrix type (OpenGL style 4x4 - right handed, column major)</div><div class="ttdef"><b>Definition:</b> <a href="_matrix_8hpp_source.html#l00016">Matrix.hpp:16</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_matrix_html_a63d84439072b269a99cbf83608ceb387"><div class="ttname"><a href="classraylib_1_1_matrix.html#a63d84439072b269a99cbf83608ceb387">raylib::Matrix::SetShaderValue</a></div><div class="ttdeci">Matrix &amp; SetShaderValue(const ::Shader &amp;shader, int uniformLoc)</div><div class="ttdoc">Set shader uniform value (matrix 4x4)</div><div class="ttdef"><b>Definition:</b> <a href="_matrix_8hpp_source.html#l00193">Matrix.hpp:193</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_matrix_html_a7ed7bc3003490c97c363ac2108aaa44b"><div class="ttname"><a href="classraylib_1_1_matrix.html#a7ed7bc3003490c97c363ac2108aaa44b">raylib::Matrix::Trace</a></div><div class="ttdeci">float Trace() const</div><div class="ttdoc">Returns the trace of the matrix (sum of the values along the diagonal)</div><div class="ttdef"><b>Definition:</b> <a href="_matrix_8hpp_source.html#l00093">Matrix.hpp:93</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_matrix_html_a7fc0f1d9225126201c4880a5052b8316"><div class="ttname"><a href="classraylib_1_1_matrix.html#a7fc0f1d9225126201c4880a5052b8316">raylib::Matrix::Transpose</a></div><div class="ttdeci">Matrix Transpose() const</div><div class="ttdoc">Transposes provided matrix.</div><div class="ttdef"><b>Definition:</b> <a href="_matrix_8hpp_source.html#l00100">Matrix.hpp:100</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_matrix_html_a63d84439072b269a99cbf83608ceb387"><div class="ttname"><a href="classraylib_1_1_matrix.html#a63d84439072b269a99cbf83608ceb387">raylib::Matrix::SetShaderValue</a></div><div class="ttdeci">Matrix &amp; SetShaderValue(const ::Shader &amp;shader, int uniformLoc)</div><div class="ttdoc">Set shader uniform value (matrix 4x4)</div><div class="ttdef"><b>Definition:</b> <a href="_matrix_8hpp_source.html#l00158">Matrix.hpp:158</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_matrix_html_a7ed7bc3003490c97c363ac2108aaa44b"><div class="ttname"><a href="classraylib_1_1_matrix.html#a7ed7bc3003490c97c363ac2108aaa44b">raylib::Matrix::Trace</a></div><div class="ttdeci">float Trace() const</div><div class="ttdoc">Returns the trace of the matrix (sum of the values along the diagonal)</div><div class="ttdef"><b>Definition:</b> <a href="_matrix_8hpp_source.html#l00100">Matrix.hpp:100</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_matrix_html_a7fc0f1d9225126201c4880a5052b8316"><div class="ttname"><a href="classraylib_1_1_matrix.html#a7fc0f1d9225126201c4880a5052b8316">raylib::Matrix::Transpose</a></div><div class="ttdeci">Matrix Transpose() const</div><div class="ttdoc">Transposes provided matrix.</div><div class="ttdef"><b>Definition:</b> <a href="_matrix_8hpp_source.html#l00105">Matrix.hpp:105</a></div></div>
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00008">AudioDevice.hpp:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

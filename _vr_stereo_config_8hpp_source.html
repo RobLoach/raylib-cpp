@@ -75,69 +75,60 @@ $(function() {
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RAYLIB_CPP_INCLUDE_VRSTEREOCONFIG_HPP_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RAYLIB_CPP_INCLUDE_VRSTEREOCONFIG_HPP_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classraylib_1_1_vr_stereo_config.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_vr_stereo_config.html">VrStereoConfig</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_vr_stereo_config.html">::VrStereoConfig</a>  {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classraylib_1_1_vr_stereo_config.html">VrStereoConfig</a>(const ::VrDeviceInfo&amp; info) {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classraylib_1_1_vr_stereo_config.html#a9bfecba47ab31e1849bc6fb801b771dd">Load</a>(info);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classraylib_1_1_vr_stereo_config.html#a9bfecba47ab31e1849bc6fb801b771dd">   20</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_vr_stereo_config.html#a9bfecba47ab31e1849bc6fb801b771dd">Load</a>(const ::VrDeviceInfo&amp; info) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        set(LoadVrStereoConfig(info));</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classraylib_1_1_vr_stereo_config.html#affd207a5267f0ea9c48d92dcfd72edea">   27</a></span>&#160;    <a class="code" href="classraylib_1_1_vr_stereo_config.html#affd207a5267f0ea9c48d92dcfd72edea">~VrStereoConfig</a>() {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classraylib_1_1_vr_stereo_config.html#af2f638f95b4efda7c90a5a623b374678">Unload</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classraylib_1_1_vr_stereo_config.html#aee11917e6f68d22e12e06a81d58ee340">   34</a></span>&#160;    <a class="code" href="classraylib_1_1_vr_stereo_config.html">VrStereoConfig</a>&amp; <a class="code" href="classraylib_1_1_vr_stereo_config.html#aee11917e6f68d22e12e06a81d58ee340">BeginMode</a>() {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        ::BeginVrStereoMode(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classraylib_1_1_vr_stereo_config.html#af7dfa68579eca4f909be5bb8c2383721">   42</a></span>&#160;    <a class="code" href="classraylib_1_1_vr_stereo_config.html">VrStereoConfig</a>&amp; <a class="code" href="classraylib_1_1_vr_stereo_config.html#af7dfa68579eca4f909be5bb8c2383721">EndMode</a>() {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        ::EndVrStereoMode();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classraylib_1_1_vr_stereo_config.html#af2f638f95b4efda7c90a5a623b374678">   50</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_vr_stereo_config.html#af2f638f95b4efda7c90a5a623b374678">Unload</a>() {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        ::UnloadVrStereoConfig(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> set(const ::VrStereoConfig&amp; config) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        projection[0] = config.projection[0];</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        projection[1] = config.projection[1];</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        viewOffset[0] = config.viewOffset[0];</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        viewOffset[1] = config.viewOffset[1];</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        leftLensCenter[0] = config.leftLensCenter[0];</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        leftLensCenter[1] = config.leftLensCenter[1];</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        rightLensCenter[0] = config.rightLensCenter[0];</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        rightLensCenter[1] = config.rightLensCenter[1];</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        leftScreenCenter[0] = config.leftScreenCenter[0];</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        leftScreenCenter[1] = config.leftScreenCenter[1];</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        rightScreenCenter[0] = config.rightScreenCenter[0];</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        rightScreenCenter[1] = config.rightScreenCenter[1];</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        scale[0] = config.scale[0];</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        scale[1] = config.scale[1];</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        scaleIn[0] = config.scaleIn[0];</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        scaleIn[1] = config.scaleIn[1];</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}  <span class="comment">// namespace raylib</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">using</span> <a class="code" href="classraylib_1_1_vr_stereo_config.html">RVrStereoConfig</a> = <a class="code" href="classraylib_1_1_vr_stereo_config.html">raylib::VrStereoConfig</a>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// RAYLIB_CPP_INCLUDE_VRSTEREOCONFIG_HPP_</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classraylib_1_1_vr_stereo_config.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_vr_stereo_config.html">VrStereoConfig</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_vr_stereo_config.html">::VrStereoConfig</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classraylib_1_1_vr_stereo_config.html">VrStereoConfig</a>(const ::VrDeviceInfo&amp; info) { <a class="code" href="classraylib_1_1_vr_stereo_config.html#a9bfecba47ab31e1849bc6fb801b771dd">Load</a>(info); }</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classraylib_1_1_vr_stereo_config.html#a9bfecba47ab31e1849bc6fb801b771dd">   18</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_vr_stereo_config.html#a9bfecba47ab31e1849bc6fb801b771dd">Load</a>(const ::VrDeviceInfo&amp; info) { set(LoadVrStereoConfig(info)); }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classraylib_1_1_vr_stereo_config.html#affd207a5267f0ea9c48d92dcfd72edea">   23</a></span>&#160;    <a class="code" href="classraylib_1_1_vr_stereo_config.html#affd207a5267f0ea9c48d92dcfd72edea">~VrStereoConfig</a>() { <a class="code" href="classraylib_1_1_vr_stereo_config.html#af2f638f95b4efda7c90a5a623b374678">Unload</a>(); }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classraylib_1_1_vr_stereo_config.html#aee11917e6f68d22e12e06a81d58ee340">   28</a></span>&#160;    <a class="code" href="classraylib_1_1_vr_stereo_config.html">VrStereoConfig</a>&amp; <a class="code" href="classraylib_1_1_vr_stereo_config.html#aee11917e6f68d22e12e06a81d58ee340">BeginMode</a>() {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        ::BeginVrStereoMode(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classraylib_1_1_vr_stereo_config.html#af7dfa68579eca4f909be5bb8c2383721">   36</a></span>&#160;    <a class="code" href="classraylib_1_1_vr_stereo_config.html">VrStereoConfig</a>&amp; <a class="code" href="classraylib_1_1_vr_stereo_config.html#af7dfa68579eca4f909be5bb8c2383721">EndMode</a>() {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        ::EndVrStereoMode();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classraylib_1_1_vr_stereo_config.html#af2f638f95b4efda7c90a5a623b374678">   44</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classraylib_1_1_vr_stereo_config.html#af2f638f95b4efda7c90a5a623b374678">Unload</a>() { ::UnloadVrStereoConfig(*<span class="keyword">this</span>); }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> set(const ::VrStereoConfig&amp; config) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        projection[0] = config.projection[0];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        projection[1] = config.projection[1];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        viewOffset[0] = config.viewOffset[0];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        viewOffset[1] = config.viewOffset[1];</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        leftLensCenter[0] = config.leftLensCenter[0];</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        leftLensCenter[1] = config.leftLensCenter[1];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        rightLensCenter[0] = config.rightLensCenter[0];</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        rightLensCenter[1] = config.rightLensCenter[1];</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        leftScreenCenter[0] = config.leftScreenCenter[0];</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        leftScreenCenter[1] = config.leftScreenCenter[1];</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        rightScreenCenter[0] = config.rightScreenCenter[0];</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        rightScreenCenter[1] = config.rightScreenCenter[1];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        scale[0] = config.scale[0];</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        scale[1] = config.scale[1];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        scaleIn[0] = config.scaleIn[0];</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        scaleIn[1] = config.scaleIn[1];</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;} <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">using</span> <a class="code" href="classraylib_1_1_vr_stereo_config.html">RVrStereoConfig</a> = <a class="code" href="classraylib_1_1_vr_stereo_config.html">raylib::VrStereoConfig</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// RAYLIB_CPP_INCLUDE_VRSTEREOCONFIG_HPP_</span></div>
 <div class="ttc" id="aclassraylib_1_1_vr_stereo_config_html"><div class="ttname"><a href="classraylib_1_1_vr_stereo_config.html">raylib::VrStereoConfig</a></div><div class="ttdoc">VR stereo config functions for VR simulator.</div><div class="ttdef"><b>Definition:</b> <a href="_vr_stereo_config_8hpp_source.html#l00011">VrStereoConfig.hpp:11</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vr_stereo_config_html_a9bfecba47ab31e1849bc6fb801b771dd"><div class="ttname"><a href="classraylib_1_1_vr_stereo_config.html#a9bfecba47ab31e1849bc6fb801b771dd">raylib::VrStereoConfig::Load</a></div><div class="ttdeci">void Load(const ::VrDeviceInfo &amp;info)</div><div class="ttdoc">Load VR stereo config for VR simulator device parameters.</div><div class="ttdef"><b>Definition:</b> <a href="_vr_stereo_config_8hpp_source.html#l00020">VrStereoConfig.hpp:20</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vr_stereo_config_html_aee11917e6f68d22e12e06a81d58ee340"><div class="ttname"><a href="classraylib_1_1_vr_stereo_config.html#aee11917e6f68d22e12e06a81d58ee340">raylib::VrStereoConfig::BeginMode</a></div><div class="ttdeci">VrStereoConfig &amp; BeginMode()</div><div class="ttdoc">Begin stereo rendering.</div><div class="ttdef"><b>Definition:</b> <a href="_vr_stereo_config_8hpp_source.html#l00034">VrStereoConfig.hpp:34</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vr_stereo_config_html_af2f638f95b4efda7c90a5a623b374678"><div class="ttname"><a href="classraylib_1_1_vr_stereo_config.html#af2f638f95b4efda7c90a5a623b374678">raylib::VrStereoConfig::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdoc">Unload VR stereo config.</div><div class="ttdef"><b>Definition:</b> <a href="_vr_stereo_config_8hpp_source.html#l00050">VrStereoConfig.hpp:50</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vr_stereo_config_html_af7dfa68579eca4f909be5bb8c2383721"><div class="ttname"><a href="classraylib_1_1_vr_stereo_config.html#af7dfa68579eca4f909be5bb8c2383721">raylib::VrStereoConfig::EndMode</a></div><div class="ttdeci">VrStereoConfig &amp; EndMode()</div><div class="ttdoc">End stereo rendering.</div><div class="ttdef"><b>Definition:</b> <a href="_vr_stereo_config_8hpp_source.html#l00042">VrStereoConfig.hpp:42</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_vr_stereo_config_html_affd207a5267f0ea9c48d92dcfd72edea"><div class="ttname"><a href="classraylib_1_1_vr_stereo_config.html#affd207a5267f0ea9c48d92dcfd72edea">raylib::VrStereoConfig::~VrStereoConfig</a></div><div class="ttdeci">~VrStereoConfig()</div><div class="ttdoc">Unload VR stereo config.</div><div class="ttdef"><b>Definition:</b> <a href="_vr_stereo_config_8hpp_source.html#l00027">VrStereoConfig.hpp:27</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vr_stereo_config_html_a9bfecba47ab31e1849bc6fb801b771dd"><div class="ttname"><a href="classraylib_1_1_vr_stereo_config.html#a9bfecba47ab31e1849bc6fb801b771dd">raylib::VrStereoConfig::Load</a></div><div class="ttdeci">void Load(const ::VrDeviceInfo &amp;info)</div><div class="ttdoc">Load VR stereo config for VR simulator device parameters.</div><div class="ttdef"><b>Definition:</b> <a href="_vr_stereo_config_8hpp_source.html#l00018">VrStereoConfig.hpp:18</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vr_stereo_config_html_aee11917e6f68d22e12e06a81d58ee340"><div class="ttname"><a href="classraylib_1_1_vr_stereo_config.html#aee11917e6f68d22e12e06a81d58ee340">raylib::VrStereoConfig::BeginMode</a></div><div class="ttdeci">VrStereoConfig &amp; BeginMode()</div><div class="ttdoc">Begin stereo rendering.</div><div class="ttdef"><b>Definition:</b> <a href="_vr_stereo_config_8hpp_source.html#l00028">VrStereoConfig.hpp:28</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vr_stereo_config_html_af2f638f95b4efda7c90a5a623b374678"><div class="ttname"><a href="classraylib_1_1_vr_stereo_config.html#af2f638f95b4efda7c90a5a623b374678">raylib::VrStereoConfig::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdoc">Unload VR stereo config.</div><div class="ttdef"><b>Definition:</b> <a href="_vr_stereo_config_8hpp_source.html#l00044">VrStereoConfig.hpp:44</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vr_stereo_config_html_af7dfa68579eca4f909be5bb8c2383721"><div class="ttname"><a href="classraylib_1_1_vr_stereo_config.html#af7dfa68579eca4f909be5bb8c2383721">raylib::VrStereoConfig::EndMode</a></div><div class="ttdeci">VrStereoConfig &amp; EndMode()</div><div class="ttdoc">End stereo rendering.</div><div class="ttdef"><b>Definition:</b> <a href="_vr_stereo_config_8hpp_source.html#l00036">VrStereoConfig.hpp:36</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_vr_stereo_config_html_affd207a5267f0ea9c48d92dcfd72edea"><div class="ttname"><a href="classraylib_1_1_vr_stereo_config.html#affd207a5267f0ea9c48d92dcfd72edea">raylib::VrStereoConfig::~VrStereoConfig</a></div><div class="ttdeci">~VrStereoConfig()</div><div class="ttdoc">Unload VR stereo config.</div><div class="ttdef"><b>Definition:</b> <a href="_vr_stereo_config_8hpp_source.html#l00023">VrStereoConfig.hpp:23</a></div></div>
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00008">AudioDevice.hpp:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

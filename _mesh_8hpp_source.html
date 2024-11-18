@@ -78,15 +78,15 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;./BoundingBox.hpp&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;./Model.hpp&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;./MeshUnmanaged.hpp&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;./BoundingBox.hpp&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;./MeshUnmanaged.hpp&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;./Model.hpp&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;./raylib-cpp-utils.hpp&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;./raylib.hpp&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classraylib_1_1_mesh.html">Mesh</a> : <span class="keyword">public</span> <a class="code" href="classraylib_1_1_mesh_unmanaged.html">MeshUnmanaged</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">using</span> <a class="code" href="classraylib_1_1_mesh_unmanaged.html#a95fb756d6aea3e1e6a9d71b78ebd2f52">MeshUnmanaged::MeshUnmanaged</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classraylib_1_1_mesh.html#a06926991922586318cbdc402b8c1ba42">   28</a></span>&#160;    <a class="code" href="classraylib_1_1_mesh.html#a06926991922586318cbdc402b8c1ba42">Mesh</a>(<span class="keyword">const</span> <a class="code" href="classraylib_1_1_mesh.html">Mesh</a>&amp;) = <span class="keyword">delete</span>;</div>
@@ -140,22 +140,20 @@ $(function() {
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    ~<a class="code" href="classraylib_1_1_mesh.html#a06926991922586318cbdc402b8c1ba42">Mesh</a>() {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classraylib_1_1_mesh_unmanaged.html#aa30017b88394dc52f71f4a1dec875460">Unload</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}  <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    ~<a class="code" href="classraylib_1_1_mesh.html#a06926991922586318cbdc402b8c1ba42">Mesh</a>() { <a class="code" href="classraylib_1_1_mesh_unmanaged.html#aa30017b88394dc52f71f4a1dec875460">Unload</a>(); }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;} <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">using</span> <a class="code" href="classraylib_1_1_mesh.html">RMesh</a> = <a class="code" href="classraylib_1_1_mesh.html">raylib::Mesh</a>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">using</span> <a class="code" href="classraylib_1_1_mesh.html">RMesh</a> = <a class="code" href="classraylib_1_1_mesh.html">raylib::Mesh</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// RAYLIB_CPP_INCLUDE_MESH_HPP_</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// RAYLIB_CPP_INCLUDE_MESH_HPP_</span></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html"><div class="ttname"><a href="classraylib_1_1_mesh.html">raylib::Mesh</a></div><div class="ttdoc">Vertex data defining a mesh.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00021">Mesh.hpp:21</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html_a06926991922586318cbdc402b8c1ba42"><div class="ttname"><a href="classraylib_1_1_mesh.html#a06926991922586318cbdc402b8c1ba42">raylib::Mesh::Mesh</a></div><div class="ttdeci">Mesh(const Mesh &amp;)=delete</div><div class="ttdoc">Explicitly forbid the copy constructor.</div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html_a79ce0a2fa4f61795b3632330d29edac6"><div class="ttname"><a href="classraylib_1_1_mesh.html#a79ce0a2fa4f61795b3632330d29edac6">raylib::Mesh::Mesh</a></div><div class="ttdeci">Mesh(Mesh &amp;&amp;other)</div><div class="ttdoc">Move constructor.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00038">Mesh.hpp:38</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_html_a8f0fc37900b224339ad568cf002126a8"><div class="ttname"><a href="classraylib_1_1_mesh.html#a8f0fc37900b224339ad568cf002126a8">raylib::Mesh::operator=</a></div><div class="ttdeci">Mesh &amp; operator=(const Mesh &amp;)=delete</div><div class="ttdoc">Explicitly forbid copy assignment.</div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_unmanaged_html"><div class="ttname"><a href="classraylib_1_1_mesh_unmanaged.html">raylib::MeshUnmanaged</a></div><div class="ttdoc">Vertex data defining a mesh, not managed by C++ RAII.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_unmanaged_8hpp_source.html#l00021">MeshUnmanaged.hpp:21</a></div></div>
 <div class="ttc" id="aclassraylib_1_1_mesh_unmanaged_html_a95fb756d6aea3e1e6a9d71b78ebd2f52"><div class="ttname"><a href="classraylib_1_1_mesh_unmanaged.html#a95fb756d6aea3e1e6a9d71b78ebd2f52">raylib::MeshUnmanaged::MeshUnmanaged</a></div><div class="ttdeci">MeshUnmanaged()</div><div class="ttdoc">Default texture constructor.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_unmanaged_8hpp_source.html#l00026">MeshUnmanaged.hpp:26</a></div></div>
-<div class="ttc" id="aclassraylib_1_1_mesh_unmanaged_html_aa30017b88394dc52f71f4a1dec875460"><div class="ttname"><a href="classraylib_1_1_mesh_unmanaged.html#aa30017b88394dc52f71f4a1dec875460">raylib::MeshUnmanaged::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdoc">Unload mesh from memory (RAM and/or VRAM)</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_unmanaged_8hpp_source.html#l00162">MeshUnmanaged.hpp:162</a></div></div>
+<div class="ttc" id="aclassraylib_1_1_mesh_unmanaged_html_aa30017b88394dc52f71f4a1dec875460"><div class="ttname"><a href="classraylib_1_1_mesh_unmanaged.html#aa30017b88394dc52f71f4a1dec875460">raylib::MeshUnmanaged::Unload</a></div><div class="ttdeci">void Unload()</div><div class="ttdoc">Unload mesh from memory (RAM and/or VRAM)</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_unmanaged_8hpp_source.html#l00144">MeshUnmanaged.hpp:144</a></div></div>
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">All raylib-cpp classes and functions appear in the raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_device_8hpp_source.html#l00008">AudioDevice.hpp:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
