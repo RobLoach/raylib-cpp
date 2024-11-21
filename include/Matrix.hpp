@@ -79,11 +79,6 @@ public:
         return *this;
     }
 
-    Matrix& operator=(const Matrix& matrix) {
-        set(matrix);
-        return *this;
-    }
-
     bool operator==(const ::Matrix& other) {
         return m0 == other.m0 && m1 == other.m1 && m2 == other.m2 && m3 == other.m3 && m4 == other.m4 &&
                m5 == other.m5 && m6 == other.m6 && m7 == other.m7 && m8 == other.m8 && m9 == other.m9 &&
