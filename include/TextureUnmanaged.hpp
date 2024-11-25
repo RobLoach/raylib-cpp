@@ -89,7 +89,7 @@ public:
     /**
      * Retrieve the width and height of the texture.
      */
-    ::Vector2 GetSize() const { return {static_cast<float>(width), static_cast<float>(height)}; }
+    Vector2 GetSize() const { return {static_cast<float>(width), static_cast<float>(height)}; }
 
     /**
      * Load texture from image data
