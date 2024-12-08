@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "./BoundingBox.hpp"
+#include "./Matrix.hpp"
 #include "./Model.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
@@ -37,6 +38,7 @@ public:
         animNormals = nullptr;
         boneIds = nullptr;
         boneWeights = nullptr;
+        boneMatrices = nullptr;
         vaoId = 0;
         vboId = nullptr;
     }
@@ -242,6 +244,7 @@ protected:
         animNormals = mesh.animNormals;
         boneIds = mesh.boneIds;
         boneWeights = mesh.boneWeights;
+        boneMatrices = mesh.boneMatrices;
         vaoId = mesh.vaoId;
         vboId = mesh.vboId;
     }
