@@ -39,6 +39,7 @@ public:
         boneIds = nullptr;
         boneWeights = nullptr;
         boneMatrices = nullptr;
+        boneCount = 0;
         vaoId = 0;
         vboId = nullptr;
     }
