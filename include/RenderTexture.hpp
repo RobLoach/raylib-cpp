@@ -13,10 +13,7 @@ public:
     /**
      * Default constructor to build an empty RenderTexture.
      */
-    RenderTexture()
-        : ::RenderTexture{ .id = 0 } {
-        // Nothing.
-    }
+    RenderTexture() = default;
 
     RenderTexture(const ::RenderTexture& renderTexture)
         : ::RenderTexture(renderTexture) {

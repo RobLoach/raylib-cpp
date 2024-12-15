@@ -4,10 +4,11 @@
 #include "./Functions.hpp"
 #include "./raylib.hpp"
 
+namespace raylib {
 /**
  * Input-related functions: keyboard
  */
-namespace raylib::Keyboard {
+namespace Keyboard {
 /**
  * Detect if a key has been pressed once
  */
@@ -57,7 +58,8 @@ namespace raylib::Keyboard {
 [[maybe_unused]] RLCPPAPI inline int GetCharPressed() {
     return ::GetCharPressed();
 }
-} // namespace raylib::Keyboard
+} // namespace Keyboard
+} // namespace raylib
 
 namespace RKeyboard = raylib::Keyboard;
 
