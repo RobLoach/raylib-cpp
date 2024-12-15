@@ -89,7 +89,7 @@ public:
     /**
      * Retrieve the width and height of the texture.
      */
-    Vector2 GetSize() const { return {static_cast<float>(width), static_cast<float>(height)}; }
+    [[nodiscard]] Vector2 GetSize() const { return {static_cast<float>(width), static_cast<float>(height)}; }
 
     /**
      * Load texture from image data
@@ -151,7 +151,7 @@ public:
     /**
      * Get pixel data from GPU texture and return an Image
      */
-    ::Image GetData() const { return ::LoadImageFromTexture(*this); }
+    [[nodiscard]] ::Image GetData() const { return ::LoadImageFromTexture(*this); }
 
     /**
      * Get pixel data from GPU texture and return an Image
@@ -319,7 +319,7 @@ public:
      *
      * @return True or false depending on whether the Texture has data.
      */
-    bool IsValid() const { return IsTextureValid(*this); }
+    [[nodiscard]] bool IsValid() const { return IsTextureValid(*this); }
 protected:
     void set(const ::Texture& texture) {
         id = texture.id;
