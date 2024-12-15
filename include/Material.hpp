@@ -22,7 +22,7 @@ public:
 
     Material(const Material&) = delete;
 
-    Material(Material&& other) {
+    Material(Material&& other) noexcept {
         set(other);
 
         other.maps = nullptr;

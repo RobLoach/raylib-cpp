@@ -84,7 +84,7 @@ public:
 
     Font(const Font&) = delete;
 
-    Font(Font&& other) {
+    Font(Font&& other) noexcept {
         set(other);
 
         other.baseSize = 0;

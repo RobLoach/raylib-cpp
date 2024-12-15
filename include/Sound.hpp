@@ -30,7 +30,7 @@ public:
         // Nothing.
     }
 
-    Sound(Sound&& other) {
+    Sound(Sound&& other) noexcept {
         set(other);
 
         other.stream = {nullptr, nullptr, 0, 0, 0};

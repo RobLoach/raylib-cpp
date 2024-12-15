@@ -31,7 +31,7 @@ public:
 
     AutomationEventList(const AutomationEventList&) = delete;
 
-    AutomationEventList(AutomationEventList&& other) {
+    AutomationEventList(AutomationEventList&& other) noexcept {
         set(other);
 
         other.capacity = 0;

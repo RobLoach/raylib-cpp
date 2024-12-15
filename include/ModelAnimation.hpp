@@ -18,7 +18,7 @@ public:
 
     ModelAnimation(const ModelAnimation&) = delete;
 
-    ModelAnimation(ModelAnimation&& other) {
+    ModelAnimation(ModelAnimation&& other) noexcept {
         set(other);
 
         other.boneCount = 0;

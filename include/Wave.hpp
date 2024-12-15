@@ -43,7 +43,7 @@ public:
 
     Wave(const Wave& other) { set(other.Copy()); }
 
-    Wave(Wave&& other) {
+    Wave(Wave&& other) noexcept {
         set(other);
 
         other.frameCount = 0;

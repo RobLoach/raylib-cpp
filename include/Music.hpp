@@ -39,7 +39,7 @@ public:
 
     Music(const Music&) = delete;
 
-    Music(Music&& other) {
+    Music(Music&& other) noexcept {
         set(other);
 
         other.stream = {};
@@ -169,12 +169,12 @@ public:
     /**
      * Get music time length (in seconds)
      */
-    float GetTimeLength() const { return ::GetMusicTimeLength(*this); }
+    [[nodiscard]] float GetTimeLength() const { return ::GetMusicTimeLength(*this); }
 
     /**
      * Get current music time played (in seconds)
      */
-    float GetTimePlayed() const { return ::GetMusicTimePlayed(*this); }
+    [[nodiscard]] float GetTimePlayed() const { return ::GetMusicTimePlayed(*this); }
 
     /**
      * Load music stream from file
