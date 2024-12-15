@@ -13,7 +13,7 @@ namespace raylib {
  */
 class Wave : public ::Wave {
 public:
-    Wave(const ::Wave& wave) { set(wave); }
+    Wave(const ::Wave& wave) : ::Wave(wave) { }
 
     Wave(
         unsigned int frameCount = 0,
@@ -100,7 +100,7 @@ public:
     /**
      * Copy a wave to a new wave
      */
-    ::Wave Copy() const { return ::WaveCopy(*this); }
+    [[nodiscard]] ::Wave Copy() const { return ::WaveCopy(*this); }
 
     /**
      * Crop a wave to defined samples range
@@ -194,7 +194,7 @@ public:
      *
      * @return True or false depending on whether the wave data has been loaded.
      */
-    bool IsValid() const { return ::IsWaveValid(*this); }
+    [[nodiscard]] bool IsValid() const { return ::IsWaveValid(*this); }
 protected:
     void set(const ::Wave& wave) {
         frameCount = wave.frameCount;

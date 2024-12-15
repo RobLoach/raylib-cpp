@@ -131,7 +131,7 @@ public:
     /**
      * Check if a sound is currently playing
      */
-    bool IsPlaying() const { return ::IsSoundPlaying(*this); }
+    [[nodiscard]] bool IsPlaying() const { return ::IsSoundPlaying(*this); }
 
     /**
      * Set volume for a sound (1.0 is max level)
@@ -186,7 +186,7 @@ public:
      *
      * @return True or false depending on whether the Sound buffer is loaded.
      */
-    bool IsValid() const { return ::IsSoundValid(*this); }
+    [[nodiscard]] bool IsValid() const { return ::IsSoundValid(*this); }
 protected:
     void set(const ::Sound& sound) {
         frameCount = sound.frameCount;

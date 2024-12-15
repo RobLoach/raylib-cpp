@@ -1,6 +1,7 @@
 #ifndef RAYLIB_CPP_INCLUDE_TOUCH_HPP_
 #define RAYLIB_CPP_INCLUDE_TOUCH_HPP_
 
+#include "./Functions.hpp"
 #include "./raylib.hpp"
 
 namespace raylib {

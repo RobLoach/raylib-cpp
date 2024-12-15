@@ -18,9 +18,7 @@ public:
      *
      * @see Init()
      */
-    Window() {
-        // Nothing.
-    }
+    Window() = default;
 
     /**
      * Initialize window and OpenGL context.
@@ -57,7 +55,7 @@ public:
      *
      * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    void Init(int width = 800, int height = 450, const std::string& title = "raylib", unsigned int flags = 0) {
+    static void Init(int width = 800, int height = 450, const std::string& title = "raylib", unsigned int flags = 0) {
         if (flags != 0) {
             ::SetConfigFlags(flags);
         }
@@ -70,17 +68,17 @@ public:
     /**
      * Check if KEY_ESCAPE pressed or Close icon pressed
      */
-    bool ShouldClose() const { return ::WindowShouldClose(); }
+    static bool ShouldClose()  { return ::WindowShouldClose(); }
 
     /**
      * Set a custom key to exit program (default is ESC)
      */
-    void SetExitKey(int key) { ::SetExitKey(key); }
+    static void SetExitKey(int key) { ::SetExitKey(key); }
 
     /**
      * Close window and unload OpenGL context
      */
-    void Close() {
+    static void Close() {
         if (::IsWindowReady()) {
             ::CloseWindow();
         }
@@ -89,42 +87,42 @@ public:
     /**
      * Check if cursor is on the current screen
      */
-    bool IsCursorOnScreen() const { return ::IsCursorOnScreen(); }
+    static bool IsCursorOnScreen()  { return ::IsCursorOnScreen(); }
 
     /**
      * Check if window is currently fullscreen
      */
-    bool IsFullscreen() const { return ::IsWindowFullscreen(); }
+    static bool IsFullscreen()  { return ::IsWindowFullscreen(); }
 
     /**
      * Check if window is currently hidden
      */
-    bool IsHidden() const { return ::IsWindowHidden(); }
+    static bool IsHidden()  { return ::IsWindowHidden(); }
 
     /**
      * Check if window is currently minimized
      */
-    bool IsMinimized() const { return ::IsWindowMinimized(); }
+    static bool IsMinimized()  { return ::IsWindowMinimized(); }
 
     /**
      * Check if window is currently minimized
      */
-    bool IsMaximized() const { return ::IsWindowMaximized(); }
+    static bool IsMaximized()  { return ::IsWindowMaximized(); }
 
     /**
      * Check if window is currently focused
      */
-    bool IsFocused() const { return ::IsWindowFocused(); }
+    static bool IsFocused()  { return ::IsWindowFocused(); }
 
     /**
      * Check if window has been resized last frame
      */
-    bool IsResized() const { return ::IsWindowResized(); }
+    static bool IsResized()  { return ::IsWindowResized(); }
 
     /**
      * Check if one specific window flag is enabled
      */
-    bool IsState(unsigned int flag) const { return ::IsWindowState(flag); }
+    static bool IsState(unsigned int flag)  { return ::IsWindowState(flag); }
 
     /**
      * Set window configuration state using flags
@@ -303,12 +301,12 @@ public:
     /**
      * Get the screen's width and height.
      */
-    Vector2 GetSize() const { return {static_cast<float>(GetWidth()), static_cast<float>(GetHeight())}; }
+    static Vector2 GetSize() { return {static_cast<float>(GetWidth()), static_cast<float>(GetHeight())}; }
 
     /**
      * Get native window handle
      */
-    void* GetHandle() const { return ::GetWindowHandle(); }
+    static void* GetHandle() { return ::GetWindowHandle(); }
 
     /**
      * Setup canvas (framebuffer) to start drawing
@@ -329,42 +327,42 @@ public:
     /**
      * Get current screen width
      */
-    int GetWidth() const { return ::GetScreenWidth(); }
+    static int GetWidth() { return ::GetScreenWidth(); }
 
     /**
      * Get current screen height
      */
-    int GetHeight() const { return ::GetScreenHeight(); }
+    static int GetHeight() { return ::GetScreenHeight(); }
 
     /**
      * Get current render width (it considers HiDPI)
      */
-    int GetRenderWidth() const { return ::GetRenderWidth(); }
+    static int GetRenderWidth() { return ::GetRenderWidth(); }
 
     /**
      * Get current render height (it considers HiDPI)
      */
-    int GetRenderHeight() const { return ::GetRenderHeight(); }
+    static int GetRenderHeight() { return ::GetRenderHeight(); }
 
     /**
      * Get window position XY on monitor
      */
-    Vector2 GetPosition() const { return ::GetWindowPosition(); }
+    static Vector2 GetPosition() { return ::GetWindowPosition(); }
 
     /**
      * Get window scale DPI factor
      */
-    Vector2 GetScaleDPI() const { return ::GetWindowScaleDPI(); }
+    static Vector2 GetScaleDPI() { return ::GetWindowScaleDPI(); }
 
     /**
      * Set clipboard text content
      */
-    void SetClipboardText(const std::string& text) { ::SetClipboardText(text.c_str()); }
+    static void SetClipboardText(const std::string& text) { ::SetClipboardText(text.c_str()); }
 
     /**
      * Get clipboard text content
      */
-    const std::string GetClipboardText() { return ::GetClipboardText(); }
+    static std::string GetClipboardText() { return ::GetClipboardText(); }
 
     /**
      * Set target FPS (maximum)
@@ -377,22 +375,22 @@ public:
     /**
      * Returns current FPS
      */
-    int GetFPS() const { return ::GetFPS(); }
+    static int GetFPS()  { return ::GetFPS(); }
 
     /**
      * Draw current FPS
      */
-    void DrawFPS(int posX = 10, int posY = 10) const { ::DrawFPS(posX, posY); }
+    static void DrawFPS(int posX = 10, int posY = 10)  { ::DrawFPS(posX, posY); }
 
     /**
      * Returns time in seconds for last frame drawn
      */
-    float GetFrameTime() const { return ::GetFrameTime(); }
+    static float GetFrameTime()  { return ::GetFrameTime(); }
 
     /**
      * Returns elapsed time in seconds since InitWindow()
      */
-    double GetTime() const { return ::GetTime(); }
+    static double GetTime()  { return ::GetTime(); }
 
     /**
      * Check if window has been initialized successfully
@@ -406,7 +404,7 @@ public:
      *
      * @see ::SetConfigFlags
      */
-    void SetConfigFlags(unsigned int flags) { ::SetConfigFlags(flags); }
+    static void SetConfigFlags(unsigned int flags) { ::SetConfigFlags(flags); }
 };
 } // namespace raylib
 

@@ -21,7 +21,7 @@ public:
         void* ctxData = nullptr)
         : ::Music{stream, frameCount, looping, ctxType, ctxData} {}
 
-    Music(const ::Music& music) { set(music); }
+    Music(const ::Music& music) : ::Music(music) { }
 
     /**
      * Load music stream from file
@@ -140,7 +140,7 @@ public:
     /**
      * Check if music is playing
      */
-    bool IsPlaying() const { return ::IsMusicStreamPlaying(*this); }
+    [[nodiscard]] bool IsPlaying() const { return ::IsMusicStreamPlaying(*this); }
 
     /**
      * Set volume for music

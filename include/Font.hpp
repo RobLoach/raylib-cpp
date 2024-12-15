@@ -28,9 +28,9 @@ public:
     /**
      * Retrieves the default Font.
      */
-    Font() { set(::GetFontDefault()); }
+    Font() : ::Font(::GetFontDefault()) { }
 
-    Font(const ::Font& font) { set(font); }
+    Font(const ::Font& font) : ::Font(font) { }
 
     /**
      * Loads a Font from the given file.
@@ -203,7 +203,7 @@ public:
     /**
      * Returns if the font is ready to be used.
      */
-    bool IsValid() const { return ::IsFontValid(*this); }
+    [[nodiscard]] bool IsValid() const { return ::IsFontValid(*this); }
 
     /**
      * Draw text using font and additional parameters.
@@ -286,33 +286,33 @@ public:
     /**
      * Measure string size for Font
      */
-    Vector2 MeasureText(const char* text, float fontSize, float spacing) const {
+    [[nodiscard]] Vector2 MeasureText(const char* text, float fontSize, float spacing) const {
         return ::MeasureTextEx(*this, text, fontSize, spacing);
     }
 
     /**
      * Measure string size for Font
      */
-    Vector2 MeasureText(const std::string& text, float fontSize, float spacing) const {
+    [[nodiscard]] Vector2 MeasureText(const std::string& text, float fontSize, float spacing) const {
         return ::MeasureTextEx(*this, text.c_str(), fontSize, spacing);
     }
 
     /**
      * Get index position for a unicode character on font
      */
-    int GetGlyphIndex(int character) const { return ::GetGlyphIndex(*this, character); }
+    [[nodiscard]] int GetGlyphIndex(int character) const { return ::GetGlyphIndex(*this, character); }
 
     /**
      * Create an image from text (custom sprite font)
      */
-    ::Image ImageText(const char* text, float fontSize, float spacing, ::Color tint) const {
+    [[nodiscard]] ::Image ImageText(const char* text, float fontSize, float spacing, ::Color tint) const {
         return ::ImageTextEx(*this, text, fontSize, spacing, tint);
     }
 
     /**
      * Create an image from text (custom sprite font)
      */
-    ::Image ImageText(const std::string& text, float fontSize, float spacing, ::Color tint) const {
+    [[nodiscard]] ::Image ImageText(const std::string& text, float fontSize, float spacing, ::Color tint) const {
         return ::ImageTextEx(*this, text.c_str(), fontSize, spacing, tint);
     }
 protected:

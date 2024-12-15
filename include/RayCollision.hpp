@@ -3,6 +3,7 @@
 
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
+#include <raylib.h>
 
 namespace raylib {
 /**
@@ -10,7 +11,7 @@ namespace raylib {
  */
 class RayCollision : public ::RayCollision {
 public:
-    RayCollision(const ::RayCollision& ray) { set(ray); }
+    RayCollision(const ::RayCollision& ray) : ::RayCollision(ray) { }
 
     RayCollision(bool hit, float distance, ::Vector3 point, ::Vector3 normal)
         : ::RayCollision{hit, distance, point, normal} {
@@ -20,34 +21,41 @@ public:
     /**
      * Get collision info between ray and bounding box
      */
-    RayCollision(const ::Ray& ray, const ::BoundingBox& box) { set(::GetRayCollisionBox(ray, box)); }
+    RayCollision(const ::Ray& ray, const ::BoundingBox& box)
+        : ::RayCollision(::GetRayCollisionBox(ray, box)) {
+        // Nothing.
+    }
 
     /**
      * Get collision info between ray and mesh
      */
-    RayCollision(const ::Ray& ray, const ::Mesh& mesh, const ::Matrix& transform) {
-        set(::GetRayCollisionMesh(ray, mesh, transform));
+    RayCollision(const ::Ray& ray, const ::Mesh& mesh, const ::Matrix& transform)
+        : ::RayCollision(::GetRayCollisionMesh(ray, mesh, transform)) {
+        // Nothing.
     }
 
     /**
      * Get collision info between ray and quad
      */
-    RayCollision(const ::Ray& ray, ::Vector3 p1, ::Vector3 p2, ::Vector3 p3, ::Vector3 p4) {
-        set(::GetRayCollisionQuad(ray, p1, p2, p3, p4));
+    RayCollision(const ::Ray& ray, ::Vector3 p1, ::Vector3 p2, ::Vector3 p3, ::Vector3 p4)
+        : ::RayCollision(::GetRayCollisionQuad(ray, p1, p2, p3, p4)) {
+        // Nothing.
     }
 
     /**
      * Get collision info between ray and sphere
      */
-    RayCollision(const ::Ray& ray, ::Vector3 center, float radius) {
-        set(::GetRayCollisionSphere(ray, center, radius));
+    RayCollision(const ::Ray& ray, ::Vector3 center, float radius)
+        : ::RayCollision(::GetRayCollisionSphere(ray, center, radius)) {
+        // Nothing.
     }
 
     /**
      * Get collision info between ray and triangle
      */
-    RayCollision(const ::Ray& ray, ::Vector3 p1, ::Vector3 p2, ::Vector3 p3) {
-        set(::GetRayCollisionTriangle(ray, p1, p2, p3));
+    RayCollision(const ::Ray& ray, ::Vector3 p1, ::Vector3 p2, ::Vector3 p3)
+        : ::RayCollision(::GetRayCollisionTriangle(ray, p1, p2, p3)) {
+        // Nothing.
     }
 
     RayCollision& operator=(const ::RayCollision& ray) {

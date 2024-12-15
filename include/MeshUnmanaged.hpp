@@ -200,12 +200,12 @@ public:
     /**
      * Compute mesh bounding box limits
      */
-    raylib::BoundingBox BoundingBox() const { return ::GetMeshBoundingBox(*this); }
+    [[nodiscard]] raylib::BoundingBox BoundingBox() const { return ::GetMeshBoundingBox(*this); }
 
     /**
      * Compute mesh bounding box limits
      */
-    operator raylib::BoundingBox() { return BoundingBox(); }
+    operator raylib::BoundingBox() const { return BoundingBox(); }
 
     /**
      * Compute mesh tangents
@@ -218,7 +218,7 @@ public:
     /**
      * Load model from generated mesh
      */
-    raylib::Model LoadModelFrom() const { return ::LoadModelFromMesh(*this); }
+    [[nodiscard]] raylib::Model LoadModelFrom() const { return ::LoadModelFromMesh(*this); }
 
     /**
      * Load model from generated mesh

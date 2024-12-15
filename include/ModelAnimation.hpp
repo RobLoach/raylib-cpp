@@ -94,7 +94,7 @@ public:
     /**
      * Check model animation skeleton match
      */
-    bool IsValid(const ::Model& model) const { return ::IsModelAnimationValid(model, *this); }
+    [[nodiscard]] bool IsValid(const ::Model& model) const { return ::IsModelAnimationValid(model, *this); }
 protected:
     void set(const ::ModelAnimation& model) {
         boneCount = model.boneCount;

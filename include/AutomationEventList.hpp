@@ -4,6 +4,7 @@
 #include "./RaylibException.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
+#include <raylib.h>
 
 namespace raylib {
 /**
@@ -11,7 +12,10 @@ namespace raylib {
  */
 class AutomationEventList : public ::AutomationEventList {
 public:
-    AutomationEventList(const ::AutomationEventList& automationEventList) { set(automationEventList); }
+    AutomationEventList(const ::AutomationEventList& automationEventList)
+        : ::AutomationEventList(automationEventList) {
+        // Nothing.
+    }
 
     /**
      * Load an empty automation events list.

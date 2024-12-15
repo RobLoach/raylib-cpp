@@ -5,6 +5,7 @@
 #include "./TextureUnmanaged.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
+#include <raylib.h>
 
 namespace raylib {
 /**
@@ -15,9 +16,15 @@ public:
     /**
      * Default constructor to build an empty RenderTexture.
      */
-    RenderTexture() { id = 0; }
+    RenderTexture()
+        : ::RenderTexture{ .id = 0 } {
+        // Nothing.
+    }
 
-    RenderTexture(const ::RenderTexture& renderTexture) { set(renderTexture); }
+    RenderTexture(const ::RenderTexture& renderTexture)
+        : ::RenderTexture(renderTexture) {
+        // Nothing.
+    }
 
     RenderTexture(unsigned int id, const ::Texture& texture, const ::Texture& depth)
         : ::RenderTexture{id, texture, depth} {}
@@ -25,11 +32,15 @@ public:
     /**
      * Load texture for rendering (framebuffer)
      */
-    RenderTexture(int width, int height) { set(::LoadRenderTexture(width, height)); }
+    RenderTexture(int width, int height)
+        : ::RenderTexture(::LoadRenderTexture(width, height)) {
+        // Nothing.
+    }
 
     RenderTexture(const RenderTexture&) = delete;
 
-    RenderTexture(RenderTexture&& other) {
+    RenderTexture(RenderTexture&& other) noexcept
+    {
         set(other);
 
         other.id = 0;
@@ -103,7 +114,7 @@ public:
     /**
      * Retrieves whether or not the render texture is ready.
      */
-    bool IsValid() const { return ::IsRenderTextureValid(*this); }
+    [[nodiscard]] bool IsValid() const { return ::IsRenderTextureValid(*this); }
 protected:
     void set(const ::RenderTexture& renderTexture) {
         id = renderTexture.id;

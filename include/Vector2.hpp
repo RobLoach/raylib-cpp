@@ -44,7 +44,7 @@ public:
      */
     bool operator!=(const ::Vector2& other) const { return !(*this == other); }
 
-    std::string ToString() const { return TextFormat("Vector2(%f, %f)", x, y); }
+    [[nodiscard]] std::string ToString() const { return TextFormat("Vector2(%f, %f)", x, y); }
 
     operator std::string() const { return ToString(); }
 
@@ -71,7 +71,7 @@ public:
     /**
      * Subtract two vectors (v1 - v2)
      */
-    Vector2 Subtract(const ::Vector2& vector2) const { return Vector2Subtract(*this, vector2); }
+    [[nodiscard]] Vector2 Subtract(const ::Vector2& vector2) const { return Vector2Subtract(*this, vector2); }
 
     /**
      * Subtract two vectors (v1 - v2)
@@ -90,7 +90,7 @@ public:
     /**
      * Negate vector
      */
-    Vector2 Negate() const { return Vector2Negate(*this); }
+    [[nodiscard]] Vector2 Negate() const { return Vector2Negate(*this); }
 
     /**
      * Negate vector
@@ -100,7 +100,7 @@ public:
     /**
      * Multiply vector by vector
      */
-    Vector2 Multiply(const ::Vector2& vector2) const { return Vector2Multiply(*this, vector2); }
+    [[nodiscard]] Vector2 Multiply(const ::Vector2& vector2) const { return Vector2Multiply(*this, vector2); }
 
     /**
      * Multiply vector by vector
@@ -119,7 +119,7 @@ public:
     /**
      * Scale vector (multiply by value)
      */
-    Vector2 Scale(const float scale) const { return Vector2Scale(*this, scale); }
+    [[nodiscard]] Vector2 Scale(const float scale) const { return Vector2Scale(*this, scale); }
 
     /**
      * Scale vector (multiply by value)
@@ -138,7 +138,7 @@ public:
     /**
      * Divide vector by vector
      */
-    Vector2 Divide(const ::Vector2& vector2) const { return Vector2Divide(*this, vector2); }
+    [[nodiscard]] Vector2 Divide(const ::Vector2& vector2) const { return Vector2Divide(*this, vector2); }
 
 
     /**
@@ -158,7 +158,7 @@ public:
     /**
      * Divide vector by value
      */
-    Vector2 Divide(const float div) const { return ::Vector2{x / div, y / div}; }
+    [[nodiscard]] Vector2 Divide(const float div) const { return ::Vector2{x / div, y / div}; }
 
     /**
      * Divide vector by value
@@ -178,84 +178,84 @@ public:
     /**
      * Normalize provided vector
      */
-    Vector2 Normalize() const { return Vector2Normalize(*this); }
+    [[nodiscard]] Vector2 Normalize() const { return Vector2Normalize(*this); }
 
     /**
      * Transforms a Vector2 by a given Matrix
      */
-    Vector2 Transform(::Matrix mat) const { return ::Vector2Transform(*this, mat); }
+    [[nodiscard]] Vector2 Transform(::Matrix mat) const { return ::Vector2Transform(*this, mat); }
 
     /**
      * Calculate linear interpolation between two vectors
      */
-    Vector2 Lerp(const ::Vector2& vector2, float amount) const { return Vector2Lerp(*this, vector2, amount); }
+    [[nodiscard]] Vector2 Lerp(const ::Vector2& vector2, float amount) const { return Vector2Lerp(*this, vector2, amount); }
 
     /**
      * Calculate reflected vector to normal
      */
-    Vector2 Reflect(const ::Vector2& normal) const { return Vector2Reflect(*this, normal); }
+    [[nodiscard]] Vector2 Reflect(const ::Vector2& normal) const { return Vector2Reflect(*this, normal); }
 
     /**
      * Rotate Vector by float in radians
      */
-    Vector2 Rotate(float angle) const { return Vector2Rotate(*this, angle); }
+    [[nodiscard]] Vector2 Rotate(float angle) const { return Vector2Rotate(*this, angle); }
 
     /**
      * Move Vector towards target
      */
-    Vector2 MoveTowards(const ::Vector2& target, float maxDistance) const {
+    [[nodiscard]] Vector2 MoveTowards(const ::Vector2& target, float maxDistance) const {
         return Vector2MoveTowards(*this, target, maxDistance);
     }
 
     /**
      * Invert the given vector
      */
-    Vector2 Invert() const { return ::Vector2Invert(*this); }
+    [[nodiscard]] Vector2 Invert() const { return ::Vector2Invert(*this); }
 
     /**
      * Clamp the components of the vector between
      */
-    Vector2 Clamp(::Vector2 min, ::Vector2 max) const { return ::Vector2Clamp(*this, min, max); }
+    [[nodiscard]] Vector2 Clamp(::Vector2 min, ::Vector2 max) const { return ::Vector2Clamp(*this, min, max); }
 
     /**
      * // Clamp the magnitude of the vector between two min and max values
      */
-    Vector2 Clamp(float min, float max) const { return ::Vector2ClampValue(*this, min, max); }
+    [[nodiscard]] Vector2 Clamp(float min, float max) const { return ::Vector2ClampValue(*this, min, max); }
 
     /**
      * Check whether two given vectors are almost equal
      */
-    int Equals(::Vector2 q) const { return ::Vector2Equals(*this, q); }
+    [[nodiscard]] int Equals(::Vector2 q) const { return ::Vector2Equals(*this, q); }
 
     /**
      * Calculate vector length
      */
-    float Length() const { return Vector2Length(*this); }
+    [[nodiscard]] float Length() const { return Vector2Length(*this); }
 
     /**
      * Calculate vector square length
      */
-    float LengthSqr() const { return Vector2LengthSqr(*this); }
+    [[nodiscard]] float LengthSqr() const { return Vector2LengthSqr(*this); }
 
     /**
      * Calculate two vectors dot product
      */
-    float DotProduct(const ::Vector2& vector2) const { return Vector2DotProduct(*this, vector2); }
+    [[nodiscard]] float DotProduct(const ::Vector2& vector2) const { return Vector2DotProduct(*this, vector2); }
 
     /**
      * Calculate distance between two vectors
      */
-    float Distance(const ::Vector2& vector2) const { return Vector2Distance(*this, vector2); }
+    [[nodiscard]] float Distance(const ::Vector2& vector2) const { return Vector2Distance(*this, vector2); }
 
     /**
      * Calculate square distance between two vectors
      */
-    float DistanceSqr(::Vector2 v2) const { return ::Vector2DistanceSqr(*this, v2); }
+    [[nodiscard]] float DistanceSqr(::Vector2 v2) const { return ::Vector2DistanceSqr(*this, v2); }
 
     /**
      * Calculate angle from two vectors in X-axis
      */
-    float Angle(const ::Vector2& vector2) const { return Vector2Angle(*this, vector2); }
+    [[nodiscard]] float Angle(const ::Vector2& vector2) const { return Vector2Angle(*this, vector2); }
 
     /**
      * Vector with components value 0.0f
@@ -294,33 +294,33 @@ public:
     /**
      * Check collision between two circles
      */
-    bool CheckCollisionCircle(float radius1, ::Vector2 center2, float radius2) const {
+    [[nodiscard]] bool CheckCollisionCircle(float radius1, ::Vector2 center2, float radius2) const {
         return ::CheckCollisionCircles(*this, radius1, center2, radius2);
     }
 
     /**
      * Check collision between circle and rectangle
      */
-    bool CheckCollisionCircle(float radius, ::Rectangle rec) const {
+    [[nodiscard]] bool CheckCollisionCircle(float radius, ::Rectangle rec) const {
         return ::CheckCollisionCircleRec(*this, radius, rec);
     }
 
     /**
      * Check if point is inside rectangle
      */
-    bool CheckCollision(::Rectangle rec) const { return ::CheckCollisionPointRec(*this, rec); }
+    [[nodiscard]] bool CheckCollision(::Rectangle rec) const { return ::CheckCollisionPointRec(*this, rec); }
 
     /**
      * Check if point is inside circle
      */
-    bool CheckCollision(::Vector2 center, float radius) const {
+    [[nodiscard]] bool CheckCollision(::Vector2 center, float radius) const {
         return ::CheckCollisionPointCircle(*this, center, radius);
     }
 
     /**
      * Check if point is inside a triangle
      */
-    bool CheckCollision(::Vector2 p1, ::Vector2 p2, ::Vector2 p3) const {
+    [[nodiscard]] bool CheckCollision(::Vector2 p1, ::Vector2 p2, ::Vector2 p3) const {
         return ::CheckCollisionPointTriangle(*this, p1, p2, p3);
     }
 
@@ -335,7 +335,7 @@ public:
     /**
      * Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
      */
-    bool CheckCollisionPointLine(::Vector2 p1, ::Vector2 p2, int threshold = 1) const {
+    [[nodiscard]] bool CheckCollisionPointLine(::Vector2 p1, ::Vector2 p2, int threshold = 1) const {
         return ::CheckCollisionPointLine(*this, p1, p2, threshold);
     }
 protected:

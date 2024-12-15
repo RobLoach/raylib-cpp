@@ -11,7 +11,9 @@ namespace raylib {
  */
 class AudioStream : public ::AudioStream {
 public:
-    AudioStream(const ::AudioStream& music) { set(music); }
+    AudioStream(const ::AudioStream& music)
+        : ::AudioStream(music)
+    { }
 
     AudioStream(
         rAudioBuffer* buffer = nullptr,
@@ -34,7 +36,7 @@ public:
 
     AudioStream(const AudioStream&) = delete;
 
-    AudioStream(AudioStream&& other) {
+    AudioStream(AudioStream&& other) noexcept {
         set(other);
 
         other.buffer = nullptr;
@@ -96,7 +98,7 @@ public:
     /**
      * Check if any audio stream buffers requires refill
      */
-    bool IsProcessed() const { return ::IsAudioStreamProcessed(*this); }
+    [[nodiscard]] bool IsProcessed() const { return ::IsAudioStreamProcessed(*this); }
 
     /**
      * Play audio stream
@@ -125,7 +127,7 @@ public:
     /**
      * Check if audio stream is playing
      */
-    bool IsPlaying() const { return ::IsAudioStreamPlaying(*this); }
+    [[nodiscard]] bool IsPlaying() const { return ::IsAudioStreamPlaying(*this); }
 
     /**
      * Stop audio stream
@@ -182,7 +184,7 @@ public:
     /**
      * Retrieve whether or not the audio stream is ready.
      */
-    bool IsValid() const { return ::IsAudioStreamValid(*this); }
+    [[nodiscard]] bool IsValid() const { return ::IsAudioStreamValid(*this); }
 
     /**
      * Load audio stream (to stream raw audio pcm data)

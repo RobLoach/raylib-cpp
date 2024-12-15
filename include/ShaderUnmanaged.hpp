@@ -1,12 +1,11 @@
 #ifndef RAYLIB_CPP_INCLUDE_UNMANAGEDSHADER_HPP_
 #define RAYLIB_CPP_INCLUDE_UNMANAGEDSHADER_HPP_
 
-#include <rlgl.h>
-#include <string>
-
-#include "Texture.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
+
+#include <rlgl.h>
+#include <string>
 
 namespace raylib {
 
@@ -17,7 +16,7 @@ class ShaderUnmanaged : public ::Shader {
 public:
     ShaderUnmanaged() : ::Shader{rlGetShaderIdDefault(), rlGetShaderLocsDefault()} {}
 
-    ShaderUnmanaged(const ::Shader& shader) { set(shader); }
+    ShaderUnmanaged(const ::Shader& shader) : ::Shader(shader) { }
 
     ShaderUnmanaged(unsigned int id, int* locs = nullptr) : ::Shader{id, locs} {}
 
@@ -79,14 +78,14 @@ public:
      *
      * @see GetShaderLocation()
      */
-    int GetLocation(const std::string& uniformName) const { return ::GetShaderLocation(*this, uniformName.c_str()); }
+    [[nodiscard]] int GetLocation(const std::string& uniformName) const { return ::GetShaderLocation(*this, uniformName.c_str()); }
 
     /**
      * Get shader attribute location
      *
      * @see GetShaderLocationAttrib()
      */
-    int GetLocationAttrib(const std::string& attribName) const {
+    [[nodiscard]] int GetLocationAttrib(const std::string& attribName) const {
         return ::GetShaderLocationAttrib(*this, attribName.c_str());
     }
 
@@ -133,7 +132,7 @@ public:
     /**
      * Retrieves whether or not the shader is ready.
      */
-    bool IsValid() const { return ::IsShaderValid(*this); }
+    [[nodiscard]] bool IsValid() const { return ::IsShaderValid(*this); }
 protected:
     void set(const ::Shader& shader) {
         id = shader.id;
