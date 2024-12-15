@@ -8,7 +8,6 @@
 #include "./Matrix.hpp"
 #include "./Model.hpp"
 #include "./raylib-cpp-utils.hpp"
-#include "./raylib.hpp"
 
 namespace raylib {
 

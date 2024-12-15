@@ -12,8 +12,9 @@ namespace raylib {
 class AudioStream : public ::AudioStream {
 public:
     AudioStream(const ::AudioStream& music)
-        : ::AudioStream(music)
-    { }
+        : ::AudioStream(music) {
+        // Nothing.
+    }
 
     AudioStream(
         rAudioBuffer* buffer = nullptr,

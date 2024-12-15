@@ -1,7 +1,7 @@
 #ifndef RAYLIB_CPP_INCLUDE_KEYBOARD_HPP_
 #define RAYLIB_CPP_INCLUDE_KEYBOARD_HPP_
 
-#include "Functions.hpp"
+#include "./Functions.hpp"
 #include "./raylib.hpp"
 
 /**

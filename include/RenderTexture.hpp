@@ -1,11 +1,8 @@
 #ifndef RAYLIB_CPP_INCLUDE_RENDERTEXTURE_HPP_
 #define RAYLIB_CPP_INCLUDE_RENDERTEXTURE_HPP_
 
-#include "./RaylibException.hpp"
 #include "./TextureUnmanaged.hpp"
 #include "./raylib-cpp-utils.hpp"
-#include "./raylib.hpp"
-#include <raylib.h>
 
 namespace raylib {
 /**

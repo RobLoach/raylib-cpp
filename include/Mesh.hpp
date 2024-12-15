@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 
-#include "./BoundingBox.hpp"
 #include "./MeshUnmanaged.hpp"
 #include "./Model.hpp"
 #include "./raylib-cpp-utils.hpp"
