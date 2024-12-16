@@ -21,7 +21,7 @@ public:
         void* ctxData = nullptr)
         : ::Music{stream, frameCount, looping, ctxType, ctxData} {}
 
-    Music(const ::Music& music) { set(music); }
+    Music(const ::Music& music) : ::Music(music) { }
 
     /**
      * Load music stream from file
@@ -39,7 +39,7 @@ public:
 
     Music(const Music&) = delete;
 
-    Music(Music&& other) {
+    Music(Music&& other) noexcept {
         set(other);
 
         other.stream = {};
@@ -140,7 +140,7 @@ public:
     /**
      * Check if music is playing
      */
-    bool IsPlaying() const { return ::IsMusicStreamPlaying(*this); }
+    [[nodiscard]] bool IsPlaying() const { return ::IsMusicStreamPlaying(*this); }
 
     /**
      * Set volume for music
@@ -169,12 +169,12 @@ public:
     /**
      * Get music time length (in seconds)
      */
-    float GetTimeLength() const { return ::GetMusicTimeLength(*this); }
+    [[nodiscard]] float GetTimeLength() const { return ::GetMusicTimeLength(*this); }
 
     /**
      * Get current music time played (in seconds)
      */
-    float GetTimePlayed() const { return ::GetMusicTimePlayed(*this); }
+    [[nodiscard]] float GetTimePlayed() const { return ::GetMusicTimePlayed(*this); }
 
     /**
      * Load music stream from file

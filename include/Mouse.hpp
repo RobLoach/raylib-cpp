@@ -1,6 +1,7 @@
 #ifndef RAYLIB_CPP_INCLUDE_MOUSE_HPP_
 #define RAYLIB_CPP_INCLUDE_MOUSE_HPP_
 
+#include "./Functions.hpp"
 #include "./Vector2.hpp"
 #include "./raylib.hpp"
 

@@ -26,7 +26,7 @@ public:
         // Nothing.
     }
 
-    Image(const ::Image& image) { set(image); }
+    Image(const ::Image& image) : ::Image(image) { }
 
     /**
      * Load an image from the given file.
@@ -90,7 +90,7 @@ public:
 
     Image(const Image& other) { set(other.Copy()); }
 
-    Image(Image&& other) {
+    Image(Image&& other) noexcept {
         set(other);
 
         other.data = nullptr;
@@ -340,17 +340,17 @@ public:
     /**
      * Retrieve the width and height of the image.
      */
-    ::Vector2 GetSize() const { return {static_cast<float>(width), static_cast<float>(height)}; }
+    [[nodiscard]] ::Vector2 GetSize() const { return {static_cast<float>(width), static_cast<float>(height)}; }
 
     /**
      * Create an image duplicate (useful for transformations)
      */
-    ::Image Copy() const { return ::ImageCopy(*this); }
+    [[nodiscard]] ::Image Copy() const { return ::ImageCopy(*this); }
 
     /**
      * Create an image from another image piece
      */
-    ::Image FromImage(::Rectangle rec) const { return ::ImageFromImage(*this, rec); }
+    [[nodiscard]] ::Image FromImage(::Rectangle rec) const { return ::ImageFromImage(*this, rec); }
 
     /**
      * Convert image data to desired format
@@ -569,17 +569,17 @@ public:
      *
      * @param threshold Threshold is defined as a percentatge: 0.0f -> 1.0f
      */
-    Rectangle GetAlphaBorder(float threshold) const { return ::GetImageAlphaBorder(*this, threshold); }
+    [[nodiscard]] Rectangle GetAlphaBorder(float threshold) const { return ::GetImageAlphaBorder(*this, threshold); }
 
     /**
      * Get image pixel color at (x, y) position
      */
-    raylib::Color GetColor(int x = 0, int y = 0) const { return ::GetImageColor(*this, x, y); }
+    [[nodiscard]] raylib::Color GetColor(int x = 0, int y = 0) const { return ::GetImageColor(*this, x, y); }
 
     /**
      * Get image pixel color at vector position
      */
-    raylib::Color GetColor(::Vector2 position) const {
+    [[nodiscard]] raylib::Color GetColor(::Vector2 position) const {
         return ::GetImageColor(*this, static_cast<int>(position.x), static_cast<int>(position.y));
     }
 
@@ -692,7 +692,7 @@ public:
     /**
      * Load color data from image as a Color array (RGBA - 32bit)
      */
-    ::Color* LoadColors() const { return ::LoadImageColors(*this); }
+    [[nodiscard]] ::Color* LoadColors() const { return ::LoadImageColors(*this); }
 
     /**
      * Load colors palette from image as a Color array (RGBA - 32bit)
@@ -714,14 +714,14 @@ public:
     /**
      * Load texture from image data.
      */
-    ::Texture2D LoadTexture() const { return ::LoadTextureFromImage(*this); }
+    [[nodiscard]] ::Texture2D LoadTexture() const { return ::LoadTextureFromImage(*this); }
 
     /**
      * Loads a texture from the image data.
      *
      * @see LoadTexture()
      */
-    operator ::Texture2D() { return LoadTexture(); }
+    operator ::Texture2D() const { return LoadTexture(); }
 
     /**
      * Get pixel data size in bytes for certain format
@@ -735,14 +735,14 @@ public:
      *
      * @return The pixel data size of the image.
      */
-    int GetPixelDataSize() const { return ::GetPixelDataSize(width, height, format); }
+    [[nodiscard]] int GetPixelDataSize() const { return ::GetPixelDataSize(width, height, format); }
 
     /**
      * Retrieve whether or not the Image has been loaded.
      *
      * @return True or false depending on whether the Image has been loaded.
      */
-    bool IsValid() const { return ::IsImageValid(*this); }
+    [[nodiscard]] bool IsValid() const { return ::IsImageValid(*this); }
 
     /**
      * Create an image from a selected channel of another image (GRAYSCALE)

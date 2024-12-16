@@ -84,7 +84,7 @@ public:
         // Nothing.
     }
 
-    GETTERSETTER(std::string, Text, text)
+    GETTERSETTER(const std::string&, Text, text)
     GETTERSETTER(float, FontSize, fontSize)
     GETTERSETTER(::Font, Font, font)
     GETTERSETTER(::Color, Color, color)
@@ -120,12 +120,12 @@ public:
     /**
      * Measure string width for default font
      */
-    int Measure() const { return ::MeasureText(text.c_str(), static_cast<int>(fontSize)); }
+    [[nodiscard]] int Measure() const { return ::MeasureText(text.c_str(), static_cast<int>(fontSize)); }
 
     /**
      * Measure string size for Font
      */
-    Vector2 MeasureEx() const { return ::MeasureTextEx(font, text.c_str(), fontSize, spacing); }
+    [[nodiscard]] Vector2 MeasureEx() const { return ::MeasureTextEx(font, text.c_str(), fontSize, spacing); }
 
     Text& operator=(const Text& other) {
         if (this == &other) {

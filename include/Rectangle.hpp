@@ -35,7 +35,7 @@ public:
 
     ::Vector4 ToVector4() { return {x, y, width, height}; }
 
-    operator ::Vector4() const { return {x, y, width, height}; }
+    explicit operator ::Vector4() const { return {x, y, width, height}; }
 
     /**
      * Draw a color-filled rectangle
@@ -96,26 +96,26 @@ public:
     /**
      * Check collision between two rectangles
      */
-    bool CheckCollision(::Rectangle rec2) const { return ::CheckCollisionRecs(*this, rec2); }
+    [[nodiscard]] bool CheckCollision(::Rectangle rec2) const { return ::CheckCollisionRecs(*this, rec2); }
 
     /**
      * Get collision rectangle for two rectangles collision
      */
-    ::Rectangle GetCollision(::Rectangle rec2) const { return ::GetCollisionRec(*this, rec2); }
+    [[nodiscard]] ::Rectangle GetCollision(::Rectangle rec2) const { return ::GetCollisionRec(*this, rec2); }
 
     /**
      * Check if point is inside rectangle
      */
-    bool CheckCollision(::Vector2 point) const { return ::CheckCollisionPointRec(point, *this); }
+    [[nodiscard]] bool CheckCollision(::Vector2 point) const { return ::CheckCollisionPointRec(point, *this); }
 
     /**
      * Check collision between circle and rectangle
      */
-    bool CheckCollision(::Vector2 center, float radius) const {
+    [[nodiscard]] bool CheckCollision(::Vector2 center, float radius) const {
         return ::CheckCollisionCircleRec(center, radius, *this);
     }
 
-    Vector2 GetSize() const { return {width, height}; }
+    [[nodiscard]] Vector2 GetSize() const { return {width, height}; }
 
     Rectangle& SetSize(float newWidth, float newHeight) {
         width = newWidth;
@@ -130,7 +130,7 @@ public:
         return *this;
     }
 
-    Vector2 GetPosition() const { return {x, y}; }
+    [[nodiscard]] Vector2 GetPosition() const { return {x, y}; }
 
     Rectangle& SetPosition(float newX, float newY) {
         x = newX;

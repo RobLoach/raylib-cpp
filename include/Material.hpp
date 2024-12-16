@@ -13,16 +13,16 @@ namespace raylib {
  */
 class Material : public ::Material {
 public:
-    Material(const ::Material& material) { set(material); }
+    Material(const ::Material& material) : ::Material(material) {  }
 
     /**
      * Load default material (Supports: DIFFUSE, SPECULAR, NORMAL maps)
      */
-    Material() { set(LoadMaterialDefault()); }
+    Material() : ::Material(LoadMaterialDefault()) { }
 
     Material(const Material&) = delete;
 
-    Material(Material&& other) {
+    Material(Material&& other) noexcept {
         set(other);
 
         other.maps = nullptr;
@@ -104,7 +104,7 @@ public:
     /**
      * Check if material is ready
      */
-    bool IsValid() const { return ::IsMaterialValid(*this); }
+    [[nodiscard]] bool IsValid() const { return ::IsMaterialValid(*this); }
 protected:
     void set(const ::Material& material) {
         shader = material.shader;

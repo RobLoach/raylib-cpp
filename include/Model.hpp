@@ -21,7 +21,7 @@ public:
     /*
      * Copy a model from another model.
      */
-    Model(const ::Model& model) { set(model); }
+    Model(const ::Model& model) : ::Model(model) { }
 
     /*
      * Load a model from a file.
@@ -50,7 +50,7 @@ public:
 
     Model(const Model&) = delete;
 
-    Model(Model&& other) {
+    Model(Model&& other) noexcept {
         set(other);
 
         other.meshCount = 0;
@@ -138,7 +138,7 @@ public:
     /**
      * Check model animation skeleton match
      */
-    bool IsModelAnimationValid(const ::ModelAnimation& anim) const { return ::IsModelAnimationValid(*this, anim); }
+    [[nodiscard]] bool IsModelAnimationValid(const ::ModelAnimation& anim) const { return ::IsModelAnimationValid(*this, anim); }
 
     /**
      * Draw a model (with texture if set)
@@ -195,17 +195,17 @@ public:
     /**
      * Compute model bounding box limits (considers all meshes)
      */
-    BoundingBox GetBoundingBox() const { return ::GetModelBoundingBox(*this); }
+    [[nodiscard]] BoundingBox GetBoundingBox() const { return ::GetModelBoundingBox(*this); }
 
     /**
      * Compute model bounding box limits (considers all meshes)
      */
-    operator BoundingBox() const { return ::GetModelBoundingBox(*this); }
+    explicit operator BoundingBox() const { return ::GetModelBoundingBox(*this); }
 
     /**
      * Determines whether or not the Model has data in it.
      */
-    bool IsValid() const { return ::IsModelValid(*this); }
+    [[nodiscard]] bool IsValid() const { return ::IsModelValid(*this); }
 
     /**
      * Loads a Model from the given file.

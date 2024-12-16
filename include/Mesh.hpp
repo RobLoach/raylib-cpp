@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 
-#include "./BoundingBox.hpp"
 #include "./MeshUnmanaged.hpp"
 #include "./Model.hpp"
 #include "./raylib-cpp-utils.hpp"
@@ -35,7 +34,7 @@ public:
     /**
      * Move constructor.
      */
-    Mesh(Mesh&& other) {
+    Mesh(Mesh&& other) noexcept {
         set(other);
 
         other.vertexCount = 0;

@@ -11,7 +11,10 @@ namespace raylib {
  */
 class AutomationEventList : public ::AutomationEventList {
 public:
-    AutomationEventList(const ::AutomationEventList& automationEventList) { set(automationEventList); }
+    AutomationEventList(const ::AutomationEventList& automationEventList)
+        : ::AutomationEventList(automationEventList) {
+        // Nothing.
+    }
 
     /**
      * Load an empty automation events list.
@@ -27,7 +30,7 @@ public:
 
     AutomationEventList(const AutomationEventList&) = delete;
 
-    AutomationEventList(AutomationEventList&& other) {
+    AutomationEventList(AutomationEventList&& other) noexcept {
         set(other);
 
         other.capacity = 0;
