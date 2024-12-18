@@ -41,7 +41,7 @@ int main(void)
     raylib::RenderTexture2D target(gameScreenWidth, gameScreenHeight);
     target.GetTexture().SetFilter(TEXTURE_FILTER_BILINEAR); // Texture scale filter to use
 
-    raylib::Color colors[10] = { 0 };
+    raylib::Color colors[10];
     for (int i = 0; i < 10; i++) {
         colors[i] = raylib::Color((unsigned char)GetRandomValue(100, 250), (unsigned char)GetRandomValue(50, 150), (unsigned char)GetRandomValue(10, 100), 255);
     }
@@ -60,7 +60,9 @@ int main(void)
         if (IsKeyPressed(KEY_SPACE))
         {
             // Recalculate random colors for the bars
-            for (int i = 0; i < 10; i++) colors[i] = (Color){ (unsigned char)GetRandomValue(100, 250), (unsigned char)GetRandomValue(50, 150), (unsigned char)GetRandomValue(10, 100), 255 };
+            for (int i = 0; i < 10; i++) {
+                colors[i] = raylib::Color((unsigned char)GetRandomValue(100, 250), (unsigned char)GetRandomValue(50, 150), (unsigned char)GetRandomValue(10, 100), 255);
+            }
         }
 
         // Update virtual mouse (clamped mouse value behind game screen)
