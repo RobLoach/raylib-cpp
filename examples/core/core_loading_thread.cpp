@@ -55,7 +55,7 @@ int main(void)
                         threadId = std::thread(LoadDataThread);
                         TraceLog(LOG_INFO,
                             "Loading thread initialized successfully");
-                    } catch (std::system_error e) {
+                    } catch (std::system_error& e) {
                         TraceLog(LOG_ERROR, "Error: %s", e.what());
                     }
 
