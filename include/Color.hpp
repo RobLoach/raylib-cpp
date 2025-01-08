@@ -36,9 +36,9 @@ public:
     /**
      * Get Color structure from hexadecimal value
      */
-    explicit Color(unsigned int hexValue) : ::Color(::GetColor(hexValue)) { }
+    explicit Color(unsigned int hexValue) : ::Color(::GetColor(hexValue)) {}
 
-    Color(void* srcPtr, int format) : ::Color(::GetPixelColor(srcPtr, format)) { }
+    Color(void* srcPtr, int format) : ::Color(::GetPixelColor(srcPtr, format)) {}
 
     /**
      * Returns hexadecimal value for a Color
@@ -67,7 +67,7 @@ public:
     /**
      * Returns Color from normalized values [0..1]
      */
-    explicit Color(::Vector4 normalized) : Color(::ColorFromNormalized(normalized)) { }
+    explicit Color(::Vector4 normalized) : Color(::ColorFromNormalized(normalized)) {}
 
     /**
      * Returns HSV values for a Color
@@ -181,9 +181,7 @@ public:
 
     void DrawRectangleLines(::Rectangle rec, float lineThick) const { ::DrawRectangleLinesEx(rec, lineThick, *this); }
 
-    bool IsEqual(::Color color) {
-        return ::ColorIsEqual(*this, color);
-    }
+    bool IsEqual(::Color color) { return ::ColorIsEqual(*this, color); }
 
     bool operator==(const ::Color& other) const { return ::ColorIsEqual(*this, other); }
     bool operator!=(const ::Color& other) const { return !::ColorIsEqual(*this, other); }
@@ -208,15 +206,14 @@ public:
      */
     [[nodiscard]] Color Alpha(float alpha) const { return ::ColorAlpha(*this, alpha); }
 
-    Color Lerp(::Color color2, float factor) {
-        return ::ColorLerp(*this, color2, factor);
-    }
+    Color Lerp(::Color color2, float factor) { return ::ColorLerp(*this, color2, factor); }
 
     /**
      * Returns src alpha-blended into dst color with tint
      */
     [[nodiscard]] Color AlphaBlend(::Color dst, ::Color tint) const { return ::ColorAlphaBlend(dst, *this, tint); }
 
+    /* I think it deprecated
     static Color LightGray() { return LIGHTGRAY; }
     static Color Gray() { return GRAY; }
     static Color DarkGray() { return DARKGRAY; }
@@ -243,6 +240,37 @@ public:
     static Color Blank() { return BLANK; }
     static Color Magenta() { return MAGENTA; }
     static Color RayWhite() { return RAYWHITE; }
+    */
+
+    /**
+     * As an alternative to a function calling convention
+     */
+    constexpr Color LightGray = LIGHTGRAY;
+    constexpr Color Gray = GRAY;
+    constexpr Color DarkGray = DARKGRAY;
+    constexpr Color Yellow = YELLOW;
+    constexpr Color Gold = GOLD;
+    constexpr Color Orange = ORANGE;
+    constexpr Color Pink = PINK;
+    constexpr Color Red = RED;
+    constexpr Color Maroon = MAROON;
+    constexpr Color Green = GREEN;
+    constexpr Color Lime = LIME;
+    constexpr Color DarkGreen = DARKGREEN;
+    constexpr Color SkyBlue = SKYBLUE;
+    constexpr Color Blue = BLUE;
+    constexpr Color DarkBlue = DARKBLUE;
+    constexpr Color Purple = PURPLE;
+    constexpr Color Violet = VIOLET;
+    constexpr Color DarkPurple = DARKPURPLE;
+    constexpr Color Beige = BEIGE;
+    constexpr Color Brown = BROWN;
+    constexpr Color DarkBrown = DARKBROWN;
+    constexpr Color White = WHITE;
+    constexpr Color Black = BLACK;
+    constexpr Color Blank = BLANK;
+    constexpr Color Magenta = MAGENTA;
+    constexpr Color RayWhite = RAYWHITE;
 protected:
     void set(const ::Color& color) {
         r = color.r;
