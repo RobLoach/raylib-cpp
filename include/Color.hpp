@@ -13,15 +13,15 @@ namespace raylib {
  */
 class Color : public ::Color {
 public:
-    Color(const ::Color& color) : ::Color{color.r, color.g, color.b, color.a} {}
+    Color(const ::Color& color) : ::Color{color.r, color.g, color.b, color.a} { }
 
     Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha = 255)
-        : ::Color{red, green, blue, alpha} {};
+        : ::Color{red, green, blue, alpha} { };
 
     /**
      * Black.
      */
-    Color() : ::Color{0, 0, 0, 255} {};
+    Color() : ::Color{0, 0, 0, 255} { };
 
     /**
      * Returns a Color from HSV values
@@ -36,9 +36,9 @@ public:
     /**
      * Get Color structure from hexadecimal value
      */
-    explicit Color(unsigned int hexValue) : ::Color(::GetColor(hexValue)) {}
+    explicit Color(unsigned int hexValue) : ::Color(::GetColor(hexValue)) { }
 
-    Color(void* srcPtr, int format) : ::Color(::GetPixelColor(srcPtr, format)) {}
+    Color(void* srcPtr, int format) : ::Color(::GetPixelColor(srcPtr, format)) { }
 
     /**
      * Returns hexadecimal value for a Color
@@ -67,7 +67,7 @@ public:
     /**
      * Returns Color from normalized values [0..1]
      */
-    explicit Color(::Vector4 normalized) : Color(::ColorFromNormalized(normalized)) {}
+    explicit Color(::Vector4 normalized) : Color(::ColorFromNormalized(normalized)) { }
 
     /**
      * Returns HSV values for a Color
