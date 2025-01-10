@@ -213,11 +213,6 @@ public:
      */
     [[nodiscard]] Color AlphaBlend(::Color dst, ::Color tint) const { return ::ColorAlphaBlend(dst, *this, tint); }
 
-    /**
-     * The default color preprocessors wrapped as constexpr
-     * Use:
-     *     raylib::Color::RayWhite
-     */
     static constexpr Color LightGray = LIGHTGRAY;
     static constexpr Color Gray = GRAY;
     static constexpr Color DarkGray = DARKGRAY;
