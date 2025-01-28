@@ -212,33 +212,6 @@ public:
      * Returns src alpha-blended into dst color with tint
      */
     [[nodiscard]] Color AlphaBlend(::Color dst, ::Color tint) const { return ::ColorAlphaBlend(dst, *this, tint); }
-
-    static constexpr Color LightGray = LIGHTGRAY;
-    static constexpr Color Gray = GRAY;
-    static constexpr Color DarkGray = DARKGRAY;
-    static constexpr Color Yellow = YELLOW;
-    static constexpr Color Gold = GOLD;
-    static constexpr Color Orange = ORANGE;
-    static constexpr Color Pink = PINK;
-    static constexpr Color Red = RED;
-    static constexpr Color Maroon = MAROON;
-    static constexpr Color Green = GREEN;
-    static constexpr Color Lime = LIME;
-    static constexpr Color DarkGreen = DARKGREEN;
-    static constexpr Color SkyBlue = SKYBLUE;
-    static constexpr Color Blue = BLUE;
-    static constexpr Color DarkBlue = DARKBLUE;
-    static constexpr Color Purple = PURPLE;
-    static constexpr Color Violet = VIOLET;
-    static constexpr Color DarkPurple = DARKPURPLE;
-    static constexpr Color Beige = BEIGE;
-    static constexpr Color Brown = BROWN;
-    static constexpr Color DarkBrown = DARKBROWN;
-    static constexpr Color White = WHITE;
-    static constexpr Color Black = BLACK;
-    static constexpr Color Blank = BLANK;
-    static constexpr Color Magenta = MAGENTA;
-    static constexpr Color RayWhite = RAYWHITE;
 protected:
     void set(const ::Color& color) {
         r = color.r;
@@ -247,6 +220,33 @@ protected:
         a = color.a;
     }
 };
+
+    constexpr Color LightGray = LIGHTGRAY;
+    constexpr Color Gray = GRAY;
+    constexpr Color DarkGray = DARKGRAY;
+    constexpr Color Yellow = YELLOW;
+    constexpr Color Gold = GOLD;
+    constexpr Color Orange = ORANGE;
+    constexpr Color Pink = PINK;
+    constexpr Color Red = RED;
+    constexpr Color Maroon = MAROON;
+    constexpr Color Green = GREEN;
+    constexpr Color Lime = LIME;
+    constexpr Color DarkGreen = DARKGREEN;
+    constexpr Color SkyBlue = SKYBLUE;
+    constexpr Color Blue = BLUE;
+    constexpr Color DarkBlue = DARKBLUE;
+    constexpr Color Purple = PURPLE;
+    constexpr Color Violet = VIOLET;
+    constexpr Color DarkPurple = DARKPURPLE;
+    constexpr Color Beige = BEIGE;
+    constexpr Color Brown = BROWN;
+    constexpr Color DarkBrown = DARKBROWN;
+    constexpr Color White = WHITE;
+    constexpr Color Black = BLACK;
+    constexpr Color Blank = BLANK;
+    constexpr Color Magenta = MAGENTA;
+    constexpr Color RayWhite = RAYWHITE;
 
 } // namespace raylib
 
