@@ -40,6 +40,7 @@ public:
         if (data != nullptr) {
             ::UnloadFileData(data);
             data = nullptr;
+            bytesRead = 0;
         }
     }
 private:
