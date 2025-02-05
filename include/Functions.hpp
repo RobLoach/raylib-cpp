@@ -393,7 +393,7 @@ TextReplace(const std::string& text, const std::string& replace, const std::stri
  */
 [[maybe_unused]] RLCPPAPI std::vector<std::string> TextSplit(const std::string& text, char delimiter) {
     int count;
-    const char** split = ::TextSplit(text.c_str(), delimiter, &count);
+    const char* const* split = ::TextSplit(text.c_str(), delimiter, &count);
     return std::vector<std::string>(split, split + count);
 }
 
