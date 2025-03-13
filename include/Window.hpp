@@ -349,6 +349,11 @@ public:
      */
     static Vector2 GetPosition() { return ::GetWindowPosition(); }
 
+    /*
+     * Get current window monitor
+     */
+    static int GetMonitor() { return ::GetCurrentMonitor(); }
+
     /**
      * Get window scale DPI factor
      */
