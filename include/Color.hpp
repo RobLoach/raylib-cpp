@@ -13,15 +13,15 @@ namespace raylib {
  */
 class Color : public ::Color {
 public:
-    Color(const ::Color& color) : ::Color{color.r, color.g, color.b, color.a} {}
+    Color(const ::Color& color) : ::Color{color.r, color.g, color.b, color.a} { }
 
     Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha = 255)
-        : ::Color{red, green, blue, alpha} {};
+        : ::Color{red, green, blue, alpha} { };
 
     /**
      * Black.
      */
-    Color() : ::Color{0, 0, 0, 255} {};
+    Color() : ::Color{0, 0, 0, 255} { };
 
     /**
      * Returns a Color from HSV values
@@ -181,9 +181,7 @@ public:
 
     void DrawRectangleLines(::Rectangle rec, float lineThick) const { ::DrawRectangleLinesEx(rec, lineThick, *this); }
 
-    bool IsEqual(::Color color) {
-        return ::ColorIsEqual(*this, color);
-    }
+    bool IsEqual(::Color color) { return ::ColorIsEqual(*this, color); }
 
     bool operator==(const ::Color& other) const { return ::ColorIsEqual(*this, other); }
     bool operator!=(const ::Color& other) const { return !::ColorIsEqual(*this, other); }
@@ -208,41 +206,12 @@ public:
      */
     [[nodiscard]] Color Alpha(float alpha) const { return ::ColorAlpha(*this, alpha); }
 
-    Color Lerp(::Color color2, float factor) {
-        return ::ColorLerp(*this, color2, factor);
-    }
+    Color Lerp(::Color color2, float factor) { return ::ColorLerp(*this, color2, factor); }
 
     /**
      * Returns src alpha-blended into dst color with tint
      */
     [[nodiscard]] Color AlphaBlend(::Color dst, ::Color tint) const { return ::ColorAlphaBlend(dst, *this, tint); }
-
-    static Color LightGray() { return LIGHTGRAY; }
-    static Color Gray() { return GRAY; }
-    static Color DarkGray() { return DARKGRAY; }
-    static Color Yellow() { return YELLOW; }
-    static Color Gold() { return GOLD; }
-    static Color Orange() { return ORANGE; }
-    static Color Pink() { return PINK; }
-    static Color Red() { return RED; }
-    static Color Maroon() { return MAROON; }
-    static Color Green() { return GREEN; }
-    static Color Lime() { return LIME; }
-    static Color DarkGreen() { return DARKGREEN; }
-    static Color SkyBlue() { return SKYBLUE; }
-    static Color Blue() { return BLUE; }
-    static Color DarkBlue() { return DARKBLUE; }
-    static Color Purple() { return PURPLE; }
-    static Color Violet() { return VIOLET; }
-    static Color DarkPurple() { return DARKPURPLE; }
-    static Color Beige() { return BEIGE; }
-    static Color Brown() { return BROWN; }
-    static Color DarkBrown() { return DARKBROWN; }
-    static Color White() { return WHITE; }
-    static Color Black() { return BLACK; }
-    static Color Blank() { return BLANK; }
-    static Color Magenta() { return MAGENTA; }
-    static Color RayWhite() { return RAYWHITE; }
 protected:
     void set(const ::Color& color) {
         r = color.r;
@@ -251,6 +220,33 @@ protected:
         a = color.a;
     }
 };
+
+    constexpr Color LightGray = LIGHTGRAY;
+    constexpr Color Gray = GRAY;
+    constexpr Color DarkGray = DARKGRAY;
+    constexpr Color Yellow = YELLOW;
+    constexpr Color Gold = GOLD;
+    constexpr Color Orange = ORANGE;
+    constexpr Color Pink = PINK;
+    constexpr Color Red = RED;
+    constexpr Color Maroon = MAROON;
+    constexpr Color Green = GREEN;
+    constexpr Color Lime = LIME;
+    constexpr Color DarkGreen = DARKGREEN;
+    constexpr Color SkyBlue = SKYBLUE;
+    constexpr Color Blue = BLUE;
+    constexpr Color DarkBlue = DARKBLUE;
+    constexpr Color Purple = PURPLE;
+    constexpr Color Violet = VIOLET;
+    constexpr Color DarkPurple = DARKPURPLE;
+    constexpr Color Beige = BEIGE;
+    constexpr Color Brown = BROWN;
+    constexpr Color DarkBrown = DARKBROWN;
+    constexpr Color White = WHITE;
+    constexpr Color Black = BLACK;
+    constexpr Color Blank = BLANK;
+    constexpr Color Magenta = MAGENTA;
+    constexpr Color RayWhite = RAYWHITE;
 
 } // namespace raylib
 
