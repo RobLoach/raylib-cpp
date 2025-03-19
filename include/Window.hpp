@@ -423,14 +423,15 @@ public:
      * @return True of false depending if we're within the BeginDrawing() / EndDrawing() scope.
      */
     bool Drawing() {
-        if (m_drawing == false) {
-            BeginDrawing();
-            m_drawing = true;
-        }
-        else {
+        if (m_drawing) {
             EndDrawing();
             m_drawing = false;
         }
+        else {
+            BeginDrawing();
+            m_drawing = true;
+        }
+
         return m_drawing;
     }
 
