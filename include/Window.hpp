@@ -410,6 +410,32 @@ public:
      * @see ::SetConfigFlags
      */
     static void SetConfigFlags(unsigned int flags) { ::SetConfigFlags(flags); }
+
+    /**
+     * Used to handle the BeginDrawing() and EndDrawing() calls.
+     *
+     * @code
+     * while (window.Drawing()) {
+     *     DrawRectangle();
+     * }
+     * @endcode
+     *
+     * @return True of false depending if we're within the BeginDrawing() / EndDrawing() scope.
+     */
+    bool Drawing() {
+        if (m_drawing == false) {
+            BeginDrawing();
+            m_drawing = true;
+        }
+        else {
+            EndDrawing();
+            m_drawing = false;
+        }
+        return m_drawing;
+    }
+
+    protected:
+        bool m_drawing = false;
 };
 } // namespace raylib
 

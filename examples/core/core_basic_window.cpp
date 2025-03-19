@@ -41,12 +41,10 @@ int main() {
 
         // Draw
         //----------------------------------------------------------------------------------
-        BeginDrawing();
-        {
+        while (window.Drawing()) {
             window.ClearBackground(RAYWHITE);
             textColor.DrawText("Congrats! You created your first window!", 190, 200, 20);
         }
-        EndDrawing();
         //----------------------------------------------------------------------------------
     }
 
