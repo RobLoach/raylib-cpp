@@ -38,6 +38,21 @@ int main(int argc, char* argv[]) {
         raylib::Vector2 doublesize = size * 2.0f;
         AssertEqual(size.x, 50);
         AssertEqual(doublesize.x, 100);
+
+        const raylib::Vector2 zero2d;
+        AssertEqual(zero2d.x, 0);
+        AssertEqual(zero2d.y, 0);
+
+        const raylib::Vector3 zero3d;
+        AssertEqual(zero3d.x, 0);
+        AssertEqual(zero3d.y, 0);
+        AssertEqual(zero3d.z, 0);
+
+        const raylib::Vector4 zero4d;
+        AssertEqual(zero4d.x, 0);
+        AssertEqual(zero4d.y, 0);
+        AssertEqual(zero4d.z, 0);
+        AssertEqual(zero4d.w, 0);
     }
 
     // Color
