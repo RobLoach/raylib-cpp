@@ -18,6 +18,20 @@ option(BUILD_RAYLIB_CPP_EXAMPLES "Examples" ${RAYLIB_CPP_IS_MAIN})
 # Include Directory
 add_subdirectory(include)
 
+# Modules
+option(BUILD_RAYLIB_CPP_MODULES "Build C++ modules support" OFF)
+
+if(BUILD_RAYLIB_CPP_MODULES)
+    if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.28)
+        message(STATUS "Building raylib-cpp C++ modules (CMake ${CMAKE_VERSION} supports modules)")
+        add_subdirectory(modules)
+    else()
+        message(WARNING "Skipping raylib-cpp C++ modules (requires CMake 3.28+, found ${CMAKE_VERSION})")
+    endif()
+else()
+    message(STATUS "raylib-cpp C++ modules support is disabled. Enable with -BUILD_RAYLIB_CPP_MODULES=ON")
+endif()
+
 # Examples
 if(BUILD_RAYLIB_CPP_EXAMPLES)
     add_subdirectory(examples)
