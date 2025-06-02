@@ -27,14 +27,15 @@ public:
      * @param height The height of the window.
      * @param title The desired title of the window.
      * @param flags The ConfigFlags to set prior to initializing the window. See SetConfigFlags for more details.
+     * @param logLevel The the current threshold (minimum) log level
      *
      * @see ::SetConfigFlags()
      * @see ConfigFlags
      *
      * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    Window(int width, int height, const std::string& title = "raylib", unsigned int flags = 0) {
-        Init(width, height, title, flags);
+    Window(int width, int height, const std::string& title = "raylib", unsigned int flags = 0, TraceLogLevel logLevel = LOG_ALL) {
+        Init(width, height, title, flags, logLevel);
     }
 
     /**
@@ -55,10 +56,11 @@ public:
      *
      * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    static void Init(int width = 800, int height = 450, const std::string& title = "raylib", unsigned int flags = 0) {
+    static void Init(int width = 800, int height = 450, const std::string& title = "raylib", unsigned int flags = 0, TraceLogLevel logLevel = LOG_ALL) {
         if (flags != 0) {
             ::SetConfigFlags(flags);
         }
+        ::SetTraceLogLevel(logLevel);
         ::InitWindow(width, height, title.c_str());
         if (!::IsWindowReady()) {
             throw RaylibException("Failed to create Window");
@@ -88,6 +90,21 @@ public:
      * Check if cursor is on the current screen
      */
     static bool IsCursorOnScreen()  { return ::IsCursorOnScreen(); }
+
+    /**
+     * Check if cursor is not visible
+     */
+    static bool IsCursorHidden()  { return ::IsCursorHidden(); }
+
+    /**
+     * Hides cursor
+     */
+    static void HideCursor()  { ::HideCursor(); }
+
+    /**
+     * Shows cursor
+     */
+    static void ShowCursor()  { ::ShowCursor(); }
 
     /**
      * Check if window is currently fullscreen
