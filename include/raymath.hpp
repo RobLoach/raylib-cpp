@@ -8,8 +8,10 @@
 extern "C" {
 #endif
 #ifndef RAYLIB_CPP_NO_MATH
+#ifndef BUILD_RAYLIB_CPP_MODULES
 #ifndef RAYMATH_STATIC_INLINE
 #define RAYMATH_STATIC_INLINE
+#endif
 #endif
 #ifdef __GNUC__
 #pragma GCC diagnostic push // These throw a warnings on visual studio, need to check if __GNUC__ is defined to use it.

@@ -253,6 +253,24 @@ raylib::Vector2 direction(50, 50);
 raylib::Vector2 newDirection = direction.Rotate(30);
 ```
 
+### Modules
+
+If using C++20 or later, by passing `BUILD_RAYLIB_CPP_MODULES` to the build system the library may be imported as a module by using `import raylib;`.
+
+```cpp
+import raylib;
+
+int main() {
+    int screenWidth = 800;
+    int screenHeight = 450;
+
+    raylib::Window window(screenWidth, screenHeight, "raylib-cpp - basic window");
+    raylib::Texture logo("raylib_logo.png");
+
+    // ...
+}
+```
+
 ## Getting Started
 
 *raylib-cpp* is a header-only library. This means in order to use it, you must link your project to [raylib](https://www.raylib.com/), and then include [`raylib-cpp.hpp`](raylib-cpp/include/raylib-cpp.hpp).
