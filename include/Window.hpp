@@ -92,6 +92,21 @@ public:
     static bool IsCursorOnScreen()  { return ::IsCursorOnScreen(); }
 
     /**
+     * Check if cursor is not visible
+     */
+    static bool IsCursorHidden()  { return ::IsCursorHidden(); }
+
+    /**
+     * Hides cursor
+     */
+    static void HideCursor()  { ::HideCursor(); }
+
+    /**
+     * Shows cursor
+     */
+    static void ShowCursor()  { ::ShowCursor(); }
+
+    /**
      * Check if window is currently fullscreen
      */
     static bool IsFullscreen()  { return ::IsWindowFullscreen(); }
