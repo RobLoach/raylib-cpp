@@ -8,7 +8,7 @@ module;
 #define BUILD_RAYLIB_CPP_MODULES
 #define RLCPPAPI
 #define RAYMATH_IMPLEMENTATION
-#include "../include/raylib-cpp.hpp"
+#include "raylib-cpp.hpp"
 
 #undef LIGHTGRAY
 #undef GRAY
@@ -86,6 +86,29 @@ export namespace raylib {
     using raylib::VrStereoConfig;
     using raylib::Wave;
     using raylib::Window;
+
+    // Enums
+    using ::ConfigFlags;
+    using ::TraceLogLevel;
+    using ::KeyboardKey;
+    using ::MouseButton;
+    using ::MouseCursor;
+    using ::GamepadButton;
+    using ::GamepadAxis;
+    using ::MaterialMapIndex;
+    using ::ShaderLocationIndex;
+    using ::ShaderUniformDataType;
+    using ::ShaderAttributeDataType;
+    using ::PixelFormat;
+    using ::TextureFilter;
+    using ::TextureWrap;
+    using ::CubemapLayout;
+    using ::FontType;
+    using ::BlendMode;
+    using ::Gesture;
+    using ::CameraMode;
+    using ::CameraProjection;
+    using ::NPatchLayout;
 
     // From Functions.hpp
     using raylib::InitWindow;
