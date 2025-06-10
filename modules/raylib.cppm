@@ -8,7 +8,7 @@ module;
 #define BUILD_RAYLIB_CPP_MODULES
 #define RLCPPAPI
 #define RAYMATH_IMPLEMENTATION
-#include "raylib-cpp.hpp"
+#include "../include/raylib-cpp.hpp"
 
 #undef LIGHTGRAY
 #undef GRAY
