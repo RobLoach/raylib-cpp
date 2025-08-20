@@ -260,12 +260,15 @@ If using C++20 or later, by passing `BUILD_RAYLIB_CPP_MODULES` to the build syst
 ```cpp
 import raylib;
 
+using raylib::Texture;
+using raylib::Window;
+
 int main() {
     int screenWidth = 800;
     int screenHeight = 450;
 
-    raylib::Window window(screenWidth, screenHeight, "raylib-cpp - basic window");
-    raylib::Texture logo("raylib_logo.png");
+    Window window(screenWidth, screenHeight, "raylib-cpp - basic window");
+    Texture logo("raylib_logo.png");
 
     // ...
 }
