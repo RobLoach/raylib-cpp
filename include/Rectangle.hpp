@@ -13,11 +13,8 @@ class Rectangle : public ::Rectangle {
 public:
     Rectangle(const ::Rectangle& rect) : ::Rectangle{rect.x, rect.y, rect.width, rect.height} {}
 
-    Rectangle(float x, float y, float width, float height) : ::Rectangle{x, y, width, height} {}
-    Rectangle(float x, float y, float width) : ::Rectangle{x, y, width, 0} {}
-    Rectangle(float x, float y) : ::Rectangle{x, y, 0, 0} {}
-    Rectangle(float x) : ::Rectangle{x, 0, 0, 0} {}
-    Rectangle() : ::Rectangle{0, 0, 0, 0} {}
+    Rectangle(float x = 0, float y = 0, float width = 0, float height = 0)
+            : ::Rectangle{x, y, width, height} {}
 
     Rectangle(::Vector2 position, ::Vector2 size) : ::Rectangle{position.x, position.y, size.x, size.y} {}
     Rectangle(::Vector2 size) : ::Rectangle{0, 0, size.x, size.y} {}
