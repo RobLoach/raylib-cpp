@@ -9,6 +9,11 @@
 
 namespace raylib {
 /**
+ * Allows to use the enum through the raylib namespace
+ */
+using ConfigFlags = ::ConfigFlags;
+
+/**
  * Window and Graphics Device Functions.
  */
 class Window {
