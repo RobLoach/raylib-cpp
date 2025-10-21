@@ -294,7 +294,7 @@ public:
     }
 
     TextureUnmanaged& SetMaterial(const ::Material& material, int mapType = MATERIAL_MAP_NORMAL) {
-        ::SetMaterialTexture((::Material*)(&material), mapType, *this);
+        ::SetMaterialTexture(const_cast<::Material*>(&material), mapType, *this);
         return *this;
     }
 
