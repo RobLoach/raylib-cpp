@@ -12,6 +12,8 @@ int main(int argc, char* argv[]) {
     if (argc > 0) {
         path = GetDirectoryPath(argv[0]);
     }
+    
+    AssertEqual(raylib::Window::IsReady(), false);
 
     // Vector
     {
@@ -25,7 +27,10 @@ int main(int argc, char* argv[]) {
         raylib::Vector2 speed(10, 10);
         position += speed;
         AssertEqual(position.x, 310);
-        AssertEqual(raylib::Window::IsReady(), false);
+        AssertEqual(position.y, 160);
+        position -= speed;
+        AssertEqual(position.x, 300);
+        AssertEqual(position.x, 150);
 
         raylib::Vector2 size{50, 100};
         raylib::Vector2 halfsize = size / 2.0f;
