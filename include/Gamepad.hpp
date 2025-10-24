@@ -12,7 +12,7 @@ namespace raylib {
  */
 class Gamepad {
 public:
-    Gamepad(int gamepadNumber = 0) { set(gamepadNumber); }
+    Gamepad(int gamepadNumber = 0) : number(gamepadNumber) {};
     int number;
 
     GETTERSETTER(int, Number, number)
