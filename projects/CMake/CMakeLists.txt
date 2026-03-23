@@ -18,7 +18,7 @@ endif()
 find_package(raylib_cpp QUIET)
 if (NOT raylib_cpp_FOUND)
     if (NOT DEFINED RAYLIB_CPP_VERSION)
-        set(RAYLIB_CPP_VERSION next)
+        set(RAYLIB_CPP_VERSION v5.5.1)
     endif()
     include(FetchContent)
     FetchContent_Declare(
