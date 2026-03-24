@@ -136,9 +136,9 @@ public:
     }
 
     /**
-     * Update model animation pose
+     * Blend two model animation poses
      */
-    Model& UpdateAnimationsEx(const ::ModelAnimation& animA, float frameA, const ::ModelAnimation& animB, float frameB, float blend) {
+    Model& BlendAnimation(const ::ModelAnimation& animA, float frameA, const ::ModelAnimation& animB, float frameB, float blend) {
         ::UpdateModelAnimationEx(*this, animA, frameA, animB, frameB, blend);
         return *this;
     }

@@ -26,8 +26,8 @@ public:
         other.keyframePoses = nullptr;
     }
 
-    // TODO: Implement a way to unload all animations at once, as the current Unload() only unloads one animation.
-    ~ModelAnimation() { Unload(1); }
+    // Unloads animation data using populated animCount field, which is set by Load() method.
+    ~ModelAnimation() { Unload(); }
 
     /**
      * Load model animations from file
@@ -35,6 +35,7 @@ public:
     static std::vector<ModelAnimation> Load(const std::string& fileName) {
         int count = 0;
         ::ModelAnimation* modelAnimations = ::LoadModelAnimations(fileName.c_str(), &count);
+
         std::vector<ModelAnimation> mats(modelAnimations, modelAnimations + count);
 
         RL_FREE(modelAnimations);
@@ -58,7 +59,7 @@ public:
             return *this;
         }
 
-        Unload(1);
+        Unload();
         set(other);
 
         other.boneCount = 0;
@@ -71,23 +72,30 @@ public:
     /**
      * Unload animation data
      */
-    void Unload(int animCount) { ::UnloadModelAnimations(this, animCount); }
+    void Unload() {
+        ::UnloadModelAnimations(this, 1); 
+    }
+
+    static void Unload(ModelAnimation *modelAnimation, int count) {
+        ::UnloadModelAnimations(modelAnimation, count); 
+    }
 
     /**
      * Update model animation pose
      */
-    ModelAnimation& Update(const ::Model& model, int frame) {
+    ModelAnimation& Update(const ::Model& model, float frame) {
         ::UpdateModelAnimation(model, *this, frame);
         return *this;
     }
 
     /**
-     * Update model animation mesh bone matrices (GPU skinning)
+     * Blend two animation poses
      */
-    ModelAnimation& UpdateBones(const ::Model& model, int frame) {
-        ::UpdateModelAnimation(model, *this, frame);
+    ModelAnimation& Blend(const ::Model& model, float frameA, const ::ModelAnimation& animB, float frameB, float blend) {
+        ::UpdateModelAnimationEx(model, *this, frameA, animB, frameB, blend);
         return *this;
     }
+
 
     /**
      * Check model animation skeleton match
