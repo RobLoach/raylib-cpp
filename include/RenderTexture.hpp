@@ -48,6 +48,7 @@ public:
      * Get the color buffer attachment texture.
      */
     TextureUnmanaged GetTexture() { return texture; }
+    [[nodiscard]] TextureUnmanaged GetTexture() const { return texture; }
 
     void SetTexture(const ::Texture& newTexture) { texture = newTexture; }
 
