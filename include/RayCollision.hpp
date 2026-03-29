@@ -12,7 +12,7 @@ class RayCollision : public ::RayCollision {
 public:
     RayCollision(const ::RayCollision& ray) : ::RayCollision(ray) { }
 
-    RayCollision(bool hit, float distance, ::Vector3 point, ::Vector3 normal)
+    constexpr RayCollision(bool hit, float distance, ::Vector3 point, ::Vector3 normal)
         : ::RayCollision{hit, distance, point, normal} {
         // Nothing.
     }

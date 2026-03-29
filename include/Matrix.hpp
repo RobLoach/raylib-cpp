@@ -15,12 +15,12 @@ namespace raylib {
  */
 class Matrix : public ::Matrix {
 public:
-    Matrix(const ::Matrix& mat)
+    constexpr Matrix(const ::Matrix& mat)
         : ::Matrix(mat) {
         // Nothing.
     }
 
-    Matrix(
+    constexpr Matrix(
         float m0 = 0,
         float m4 = 0,
         float m8 = 0,
@@ -72,14 +72,14 @@ public:
         return *this;
     }
 
-    bool operator==(const ::Matrix& other) {
+    constexpr bool operator==(const ::Matrix& other) {
         return m0 == other.m0 && m1 == other.m1 && m2 == other.m2 && m3 == other.m3 && m4 == other.m4 &&
                m5 == other.m5 && m6 == other.m6 && m7 == other.m7 && m8 == other.m8 && m9 == other.m9 &&
                m10 == other.m10 && m11 == other.m11 && m12 == other.m12 && m13 == other.m13 && m14 == other.m14 &&
                m15 == other.m15;
     }
 
-    bool operator!=(const ::Matrix& other) { return !(*this == other); }
+    constexpr bool operator!=(const ::Matrix& other) { return !(*this == other); }
 
 #ifndef RAYLIB_CPP_NO_MATH
     /**

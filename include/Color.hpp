@@ -13,15 +13,15 @@ namespace raylib {
  */
 class Color : public ::Color {
 public:
-    Color(const ::Color& color) : ::Color{color.r, color.g, color.b, color.a} {}
+    constexpr Color(const ::Color& color) : ::Color{color.r, color.g, color.b, color.a} {}
 
-    Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha = 255)
+    constexpr Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha = 255)
         : ::Color{red, green, blue, alpha} {};
 
     /**
      * Black.
      */
-    Color() : ::Color{0, 0, 0, 255} {};
+    constexpr Color() : ::Color{0, 0, 0, 255} {};
 
     /**
      * Returns a Color from HSV values

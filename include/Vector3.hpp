@@ -17,12 +17,12 @@ namespace raylib {
  */
 class Vector3 : public ::Vector3 {
 public:
-    Vector3(const ::Vector3& vec) : ::Vector3{vec.x, vec.y, vec.z} {}
+    constexpr Vector3(const ::Vector3& vec) : ::Vector3{vec.x, vec.y, vec.z} {}
 
-    Vector3(float x, float y, float z) : ::Vector3{x, y, z} {}
-    Vector3(float x, float y) : ::Vector3{x, y, 0} {}
-    Vector3(float x) : ::Vector3{x, 0, 0} {}
-    Vector3() : ::Vector3{0, 0, 0} {}
+    constexpr Vector3(float x, float y, float z) : ::Vector3{x, y, z} {}
+    constexpr Vector3(float x, float y) : ::Vector3{x, y, 0} {}
+    constexpr Vector3(float x) : ::Vector3{x, 0, 0} {}
+    constexpr Vector3() : ::Vector3{0, 0, 0} {}
 
     Vector3(::Color color) { set(ColorToHSV(color)); }
 
@@ -35,9 +35,9 @@ public:
         return *this;
     }
 
-    bool operator==(const ::Vector3& other) const { return x == other.x && y == other.y && z == other.z; }
+    constexpr bool operator==(const ::Vector3& other) const { return x == other.x && y == other.y && z == other.z; }
 
-    bool operator!=(const ::Vector3& other) const { return !(*this == other); }
+    constexpr bool operator!=(const ::Vector3& other) const { return !(*this == other); }
 
     [[nodiscard]] std::string ToString() const { return TextFormat("Vector3(%f, %f, %f)", x, y, z); }
 
