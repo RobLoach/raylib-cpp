@@ -17,11 +17,11 @@ namespace raylib {
  */
 class Vector2 : public ::Vector2 {
 public:
-    Vector2(const ::Vector2& vec) : ::Vector2{vec.x, vec.y} {}
+    constexpr Vector2(const ::Vector2& vec) : ::Vector2{vec.x, vec.y} {}
 
-    Vector2(float x, float y) : ::Vector2{x, y} {}
-    Vector2(float x) : ::Vector2{x, 0} {}
-    Vector2() : ::Vector2{0, 0} {}
+    constexpr Vector2(float x, float y) : ::Vector2{x, y} {}
+    constexpr Vector2(float x) : ::Vector2{x, 0} {}
+    constexpr Vector2() : ::Vector2{0, 0} {}
 
     GETTERSETTER(float, X, x)
     GETTERSETTER(float, Y, y)
@@ -37,12 +37,12 @@ public:
     /**
      * Determine whether or not the vectors are equal.
      */
-    bool operator==(const ::Vector2& other) const { return x == other.x && y == other.y; }
+    constexpr bool operator==(const ::Vector2& other) const { return x == other.x && y == other.y; }
 
     /**
      * Determines if the vectors are not equal.
      */
-    bool operator!=(const ::Vector2& other) const { return !(*this == other); }
+    constexpr bool operator!=(const ::Vector2& other) const { return !(*this == other); }
 
     [[nodiscard]] std::string ToString() const { return TextFormat("Vector2(%f, %f)", x, y); }
 

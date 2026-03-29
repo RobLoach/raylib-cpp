@@ -13,7 +13,7 @@ public:
     /*
      * Copy a bounding box from another bounding box.
      */
-    BoundingBox(const ::BoundingBox& box) : ::BoundingBox{box.min, box.max} {
+    constexpr BoundingBox(const ::BoundingBox& box) : ::BoundingBox{box.min, box.max} {
         // Nothing.
     }
 
@@ -22,8 +22,8 @@ public:
      */
     BoundingBox(const ::Mesh& mesh) { set(::GetMeshBoundingBox(mesh)); }
 
-    BoundingBox(::Vector3 minMax = ::Vector3{0.0f, 0.0f, 0.0f}) : ::BoundingBox{minMax, minMax} {}
-    BoundingBox(::Vector3 min, ::Vector3 max) : ::BoundingBox{min, max} {}
+    constexpr BoundingBox(::Vector3 minMax = ::Vector3{0.0f, 0.0f, 0.0f}) : ::BoundingBox{minMax, minMax} {}
+    constexpr BoundingBox(::Vector3 min, ::Vector3 max) : ::BoundingBox{min, max} {}
 
     GETTERSETTER(::Vector3, Min, min)
     GETTERSETTER(::Vector3, Max, max)
