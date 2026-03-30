@@ -120,8 +120,12 @@ public:
 
     [[nodiscard]] Matrix Multiply(const ::Matrix& right) const { return ::MatrixMultiply(*this, right); }
 
+    [[nodiscard]] Matrix Multiply(float value) const { return ::MatrixMultiplyValue(*this, value); }
+
     Matrix operator*(const ::Matrix& matrix) { return ::MatrixMultiply(*this, matrix); }
 
+    Matrix operator*(float value) { return ::MatrixMultiplyValue(*this, value); }
+    
     static Matrix Frustum(double left, double right, double bottom, double top, double near, double far) {
         return ::MatrixFrustum(left, right, bottom, top, near, far);
     }
