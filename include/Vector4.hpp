@@ -18,14 +18,14 @@ namespace raylib {
  */
 class Vector4 : public ::Vector4 {
 public:
-    Vector4(const ::Vector4& vec) : ::Vector4{vec.x, vec.y, vec.z, vec.w} {}
+    constexpr Vector4(const ::Vector4& vec) : ::Vector4{vec.x, vec.y, vec.z, vec.w} {}
 
-    Vector4(float x, float y, float z, float w) : ::Vector4{x, y, z, w} {}
-    Vector4(float x, float y, float z) : ::Vector4{x, y, z, 0} {}
-    Vector4(float x, float y) : ::Vector4{x, y, 0, 0} {}
-    Vector4(float x) : ::Vector4{x, 0, 0, 0} {}
-    Vector4() : ::Vector4{0, 0, 0, 0} {}
-    Vector4(::Rectangle rectangle) : ::Vector4{rectangle.x, rectangle.y, rectangle.width, rectangle.height} {}
+    constexpr Vector4(float x, float y, float z, float w) : ::Vector4{x, y, z, w} {}
+    constexpr Vector4(float x, float y, float z) : ::Vector4{x, y, z, 0} {}
+    constexpr Vector4(float x, float y) : ::Vector4{x, y, 0, 0} {}
+    constexpr Vector4(float x) : ::Vector4{x, 0, 0, 0} {}
+    constexpr Vector4() : ::Vector4{0, 0, 0, 0} {}
+    constexpr Vector4(::Rectangle rectangle) : ::Vector4{rectangle.x, rectangle.y, rectangle.width, rectangle.height} {}
 
     Vector4(::Color color) { set(ColorNormalize(color)); }
 
@@ -39,15 +39,15 @@ public:
         return *this;
     }
 
-    bool operator==(const ::Vector4& other) const {
+    constexpr bool operator==(const ::Vector4& other) const {
         return x == other.x && y == other.y && z == other.z && w == other.w;
     }
 
-    bool operator!=(const ::Vector4& other) const { return !(*this == other); }
+    constexpr bool operator!=(const ::Vector4& other) const { return !(*this == other); }
 
-    [[nodiscard]] ::Rectangle ToRectangle() const { return {x, y, z, w}; }
+    [[nodiscard]] constexpr ::Rectangle ToRectangle() const { return {x, y, z, w}; }
 
-    operator ::Rectangle() const { return {x, y, z, w}; }
+    constexpr operator ::Rectangle() const { return {x, y, z, w}; }
 
     [[nodiscard]] std::string ToString() const { return TextFormat("Vector4(%f, %f, %f, %f)", x, y, z, w); }
 

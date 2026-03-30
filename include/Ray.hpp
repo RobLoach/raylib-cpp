@@ -13,7 +13,7 @@ class Ray : public ::Ray {
 public:
     Ray(const ::Ray& ray) { set(ray); }
 
-    Ray(::Vector3 position = {0.0f, 0.0f, 0.0f}, ::Vector3 direction = {0.0f, 0.0f, 0.0f})
+    constexpr Ray(::Vector3 position = {0.0f, 0.0f, 0.0f}, ::Vector3 direction = {0.0f, 0.0f, 0.0f})
         : ::Ray{position, direction} {
         // Nothing.
     }
