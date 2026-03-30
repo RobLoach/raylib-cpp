@@ -187,20 +187,6 @@ public:
     }
 
     /**
-     * Draw a model as points
-     */
-    void DrawPoints(::Vector3 position, float scale = 1.0f, ::Color tint = {255, 255, 255, 255}) {
-        ::DrawModelPoints(*this, position, scale, tint);
-    }
-
-    /**
-     * Draw a model as points
-     */
-    void DrawPoints(::Vector3 position, ::Vector3 rotationAxis, float rotationAngle = 0.0f, ::Vector3 scale = {1.0f, 1.0f, 1.0f}, ::Color tint = {255, 255, 255, 255}) {
-        ::DrawModelPointsEx(*this, position, rotationAxis, rotationAngle, scale, tint);
-    }
-
-    /**
      * Compute model bounding box limits (considers all meshes)
      */
     [[nodiscard]] BoundingBox GetBoundingBox() const { return ::GetModelBoundingBox(*this); }
