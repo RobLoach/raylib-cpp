@@ -22,9 +22,9 @@ int main() {
     {
         BeginDrawing();
 
-        window.ClearBackground(RAYWHITE);
+        window.ClearBackground(raylib::Color::RayWhite());
 
-        DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+        DrawText("Congrats! You created your first window!", 190, 200, 20, raylib::Color::LightGray());
 
         // Object methods.
         logo.Draw(
@@ -69,7 +69,7 @@ DrawPixelV(position, PURPLE);
 
 // raylib-cpp
 raylib::Vector2 position(50, 50);
-position.DrawPixel(PURPLE);
+position.DrawPixel(raylib::Color::Purple());
 ```
 
 ### Method Names
@@ -81,7 +81,7 @@ If a method's name contains an object's name, it is removed from its name to sho
 DrawTexture(texture, 50, 50, WHITE);
 
 // raylib-cpp
-texture.Draw(50, 50, WHITE);
+texture.Draw(50, 50, raylib::Color::White());
 ```
 
 ### Optional Parameters
@@ -93,7 +93,7 @@ Many methods have optional parameters with sane defaults.
 DrawTexture(texture, 50, 50, WHITE);
 
 // raylib-cpp
-texture.Draw(50, 50); // WHITE is provided as the default tint.
+texture.Draw(50, 50); // raylib::Color::White() is provided as the default tint.
 ```
 
 ### Object Destructors
