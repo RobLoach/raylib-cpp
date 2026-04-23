@@ -365,12 +365,9 @@ LoadFontEx(const std::string& fileName, int fontSize, int* fontChars, int charsC
  */
 [[maybe_unused]] RLCPPAPI std::string
 TextReplace(const std::string& text, const std::string& replace, const std::string& by) {
-    const char* input = text.c_str();
-    char* output = ::TextReplace(const_cast<char*>(input), replace.c_str(), by.c_str());
+    const char* output = ::TextReplace(text.c_str(), replace.c_str(), by.c_str());
     if (output != NULL) {
-        std::string stringOutput(output);
-        free(output);
-        return stringOutput;
+        return std::string(output);
     }
     return "";
 }
@@ -379,11 +376,9 @@ TextReplace(const std::string& text, const std::string& replace, const std::stri
  * Insert text in a position
  */
 [[maybe_unused]] RLCPPAPI std::string TextInsert(const std::string& text, const std::string& insert, int position) {
-    char* output = ::TextInsert(text.c_str(), insert.c_str(), position);
+    const char* output = ::TextInsert(text.c_str(), insert.c_str(), position);
     if (output != NULL) {
-        std::string stringOutput(output);
-        free(output);
-        return stringOutput;
+        return std::string(output);
     }
     return "";
 }

@@ -62,9 +62,8 @@ public:
         other.skeleton.boneCount = 0;
         other.skeleton.bones = nullptr;
         other.skeleton.bindPose = nullptr;
-
-        ModelAnimPose currentPose;
-        Matrix *boneMatrices;
+        other.currentPose = nullptr;
+        other.boneMatrices = nullptr;
     }
 
     GETTERSETTER(::Matrix, Transform, transform)
