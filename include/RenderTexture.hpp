@@ -60,6 +60,7 @@ public:
     void SetDepth(const ::Texture& newDepth) { depth = newDepth; }
 
     RenderTexture& operator=(const ::RenderTexture& texture) {
+        Unload();
         set(texture);
         return *this;
     }
@@ -83,7 +84,12 @@ public:
 
     ~RenderTexture() { Unload(); }
 
-    void Unload() { UnloadRenderTexture(*this); }
+    void Unload() {
+        if (IsValid()) {
+            ::UnloadRenderTexture(*this);
+            id = 0;
+        }
+    }
 
     /**
      * Initializes render texture for drawing

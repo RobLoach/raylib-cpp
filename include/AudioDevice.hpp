@@ -24,6 +24,9 @@ public:
         }
     }
 
+    AudioDevice(const AudioDevice&) = delete;
+    AudioDevice& operator=(const AudioDevice&) = delete;
+
     /**
      * Close the audio device and context.
      */

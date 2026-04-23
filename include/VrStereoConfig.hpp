@@ -12,6 +12,11 @@ class VrStereoConfig : public ::VrStereoConfig {
 public:
     VrStereoConfig(const ::VrDeviceInfo& info) { Load(info); }
 
+    VrStereoConfig(const VrStereoConfig&) = delete;
+    VrStereoConfig& operator=(const VrStereoConfig&) = delete;
+    VrStereoConfig(VrStereoConfig&&) = default;
+    VrStereoConfig& operator=(VrStereoConfig&&) = default;
+
     /**
      * Load VR stereo config for VR simulator device parameters
      */

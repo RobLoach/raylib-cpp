@@ -61,6 +61,7 @@ public:
     GETTER(void*, CtxData, ctxData)
 
     Music& operator=(const ::Music& music) {
+        Unload();
         set(music);
         return *this;
     }
@@ -87,7 +88,13 @@ public:
     /**
      * Unload music stream
      */
-    void Unload() { ::UnloadMusicStream(*this); }
+    void Unload() {
+        if (IsValid()) {
+            ::UnloadMusicStream(*this);
+            ctxData = nullptr;
+            ctxType = 0;
+        }
+    }
 
     /**
      * Start music playing
