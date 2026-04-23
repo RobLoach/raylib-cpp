@@ -198,7 +198,7 @@ for (int i = 0; i < files.count; i++) {
 UnloadDirectoryFiles(files);
 
 // raylib-cpp
-std::vector<std::string> files = raylib::GetDirectoryFiles(".");
+std::vector<std::string> files = raylib::LoadDirectoryFiles(".");
 TraceLog(LOG_INFO, "Count: %i", files.size());
 for (auto& file : files) {
     TraceLog(LOG_INFO, "File: %s", file.c_str());
