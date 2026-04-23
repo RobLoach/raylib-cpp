@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['spacing_1057',['spacing',['../classraylib_1_1_text.html#a489d962f442b9d4f0bc9a2927f4515c0',1,'raylib::Text']]]
+  ['m_5fdrawing_0',['m_drawing',['../classraylib_1_1_window.html#a2692b889345aa5f21ffe4a1e6acb8690',1,'raylib::Window']]]
 ];
