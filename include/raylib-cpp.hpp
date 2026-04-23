@@ -57,6 +57,7 @@
 #include "./RaylibException.hpp"
 #include "./Rectangle.hpp"
 #include "./RenderTexture.hpp"
+#include "./RenderTextureUnmanaged.hpp"
 #include "./Shader.hpp"
 #include "./Sound.hpp"
 #include "./Text.hpp"
