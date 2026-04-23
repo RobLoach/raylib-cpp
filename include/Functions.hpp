@@ -81,7 +81,7 @@ namespace raylib {
  * Save text data to file (write)
  */
 [[maybe_unused]] RLCPPAPI inline bool SaveFileText(const std::string& fileName, const std::string& text) {
-    return ::SaveFileText(fileName.c_str(), const_cast<char*>(text.c_str()));
+    return ::SaveFileText(fileName.c_str(), text.c_str());
 }
 
 /**
@@ -152,6 +152,17 @@ namespace raylib {
  */
 [[maybe_unused]] RLCPPAPI std::vector<std::string> LoadDirectoryFiles(const std::string& dirPath) {
     FilePathList files = ::LoadDirectoryFiles(dirPath.c_str());
+    std::vector<std::string> output(files.paths, files.paths + files.count);
+    ::UnloadDirectoryFiles(files);
+    return output;
+}
+
+/**
+ * Load directory filepaths with extension filtering and optional subdirectory scanning
+ */
+[[maybe_unused]] RLCPPAPI std::vector<std::string>
+LoadDirectoryFilesEx(const std::string& basePath, const std::string& filter, bool scanSubdirs = false) {
+    FilePathList files = ::LoadDirectoryFilesEx(basePath.c_str(), filter.c_str(), scanSubdirs);
     std::vector<std::string> output(files.paths, files.paths + files.count);
     ::UnloadDirectoryFiles(files);
     return output;
@@ -254,7 +265,7 @@ DrawText(const std::string& text, int posX, int posY, int fontSize, ::Color colo
  * Draw text using font and additional parameters
  */
 [[maybe_unused]] RLCPPAPI inline void
-DrawTextEx(const Font& font, char* text, Vector2 position, float fontSize, float spacing, ::Color tint) {
+DrawTextEx(const Font& font, const char* text, Vector2 position, float fontSize, float spacing, ::Color tint) {
     ::DrawTextEx(font, text, position, fontSize, spacing, tint);
 }
 
@@ -307,8 +318,8 @@ DrawTextEx(const Font& font, const std::string& text, Vector2 position, float fo
  * Load font from file (filename must include file extension)
  */
 [[maybe_unused]] RLCPPAPI inline ::Font
-LoadFontEx(const std::string& fileName, int fontSize, int* fontChars, int charsCount) {
-    return ::LoadFontEx(fileName.c_str(), fontSize, fontChars, charsCount);
+LoadFontEx(const std::string& fileName, int fontSize, const int* codepoints = nullptr, int codepointCount = 0) {
+    return ::LoadFontEx(fileName.c_str(), fontSize, codepoints, codepointCount);
 }
 
 /**
@@ -340,21 +351,21 @@ LoadFontEx(const std::string& fileName, int fontSize, int* fontChars, int charsC
 }
 
 /**
- * Check if two text string are equal
+ * Get text length, checks for '\0' ending
  */
 [[maybe_unused]] RLCPPAPI inline unsigned int TextLength(const char* text) {
     return ::TextLength(text);
 }
 
 /**
- * Check if two text string are equal
+ * Get text length, checks for '\0' ending
  */
 [[maybe_unused]] RLCPPAPI inline unsigned int TextLength(const std::string& text) {
     return ::TextLength(text.c_str());
 }
 
 /**
- * Get text length, checks for '\0' ending
+ * Get a piece of a text string
  */
 [[maybe_unused]] RLCPPAPI inline std::string TextSubtext(const std::string& text, int position, int length) {
     return ::TextSubtext(text.c_str(), position, length);
@@ -439,6 +450,13 @@ TextReplace(const std::string& text, const std::string& replace, const std::stri
  */
 [[maybe_unused]] RLCPPAPI inline int TextToInteger(const std::string& text) {
     return ::TextToInteger(text.c_str());
+}
+
+/**
+ * Get float value from text
+ */
+[[maybe_unused]] RLCPPAPI inline float TextToFloat(const std::string& text) {
+    return ::TextToFloat(text.c_str());
 }
 
 } // namespace raylib
