@@ -58,9 +58,12 @@ public:
         other.meshes = nullptr;
         other.materials = nullptr;
         other.meshMaterial = nullptr;
-        other.boneCount = 0;
-        other.bones = nullptr;
-        other.bindPose = nullptr;
+
+        other.skeleton.boneCount = 0;
+        other.skeleton.bones = nullptr;
+        other.skeleton.bindPose = nullptr;
+        other.currentPose = nullptr;
+        other.boneMatrices = nullptr;
     }
 
     GETTERSETTER(::Matrix, Transform, transform)
@@ -69,9 +72,11 @@ public:
     GETTERSETTER(::Mesh*, Meshes, meshes)
     GETTERSETTER(::Material*, Materials, materials)
     GETTERSETTER(int*, MeshMaterial, meshMaterial)
-    GETTERSETTER(int, BoneCount, boneCount)
-    GETTERSETTER(::BoneInfo*, Bones, bones)
-    GETTERSETTER(::Transform*, BindPose, bindPose)
+    GETTERSETTER(int, BoneCount, skeleton.boneCount)
+    GETTERSETTER(::BoneInfo*, Bones, skeleton.bones)
+    GETTERSETTER(::Transform*, BindPose, skeleton.bindPose)
+    GETTERSETTER(::ModelAnimPose, CurrentPose, currentPose)
+    GETTERSETTER(::Matrix*, BoneMatrices, boneMatrices)
 
     Model& operator=(const ::Model& model) {
         set(model);
@@ -93,9 +98,11 @@ public:
         other.meshes = nullptr;
         other.materials = nullptr;
         other.meshMaterial = nullptr;
-        other.boneCount = 0;
-        other.bones = nullptr;
-        other.bindPose = nullptr;
+        other.skeleton.boneCount = 0;
+        other.skeleton.bones = nullptr;
+        other.skeleton.bindPose = nullptr;
+        other.currentPose = nullptr;
+        other.boneMatrices = nullptr;
 
         return *this;
     }
@@ -122,16 +129,16 @@ public:
     /**
      * Update model animation pose
      */
-    Model& UpdateAnimation(const ::ModelAnimation& anim, int frame) {
+    Model& UpdateAnimation(const ::ModelAnimation& anim, float frame) {
         ::UpdateModelAnimation(*this, anim, frame);
         return *this;
     }
 
     /**
-     * Update model animation pose
+     * Blend two model animation poses
      */
-    Model& UpdateAnimationBones(const ::ModelAnimation& anim, int frame) {
-        ::UpdateModelAnimationBones(*this, anim, frame);
+    Model& BlendAnimation(const ::ModelAnimation& animA, float frameA, const ::ModelAnimation& animB, float frameB, float blend) {
+        ::UpdateModelAnimationEx(*this, animA, frameA, animB, frameB, blend);
         return *this;
     }
 
@@ -176,20 +183,6 @@ public:
         ::Vector3 scale = {1.0f, 1.0f, 1.0f},
         ::Color tint = {255, 255, 255, 255}) const {
         ::DrawModelWiresEx(*this, position, rotationAxis, rotationAngle, scale, tint);
-    }
-
-    /**
-     * Draw a model as points
-     */
-    void DrawPoints(::Vector3 position, float scale = 1.0f, ::Color tint = {255, 255, 255, 255}) {
-        ::DrawModelPoints(*this, position, scale, tint);
-    }
-
-    /**
-     * Draw a model as points
-     */
-    void DrawPoints(::Vector3 position, ::Vector3 rotationAxis, float rotationAngle = 0.0f, ::Vector3 scale = {1.0f, 1.0f, 1.0f}, ::Color tint = {255, 255, 255, 255}) {
-        ::DrawModelPointsEx(*this, position, rotationAxis, rotationAngle, scale, tint);
     }
 
     /**
@@ -240,9 +233,11 @@ protected:
         materials = model.materials;
         meshMaterial = model.meshMaterial;
 
-        boneCount = model.boneCount;
-        bones = model.bones;
-        bindPose = model.bindPose;
+        skeleton.boneCount = model.skeleton.boneCount;
+        skeleton.bones = model.skeleton.bones;
+        skeleton.bindPose = model.skeleton.bindPose;
+        currentPose = model.currentPose;
+        boneMatrices = model.boneMatrices;
     }
 };
 

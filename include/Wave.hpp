@@ -81,7 +81,7 @@ public:
     }
 
     Wave& operator=(Wave&& other) noexcept {
-        if (this != &other) {
+        if (this == &other) {
             return *this;
         }
 

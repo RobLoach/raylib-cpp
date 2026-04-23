@@ -35,9 +35,8 @@ public:
         indices = nullptr;
         animVertices = nullptr;
         animNormals = nullptr;
-        boneIds = nullptr;
+        boneIndices = nullptr;
         boneWeights = nullptr;
-        boneMatrices = nullptr;
         boneCount = 0;
         vaoId = 0;
         vboId = nullptr;
@@ -130,7 +129,7 @@ public:
     GETTERSETTER(unsigned short*, Indices, indices) // NOLINT
     GETTERSETTER(float*, AnimVertices, animVertices)
     GETTERSETTER(float*, AnimNormals, animNormals)
-    GETTERSETTER(unsigned char*, BoneIds, boneIds)
+    GETTERSETTER(unsigned char*, BoneIndices, boneIndices)
     GETTERSETTER(float*, BoneWeights, boneWeights)
     GETTERSETTER(unsigned int, VaoId, vaoId)
     GETTERSETTER(unsigned int*, VboId, vboId)
@@ -170,7 +169,7 @@ public:
     /**
      * Draw multiple mesh instances with material and different transforms
      */
-    void Draw(const ::Material& material, ::Matrix* transforms, int instances) const {
+    void Draw(const ::Material& material, const ::Matrix* transforms, int instances) const {
         ::DrawMeshInstanced(*this, material, transforms, instances);
     }
 
@@ -227,7 +226,7 @@ public:
     /**
      * Returns whether or not the Mesh is valid.
      */
-    bool IsValid() { return ::IsModelValid(*this); }
+    [[nodiscard]] bool IsValid() const { return vaoId != 0 && vertexCount > 0; }
 
 protected:
     void set(const ::Mesh& mesh) {
@@ -242,9 +241,8 @@ protected:
         indices = mesh.indices;
         animVertices = mesh.animVertices;
         animNormals = mesh.animNormals;
-        boneIds = mesh.boneIds;
+        boneIndices = mesh.boneIndices;
         boneWeights = mesh.boneWeights;
-        boneMatrices = mesh.boneMatrices;
         vaoId = mesh.vaoId;
         vboId = mesh.vboId;
     }

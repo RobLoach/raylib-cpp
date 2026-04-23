@@ -40,6 +40,14 @@ public:
     /**
      * Draw a color-filled rectangle
      */
+    static void Draw(int posX, int posY, int width, int height, ::Color color) {
+        ::DrawRectangle(posX, posY, width, height, color);
+    }
+
+    static void Draw(::Vector2 position, ::Vector2 size, ::Color color) {
+        ::DrawRectangleV(position, size, color);
+    }
+
     void Draw(::Color color) const { ::DrawRectangleRec(*this, color); }
 
     void Draw(::Vector2 origin, float rotation, ::Color color) const {
@@ -66,8 +74,8 @@ public:
             color2);
     }
 
-    void DrawGradient(::Color topLeft, ::Color bottomLeft, ::Color topRight, ::Color bottomRight) const {
-        ::DrawRectangleGradientEx(*this, topLeft, bottomLeft, topRight, bottomRight);
+    void DrawGradient(::Color topLeft, ::Color bottomLeft, ::Color bottomRight, ::Color topRight) const {
+        ::DrawRectangleGradientEx(*this, topLeft, bottomLeft, bottomRight, topRight);
     }
 
     void DrawLines(::Color color) const {
@@ -90,7 +98,7 @@ public:
     }
 
     void DrawRoundedLines(float roundness, int segments, float lineThick, ::Color color) const {
-        DrawRectangleRoundedLinesEx(*this, roundness, segments, lineThick, color);
+        ::DrawRectangleRoundedLinesEx(*this, roundness, segments, lineThick, color);
     }
 
     /**

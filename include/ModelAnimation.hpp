@@ -22,11 +22,11 @@ public:
         set(other);
 
         other.boneCount = 0;
-        other.frameCount = 0;
-        other.bones = nullptr;
-        other.framePoses = nullptr;
+        other.keyframeCount = 0;
+        other.keyframePoses = nullptr;
     }
 
+    // Unloads animation data using populated animCount field, which is set by Load() method.
     ~ModelAnimation() { Unload(); }
 
     /**
@@ -35,6 +35,7 @@ public:
     static std::vector<ModelAnimation> Load(const std::string& fileName) {
         int count = 0;
         ::ModelAnimation* modelAnimations = ::LoadModelAnimations(fileName.c_str(), &count);
+
         std::vector<ModelAnimation> mats(modelAnimations, modelAnimations + count);
 
         RL_FREE(modelAnimations);
@@ -43,9 +44,8 @@ public:
     }
 
     GETTERSETTER(int, BoneCount, boneCount)
-    GETTERSETTER(::BoneInfo*, Bones, bones)
-    GETTERSETTER(int, FrameCount, frameCount)
-    GETTERSETTER(::Transform**, FramePoses, framePoses)
+    GETTERSETTER(int, KeyframeCount, keyframeCount)
+    GETTERSETTER(::Transform**, KeyframePoses, keyframePoses)
 
     ModelAnimation& operator=(const ::ModelAnimation& model) {
         set(model);
@@ -63,9 +63,8 @@ public:
         set(other);
 
         other.boneCount = 0;
-        other.frameCount = 0;
-        other.bones = nullptr;
-        other.framePoses = nullptr;
+        other.keyframeCount = 0;
+        other.keyframePoses = nullptr;
 
         return *this;
     }
@@ -73,23 +72,30 @@ public:
     /**
      * Unload animation data
      */
-    void Unload() { ::UnloadModelAnimation(*this); }
+    void Unload() {
+        ::UnloadModelAnimations(this, 1); 
+    }
+
+    static void Unload(ModelAnimation *modelAnimation, int count) {
+        ::UnloadModelAnimations(modelAnimation, count); 
+    }
 
     /**
      * Update model animation pose
      */
-    ModelAnimation& Update(const ::Model& model, int frame) {
+    ModelAnimation& Update(const ::Model& model, float frame) {
         ::UpdateModelAnimation(model, *this, frame);
         return *this;
     }
 
     /**
-     * Update model animation mesh bone matrices (GPU skinning)
+     * Blend two animation poses
      */
-    ModelAnimation& UpdateBones(const ::Model& model, int frame) {
-        ::UpdateModelAnimationBones(model, *this, frame);
+    ModelAnimation& Blend(const ::Model& model, float frameA, const ::ModelAnimation& animB, float frameB, float blend) {
+        ::UpdateModelAnimationEx(model, *this, frameA, animB, frameB, blend);
         return *this;
     }
+
 
     /**
      * Check model animation skeleton match
@@ -98,9 +104,8 @@ public:
 protected:
     void set(const ::ModelAnimation& model) {
         boneCount = model.boneCount;
-        frameCount = model.frameCount;
-        bones = model.bones;
-        framePoses = model.framePoses;
+        keyframeCount = model.keyframeCount;
+        keyframePoses = model.keyframePoses;
 
         // Duplicate the name. TextCopy() uses the null terminator, which we ignore here.
         for (int i = 0; i < 32; i++) {
