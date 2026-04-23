@@ -421,6 +421,20 @@ TextReplace(const std::string& text, const std::string& replace, const std::stri
 }
 
 /**
+ * Get Snake case notation version of provided string
+ */
+[[maybe_unused]] RLCPPAPI inline std::string TextToSnake(const std::string& text) {
+    return ::TextToSnake(text.c_str());
+}
+
+/**
+ * Get Camel case notation version of provided string
+ */
+[[maybe_unused]] RLCPPAPI inline std::string TextToCamel(const std::string& text) {
+    return ::TextToCamel(text.c_str());
+}
+
+/**
  * Get integer value from text (negative values not supported)
  */
 [[maybe_unused]] RLCPPAPI inline int TextToInteger(const std::string& text) {
