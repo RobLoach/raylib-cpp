@@ -50,8 +50,8 @@ public:
      *
      * @see ::LoadFontEx
      */
-    Font(const std::string& fileName, int fontSize, int* fontChars = 0, int charCount = 0) {
-        Load(fileName, fontSize, fontChars, charCount);
+    Font(const std::string& fileName, int fontSize, const int* codepoints = nullptr, int codepointCount = 0) {
+        Load(fileName, fontSize, codepoints, codepointCount);
     }
 
     /**
@@ -77,9 +77,9 @@ public:
         const unsigned char* fileData,
         int dataSize,
         int fontSize,
-        int* fontChars,
-        int charsCount) {
-        Load(fileType, fileData, dataSize, fontSize, fontChars, charsCount);
+        const int* codepoints,
+        int codepointCount) {
+        Load(fileType, fileData, dataSize, fontSize, codepoints, codepointCount);
     }
 
     Font(const Font&) = delete;
@@ -173,8 +173,8 @@ public:
      *
      * @see ::LoadFontEx()
      */
-    void Load(const std::string& fileName, int fontSize, int* fontChars, int charCount) {
-        set(::LoadFontEx(fileName.c_str(), fontSize, fontChars, charCount));
+    void Load(const std::string& fileName, int fontSize, const int* codepoints = nullptr, int codepointCount = 0) {
+        set(::LoadFontEx(fileName.c_str(), fontSize, codepoints, codepointCount));
         if (!IsValid()) {
             throw RaylibException("Failed to load Font with from file with font size: " + fileName);
         }
@@ -192,9 +192,9 @@ public:
         const unsigned char* fileData,
         int dataSize,
         int fontSize,
-        int* fontChars,
-        int charsCount) {
-        set(::LoadFontFromMemory(fileType.c_str(), fileData, dataSize, fontSize, fontChars, charsCount));
+        const int* codepoints,
+        int codepointCount) {
+        set(::LoadFontFromMemory(fileType.c_str(), fileData, dataSize, fontSize, codepoints, codepointCount));
         if (!IsValid()) {
             throw RaylibException("Failed to load Font " + fileType + " with from file data");
         }

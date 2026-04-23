@@ -169,7 +169,7 @@ public:
     /**
      * Draw multiple mesh instances with material and different transforms
      */
-    void Draw(const ::Material& material, ::Matrix* transforms, int instances) const {
+    void Draw(const ::Material& material, const ::Matrix* transforms, int instances) const {
         ::DrawMeshInstanced(*this, material, transforms, instances);
     }
 
@@ -226,7 +226,7 @@ public:
     /**
      * Returns whether or not the Mesh is valid.
      */
-    bool IsValid() { return ::IsModelValid(*this); }
+    [[nodiscard]] bool IsValid() const { return vaoId != 0 && vertexCount > 0; }
 
 protected:
     void set(const ::Mesh& mesh) {

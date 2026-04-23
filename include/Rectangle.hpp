@@ -90,7 +90,7 @@ public:
     }
 
     void DrawRoundedLines(float roundness, int segments, float lineThick, ::Color color) const {
-        DrawRectangleRoundedLinesEx(*this, roundness, segments, lineThick, color);
+        ::DrawRectangleRoundedLinesEx(*this, roundness, segments, lineThick, color);
     }
 
     /**
