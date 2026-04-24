@@ -38,6 +38,9 @@ public:
         Init(width, height, title, flags, logLevel);
     }
 
+    Window(const Window&) = delete;
+    Window& operator=(const Window&) = delete;
+
     /**
      * Close window and unload OpenGL context
      */

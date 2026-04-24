@@ -1,5 +1,5 @@
-#ifndef RAYLIB_CPP_INCLUDE_UNMANAGEDSHADER_HPP_
-#define RAYLIB_CPP_INCLUDE_UNMANAGEDSHADER_HPP_
+#ifndef RAYLIB_CPP_INCLUDE_SHADERUNMANAGED_HPP_
+#define RAYLIB_CPP_INCLUDE_SHADERUNMANAGED_HPP_
 
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
@@ -130,6 +130,16 @@ public:
     }
 
     /**
+     * Unload shader from GPU memory (VRAM).
+     */
+    void Unload() {
+        if (locs != nullptr) {
+            ::UnloadShader(*this);
+            locs = nullptr;
+        }
+    }
+
+    /**
      * Retrieves whether or not the shader is ready.
      */
     [[nodiscard]] bool IsValid() const { return ::IsShaderValid(*this); }
@@ -143,4 +153,4 @@ protected:
 
 using RShaderUnmanaged = raylib::ShaderUnmanaged;
 
-#endif // RAYLIB_CPP_INCLUDE_UNMANAGEDSHADER_HPP_
+#endif // RAYLIB_CPP_INCLUDE_SHADERUNMANAGED_HPP_

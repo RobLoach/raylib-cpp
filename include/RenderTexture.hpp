@@ -1,120 +1,57 @@
 #ifndef RAYLIB_CPP_INCLUDE_RENDERTEXTURE_HPP_
 #define RAYLIB_CPP_INCLUDE_RENDERTEXTURE_HPP_
 
-#include "./TextureUnmanaged.hpp"
-#include "./raylib-cpp-utils.hpp"
+#include "./RenderTextureUnmanaged.hpp"
 
 namespace raylib {
 /**
- * RenderTexture type, for texture rendering
+ * RenderTexture type, for texture rendering.
+ *
+ * The render texture will be unloaded on object destruction. Use raylib::RenderTextureUnmanaged
+ * if you're looking to not unload.
+ *
+ * @see raylib::RenderTextureUnmanaged
  */
-class RenderTexture : public ::RenderTexture {
+class RenderTexture : public RenderTextureUnmanaged {
 public:
-    /**
-     * Default constructor to build an empty RenderTexture.
-     */
-    RenderTexture() = default;
-
-    RenderTexture(const ::RenderTexture& renderTexture)
-        : ::RenderTexture(renderTexture) {
-        // Nothing.
-    }
-
-    RenderTexture(unsigned int id, const ::Texture& texture, const ::Texture& depth)
-        : ::RenderTexture{id, texture, depth} {}
-
-    /**
-     * Load texture for rendering (framebuffer)
-     */
-    RenderTexture(int width, int height)
-        : ::RenderTexture(::LoadRenderTexture(width, height)) {
-        // Nothing.
-    }
+    using RenderTextureUnmanaged::RenderTextureUnmanaged;
 
     RenderTexture(const RenderTexture&) = delete;
+    RenderTexture& operator=(const RenderTexture&) = delete;
 
-    RenderTexture(RenderTexture&& other) noexcept
-    {
+    RenderTexture(RenderTexture&& other) noexcept {
         set(other);
-
         other.id = 0;
         other.texture = {};
         other.depth = {};
     }
-
-    GETTER(unsigned int, Id, id)
-
-    /**
-     * Get the color buffer attachment texture.
-     */
-    TextureUnmanaged GetTexture() { return texture; }
-    [[nodiscard]] TextureUnmanaged GetTexture() const { return texture; }
-
-    void SetTexture(const ::Texture& newTexture) { texture = newTexture; }
-
-    /**
-     * Depth buffer attachment texture
-     */
-    TextureUnmanaged GetDepth() { return depth; }
-
-    void SetDepth(const ::Texture& newDepth) { depth = newDepth; }
-
-    RenderTexture& operator=(const ::RenderTexture& texture) {
-        set(texture);
-        return *this;
-    }
-
-    RenderTexture& operator=(const RenderTexture&) = delete;
 
     RenderTexture& operator=(RenderTexture&& other) noexcept {
         if (this == &other) {
             return *this;
         }
-
         Unload();
         set(other);
-
         other.id = 0;
         other.texture = {};
         other.depth = {};
+        return *this;
+    }
 
+    RenderTexture& operator=(const ::RenderTexture& other) {
+        Unload();
+        set(other);
         return *this;
     }
 
     ~RenderTexture() { Unload(); }
 
-    void Unload() { UnloadRenderTexture(*this); }
-
     /**
-     * Initializes render texture for drawing
+     * Unload previous render texture, then load a new one.
      */
-    RenderTexture& BeginMode() {
-        ::BeginTextureMode(*this);
-        return *this;
-    }
-
-    /**
-     * Ends drawing to render texture
-     */
-    RenderTexture& EndMode() {
-        ::EndTextureMode();
-        return *this;
-    }
-
-    /**
-     * Load texture for rendering (framebuffer)
-     */
-    static RenderTexture Load(int width, int height) { return ::LoadRenderTexture(width, height); }
-
-    /**
-     * Retrieves whether or not the render texture is ready.
-     */
-    [[nodiscard]] bool IsValid() const { return ::IsRenderTextureValid(*this); }
-protected:
-    void set(const ::RenderTexture& renderTexture) {
-        id = renderTexture.id;
-        texture = renderTexture.texture;
-        depth = renderTexture.depth;
+    void Load(int width, int height) {
+        Unload();
+        RenderTextureUnmanaged::Load(width, height);
     }
 };
 
