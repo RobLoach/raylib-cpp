@@ -13,11 +13,7 @@ class Rectangle : public ::Rectangle {
 public:
     constexpr Rectangle(const ::Rectangle& rect) : ::Rectangle{rect.x, rect.y, rect.width, rect.height} {}
 
-    constexpr Rectangle(float x, float y, float width, float height) : ::Rectangle{x, y, width, height} {}
-    constexpr Rectangle(float x, float y, float width) : ::Rectangle{x, y, width, 0} {}
-    constexpr Rectangle(float x, float y) : ::Rectangle{x, y, 0, 0} {}
-    constexpr Rectangle(float x) : ::Rectangle{x, 0, 0, 0} {}
-    constexpr Rectangle() : ::Rectangle{0, 0, 0, 0} {}
+    constexpr Rectangle(float x = 0, float y = 0, float width = 0, float height = 0) : ::Rectangle{x, y, width, height} {}
 
     constexpr Rectangle(::Vector2 position, ::Vector2 size) : ::Rectangle{position.x, position.y, size.x, size.y} {}
     constexpr Rectangle(::Vector2 size) : ::Rectangle{0, 0, size.x, size.y} {}
