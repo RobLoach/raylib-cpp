@@ -45,15 +45,6 @@ public:
      * Unload shader from GPU memory (VRAM)
      */
     ~Shader() { Unload(); }
-
-    /**
-     * Unload shader from GPU memory (VRAM)
-     */
-    void Unload() {
-        if (locs != nullptr) {
-            ::UnloadShader(*this);
-        }
-    }
 };
 } // namespace raylib
 
