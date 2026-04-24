@@ -16,8 +16,7 @@ public:
         // Nothing.
     }
 
-    Camera2D() : ::Camera2D() {}
-    Camera2D(::Vector2 offset, ::Vector2 target, float rotation = 0.0f, float zoom = 1.0f)
+    Camera2D(::Vector2 offset = {}, ::Vector2 target = {}, float rotation = 0.0f, float zoom = 1.0f)
         : ::Camera2D{offset, target, rotation, zoom} {}
 
     Camera2D& BeginMode() {

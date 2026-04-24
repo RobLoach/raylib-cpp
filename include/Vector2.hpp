@@ -19,9 +19,7 @@ class Vector2 : public ::Vector2 {
 public:
     constexpr Vector2(const ::Vector2& vec) : ::Vector2{vec.x, vec.y} {}
 
-    constexpr Vector2(float x, float y) : ::Vector2{x, y} {}
-    constexpr Vector2(float x) : ::Vector2{x, 0} {}
-    constexpr Vector2() : ::Vector2{0, 0} {}
+    constexpr Vector2(float x = 0, float y = 0) : ::Vector2{x, y} {}
 
     GETTERSETTER(float, X, x)
     GETTERSETTER(float, Y, y)

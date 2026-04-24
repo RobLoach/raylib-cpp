@@ -20,11 +20,7 @@ class Vector4 : public ::Vector4 {
 public:
     constexpr Vector4(const ::Vector4& vec) : ::Vector4{vec.x, vec.y, vec.z, vec.w} {}
 
-    constexpr Vector4(float x, float y, float z, float w) : ::Vector4{x, y, z, w} {}
-    constexpr Vector4(float x, float y, float z) : ::Vector4{x, y, z, 0} {}
-    constexpr Vector4(float x, float y) : ::Vector4{x, y, 0, 0} {}
-    constexpr Vector4(float x) : ::Vector4{x, 0, 0, 0} {}
-    constexpr Vector4() : ::Vector4{0, 0, 0, 0} {}
+    constexpr Vector4(float x = 0, float y = 0, float z = 0, float w = 0) : ::Vector4{x, y, z, w} {}
     constexpr Vector4(::Rectangle rectangle) : ::Vector4{rectangle.x, rectangle.y, rectangle.width, rectangle.height} {}
 
     Vector4(::Color color) { set(ColorNormalize(color)); }

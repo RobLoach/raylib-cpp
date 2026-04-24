@@ -19,10 +19,7 @@ class Vector3 : public ::Vector3 {
 public:
     constexpr Vector3(const ::Vector3& vec) : ::Vector3{vec.x, vec.y, vec.z} {}
 
-    constexpr Vector3(float x, float y, float z) : ::Vector3{x, y, z} {}
-    constexpr Vector3(float x, float y) : ::Vector3{x, y, 0} {}
-    constexpr Vector3(float x) : ::Vector3{x, 0, 0} {}
-    constexpr Vector3() : ::Vector3{0, 0, 0} {}
+    constexpr Vector3(float x = 0, float y = 0, float z = 0) : ::Vector3{x, y, z} {}
 
     Vector3(::Color color) { set(ColorToHSV(color)); }
 
