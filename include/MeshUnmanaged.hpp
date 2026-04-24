@@ -208,7 +208,7 @@ public:
     /**
      * Compute mesh tangents
      */
-    Mesh& GenTangents() {
+    MeshUnmanaged& GenTangents() {
         ::GenMeshTangents(this);
         return *this;
     }

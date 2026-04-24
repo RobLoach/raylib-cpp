@@ -73,7 +73,10 @@ public:
      * Unload animation data
      */
     void Unload() {
-        ::UnloadModelAnimations(this, 1); 
+        if (keyframePoses != nullptr) {
+            ::UnloadModelAnimations(this, 1);
+            keyframePoses = nullptr;
+        }
     }
 
     static void Unload(ModelAnimation *modelAnimation, int count) {
