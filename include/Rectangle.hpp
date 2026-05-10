@@ -104,26 +104,26 @@ public:
     /**
      * Check collision between two rectangles
      */
-    [[nodiscard]] bool CheckCollision(::Rectangle rec2) const { return ::CheckCollisionRecs(*this, rec2); }
+    RLCPP_NODISCARD bool CheckCollision(::Rectangle rec2) const { return ::CheckCollisionRecs(*this, rec2); }
 
     /**
      * Get collision rectangle for two rectangles collision
      */
-    [[nodiscard]] ::Rectangle GetCollision(::Rectangle rec2) const { return ::GetCollisionRec(*this, rec2); }
+    RLCPP_NODISCARD ::Rectangle GetCollision(::Rectangle rec2) const { return ::GetCollisionRec(*this, rec2); }
 
     /**
      * Check if point is inside rectangle
      */
-    [[nodiscard]] bool CheckCollision(::Vector2 point) const { return ::CheckCollisionPointRec(point, *this); }
+    RLCPP_NODISCARD bool CheckCollision(::Vector2 point) const { return ::CheckCollisionPointRec(point, *this); }
 
     /**
      * Check collision between circle and rectangle
      */
-    [[nodiscard]] bool CheckCollision(::Vector2 center, float radius) const {
+    RLCPP_NODISCARD bool CheckCollision(::Vector2 center, float radius) const {
         return ::CheckCollisionCircleRec(center, radius, *this);
     }
 
-    [[nodiscard]] Vector2 GetSize() const { return {width, height}; }
+    RLCPP_NODISCARD Vector2 GetSize() const { return {width, height}; }
 
     Rectangle& SetSize(float newWidth, float newHeight) {
         width = newWidth;
@@ -138,7 +138,7 @@ public:
         return *this;
     }
 
-    [[nodiscard]] Vector2 GetPosition() const { return {x, y}; }
+    RLCPP_NODISCARD Vector2 GetPosition() const { return {x, y}; }
 
     Rectangle& SetPosition(float newX, float newY) {
         x = newX;

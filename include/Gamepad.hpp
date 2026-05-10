@@ -36,7 +36,7 @@ public:
     /**
      * Detect if a gamepad is available
      */
-    [[nodiscard]] bool IsAvailable() const { return ::IsGamepadAvailable(number); }
+    RLCPP_NODISCARD bool IsAvailable() const { return ::IsGamepadAvailable(number); }
 
     /**
      * Detect if a gamepad is available
@@ -46,7 +46,7 @@ public:
     /**
      * Return gamepad internal name id
      */
-    [[nodiscard]] std::string GetName() const { return ::GetGamepadName(number); }
+    RLCPP_NODISCARD std::string GetName() const { return ::GetGamepadName(number); }
 
     /**
      * Return gamepad internal name id
@@ -56,22 +56,22 @@ public:
     /**
      * Detect if a gamepad button has been pressed once
      */
-    [[nodiscard]] bool IsButtonPressed(int button) const { return ::IsGamepadButtonPressed(number, button); }
+    RLCPP_NODISCARD bool IsButtonPressed(int button) const { return ::IsGamepadButtonPressed(number, button); }
 
     /**
      * Detect if a gamepad button is being pressed
      */
-    [[nodiscard]] bool IsButtonDown(int button) const { return ::IsGamepadButtonDown(number, button); }
+    RLCPP_NODISCARD bool IsButtonDown(int button) const { return ::IsGamepadButtonDown(number, button); }
 
     /**
      * Detect if a gamepad button has been released once
      */
-    [[nodiscard]] bool IsButtonReleased(int button) const { return ::IsGamepadButtonReleased(number, button); }
+    RLCPP_NODISCARD bool IsButtonReleased(int button) const { return ::IsGamepadButtonReleased(number, button); }
 
     /**
      * Detect if a gamepad button is NOT being pressed
      */
-    [[nodiscard]] bool IsButtonUp(int button) const { return ::IsGamepadButtonUp(number, button); }
+    RLCPP_NODISCARD bool IsButtonUp(int button) const { return ::IsGamepadButtonUp(number, button); }
 
     /**
      * Get the last gamepad button pressed
@@ -81,12 +81,12 @@ public:
     /**
      * Return gamepad axis count for a gamepad
      */
-    [[nodiscard]] int GetAxisCount() const { return ::GetGamepadAxisCount(number); }
+    RLCPP_NODISCARD int GetAxisCount() const { return ::GetGamepadAxisCount(number); }
 
     /**
      * Return axis movement value for a gamepad axis
      */
-    [[nodiscard]] float GetAxisMovement(int axis) const { return ::GetGamepadAxisMovement(number, axis); }
+    RLCPP_NODISCARD float GetAxisMovement(int axis) const { return ::GetGamepadAxisMovement(number, axis); }
 
     static int SetMappings(const std::string& mappings) { return SetGamepadMappings(mappings.c_str()); }
 

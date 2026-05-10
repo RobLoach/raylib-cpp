@@ -30,9 +30,9 @@ public:
     GETTER(const char*, Data, data)
     GETTER(unsigned int, Length, length)
 
-    [[nodiscard]] const char* c_str() const { return data; }
+    RLCPP_NODISCARD const char* c_str() const { return data; }
 
-    [[nodiscard]] std::string ToString() const { return data; }
+    RLCPP_NODISCARD std::string ToString() const { return data; }
     explicit operator std::string() const { return data; }
 
     void Load(const std::string& fileName) { Load(fileName.c_str()); }

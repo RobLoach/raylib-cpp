@@ -87,7 +87,7 @@ public:
     /**
      * Check if any audio stream buffers require refill.
      */
-    [[nodiscard]] bool IsProcessed() const { return ::IsAudioStreamProcessed(*this); }
+    RLCPP_NODISCARD bool IsProcessed() const { return ::IsAudioStreamProcessed(*this); }
 
     /**
      * Play audio stream.
@@ -116,7 +116,7 @@ public:
     /**
      * Check if audio stream is playing.
      */
-    [[nodiscard]] bool IsPlaying() const { return ::IsAudioStreamPlaying(*this); }
+    RLCPP_NODISCARD bool IsPlaying() const { return ::IsAudioStreamPlaying(*this); }
 
     /**
      * Stop audio stream.
@@ -182,7 +182,7 @@ public:
     /**
      * Retrieve whether or not the audio stream is ready.
      */
-    [[nodiscard]] bool IsValid() const { return ::IsAudioStreamValid(*this); }
+    RLCPP_NODISCARD bool IsValid() const { return ::IsAudioStreamValid(*this); }
 
 protected:
     void set(const ::AudioStream& stream) {

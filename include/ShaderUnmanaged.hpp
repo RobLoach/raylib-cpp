@@ -82,14 +82,14 @@ public:
      *
      * @see GetShaderLocation()
      */
-    [[nodiscard]] int GetLocation(const std::string& uniformName) const { return ::GetShaderLocation(*this, uniformName.c_str()); }
+    RLCPP_NODISCARD int GetLocation(const std::string& uniformName) const { return ::GetShaderLocation(*this, uniformName.c_str()); }
 
     /**
      * Get shader attribute location
      *
      * @see GetShaderLocationAttrib()
      */
-    [[nodiscard]] int GetLocationAttrib(const std::string& attribName) const {
+    RLCPP_NODISCARD int GetLocationAttrib(const std::string& attribName) const {
         return ::GetShaderLocationAttrib(*this, attribName.c_str());
     }
 
@@ -146,7 +146,7 @@ public:
     /**
      * Retrieves whether or not the shader is ready.
      */
-    [[nodiscard]] bool IsValid() const { return ::IsShaderValid(*this); }
+    RLCPP_NODISCARD bool IsValid() const { return ::IsShaderValid(*this); }
 protected:
     void set(const ::Shader& shader) {
         id = shader.id;

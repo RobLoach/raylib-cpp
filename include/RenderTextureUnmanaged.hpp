@@ -48,7 +48,7 @@ public:
      * Get the color buffer attachment texture.
      */
     TextureUnmanaged GetTexture() { return texture; }
-    [[nodiscard]] TextureUnmanaged GetTexture() const { return texture; }
+    RLCPP_NODISCARD TextureUnmanaged GetTexture() const { return texture; }
     void SetTexture(const ::Texture& newTexture) { texture = newTexture; }
 
     /**
@@ -103,7 +103,7 @@ public:
     /**
      * Retrieves whether or not the render texture is ready.
      */
-    [[nodiscard]] bool IsValid() const { return ::IsRenderTextureValid(*this); }
+    RLCPP_NODISCARD bool IsValid() const { return ::IsRenderTextureValid(*this); }
 
 protected:
     void set(const ::RenderTexture& renderTexture) {

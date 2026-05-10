@@ -87,7 +87,7 @@ public:
      * Get the texture atlas containing the glyphs.
      */
     TextureUnmanaged GetTexture() { return texture; }
-    [[nodiscard]] TextureUnmanaged GetTexture() const { return texture; }
+    RLCPP_NODISCARD TextureUnmanaged GetTexture() const { return texture; }
 
     /**
      * Set the texture atlas containing the glyphs.
@@ -167,7 +167,7 @@ public:
     /**
      * Returns if the font is ready to be used.
      */
-    [[nodiscard]] bool IsValid() const { return ::IsFontValid(*this); }
+    RLCPP_NODISCARD bool IsValid() const { return ::IsFontValid(*this); }
 
     /**
      * Draw text using font and additional parameters.
@@ -265,33 +265,33 @@ public:
     /**
      * Measure string size for Font.
      */
-    [[nodiscard]] Vector2 MeasureText(const char* text, float fontSize, float spacing) const {
+    RLCPP_NODISCARD Vector2 MeasureText(const char* text, float fontSize, float spacing) const {
         return ::MeasureTextEx(*this, text, fontSize, spacing);
     }
 
     /**
      * Measure string size for Font.
      */
-    [[nodiscard]] Vector2 MeasureText(const std::string& text, float fontSize, float spacing) const {
+    RLCPP_NODISCARD Vector2 MeasureText(const std::string& text, float fontSize, float spacing) const {
         return ::MeasureTextEx(*this, text.c_str(), fontSize, spacing);
     }
 
     /**
      * Get index position for a unicode character on font.
      */
-    [[nodiscard]] int GetGlyphIndex(int character) const { return ::GetGlyphIndex(*this, character); }
+    RLCPP_NODISCARD int GetGlyphIndex(int character) const { return ::GetGlyphIndex(*this, character); }
 
     /**
      * Create an image from text (custom sprite font).
      */
-    [[nodiscard]] ::Image ImageText(const char* text, float fontSize, float spacing, ::Color tint) const {
+    RLCPP_NODISCARD ::Image ImageText(const char* text, float fontSize, float spacing, ::Color tint) const {
         return ::ImageTextEx(*this, text, fontSize, spacing, tint);
     }
 
     /**
      * Create an image from text (custom sprite font).
      */
-    [[nodiscard]] ::Image ImageText(const std::string& text, float fontSize, float spacing, ::Color tint) const {
+    RLCPP_NODISCARD ::Image ImageText(const std::string& text, float fontSize, float spacing, ::Color tint) const {
         return ::ImageTextEx(*this, text.c_str(), fontSize, spacing, tint);
     }
 

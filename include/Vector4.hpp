@@ -41,39 +41,39 @@ public:
 
     constexpr bool operator!=(const ::Vector4& other) const { return !(*this == other); }
 
-    [[nodiscard]] constexpr ::Rectangle ToRectangle() const { return {x, y, z, w}; }
+    RLCPP_NODISCARD constexpr ::Rectangle ToRectangle() const { return {x, y, z, w}; }
 
     constexpr operator ::Rectangle() const { return {x, y, z, w}; }
 
-    [[nodiscard]] std::string ToString() const { return TextFormat("Vector4(%f, %f, %f, %f)", x, y, z, w); }
+    RLCPP_NODISCARD std::string ToString() const { return TextFormat("Vector4(%f, %f, %f, %f)", x, y, z, w); }
 
     operator std::string() const { return ToString(); }
 
 #ifndef RAYLIB_CPP_NO_MATH
-    [[nodiscard]] Vector4 Multiply(const ::Vector4& vector4) const { return QuaternionMultiply(*this, vector4); }
+    RLCPP_NODISCARD Vector4 Multiply(const ::Vector4& vector4) const { return QuaternionMultiply(*this, vector4); }
 
     Vector4 operator*(const ::Vector4& vector4) const { return QuaternionMultiply(*this, vector4); }
 
-    [[nodiscard]] Vector4 Lerp(const ::Vector4& vector4, float amount) const { return QuaternionLerp(*this, vector4, amount); }
+    RLCPP_NODISCARD Vector4 Lerp(const ::Vector4& vector4, float amount) const { return QuaternionLerp(*this, vector4, amount); }
 
-    [[nodiscard]] Vector4 Nlerp(const ::Vector4& vector4, float amount) const { return QuaternionNlerp(*this, vector4, amount); }
+    RLCPP_NODISCARD Vector4 Nlerp(const ::Vector4& vector4, float amount) const { return QuaternionNlerp(*this, vector4, amount); }
 
-    [[nodiscard]] Vector4 Slerp(const ::Vector4& vector4, float amount) const { return QuaternionSlerp(*this, vector4, amount); }
+    RLCPP_NODISCARD Vector4 Slerp(const ::Vector4& vector4, float amount) const { return QuaternionSlerp(*this, vector4, amount); }
 
-    [[nodiscard]] Matrix ToMatrix() const { return QuaternionToMatrix(*this); }
+    RLCPP_NODISCARD Matrix ToMatrix() const { return QuaternionToMatrix(*this); }
 
-    [[nodiscard]] float Length() const { return QuaternionLength(*this); }
+    RLCPP_NODISCARD float Length() const { return QuaternionLength(*this); }
 
-    [[nodiscard]] Vector4 Normalize() const { return QuaternionNormalize(*this); }
+    RLCPP_NODISCARD Vector4 Normalize() const { return QuaternionNormalize(*this); }
 
-    [[nodiscard]] Vector4 Invert() const { return QuaternionInvert(*this); }
+    RLCPP_NODISCARD Vector4 Invert() const { return QuaternionInvert(*this); }
 
     void ToAxisAngle(::Vector3* outAxis, float* outAngle) const { QuaternionToAxisAngle(*this, outAxis, outAngle); }
 
     /**
      * Get the rotation angle and axis for a given quaternion
      */
-    [[nodiscard]] std::pair<Vector3, float> ToAxisAngle() const {
+    RLCPP_NODISCARD std::pair<Vector3, float> ToAxisAngle() const {
         Vector3 outAxis;
         float outAngle;
         QuaternionToAxisAngle(*this, &outAxis, &outAngle);
@@ -81,7 +81,7 @@ public:
         return { outAxis, outAngle };
     }
 
-    [[nodiscard]] Vector4 Transform(const ::Matrix& matrix) const { return ::QuaternionTransform(*this, matrix); }
+    RLCPP_NODISCARD Vector4 Transform(const ::Matrix& matrix) const { return ::QuaternionTransform(*this, matrix); }
 
     static Vector4 Identity() { return ::QuaternionIdentity(); }
 
@@ -103,10 +103,10 @@ public:
         return ::QuaternionFromEuler(vector3.x, vector3.y, vector3.z);
     }
 
-    [[nodiscard]] Vector3 ToEuler() const { return ::QuaternionToEuler(*this); }
+    RLCPP_NODISCARD Vector3 ToEuler() const { return ::QuaternionToEuler(*this); }
 #endif
 
-    [[nodiscard]] Color ColorFromNormalized() const { return ::ColorFromNormalized(*this); }
+    RLCPP_NODISCARD Color ColorFromNormalized() const { return ::ColorFromNormalized(*this); }
 
     operator Color() const { return ColorFromNormalized(); }
 protected:

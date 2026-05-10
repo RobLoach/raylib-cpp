@@ -43,26 +43,26 @@ public:
     /**
      * Returns hexadecimal value for a Color
      */
-    [[nodiscard]] int ToInt() const { return ::ColorToInt(*this); }
+    RLCPP_NODISCARD int ToInt() const { return ::ColorToInt(*this); }
 
     /**
      * Returns hexadecimal value for a Color
      */
     explicit operator int() const { return ::ColorToInt(*this); }
 
-    [[nodiscard]] std::string ToString() const { return TextFormat("Color(%d, %d, %d, %d)", r, g, b, a); }
+    RLCPP_NODISCARD std::string ToString() const { return TextFormat("Color(%d, %d, %d, %d)", r, g, b, a); }
 
     explicit operator std::string() const { return ToString(); }
 
     /**
      * Returns color with alpha applied, alpha goes from 0.0f to 1.0f
      */
-    [[nodiscard]] Color Fade(float alpha) const { return ::Fade(*this, alpha); }
+    RLCPP_NODISCARD Color Fade(float alpha) const { return ::Fade(*this, alpha); }
 
     /**
      * Returns Color normalized as float [0..1]
      */
-    [[nodiscard]] Vector4 Normalize() const { return ::ColorNormalize(*this); }
+    RLCPP_NODISCARD Vector4 Normalize() const { return ::ColorNormalize(*this); }
 
     /**
      * Returns Color from normalized values [0..1]
@@ -72,7 +72,7 @@ public:
     /**
      * Returns HSV values for a Color
      */
-    [[nodiscard]] Vector3 ToHSV() const { return ::ColorToHSV(*this); }
+    RLCPP_NODISCARD Vector3 ToHSV() const { return ::ColorToHSV(*this); }
 
     GETTERSETTER(unsigned char, R, r)
     GETTERSETTER(unsigned char, G, g)
@@ -206,7 +206,7 @@ public:
     /**
      * Returns color with alpha applied, alpha goes from 0.0f to 1.0f
      */
-    [[nodiscard]] Color Alpha(float alpha) const { return ::ColorAlpha(*this, alpha); }
+    RLCPP_NODISCARD Color Alpha(float alpha) const { return ::ColorAlpha(*this, alpha); }
 
     Color Lerp(::Color color2, float factor) {
         return ::ColorLerp(*this, color2, factor);
@@ -215,7 +215,7 @@ public:
     /**
      * Returns src alpha-blended into dst color with tint
      */
-    [[nodiscard]] Color AlphaBlend(::Color dst, ::Color tint) const { return ::ColorAlphaBlend(dst, *this, tint); }
+    RLCPP_NODISCARD Color AlphaBlend(::Color dst, ::Color tint) const { return ::ColorAlphaBlend(dst, *this, tint); }
 
     static Color LightGray() { return LIGHTGRAY; }
     static Color Gray() { return GRAY; }

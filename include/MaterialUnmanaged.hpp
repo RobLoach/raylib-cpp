@@ -77,7 +77,7 @@ public:
     /**
      * Check if material is ready.
      */
-    [[nodiscard]] bool IsValid() const { return ::IsMaterialValid(*this); }
+    RLCPP_NODISCARD bool IsValid() const { return ::IsMaterialValid(*this); }
 
 protected:
     void set(const ::Material& material) {
