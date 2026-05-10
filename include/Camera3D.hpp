@@ -42,6 +42,17 @@ public:
         return *this;
     }
 
+    [[nodiscard]] std::string ToString() const {
+        return TextFormat(
+            "Camera3D(position=(%f, %f, %f), target=(%f, %f, %f), fovy=%f)",
+            position.x, position.y, position.z,
+            target.x, target.y, target.z,
+            fovy
+        );
+    }
+
+    operator std::string() const { return ToString(); }
+
     /**
      * Initializes 3D mode with custom camera (3D)
      */

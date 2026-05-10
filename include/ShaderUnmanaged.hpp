@@ -57,6 +57,10 @@ public:
         return *this;
     }
 
+    [[nodiscard]] std::string ToString() const { return TextFormat("Shader(id=%u)", id); }
+
+    operator std::string() const { return ToString(); }
+
     /**
      * Begin custom shader drawing.
      */

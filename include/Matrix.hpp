@@ -81,6 +81,23 @@ public:
 
     constexpr bool operator!=(const ::Matrix& other) { return !(*this == other); }
 
+    [[nodiscard]] std::string ToString() const {
+        return TextFormat(
+            "Matrix(\n"
+            "  %f, %f, %f, %f\n"
+            "  %f, %f, %f, %f\n"
+            "  %f, %f, %f, %f\n"
+            "  %f, %f, %f, %f\n"
+            ")",
+            m0,  m4,  m8,  m12,
+            m1,  m5,  m9,  m13,
+            m2,  m6,  m10, m14,
+            m3,  m7,  m11, m15
+        );
+    }
+
+    operator std::string() const { return ToString(); }
+
 #ifndef RAYLIB_CPP_NO_MATH
     /**
      * Returns the trace of the matrix (sum of the values along the diagonal)

@@ -46,6 +46,10 @@ public:
      */
     ~Window() { Close(); }
 
+    [[nodiscard]] std::string ToString() const { return TextFormat("Window(%dx%d)", GetWidth(), GetHeight()); }
+
+    operator std::string() const { return ToString(); }
+
     /**
      * Initializes the window.
      *

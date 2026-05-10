@@ -139,6 +139,15 @@ public:
         return *this;
     }
 
+    [[nodiscard]] std::string ToString() const {
+        return TextFormat(
+            "Mesh(vertexCount=%d, triangleCount=%d, boneCount=%d)",
+            vertexCount, triangleCount, boneCount
+        );
+    }
+
+    operator std::string() const { return ToString(); }
+
     /**
      * Unload mesh from memory (RAM and/or VRAM)
      */

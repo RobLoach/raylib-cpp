@@ -38,6 +38,10 @@ public:
      */
     RenderTextureUnmanaged(int width, int height) { Load(width, height); }
 
+    [[nodiscard]] std::string ToString() const { return TextFormat("RenderTexture(id=%u)", id); }
+
+    operator std::string() const { return ToString(); }
+
     GETTER(unsigned int, Id, id)
 
     /**

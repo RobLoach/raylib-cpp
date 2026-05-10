@@ -60,6 +60,10 @@ public:
         return *this;
     }
 
+    [[nodiscard]] std::string ToString() const { return TextFormat("Music(frameCount=%u, looping=%s)", frameCount, looping ? "true" : "false"); }
+
+    operator std::string() const { return ToString(); }
+
     /**
      * Load music stream from file.
      *
