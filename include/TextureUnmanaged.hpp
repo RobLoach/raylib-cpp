@@ -86,6 +86,10 @@ public:
         return *this;
     }
 
+    [[nodiscard]] std::string ToString() const { return TextFormat("Texture(id=%u, %dx%d)", id, width, height); }
+
+    operator std::string() const { return ToString(); }
+
     /**
      * Retrieve the width and height of the texture.
      */

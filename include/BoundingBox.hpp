@@ -33,6 +33,15 @@ public:
         return *this;
     }
 
+    [[nodiscard]] std::string ToString() const {
+        return TextFormat(
+            "BoundingBox(min=(%f, %f, %f), max=(%f, %f, %f))",
+            min.x, min.y, min.z, max.x, max.y, max.z
+        );
+    }
+
+    operator std::string() const { return ToString(); }
+
     /**
      * Draw a bounding box with wires
      */

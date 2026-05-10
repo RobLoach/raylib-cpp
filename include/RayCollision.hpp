@@ -62,6 +62,18 @@ public:
         return *this;
     }
 
+    [[nodiscard]] std::string ToString() const {
+        return TextFormat(
+            "RayCollision(hit=%s, distance=%f, point=(%f, %f, %f), normal=(%f, %f, %f))",
+            hit ? "true" : "false",
+            distance,
+            point.x, point.y, point.z,
+            normal.x, normal.y, normal.z
+        );
+    }
+
+    operator std::string() const { return ToString(); }
+
     GETTERSETTER(bool, Hit, hit)
     GETTERSETTER(float, Distance, distance)
     GETTERSETTER(::Vector3, Position, point)

@@ -59,6 +59,10 @@ public:
         return *this;
     }
 
+    [[nodiscard]] std::string ToString() const { return TextFormat("Model(meshCount=%d, materialCount=%d)", meshCount, materialCount); }
+
+    operator std::string() const { return ToString(); }
+
     /**
      * Loads a Model from the given file.
      *

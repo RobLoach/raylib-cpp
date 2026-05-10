@@ -33,6 +33,10 @@ public:
 
     constexpr explicit operator ::Vector4() const { return {x, y, width, height}; }
 
+    [[nodiscard]] std::string ToString() const { return TextFormat("Rectangle(%fx%f, %fx%f)", x, y, width, height); }
+
+    operator std::string() const { return ToString(); }
+
     /**
      * Draw a color-filled rectangle
      */

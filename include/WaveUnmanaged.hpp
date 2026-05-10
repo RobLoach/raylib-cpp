@@ -60,6 +60,15 @@ public:
         return *this;
     }
 
+    [[nodiscard]] std::string ToString() const {
+        return TextFormat(
+            "Wave(frameCount=%u, sampleRate=%u, sampleSize=%u, channels=%u, data=%p)",
+            frameCount, sampleRate, sampleSize, channels, data
+        );
+    }
+
+    operator std::string() const { return ToString(); }
+
     /**
      * Load wave data from file.
      *
