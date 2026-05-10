@@ -6,7 +6,7 @@ set(CTEST_CUSTOM_TESTS_IGNORE pkg-config--static)
 # Executable
 add_executable(raylib_cpp_test raylib_cpp_test.cpp)
 if (MSVC)
-    target_compile_options(raylib_cpp_test PRIVATE /Wall /W4)
+    target_compile_options(raylib_cpp_test PRIVATE /W4)
 else()
     target_compile_options(raylib_cpp_test PRIVATE -Wall -Wextra -Wconversion -Wsign-conversion -Weffc++)
 endif()

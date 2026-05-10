@@ -48,9 +48,9 @@ int main(void)
 
     // Define the camera to look into our 3d world
     raylib::Camera camera;
-    camera.position = (Vector3){ 2.0f, 4.0f, 6.0f };    // Camera position
-    camera.target = (Vector3){ 0.0f, 0.5f, 0.0f };      // Camera looking at point
-    camera.up = (Vector3){ 0.0f, 1.0f, 0.0f };          // Camera up vector (rotation towards target)
+    camera.position = Vector3{ 2.0f, 4.0f, 6.0f };    // Camera position
+    camera.target = Vector3{ 0.0f, 0.5f, 0.0f };      // Camera looking at point
+    camera.up = Vector3{ 0.0f, 1.0f, 0.0f };          // Camera up vector (rotation towards target)
     camera.fovy = 45.0f;                                // Camera field-of-view Y
     camera.projection = CAMERA_PERSPECTIVE;             // Camera projection type
 
@@ -70,10 +70,10 @@ int main(void)
 
     // Create lights
     std::array<Light, MAX_LIGHTS> lights = {
-        CreateLight(LIGHT_POINT, (Vector3) {-2, 1, -2}, Vector3Zero(), YELLOW, shader),
-        CreateLight(LIGHT_POINT, (Vector3) {2, 1, 2}, Vector3Zero(), RED, shader),
-        CreateLight(LIGHT_POINT, (Vector3) {-2, 1, 2}, Vector3Zero(), GREEN, shader),
-        CreateLight(LIGHT_POINT, (Vector3) {2, 1, -2}, Vector3Zero(), BLUE, shader),
+        CreateLight(LIGHT_POINT, Vector3 {-2, 1, -2}, Vector3Zero(), YELLOW, shader),
+        CreateLight(LIGHT_POINT, Vector3 {2, 1, 2}, Vector3Zero(), RED, shader),
+        CreateLight(LIGHT_POINT, Vector3 {-2, 1, 2}, Vector3Zero(), GREEN, shader),
+        CreateLight(LIGHT_POINT, Vector3 {2, 1, -2}, Vector3Zero(), BLUE, shader),
     };
 
     SetTargetFPS(60);                   // Set our game to run at 60 frames-per-second
@@ -110,7 +110,7 @@ int main(void)
 
         BeginShaderMode(shader);
 
-        DrawPlane(Vector3Zero(), (Vector2) { 10.0, 10.0 }, WHITE);
+        DrawPlane(Vector3Zero(), Vector2 { 10.0, 10.0 }, WHITE);
         DrawCube(Vector3Zero(), 2.0, 4.0, 2.0, WHITE);
 
         EndShaderMode();

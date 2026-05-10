@@ -78,8 +78,9 @@ extern "C" {
 #endif
 
 // Variadic Arguments
-#define RAYLIB_ASSERT_CAT( A, B ) A ## B
-#define RAYLIB_ASSERT_SELECT( NAME, NUM ) RAYLIB_ASSERT_CAT( NAME ## _, NUM )
+#define RAYLIB_ASSERT_CAT(a, b) RAYLIB_ASSERT_CAT_I(a, b)
+#define RAYLIB_ASSERT_CAT_I(a, b) a##b
+#define RAYLIB_ASSERT_SELECT(name, num) RAYLIB_ASSERT_CAT(name##_, num)
 #define RAYLIB_ASSERT_GET_COUNT( _1, _2, _3, _4, _5, _6, _7, RAYLIB_ASSERT_COUNT, ... ) RAYLIB_ASSERT_COUNT
 #define RAYLIB_ASSERT_VA_SIZE( ... ) RAYLIB_ASSERT_GET_COUNT( __VA_ARGS__, 7, 6, 5, 4, 3, 2, 1 )
 #define RAYLIB_ASSERT_VA_SELECT( NAME, ... ) RAYLIB_ASSERT_SELECT( NAME, RAYLIB_ASSERT_VA_SIZE(__VA_ARGS__) )(__VA_ARGS__)

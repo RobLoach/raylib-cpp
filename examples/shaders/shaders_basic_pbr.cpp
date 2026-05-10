@@ -88,9 +88,9 @@ int main()
 
     // Define the camera to look into our 3d world
     raylib::Camera camera;
-    camera.position = (Vector3){ 2.0f, 2.0f, 6.0f };    // Camera position
-    camera.target = (Vector3){ 0.0f, 0.5f, 0.0f };      // Camera looking at point
-    camera.up = (Vector3){ 0.0f, 1.0f, 0.0f };          // Camera up vector (rotation towards target)
+    camera.position = Vector3{ 2.0f, 2.0f, 6.0f };    // Camera position
+    camera.target = Vector3{ 0.0f, 0.5f, 0.0f };      // Camera looking at point
+    camera.up = Vector3{ 0.0f, 1.0f, 0.0f };          // Camera up vector (rotation towards target)
     camera.fovy = 45.0f;                                // Camera field-of-view Y
     camera.projection = CAMERA_PERSPECTIVE;             // Camera projection type
 
@@ -117,8 +117,8 @@ int main()
 
     // Setup ambient color and intensity parameters
     float ambientIntensity = 0.02f;
-    raylib::Color ambientColor = (Color){ 26, 32, 135, 255 };
-    raylib::Vector3 ambientColorNormalized = (Vector3){ ambientColor.r/255.0f, ambientColor.g/255.0f, ambientColor.b/255.0f };
+    raylib::Color ambientColor = Color{ 26, 32, 135, 255 };
+    raylib::Vector3 ambientColorNormalized = Vector3{ ambientColor.r/255.0f, ambientColor.g/255.0f, ambientColor.b/255.0f };
     shader.SetValue(shader.GetLocation("ambientColor"), &ambientColorNormalized, SHADER_UNIFORM_VEC3);
     shader.SetValue(shader.GetLocation("ambient"), &ambientIntensity, SHADER_UNIFORM_FLOAT);
 
@@ -142,7 +142,7 @@ int main()
     car.materials[0].maps[MATERIAL_MAP_METALNESS].value = 0.0f;
     car.materials[0].maps[MATERIAL_MAP_ROUGHNESS].value = 0.0f;
     car.materials[0].maps[MATERIAL_MAP_OCCLUSION].value = 1.0f;
-    car.materials[0].maps[MATERIAL_MAP_EMISSION].color = (Color){ 255, 162, 0, 255 };
+    car.materials[0].maps[MATERIAL_MAP_EMISSION].color = Color{ 255, 162, 0, 255 };
 
     // Setup materials[0].maps default textures
     car.materials[0].maps[MATERIAL_MAP_ALBEDO].texture = LoadTexture("resources/old_car_d.png");
@@ -172,15 +172,15 @@ int main()
 
     // Models texture tiling parameter can be stored in the Material struct if required (CURRENTLY NOT USED)
     // NOTE: Material.params[4] are available for generic parameters storage (float)
-    Vector2 carTextureTiling = (Vector2){ 0.5f, 0.5f };
-    Vector2 floorTextureTiling = (Vector2){ 0.5f, 0.5f };
+    Vector2 carTextureTiling = Vector2{ 0.5f, 0.5f };
+    Vector2 floorTextureTiling = Vector2{ 0.5f, 0.5f };
 
     // Create some lights
     std::array<Light, MAX_LIGHTS> lights = {
-            CreateLight(0, LightType::POINT, (Vector3) {-1.0f, 1.0f, -2.0f}, (Vector3) {0.0f, 0.0f, 0.0f}, YELLOW, 4.0f, shader),
-            CreateLight(1, LightType::POINT, (Vector3){ 2.0f, 1.0f, 1.0f }, (Vector3){ 0.0f, 0.0f, 0.0f }, GREEN, 3.3f, shader),
-            CreateLight(2, LightType::POINT, (Vector3){ -2.0f, 1.0f, 1.0f }, (Vector3){ 0.0f, 0.0f, 0.0f }, RED, 8.3f, shader),
-            CreateLight(3, LightType::POINT, (Vector3){ 1.0f, 1.0f, -2.0f }, (Vector3){ 0.0f, 0.0f, 0.0f }, BLUE, 2.0f, shader),
+            CreateLight(0, LightType::POINT, Vector3{-1.0f, 1.0f, -2.0f}, Vector3{0.0f, 0.0f, 0.0f}, YELLOW, 4.0f, shader),
+            CreateLight(1, LightType::POINT, Vector3{ 2.0f, 1.0f, 1.0f }, Vector3{ 0.0f, 0.0f, 0.0f }, GREEN, 3.3f, shader),
+            CreateLight(2, LightType::POINT, Vector3{ -2.0f, 1.0f, 1.0f }, Vector3{ 0.0f, 0.0f, 0.0f }, RED, 8.3f, shader),
+            CreateLight(3, LightType::POINT, Vector3{ 1.0f, 1.0f, -2.0f }, Vector3{ 0.0f, 0.0f, 0.0f }, BLUE, 2.0f, shader),
     };
 
     // Setup material texture maps usage in shader
@@ -228,7 +228,7 @@ int main()
         raylib::Vector4 floorEmissiveColor = ColorNormalize(floor.materials[0].maps[MATERIAL_MAP_EMISSION].color);
         SetShaderValue(shader, emissiveColorLoc, &floorEmissiveColor, SHADER_UNIFORM_VEC4);
 
-        DrawModel(floor, (Vector3){ 0.0f, 0.0f, 0.0f }, 5.0f, WHITE);   // Draw floor model
+        DrawModel(floor, Vector3{ 0.0f, 0.0f, 0.0f }, 5.0f, WHITE);   // Draw floor model
 
         // Set old car model texture tiling, emissive color and emissive intensity parameters on shader
         SetShaderValue(shader, textureTilingLoc, &carTextureTiling, SHADER_UNIFORM_VEC2);
@@ -237,15 +237,15 @@ int main()
         float emissiveIntensity = 0.01f;
         SetShaderValue(shader, emissiveIntensityLoc, &emissiveIntensity, SHADER_UNIFORM_FLOAT);
 
-        car.Draw((Vector3){ 0.0f, 0.0f, 0.0f }, 0.005f, WHITE);   // Draw car model
+        car.Draw(Vector3{ 0.0f, 0.0f, 0.0f }, 0.005f, WHITE);   // Draw car model
 
         // Draw spheres to show the lights positions
         for (const auto& light : lights)
         {
-            Color lightColor = (Color){ static_cast<unsigned char>(light.color[0]*255),
-                                        static_cast<unsigned char>(light.color[1]*255),
-                                        static_cast<unsigned char>(light.color[2]*255),
-                                        static_cast<unsigned char>(light.color[3]*255) };
+            Color lightColor = Color{ static_cast<unsigned char>(light.color[0]*255),
+                                      static_cast<unsigned char>(light.color[1]*255),
+                                      static_cast<unsigned char>(light.color[2]*255),
+                                      static_cast<unsigned char>(light.color[3]*255) };
 
             if (light.enabled) DrawSphereEx(light.position, 0.2f, 8, 8, lightColor);
             else DrawSphereWires(light.position, 0.2f, 8, 8, ColorAlpha(lightColor, 0.3f));
@@ -267,12 +267,12 @@ int main()
     //--------------------------------------------------------------------------------------
     // Unbind (disconnect) shader from car.material[0]
     // to avoid UnloadMaterial() trying to unload it automatically
-    car.materials[0].shader = (Shader){ 0 };
+    car.materials[0].shader = Shader{ 0 };
     UnloadMaterial(car.materials[0]);
     car.materials[0].maps = NULL;
     //UnloadModel(car);
 
-    floor.materials[0].shader = (Shader){ 0 };
+    floor.materials[0].shader = Shader{ 0 };
     UnloadMaterial(floor.materials[0]);
     floor.materials[0].maps = NULL;
     //UnloadModel(floor);
