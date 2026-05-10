@@ -100,6 +100,10 @@ public:
         other.format = 0;
     }
 
+    [[nodiscard]] std::string ToString() const { return TextFormat("Image(width=%d, height=%d)", width, height); }
+
+    operator std::string() const { return ToString(); }
+
     static ::Image Text(const std::string& text, int fontSize, ::Color color = {255, 255, 255, 255}) {
         return ::ImageText(text.c_str(), fontSize, color);
     }
