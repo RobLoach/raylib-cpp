@@ -198,7 +198,7 @@ public:
     /**
      * Compute mesh bounding box limits
      */
-    [[nodiscard]] raylib::BoundingBox BoundingBox() const { return ::GetMeshBoundingBox(*this); }
+    RLCPP_NODISCARD raylib::BoundingBox BoundingBox() const { return ::GetMeshBoundingBox(*this); }
 
     /**
      * Compute mesh bounding box limits
@@ -216,7 +216,7 @@ public:
     /**
      * Load model from generated mesh
      */
-    [[nodiscard]] raylib::Model LoadModelFrom() const { return ::LoadModelFromMesh(*this); }
+    RLCPP_NODISCARD raylib::Model LoadModelFrom() const { return ::LoadModelFromMesh(*this); }
 
     /**
      * Load model from generated mesh
@@ -226,7 +226,7 @@ public:
     /**
      * Returns whether or not the Mesh is valid.
      */
-    [[nodiscard]] bool IsValid() const { return vaoId != 0 && vertexCount > 0; }
+    RLCPP_NODISCARD bool IsValid() const { return vaoId != 0 && vertexCount > 0; }
 
 protected:
     void set(const ::Mesh& mesh) {

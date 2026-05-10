@@ -126,7 +126,7 @@ public:
     /**
      * Check model animation skeleton match.
      */
-    [[nodiscard]] bool IsModelAnimationValid(const ::ModelAnimation& anim) const {
+    RLCPP_NODISCARD bool IsModelAnimationValid(const ::ModelAnimation& anim) const {
         return ::IsModelAnimationValid(*this, anim);
     }
 
@@ -171,7 +171,7 @@ public:
     /**
      * Compute model bounding box limits (considers all meshes).
      */
-    [[nodiscard]] BoundingBox GetBoundingBox() const { return ::GetModelBoundingBox(*this); }
+    RLCPP_NODISCARD BoundingBox GetBoundingBox() const { return ::GetModelBoundingBox(*this); }
 
     /**
      * Compute model bounding box limits (considers all meshes).
@@ -181,7 +181,7 @@ public:
     /**
      * Determines whether or not the Model has data in it.
      */
-    [[nodiscard]] bool IsValid() const { return ::IsModelValid(*this); }
+    RLCPP_NODISCARD bool IsValid() const { return ::IsModelValid(*this); }
 
 protected:
     void set(const ::Model& model) {

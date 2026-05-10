@@ -103,7 +103,7 @@ public:
     /**
      * Check model animation skeleton match
      */
-    [[nodiscard]] bool IsValid(const ::Model& model) const { return ::IsModelAnimationValid(model, *this); }
+    RLCPP_NODISCARD bool IsValid(const ::Model& model) const { return ::IsModelAnimationValid(model, *this); }
 protected:
     void set(const ::ModelAnimation& model) {
         boneCount = model.boneCount;

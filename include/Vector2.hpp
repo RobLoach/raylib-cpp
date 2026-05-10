@@ -42,7 +42,7 @@ public:
      */
     constexpr bool operator!=(const ::Vector2& other) const { return !(*this == other); }
 
-    [[nodiscard]] std::string ToString() const { return TextFormat("Vector2(%f, %f)", x, y); }
+    RLCPP_NODISCARD std::string ToString() const { return TextFormat("Vector2(%f, %f)", x, y); }
 
     operator std::string() const { return ToString(); }
 
@@ -92,7 +92,7 @@ public:
     /**
      * Subtract two vectors (v1 - v2)
      */
-    [[nodiscard]] Vector2 Subtract(const ::Vector2& vector2) const { return Vector2Subtract(*this, vector2); }
+    RLCPP_NODISCARD Vector2 Subtract(const ::Vector2& vector2) const { return Vector2Subtract(*this, vector2); }
 
     /**
      * Subtract two vectors (v1 - v2)
@@ -111,7 +111,7 @@ public:
     /**
      * Subtract vector by float value
      */
-    [[nodiscard]] Vector2 Subtract(float value) const {
+    RLCPP_NODISCARD Vector2 Subtract(float value) const {
       return Vector2SubtractValue(*this, value);
     }
 
@@ -134,7 +134,7 @@ public:
     /**
      * Negate vector
      */
-    [[nodiscard]] Vector2 Negate() const { return Vector2Negate(*this); }
+    RLCPP_NODISCARD Vector2 Negate() const { return Vector2Negate(*this); }
 
     /**
      * Negate vector
@@ -144,7 +144,7 @@ public:
     /**
      * Multiply vector by vector
      */
-    [[nodiscard]] Vector2 Multiply(const ::Vector2& vector2) const { return Vector2Multiply(*this, vector2); }
+    RLCPP_NODISCARD Vector2 Multiply(const ::Vector2& vector2) const { return Vector2Multiply(*this, vector2); }
 
     /**
      * Multiply vector by vector
@@ -163,7 +163,7 @@ public:
     /**
      * Scale vector (multiply by value)
      */
-    [[nodiscard]] Vector2 Scale(const float scale) const { return Vector2Scale(*this, scale); }
+    RLCPP_NODISCARD Vector2 Scale(const float scale) const { return Vector2Scale(*this, scale); }
 
     /**
      * Scale vector (multiply by value)
@@ -182,7 +182,7 @@ public:
     /**
      * Divide vector by vector
      */
-    [[nodiscard]] Vector2 Divide(const ::Vector2& vector2) const { return Vector2Divide(*this, vector2); }
+    RLCPP_NODISCARD Vector2 Divide(const ::Vector2& vector2) const { return Vector2Divide(*this, vector2); }
 
 
     /**
@@ -202,7 +202,7 @@ public:
     /**
      * Divide vector by value
      */
-    [[nodiscard]] Vector2 Divide(const float div) const { return ::Vector2{x / div, y / div}; }
+    RLCPP_NODISCARD Vector2 Divide(const float div) const { return ::Vector2{x / div, y / div}; }
 
     /**
      * Divide vector by value
@@ -222,84 +222,84 @@ public:
     /**
      * Normalize provided vector
      */
-    [[nodiscard]] Vector2 Normalize() const { return Vector2Normalize(*this); }
+    RLCPP_NODISCARD Vector2 Normalize() const { return Vector2Normalize(*this); }
 
     /**
      * Transforms a Vector2 by a given Matrix
      */
-    [[nodiscard]] Vector2 Transform(::Matrix mat) const { return ::Vector2Transform(*this, mat); }
+    RLCPP_NODISCARD Vector2 Transform(::Matrix mat) const { return ::Vector2Transform(*this, mat); }
 
     /**
      * Calculate linear interpolation between two vectors
      */
-    [[nodiscard]] Vector2 Lerp(const ::Vector2& vector2, float amount) const { return Vector2Lerp(*this, vector2, amount); }
+    RLCPP_NODISCARD Vector2 Lerp(const ::Vector2& vector2, float amount) const { return Vector2Lerp(*this, vector2, amount); }
 
     /**
      * Calculate reflected vector to normal
      */
-    [[nodiscard]] Vector2 Reflect(const ::Vector2& normal) const { return Vector2Reflect(*this, normal); }
+    RLCPP_NODISCARD Vector2 Reflect(const ::Vector2& normal) const { return Vector2Reflect(*this, normal); }
 
     /**
      * Rotate Vector by float in radians
      */
-    [[nodiscard]] Vector2 Rotate(float angle) const { return Vector2Rotate(*this, angle); }
+    RLCPP_NODISCARD Vector2 Rotate(float angle) const { return Vector2Rotate(*this, angle); }
 
     /**
      * Move Vector towards target
      */
-    [[nodiscard]] Vector2 MoveTowards(const ::Vector2& target, float maxDistance) const {
+    RLCPP_NODISCARD Vector2 MoveTowards(const ::Vector2& target, float maxDistance) const {
         return Vector2MoveTowards(*this, target, maxDistance);
     }
 
     /**
      * Invert the given vector
      */
-    [[nodiscard]] Vector2 Invert() const { return ::Vector2Invert(*this); }
+    RLCPP_NODISCARD Vector2 Invert() const { return ::Vector2Invert(*this); }
 
     /**
      * Clamp the components of the vector between
      */
-    [[nodiscard]] Vector2 Clamp(::Vector2 min, ::Vector2 max) const { return ::Vector2Clamp(*this, min, max); }
+    RLCPP_NODISCARD Vector2 Clamp(::Vector2 min, ::Vector2 max) const { return ::Vector2Clamp(*this, min, max); }
 
     /**
      * // Clamp the magnitude of the vector between two min and max values
      */
-    [[nodiscard]] Vector2 Clamp(float min, float max) const { return ::Vector2ClampValue(*this, min, max); }
+    RLCPP_NODISCARD Vector2 Clamp(float min, float max) const { return ::Vector2ClampValue(*this, min, max); }
 
     /**
      * Check whether two given vectors are almost equal
      */
-    [[nodiscard]] int Equals(::Vector2 q) const { return ::Vector2Equals(*this, q); }
+    RLCPP_NODISCARD int Equals(::Vector2 q) const { return ::Vector2Equals(*this, q); }
 
     /**
      * Calculate vector length
      */
-    [[nodiscard]] float Length() const { return Vector2Length(*this); }
+    RLCPP_NODISCARD float Length() const { return Vector2Length(*this); }
 
     /**
      * Calculate vector square length
      */
-    [[nodiscard]] float LengthSqr() const { return Vector2LengthSqr(*this); }
+    RLCPP_NODISCARD float LengthSqr() const { return Vector2LengthSqr(*this); }
 
     /**
      * Calculate two vectors dot product
      */
-    [[nodiscard]] float DotProduct(const ::Vector2& vector2) const { return Vector2DotProduct(*this, vector2); }
+    RLCPP_NODISCARD float DotProduct(const ::Vector2& vector2) const { return Vector2DotProduct(*this, vector2); }
 
     /**
      * Calculate distance between two vectors
      */
-    [[nodiscard]] float Distance(const ::Vector2& vector2) const { return Vector2Distance(*this, vector2); }
+    RLCPP_NODISCARD float Distance(const ::Vector2& vector2) const { return Vector2Distance(*this, vector2); }
 
     /**
      * Calculate square distance between two vectors
      */
-    [[nodiscard]] float DistanceSqr(::Vector2 v2) const { return ::Vector2DistanceSqr(*this, v2); }
+    RLCPP_NODISCARD float DistanceSqr(::Vector2 v2) const { return ::Vector2DistanceSqr(*this, v2); }
 
     /**
      * Calculate angle from two vectors in X-axis
      */
-    [[nodiscard]] float Angle(const ::Vector2& vector2) const { return Vector2Angle(*this, vector2); }
+    RLCPP_NODISCARD float Angle(const ::Vector2& vector2) const { return Vector2Angle(*this, vector2); }
 
     /**
      * Vector with components value 0.0f
@@ -338,33 +338,33 @@ public:
     /**
      * Check collision between two circles
      */
-    [[nodiscard]] bool CheckCollisionCircle(float radius1, ::Vector2 center2, float radius2) const {
+    RLCPP_NODISCARD bool CheckCollisionCircle(float radius1, ::Vector2 center2, float radius2) const {
         return ::CheckCollisionCircles(*this, radius1, center2, radius2);
     }
 
     /**
      * Check collision between circle and rectangle
      */
-    [[nodiscard]] bool CheckCollisionCircle(float radius, ::Rectangle rec) const {
+    RLCPP_NODISCARD bool CheckCollisionCircle(float radius, ::Rectangle rec) const {
         return ::CheckCollisionCircleRec(*this, radius, rec);
     }
 
     /**
      * Check if point is inside rectangle
      */
-    [[nodiscard]] bool CheckCollision(::Rectangle rec) const { return ::CheckCollisionPointRec(*this, rec); }
+    RLCPP_NODISCARD bool CheckCollision(::Rectangle rec) const { return ::CheckCollisionPointRec(*this, rec); }
 
     /**
      * Check if point is inside circle
      */
-    [[nodiscard]] bool CheckCollision(::Vector2 center, float radius) const {
+    RLCPP_NODISCARD bool CheckCollision(::Vector2 center, float radius) const {
         return ::CheckCollisionPointCircle(*this, center, radius);
     }
 
     /**
      * Check if point is inside a triangle
      */
-    [[nodiscard]] bool CheckCollision(::Vector2 p1, ::Vector2 p2, ::Vector2 p3) const {
+    RLCPP_NODISCARD bool CheckCollision(::Vector2 p1, ::Vector2 p2, ::Vector2 p3) const {
         return ::CheckCollisionPointTriangle(*this, p1, p2, p3);
     }
 
@@ -379,7 +379,7 @@ public:
     /**
      * Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
      */
-    [[nodiscard]] bool CheckCollisionPointLine(::Vector2 p1, ::Vector2 p2, int threshold = 1) const {
+    RLCPP_NODISCARD bool CheckCollisionPointLine(::Vector2 p1, ::Vector2 p2, int threshold = 1) const {
         return ::CheckCollisionPointLine(*this, p1, p2, threshold);
     }
 protected:

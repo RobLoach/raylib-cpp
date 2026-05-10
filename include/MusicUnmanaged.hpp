@@ -146,7 +146,7 @@ public:
     /**
      * Check if music is playing.
      */
-    [[nodiscard]] bool IsPlaying() const { return ::IsMusicStreamPlaying(*this); }
+    RLCPP_NODISCARD bool IsPlaying() const { return ::IsMusicStreamPlaying(*this); }
 
     /**
      * Set volume for music.
@@ -175,19 +175,19 @@ public:
     /**
      * Get music time length (in seconds).
      */
-    [[nodiscard]] float GetTimeLength() const { return ::GetMusicTimeLength(*this); }
+    RLCPP_NODISCARD float GetTimeLength() const { return ::GetMusicTimeLength(*this); }
 
     /**
      * Get current music time played (in seconds).
      */
-    [[nodiscard]] float GetTimePlayed() const { return ::GetMusicTimePlayed(*this); }
+    RLCPP_NODISCARD float GetTimePlayed() const { return ::GetMusicTimePlayed(*this); }
 
     /**
      * Retrieve whether or not the Music has been loaded.
      *
      * @return True or false depending on whether the Music has been loaded.
      */
-    [[nodiscard]] bool IsValid() const { return ::IsMusicValid(*this); }
+    RLCPP_NODISCARD bool IsValid() const { return ::IsMusicValid(*this); }
 
 protected:
     void set(const ::Music& music) {

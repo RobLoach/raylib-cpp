@@ -42,17 +42,17 @@ public:
     /**
      * Returns camera 2d transform matrix
      */
-    [[nodiscard]] Matrix GetMatrix() const { return ::GetCameraMatrix2D(*this); }
+    RLCPP_NODISCARD Matrix GetMatrix() const { return ::GetCameraMatrix2D(*this); }
 
     /**
      * Returns the world space position for a 2d camera screen space position
      */
-    [[nodiscard]] Vector2 GetScreenToWorld(::Vector2 position) const { return ::GetScreenToWorld2D(position, *this); }
+    RLCPP_NODISCARD Vector2 GetScreenToWorld(::Vector2 position) const { return ::GetScreenToWorld2D(position, *this); }
 
     /**
      * Returns the screen space position for a 2d world space position
      */
-    [[nodiscard]] Vector2 GetWorldToScreen(::Vector2 position) const { return ::GetWorldToScreen2D(position, *this); }
+    RLCPP_NODISCARD Vector2 GetWorldToScreen(::Vector2 position) const { return ::GetWorldToScreen2D(position, *this); }
 protected:
     void set(const ::Camera2D& camera) {
         offset = camera.offset;

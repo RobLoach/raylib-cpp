@@ -16,20 +16,6 @@
 #define RLCPPAPI static
 #endif
 
-#ifndef RLCPP_MAYBEUNUSED
-#  if defined(__has_cpp_attribute)
-#    if __has_cpp_attribute(maybe_unused) && __cplusplus >= 201703L
-#      define RLCPP_MAYBEUNUSED [[maybe_unused]]
-#    else
-#      define RLCPP_MAYBEUNUSED
-#    endif
-#  elif (defined(_MSVC_LANG) && _MSVC_LANG >= 201703L) || (__cplusplus >= 201703L)
-#    define RLCPP_MAYBEUNUSED [[maybe_unused]]
-#  else
-#    define RLCPP_MAYBEUNUSED
-#  endif
-#endif
-
 namespace raylib {
 
 /**

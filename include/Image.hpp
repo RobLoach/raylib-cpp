@@ -340,17 +340,17 @@ public:
     /**
      * Retrieve the width and height of the image.
      */
-    [[nodiscard]] ::Vector2 GetSize() const { return {static_cast<float>(width), static_cast<float>(height)}; }
+    RLCPP_NODISCARD ::Vector2 GetSize() const { return {static_cast<float>(width), static_cast<float>(height)}; }
 
     /**
      * Create an image duplicate (useful for transformations)
      */
-    [[nodiscard]] ::Image Copy() const { return ::ImageCopy(*this); }
+    RLCPP_NODISCARD ::Image Copy() const { return ::ImageCopy(*this); }
 
     /**
      * Create an image from another image piece
      */
-    [[nodiscard]] ::Image FromImage(::Rectangle rec) const { return ::ImageFromImage(*this, rec); }
+    RLCPP_NODISCARD ::Image FromImage(::Rectangle rec) const { return ::ImageFromImage(*this, rec); }
 
     /**
      * Convert image data to desired format
@@ -569,17 +569,17 @@ public:
      *
      * @param threshold Threshold is defined as a percentatge: 0.0f -> 1.0f
      */
-    [[nodiscard]] Rectangle GetAlphaBorder(float threshold) const { return ::GetImageAlphaBorder(*this, threshold); }
+    RLCPP_NODISCARD Rectangle GetAlphaBorder(float threshold) const { return ::GetImageAlphaBorder(*this, threshold); }
 
     /**
      * Get image pixel color at (x, y) position
      */
-    [[nodiscard]] raylib::Color GetColor(int x = 0, int y = 0) const { return ::GetImageColor(*this, x, y); }
+    RLCPP_NODISCARD raylib::Color GetColor(int x = 0, int y = 0) const { return ::GetImageColor(*this, x, y); }
 
     /**
      * Get image pixel color at vector position
      */
-    [[nodiscard]] raylib::Color GetColor(::Vector2 position) const {
+    RLCPP_NODISCARD raylib::Color GetColor(::Vector2 position) const {
         return ::GetImageColor(*this, static_cast<int>(position.x), static_cast<int>(position.y));
     }
 
@@ -692,7 +692,7 @@ public:
     /**
      * Load color data from image as a Color array (RGBA - 32bit)
      */
-    [[nodiscard]] ::Color* LoadColors() const { return ::LoadImageColors(*this); }
+    RLCPP_NODISCARD ::Color* LoadColors() const { return ::LoadImageColors(*this); }
 
     /**
      * Load colors palette from image as a Color array (RGBA - 32bit)
@@ -714,7 +714,7 @@ public:
     /**
      * Load texture from image data.
      */
-    [[nodiscard]] ::Texture2D LoadTexture() const { return ::LoadTextureFromImage(*this); }
+    RLCPP_NODISCARD ::Texture2D LoadTexture() const { return ::LoadTextureFromImage(*this); }
 
     /**
      * Loads a texture from the image data.
@@ -735,14 +735,14 @@ public:
      *
      * @return The pixel data size of the image.
      */
-    [[nodiscard]] int GetPixelDataSize() const { return ::GetPixelDataSize(width, height, format); }
+    RLCPP_NODISCARD int GetPixelDataSize() const { return ::GetPixelDataSize(width, height, format); }
 
     /**
      * Retrieve whether or not the Image has been loaded.
      *
      * @return True or false depending on whether the Image has been loaded.
      */
-    [[nodiscard]] bool IsValid() const { return ::IsImageValid(*this); }
+    RLCPP_NODISCARD bool IsValid() const { return ::IsImageValid(*this); }
 
     /**
      * Create an image from a selected channel of another image (GRAYSCALE)

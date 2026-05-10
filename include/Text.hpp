@@ -120,12 +120,12 @@ public:
     /**
      * Measure string width for default font
      */
-    [[nodiscard]] int Measure() const { return ::MeasureText(text.c_str(), static_cast<int>(fontSize)); }
+    RLCPP_NODISCARD int Measure() const { return ::MeasureText(text.c_str(), static_cast<int>(fontSize)); }
 
     /**
      * Measure string size for Font
      */
-    [[nodiscard]] Vector2 MeasureEx() const { return ::MeasureTextEx(font, text.c_str(), fontSize, spacing); }
+    RLCPP_NODISCARD Vector2 MeasureEx() const { return ::MeasureTextEx(font, text.c_str(), fontSize, spacing); }
 
     Text& operator=(const Text& other) {
         if (this == &other) {

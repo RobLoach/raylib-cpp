@@ -56,3 +56,10 @@ if(BUILD_RAYLIB_CPP_EXAMPLES)
         )
     endif()
 endif()
+
+# ignore unused functions
+if (MSVC)
+    target_compile_options(raylib_cpp INTERFACE /wd4505)
+else()
+    target_compile_options(raylib_cpp INTERFACE -Wno-unused-function)
+endif()

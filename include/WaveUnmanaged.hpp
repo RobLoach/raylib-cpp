@@ -98,7 +98,7 @@ public:
     /**
      * Copy a wave to a new wave.
      */
-    [[nodiscard]] ::Wave Copy() const { return ::WaveCopy(*this); }
+    RLCPP_NODISCARD ::Wave Copy() const { return ::WaveCopy(*this); }
 
     /**
      * Crop a wave to defined samples range.
@@ -151,7 +151,7 @@ public:
      *
      * @return True or false depending on whether the wave data has been loaded.
      */
-    [[nodiscard]] bool IsValid() const { return ::IsWaveValid(*this); }
+    RLCPP_NODISCARD bool IsValid() const { return ::IsWaveValid(*this); }
 
 protected:
     void set(const ::Wave& wave) {

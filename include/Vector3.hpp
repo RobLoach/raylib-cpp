@@ -36,7 +36,7 @@ public:
 
     constexpr bool operator!=(const ::Vector3& other) const { return !(*this == other); }
 
-    [[nodiscard]] std::string ToString() const { return TextFormat("Vector3(%f, %f, %f)", x, y, z); }
+    RLCPP_NODISCARD std::string ToString() const { return TextFormat("Vector3(%f, %f, %f)", x, y, z); }
 
     operator std::string() const { return ToString(); }
 
@@ -44,7 +44,7 @@ public:
     /**
      * Add two vectors
      */
-    [[nodiscard]] Vector3 Add(const ::Vector3& vector3) const { return Vector3Add(*this, vector3); }
+    RLCPP_NODISCARD Vector3 Add(const ::Vector3& vector3) const { return Vector3Add(*this, vector3); }
 
     /**
      * Add two vectors
@@ -60,7 +60,7 @@ public:
     /**
      * Add vector and float value
      */
-    [[nodiscard]] Vector3 Add(float value) const {
+    RLCPP_NODISCARD Vector3 Add(float value) const {
       return Vector3AddValue(*this, value);
     }
 
@@ -80,7 +80,7 @@ public:
     /**
      * Subtract two vectors.
      */
-    [[nodiscard]] Vector3 Subtract(const ::Vector3& vector3) const { return Vector3Subtract(*this, vector3); }
+    RLCPP_NODISCARD Vector3 Subtract(const ::Vector3& vector3) const { return Vector3Subtract(*this, vector3); }
 
     /**
      * Subtract two vectors.
@@ -96,7 +96,7 @@ public:
     /**
      * Subtract vector by float value
      */
-    [[nodiscard]] Vector3 Subtract(float value) const {
+    RLCPP_NODISCARD Vector3 Subtract(float value) const {
       return Vector3SubtractValue(*this, value);
     }
 
@@ -116,7 +116,7 @@ public:
     /**
      * Negate provided vector (invert direction)
      */
-    [[nodiscard]] Vector3 Negate() const { return Vector3Negate(*this); }
+    RLCPP_NODISCARD Vector3 Negate() const { return Vector3Negate(*this); }
 
     /**
      * Negate provided vector (invert direction)
@@ -126,7 +126,7 @@ public:
     /**
      * Multiply vector by vector
      */
-    [[nodiscard]] Vector3 Multiply(const ::Vector3& vector3) const { return Vector3Multiply(*this, vector3); }
+    RLCPP_NODISCARD Vector3 Multiply(const ::Vector3& vector3) const { return Vector3Multiply(*this, vector3); }
 
     /**
      * Multiply vector by vector
@@ -145,7 +145,7 @@ public:
     /**
      * Multiply vector by scalar
      */
-    [[nodiscard]] Vector3 Scale(const float scaler) const { return Vector3Scale(*this, scaler); }
+    RLCPP_NODISCARD Vector3 Scale(const float scaler) const { return Vector3Scale(*this, scaler); }
 
     /**
      * Multiply vector by scalar
@@ -164,7 +164,7 @@ public:
     /**
      * Divide vector by vector
      */
-    [[nodiscard]] Vector3 Divide(const ::Vector3& vector3) const { return Vector3Divide(*this, vector3); }
+    RLCPP_NODISCARD Vector3 Divide(const ::Vector3& vector3) const { return Vector3Divide(*this, vector3); }
 
     /**
      * Divide vector by vector
@@ -185,7 +185,7 @@ public:
     /**
      * Divide a vector by a value.
      */
-    [[nodiscard]] Vector3 Divide(const float div) const { return ::Vector3{x / div, y / div, z / div}; }
+    RLCPP_NODISCARD Vector3 Divide(const float div) const { return ::Vector3{x / div, y / div, z / div}; }
 
     /**
      * Divide a vector by a value.
@@ -206,44 +206,44 @@ public:
     /**
      * Calculate vector length
      */
-    [[nodiscard]] float Length() const { return Vector3Length(*this); }
+    RLCPP_NODISCARD float Length() const { return Vector3Length(*this); }
 
     /**
      * Calculate vector square length
      */
-    [[nodiscard]] float LengthSqr() const { return Vector3LengthSqr(*this); }
+    RLCPP_NODISCARD float LengthSqr() const { return Vector3LengthSqr(*this); }
 
-    [[nodiscard]] Vector3 Normalize() const { return Vector3Normalize(*this); }
+    RLCPP_NODISCARD Vector3 Normalize() const { return Vector3Normalize(*this); }
 
-    [[nodiscard]] float DotProduct(const ::Vector3& vector3) const { return Vector3DotProduct(*this, vector3); }
+    RLCPP_NODISCARD float DotProduct(const ::Vector3& vector3) const { return Vector3DotProduct(*this, vector3); }
 
-    [[nodiscard]] float Distance(const ::Vector3& vector3) const { return Vector3Distance(*this, vector3); }
+    RLCPP_NODISCARD float Distance(const ::Vector3& vector3) const { return Vector3Distance(*this, vector3); }
 
-    [[nodiscard]] Vector3 Lerp(const ::Vector3& vector3, const float amount) const { return Vector3Lerp(*this, vector3, amount); }
+    RLCPP_NODISCARD Vector3 Lerp(const ::Vector3& vector3, const float amount) const { return Vector3Lerp(*this, vector3, amount); }
 
-    [[nodiscard]] Vector3 CrossProduct(const ::Vector3& vector3) const { return Vector3CrossProduct(*this, vector3); }
+    RLCPP_NODISCARD Vector3 CrossProduct(const ::Vector3& vector3) const { return Vector3CrossProduct(*this, vector3); }
 
-    [[nodiscard]] Vector3 Perpendicular() const { return Vector3Perpendicular(*this); }
+    RLCPP_NODISCARD Vector3 Perpendicular() const { return Vector3Perpendicular(*this); }
 
-    [[nodiscard]] Vector3 Project(const ::Vector3& vector3) const { return Vector3Project(*this, vector3); }
+    RLCPP_NODISCARD Vector3 Project(const ::Vector3& vector3) const { return Vector3Project(*this, vector3); }
 
-    [[nodiscard]] Vector3 Reject(const ::Vector3& vector3) const { return Vector3Reject(*this, vector3); }
+    RLCPP_NODISCARD Vector3 Reject(const ::Vector3& vector3) const { return Vector3Reject(*this, vector3); }
 
     void OrthoNormalize(::Vector3* vector3) { Vector3OrthoNormalize(this, vector3); }
 
-    [[nodiscard]] Vector3 Transform(const ::Matrix& matrix) const { return Vector3Transform(*this, matrix); }
+    RLCPP_NODISCARD Vector3 Transform(const ::Matrix& matrix) const { return Vector3Transform(*this, matrix); }
 
-    [[nodiscard]] Vector3 RotateByQuaternion(const ::Quaternion& quaternion) const {
+    RLCPP_NODISCARD Vector3 RotateByQuaternion(const ::Quaternion& quaternion) const {
         return Vector3RotateByQuaternion(*this, quaternion);
     }
 
-    [[nodiscard]] Vector3 Reflect(const ::Vector3& normal) const { return Vector3Reflect(*this, normal); }
+    RLCPP_NODISCARD Vector3 Reflect(const ::Vector3& normal) const { return Vector3Reflect(*this, normal); }
 
-    [[nodiscard]] Vector3 Min(const ::Vector3& vector3) const { return Vector3Min(*this, vector3); }
+    RLCPP_NODISCARD Vector3 Min(const ::Vector3& vector3) const { return Vector3Min(*this, vector3); }
 
-    [[nodiscard]] Vector3 Max(const ::Vector3& vector3) const { return Vector3Max(*this, vector3); }
+    RLCPP_NODISCARD Vector3 Max(const ::Vector3& vector3) const { return Vector3Max(*this, vector3); }
 
-    [[nodiscard]] Vector3 Barycenter(const ::Vector3& a, const ::Vector3& b, const ::Vector3& c) const {
+    RLCPP_NODISCARD Vector3 Barycenter(const ::Vector3& a, const ::Vector3& b, const ::Vector3& c) const {
         return Vector3Barycenter(*this, a, b, c);
     }
 
@@ -295,7 +295,7 @@ public:
     /**
      * Detect collision between two spheres
      */
-    [[nodiscard]] bool CheckCollision(float radius1, const ::Vector3& center2, float radius2) const {
+    RLCPP_NODISCARD bool CheckCollision(float radius1, const ::Vector3& center2, float radius2) const {
         return CheckCollisionSpheres(*this, radius1, center2, radius2);
     }
 protected:

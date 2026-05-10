@@ -41,17 +41,17 @@ public:
     /**
      * Detect collision between two boxes
      */
-    [[nodiscard]] bool CheckCollision(const ::BoundingBox& box2) const { return CheckCollisionBoxes(*this, box2); }
+    RLCPP_NODISCARD bool CheckCollision(const ::BoundingBox& box2) const { return CheckCollisionBoxes(*this, box2); }
 
     /**
      * Detect collision between box and sphere
      */
-    [[nodiscard]] bool CheckCollision(::Vector3 center, float radius) const { return CheckCollisionBoxSphere(*this, center, radius); }
+    RLCPP_NODISCARD bool CheckCollision(::Vector3 center, float radius) const { return CheckCollisionBoxSphere(*this, center, radius); }
 
     /**
      * Detect collision between ray and bounding box
      */
-    [[nodiscard]] bool CheckCollision(const ::Ray& ray) const { return GetRayCollisionBox(ray, *this).hit; }
+    RLCPP_NODISCARD bool CheckCollision(const ::Ray& ray) const { return GetRayCollisionBox(ray, *this).hit; }
 
     /**
      * Get collision information between ray and bounding box

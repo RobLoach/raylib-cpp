@@ -85,14 +85,14 @@ public:
     /**
      * Returns the trace of the matrix (sum of the values along the diagonal)
      */
-    [[nodiscard]] float Trace() const { return ::MatrixTrace(*this); }
+    RLCPP_NODISCARD float Trace() const { return ::MatrixTrace(*this); }
 
     /**
      * Transposes provided matrix
      */
-    [[nodiscard]] Matrix Transpose() const { return ::MatrixTranspose(*this); }
+    RLCPP_NODISCARD Matrix Transpose() const { return ::MatrixTranspose(*this); }
 
-    [[nodiscard]] Matrix Invert() const { return ::MatrixInvert(*this); }
+    RLCPP_NODISCARD Matrix Invert() const { return ::MatrixInvert(*this); }
 
     static Matrix Identity() { return ::MatrixIdentity(); }
 
@@ -118,9 +118,9 @@ public:
 
     static Matrix Scale(float x, float y, float z) { return ::MatrixScale(x, y, z); }
 
-    [[nodiscard]] Matrix Multiply(const ::Matrix& right) const { return ::MatrixMultiply(*this, right); }
+    RLCPP_NODISCARD Matrix Multiply(const ::Matrix& right) const { return ::MatrixMultiply(*this, right); }
 
-    [[nodiscard]] Matrix Multiply(float value) const { return ::MatrixMultiplyValue(*this, value); }
+    RLCPP_NODISCARD Matrix Multiply(float value) const { return ::MatrixMultiplyValue(*this, value); }
 
     Matrix operator*(const ::Matrix& matrix) { return ::MatrixMultiply(*this, matrix); }
 
@@ -140,7 +140,7 @@ public:
 
     static Matrix LookAt(Vector3 eye, Vector3 target, Vector3 up) { return ::MatrixLookAt(eye, target, up); }
 
-    [[nodiscard]] float16 ToFloatV() const { return ::MatrixToFloatV(*this); }
+    RLCPP_NODISCARD float16 ToFloatV() const { return ::MatrixToFloatV(*this); }
 
     operator float16() const { return ToFloatV(); }
 
