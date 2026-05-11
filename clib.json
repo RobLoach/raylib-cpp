@@ -40,6 +40,7 @@
     "include/ModelAnimation.hpp",
     "include/Mouse.hpp",
     "include/Music.hpp",
+    "include/Quaternion.hpp",
     "include/physac.hpp",
     "include/Ray.hpp",
     "include/RayCollision.hpp",
