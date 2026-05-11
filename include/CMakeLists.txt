@@ -23,6 +23,7 @@ set(RAYLIB_CPP_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/ModelAnimation.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Mouse.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Music.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Quaternion.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Ray.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/RayCollision.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/RaylibException.hpp
