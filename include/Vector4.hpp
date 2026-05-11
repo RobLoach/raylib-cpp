@@ -238,7 +238,7 @@ public:
     /**
      * Divide vector components by value
      */
-    constexpr Vector4& operator/=(const float div) {
+    Vector4& operator/=(const float div) {
         x /= div;
         y /= div;
         z /= div;
