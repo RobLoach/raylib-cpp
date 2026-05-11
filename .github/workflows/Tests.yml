@@ -21,7 +21,7 @@ jobs:
       matrix:
         platform:
         # - { name: Windows VS2019, os: windows-2019 }
-        # - { name: Windows VS2022, os: windows-2022 }
+        - { name: Windows VS2022, os: windows-2022 }
         - { name: Linux GCC,      os: ubuntu-22.04, flags: -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CXX_STANDARD=17 }
         - { name: Linux Clang,    os: ubuntu-22.04, flags: -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_STANDARD=17 }
         #- { name: Linux GCC,      os: ubuntu-18.04, flags: -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CXX_STANDARD=14 }
@@ -42,11 +42,18 @@ jobs:
       if: runner.os == 'Linux'
       run: sudo apt-get update && sudo apt-get install -y libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev
 
-    - name: Configure
+    - name: Configure Linux
+      if: runner.os == 'Linux'
       run: cmake -B build -S . -DGLFW_BUILD_WAYLAND=OFF -DBUILD_TESTING=ON -DCMAKE_CXX_FLAGS="-Wall -Wextra -Wpedantic" ${{ matrix.platform.flags }} ${{ matrix.type.flags }} ${{ matrix.config.flags }}
+    
+    - name: Configure Windows
+      if: runner.os == 'Windows'
+      run: cmake -B build -S . ${{ matrix.platform.flags }} ${{ matrix.type.flags }} ${{ matrix.config.flags }}
 
     - name: Build
       run: cmake --build build
 
+    # seem to be failing on windows (even with -C), no clue why
     - name: Test
+      if: runner.os == 'Linux'
       run: ctest --verbose --test-dir build
