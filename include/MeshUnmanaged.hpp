@@ -131,6 +131,7 @@ public:
     GETTERSETTER(float*, AnimNormals, animNormals)
     GETTERSETTER(unsigned char*, BoneIndices, boneIndices)
     GETTERSETTER(float*, BoneWeights, boneWeights)
+    GETTERSETTER(int, BoneCount, boneCount)
     GETTERSETTER(unsigned int, VaoId, vaoId)
     GETTERSETTER(unsigned int*, VboId, vboId)
 
@@ -252,6 +253,7 @@ protected:
         animNormals = mesh.animNormals;
         boneIndices = mesh.boneIndices;
         boneWeights = mesh.boneWeights;
+        boneCount = mesh.boneCount;
         vaoId = mesh.vaoId;
         vboId = mesh.vboId;
     }

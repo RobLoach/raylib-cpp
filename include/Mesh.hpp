@@ -50,6 +50,7 @@ public:
         other.animNormals = nullptr;
         other.boneIndices = nullptr;
         other.boneWeights = nullptr;
+        other.boneCount = 0;
         other.vaoId = 0;
         other.vboId = nullptr;
     }
@@ -75,6 +76,7 @@ public:
         other.animNormals = nullptr;
         other.boneIndices = nullptr;
         other.boneWeights = nullptr;
+        other.boneCount = 0;
         other.vaoId = 0;
         other.vboId = nullptr;
 
