@@ -16,10 +16,9 @@ class Wave : public WaveUnmanaged {
 public:
     using WaveUnmanaged::WaveUnmanaged;
 
-    Wave(const Wave& other) { set(other.Copy()); }
+    Wave(const Wave& other) : WaveUnmanaged(other.Copy()) {}
 
-    Wave(Wave&& other) noexcept {
-        set(other);
+    Wave(Wave&& other) noexcept : WaveUnmanaged(other) {
         other.frameCount = 0;
         other.sampleRate = 0;
         other.sampleSize = 0;

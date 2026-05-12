@@ -1,5 +1,5 @@
-#include "raylib-assert.h"
 #include "raylib-cpp.hpp"
+#include "raylib-assert.h"
 #include <string>
 #include <vector>
 
