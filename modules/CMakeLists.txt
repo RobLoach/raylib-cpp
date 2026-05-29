@@ -20,6 +20,7 @@ configure_cpp_module_target(raylib_cpp_modules)
 target_link_libraries(raylib_cpp_modules
   PUBLIC
     raylib_cpp
+    raylib
 )
 
 target_include_directories(raylib_cpp_modules
