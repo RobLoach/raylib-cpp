@@ -642,7 +642,12 @@ public:
     }
 
     void DrawRectangleLines(::Rectangle rec, int thick = 1, ::Color color = {255, 255, 255, 255}) {
+        // raylib 6.1 changes ImageDrawRectangleLines().
+#if RAYLIB_VERSION_MAJOR == 6 && RAYLIB_VERSION_MINOR == 0
         ::ImageDrawRectangleLines(this, rec, thick, color);
+#else
+        ::ImageDrawRectangleLinesEx(this, rec, thick, color);
+#endif
     }
 
     // TODO: Add ImageDrawTriangle()
