@@ -3,6 +3,7 @@ add_library(raylib_cpp INTERFACE)
 set(RAYLIB_CPP_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/AudioDevice.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/AudioStream.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/AudioStreamUnmanaged.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/AutomationEventList.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/BoundingBox.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Camera2D.hpp
@@ -11,18 +12,22 @@ set(RAYLIB_CPP_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/FileData.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/FileText.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Font.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/FontUnmanaged.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Functions.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Gamepad.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Image.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Keyboard.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Material.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/MaterialUnmanaged.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Matrix.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Mesh.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/MeshUnmanaged.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Model.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ModelUnmanaged.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ModelAnimation.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Mouse.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Music.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/MusicUnmanaged.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Quaternion.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Ray.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/RayCollision.hpp
@@ -33,9 +38,11 @@ set(RAYLIB_CPP_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/raymath.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Rectangle.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/RenderTexture.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/RenderTextureUnmanaged.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ShaderUnmanaged.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Shader.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Sound.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/SoundUnmanaged.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Text.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Texture.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/TextureUnmanaged.hpp
@@ -45,6 +52,7 @@ set(RAYLIB_CPP_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/Vector4.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/VrStereoConfig.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Wave.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/WaveUnmanaged.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Window.hpp
 )
 
