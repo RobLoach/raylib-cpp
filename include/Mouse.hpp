@@ -4,6 +4,7 @@
 #include "./Functions.hpp"
 #include "./Vector2.hpp"
 #include "./raylib.hpp"
+#include <raylib.h>
 
 namespace raylib {
 /**
@@ -136,14 +137,14 @@ RLCPP_MAYBEUNUSED RLCPPAPI inline Vector2 GetTouchPosition(int index) {
  * Get a ray trace from mouse position
  */
 RLCPP_MAYBEUNUSED RLCPPAPI inline Ray GetRay(::Vector2 mousePosition, const ::Camera& camera) {
-    return ::GetMouseRay(mousePosition, camera);
+    return ::GetScreenToWorldRay(mousePosition, camera);
 }
 
 /**
  * Get a ray trace from mouse position
  */
 RLCPP_MAYBEUNUSED RLCPPAPI inline Ray GetRay(const ::Camera& camera) {
-    return ::GetMouseRay(::GetMousePosition(), camera);
+    return ::GetScreenToWorldRay(::GetMousePosition(), camera);
 }
 } // namespace Mouse
 } // namespace raylib
