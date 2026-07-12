@@ -7,6 +7,7 @@
 #include "./RaylibException.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
+#include <raylib.h>
 
 namespace raylib {
 /**
@@ -652,8 +653,8 @@ public:
 
     // TODO: Add ImageDrawTriangle()
 
-    void Draw(const ::Image& src, ::Rectangle srcRec, ::Rectangle dstRec, ::Color tint = {255, 255, 255, 255}) {
-        ::ImageDraw(this, src, srcRec, dstRec, tint);
+    void Draw(const ::Image& src, ::Rectangle srcRec, ::Vector2 position, ::Color tint = {255, 255, 255, 255}) {
+        ::ImageDrawImageRec(this, src, srcRec,position , tint);
     }
 
     void DrawText(const char* text, ::Vector2 position, int fontSize, ::Color color = {255, 255, 255, 255}) {
