@@ -136,14 +136,14 @@ RLCPP_MAYBEUNUSED RLCPPAPI inline Vector2 GetTouchPosition(int index) {
 /**
  * Get a ray trace from mouse position
  */
-RLCPP_MAYBEUNUSED RLCPPAPI inline Ray GetRay(::Vector2 mousePosition, const ::Camera& camera) {
+RLCPP_MAYBEUNUSED RLCPPAPI inline Ray GetScreenToWorldRay(::Vector2 mousePosition, const ::Camera& camera) {
     return ::GetScreenToWorldRay(mousePosition, camera);
 }
 
 /**
  * Get a ray trace from mouse position
  */
-RLCPP_MAYBEUNUSED RLCPPAPI inline Ray GetRay(const ::Camera& camera) {
+RLCPP_MAYBEUNUSED RLCPPAPI inline Ray GetScreenToWorldRay(const ::Camera& camera) {
     return ::GetScreenToWorldRay(::GetMousePosition(), camera);
 }
 } // namespace Mouse

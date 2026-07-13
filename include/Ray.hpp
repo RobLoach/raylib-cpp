@@ -69,14 +69,14 @@ public:
     /**
      * Get a ray trace from mouse position
      */
-    static Ray GetMouse(::Vector2 mousePosition, const ::Camera& camera) {
+    static Ray GetScreenToWorldRay(::Vector2 mousePosition, const ::Camera& camera) {
         return ::GetScreenToWorldRay(mousePosition, camera);
     }
 
     /**
      * Get a ray trace from mouse position
      */
-    static Ray GetMouse(const ::Camera& camera) { return ::GetScreenToWorldRay(::GetMousePosition(), camera); }
+    static Ray GetScreenToWorldRay(const ::Camera& camera) { return ::GetScreenToWorldRay(::GetMousePosition(), camera); }
 protected:
     void set(const ::Ray& ray) {
         position = ray.position;
