@@ -15,8 +15,8 @@ if (NOT raylib_FOUND)
         FetchContent_Declare(
         raylib
         GIT_REPOSITORY https://github.com/raysan5/raylib.git
-        # 6.5
-        GIT_TAG f00317bead662c6e7fd5dfc92f16ca37f8a2e08f
+        # Track raylib's master branch, so CI verifies compatibility with the latest raylib.
+        GIT_TAG master
         GIT_SHALLOW 1
     )
     FetchContent_GetProperties(raylib)
