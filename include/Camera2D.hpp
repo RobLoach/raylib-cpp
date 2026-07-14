@@ -4,6 +4,7 @@
 #include "./Vector2.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
+#include <raylib.h>
 
 namespace raylib {
 /**

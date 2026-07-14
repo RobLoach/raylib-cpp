@@ -93,7 +93,7 @@ public:
     /**
      * Returns a ray trace from mouse position
      */
-    Ray GetMouseRay(::Vector2 mousePosition) const { return ::GetMouseRay(mousePosition, *this); }
+    Ray GetScreenToWorldRay(::Vector2 mousePosition) const { return ::GetScreenToWorldRay(mousePosition, *this); }
 
     /**
      * Returns the screen space position for a 3d world space position
