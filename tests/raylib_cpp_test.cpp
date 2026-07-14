@@ -103,7 +103,12 @@ int main(int argc, char* argv[]) {
     {
         std::string input = "Hello World!";
         std::string output = raylib::TextInsert(input, "Good!", 0);
+        // raylib 6.1 fixes a TextInsert() bug that dropped the text before the insert position.
+#if RAYLIB_VERSION_MAJOR == 6 && RAYLIB_VERSION_MINOR == 0
         AssertEqual(output, "Good! World!");
+#else
+        AssertEqual(output, "Good!Hello World!");
+#endif
     }
 
     // raylib::TextSubtext()

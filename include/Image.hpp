@@ -653,8 +653,13 @@ public:
 
     // TODO: Add ImageDrawTriangle()
 
-    void Draw(const ::Image& src, ::Rectangle srcRec, ::Vector2 position, ::Color tint = {255, 255, 255, 255}) {
-        ::ImageDrawImageRec(this, src, srcRec,position , tint);
+    void Draw(const ::Image& src, ::Rectangle srcRec, ::Rectangle dstRec, ::Color tint = {255, 255, 255, 255}) {
+        // raylib 6.1 replaces ImageDraw() with ImageDrawImagePro().
+#if RAYLIB_VERSION_MAJOR == 6 && RAYLIB_VERSION_MINOR == 0
+        ::ImageDraw(this, src, srcRec, dstRec, tint);
+#else
+        ::ImageDrawImagePro(this, src, srcRec, dstRec, {0, 0}, 0, tint);
+#endif
     }
 
     void DrawText(const char* text, ::Vector2 position, int fontSize, ::Color color = {255, 255, 255, 255}) {
