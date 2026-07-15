@@ -19,6 +19,21 @@
     }
 #endif
 
+#ifndef SETTER
+/**
+ * A utility to build get and set methods on top of a property.
+ *
+ * @param type The type of the property.
+ * @param method The human-readable name for the method.
+ * @param name The machine-readable name of the property.
+ */
+#define SETTER(type, method, name)                                                             \
+    /** Sets the name value for the object. @param value The value of which to set name to. */ \
+    void Set##method(type value) {                                                             \
+        name = value;                                                                          \
+    }
+#endif
+
 #ifndef GETTERSETTER
 /**
  * A utility to build get and set methods on top of a property.
@@ -29,10 +44,7 @@
  */
 #define GETTERSETTER(type, method, name)                                                       \
     GETTER(type, method, name)                                                                 \
-    /** Sets the name value for the object. @param value The value of which to set name to. */ \
-    void Set##method(type value) {                                                             \
-        name = value;                                                                          \
-    }
+    SETTER(type, method, name)
 #endif
 
 #endif // RAYLIB_CPP_INCLUDE_RAYLIB_CPP_UTILS_HPP_
