@@ -171,6 +171,9 @@ int main(int argc, char* argv[]) {
         AssertEqual(newMax.GetX(), max.x);
         AssertEqual(newMax.GetY(), max.y);
         AssertEqual(newMax.GetZ(), max.z);
+
+        boundingBox.SetMin({9, 8, 7});
+        AssertEqual(boundingBox.GetMin(), (raylib::Vector3{9, 8, 7}));
     }
 
     TraceLog(LOG_INFO, "TEST: raylib-cpp test");
