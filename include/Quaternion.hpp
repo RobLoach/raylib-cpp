@@ -3,7 +3,6 @@
 
 #ifndef RAYLIB_CPP_NO_MATH
 #include <cmath>
-#include <utility>
 #endif
 
 #include <string>

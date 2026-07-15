@@ -1,10 +1,6 @@
 #ifndef RAYLIB_CPP_INCLUDE_VECTOR4_HPP_
 #define RAYLIB_CPP_INCLUDE_VECTOR4_HPP_
 
-#ifndef RAYLIB_CPP_NO_MATH
-#include <cmath>
-#include <utility>
-#endif
 
 #include <string>
 

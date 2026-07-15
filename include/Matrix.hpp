@@ -5,10 +5,6 @@
 #include "./raylib.hpp"
 #include "./raymath.hpp"
 
-#ifndef RAYLIB_CPP_NO_MATH
-#include <cmath>
-#endif
-
 namespace raylib {
 /**
  * Matrix type (OpenGL style 4x4 - right handed, column major)
