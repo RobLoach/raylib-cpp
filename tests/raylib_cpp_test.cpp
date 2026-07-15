@@ -156,6 +156,23 @@ int main(int argc, char* argv[]) {
         AssertEqual(text.ToString().substr(0, 5), "Lorem");
     }
 
+    // BoundingBox
+    {
+        ::Vector3 min = {1, 2, 3};
+        ::Vector3 max = {4, 5, 6};
+        raylib::BoundingBox boundingBox(min, max);
+        raylib::Vector3 newMin = boundingBox.GetMin();
+        raylib::Vector3 newMax = boundingBox.GetMax();
+
+        AssertEqual(newMin.GetX(), min.x);
+        AssertEqual(newMin.GetY(), min.y);
+        AssertEqual(newMin.GetZ(), min.z);
+
+        AssertEqual(newMax.GetX(), max.x);
+        AssertEqual(newMax.GetY(), max.y);
+        AssertEqual(newMax.GetZ(), max.z);
+    }
+
     TraceLog(LOG_INFO, "TEST: raylib-cpp test");
     TraceLog(LOG_INFO, "---------------------");
     return 0;
