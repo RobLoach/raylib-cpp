@@ -21,7 +21,7 @@ public:
     /**
      * Default constructor.
      */
-    ModelUnmanaged() {}
+    ModelUnmanaged() : ::Model{} {}
 
     /**
      * Creates a ModelUnmanaged from an existing Model struct.
