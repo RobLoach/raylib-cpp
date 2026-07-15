@@ -4,6 +4,8 @@
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
 
+#include "./Vector3.hpp"
+
 namespace raylib {
 /**
  * Bounding box type
@@ -25,8 +27,12 @@ public:
     constexpr BoundingBox(::Vector3 minMax = ::Vector3{0.0f, 0.0f, 0.0f}) : ::BoundingBox{minMax, minMax} {}
     constexpr BoundingBox(::Vector3 min, ::Vector3 max) : ::BoundingBox{min, max} {}
 
-    GETTERSETTER(::Vector3, Min, min)
-    GETTERSETTER(::Vector3, Max, max)
+    // return the best we have
+    // receive the worst
+    GETTER(Vector3, Min, min)
+    SETTER(::Vector3, Min, min)
+    GETTER(Vector3, Max, max)
+    SETTER(::Vector3, Max, max)
 
     BoundingBox& operator=(const ::BoundingBox& box) {
         set(box);
