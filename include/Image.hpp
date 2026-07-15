@@ -651,7 +651,31 @@ public:
 #endif
     }
 
-    // TODO: Add ImageDrawTriangle()
+    void DrawTriangle(::Vector2 v1, ::Vector2 v2, ::Vector2 v3, ::Color color = {255, 255, 255, 255}) {
+        ::ImageDrawTriangle(this, v1, v2, v3, color);
+    }
+
+    void DrawTriangleGradient(
+        ::Vector2 v1,
+        ::Vector2 v2,
+        ::Vector2 v3,
+        ::Color c1 = {255, 255, 255, 255},
+        ::Color c2 = {255, 255, 255, 255},
+        ::Color c3 = {255, 255, 255, 255}) {
+        ::ImageDrawTriangleGradient(this, v1, v2, v3, c1, c2, c3);
+    }
+
+    void DrawTriangleLines(::Vector2 v1, ::Vector2 v2, ::Vector2 v3, ::Color color = {255, 255, 255, 255}) {
+        ::ImageDrawTriangleLines(this, v1, v2, v3, color);
+    }
+
+    void DrawTriangleFan(::Vector2* points, int pointCount, ::Color color = {255, 255, 255, 255}) {
+        ::ImageDrawTriangleFan(this, points, pointCount, color);
+    }
+
+    void DrawTriangleStrip(::Vector2* points, int pointCount, ::Color color = {255, 255, 255, 255}) {
+        ::ImageDrawTriangleStrip(this, points, pointCount, color);
+    }
 
     void Draw(const ::Image& src, ::Rectangle srcRec, ::Rectangle dstRec, ::Color tint = {255, 255, 255, 255}) {
         // raylib 6.1 replaces ImageDraw() with ImageDrawImagePro().
