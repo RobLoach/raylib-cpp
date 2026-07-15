@@ -1,10 +1,6 @@
 #ifndef RAYLIB_CPP_INCLUDE_VECTOR3_HPP_
 #define RAYLIB_CPP_INCLUDE_VECTOR3_HPP_
 
-#ifndef RAYLIB_CPP_NO_MATH
-#include <cmath>
-#endif
-
 #include <string>
 
 #include "./raylib-cpp-utils.hpp"
