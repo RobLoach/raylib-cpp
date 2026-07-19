@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "./Mesh.hpp"
+#include "./RaylibException.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
 
@@ -41,6 +42,34 @@ public:
         RL_FREE(modelAnimations);
 
         return mats;
+    }
+
+    /**
+     * Load a single model animation from file by index
+     *
+     * @throws raylib::RaylibException Throws if the index is out of bounds.
+     */
+    static ModelAnimation Load(const std::string& fileName, int index) {
+        int count = 0;
+        ::ModelAnimation* modelAnimations = ::LoadModelAnimations(fileName.c_str(), &count);
+        if (index < 0 || index >= count) {
+            ::UnloadModelAnimations(modelAnimations, count);
+            throw RaylibException(TextFormat("ModelAnimation index %d out of range [0, %d)", index, count));
+        }
+        ModelAnimation result(modelAnimations[index]);
+        modelAnimations[index].keyframePoses = nullptr;
+        ::UnloadModelAnimations(modelAnimations, count);
+        return result;
+    }
+
+    /**
+     * Get the number of model animations in a file without fully loading them
+     */
+    static int LoadCount(const std::string& fileName) {
+        int count = 0;
+        ::ModelAnimation* modelAnimations = ::LoadModelAnimations(fileName.c_str(), &count);
+        ::UnloadModelAnimations(modelAnimations, count);
+        return count;
     }
 
     GETTERSETTER(int, BoneCount, boneCount)
