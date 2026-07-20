@@ -285,8 +285,8 @@ int main() {
 C++ modules rely on CMake's dependency-scanning support, so the whole tool-chain (including the consuming project) must satisfy all of the following:
 
 * **CMake 3.28 or newer.**
-* **A scanning-capable generator: Ninja, Ninja Multi-Config, or Visual Studio 17.4+.** The Makefile generators — the default on macOS and Linux, and what CLion uses unless changed — cannot scan for modules and produce the error *"the compiler does not provide a way to discover the import graph dependencies"*. Reconfigure with `-G Ninja`.
-* **A compiler with module scanning: LLVM Clang 16+, MSVC 19.34+, or GCC 14+.** Apple Clang does not expose `clang-scan-deps` in a way CMake detects; install and select LLVM Clang (e.g. via Homebrew) instead.
+* **Scanning Generator: Ninja, Ninja Multi-Config, or Visual Studio 17.4+
+* **Module-compatible Compiler: LLVM Clang 16+, MSVC 19.34+, or GCC 14+
 * **C++20 or newer** for every target that does `import raylib;` (this also enables `CMAKE_CXX_SCAN_FOR_MODULES` by default).
 
 #### Consuming with FetchContent
