@@ -255,12 +255,12 @@ raylib::Vector2 newDirection = direction.Rotate(30);
 
 ### Modules
 
-If using C++20 or later, by passing `BUILD_RAYLIB_CPP_MODULES` to the build system the library may be imported as a module by using `import raylib;`.
+If using C++20 or later, enabling `BUILD_RAYLIB_CPP_MODULES` lets the library be imported as a C++ module with `import raylib;`. Link against the `raylib_cpp_modules` target instead of `raylib_cpp`.
 
 ```cpp
 import raylib;
 
-using raylib::Texture;
+using raylib::Color;
 using raylib::Window;
 
 int main() {
@@ -268,10 +268,55 @@ int main() {
     int screenHeight = 450;
 
     Window window(screenWidth, screenHeight, "raylib-cpp - basic window");
-    Texture logo("raylib_logo.png");
 
-    // ...
+    while (!window.ShouldClose()) {
+        window.BeginDrawing();
+        window.ClearBackground(raylib::Colors::RAYWHITE);
+        raylib::DrawText("Imported raylib as a module!", 120, 200, 20, Color::LightGray());
+        window.EndDrawing();
+    }
+
+    return 0;
 }
+```
+
+#### Requirements
+
+C++ modules rely on CMake's dependency-scanning support, so the whole tool-chain (including the consuming project) must satisfy all of the following:
+
+* **CMake 3.28 or newer.**
+* **A scanning-capable generator: Ninja, Ninja Multi-Config, or Visual Studio 17.4+.** The Makefile generators — the default on macOS and Linux, and what CLion uses unless changed — cannot scan for modules and produce the error *"the compiler does not provide a way to discover the import graph dependencies"*. Reconfigure with `-G Ninja`.
+* **A compiler with module scanning: LLVM Clang 16+, MSVC 19.34+, or GCC 14+.** Apple Clang does not expose `clang-scan-deps` in a way CMake detects; install and select LLVM Clang (e.g. via Homebrew) instead.
+* **C++20 or newer** for every target that does `import raylib;` (this also enables `CMAKE_CXX_SCAN_FOR_MODULES` by default).
+
+#### Consuming with FetchContent
+
+```cmake
+cmake_minimum_required(VERSION 3.28)
+project(example CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+include(FetchContent)
+FetchContent_Declare(raylib
+    GIT_REPOSITORY https://github.com/raysan5/raylib.git
+    GIT_TAG 5.5)
+FetchContent_Declare(raylib_cpp
+    GIT_REPOSITORY https://github.com/RobLoach/raylib-cpp.git
+    GIT_TAG v6.0.2)
+set(BUILD_RAYLIB_CPP_MODULES ON)
+FetchContent_MakeAvailable(raylib raylib_cpp)
+
+add_executable(example main.cpp)
+target_link_libraries(example PRIVATE raylib_cpp_modules)
+```
+
+Configure it with a supporting generator and compiler:
+
+```sh
+cmake -B build -G Ninja -DCMAKE_CXX_COMPILER=clang++
+cmake --build build
 ```
 
 ## Getting Started

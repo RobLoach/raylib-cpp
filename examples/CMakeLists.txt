@@ -58,5 +58,17 @@ endforeach()
 add_executable("multiple" multiple/main.cpp multiple/Player.cpp)
 target_link_libraries("multiple" PUBLIC raylib_cpp raylib)
 
+# C++20 modules example: only built when modules are enabled and the
+# raylib_cpp_modules target was created (CMake 3.28+).
+if(BUILD_RAYLIB_CPP_MODULES AND TARGET raylib_cpp_modules)
+    add_executable("module" module/main.cpp)
+    target_link_libraries("module" PRIVATE raylib_cpp_modules)
+    set_target_properties("module" PROPERTIES
+        CXX_STANDARD 20
+        CXX_STANDARD_REQUIRED ON
+        CXX_EXTENSIONS OFF
+    )
+endif()
+
 # Copy all the resources
 file(COPY ${example_resources} DESTINATION "resources/")

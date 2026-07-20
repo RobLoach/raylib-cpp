@@ -57,3 +57,29 @@ jobs:
     - name: Test
       if: runner.os == 'Linux'
       run: ctest --verbose --test-dir build
+
+  # Verify the C++20 module target (`import raylib;`) builds. Module
+  # dependency scanning requires the Ninja generator and a scan-capable
+  # compiler (LLVM Clang here), so this uses its own job.
+  modules:
+    name: C++20 Modules (Ninja Clang)
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+    - name: Install Dependencies
+      run: sudo apt-get update && sudo apt-get install -y ninja-build clang-18 clang-tools-18 libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev
+
+    - name: Configure
+      run: >
+        cmake -B build -S . -G Ninja
+        -DCMAKE_C_COMPILER=clang-18
+        -DCMAKE_CXX_COMPILER=clang++-18
+        -DBUILD_RAYLIB_CPP_MODULES=ON
+        -DCMAKE_CXX_STANDARD=20
+        -DGLFW_BUILD_WAYLAND=OFF
+        -DCMAKE_BUILD_TYPE=Release
+
+    - name: Build modules
+      run: cmake --build build --target raylib_cpp_modules module
