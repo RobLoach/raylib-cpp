@@ -67,6 +67,9 @@ if(BUILD_RAYLIB_CPP_MODULES AND TARGET raylib_cpp_modules)
         CXX_STANDARD 20
         CXX_STANDARD_REQUIRED ON
         CXX_EXTENSIONS OFF
+        # The examples directory defaults to C++11, so module scanning is not
+        # enabled for this target automatically; turn it on explicitly.
+        CXX_SCAN_FOR_MODULES ON
     )
 endif()
 
