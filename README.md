@@ -280,46 +280,6 @@ int main() {
 }
 ```
 
-#### Requirements
-
-C++ modules rely on CMake's dependency-scanning support, so the whole tool-chain (including the consuming project) must satisfy all of the following:
-
-* **CMake 3.28 or newer.**
-* **Scanning Generator: Ninja, Ninja Multi-Config, or Visual Studio 17.4+
-* **Module-compatible Compiler: LLVM Clang 16+, MSVC 19.34+, or GCC 14+
-* **C++20 or newer.**
-* ```
-
-#### Consuming with FetchContent
-
-```cmake
-cmake_minimum_required(VERSION 3.28)
-project(example CXX)
-
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-include(FetchContent)
-FetchContent_Declare(raylib
-    GIT_REPOSITORY https://github.com/raysan5/raylib.git
-    GIT_TAG 5.5)
-FetchContent_Declare(raylib_cpp
-    GIT_REPOSITORY https://github.com/RobLoach/raylib-cpp.git
-    GIT_TAG v6.0.2)
-set(BUILD_RAYLIB_CPP_MODULES ON)
-FetchContent_MakeAvailable(raylib raylib_cpp)
-
-add_executable(example main.cpp)
-target_link_libraries(example PRIVATE raylib_cpp_modules)
-```
-
-Configure it with a supporting generator and compiler:
-
-```sh
-cmake -B build -G Ninja -DCMAKE_CXX_COMPILER=clang++
-cmake --build build
-```
-
 ## Getting Started
 
 *raylib-cpp* is a header-only library. This means in order to use it, you must link your project to [raylib](https://www.raylib.com/), and then include [`raylib-cpp.hpp`](raylib-cpp/include/raylib-cpp.hpp).
