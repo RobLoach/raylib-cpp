@@ -287,7 +287,8 @@ C++ modules rely on CMake's dependency-scanning support, so the whole tool-chain
 * **CMake 3.28 or newer.**
 * **Scanning Generator: Ninja, Ninja Multi-Config, or Visual Studio 17.4+
 * **Module-compatible Compiler: LLVM Clang 16+, MSVC 19.34+, or GCC 14+
-* **C++20 or newer** for every target that does `import raylib;` (this also enables `CMAKE_CXX_SCAN_FOR_MODULES` by default).
+* **C++20 or newer.**
+* ```
 
 #### Consuming with FetchContent
 
