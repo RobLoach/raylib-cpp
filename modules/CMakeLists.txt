@@ -1,17 +1,9 @@
 # raylib-cpp C++ module target (`import raylib;`).
 #
-# Consuming this target requires a tool-chain that can scan for C++ module
-# dependencies:
-#   * CMake 3.28 or newer.
-#   * A generator that supports module dependency scanning: Ninja,
-#     Ninja Multi-Config, or Visual Studio 17.4+. The Makefile generators
-#     (including the default on macOS/Linux) CANNOT scan for modules.
-#   * A compiler with scanning support: Clang 16+ (LLVM, not Apple Clang),
-#     MSVC 19.34+, or GCC 14+.
-#
-# When these requirements are not met CMake reports the cryptic error
-# "the compiler does not provide a way to discover the import graph
-# dependencies"; the checks below turn that into an actionable message.
+# Requirements
+# - CMake 3.28+
+# - Module dependency scanning generator, like Ninja, VS17.4+
+# - Compiler with scanning support, like CLang (16+, MSVC 19.34+ or GCC 14+
 
 if(CMAKE_VERSION VERSION_LESS 3.28)
   message(WARNING
