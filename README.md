@@ -255,12 +255,12 @@ raylib::Vector2 newDirection = direction.Rotate(30);
 
 ### Modules
 
-If using C++20 or later, by passing `BUILD_RAYLIB_CPP_MODULES` to the build system the library may be imported as a module by using `import raylib;`.
+If using C++20 or later, enabling `BUILD_RAYLIB_CPP_MODULES` lets the library be imported as a C++ module with `import raylib;`. Link against the `raylib_cpp_modules` target instead of `raylib_cpp`.
 
 ```cpp
 import raylib;
 
-using raylib::Texture;
+using raylib::Color;
 using raylib::Window;
 
 int main() {
@@ -268,9 +268,15 @@ int main() {
     int screenHeight = 450;
 
     Window window(screenWidth, screenHeight, "raylib-cpp - basic window");
-    Texture logo("raylib_logo.png");
 
-    // ...
+    while (!window.ShouldClose()) {
+        window.BeginDrawing();
+        window.ClearBackground(raylib::Colors::RAYWHITE);
+        raylib::DrawText("Imported raylib as a module!", 120, 200, 20, Color::LightGray());
+        window.EndDrawing();
+    }
+
+    return 0;
 }
 ```
 

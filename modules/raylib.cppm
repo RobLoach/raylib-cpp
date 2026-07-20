@@ -229,7 +229,7 @@ export namespace raylib {
         using raylib::Mouse::GetTouchX;
         using raylib::Mouse::GetTouchY;
         using raylib::Mouse::GetTouchPosition;
-        using raylib::Mouse::GetRay;
+        using raylib::Mouse::GetScreenToWorldRay;
     }
 
     /**
