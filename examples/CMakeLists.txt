@@ -66,7 +66,10 @@ if(BUILD_RAYLIB_CPP_MODULES AND TARGET raylib_cpp_modules)
     set_target_properties("module" PROPERTIES
         CXX_STANDARD 20
         CXX_STANDARD_REQUIRED ON
-        CXX_EXTENSIONS OFF
+        # Match raylib_cpp_modules' language flags: the compiled module (BMI)
+        # can only be imported by a consumer built with the same C++ standard
+        # and extension settings, so keep the default extensions here.
+        CXX_EXTENSIONS ON
         # The examples directory defaults to C++11, so module scanning is not
         # enabled for this target automatically; turn it on explicitly.
         CXX_SCAN_FOR_MODULES ON
