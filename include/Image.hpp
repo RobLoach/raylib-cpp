@@ -662,7 +662,12 @@ public:
         ::Color c1 = {255, 255, 255, 255},
         ::Color c2 = {255, 255, 255, 255},
         ::Color c3 = {255, 255, 255, 255}) {
+        // raylib 6.1 renames ImageDrawTriangleEx() to ImageDrawTriangleGradient().
+#if RAYLIB_VERSION_MAJOR == 6 && RAYLIB_VERSION_MINOR == 0
+        ::ImageDrawTriangleEx(this, v1, v2, v3, c1, c2, c3);
+#else
         ::ImageDrawTriangleGradient(this, v1, v2, v3, c1, c2, c3);
+#endif
     }
 
     void DrawTriangleLines(::Vector2 v1, ::Vector2 v2, ::Vector2 v3, ::Color color = {255, 255, 255, 255}) {
