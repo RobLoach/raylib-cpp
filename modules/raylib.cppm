@@ -5,6 +5,8 @@
 
 module;
 
+#include <cstdlib>
+
 #define BUILD_RAYLIB_CPP_MODULES
 #define RLCPPAPI
 #define RAYMATH_IMPLEMENTATION
