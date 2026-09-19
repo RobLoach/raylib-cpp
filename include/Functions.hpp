@@ -446,6 +446,24 @@ RLCPP_MAYBEUNUSED RLCPPAPI inline std::string TextToCamel(const std::string& tex
 }
 
 /**
+ * Load all codepoints from a UTF-8 text string
+ */
+RLCPP_MAYBEUNUSED RLCPPAPI std::vector<int> LoadCodepoints(const std::string& text) {
+    int count = 0;
+    int* codepoints = ::LoadCodepoints(text.c_str(), &count);
+    std::vector<int> output(codepoints, codepoints + count);
+    ::UnloadCodepoints(codepoints);
+    return output;
+}
+
+/**
+ * Get total number of codepoints in a UTF-8 encoded string
+ */
+RLCPP_MAYBEUNUSED RLCPPAPI inline int GetCodepointCount(const std::string& text) {
+    return ::GetCodepointCount(text.c_str());
+}
+
+/**
  * Get integer value from text (negative values not supported)
  */
 RLCPP_MAYBEUNUSED RLCPPAPI inline int TextToInteger(const std::string& text) {

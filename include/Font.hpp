@@ -61,6 +61,11 @@ public:
         FontUnmanaged::Load(fileName, fontSize, codepoints, codepointCount);
     }
 
+    void Load(const std::string& fileName, int fontSize, const std::vector<int>& codepoints) {
+        Unload();
+        FontUnmanaged::Load(fileName, fontSize, codepoints);
+    }
+
     void Load(const ::Image& image, ::Color key, int firstChar) {
         Unload();
         FontUnmanaged::Load(image, key, firstChar);
