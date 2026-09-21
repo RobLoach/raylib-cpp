@@ -1,6 +1,8 @@
 #ifndef RAYLIB_CPP_INCLUDE_MATRIX_HPP_
 #define RAYLIB_CPP_INCLUDE_MATRIX_HPP_
 
+#include <string>
+
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
 #include "./raymath.hpp"
@@ -10,7 +12,7 @@ namespace raylib {
  * Matrix type (OpenGL style 4x4 - right handed, column major)
  */
 class Matrix : public ::Matrix {
-public:
+ public:
     constexpr Matrix(const ::Matrix& mat)
         : ::Matrix(mat) {
         // Nothing.
@@ -85,11 +87,10 @@ public:
             "  %f, %f, %f, %f\n"
             "  %f, %f, %f, %f\n"
             ")",
-            m0,  m4,  m8,  m12,
-            m1,  m5,  m9,  m13,
-            m2,  m6,  m10, m14,
-            m3,  m7,  m11, m15
-        );
+            m0, m4, m8, m12,
+            m1, m5, m9, m13,
+            m2, m6, m10, m14,
+            m3, m7, m11, m15);
     }
 
     operator std::string() const { return ToString(); }
@@ -138,7 +139,7 @@ public:
     Matrix operator*(const ::Matrix& matrix) { return ::MatrixMultiply(*this, matrix); }
 
     Matrix operator*(float value) { return ::MatrixMultiplyValue(*this, value); }
-    
+
     static Matrix Frustum(double left, double right, double bottom, double top, double near, double far) {
         return ::MatrixFrustum(left, right, bottom, top, near, far);
     }
@@ -170,7 +171,8 @@ public:
     static Matrix GetCamera(const ::Camera2D& camera) { return ::GetCameraMatrix2D(camera); }
 
 #endif
-protected:
+
+ protected:
     void set(const ::Matrix& mat) {
         m0 = mat.m0;
         m1 = mat.m1;
@@ -190,8 +192,8 @@ protected:
         m15 = mat.m15;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RMatrix = raylib::Matrix;
 
-#endif // RAYLIB_CPP_INCLUDE_MATRIX_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_MATRIX_HPP_

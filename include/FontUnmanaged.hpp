@@ -17,7 +17,7 @@ namespace raylib {
  * @see raylib::Font
  */
 class FontUnmanaged : public ::Font {
-public:
+ public:
     FontUnmanaged(
         int baseSize,
         int glyphCount,
@@ -295,7 +295,7 @@ public:
         return ::ImageTextEx(*this, text.c_str(), fontSize, spacing, tint);
     }
 
-protected:
+ protected:
     void set(const ::Font& font) {
         baseSize = font.baseSize;
         glyphCount = font.glyphCount;
@@ -305,8 +305,8 @@ protected:
         glyphs = font.glyphs;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RFontUnmanaged = raylib::FontUnmanaged;
 
-#endif // RAYLIB_CPP_INCLUDE_FONTUNMANAGED_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_FONTUNMANAGED_HPP_

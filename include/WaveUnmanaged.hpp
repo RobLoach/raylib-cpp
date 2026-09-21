@@ -16,7 +16,7 @@ namespace raylib {
  * @see raylib::Wave
  */
 class WaveUnmanaged : public ::Wave {
-public:
+ public:
     /**
      * Creates a WaveUnmanaged from an existing Wave struct.
      */
@@ -63,8 +63,7 @@ public:
     [[nodiscard]] std::string ToString() const {
         return ::TextFormat(
             "Wave(frameCount=%u, sampleRate=%u, sampleSize=%u, channels=%u, data=%p)",
-            frameCount, sampleRate, sampleSize, channels, data
-        );
+            frameCount, sampleRate, sampleSize, channels, data);
     }
 
     operator std::string() const { return ToString(); }
@@ -162,7 +161,7 @@ public:
      */
     RLCPP_NODISCARD bool IsValid() const { return ::IsWaveValid(*this); }
 
-protected:
+ protected:
     void set(const ::Wave& wave) {
         frameCount = wave.frameCount;
         sampleRate = wave.sampleRate;
@@ -171,8 +170,8 @@ protected:
         data = wave.data;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RWaveUnmanaged = raylib::WaveUnmanaged;
 
-#endif // RAYLIB_CPP_INCLUDE_WAVEUNMANAGED_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_WAVEUNMANAGED_HPP_

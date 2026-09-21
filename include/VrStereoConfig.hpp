@@ -9,7 +9,7 @@ namespace raylib {
  * VR stereo config functions for VR simulator
  */
 class VrStereoConfig : public ::VrStereoConfig {
-public:
+ public:
     VrStereoConfig(const ::VrDeviceInfo& info) { Load(info); }
 
     VrStereoConfig(const VrStereoConfig&) = delete;
@@ -47,7 +47,8 @@ public:
      * Unload VR stereo config
      */
     void Unload() { ::UnloadVrStereoConfig(*this); }
-protected:
+
+ protected:
     void set(const ::VrStereoConfig& config) {
         projection[0] = config.projection[0];
         projection[1] = config.projection[1];
@@ -67,8 +68,8 @@ protected:
         scaleIn[1] = config.scaleIn[1];
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RVrStereoConfig = raylib::VrStereoConfig;
 
-#endif // RAYLIB_CPP_INCLUDE_VRSTEREOCONFIG_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_VRSTEREOCONFIG_HPP_

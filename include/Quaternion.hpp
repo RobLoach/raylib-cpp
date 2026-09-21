@@ -18,11 +18,12 @@ class Vector4 : public ::Vector4 {};
  * Quaternion type
  */
 class Quaternion : public ::Quaternion {
-public:
+ public:
     constexpr Quaternion(const ::Quaternion& quat) : ::Quaternion{quat.x, quat.y, quat.z, quat.w} {}
     explicit constexpr Quaternion(const raylib::Vector4 vec4) : ::Quaternion{vec4.x, vec4.y, vec4.z, vec4.w} {}
 
-    explicit constexpr Quaternion(const float x = 0, const float y = 0, const float z = 0, const float w = 1) : ::Quaternion{x, y, z, w} {}
+    explicit constexpr Quaternion(const float x = 0, const float y = 0, const float z = 0, const float w = 1)
+        : ::Quaternion{x, y, z, w} {}
 
     GETTERSETTER(float, X, x)
     GETTERSETTER(float, Y, y)
@@ -100,7 +101,9 @@ public:
     /**
      * Subtract two quaternions.
      */
-    RLCPP_NODISCARD Quaternion Subtract(const ::Quaternion& quaternion) const { return ::QuaternionSubtract(*this, quaternion); }
+    RLCPP_NODISCARD Quaternion Subtract(const ::Quaternion& quaternion) const {
+        return ::QuaternionSubtract(*this, quaternion);
+    }
 
     /**
      * Subtract two quaternions.
@@ -160,7 +163,9 @@ public:
     /**
      * Divide quaternion by quaternion
      */
-    RLCPP_NODISCARD Quaternion Divide(const ::Quaternion& quaternion) const { return ::QuaternionDivide(*this, quaternion); }
+    RLCPP_NODISCARD Quaternion Divide(const ::Quaternion& quaternion) const {
+        return ::QuaternionDivide(*this, quaternion);
+    }
 
     /**
      * Divide quaternion by quaternion
@@ -179,10 +184,11 @@ public:
     /**
      * Divide quaternion components by value
      */
-    RLCPP_NODISCARD constexpr Quaternion Divide(const float div) const { return ::Quaternion{x / div, y / div, z / div, w / div}; }
+    RLCPP_NODISCARD constexpr Quaternion Divide(const float div) const {
+        return ::Quaternion{x / div, y / div, z / div, w / div};
+    }
 
-    RLCPP_NODISCARD Quaternion Lerp(const ::Quaternion& v2, const float amount) const
-    {
+    RLCPP_NODISCARD Quaternion Lerp(const ::Quaternion& v2, const float amount) const {
         return ::QuaternionLerp(*this, v2, amount);
     }
 
@@ -207,10 +213,7 @@ public:
         const ::Quaternion& outTangent1,
         const ::Quaternion& q2,
         const ::Quaternion& inTangent2,
-        const float t
-    ) const {
-        return ::QuaternionCubicHermiteSpline(*this, outTangent1, q2, inTangent2, t);
-    }
+        const float t) const { return ::QuaternionCubicHermiteSpline(*this, outTangent1, q2, inTangent2, t); }
 
     /**
      * Calculate quaternion based on the rotation from one vector to another
@@ -278,7 +281,8 @@ public:
         return static_cast<bool>(::QuaternionEquals(*this, other));
     }
 #endif
-protected:
+
+ protected:
     void set(const ::Quaternion& quat) {
         x = quat.x;
         y = quat.y;
@@ -287,9 +291,8 @@ protected:
     }
 };
 
-} // namespace raylib
+}  // namespace raylib
 
 using RQuaternion = raylib::Quaternion;
 
-#endif // RAYLIB_CPP_INCLUDE_QUATERNION_HPP_
-
+#endif  // RAYLIB_CPP_INCLUDE_QUATERNION_HPP_

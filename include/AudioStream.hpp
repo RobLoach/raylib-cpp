@@ -12,7 +12,7 @@ namespace raylib {
  * @see raylib::AudioStreamUnmanaged
  */
 class AudioStream : public AudioStreamUnmanaged {
-public:
+ public:
     using AudioStreamUnmanaged::AudioStreamUnmanaged;
 
     AudioStream(const AudioStream&) = delete;
@@ -48,8 +48,8 @@ public:
         AudioStreamUnmanaged::Load(sampleRate, sampleSize, channels);
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RAudioStream = raylib::AudioStream;
 
-#endif // RAYLIB_CPP_INCLUDE_AUDIOSTREAM_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_AUDIOSTREAM_HPP_

@@ -12,7 +12,7 @@ namespace raylib {
  * Vector3 type
  */
 class Vector3 : public ::Vector3 {
-public:
+ public:
     constexpr Vector3(const ::Vector3& vec) : ::Vector3{vec.x, vec.y, vec.z} {}
 
     constexpr Vector3(float x = 0, float y = 0, float z = 0) : ::Vector3{x, y, z} {}
@@ -215,7 +215,9 @@ public:
 
     RLCPP_NODISCARD float Distance(const ::Vector3& vector3) const { return Vector3Distance(*this, vector3); }
 
-    RLCPP_NODISCARD Vector3 Lerp(const ::Vector3& vector3, const float amount) const { return Vector3Lerp(*this, vector3, amount); }
+    RLCPP_NODISCARD Vector3 Lerp(const ::Vector3& vector3, const float amount) const {
+        return Vector3Lerp(*this, vector3, amount);
+    }
 
     RLCPP_NODISCARD Vector3 CrossProduct(const ::Vector3& vector3) const { return Vector3CrossProduct(*this, vector3); }
 
@@ -294,15 +296,16 @@ public:
     RLCPP_NODISCARD bool CheckCollision(float radius1, const ::Vector3& center2, float radius2) const {
         return CheckCollisionSpheres(*this, radius1, center2, radius2);
     }
-protected:
+
+ protected:
     void set(const ::Vector3& vec) {
         x = vec.x;
         y = vec.y;
         z = vec.z;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RVector3 = raylib::Vector3;
 
-#endif // RAYLIB_CPP_INCLUDE_VECTOR3_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_VECTOR3_HPP_

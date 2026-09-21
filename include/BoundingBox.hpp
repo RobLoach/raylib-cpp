@@ -1,6 +1,8 @@
 #ifndef RAYLIB_CPP_INCLUDE_BOUNDINGBOX_HPP_
 #define RAYLIB_CPP_INCLUDE_BOUNDINGBOX_HPP_
 
+#include <string>
+
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
 
@@ -11,7 +13,7 @@ namespace raylib {
  * Bounding box type
  */
 class BoundingBox : public ::BoundingBox {
-public:
+ public:
     /*
      * Copy a bounding box from another bounding box.
      */
@@ -40,10 +42,8 @@ public:
     }
 
     [[nodiscard]] std::string ToString() const {
-        return ::TextFormat(
-            "BoundingBox(min=(%f, %f, %f), max=(%f, %f, %f))",
-            min.x, min.y, min.z, max.x, max.y, max.z
-        );
+        return ::TextFormat("BoundingBox(min=(%f, %f, %f), max=(%f, %f, %f))",
+            min.x, min.y, min.z, max.x, max.y, max.z);
     }
 
     operator std::string() const { return ToString(); }
@@ -61,7 +61,9 @@ public:
     /**
      * Detect collision between box and sphere
      */
-    RLCPP_NODISCARD bool CheckCollision(::Vector3 center, float radius) const { return CheckCollisionBoxSphere(*this, center, radius); }
+    RLCPP_NODISCARD bool CheckCollision(::Vector3 center, float radius) const {
+        return CheckCollisionBoxSphere(*this, center, radius);
+    }
 
     /**
      * Detect collision between ray and bounding box
@@ -72,7 +74,8 @@ public:
      * Get collision information between ray and bounding box
      */
     RayCollision GetCollision(const ::Ray& ray) const { return GetRayCollisionBox(ray, *this); }
-protected:
+
+ protected:
     void set(const ::BoundingBox& box) {
         min = box.min;
         max = box.max;
@@ -82,8 +85,8 @@ protected:
         max = _max;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RBoundingBox = raylib::BoundingBox;
 
-#endif // RAYLIB_CPP_INCLUDE_BOUNDINGBOX_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_BOUNDINGBOX_HPP_

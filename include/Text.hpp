@@ -12,7 +12,7 @@ namespace raylib {
  * Text Functions.
  */
 class Text {
-public:
+ public:
     /**
      * The internal text.
      */
@@ -192,8 +192,8 @@ public:
         ::DrawTextPro(font, text.c_str(), position, origin, rotation, fontSize, spacing, color);
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RText = raylib::Text;
 
-#endif // RAYLIB_CPP_INCLUDE_TEXT_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_TEXT_HPP_

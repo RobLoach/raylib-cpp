@@ -7,7 +7,6 @@
 #include "./RaylibException.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
-#include <raylib.h>
 
 namespace raylib {
 /**
@@ -16,7 +15,7 @@ namespace raylib {
  * Data stored in CPU memory (RAM)
  */
 class Image : public ::Image {
-public:
+ public:
     Image(
         void* data = nullptr,
         int width = 0,
@@ -799,7 +798,8 @@ public:
     void KernelConvolution(const float* kernel, int kernelSize) {
         ::ImageKernelConvolution(this, kernel, kernelSize);
     }
-protected:
+
+ protected:
     void set(const ::Image& image) {
         data = image.data;
         width = image.width;
@@ -808,8 +808,8 @@ protected:
         format = image.format;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RImage = raylib::Image;
 
-#endif // RAYLIB_CPP_INCLUDE_IMAGE_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_IMAGE_HPP_

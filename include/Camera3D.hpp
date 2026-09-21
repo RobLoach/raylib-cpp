@@ -1,6 +1,8 @@
 #ifndef RAYLIB_CPP_INCLUDE_CAMERA3D_HPP_
 #define RAYLIB_CPP_INCLUDE_CAMERA3D_HPP_
 
+#include <string>
+
 #include "./Vector3.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
@@ -10,7 +12,7 @@ namespace raylib {
  * Camera type, defines a camera position/orientation in 3d space
  */
 class Camera3D : public ::Camera3D {
-public:
+ public:
     Camera3D(const ::Camera3D& camera) : ::Camera3D(camera) { }
 
     /**
@@ -46,9 +48,7 @@ public:
         return ::TextFormat(
             "Camera3D(position=(%f, %f, %f), target=(%f, %f, %f), fovy=%f)",
             position.x, position.y, position.z,
-            target.x, target.y, target.z,
-            fovy
-        );
+            target.x, target.y, target.z, fovy);
     }
 
     operator std::string() const { return ToString(); }
@@ -126,7 +126,8 @@ public:
         ::Color tint = {255, 255, 255, 255}) const {
         ::DrawBillboardRec(*this, texture, sourceRec, center, size, tint);
     }
-protected:
+
+ protected:
     void set(const ::Camera3D& camera) {
         position = camera.position;
         target = camera.target;
@@ -138,9 +139,9 @@ protected:
 
 using Camera = Camera3D;
 
-} // namespace raylib
+}  // namespace raylib
 
 using RCamera = raylib::Camera;
 using RCamera3D = raylib::Camera3D;
 
-#endif // RAYLIB_CPP_INCLUDE_CAMERA3D_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_CAMERA3D_HPP_

@@ -19,7 +19,7 @@ namespace raylib {
  * @see raylib::Mesh
  */
 class MeshUnmanaged : public ::Mesh {
-public:
+ public:
     /**
      * Default texture constructor.
      */
@@ -142,9 +142,7 @@ public:
 
     [[nodiscard]] std::string ToString() const {
         return ::TextFormat(
-            "Mesh(vertexCount=%d, triangleCount=%d, boneCount=%d)",
-            vertexCount, triangleCount, boneCount
-        );
+            "Mesh(vertexCount=%d, triangleCount=%d, boneCount=%d)", vertexCount, triangleCount, boneCount);
     }
 
     operator std::string() const { return ToString(); }
@@ -238,7 +236,7 @@ public:
      */
     RLCPP_NODISCARD bool IsValid() const { return vaoId != 0 && vertexCount > 0; }
 
-protected:
+ protected:
     void set(const ::Mesh& mesh) {
         vertexCount = mesh.vertexCount;
         triangleCount = mesh.triangleCount;
@@ -258,8 +256,8 @@ protected:
         vboId = mesh.vboId;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RMeshUnmanaged = raylib::MeshUnmanaged;
 
-#endif // RAYLIB_CPP_INCLUDE_MESHUNMANAGED_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_MESHUNMANAGED_HPP_
