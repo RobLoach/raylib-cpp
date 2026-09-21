@@ -114,6 +114,20 @@ public:
     static void ShowCursor()  { ::ShowCursor(); }
 
     /**
+     * Enables cursor (unlock cursor)
+     */
+    RLCPP_MAYBEUNUSED RLCPPAPI inline void EnableCursor() {
+        ::EnableCursor();
+    }
+
+    /**
+     * Disables cursor (lock cursor)
+     */
+    RLCPP_MAYBEUNUSED RLCPPAPI inline void DisableCursor() {
+        ::DisableCursor();
+    }
+
+    /**
      * Check if window is currently fullscreen
      */
     static bool IsFullscreen()  { return ::IsWindowFullscreen(); }
