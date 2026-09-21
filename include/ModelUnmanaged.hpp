@@ -48,7 +48,7 @@ public:
     GETTERSETTER(::Mesh*, Meshes, meshes)
     GETTERSETTER(::Material*, Materials, materials)
     GETTERSETTER(int*, MeshMaterial, meshMaterial)
-    GETTERSETTER(int, BoneCount, skeleton.boneCount)
+    GETTERSETTER(unsigned int, BoneCount, skeleton.boneCount)
     GETTERSETTER(::BoneInfo*, Bones, skeleton.bones)
     GETTERSETTER(::Transform*, BindPose, skeleton.bindPose)
     GETTERSETTER(::ModelAnimPose, CurrentPose, currentPose)

@@ -546,7 +546,7 @@ public:
      *
      * @param contrast Contrast values between -100 and 100
      */
-    Image& ColorContrast(float contrast) {
+    Image& ColorContrast(const int contrast) {
         ::ImageColorContrast(this, contrast);
         return *this;
     }

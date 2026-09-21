@@ -72,7 +72,7 @@ public:
         return count;
     }
 
-    GETTERSETTER(int, BoneCount, boneCount)
+    GETTERSETTER(unsigned int, BoneCount, boneCount)
     GETTERSETTER(int, KeyframeCount, keyframeCount)
     GETTERSETTER(::Transform**, KeyframePoses, keyframePoses)
 
