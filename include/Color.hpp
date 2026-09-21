@@ -12,7 +12,7 @@ namespace raylib {
  * Color type, RGBA (32bit)
  */
 class Color : public ::Color {
-public:
+ public:
     constexpr Color(const ::Color& color) : ::Color{color.r, color.g, color.b, color.a} {}
 
     constexpr Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha = 255)
@@ -243,7 +243,8 @@ public:
     static Color Blank() { return BLANK; }
     static Color Magenta() { return MAGENTA; }
     static Color RayWhite() { return RAYWHITE; }
-protected:
+
+ protected:
     void set(const ::Color& color) {
         r = color.r;
         g = color.g;
@@ -252,8 +253,8 @@ protected:
     }
 };
 
-} // namespace raylib
+}  // namespace raylib
 
 using RColor = raylib::Color;
 
-#endif // RAYLIB_CPP_INCLUDE_COLOR_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_COLOR_HPP_

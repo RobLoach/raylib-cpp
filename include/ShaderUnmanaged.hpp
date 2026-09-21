@@ -1,11 +1,11 @@
 #ifndef RAYLIB_CPP_INCLUDE_SHADERUNMANAGED_HPP_
 #define RAYLIB_CPP_INCLUDE_SHADERUNMANAGED_HPP_
 
-#include "./raylib-cpp-utils.hpp"
-#include "./raylib.hpp"
-
 #include <rlgl.h>
 #include <string>
+
+#include "./raylib-cpp-utils.hpp"
+#include "./raylib.hpp"
 
 namespace raylib {
 
@@ -13,7 +13,7 @@ namespace raylib {
  * Shader type (generic), not managed by C++ RAII.
  */
 class ShaderUnmanaged : public ::Shader {
-public:
+ public:
     ShaderUnmanaged() : ::Shader{rlGetShaderIdDefault(), rlGetShaderLocsDefault()} {}
 
     ShaderUnmanaged(const ::Shader& shader) : ::Shader(shader) { }
@@ -82,7 +82,9 @@ public:
      *
      * @see GetShaderLocation()
      */
-    RLCPP_NODISCARD int GetLocation(const std::string& uniformName) const { return ::GetShaderLocation(*this, uniformName.c_str()); }
+    RLCPP_NODISCARD int GetLocation(const std::string& uniformName) const {
+        return ::GetShaderLocation(*this, uniformName.c_str());
+    }
 
     /**
      * Get shader attribute location
@@ -147,14 +149,15 @@ public:
      * Retrieves whether or not the shader is ready.
      */
     RLCPP_NODISCARD bool IsValid() const { return ::IsShaderValid(*this); }
-protected:
+
+ protected:
     void set(const ::Shader& shader) {
         id = shader.id;
         locs = shader.locs;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RShaderUnmanaged = raylib::ShaderUnmanaged;
 
-#endif // RAYLIB_CPP_INCLUDE_SHADERUNMANAGED_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_SHADERUNMANAGED_HPP_

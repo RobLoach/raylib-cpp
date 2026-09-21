@@ -47,4 +47,4 @@
     SETTER(type, method, name)
 #endif
 
-#endif // RAYLIB_CPP_INCLUDE_RAYLIB_CPP_UTILS_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_RAYLIB_CPP_UTILS_HPP_

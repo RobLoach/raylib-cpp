@@ -16,7 +16,7 @@ namespace raylib {
  * @see raylib::Sound
  */
 class SoundUnmanaged : public ::Sound {
-public:
+ public:
     /**
      * Default constructor, creates an empty Sound.
      */
@@ -177,14 +177,14 @@ public:
      */
     RLCPP_NODISCARD bool IsValid() const { return ::IsSoundValid(*this); }
 
-protected:
+ protected:
     void set(const ::Sound& sound) {
         stream = sound.stream;
         frameCount = sound.frameCount;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RSoundUnmanaged = raylib::SoundUnmanaged;
 
-#endif // RAYLIB_CPP_INCLUDE_SOUNDUNMANAGED_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_SOUNDUNMANAGED_HPP_

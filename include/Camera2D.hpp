@@ -4,14 +4,13 @@
 #include "./Vector2.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
-#include <raylib.h>
 
 namespace raylib {
 /**
  * Camera2D type, defines a 2d camera
  */
 class Camera2D : public ::Camera2D {
-public:
+ public:
     Camera2D(const ::Camera2D& camera)
         : ::Camera2D(camera) {
         // Nothing.
@@ -54,7 +53,8 @@ public:
      * Returns the screen space position for a 2d world space position
      */
     RLCPP_NODISCARD Vector2 GetWorldToScreen(::Vector2 position) const { return ::GetWorldToScreen2D(position, *this); }
-protected:
+
+ protected:
     void set(const ::Camera2D& camera) {
         offset = camera.offset;
         target = camera.target;
@@ -62,8 +62,8 @@ protected:
         zoom = camera.zoom;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RCamera2D = raylib::Camera2D;
 
-#endif // RAYLIB_CPP_INCLUDE_CAMERA2D_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_CAMERA2D_HPP_

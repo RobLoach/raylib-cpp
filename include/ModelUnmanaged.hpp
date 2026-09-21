@@ -17,7 +17,7 @@ namespace raylib {
  * @see raylib::Model
  */
 class ModelUnmanaged : public ::Model {
-public:
+ public:
     /**
      * Default constructor.
      */
@@ -59,7 +59,9 @@ public:
         return *this;
     }
 
-    [[nodiscard]] std::string ToString() const { return ::TextFormat("Model(meshCount=%d, materialCount=%d)", meshCount, materialCount); }
+    [[nodiscard]] std::string ToString() const {
+        return ::TextFormat("Model(meshCount=%d, materialCount=%d)", meshCount, materialCount);
+    }
 
     operator std::string() const { return ToString(); }
 
@@ -187,7 +189,7 @@ public:
      */
     RLCPP_NODISCARD bool IsValid() const { return ::IsModelValid(*this); }
 
-protected:
+ protected:
     void set(const ::Model& model) {
         transform = model.transform;
 
@@ -204,8 +206,8 @@ protected:
         boneMatrices = model.boneMatrices;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RModelUnmanaged = raylib::ModelUnmanaged;
 
-#endif // RAYLIB_CPP_INCLUDE_MODELUNMANAGED_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_MODELUNMANAGED_HPP_

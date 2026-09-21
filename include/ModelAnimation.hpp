@@ -14,7 +14,7 @@ namespace raylib {
  * Model animation
  */
 class ModelAnimation : public ::ModelAnimation {
-public:
+ public:
     ModelAnimation(const ::ModelAnimation& model) { set(model); }
 
     ModelAnimation(const ModelAnimation&) = delete;
@@ -109,7 +109,7 @@ public:
     }
 
     static void Unload(ModelAnimation *modelAnimation, int count) {
-        ::UnloadModelAnimations(modelAnimation, count); 
+        ::UnloadModelAnimations(modelAnimation, count);
     }
 
     /**
@@ -123,7 +123,8 @@ public:
     /**
      * Blend two animation poses
      */
-    ModelAnimation& Blend(const ::Model& model, float frameA, const ::ModelAnimation& animB, float frameB, float blend) {
+    ModelAnimation& Blend(
+        const ::Model& model, float frameA, const ::ModelAnimation& animB, float frameB, float blend) {
         ::UpdateModelAnimationEx(model, *this, frameA, animB, frameB, blend);
         return *this;
     }
@@ -133,7 +134,8 @@ public:
      * Check model animation skeleton match
      */
     RLCPP_NODISCARD bool IsValid(const ::Model& model) const { return ::IsModelAnimationValid(model, *this); }
-protected:
+
+ protected:
     void set(const ::ModelAnimation& model) {
         boneCount = model.boneCount;
         keyframeCount = model.keyframeCount;
@@ -145,8 +147,8 @@ protected:
         }
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RModelAnimation = raylib::ModelAnimation;
 
-#endif // RAYLIB_CPP_INCLUDE_MODELANIMATION_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_MODELANIMATION_HPP_

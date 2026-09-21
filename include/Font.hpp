@@ -1,6 +1,8 @@
 #ifndef RAYLIB_CPP_INCLUDE_FONT_HPP_
 #define RAYLIB_CPP_INCLUDE_FONT_HPP_
 
+#include <string>
+
 #include "./FontUnmanaged.hpp"
 
 namespace raylib {
@@ -12,7 +14,7 @@ namespace raylib {
  * @see raylib::FontUnmanaged
  */
 class Font : public FontUnmanaged {
-public:
+ public:
     using FontUnmanaged::FontUnmanaged;
 
     Font(const Font&) = delete;
@@ -77,8 +79,8 @@ public:
         FontUnmanaged::Load(fileType, fileData, dataSize, fontSize, codepoints, codepointCount);
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RFont = raylib::Font;
 
-#endif // RAYLIB_CPP_INCLUDE_FONT_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_FONT_HPP_

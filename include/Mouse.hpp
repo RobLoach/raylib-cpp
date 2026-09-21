@@ -4,7 +4,6 @@
 #include "./Functions.hpp"
 #include "./Vector2.hpp"
 #include "./raylib.hpp"
-#include <raylib.h>
 
 namespace raylib {
 /**
@@ -146,9 +145,9 @@ RLCPP_MAYBEUNUSED RLCPPAPI inline Ray GetScreenToWorldRay(::Vector2 mousePositio
 RLCPP_MAYBEUNUSED RLCPPAPI inline Ray GetScreenToWorldRay(const ::Camera& camera) {
     return ::GetScreenToWorldRay(::GetMousePosition(), camera);
 }
-} // namespace Mouse
-} // namespace raylib
+}  // namespace Mouse
+}  // namespace raylib
 
 namespace RMouse = raylib::Mouse;
 
-#endif // RAYLIB_CPP_INCLUDE_MOUSE_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_MOUSE_HPP_

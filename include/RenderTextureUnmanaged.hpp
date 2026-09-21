@@ -1,6 +1,8 @@
 #ifndef RAYLIB_CPP_INCLUDE_RENDERTEXTUREUNMANAGED_HPP_
 #define RAYLIB_CPP_INCLUDE_RENDERTEXTUREUNMANAGED_HPP_
 
+#include <string>
+
 #include "./RaylibException.hpp"
 #include "./TextureUnmanaged.hpp"
 #include "./raylib-cpp-utils.hpp"
@@ -14,7 +16,7 @@ namespace raylib {
  * @see raylib::RenderTexture
  */
 class RenderTextureUnmanaged : public ::RenderTexture {
-public:
+ public:
     /**
      * Default constructor to build an empty RenderTexture.
      */
@@ -105,7 +107,7 @@ public:
      */
     RLCPP_NODISCARD bool IsValid() const { return ::IsRenderTextureValid(*this); }
 
-protected:
+ protected:
     void set(const ::RenderTexture& renderTexture) {
         id = renderTexture.id;
         texture = renderTexture.texture;
@@ -115,9 +117,9 @@ protected:
 
 using RenderTexture2DUnmanaged = RenderTextureUnmanaged;
 
-} // namespace raylib
+}  // namespace raylib
 
 using RRenderTextureUnmanaged = raylib::RenderTextureUnmanaged;
 using RRenderTexture2DUnmanaged = raylib::RenderTexture2DUnmanaged;
 
-#endif // RAYLIB_CPP_INCLUDE_RENDERTEXTUREUNMANAGED_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_RENDERTEXTUREUNMANAGED_HPP_

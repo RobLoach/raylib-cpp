@@ -1,6 +1,8 @@
 #ifndef RAYLIB_CPP_INCLUDE_RECTANGLE_HPP_
 #define RAYLIB_CPP_INCLUDE_RECTANGLE_HPP_
 
+#include <string>
+
 #include "./Vector2.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
@@ -10,10 +12,11 @@ namespace raylib {
  * Rectangle type
  */
 class Rectangle : public ::Rectangle {
-public:
+ public:
     constexpr Rectangle(const ::Rectangle& rect) : ::Rectangle{rect.x, rect.y, rect.width, rect.height} {}
 
-    constexpr Rectangle(float x = 0, float y = 0, float width = 0, float height = 0) : ::Rectangle{x, y, width, height} {}
+    constexpr Rectangle(float x = 0, float y = 0, float width = 0, float height = 0)
+        : ::Rectangle{x, y, width, height} {}
 
     constexpr Rectangle(::Vector2 position, ::Vector2 size) : ::Rectangle{position.x, position.y, size.x, size.y} {}
     constexpr Rectangle(::Vector2 size) : ::Rectangle{0, 0, size.x, size.y} {}
@@ -147,7 +150,8 @@ public:
     }
 
     Rectangle& SetPosition(const ::Vector2& position) { return SetPosition(position.x, position.y); }
-protected:
+
+ protected:
     void set(const ::Rectangle& rect) {
         x = rect.x;
         y = rect.y;
@@ -155,8 +159,8 @@ protected:
         height = rect.height;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RRectangle = raylib::Rectangle;
 
-#endif // RAYLIB_CPP_INCLUDE_RECTANGLE_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_RECTANGLE_HPP_

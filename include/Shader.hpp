@@ -3,8 +3,8 @@
 
 #include <string>
 
-#include "ShaderUnmanaged.hpp"
-#include "Texture.hpp"
+#include "./ShaderUnmanaged.hpp"
+#include "./Texture.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
 
@@ -13,7 +13,7 @@ namespace raylib {
  * Shader type (generic)
  */
 class Shader : public ShaderUnmanaged {
-public:
+ public:
     using ShaderUnmanaged::ShaderUnmanaged;
 
     Shader(const Shader&) = delete;
@@ -46,8 +46,8 @@ public:
      */
     ~Shader() { Unload(); }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RShader = raylib::Shader;
 
-#endif // RAYLIB_CPP_INCLUDE_SHADER_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_SHADER_HPP_

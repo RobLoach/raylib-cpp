@@ -19,7 +19,7 @@ namespace raylib {
  * @see raylib::Texture
  */
 class TextureUnmanaged : public ::Texture {
-public:
+ public:
     /**
      * Default texture constructor.
      */
@@ -326,7 +326,8 @@ public:
     RLCPP_NODISCARD bool IsValid() const {
         return ::IsTextureValid(*this);
     }
-protected:
+
+ protected:
     void set(const ::Texture& texture) {
         id = texture.id;
         width = texture.width;
@@ -340,10 +341,10 @@ protected:
 using Texture2DUnmanaged = TextureUnmanaged;
 using TextureCubemapUnmanaged = TextureUnmanaged;
 
-} // namespace raylib
+}  // namespace raylib
 
 using RTextureUnmanaged = raylib::TextureUnmanaged;
 using RTexture2DUnmanaged = raylib::Texture2DUnmanaged;
 using RTextureCubemapUnmanaged = raylib::TextureCubemapUnmanaged;
 
-#endif // RAYLIB_CPP_INCLUDE_TEXTUREUNMANAGED_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_TEXTUREUNMANAGED_HPP_

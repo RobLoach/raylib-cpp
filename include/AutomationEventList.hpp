@@ -10,7 +10,7 @@ namespace raylib {
  * AutomationEventList management functions
  */
 class AutomationEventList : public ::AutomationEventList {
-public:
+ public:
     AutomationEventList(const ::AutomationEventList& automationEventList)
         : ::AutomationEventList(automationEventList) {
         // Nothing.
@@ -128,15 +128,16 @@ public:
         Set();
         ::PlayAutomationEvent(this->events[index]);
     }
-protected:
+
+ protected:
     void set(const ::AutomationEventList& other) {
         capacity = other.capacity;
         count = other.count;
         events = other.events;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RAutomationEventList = raylib::AutomationEventList;
 
-#endif // RAYLIB_CPP_INCLUDE_AUTOMATIONEVENTLIST_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_AUTOMATIONEVENTLIST_HPP_

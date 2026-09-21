@@ -1,6 +1,8 @@
 #ifndef RAYLIB_CPP_INCLUDE_MUSIC_HPP_
 #define RAYLIB_CPP_INCLUDE_MUSIC_HPP_
 
+#include <string>
+
 #include "./MusicUnmanaged.hpp"
 
 namespace raylib {
@@ -12,7 +14,7 @@ namespace raylib {
  * @see raylib::MusicUnmanaged
  */
 class Music : public MusicUnmanaged {
-public:
+ public:
     using MusicUnmanaged::MusicUnmanaged;
 
     Music(const Music&) = delete;
@@ -59,8 +61,8 @@ public:
         MusicUnmanaged::Load(fileType, data, dataSize);
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RMusic = raylib::Music;
 
-#endif // RAYLIB_CPP_INCLUDE_MUSIC_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_MUSIC_HPP_

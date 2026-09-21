@@ -11,8 +11,8 @@ namespace raylib {
  * Input-related functions: gamepads
  */
 class Gamepad {
-public:
-    Gamepad(int gamepadNumber = 0) : number(gamepadNumber) {};
+ public:
+    Gamepad(int gamepadNumber = 0) : number(gamepadNumber) {}
     int number;
 
     GETTERSETTER(int, Number, number)
@@ -96,11 +96,12 @@ public:
     void SetVibration(float leftMotor, float rightMotor, float duration) const {
         ::SetGamepadVibration(number, leftMotor, rightMotor, duration);
     }
-protected:
+
+ protected:
     void set(int gamepadNumber) { number = gamepadNumber; }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RGamepad = raylib::Gamepad;
 
-#endif // RAYLIB_CPP_INCLUDE_GAMEPAD_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_GAMEPAD_HPP_

@@ -15,12 +15,14 @@ class Quaternion : public ::Quaternion {};
  * Vector4 type
  */
 class Vector4 : public ::Vector4 {
-public:
+ public:
     constexpr Vector4(const ::Vector4& vec) : ::Vector4{vec.x, vec.y, vec.z, vec.w} {}
     explicit constexpr Vector4(const raylib::Quaternion quat) : ::Vector4{quat.x, quat.y, quat.z, quat.w} {}
 
-    explicit constexpr Vector4(const float x = 0, const float y = 0, const float z = 0, const float w = 0) : ::Vector4{x, y, z, w} {}
-    explicit constexpr Vector4(const ::Rectangle rectangle) : ::Vector4{rectangle.x, rectangle.y, rectangle.width, rectangle.height} {}
+    explicit constexpr Vector4(const float x = 0, const float y = 0, const float z = 0, const float w = 0)
+        : ::Vector4{x, y, z, w} {}
+    explicit constexpr Vector4(const ::Rectangle rectangle)
+        : ::Vector4{rectangle.x, rectangle.y, rectangle.width, rectangle.height} {}
 
     explicit Vector4(const ::Color color) { set(ColorNormalize(color)); }
 
@@ -224,7 +226,9 @@ public:
     /**
      * Divide vector components by value
      */
-    RLCPP_NODISCARD constexpr Vector4 Divide(const float div) const { return ::Vector4{x / div, y / div, z / div, w / div}; }
+    RLCPP_NODISCARD constexpr Vector4 Divide(const float div) const {
+        return ::Vector4{x / div, y / div, z / div, w / div};
+    }
 
     /**
      * Divide vector components by value
@@ -271,9 +275,13 @@ public:
 
     RLCPP_NODISCARD Vector4 Max(const ::Vector4& v2) const { return ::Vector4Max(*this, v2); }
 
-    RLCPP_NODISCARD Vector4 Lerp(const ::Vector4& v2, const float amount) const { return ::Vector4Lerp(*this, v2, amount); }
+    RLCPP_NODISCARD Vector4 Lerp(const ::Vector4& v2, const float amount) const {
+        return ::Vector4Lerp(*this, v2, amount);
+    }
 
-    RLCPP_NODISCARD Vector4 MoveTowards(const ::Vector4& target, const float maxDistance) const { return ::Vector4MoveTowards(*this, target, maxDistance); }
+    RLCPP_NODISCARD Vector4 MoveTowards(const ::Vector4& target, const float maxDistance) const {
+        return ::Vector4MoveTowards(*this, target, maxDistance);
+    }
 
     RLCPP_NODISCARD Vector4 Invert() const { return ::Vector4Invert(*this); }
 
@@ -288,7 +296,8 @@ public:
     RLCPP_NODISCARD Color ColorFromNormalized() const { return ::ColorFromNormalized(*this); }
 
     operator Color() const { return ColorFromNormalized(); }
-protected:
+
+ protected:
     void set(const ::Vector4& vec4) {
         x = vec4.x;
         y = vec4.y;
@@ -297,8 +306,8 @@ protected:
     }
 };
 
-} // namespace raylib
+}  // namespace raylib
 
 using RVector4 = raylib::Vector4;
 
-#endif // RAYLIB_CPP_INCLUDE_VECTOR4_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_VECTOR4_HPP_

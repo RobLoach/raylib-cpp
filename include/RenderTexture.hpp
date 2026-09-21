@@ -13,7 +13,7 @@ namespace raylib {
  * @see raylib::RenderTextureUnmanaged
  */
 class RenderTexture : public RenderTextureUnmanaged {
-public:
+ public:
     using RenderTextureUnmanaged::RenderTextureUnmanaged;
 
     RenderTexture(const RenderTexture&) = delete;
@@ -57,9 +57,9 @@ public:
 
 using RenderTexture2D = RenderTexture;
 
-} // namespace raylib
+}  // namespace raylib
 
 using RRenderTexture = raylib::RenderTexture;
 using RRenderTexture2D = raylib::RenderTexture2D;
 
-#endif // RAYLIB_CPP_INCLUDE_RENDERTEXTURE_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_RENDERTEXTURE_HPP_

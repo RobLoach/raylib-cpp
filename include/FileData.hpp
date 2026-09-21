@@ -10,7 +10,7 @@
 namespace raylib {
 
 class FileData {
-public:
+ public:
     FileData() = default;
     FileData(const FileData&) = delete;
     FileData(FileData&& other) noexcept : data(other.data), bytesRead(other.bytesRead) {
@@ -43,13 +43,14 @@ public:
             bytesRead = 0;
         }
     }
-private:
+
+ private:
     unsigned char* data{nullptr};
     int bytesRead{0};
 };
 
-} // namespace raylib
+}  // namespace raylib
 
 using RFileData = raylib::FileData;
 
-#endif // RAYLIB_CPP_INCLUDE_FILEDATA_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_FILEDATA_HPP_

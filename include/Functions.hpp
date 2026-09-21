@@ -459,6 +459,6 @@ RLCPP_MAYBEUNUSED RLCPPAPI inline float TextToFloat(const std::string& text) {
     return ::TextToFloat(text.c_str());
 }
 
-} // namespace raylib
+}  // namespace raylib
 
-#endif // RAYLIB_CPP_INCLUDE_FUNCTIONS_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_FUNCTIONS_HPP_

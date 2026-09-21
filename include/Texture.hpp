@@ -1,6 +1,8 @@
 #ifndef RAYLIB_CPP_INCLUDE_TEXTURE_HPP_
 #define RAYLIB_CPP_INCLUDE_TEXTURE_HPP_
 
+#include <string>
+
 #include "./TextureUnmanaged.hpp"
 
 namespace raylib {
@@ -12,7 +14,7 @@ namespace raylib {
  * @see raylib::TextureUnmanaged
  */
 class Texture : public TextureUnmanaged {
-public:
+ public:
     using TextureUnmanaged::TextureUnmanaged;
 
     /**
@@ -93,10 +95,10 @@ public:
 using Texture2D = Texture;
 using TextureCubemap = Texture;
 
-} // namespace raylib
+}  // namespace raylib
 
 using RTexture = raylib::Texture;
 using RTexture2D = raylib::Texture2D;
 using RTextureCubemap = raylib::TextureCubemap;
 
-#endif // RAYLIB_CPP_INCLUDE_TEXTURE_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_TEXTURE_HPP_

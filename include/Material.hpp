@@ -12,7 +12,7 @@ namespace raylib {
  * @see raylib::MaterialUnmanaged
  */
 class Material : public MaterialUnmanaged {
-public:
+ public:
     using MaterialUnmanaged::MaterialUnmanaged;
 
     Material(const Material&) = delete;
@@ -47,8 +47,8 @@ public:
 
     ~Material() { Unload(); }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RMaterial = raylib::Material;
 
-#endif // RAYLIB_CPP_INCLUDE_MATERIAL_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_MATERIAL_HPP_
