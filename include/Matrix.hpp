@@ -78,7 +78,7 @@ public:
     constexpr bool operator!=(const ::Matrix& other) { return !(*this == other); }
 
     [[nodiscard]] std::string ToString() const {
-        return TextFormat(
+        return ::TextFormat(
             "Matrix(\n"
             "  %f, %f, %f, %f\n"
             "  %f, %f, %f, %f\n"

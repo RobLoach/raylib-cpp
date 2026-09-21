@@ -54,7 +54,7 @@ public:
         return *this;
     }
 
-    [[nodiscard]] std::string ToString() const { return TextFormat("Sound(frameCount=%u)", frameCount); }
+    [[nodiscard]] std::string ToString() const { return ::TextFormat("Sound(frameCount=%u)", frameCount); }
 
     operator std::string() const { return ToString(); }
 

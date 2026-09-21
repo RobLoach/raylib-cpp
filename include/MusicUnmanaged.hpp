@@ -60,7 +60,7 @@ public:
         return *this;
     }
 
-    [[nodiscard]] std::string ToString() const { return TextFormat("Music(frameCount=%u, looping=%s)", frameCount, looping ? "true" : "false"); }
+    [[nodiscard]] std::string ToString() const { return ::TextFormat("Music(frameCount=%u, looping=%s)", frameCount, looping ? "true" : "false"); }
 
     operator std::string() const { return ToString(); }
 
@@ -72,7 +72,7 @@ public:
     void Load(const std::string& fileName) {
         set(::LoadMusicStream(fileName.c_str()));
         if (!IsValid()) {
-            throw RaylibException(TextFormat("Failed to load Music from file: %s", fileName.c_str()));
+            throw RaylibException(::TextFormat("Failed to load Music from file: %s", fileName.c_str()));
         }
     }
 
@@ -84,7 +84,7 @@ public:
     void Load(const std::string& fileType, unsigned char* data, int dataSize) {
         set(::LoadMusicStreamFromMemory(fileType.c_str(), data, dataSize));
         if (!IsValid()) {
-            throw RaylibException(TextFormat("Failed to load Music from %s file data", fileType.c_str()));
+            throw RaylibException(::TextFormat("Failed to load Music from %s file data", fileType.c_str()));
         }
     }
 

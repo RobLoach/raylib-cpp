@@ -86,7 +86,7 @@ public:
         return *this;
     }
 
-    [[nodiscard]] std::string ToString() const { return TextFormat("Texture(id=%u, %dx%d)", id, width, height); }
+    [[nodiscard]] std::string ToString() const { return ::TextFormat("Texture(id=%u, %dx%d)", id, width, height); }
 
     operator std::string() const { return ToString(); }
 
@@ -323,7 +323,9 @@ public:
      *
      * @return True or false depending on whether the Texture has data.
      */
-    RLCPP_NODISCARD bool IsValid() const { return IsTextureValid(*this); }
+    RLCPP_NODISCARD bool IsValid() const {
+        return ::IsTextureValid(*this);
+    }
 protected:
     void set(const ::Texture& texture) {
         id = texture.id;

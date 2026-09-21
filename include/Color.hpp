@@ -50,7 +50,7 @@ public:
      */
     explicit operator int() const { return ::ColorToInt(*this); }
 
-    RLCPP_NODISCARD std::string ToString() const { return TextFormat("Color(%d, %d, %d, %d)", r, g, b, a); }
+    RLCPP_NODISCARD std::string ToString() const { return ::TextFormat("Color(%d, %d, %d, %d)", r, g, b, a); }
 
     explicit operator std::string() const { return ToString(); }
 

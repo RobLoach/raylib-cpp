@@ -141,7 +141,7 @@ public:
     }
 
     [[nodiscard]] std::string ToString() const {
-        return TextFormat(
+        return ::TextFormat(
             "Mesh(vertexCount=%d, triangleCount=%d, boneCount=%d)",
             vertexCount, triangleCount, boneCount
         );

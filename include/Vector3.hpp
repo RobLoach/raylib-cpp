@@ -32,7 +32,7 @@ public:
 
     constexpr bool operator!=(const ::Vector3& other) const { return !(*this == other); }
 
-    RLCPP_NODISCARD std::string ToString() const { return TextFormat("Vector3(%f, %f, %f)", x, y, z); }
+    RLCPP_NODISCARD std::string ToString() const { return ::TextFormat("Vector3(%f, %f, %f)", x, y, z); }
 
     operator std::string() const { return ToString(); }
 

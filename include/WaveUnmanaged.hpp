@@ -61,7 +61,7 @@ public:
     }
 
     [[nodiscard]] std::string ToString() const {
-        return TextFormat(
+        return ::TextFormat(
             "Wave(frameCount=%u, sampleRate=%u, sampleSize=%u, channels=%u, data=%p)",
             frameCount, sampleRate, sampleSize, channels, data
         );

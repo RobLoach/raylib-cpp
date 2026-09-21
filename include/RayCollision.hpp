@@ -63,7 +63,7 @@ public:
     }
 
     [[nodiscard]] std::string ToString() const {
-        return TextFormat(
+        return ::TextFormat(
             "RayCollision(hit=%s, distance=%f, point=(%f, %f, %f), normal=(%f, %f, %f))",
             hit ? "true" : "false",
             distance,

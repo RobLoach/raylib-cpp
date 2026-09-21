@@ -40,7 +40,7 @@ public:
     }
 
     [[nodiscard]] std::string ToString() const {
-        return TextFormat(
+        return ::TextFormat(
             "BoundingBox(min=(%f, %f, %f), max=(%f, %f, %f))",
             min.x, min.y, min.z, max.x, max.y, max.z
         );

@@ -101,7 +101,7 @@ public:
         other.format = 0;
     }
 
-    [[nodiscard]] std::string ToString() const { return TextFormat("Image(width=%d, height=%d)", width, height); }
+    [[nodiscard]] std::string ToString() const { return ::TextFormat("Image(width=%d, height=%d)", width, height); }
 
     operator std::string() const { return ToString(); }
 
@@ -296,7 +296,7 @@ public:
      */
     void Export(const std::string& fileName) const {
         if (!::ExportImage(*this, fileName.c_str())) {
-            throw RaylibException(TextFormat("Failed to export Image to file: %s", fileName.c_str()));
+            throw RaylibException(::TextFormat("Failed to export Image to file: %s", fileName.c_str()));
         }
     }
 
@@ -314,7 +314,7 @@ public:
      */
     void ExportAsCode(const std::string& fileName) const {
         if (!::ExportImageAsCode(*this, fileName.c_str())) {
-            throw RaylibException(TextFormat("Failed to export Image code to file: %s", fileName.c_str()));
+            throw RaylibException(::TextFormat("Failed to export Image code to file: %s", fileName.c_str()));
         }
     }
 

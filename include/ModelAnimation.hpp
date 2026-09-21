@@ -54,7 +54,7 @@ public:
         ::ModelAnimation* modelAnimations = ::LoadModelAnimations(fileName.c_str(), &count);
         if (index < 0 || index >= count) {
             ::UnloadModelAnimations(modelAnimations, count);
-            throw RaylibException(TextFormat("ModelAnimation index %d out of range [0, %d)", index, count));
+            throw RaylibException(::TextFormat("ModelAnimation index %d out of range [0, %d)", index, count));
         }
         ModelAnimation result(modelAnimations[index]);
         modelAnimations[index].keyframePoses = nullptr;
