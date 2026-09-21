@@ -205,6 +205,7 @@ export namespace raylib {
         using raylib::Keyboard::IsKeyUp;
         using raylib::Keyboard::GetKeyPressed;
         using raylib::Keyboard::GetCharPressed;
+        using raylib::Keyboard::GetKeyName;
     }
 
     /**
