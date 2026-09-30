@@ -2,6 +2,7 @@
 #define RAYLIB_CPP_INCLUDE_FONTUNMANAGED_HPP_
 
 #include <string>
+#include <vector>
 
 #include "./RaylibException.hpp"
 #include "./TextureUnmanaged.hpp"
@@ -53,6 +54,19 @@ class FontUnmanaged : public ::Font {
      */
     FontUnmanaged(const std::string& fileName, int fontSize, const int* codepoints = nullptr, int codepointCount = 0) {
         Load(fileName, fontSize, codepoints, codepointCount);
+    }
+
+    /**
+     * Loads a Font from the given file, with the given codepoints.
+     *
+     * @param fileName The file path of the font to load.
+     * @param fontSize The desired size of the loaded font.
+     * @param codepoints The codepoints to generate glyphs for.
+     *
+     * @throws raylib::RaylibException Throws if the given font failed to initialize.
+     */
+    FontUnmanaged(const std::string& fileName, int fontSize, const std::vector<int>& codepoints) {
+        Load(fileName, fontSize, codepoints);
     }
 
     /**
@@ -121,6 +135,19 @@ class FontUnmanaged : public ::Font {
         if (!IsValid()) {
             throw RaylibException("Failed to load Font with from file with font size: " + fileName);
         }
+    }
+
+    /**
+     * Loads a font from a given file, with the given codepoints.
+     *
+     * @param fileName The file path of the font to load.
+     * @param fontSize The desired size of the loaded font.
+     * @param codepoints The codepoints to generate glyphs for.
+     *
+     * @throws raylib::RaylibException Throws if the given font failed to initialize.
+     */
+    void Load(const std::string& fileName, int fontSize, const std::vector<int>& codepoints) {
+        Load(fileName, fontSize, codepoints.data(), static_cast<int>(codepoints.size()));
     }
 
     /**

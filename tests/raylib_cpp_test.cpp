@@ -125,6 +125,33 @@ int main(int argc, char* argv[]) {
         AssertEqual(output[1], "How");
     }
 
+    // raylib::GetCodepointCount() and raylib::LoadCodepoints()
+    {
+        // ASCII text has one codepoint per byte.
+        std::string ascii = "Hello";
+        AssertEqual(raylib::GetCodepointCount(ascii), 5);
+
+        std::vector<int> asciiCodepoints = raylib::LoadCodepoints(ascii);
+        AssertEqual(static_cast<int>(asciiCodepoints.size()), raylib::GetCodepointCount(ascii));
+        AssertEqual(asciiCodepoints[0], static_cast<int>('H'));
+        AssertEqual(asciiCodepoints[4], static_cast<int>('o'));
+
+        // Multi-byte UTF-8 text holds fewer codepoints than bytes: "a", U+00E9 and U+20AC.
+        std::string utf8 = "a\xC3\xA9\xE2\x82\xAC";
+        AssertEqual(static_cast<int>(utf8.size()), 6);
+        AssertEqual(raylib::GetCodepointCount(utf8), 3);
+
+        std::vector<int> utf8Codepoints = raylib::LoadCodepoints(utf8);
+        AssertEqual(static_cast<int>(utf8Codepoints.size()), raylib::GetCodepointCount(utf8));
+        AssertEqual(utf8Codepoints[0], 0x61);
+        AssertEqual(utf8Codepoints[1], 0xE9);
+        AssertEqual(utf8Codepoints[2], 0x20AC);
+
+        // An empty string holds no codepoints.
+        AssertEqual(raylib::GetCodepointCount(""), 0);
+        AssertEqual(static_cast<int>(raylib::LoadCodepoints("").size()), 0);
+    }
+
     // Wave
     {
         raylib::Wave wave(path + "/resources/weird.wav");
