@@ -1,6 +1,8 @@
 #ifndef RAYLIB_CPP_INCLUDE_WAVE_HPP_
 #define RAYLIB_CPP_INCLUDE_WAVE_HPP_
 
+#include <string>
+
 #include "./WaveUnmanaged.hpp"
 
 namespace raylib {
@@ -13,7 +15,7 @@ namespace raylib {
  * @see raylib::WaveUnmanaged
  */
 class Wave : public WaveUnmanaged {
-public:
+ public:
     using WaveUnmanaged::WaveUnmanaged;
 
     Wave(const Wave& other) : WaveUnmanaged(other.Copy()) {}
@@ -67,8 +69,8 @@ public:
         WaveUnmanaged::Load(fileType, fileData, dataSize);
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RWave = raylib::Wave;
 
-#endif // RAYLIB_CPP_INCLUDE_WAVE_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_WAVE_HPP_

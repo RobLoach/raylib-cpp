@@ -10,7 +10,7 @@ namespace raylib {
  * Audio device management functions.
  */
 class AudioDevice {
-public:
+ public:
     /**
      * Initialize audio device and context.
      *
@@ -64,8 +64,8 @@ public:
         return *this;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RAudioDevice = raylib::AudioDevice;
 
-#endif // RAYLIB_CPP_INCLUDE_AUDIODEVICE_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_AUDIODEVICE_HPP_

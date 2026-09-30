@@ -10,7 +10,7 @@ namespace raylib {
  * Ray type (useful for raycast)
  */
 class Ray : public ::Ray {
-public:
+ public:
     Ray(const ::Ray& ray) { set(ray); }
 
     constexpr Ray(::Vector3 position = {0.0f, 0.0f, 0.0f}, ::Vector3 direction = {0.0f, 0.0f, 0.0f})
@@ -76,15 +76,17 @@ public:
     /**
      * Get a ray trace from mouse position
      */
-    static Ray GetScreenToWorldRay(const ::Camera& camera) { return ::GetScreenToWorldRay(::GetMousePosition(), camera); }
-protected:
+    static Ray GetScreenToWorldRay(const ::Camera& camera) {
+        return ::GetScreenToWorldRay(::GetMousePosition(), camera);
+    }
+
     void set(const ::Ray& ray) {
         position = ray.position;
         direction = ray.direction;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RRay = raylib::Ray;
 
-#endif // RAYLIB_CPP_INCLUDE_RAY_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_RAY_HPP_

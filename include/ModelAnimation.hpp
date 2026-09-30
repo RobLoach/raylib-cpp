@@ -14,7 +14,7 @@ namespace raylib {
  * Model animation
  */
 class ModelAnimation : public ::ModelAnimation {
-public:
+ public:
     ModelAnimation(const ::ModelAnimation& model) { set(model); }
 
     ModelAnimation(const ModelAnimation&) = delete;
@@ -54,7 +54,7 @@ public:
         ::ModelAnimation* modelAnimations = ::LoadModelAnimations(fileName.c_str(), &count);
         if (index < 0 || index >= count) {
             ::UnloadModelAnimations(modelAnimations, count);
-            throw RaylibException(TextFormat("ModelAnimation index %d out of range [0, %d)", index, count));
+            throw RaylibException(::TextFormat("ModelAnimation index %d out of range [0, %d)", index, count));
         }
         ModelAnimation result(modelAnimations[index]);
         modelAnimations[index].keyframePoses = nullptr;
@@ -72,7 +72,7 @@ public:
         return count;
     }
 
-    GETTERSETTER(int, BoneCount, boneCount)
+    GETTERSETTER(unsigned int, BoneCount, boneCount)
     GETTERSETTER(int, KeyframeCount, keyframeCount)
     GETTERSETTER(::Transform**, KeyframePoses, keyframePoses)
 
@@ -109,7 +109,7 @@ public:
     }
 
     static void Unload(ModelAnimation *modelAnimation, int count) {
-        ::UnloadModelAnimations(modelAnimation, count); 
+        ::UnloadModelAnimations(modelAnimation, count);
     }
 
     /**
@@ -123,7 +123,8 @@ public:
     /**
      * Blend two animation poses
      */
-    ModelAnimation& Blend(const ::Model& model, float frameA, const ::ModelAnimation& animB, float frameB, float blend) {
+    ModelAnimation& Blend(
+        const ::Model& model, float frameA, const ::ModelAnimation& animB, float frameB, float blend) {
         ::UpdateModelAnimationEx(model, *this, frameA, animB, frameB, blend);
         return *this;
     }
@@ -133,7 +134,8 @@ public:
      * Check model animation skeleton match
      */
     RLCPP_NODISCARD bool IsValid(const ::Model& model) const { return ::IsModelAnimationValid(model, *this); }
-protected:
+
+ protected:
     void set(const ::ModelAnimation& model) {
         boneCount = model.boneCount;
         keyframeCount = model.keyframeCount;
@@ -145,8 +147,8 @@ protected:
         }
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RModelAnimation = raylib::ModelAnimation;
 
-#endif // RAYLIB_CPP_INCLUDE_MODELANIMATION_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_MODELANIMATION_HPP_

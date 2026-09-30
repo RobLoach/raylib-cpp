@@ -14,7 +14,7 @@ namespace raylib {
  * @see raylib::AudioStream
  */
 class AudioStreamUnmanaged : public ::AudioStream {
-public:
+ public:
     /**
      * Creates an AudioStreamUnmanaged from an existing AudioStream struct.
      */
@@ -184,7 +184,7 @@ public:
      */
     RLCPP_NODISCARD bool IsValid() const { return ::IsAudioStreamValid(*this); }
 
-protected:
+ protected:
     void set(const ::AudioStream& stream) {
         buffer = stream.buffer;
         processor = stream.processor;
@@ -193,8 +193,8 @@ protected:
         channels = stream.channels;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RAudioStreamUnmanaged = raylib::AudioStreamUnmanaged;
 
-#endif // RAYLIB_CPP_INCLUDE_AUDIOSTREAMUNMANAGED_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_AUDIOSTREAMUNMANAGED_HPP_

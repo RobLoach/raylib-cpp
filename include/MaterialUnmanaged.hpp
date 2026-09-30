@@ -16,7 +16,7 @@ namespace raylib {
  * @see raylib::Material
  */
 class MaterialUnmanaged : public ::Material {
-public:
+ public:
     /**
      * Creates a MaterialUnmanaged from an existing Material struct.
      */
@@ -79,7 +79,7 @@ public:
      */
     RLCPP_NODISCARD bool IsValid() const { return ::IsMaterialValid(*this); }
 
-protected:
+ protected:
     void set(const ::Material& material) {
         shader = material.shader;
         maps = material.maps;
@@ -89,8 +89,8 @@ protected:
         params[3] = material.params[3];
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RMaterialUnmanaged = raylib::MaterialUnmanaged;
 
-#endif // RAYLIB_CPP_INCLUDE_MATERIALUNMANAGED_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_MATERIALUNMANAGED_HPP_

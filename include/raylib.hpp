@@ -58,4 +58,4 @@ extern "C" {
 }
 #endif
 
-#endif // RAYLIB_CPP_INCLUDE_RAYLIB_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_RAYLIB_HPP_

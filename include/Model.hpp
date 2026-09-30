@@ -1,6 +1,8 @@
 #ifndef RAYLIB_CPP_INCLUDE_MODEL_HPP_
 #define RAYLIB_CPP_INCLUDE_MODEL_HPP_
 
+#include <string>
+
 #include "./ModelUnmanaged.hpp"
 
 namespace raylib {
@@ -13,7 +15,7 @@ class Mesh;
  * @see raylib::ModelUnmanaged
  */
 class Model : public ModelUnmanaged {
-public:
+ public:
     using ModelUnmanaged::ModelUnmanaged;
 
     /**
@@ -79,8 +81,8 @@ public:
         ModelUnmanaged::Load(mesh);
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RModel = raylib::Model;
 
-#endif // RAYLIB_CPP_INCLUDE_MODEL_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_MODEL_HPP_

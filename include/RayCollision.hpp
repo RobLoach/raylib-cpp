@@ -1,6 +1,8 @@
 #ifndef RAYLIB_CPP_INCLUDE_RAYCOLLISION_HPP_
 #define RAYLIB_CPP_INCLUDE_RAYCOLLISION_HPP_
 
+#include <string>
+
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
 
@@ -9,7 +11,7 @@ namespace raylib {
  * Raycast hit information
  */
 class RayCollision : public ::RayCollision {
-public:
+ public:
     RayCollision(const ::RayCollision& ray) : ::RayCollision(ray) { }
 
     constexpr RayCollision(bool hit, float distance, ::Vector3 point, ::Vector3 normal)
@@ -63,13 +65,12 @@ public:
     }
 
     [[nodiscard]] std::string ToString() const {
-        return TextFormat(
+        return ::TextFormat(
             "RayCollision(hit=%s, distance=%f, point=(%f, %f, %f), normal=(%f, %f, %f))",
             hit ? "true" : "false",
             distance,
             point.x, point.y, point.z,
-            normal.x, normal.y, normal.z
-        );
+            normal.x, normal.y, normal.z);
     }
 
     operator std::string() const { return ToString(); }
@@ -78,7 +79,8 @@ public:
     GETTERSETTER(float, Distance, distance)
     GETTERSETTER(::Vector3, Position, point)
     GETTERSETTER(::Vector3, Normal, normal)
-protected:
+
+ protected:
     void set(const ::RayCollision& ray) {
         hit = ray.hit;
         distance = ray.distance;
@@ -86,8 +88,8 @@ protected:
         normal = ray.normal;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RRayCollision = raylib::RayCollision;
 
-#endif // RAYLIB_CPP_INCLUDE_RAYCOLLISION_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_RAYCOLLISION_HPP_

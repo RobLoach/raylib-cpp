@@ -43,9 +43,9 @@ RLCPP_MAYBEUNUSED RLCPPAPI inline int GetPointId(int index) {
 RLCPP_MAYBEUNUSED RLCPPAPI inline int GetPointCount() {
     return ::GetTouchPointCount();
 }
-} // namespace Touch
-} // namespace raylib
+}  // namespace Touch
+}  // namespace raylib
 
 namespace RTouch = raylib::Touch;
 
-#endif // RAYLIB_CPP_INCLUDE_TOUCH_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_TOUCH_HPP_

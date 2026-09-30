@@ -1,4 +1,5 @@
 add_library(raylib_cpp INTERFACE)
+add_library(raylib_cpp::raylib_cpp ALIAS raylib_cpp)
 
 set(RAYLIB_CPP_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/AudioDevice.hpp
@@ -57,14 +58,41 @@ set(RAYLIB_CPP_HEADERS
 )
 
 # Include Directory
-target_include_directories(raylib_cpp INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/)
-
+target_include_directories(raylib_cpp INTERFACE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/>
+    $<INSTALL_INTERFACE:include>
+)
 # Set the header files as install files.
+include(GNUInstallDirs)
+install(TARGETS raylib_cpp
+    EXPORT raylib_cppTargets
+)
 install(FILES
   ${RAYLIB_CPP_HEADERS}
   DESTINATION include
 )
-
+install(EXPORT raylib_cppTargets
+    NAMESPACE raylib_cpp::
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/raylib_cpp
+)
+include(CMakePackageConfigHelpers)
+message(STATUS ${PROJECT_SOURCE_DIR}/cmake/raylib_cppConfig.cmake.in)
+message(STATUS ${PROJECT_BINARY_DIR}/cmake/raylib_cppConfig.cmake)
+configure_package_config_file(
+    ${PROJECT_SOURCE_DIR}/cmake/raylib_cppConfig.cmake.in
+    ${PROJECT_BINARY_DIR}/cmake/raylib_cppConfig.cmake
+    INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/raylib_cpp
+)
+write_basic_package_version_file(
+    ${PROJECT_BINARY_DIR}/cmake/raylib_cppConfigVersion.cmake
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY SameMajorVersion
+)
+install(FILES
+    ${PROJECT_BINARY_DIR}/cmake/raylib_cppConfig.cmake
+    ${PROJECT_BINARY_DIR}/cmake/raylib_cppConfigVersion.cmake
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/raylib_cpp
+)
 if (RAYLIB_CPP_IS_MAIN)
     # @TODO: add examples files
     add_custom_target(format

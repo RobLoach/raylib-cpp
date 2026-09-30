@@ -10,7 +10,7 @@
 namespace raylib {
 
 class FileText {
-public:
+ public:
     FileText() = default;
     FileText(const FileText&) = delete;
     FileText(FileText&& other) noexcept : data(other.data), length(other.length) {
@@ -48,13 +48,14 @@ public:
             length = 0;
         }
     }
-private:
+
+ private:
     char* data{nullptr};
     unsigned int length{0};
 };
 
-} // namespace raylib
+}  // namespace raylib
 
 using RFileText = raylib::FileText;
 
-#endif // RAYLIB_CPP_INCLUDE_FILETEXT_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_FILETEXT_HPP_

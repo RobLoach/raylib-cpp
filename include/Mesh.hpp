@@ -18,7 +18,7 @@ namespace raylib {
  * @see raylib::MeshUnmanaged
  */
 class Mesh : public MeshUnmanaged {
-public:
+ public:
     using MeshUnmanaged::MeshUnmanaged;
 
     /**
@@ -85,8 +85,8 @@ public:
 
     ~Mesh() { Unload(); }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RMesh = raylib::Mesh;
 
-#endif // RAYLIB_CPP_INCLUDE_MESH_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_MESH_HPP_

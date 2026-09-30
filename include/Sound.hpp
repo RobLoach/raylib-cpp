@@ -1,6 +1,8 @@
 #ifndef RAYLIB_CPP_INCLUDE_SOUND_HPP_
 #define RAYLIB_CPP_INCLUDE_SOUND_HPP_
 
+#include <string>
+
 #include "./SoundUnmanaged.hpp"
 
 namespace raylib {
@@ -17,7 +19,7 @@ namespace raylib {
  * @see raylib::SoundUnmanaged
  */
 class Sound : public SoundUnmanaged {
-public:
+ public:
     using SoundUnmanaged::SoundUnmanaged;
 
     Sound(const Sound&) = delete;
@@ -52,8 +54,8 @@ public:
         SoundUnmanaged::Load(wave);
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RSound = raylib::Sound;
 
-#endif // RAYLIB_CPP_INCLUDE_SOUND_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_SOUND_HPP_

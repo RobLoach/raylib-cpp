@@ -12,7 +12,7 @@ namespace raylib {
  * Window and Graphics Device Functions.
  */
 class Window {
-public:
+ public:
     /**
      * Build a Window object, but defer the initialization. Ensure you call Init() manually.
      *
@@ -34,7 +34,12 @@ public:
      *
      * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    Window(int width, int height, const std::string& title = "raylib", unsigned int flags = 0, TraceLogLevel logLevel = LOG_ALL) {
+    Window(
+        int width,
+        int height,
+        const std::string& title = "raylib",
+        unsigned int flags = 0,
+        TraceLogLevel logLevel = LOG_ALL) {
         Init(width, height, title, flags, logLevel);
     }
 
@@ -46,7 +51,7 @@ public:
      */
     ~Window() { Close(); }
 
-    [[nodiscard]] std::string ToString() const { return TextFormat("Window(%dx%d)", GetWidth(), GetHeight()); }
+    [[nodiscard]] std::string ToString() const { return ::TextFormat("Window(%dx%d)", GetWidth(), GetHeight()); }
 
     operator std::string() const { return ToString(); }
 
@@ -63,7 +68,12 @@ public:
      *
      * @throws raylib::RaylibException Thrown if the window failed to initiate.
      */
-    static void Init(int width = 800, int height = 450, const std::string& title = "raylib", unsigned int flags = 0, TraceLogLevel logLevel = LOG_ALL) {
+    static void Init(
+        int width = 800,
+        int height = 450,
+        const std::string& title = "raylib",
+        unsigned int flags = 0,
+        TraceLogLevel logLevel = LOG_ALL) {
         if (flags != 0) {
             ::SetConfigFlags(flags);
         }
@@ -112,6 +122,20 @@ public:
      * Shows cursor
      */
     static void ShowCursor()  { ::ShowCursor(); }
+
+    /**
+     * Enables cursor (unlock cursor)
+     */
+    RLCPP_MAYBEUNUSED RLCPPAPI inline void EnableCursor() {
+        ::EnableCursor();
+    }
+
+    /**
+     * Disables cursor (lock cursor)
+     */
+    RLCPP_MAYBEUNUSED RLCPPAPI inline void DisableCursor() {
+        ::DisableCursor();
+    }
 
     /**
      * Check if window is currently fullscreen
@@ -188,8 +212,7 @@ public:
             if (!IsFullscreen()) {
                 ToggleFullscreen();
             }
-        }
-        else {
+        } else {
             if (IsFullscreen()) {
                 ToggleFullscreen();
             }
@@ -450,8 +473,7 @@ public:
         if (m_drawing) {
             EndDrawing();
             m_drawing = false;
-        }
-        else {
+        } else {
             BeginDrawing();
             m_drawing = true;
         }
@@ -459,7 +481,7 @@ public:
         return m_drawing;
     }
 
-    protected:
+ protected:
         /**
          * Handles the internal drawing state for calling either `BeginDrawing()` or `EndDrawing()` from the `Drawing()` function.
          *
@@ -467,8 +489,8 @@ public:
          */
         bool m_drawing = false;
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RWindow = raylib::Window;
 
-#endif // RAYLIB_CPP_INCLUDE_WINDOW_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_WINDOW_HPP_

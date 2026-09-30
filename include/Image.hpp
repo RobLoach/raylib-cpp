@@ -7,7 +7,6 @@
 #include "./RaylibException.hpp"
 #include "./raylib-cpp-utils.hpp"
 #include "./raylib.hpp"
-#include <raylib.h>
 
 namespace raylib {
 /**
@@ -16,7 +15,7 @@ namespace raylib {
  * Data stored in CPU memory (RAM)
  */
 class Image : public ::Image {
-public:
+ public:
     Image(
         void* data = nullptr,
         int width = 0,
@@ -101,7 +100,7 @@ public:
         other.format = 0;
     }
 
-    [[nodiscard]] std::string ToString() const { return TextFormat("Image(width=%d, height=%d)", width, height); }
+    [[nodiscard]] std::string ToString() const { return ::TextFormat("Image(width=%d, height=%d)", width, height); }
 
     operator std::string() const { return ToString(); }
 
@@ -296,7 +295,7 @@ public:
      */
     void Export(const std::string& fileName) const {
         if (!::ExportImage(*this, fileName.c_str())) {
-            throw RaylibException(TextFormat("Failed to export Image to file: %s", fileName.c_str()));
+            throw RaylibException(::TextFormat("Failed to export Image to file: %s", fileName.c_str()));
         }
     }
 
@@ -314,7 +313,7 @@ public:
      */
     void ExportAsCode(const std::string& fileName) const {
         if (!::ExportImageAsCode(*this, fileName.c_str())) {
-            throw RaylibException(TextFormat("Failed to export Image code to file: %s", fileName.c_str()));
+            throw RaylibException(::TextFormat("Failed to export Image code to file: %s", fileName.c_str()));
         }
     }
 
@@ -546,7 +545,7 @@ public:
      *
      * @param contrast Contrast values between -100 and 100
      */
-    Image& ColorContrast(float contrast) {
+    Image& ColorContrast(const int contrast) {
         ::ImageColorContrast(this, contrast);
         return *this;
     }
@@ -799,7 +798,8 @@ public:
     void KernelConvolution(const float* kernel, int kernelSize) {
         ::ImageKernelConvolution(this, kernel, kernelSize);
     }
-protected:
+
+ protected:
     void set(const ::Image& image) {
         data = image.data;
         width = image.width;
@@ -808,8 +808,8 @@ protected:
         format = image.format;
     }
 };
-} // namespace raylib
+}  // namespace raylib
 
 using RImage = raylib::Image;
 
-#endif // RAYLIB_CPP_INCLUDE_IMAGE_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_IMAGE_HPP_

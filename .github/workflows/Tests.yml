@@ -3,12 +3,16 @@ name: Build and tests
 on:
   push:
     branches:
-      - '*'
+      - '**'
     paths-ignore:
-      - '**/README.md'
+      - '**/*.md'
+      - 'LICENSE'
   pull_request:
     branches:
-      - '*'
+      - '**'
+    paths-ignore:
+      - '**/*.md'
+      - 'LICENSE'
   workflow_dispatch:
 
 jobs:

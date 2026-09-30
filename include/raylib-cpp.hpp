@@ -83,6 +83,6 @@
  */
 namespace raylib {
 // Nothing.
-} // namespace raylib
+}  // namespace raylib
 
-#endif // RAYLIB_CPP_INCLUDE_RAYLIB_CPP_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_RAYLIB_CPP_HPP_

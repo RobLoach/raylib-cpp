@@ -58,9 +58,16 @@ RLCPP_MAYBEUNUSED RLCPPAPI inline int GetKeyPressed() {
 RLCPP_MAYBEUNUSED RLCPPAPI inline int GetCharPressed() {
     return ::GetCharPressed();
 }
-} // namespace Keyboard
-} // namespace raylib
+
+/**
+ * Get name of a QWERTY key on the current keyboard layout (eg returns string 'q' for KEY_A on an AZERTY keyboard)
+ */
+RLCPP_MAYBEUNUSED RLCPPAPI inline const char* GetKeyName(const int key) {
+    return ::GetKeyName(key);
+}
+}  // namespace Keyboard
+}  // namespace raylib
 
 namespace RKeyboard = raylib::Keyboard;
 
-#endif // RAYLIB_CPP_INCLUDE_KEYBOARD_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_KEYBOARD_HPP_
