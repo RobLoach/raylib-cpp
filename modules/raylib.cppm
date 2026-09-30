@@ -132,6 +132,7 @@ using raylib::GetDirectoryPath;
 using raylib::GetPrevDirectoryPath;
 using raylib::GetWorkingDirectory;
 using raylib::LoadDirectoryFiles;
+using raylib::LoadDirectoryFilesEx;
 using raylib::ChangeDirectory;
 using raylib::LoadDroppedFiles;
 using raylib::GetFileModTime;
@@ -158,7 +159,12 @@ using raylib::TextFindIndex;
 using raylib::TextToUpper;
 using raylib::TextToLower;
 using raylib::TextToPascal;
+using raylib::TextToSnake;
+using raylib::TextToCamel;
+using raylib::LoadCodepoints;
+using raylib::GetCodepointCount;
 using raylib::TextToInteger;
+using raylib::TextToFloat;
 
 /**
  * @namespace raylib::Colors

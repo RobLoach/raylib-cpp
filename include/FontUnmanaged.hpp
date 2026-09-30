@@ -59,6 +59,10 @@ class FontUnmanaged : public ::Font {
     /**
      * Loads a Font from the given file, with the given codepoints.
      *
+     * @param fileName The file path of the font to load.
+     * @param fontSize The desired size of the loaded font.
+     * @param codepoints The codepoints to generate glyphs for.
+     *
      * @throws raylib::RaylibException Throws if the given font failed to initialize.
      */
     FontUnmanaged(const std::string& fileName, int fontSize, const std::vector<int>& codepoints) {
@@ -135,6 +139,10 @@ class FontUnmanaged : public ::Font {
 
     /**
      * Loads a font from a given file, with the given codepoints.
+     *
+     * @param fileName The file path of the font to load.
+     * @param fontSize The desired size of the loaded font.
+     * @param codepoints The codepoints to generate glyphs for.
      *
      * @throws raylib::RaylibException Throws if the given font failed to initialize.
      */
