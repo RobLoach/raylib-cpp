@@ -18,7 +18,7 @@ endif()
 find_package(raylib_cpp QUIET)
 if (NOT raylib_cpp_FOUND)
     if (NOT DEFINED RAYLIB_CPP_VERSION)
-        set(RAYLIB_CPP_VERSION v6.0.0)
+        set(RAYLIB_CPP_VERSION master)
     endif()
     include(FetchContent)
     FetchContent_Declare(
@@ -33,7 +33,7 @@ endif()
 set(SOURCES main.cpp)
 add_executable(${PROJECT_NAME} ${SOURCES})
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 11)
-target_link_libraries(${PROJECT_NAME} PUBLIC raylib INTERFACE raylib_cpp)
+target_link_libraries(${PROJECT_NAME} PUBLIC raylib PUBLIC raylib_cpp)
 
 # Web Configurations
 if ("${PLATFORM}" STREQUAL "Web")
