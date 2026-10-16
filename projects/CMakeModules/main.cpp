@@ -15,8 +15,6 @@
 *
 ********************************************************************************************/
 
-#include <string>
-
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
 #endif
