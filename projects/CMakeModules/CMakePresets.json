@@ -1,0 +1,69 @@
+{
+    "$schema": "https://cmake.org/cmake/help/latest/_downloads/3e2d73bff478d88a7de0de736ba5e361/schema.json",
+    "version": 11,
+    "configurePresets": [
+        {
+            "name": "shared",
+            "hidden": true,
+            "cacheVariables": {
+                "BUILD_RAYLIB_CPP_MODULES": "ON",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "CMAKE_CXX_STANDARD": "20"
+            }
+        },
+        {
+            "name": "Web",
+            "hidden": true,
+            "cacheVariables": {
+                "PLATFORM": "Web"
+            }
+        },
+        {
+            "name": "Debug",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/Debug",
+            "inherits": ["shared"],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "1"
+            }
+        },
+        {
+            "name": "DebugWeb",
+            "binaryDir": "${sourceDir}/build/DebugWeb",
+            "inherits": ["Web", "Debug"]
+        },
+        {
+            "name": "Release",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/Release",
+            "inherits": ["shared"],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "ReleaseWeb",
+            "binaryDir": "${sourceDir}/build/ReleaseWeb",
+            "inherits": ["Web", "Release"]
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "Debug",
+            "configurePreset": "Debug"
+        },
+        {
+            "name": "DebugWeb",
+            "configurePreset": "DebugWeb"
+        },
+        {
+            "name": "Release",
+            "configurePreset": "Release"
+        },
+        {
+            "name": "ReleaseWeb",
+            "configurePreset": "ReleaseWeb"
+        }
+    ]
+}
