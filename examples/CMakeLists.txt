@@ -55,8 +55,8 @@ foreach(example_source ${example_sources})
 endforeach()
 
 # Multiple Files Example
-add_executable("multiple" multiple/main.cpp multiple/Player.cpp)
-target_link_libraries("multiple" PUBLIC raylib_cpp raylib)
+add_executable("multiple_files" multiple_files/main.cpp multiple_files/Player.cpp)
+target_link_libraries("multiple_files" PUBLIC raylib_cpp raylib)
 
 # C++20 modules example: only built when modules are enabled and the
 # raylib_cpp_modules target was created (CMake 3.28+).

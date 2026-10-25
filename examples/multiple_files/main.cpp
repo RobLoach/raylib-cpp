@@ -1,6 +1,6 @@
 /*******************************************************************************************
 *
-*   raylib-cpp [multiple] example - Includes raylib-cpp.hpp from multiple sources.
+*   raylib-cpp [multiple_files] example - Includes raylib-cpp.hpp from multiple sources.
 *
 *   Welcome to raylib!
 *
