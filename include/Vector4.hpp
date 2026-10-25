@@ -15,7 +15,7 @@ class Quaternion : public ::Quaternion {};
  * Vector4 type
  */
 class Vector4 : public ::Vector4 {
- public:
+public:
     constexpr Vector4(const ::Vector4& vec) : ::Vector4{vec.x, vec.y, vec.z, vec.w} {}
     explicit constexpr Vector4(const raylib::Quaternion quat) : ::Vector4{quat.x, quat.y, quat.z, quat.w} {}
 
@@ -82,16 +82,12 @@ class Vector4 : public ::Vector4 {
     /**
      * Add vector and float value
      */
-    RLCPP_NODISCARD Vector4 Add(const float value) const {
-        return ::Vector4AddValue(*this, value);
-    }
+    RLCPP_NODISCARD Vector4 Add(const float value) const { return ::Vector4AddValue(*this, value); }
 
     /**
      * Add vector and float value
      */
-    Vector4 operator+(const float value) const {
-        return ::Vector4AddValue(*this, value);
-    }
+    Vector4 operator+(const float value) const { return ::Vector4AddValue(*this, value); }
 
     /**
      * Add vector and float value
@@ -126,16 +122,12 @@ class Vector4 : public ::Vector4 {
     /**
      * Subtract vector by float value
      */
-    RLCPP_NODISCARD Vector4 Subtract(const float value) const {
-        return ::Vector4SubtractValue(*this, value);
-    }
+    RLCPP_NODISCARD Vector4 Subtract(const float value) const { return ::Vector4SubtractValue(*this, value); }
 
     /**
      * Subtract vector by float value
      */
-    Vector4 operator-(const float value) const {
-        return ::Vector4SubtractValue(*this, value);
-    }
+    Vector4 operator-(const float value) const { return ::Vector4SubtractValue(*this, value); }
 
     /**
      * Subtract vector by float value
@@ -251,12 +243,14 @@ class Vector4 : public ::Vector4 {
      * Divide vector components by value
      */
     constexpr friend Vector4 operator/(const float lhs, const Vector4& rhs) {
+        // clang-format off
         return Vector4{
             lhs / rhs.x,
             lhs / rhs.y,
             lhs / rhs.z,
             lhs / rhs.w
         };
+        // clang-format on
     }
 
     RLCPP_NODISCARD float Length() const { return ::Vector4Length(*this); }
@@ -296,8 +290,7 @@ class Vector4 : public ::Vector4 {
     RLCPP_NODISCARD Color ColorFromNormalized() const { return ::ColorFromNormalized(*this); }
 
     operator Color() const { return ColorFromNormalized(); }
-
- protected:
+protected:
     void set(const ::Vector4& vec4) {
         x = vec4.x;
         y = vec4.y;
@@ -306,8 +299,8 @@ class Vector4 : public ::Vector4 {
     }
 };
 
-}  // namespace raylib
+} // namespace raylib
 
 using RVector4 = raylib::Vector4;
 
-#endif  // RAYLIB_CPP_INCLUDE_VECTOR4_HPP_
+#endif // RAYLIB_CPP_INCLUDE_VECTOR4_HPP_
