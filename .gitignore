@@ -6,6 +6,8 @@ cmake-build-debug
 .idea
 docs
 /.vs
+.direnv/
+.envrc
 
 # tools
 tools/raylib_api.json
