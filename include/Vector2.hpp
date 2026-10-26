@@ -13,7 +13,7 @@ namespace raylib {
  * Vector2 type
  */
 class Vector2 : public ::Vector2 {
-public:
+ public:
     constexpr Vector2(const ::Vector2& vec) : ::Vector2{vec.x, vec.y} {}
 
     constexpr Vector2(float x = 0, float y = 0) : ::Vector2{x, y} {}
@@ -373,15 +373,16 @@ public:
     RLCPP_NODISCARD bool CheckCollisionPointLine(::Vector2 p1, ::Vector2 p2, int threshold = 1) const {
         return ::CheckCollisionPointLine(*this, p1, p2, threshold);
     }
-protected:
+
+ protected:
     void set(const ::Vector2& vec) {
         x = vec.x;
         y = vec.y;
     }
 };
 
-} // namespace raylib
+}  // namespace raylib
 
 using RVector2 = raylib::Vector2;
 
-#endif // RAYLIB_CPP_INCLUDE_VECTOR2_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_VECTOR2_HPP_

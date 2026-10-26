@@ -15,7 +15,7 @@ class Quaternion : public ::Quaternion {};
  * Vector4 type
  */
 class Vector4 : public ::Vector4 {
-public:
+ public:
     constexpr Vector4(const ::Vector4& vec) : ::Vector4{vec.x, vec.y, vec.z, vec.w} {}
     explicit constexpr Vector4(const raylib::Quaternion quat) : ::Vector4{quat.x, quat.y, quat.z, quat.w} {}
 
@@ -290,7 +290,8 @@ public:
     RLCPP_NODISCARD Color ColorFromNormalized() const { return ::ColorFromNormalized(*this); }
 
     operator Color() const { return ColorFromNormalized(); }
-protected:
+
+ protected:
     void set(const ::Vector4& vec4) {
         x = vec4.x;
         y = vec4.y;
@@ -299,8 +300,8 @@ protected:
     }
 };
 
-} // namespace raylib
+}  // namespace raylib
 
 using RVector4 = raylib::Vector4;
 
-#endif // RAYLIB_CPP_INCLUDE_VECTOR4_HPP_
+#endif  // RAYLIB_CPP_INCLUDE_VECTOR4_HPP_
