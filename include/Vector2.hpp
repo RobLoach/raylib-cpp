@@ -66,16 +66,12 @@ class Vector2 : public ::Vector2 {
     /**
      * Add vector and float value
      */
-    Vector2 Add(float value) const {
-      return Vector2AddValue(*this, value);
-    }
+    Vector2 Add(float value) const { return Vector2AddValue(*this, value); }
 
     /**
      * Add vector and float value
      */
-    Vector2 operator+(float value) const {
-      return Vector2AddValue(*this, value);
-    }
+    Vector2 operator+(float value) const { return Vector2AddValue(*this, value); }
 
     /**
      * Add vector and float value
@@ -108,16 +104,12 @@ class Vector2 : public ::Vector2 {
     /**
      * Subtract vector by float value
      */
-    RLCPP_NODISCARD Vector2 Subtract(float value) const {
-      return Vector2SubtractValue(*this, value);
-    }
+    RLCPP_NODISCARD Vector2 Subtract(float value) const { return Vector2SubtractValue(*this, value); }
 
     /**
      * Subtract vector by float value
      */
-    Vector2 operator-(float value) const {
-      return Vector2SubtractValue(*this, value);
-    }
+    Vector2 operator-(float value) const { return Vector2SubtractValue(*this, value); }
 
     /**
      * Subtract vector by float value

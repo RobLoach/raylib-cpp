@@ -82,16 +82,12 @@ class Vector4 : public ::Vector4 {
     /**
      * Add vector and float value
      */
-    RLCPP_NODISCARD Vector4 Add(const float value) const {
-        return ::Vector4AddValue(*this, value);
-    }
+    RLCPP_NODISCARD Vector4 Add(const float value) const { return ::Vector4AddValue(*this, value); }
 
     /**
      * Add vector and float value
      */
-    Vector4 operator+(const float value) const {
-        return ::Vector4AddValue(*this, value);
-    }
+    Vector4 operator+(const float value) const { return ::Vector4AddValue(*this, value); }
 
     /**
      * Add vector and float value
@@ -126,16 +122,12 @@ class Vector4 : public ::Vector4 {
     /**
      * Subtract vector by float value
      */
-    RLCPP_NODISCARD Vector4 Subtract(const float value) const {
-        return ::Vector4SubtractValue(*this, value);
-    }
+    RLCPP_NODISCARD Vector4 Subtract(const float value) const { return ::Vector4SubtractValue(*this, value); }
 
     /**
      * Subtract vector by float value
      */
-    Vector4 operator-(const float value) const {
-        return ::Vector4SubtractValue(*this, value);
-    }
+    Vector4 operator-(const float value) const { return ::Vector4SubtractValue(*this, value); }
 
     /**
      * Subtract vector by float value
@@ -251,12 +243,14 @@ class Vector4 : public ::Vector4 {
      * Divide vector components by value
      */
     constexpr friend Vector4 operator/(const float lhs, const Vector4& rhs) {
+        // clang-format off
         return Vector4{
             lhs / rhs.x,
             lhs / rhs.y,
             lhs / rhs.z,
             lhs / rhs.w
         };
+        // clang-format on
     }
 
     RLCPP_NODISCARD float Length() const { return ::Vector4Length(*this); }

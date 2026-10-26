@@ -1,7 +1,7 @@
 ---
 Language:        Cpp
 BasedOnStyle:    Google
-AccessModifierOffset: -4
+AccessModifierOffset: -3
 AlignAfterOpenBracket: AlwaysBreak
 AlignConsecutiveAssignments: false
 AlignConsecutiveDeclarations: false
@@ -60,7 +60,7 @@ Cpp11BracedListStyle: true
 DeriveLineEnding: true
 DerivePointerAlignment: false
 DisableFormat:   false
-EmptyLineBeforeAccessModifier: Never
+EmptyLineBeforeAccessModifier: Always
 EmptyLineAfterAccessModifier: Never
 ExperimentalAutoDetectBinPacking: false
 IndentCaseLabels: true
@@ -111,7 +111,7 @@ SpaceBeforeParensOptions:
   AfterIfMacros:       false
 SpaceBeforeRangeBasedForLoopColon: true
 SpaceInEmptyParentheses: false
-SpacesBeforeTrailingComments: 1
+SpacesBeforeTrailingComments: 2
 SpacesInAngles:  false
 SpacesInContainerLiterals: false
 SpacesInCStyleCastParentheses: false

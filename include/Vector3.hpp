@@ -56,16 +56,12 @@ class Vector3 : public ::Vector3 {
     /**
      * Add vector and float value
      */
-    RLCPP_NODISCARD Vector3 Add(float value) const {
-      return Vector3AddValue(*this, value);
-    }
+    RLCPP_NODISCARD Vector3 Add(float value) const { return Vector3AddValue(*this, value); }
 
     /**
      * Add vector and float value
      */
-    Vector3 operator+(float value) const {
-      return Vector3AddValue(*this, value);
-    }
+    Vector3 operator+(float value) const { return Vector3AddValue(*this, value); }
 
     Vector3& operator+=(float value) {
         set(Vector3AddValue(*this, value));
@@ -92,16 +88,12 @@ class Vector3 : public ::Vector3 {
     /**
      * Subtract vector by float value
      */
-    RLCPP_NODISCARD Vector3 Subtract(float value) const {
-      return Vector3SubtractValue(*this, value);
-    }
+    RLCPP_NODISCARD Vector3 Subtract(float value) const { return Vector3SubtractValue(*this, value); }
 
     /**
      * Subtract vector by float value
      */
-    Vector3 operator-(float value) const {
-      return Vector3SubtractValue(*this, value);
-    }
+    Vector3 operator-(float value) const { return Vector3SubtractValue(*this, value); }
 
     Vector3& operator-=(float value) {
         set(Vector3SubtractValue(*this, value));
