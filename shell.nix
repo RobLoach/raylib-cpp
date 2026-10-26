@@ -9,7 +9,7 @@ pkgs.mkShell {
         pkgs.cmake
         pkgs.pkg-config
         pkgs.raylib
-		/*nixfmt:disable*/
+        /*nixfmt:disable*/
         pkgs.clang-tools  # clangd, clang-format, clang-tidy
         pkgs.cpplint      # repo's coding standard
         pkgs.cmake-format # for .cmake-format.yaml
