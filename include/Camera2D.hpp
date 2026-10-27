@@ -11,8 +11,7 @@ namespace raylib {
  */
 class Camera2D : public ::Camera2D {
  public:
-    Camera2D(const ::Camera2D& camera)
-        : ::Camera2D(camera) {
+    Camera2D(const ::Camera2D& camera) : ::Camera2D(camera) {
         // Nothing.
     }
 

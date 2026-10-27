@@ -26,7 +26,7 @@ class Image : public ::Image {
         // Nothing.
     }
 
-    Image(const ::Image& image) : ::Image(image) { }
+    Image(const ::Image& image) : ::Image(image) {}
 
     /**
      * Load an image from the given file.
@@ -795,9 +795,7 @@ class Image : public ::Image {
     /**
      * Apply custom square convolution kernel to image
      */
-    void KernelConvolution(const float* kernel, int kernelSize) {
-        ::ImageKernelConvolution(this, kernel, kernelSize);
-    }
+    void KernelConvolution(const float* kernel, int kernelSize) { ::ImageKernelConvolution(this, kernel, kernelSize); }
 
  protected:
     void set(const ::Image& image) {

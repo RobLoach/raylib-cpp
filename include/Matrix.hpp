@@ -13,8 +13,7 @@ namespace raylib {
  */
 class Matrix : public ::Matrix {
  public:
-    constexpr Matrix(const ::Matrix& mat)
-        : ::Matrix(mat) {
+    constexpr Matrix(const ::Matrix& mat) : ::Matrix(mat) {
         // Nothing.
     }
 
@@ -87,10 +86,22 @@ class Matrix : public ::Matrix {
             "  %f, %f, %f, %f\n"
             "  %f, %f, %f, %f\n"
             ")",
-            m0, m4, m8, m12,
-            m1, m5, m9, m13,
-            m2, m6, m10, m14,
-            m3, m7, m11, m15);
+            m0,
+            m4,
+            m8,
+            m12,
+            m1,
+            m5,
+            m9,
+            m13,
+            m2,
+            m6,
+            m10,
+            m14,
+            m3,
+            m7,
+            m11,
+            m15);
     }
 
     operator std::string() const { return ToString(); }

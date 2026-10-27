@@ -13,7 +13,7 @@ namespace raylib {
  */
 class Camera3D : public ::Camera3D {
  public:
-    Camera3D(const ::Camera3D& camera) : ::Camera3D(camera) { }
+    Camera3D(const ::Camera3D& camera) : ::Camera3D(camera) {}
 
     /**
      * Create a new Camera3D.
@@ -47,8 +47,13 @@ class Camera3D : public ::Camera3D {
     [[nodiscard]] std::string ToString() const {
         return ::TextFormat(
             "Camera3D(position=(%f, %f, %f), target=(%f, %f, %f), fovy=%f)",
-            position.x, position.y, position.z,
-            target.x, target.y, target.z, fovy);
+            position.x,
+            position.y,
+            position.z,
+            target.x,
+            target.y,
+            target.z,
+            fovy);
     }
 
     operator std::string() const { return ToString(); }

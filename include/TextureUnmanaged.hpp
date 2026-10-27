@@ -323,9 +323,7 @@ class TextureUnmanaged : public ::Texture {
      *
      * @return True or false depending on whether the Texture has data.
      */
-    RLCPP_NODISCARD bool IsValid() const {
-        return ::IsTextureValid(*this);
-    }
+    RLCPP_NODISCARD bool IsValid() const { return ::IsTextureValid(*this); }
 
  protected:
     void set(const ::Texture& texture) {

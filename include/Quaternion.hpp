@@ -73,16 +73,12 @@ class Quaternion : public ::Quaternion {
     /**
      * Add quaternion and float value
      */
-    RLCPP_NODISCARD Quaternion Add(const float value) const {
-        return ::QuaternionAddValue(*this, value);
-    }
+    RLCPP_NODISCARD Quaternion Add(const float value) const { return ::QuaternionAddValue(*this, value); }
 
     /**
      * Add quaternion and float value
      */
-    Quaternion operator+(const float value) const {
-        return ::QuaternionAddValue(*this, value);
-    }
+    Quaternion operator+(const float value) const { return ::QuaternionAddValue(*this, value); }
 
     /**
      * Add quaternion and float value
@@ -119,16 +115,12 @@ class Quaternion : public ::Quaternion {
     /**
      * Subtract quaternion by float value
      */
-    RLCPP_NODISCARD Quaternion Subtract(const float value) const {
-        return ::QuaternionSubtractValue(*this, value);
-    }
+    RLCPP_NODISCARD Quaternion Subtract(const float value) const { return ::QuaternionSubtractValue(*this, value); }
 
     /**
      * Get identity quaternion
      */
-    static RLCPP_NODISCARD Quaternion Identity() {
-        return ::QuaternionIdentity();
-    }
+    static RLCPP_NODISCARD Quaternion Identity() { return ::QuaternionIdentity(); }
 
     RLCPP_NODISCARD float Length() const { return ::QuaternionLength(*this); }
 
@@ -213,7 +205,9 @@ class Quaternion : public ::Quaternion {
         const ::Quaternion& outTangent1,
         const ::Quaternion& q2,
         const ::Quaternion& inTangent2,
-        const float t) const { return ::QuaternionCubicHermiteSpline(*this, outTangent1, q2, inTangent2, t); }
+        const float t) const {
+        return ::QuaternionCubicHermiteSpline(*this, outTangent1, q2, inTangent2, t);
+    }
 
     /**
      * Calculate quaternion based on the rotation from one vector to another
@@ -225,16 +219,12 @@ class Quaternion : public ::Quaternion {
     /**
      * Get a quaternion for a given rotation matrix
      */
-    static RLCPP_NODISCARD Quaternion FromMatrix(const ::Matrix& mat) {
-        return ::QuaternionFromMatrix(mat);
-    }
+    static RLCPP_NODISCARD Quaternion FromMatrix(const ::Matrix& mat) { return ::QuaternionFromMatrix(mat); }
 
     /**
      * Get a matrix for this quaternion
      */
-    RLCPP_NODISCARD ::Matrix ToMatrix() const {
-        return ::QuaternionToMatrix(*this);
-    }
+    RLCPP_NODISCARD ::Matrix ToMatrix() const { return ::QuaternionToMatrix(*this); }
 
     /**
      * Get rotation quaternion for an angle and axis
@@ -247,9 +237,7 @@ class Quaternion : public ::Quaternion {
     /**
      * Get the rotation angle and axis for this quaternion
      */
-    void ToAxisAngle(::Vector3* outAxis, float* outAngle) const {
-        ::QuaternionToAxisAngle(*this, outAxis, outAngle);
-    }
+    void ToAxisAngle(::Vector3* outAxis, float* outAngle) const { ::QuaternionToAxisAngle(*this, outAxis, outAngle); }
 
     /**
      * Get the quaternion equivalent to Euler angles
@@ -263,16 +251,12 @@ class Quaternion : public ::Quaternion {
      * Get the Euler angles equivalent to quaternion
      * NOTE: Angles are returned in radians
      */
-    RLCPP_NODISCARD ::Vector3 ToEuler() const {
-        return ::QuaternionToEuler(*this);
-    }
+    RLCPP_NODISCARD ::Vector3 ToEuler() const { return ::QuaternionToEuler(*this); }
 
     /**
      * Transform quaternion given transformation matrix
      */
-    RLCPP_NODISCARD Quaternion Transform(const ::Matrix& mat) const {
-        return ::QuaternionTransform(*this, mat);
-    }
+    RLCPP_NODISCARD Quaternion Transform(const ::Matrix& mat) const { return ::QuaternionTransform(*this, mat); }
 
     /*
      * Check whether two given quaternions are almost equal

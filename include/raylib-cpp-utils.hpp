@@ -42,8 +42,8 @@
  * @param method The human-readable name for the method.
  * @param name The machine-readable name of the property.
  */
-#define GETTERSETTER(type, method, name)                                                       \
-    GETTER(type, method, name)                                                                 \
+#define GETTERSETTER(type, method, name) \
+    GETTER(type, method, name)           \
     SETTER(type, method, name)
 #endif
 
