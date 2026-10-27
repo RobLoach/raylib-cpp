@@ -1,13 +1,13 @@
 /*******************************************************************************************
-*
-*   raylib [audio] example - Music playing (streaming)
-*
-*   This example has been created using raylib 1.3 (www.raylib.com)
-*   raylib is licensed under an unmodified zlib/libpng license (View raylib.h for details)
-*
-*   Copyright (c) 2015 Ramon Santamaria (@raysan5)
-*
-********************************************************************************************/
+ *
+ *   raylib [audio] example - Music playing (streaming)
+ *
+ *   This example has been created using raylib 1.3 (www.raylib.com)
+ *   raylib is licensed under an unmodified zlib/libpng license (View raylib.h for details)
+ *
+ *   Copyright (c) 2015 Ramon Santamaria (@raysan5)
+ *
+ ********************************************************************************************/
 
 #include "raylib-cpp.hpp"
 
@@ -19,7 +19,7 @@ int main() {
 
     raylib::Window window(screenWidth, screenHeight, "raylib [audio] example - music playing (streaming)");
 
-    raylib::AudioDevice audio;              // Initialize audio device
+    raylib::AudioDevice audio;  // Initialize audio device
 
     raylib::Music music("resources/target.ogg");
 
@@ -28,14 +28,14 @@ int main() {
     float timePlayed = 0.0f;
     bool pause = false;
 
-    SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
+    SetTargetFPS(60);  // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose()) {   // Detect window close button or ESC key
+    while (!window.ShouldClose()) {  // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
-        music.Update();   // Update music buffer with new stream data
+        music.Update();  // Update music buffer with new stream data
 
         // Restart music playing (stop and play)
         if (IsKeyPressed(KEY_SPACE)) {
@@ -49,7 +49,8 @@ int main() {
 
             if (pause) {
                 music.Pause();
-            } else {
+            }
+            else {
                 music.Resume();
             }
         }

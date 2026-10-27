@@ -2,12 +2,7 @@
 #include "raylib-cpp.hpp"
 
 Player::Player() {
-    position = Rectangle{
-        GetScreenWidth() / 2.0f - 50,
-        GetScreenHeight() / 2.0f - 50,
-        100,
-        100
-    };
+    position = Rectangle{GetScreenWidth() / 2.0f - 50, GetScreenHeight() / 2.0f - 50, 100, 100};
     speed = 3;
 }
 

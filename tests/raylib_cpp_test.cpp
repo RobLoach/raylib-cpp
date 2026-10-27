@@ -1,5 +1,7 @@
+// clang-format off
 #include "raylib-cpp.hpp"
 #include "raylib-assert.h"
+// clang-format on
 #include <string>
 #include <vector>
 
@@ -84,7 +86,9 @@ int main(int argc, char* argv[]) {
     }
 
     // Keyboard
-    { AssertNot(raylib::Keyboard::IsKeyPressed(KEY_MINUS)); }
+    {
+        AssertNot(raylib::Keyboard::IsKeyPressed(KEY_MINUS));
+    }
 
     // raylib::LoadDirectoryFiles()
     {
