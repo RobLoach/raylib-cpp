@@ -49,8 +49,7 @@ int main() {
 
             if (pause) {
                 music.Pause();
-            }
-            else {
+            } else {
                 music.Resume();
             }
         }

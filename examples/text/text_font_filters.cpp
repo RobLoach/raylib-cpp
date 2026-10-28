@@ -53,12 +53,10 @@ int main(void) {
         if (IsKeyPressed(KEY_ONE)) {
             font.GetTexture().SetFilter(TEXTURE_FILTER_POINT);
             currentFontFilter = 0;
-        }
-        else if (IsKeyPressed(KEY_TWO)) {
+        } else if (IsKeyPressed(KEY_TWO)) {
             font.GetTexture().SetFilter(TEXTURE_FILTER_BILINEAR);
             currentFontFilter = 1;
-        }
-        else if (IsKeyPressed(KEY_THREE)) {
+        } else if (IsKeyPressed(KEY_THREE)) {
             // NOTE: Trilinear filter won't be noticed on 2D drawing
             font.GetTexture().SetFilter(TEXTURE_FILTER_TRILINEAR);
             currentFontFilter = 2;
