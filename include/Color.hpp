@@ -36,9 +36,9 @@ class Color : public ::Color {
     /**
      * Get Color structure from hexadecimal value
      */
-    explicit Color(unsigned int hexValue) : ::Color(::GetColor(hexValue)) { }
+    explicit Color(unsigned int hexValue) : ::Color(::GetColor(hexValue)) {}
 
-    Color(void* srcPtr, int format) : ::Color(::GetPixelColor(srcPtr, format)) { }
+    Color(void* srcPtr, int format) : ::Color(::GetPixelColor(srcPtr, format)) {}
 
     /**
      * Returns hexadecimal value for a Color
@@ -67,7 +67,7 @@ class Color : public ::Color {
     /**
      * Returns Color from normalized values [0..1]
      */
-    explicit Color(::Vector4 normalized) : Color(::ColorFromNormalized(normalized)) { }
+    explicit Color(::Vector4 normalized) : Color(::ColorFromNormalized(normalized)) {}
 
     /**
      * Returns HSV values for a Color
@@ -181,9 +181,7 @@ class Color : public ::Color {
 
     void DrawRectangleLines(::Rectangle rec, float lineThick) const { ::DrawRectangleLinesEx(rec, lineThick, *this); }
 
-    bool IsEqual(::Color color) {
-        return ::ColorIsEqual(*this, color);
-    }
+    bool IsEqual(::Color color) { return ::ColorIsEqual(*this, color); }
 
     bool operator==(const ::Color& other) const { return ::ColorIsEqual(*this, other); }
     bool operator!=(const ::Color& other) const { return !::ColorIsEqual(*this, other); }
@@ -208,9 +206,7 @@ class Color : public ::Color {
      */
     RLCPP_NODISCARD Color Alpha(float alpha) const { return ::ColorAlpha(*this, alpha); }
 
-    Color Lerp(::Color color2, float factor) {
-        return ::ColorLerp(*this, color2, factor);
-    }
+    Color Lerp(::Color color2, float factor) { return ::ColorLerp(*this, color2, factor); }
 
     /**
      * Returns src alpha-blended into dst color with tint

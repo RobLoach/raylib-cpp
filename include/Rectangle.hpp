@@ -47,9 +47,7 @@ class Rectangle : public ::Rectangle {
         ::DrawRectangle(posX, posY, width, height, color);
     }
 
-    static void Draw(::Vector2 position, ::Vector2 size, ::Color color) {
-        ::DrawRectangleV(position, size, color);
-    }
+    static void Draw(::Vector2 position, ::Vector2 size, ::Color color) { ::DrawRectangleV(position, size, color); }
 
     void Draw(::Color color) const { ::DrawRectangleRec(*this, color); }
 

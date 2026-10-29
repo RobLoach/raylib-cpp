@@ -1,13 +1,13 @@
 /*******************************************************************************************
-*
-*   raylib [core] example - World to screen
-*
-*   This example has been created using raylib 1.3 (www.raylib.com)
-*   raylib is licensed under an unmodified zlib/libpng license (View raylib.h for details)
-*
-*   Copyright (c) 2015 Ramon Santamaria (@raysan5)
-*
-********************************************************************************************/
+ *
+ *   raylib [core] example - World to screen
+ *
+ *   This example has been created using raylib 1.3 (www.raylib.com)
+ *   raylib is licensed under an unmodified zlib/libpng license (View raylib.h for details)
+ *
+ *   Copyright (c) 2015 Ramon Santamaria (@raysan5)
+ *
+ ********************************************************************************************/
 
 #include "raylib-cpp.hpp"
 
@@ -30,14 +30,14 @@ int main() {
     Vector3 cubePosition;
     Vector2 cubeScreenPosition;
 
-    SetTargetFPS(60);                   // Set our game to run at 60 frames-per-second
+    SetTargetFPS(60);  // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose()) {     // Detect window close button or ESC key
+    while (!window.ShouldClose()) {  // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
-        camera.Update(CAMERA_THIRD_PERSON);                // Update camera
+        camera.Update(CAMERA_THIRD_PERSON);  // Update camera
 
         // Calculate cube screen space position (with a little offset to be in top)
         cubeScreenPosition = GetWorldToScreen(Vector3{cubePosition.x, cubePosition.y + 2.5f, cubePosition.z}, camera);
@@ -58,13 +58,18 @@ int main() {
             }
             camera.EndMode();
 
-            raylib::DrawText("Enemy: 100 / 100",
+            raylib::DrawText(
+                "Enemy: 100 / 100",
                 cubeScreenPosition.x - MeasureText("Enemy: 100/100", 20) / 2,
-                cubeScreenPosition.y, 20,
+                cubeScreenPosition.y,
+                20,
                 BLACK);
-            raylib::DrawText("Text is always on top of the cube",
+            raylib::DrawText(
+                "Text is always on top of the cube",
                 (screenWidth - MeasureText("Text is always on top of the cube", 20)) / 2,
-                25, 20, GRAY);
+                25,
+                20,
+                GRAY);
         }
         EndDrawing();
         //----------------------------------------------------------------------------------

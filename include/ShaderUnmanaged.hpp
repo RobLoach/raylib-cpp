@@ -16,7 +16,7 @@ class ShaderUnmanaged : public ::Shader {
  public:
     ShaderUnmanaged() : ::Shader{rlGetShaderIdDefault(), rlGetShaderLocsDefault()} {}
 
-    ShaderUnmanaged(const ::Shader& shader) : ::Shader(shader) { }
+    ShaderUnmanaged(const ::Shader& shader) : ::Shader(shader) {}
 
     ShaderUnmanaged(unsigned int id, int* locs = nullptr) : ::Shader{id, locs} {}
 

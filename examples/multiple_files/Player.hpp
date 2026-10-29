@@ -1,7 +1,7 @@
 #include "raylib-cpp.hpp"
 
 class Player {
-    public:
+ public:
     Player();
     raylib::Rectangle position;
     int speed;
