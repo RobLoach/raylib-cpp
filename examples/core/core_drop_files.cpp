@@ -44,7 +44,8 @@ int main() {
             // Check if there are files to process.
             if (droppedFiles.empty()) {
                 raylib::DrawText("Drop your files to this window!", 100, 40, 20, DARKGRAY);
-            } else {
+            }
+            else {
                 raylib::DrawText("Dropped files:", 100, 40, 20, DARKGRAY);
 
                 // Iterate through all the dropped files.

@@ -208,7 +208,8 @@ class Window {
             if (!IsFullscreen()) {
                 ToggleFullscreen();
             }
-        } else {
+        }
+        else {
             if (IsFullscreen()) {
                 ToggleFullscreen();
             }
@@ -469,7 +470,8 @@ class Window {
         if (m_drawing) {
             EndDrawing();
             m_drawing = false;
-        } else {
+        }
+        else {
             BeginDrawing();
             m_drawing = true;
         }
