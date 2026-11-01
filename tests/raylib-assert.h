@@ -1,41 +1,41 @@
 /**********************************************************************************************
-*
-*   raylib-assert - Assertion library for raylib.
-*   https://github.com/robloach/raylib-assert
-*
-*   Version: v3.3.1
-*
-*   Copyright 2026 Rob Loach (@RobLoach)
-*
-*   DEPENDENCIES:
-*       raylib 6.0+ https://www.raylib.com
-*
-*   LICENSE: zlib/libpng
-*
-*   raylib-assert is licensed under an unmodified zlib/libpng license, which is an OSI-certified,
-*   BSD-like license that allows static linking with closed source software:
-*
-*   This software is provided "as-is", without any express or implied warranty. In no event
-*   will the authors be held liable for any damages arising from the use of this software.
-*
-*   Permission is granted to anyone to use this software for any purpose, including commercial
-*   applications, and to alter it and redistribute it freely, subject to the following restrictions:
-*
-*     1. The origin of this software must not be misrepresented; you must not claim that you
-*     wrote the original software. If you use this software in a product, an acknowledgment
-*     in the product documentation would be appreciated but is not required.
-*
-*     2. Altered source versions must be plainly marked as such, and must not be misrepresented
-*     as being the original software.
-*
-*     3. This notice may not be removed or altered from any source distribution.
-*
-**********************************************************************************************/
+ *
+ *   raylib-assert - Assertion library for raylib.
+ *   https://github.com/robloach/raylib-assert
+ *
+ *   Version: v3.3.1
+ *
+ *   Copyright 2026 Rob Loach (@RobLoach)
+ *
+ *   DEPENDENCIES:
+ *       raylib 6.0+ https://www.raylib.com
+ *
+ *   LICENSE: zlib/libpng
+ *
+ *   raylib-assert is licensed under an unmodified zlib/libpng license, which is an OSI-certified,
+ *   BSD-like license that allows static linking with closed source software:
+ *
+ *   This software is provided "as-is", without any express or implied warranty. In no event
+ *   will the authors be held liable for any damages arising from the use of this software.
+ *
+ *   Permission is granted to anyone to use this software for any purpose, including commercial
+ *   applications, and to alter it and redistribute it freely, subject to the following restrictions:
+ *
+ *     1. The origin of this software must not be misrepresented; you must not claim that you
+ *     wrote the original software. If you use this software in a product, an acknowledgment
+ *     in the product documentation would be appreciated but is not required.
+ *
+ *     2. Altered source versions must be plainly marked as such, and must not be misrepresented
+ *     as being the original software.
+ *
+ *     3. This notice may not be removed or altered from any source distribution.
+ *
+ **********************************************************************************************/
 
 #ifndef RAYLIB_ASSERT_H
 #define RAYLIB_ASSERT_H
 
-#include <stddef.h> // NULL
+#include <stddef.h>  // NULL
 
 #ifndef RAYLIB_H
 #error "raylib-assert.h requires raylib.h to be included before raylib-assert.h"
@@ -96,24 +96,21 @@ extern "C" {
 #endif
 
 // Internal helper: true when two floats are within RAYLIB_ASSERT_EPSILON of each other.
-static inline bool RaylibAssertFloatEq(float a, float b)
-{
+static inline bool RaylibAssertFloatEq(float a, float b) {
     float delta = a - b;
     if (delta < 0.0f) delta = -delta;
     return delta <= RAYLIB_ASSERT_EPSILON;
 }
 
 // Internal helper: true when two color channels differ by no more than the given tolerance.
-static inline bool RaylibAssertChannelWithin(int a, int b, int tolerance)
-{
+static inline bool RaylibAssertChannelWithin(int a, int b, int tolerance) {
     int delta = a - b;
     if (delta < 0) delta = -delta;
     return delta <= tolerance;
 }
 
 // Internal helper: true when a mesh contains basic CPU-side geometry data.
-static inline bool RaylibAssertMeshValid(Mesh mesh)
-{
+static inline bool RaylibAssertMeshValid(Mesh mesh) {
     return mesh.vertexCount > 0 && mesh.triangleCount > 0 && mesh.vertices != NULL;
 }
 
@@ -125,9 +122,9 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 #define RAYLIB_ASSERT_CAT(a, b) RAYLIB_ASSERT_CAT_I(a, b)
 #define RAYLIB_ASSERT_CAT_I(a, b) a##b
 #define RAYLIB_ASSERT_SELECT(name, num) RAYLIB_ASSERT_CAT(name##_, num)
-#define RAYLIB_ASSERT_GET_COUNT( _1, _2, _3, _4, _5, _6, _7, RAYLIB_ASSERT_COUNT, ... ) RAYLIB_ASSERT_COUNT
-#define RAYLIB_ASSERT_VA_SIZE( ... ) RAYLIB_ASSERT_GET_COUNT( __VA_ARGS__, 7, 6, 5, 4, 3, 2, 1 )
-#define RAYLIB_ASSERT_VA_SELECT( NAME, ...) RAYLIB_ASSERT_SELECT( NAME, RAYLIB_ASSERT_VA_SIZE(__VA_ARGS__) )(__VA_ARGS__)
+#define RAYLIB_ASSERT_GET_COUNT(_1, _2, _3, _4, _5, _6, _7, RAYLIB_ASSERT_COUNT, ...) RAYLIB_ASSERT_COUNT
+#define RAYLIB_ASSERT_VA_SIZE(...) RAYLIB_ASSERT_GET_COUNT(__VA_ARGS__, 7, 6, 5, 4, 3, 2, 1)
+#define RAYLIB_ASSERT_VA_SELECT(NAME, ...) RAYLIB_ASSERT_SELECT(NAME, RAYLIB_ASSERT_VA_SIZE(__VA_ARGS__))(__VA_ARGS__)
 
 /**
  * Assert whether the given condition is true.
@@ -610,33 +607,45 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 #else
 #define Assert_0() AssertFail_1("No condition provided for Assert()")
 #define Assert_1(condition) Assert_2(condition, #condition)
-#define Assert_2(condition, message) do { if (!((bool)(condition))) { RAYLIB_ASSERT_TRACELOG(RAYLIB_ASSERT_LOG, "ASSERT: %s (%s:%i)", message, __FILE__, __LINE__); } } while(0)
+#define Assert_2(condition, message)                                                                      \
+    do {                                                                                                  \
+        if (!((bool)(condition))) {                                                                       \
+            RAYLIB_ASSERT_TRACELOG(RAYLIB_ASSERT_LOG, "ASSERT: %s (%s:%i)", message, __FILE__, __LINE__); \
+        }                                                                                                 \
+    }                                                                                                     \
+    while (0)
 #define Assert_3(condition, message, p1) Assert_2(condition, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
 #define Assert_4(condition, message, p1, p2) Assert_2(condition, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
 #define Assert_5(condition, message, p1, p2, p3) Assert_2(condition, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
-#define Assert_6(condition, message, p1, p2, p3, p4) Assert_2(condition, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
-#define Assert_7(condition, message, p1, p2, p3, p4, p5) Assert_2(condition, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4, p5))
+#define Assert_6(condition, message, p1, p2, p3, p4) \
+    Assert_2(condition, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
+#define Assert_7(condition, message, p1, p2, p3, p4, p5) \
+    Assert_2(condition, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4, p5))
 #endif
 
 // AssertEqual()
 #define AssertEqual_0() AssertFail_1("No condition provided for AssertEqual()")
 #define AssertEqual_1(condition) AssertFail_1("AssertEqual() requires at least two parameters.")
-#define AssertEqual_2(actual, expected) Assert_4((actual) == (expected), "AssertEqual(%s, %s) - Provided arguments are not equal", #actual, #expected)
+#define AssertEqual_2(actual, expected) \
+    Assert_4((actual) == (expected), "AssertEqual(%s, %s) - Provided arguments are not equal", #actual, #expected)
 #define AssertEqual_3(actual, expected, message) Assert_2((actual) == (expected), message)
 #define AssertEqual_4(actual, expected, message, p1) Assert_3((actual) == (expected), message, p1)
 #define AssertEqual_5(actual, expected, message, p1, p2) Assert_4((actual) == (expected), message, p1, p2)
 #define AssertEqual_6(actual, expected, message, p1, p2, p3) Assert_5((actual) == (expected), message, p1, p2, p3)
-#define AssertEqual_7(actual, expected, message, p1, p2, p3, p4) Assert_6((actual) == (expected), message, p1, p2, p3, p4)
+#define AssertEqual_7(actual, expected, message, p1, p2, p3, p4) \
+    Assert_6((actual) == (expected), message, p1, p2, p3, p4)
 
 // AssertNotEqual()
 #define AssertNotEqual_0() AssertFail_1("No condition provided for AssertNotEqual()")
 #define AssertNotEqual_1(condition) AssertFail_1("AssertNotEqual() requires at least two parameters.")
-#define AssertNotEqual_2(actual, expected) Assert_4((actual) != (expected), "AssertNotEqual(%s, %s) - Provided arguments are equal", #actual, #expected)
+#define AssertNotEqual_2(actual, expected) \
+    Assert_4((actual) != (expected), "AssertNotEqual(%s, %s) - Provided arguments are equal", #actual, #expected)
 #define AssertNotEqual_3(actual, expected, message) Assert_2((actual) != (expected), message)
 #define AssertNotEqual_4(actual, expected, message, p1) Assert_3((actual) != (expected), message, p1)
 #define AssertNotEqual_5(actual, expected, message, p1, p2) Assert_4((actual) != (expected), message, p1, p2)
 #define AssertNotEqual_6(actual, expected, message, p1, p2, p3) Assert_5((actual) != (expected), message, p1, p2, p3)
-#define AssertNotEqual_7(actual, expected, message, p1, p2, p3, p4) Assert_6((actual) != (expected), message, p1, p2, p3, p4)
+#define AssertNotEqual_7(actual, expected, message, p1, p2, p3, p4) \
+    Assert_6((actual) != (expected), message, p1, p2, p3, p4)
 
 // AssertNot()
 #define AssertNot_0() AssertFail_1("No condition provided for AssertNot()")
@@ -660,13 +669,15 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 #define AssertFail_7(message, p1, p2, p3, p4, p5, p6)
 #else
 #define AssertFail_0() RAYLIB_ASSERT_TRACELOG(RAYLIB_ASSERT_LOG, "ASSERT: AssertFail() (%s:%i)", __FILE__, __LINE__)
-#define AssertFail_1(message) RAYLIB_ASSERT_TRACELOG(RAYLIB_ASSERT_LOG, "ASSERT: %s (%s:%i)", message, __FILE__, __LINE__)
+#define AssertFail_1(message) \
+    RAYLIB_ASSERT_TRACELOG(RAYLIB_ASSERT_LOG, "ASSERT: %s (%s:%i)", message, __FILE__, __LINE__)
 #define AssertFail_2(message, p1) AssertFail_1(RAYLIB_ASSERT_TEXTFORMAT(message, p1))
 #define AssertFail_3(message, p1, p2) AssertFail_1(RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
 #define AssertFail_4(message, p1, p2, p3) AssertFail_1(RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
 #define AssertFail_5(message, p1, p2, p3, p4) AssertFail_1(RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
 #define AssertFail_6(message, p1, p2, p3, p4, p5) AssertFail_1(RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4, p5))
-#define AssertFail_7(message, p1, p2, p3, p4, p5, p6) AssertFail_1(RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4, p5, p6))
+#define AssertFail_7(message, p1, p2, p3, p4, p5, p6) \
+    AssertFail_1(RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4, p5, p6))
 #endif
 
 // AssertImage()
@@ -683,11 +694,23 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 #define AssertImageSize_0() AssertFail_1("No image provided for AssertImageSize()")
 #define AssertImageSize_1(image) AssertFail_1("Expected image, width, and height for AssertImageSize()")
 #define AssertImageSize_2(image, expectedWidth) AssertFail_1("Expected image, width, and height for AssertImageSize()")
-#define AssertImageSize_3(image, expectedWidth, expectedHeight) AssertImageSize_7(image, expectedWidth, expectedHeight, "AssertImageSize(%s, %s, %s) - Image size does not match", #image, #expectedWidth, #expectedHeight)
-#define AssertImageSize_4(image, expectedWidth, expectedHeight, message) Assert_2((image).width == (expectedWidth) && (image).height == (expectedHeight), message)
-#define AssertImageSize_5(image, expectedWidth, expectedHeight, message, p1) Assert_3((image).width == (expectedWidth) && (image).height == (expectedHeight), message, p1)
-#define AssertImageSize_6(image, expectedWidth, expectedHeight, message, p1, p2) Assert_4((image).width == (expectedWidth) && (image).height == (expectedHeight), message, p1, p2)
-#define AssertImageSize_7(image, expectedWidth, expectedHeight, message, p1, p2, p3) Assert_5((image).width == (expectedWidth) && (image).height == (expectedHeight), message, p1, p2, p3)
+#define AssertImageSize_3(image, expectedWidth, expectedHeight)    \
+    AssertImageSize_7(                                             \
+        image,                                                     \
+        expectedWidth,                                             \
+        expectedHeight,                                            \
+        "AssertImageSize(%s, %s, %s) - Image size does not match", \
+        #image,                                                    \
+        #expectedWidth,                                            \
+        #expectedHeight)
+#define AssertImageSize_4(image, expectedWidth, expectedHeight, message) \
+    Assert_2((image).width == (expectedWidth) && (image).height == (expectedHeight), message)
+#define AssertImageSize_5(image, expectedWidth, expectedHeight, message, p1) \
+    Assert_3((image).width == (expectedWidth) && (image).height == (expectedHeight), message, p1)
+#define AssertImageSize_6(image, expectedWidth, expectedHeight, message, p1, p2) \
+    Assert_4((image).width == (expectedWidth) && (image).height == (expectedHeight), message, p1, p2)
+#define AssertImageSize_7(image, expectedWidth, expectedHeight, message, p1, p2, p3) \
+    Assert_5((image).width == (expectedWidth) && (image).height == (expectedHeight), message, p1, p2, p3)
 
 // AssertTexture()
 #define AssertTexture_0() AssertFail_1("No texture provided for AssertTexture()")
@@ -697,7 +720,8 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 #define AssertTexture_4(texture, message, p1, p2) Assert_4(IsTextureValid(texture), message, p1, p2)
 #define AssertTexture_5(texture, message, p1, p2, p3) Assert_5(IsTextureValid(texture), message, p1, p2, p3)
 #define AssertTexture_6(texture, message, p1, p2, p3, p4) Assert_6(IsTextureValid(texture), message, p1, p2, p3, p4)
-#define AssertTexture_7(texture, message, p1, p2, p3, p4, p5) Assert_7(IsTextureValid(texture), message, p1, p2, p3, p4, p5)
+#define AssertTexture_7(texture, message, p1, p2, p3, p4, p5) \
+    Assert_7(IsTextureValid(texture), message, p1, p2, p3, p4, p5)
 
 // AssertMesh()
 #define AssertMesh_0() AssertFail_1("No mesh provided for AssertMesh()")
@@ -707,17 +731,20 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 #define AssertMesh_4(mesh, message, p1, p2) Assert_4(RAYLIB_ASSERT_MESH_VALID(mesh), message, p1, p2)
 #define AssertMesh_5(mesh, message, p1, p2, p3) Assert_5(RAYLIB_ASSERT_MESH_VALID(mesh), message, p1, p2, p3)
 #define AssertMesh_6(mesh, message, p1, p2, p3, p4) Assert_6(RAYLIB_ASSERT_MESH_VALID(mesh), message, p1, p2, p3, p4)
-#define AssertMesh_7(mesh, message, p1, p2, p3, p4, p5) Assert_7(RAYLIB_ASSERT_MESH_VALID(mesh), message, p1, p2, p3, p4, p5)
+#define AssertMesh_7(mesh, message, p1, p2, p3, p4, p5) \
+    Assert_7(RAYLIB_ASSERT_MESH_VALID(mesh), message, p1, p2, p3, p4, p5)
 
 // AssertMaterial()
 #define AssertMaterial_0() AssertFail_1("No material provided for AssertMaterial()")
-#define AssertMaterial_1(material) Assert_3(IsMaterialValid(material), "AssertMaterial(%s) - Material not loaded", #material)
+#define AssertMaterial_1(material) \
+    Assert_3(IsMaterialValid(material), "AssertMaterial(%s) - Material not loaded", #material)
 #define AssertMaterial_2(material, message) Assert_2(IsMaterialValid(material), message)
 #define AssertMaterial_3(material, message, p1) Assert_3(IsMaterialValid(material), message, p1)
 #define AssertMaterial_4(material, message, p1, p2) Assert_4(IsMaterialValid(material), message, p1, p2)
 #define AssertMaterial_5(material, message, p1, p2, p3) Assert_5(IsMaterialValid(material), message, p1, p2, p3)
 #define AssertMaterial_6(material, message, p1, p2, p3, p4) Assert_6(IsMaterialValid(material), message, p1, p2, p3, p4)
-#define AssertMaterial_7(material, message, p1, p2, p3, p4, p5) Assert_7(IsMaterialValid(material), message, p1, p2, p3, p4, p5)
+#define AssertMaterial_7(material, message, p1, p2, p3, p4, p5) \
+    Assert_7(IsMaterialValid(material), message, p1, p2, p3, p4, p5)
 
 // AssertImageSame()
 #ifdef RAYLIB_ASSERT_NDEBUG
@@ -732,35 +759,44 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 #else
 #define AssertImageSame_0() AssertFail_1("AssertImageSame(): No images provided to AssertImageSame(), expected 2")
 #define AssertImageSame_1(image) AssertFail_1("Only one image provided for AssertImageSame()")
-#define AssertImageSame_2(image1, image2) AssertImageSame_5(image1, image2, "AssertImageSame(%s, %s) - Images do not match", #image1, #image2)
-#define AssertImageSame_3(image1, image2, message) do { \
-    Image raylibAssertImage1 = (image1); \
-    Image raylibAssertImage2 = (image2); \
-    if (raylibAssertImage1.width != raylibAssertImage2.width || raylibAssertImage1.height != raylibAssertImage2.height || raylibAssertImage1.format != raylibAssertImage2.format) { \
-        AssertFail_1(message); \
-        break; \
-    } \
-    Color* colors1 = LoadImageColors(raylibAssertImage1); \
-    Color* colors2 = LoadImageColors(raylibAssertImage2); \
-    bool failure = false; \
-    for (int i = 0; i < raylibAssertImage1.width * raylibAssertImage1.height; i++) { \
-        Color color1 = colors1[i]; \
-        Color color2 = colors2[i]; \
-        if (color1.r != color2.r || color1.g != color2.g || color1.b != color2.b || color1.a != color2.a) { \
-            failure = true; \
-            break; \
-        } \
-    } \
-    UnloadImageColors(colors1); \
-    UnloadImageColors(colors2); \
-    if (failure) { \
-        AssertFail_1(message); \
-    } \
-} while(0)
-#define AssertImageSame_4(image1, image2, message, p1) AssertImageSame_3(image1, image2, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
-#define AssertImageSame_5(image1, image2, message, p1, p2) AssertImageSame_3(image1, image2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
-#define AssertImageSame_6(image1, image2, message, p1, p2, p3) AssertImageSame_3(image1, image2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
-#define AssertImageSame_7(image1, image2, message, p1, p2, p3, p4) AssertImageSame_3(image1, image2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
+#define AssertImageSame_2(image1, image2) \
+    AssertImageSame_5(image1, image2, "AssertImageSame(%s, %s) - Images do not match", #image1, #image2)
+#define AssertImageSame_3(image1, image2, message)                                                              \
+    do {                                                                                                        \
+        Image raylibAssertImage1 = (image1);                                                                    \
+        Image raylibAssertImage2 = (image2);                                                                    \
+        if (raylibAssertImage1.width != raylibAssertImage2.width ||                                             \
+            raylibAssertImage1.height != raylibAssertImage2.height ||                                           \
+            raylibAssertImage1.format != raylibAssertImage2.format) {                                           \
+            AssertFail_1(message);                                                                              \
+            break;                                                                                              \
+        }                                                                                                       \
+        Color* colors1 = LoadImageColors(raylibAssertImage1);                                                   \
+        Color* colors2 = LoadImageColors(raylibAssertImage2);                                                   \
+        bool failure = false;                                                                                   \
+        for (int i = 0; i < raylibAssertImage1.width * raylibAssertImage1.height; i++) {                        \
+            Color color1 = colors1[i];                                                                          \
+            Color color2 = colors2[i];                                                                          \
+            if (color1.r != color2.r || color1.g != color2.g || color1.b != color2.b || color1.a != color2.a) { \
+                failure = true;                                                                                 \
+                break;                                                                                          \
+            }                                                                                                   \
+        }                                                                                                       \
+        UnloadImageColors(colors1);                                                                             \
+        UnloadImageColors(colors2);                                                                             \
+        if (failure) {                                                                                          \
+            AssertFail_1(message);                                                                              \
+        }                                                                                                       \
+    }                                                                                                           \
+    while (0)
+#define AssertImageSame_4(image1, image2, message, p1) \
+    AssertImageSame_3(image1, image2, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
+#define AssertImageSame_5(image1, image2, message, p1, p2) \
+    AssertImageSame_3(image1, image2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
+#define AssertImageSame_6(image1, image2, message, p1, p2, p3) \
+    AssertImageSame_3(image1, image2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
+#define AssertImageSame_7(image1, image2, message, p1, p2, p3, p4) \
+    AssertImageSame_3(image1, image2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
 #endif
 
 // AssertColorSame()
@@ -776,18 +812,26 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 #else
 #define AssertColorSame_0() AssertFail_1("Colors not provided to AssertColorSame()")
 #define AssertColorSame_1(color) AssertFail_1("Expected two colors for AssertColorSame()")
-#define AssertColorSame_2(color1, color2) AssertColorSame_5(color1, color2, "AssertColorSame(%s, %s) - Colors do not match", #color1, #color2)
-#define AssertColorSame_3(color1, color2, message) do { \
-    Color raylibAssertColor1 = (color1); \
-    Color raylibAssertColor2 = (color2); \
-    if (raylibAssertColor1.r != raylibAssertColor2.r || raylibAssertColor1.g != raylibAssertColor2.g || raylibAssertColor1.b != raylibAssertColor2.b || raylibAssertColor1.a != raylibAssertColor2.a) { \
-        AssertFail_1(message); \
-    }\
-} while (0)
-#define AssertColorSame_4(color1, color2, message, p1) AssertColorSame_3(color1, color2, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
-#define AssertColorSame_5(color1, color2, message, p1, p2) AssertColorSame_3(color1, color2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
-#define AssertColorSame_6(color1, color2, message, p1, p2, p3) AssertColorSame_3(color1, color2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
-#define AssertColorSame_7(color1, color2, message, p1, p2, p3, p4) AssertColorSame_3(color1, color2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
+#define AssertColorSame_2(color1, color2) \
+    AssertColorSame_5(color1, color2, "AssertColorSame(%s, %s) - Colors do not match", #color1, #color2)
+#define AssertColorSame_3(color1, color2, message)                                                          \
+    do {                                                                                                    \
+        Color raylibAssertColor1 = (color1);                                                                \
+        Color raylibAssertColor2 = (color2);                                                                \
+        if (raylibAssertColor1.r != raylibAssertColor2.r || raylibAssertColor1.g != raylibAssertColor2.g || \
+            raylibAssertColor1.b != raylibAssertColor2.b || raylibAssertColor1.a != raylibAssertColor2.a) { \
+            AssertFail_1(message);                                                                          \
+        }                                                                                                   \
+    }                                                                                                       \
+    while (0)
+#define AssertColorSame_4(color1, color2, message, p1) \
+    AssertColorSame_3(color1, color2, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
+#define AssertColorSame_5(color1, color2, message, p1, p2) \
+    AssertColorSame_3(color1, color2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
+#define AssertColorSame_6(color1, color2, message, p1, p2, p3) \
+    AssertColorSame_3(color1, color2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
+#define AssertColorSame_7(color1, color2, message, p1, p2, p3, p4) \
+    AssertColorSame_3(color1, color2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
 #endif
 
 // AssertColorApprox()
@@ -804,18 +848,34 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 #define AssertColorApprox_0() AssertFail_1("Colors not provided to AssertColorApprox()")
 #define AssertColorApprox_1(color) AssertFail_1("Expected two colors and a tolerance for AssertColorApprox()")
 #define AssertColorApprox_2(color1, color2) AssertFail_1("Expected two colors and a tolerance for AssertColorApprox()")
-#define AssertColorApprox_3(color1, color2, tolerance) AssertColorApprox_7(color1, color2, tolerance, "AssertColorApprox(%s, %s, %s) - Colors differ beyond tolerance", #color1, #color2, #tolerance)
-#define AssertColorApprox_4(color1, color2, tolerance, message) do { \
-    Color raylibAssertColor1 = (color1); \
-    Color raylibAssertColor2 = (color2); \
-    int raylibAssertTolerance = (int)(tolerance); \
-    if (!RAYLIB_ASSERT_CHANNEL_WITHIN(raylibAssertColor1.r, raylibAssertColor2.r, raylibAssertTolerance) || !RAYLIB_ASSERT_CHANNEL_WITHIN(raylibAssertColor1.g, raylibAssertColor2.g, raylibAssertTolerance) || !RAYLIB_ASSERT_CHANNEL_WITHIN(raylibAssertColor1.b, raylibAssertColor2.b, raylibAssertTolerance) || !RAYLIB_ASSERT_CHANNEL_WITHIN(raylibAssertColor1.a, raylibAssertColor2.a, raylibAssertTolerance)) { \
-        AssertFail_1(message); \
-    }\
-} while (0)
-#define AssertColorApprox_5(color1, color2, tolerance, message, p1) AssertColorApprox_4(color1, color2, tolerance, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
-#define AssertColorApprox_6(color1, color2, tolerance, message, p1, p2) AssertColorApprox_4(color1, color2, tolerance, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
-#define AssertColorApprox_7(color1, color2, tolerance, message, p1, p2, p3) AssertColorApprox_4(color1, color2, tolerance, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
+#define AssertColorApprox_3(color1, color2, tolerance)                    \
+    AssertColorApprox_7(                                                  \
+        color1,                                                           \
+        color2,                                                           \
+        tolerance,                                                        \
+        "AssertColorApprox(%s, %s, %s) - Colors differ beyond tolerance", \
+        #color1,                                                          \
+        #color2,                                                          \
+        #tolerance)
+#define AssertColorApprox_4(color1, color2, tolerance, message)                                                 \
+    do {                                                                                                        \
+        Color raylibAssertColor1 = (color1);                                                                    \
+        Color raylibAssertColor2 = (color2);                                                                    \
+        int raylibAssertTolerance = (int)(tolerance);                                                           \
+        if (!RAYLIB_ASSERT_CHANNEL_WITHIN(raylibAssertColor1.r, raylibAssertColor2.r, raylibAssertTolerance) || \
+            !RAYLIB_ASSERT_CHANNEL_WITHIN(raylibAssertColor1.g, raylibAssertColor2.g, raylibAssertTolerance) || \
+            !RAYLIB_ASSERT_CHANNEL_WITHIN(raylibAssertColor1.b, raylibAssertColor2.b, raylibAssertTolerance) || \
+            !RAYLIB_ASSERT_CHANNEL_WITHIN(raylibAssertColor1.a, raylibAssertColor2.a, raylibAssertTolerance)) { \
+            AssertFail_1(message);                                                                              \
+        }                                                                                                       \
+    }                                                                                                           \
+    while (0)
+#define AssertColorApprox_5(color1, color2, tolerance, message, p1) \
+    AssertColorApprox_4(color1, color2, tolerance, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
+#define AssertColorApprox_6(color1, color2, tolerance, message, p1, p2) \
+    AssertColorApprox_4(color1, color2, tolerance, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
+#define AssertColorApprox_7(color1, color2, tolerance, message, p1, p2, p3) \
+    AssertColorApprox_4(color1, color2, tolerance, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
 #endif
 
 // AssertVector2Same()
@@ -831,18 +891,26 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 #else
 #define AssertVector2Same_0() AssertFail_1("Vectors not provided to AssertVector2Same()")
 #define AssertVector2Same_1(vector) AssertFail_1("Expected two vectors for AssertVector2Same()")
-#define AssertVector2Same_2(vector1, vector2) AssertVector2Same_5(vector1, vector2, "AssertVector2Same(%s, %s) - vectors do not match", #vector1, #vector2)
-#define AssertVector2Same_3(vector1, vector2, message) do { \
-    Vector2 raylibAssertVector1 = (vector1); \
-    Vector2 raylibAssertVector2 = (vector2); \
-    if (!RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.x, raylibAssertVector2.x) || !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.y, raylibAssertVector2.y)) { \
-        AssertFail_1(message); \
-    }\
-} while (0)
-#define AssertVector2Same_4(vector1, vector2, message, p1) AssertVector2Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
-#define AssertVector2Same_5(vector1, vector2, message, p1, p2) AssertVector2Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
-#define AssertVector2Same_6(vector1, vector2, message, p1, p2, p3) AssertVector2Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
-#define AssertVector2Same_7(vector1, vector2, message, p1, p2, p3, p4) AssertVector2Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
+#define AssertVector2Same_2(vector1, vector2) \
+    AssertVector2Same_5(vector1, vector2, "AssertVector2Same(%s, %s) - vectors do not match", #vector1, #vector2)
+#define AssertVector2Same_3(vector1, vector2, message)                               \
+    do {                                                                             \
+        Vector2 raylibAssertVector1 = (vector1);                                     \
+        Vector2 raylibAssertVector2 = (vector2);                                     \
+        if (!RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.x, raylibAssertVector2.x) || \
+            !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.y, raylibAssertVector2.y)) { \
+            AssertFail_1(message);                                                   \
+        }                                                                            \
+    }                                                                                \
+    while (0)
+#define AssertVector2Same_4(vector1, vector2, message, p1) \
+    AssertVector2Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
+#define AssertVector2Same_5(vector1, vector2, message, p1, p2) \
+    AssertVector2Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
+#define AssertVector2Same_6(vector1, vector2, message, p1, p2, p3) \
+    AssertVector2Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
+#define AssertVector2Same_7(vector1, vector2, message, p1, p2, p3, p4) \
+    AssertVector2Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
 #endif
 
 // AssertVector3Same()
@@ -858,18 +926,27 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 #else
 #define AssertVector3Same_0() AssertFail_1("Vectors not provided to AssertVector3Same()")
 #define AssertVector3Same_1(vector) AssertFail_1("Expected two vectors for AssertVector3Same()")
-#define AssertVector3Same_2(vector1, vector2) AssertVector3Same_5(vector1, vector2, "AssertVector3Same(%s, %s) - vectors do not match", #vector1, #vector2)
-#define AssertVector3Same_3(vector1, vector2, message) do { \
-    Vector3 raylibAssertVector1 = (vector1); \
-    Vector3 raylibAssertVector2 = (vector2); \
-    if (!RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.x, raylibAssertVector2.x) || !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.y, raylibAssertVector2.y) || !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.z, raylibAssertVector2.z)) { \
-        AssertFail_1(message); \
-    }\
-} while (0)
-#define AssertVector3Same_4(vector1, vector2, message, p1) AssertVector3Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
-#define AssertVector3Same_5(vector1, vector2, message, p1, p2) AssertVector3Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
-#define AssertVector3Same_6(vector1, vector2, message, p1, p2, p3) AssertVector3Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
-#define AssertVector3Same_7(vector1, vector2, message, p1, p2, p3, p4) AssertVector3Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
+#define AssertVector3Same_2(vector1, vector2) \
+    AssertVector3Same_5(vector1, vector2, "AssertVector3Same(%s, %s) - vectors do not match", #vector1, #vector2)
+#define AssertVector3Same_3(vector1, vector2, message)                               \
+    do {                                                                             \
+        Vector3 raylibAssertVector1 = (vector1);                                     \
+        Vector3 raylibAssertVector2 = (vector2);                                     \
+        if (!RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.x, raylibAssertVector2.x) || \
+            !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.y, raylibAssertVector2.y) || \
+            !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.z, raylibAssertVector2.z)) { \
+            AssertFail_1(message);                                                   \
+        }                                                                            \
+    }                                                                                \
+    while (0)
+#define AssertVector3Same_4(vector1, vector2, message, p1) \
+    AssertVector3Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
+#define AssertVector3Same_5(vector1, vector2, message, p1, p2) \
+    AssertVector3Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
+#define AssertVector3Same_6(vector1, vector2, message, p1, p2, p3) \
+    AssertVector3Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
+#define AssertVector3Same_7(vector1, vector2, message, p1, p2, p3, p4) \
+    AssertVector3Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
 #endif
 
 // AssertVector4Same()
@@ -885,18 +962,28 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 #else
 #define AssertVector4Same_0() AssertFail_1("Vectors not provided to AssertVector4Same()")
 #define AssertVector4Same_1(vector) AssertFail_1("Expected two vectors for AssertVector4Same()")
-#define AssertVector4Same_2(vector1, vector2) AssertVector4Same_5(vector1, vector2, "AssertVector4Same(%s, %s) - vectors do not match", #vector1, #vector2)
-#define AssertVector4Same_3(vector1, vector2, message) do { \
-    Vector4 raylibAssertVector1 = (vector1); \
-    Vector4 raylibAssertVector2 = (vector2); \
-    if (!RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.x, raylibAssertVector2.x) || !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.y, raylibAssertVector2.y) || !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.z, raylibAssertVector2.z) || !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.w, raylibAssertVector2.w)) { \
-        AssertFail_1(message); \
-    }\
-} while (0)
-#define AssertVector4Same_4(vector1, vector2, message, p1) AssertVector4Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
-#define AssertVector4Same_5(vector1, vector2, message, p1, p2) AssertVector4Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
-#define AssertVector4Same_6(vector1, vector2, message, p1, p2, p3) AssertVector4Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
-#define AssertVector4Same_7(vector1, vector2, message, p1, p2, p3, p4) AssertVector4Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
+#define AssertVector4Same_2(vector1, vector2) \
+    AssertVector4Same_5(vector1, vector2, "AssertVector4Same(%s, %s) - vectors do not match", #vector1, #vector2)
+#define AssertVector4Same_3(vector1, vector2, message)                               \
+    do {                                                                             \
+        Vector4 raylibAssertVector1 = (vector1);                                     \
+        Vector4 raylibAssertVector2 = (vector2);                                     \
+        if (!RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.x, raylibAssertVector2.x) || \
+            !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.y, raylibAssertVector2.y) || \
+            !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.z, raylibAssertVector2.z) || \
+            !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertVector1.w, raylibAssertVector2.w)) { \
+            AssertFail_1(message);                                                   \
+        }                                                                            \
+    }                                                                                \
+    while (0)
+#define AssertVector4Same_4(vector1, vector2, message, p1) \
+    AssertVector4Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
+#define AssertVector4Same_5(vector1, vector2, message, p1, p2) \
+    AssertVector4Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
+#define AssertVector4Same_6(vector1, vector2, message, p1, p2, p3) \
+    AssertVector4Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
+#define AssertVector4Same_7(vector1, vector2, message, p1, p2, p3, p4) \
+    AssertVector4Same_3(vector1, vector2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
 #endif
 
 // AssertRectangleSame()
@@ -912,18 +999,28 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 #else
 #define AssertRectangleSame_0() AssertFail_1("Rectangles not provided to AssertRectangleSame()")
 #define AssertRectangleSame_1(rect) AssertFail_1("Expected two rectangles for AssertRectangleSame()")
-#define AssertRectangleSame_2(rect1, rect2) AssertRectangleSame_5(rect1, rect2, "AssertRectangleSame(%s, %s) - rectangles do not match", #rect1, #rect2)
-#define AssertRectangleSame_3(rect1, rect2, message) do { \
-    Rectangle raylibAssertRect1 = (rect1); \
-    Rectangle raylibAssertRect2 = (rect2); \
-    if (!RAYLIB_ASSERT_FLOAT_EQ(raylibAssertRect1.x, raylibAssertRect2.x) || !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertRect1.y, raylibAssertRect2.y) || !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertRect1.width, raylibAssertRect2.width) || !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertRect1.height, raylibAssertRect2.height)) { \
-        AssertFail_1(message); \
-    }\
-} while (0)
-#define AssertRectangleSame_4(rect1, rect2, message, p1) AssertRectangleSame_3(rect1, rect2, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
-#define AssertRectangleSame_5(rect1, rect2, message, p1, p2) AssertRectangleSame_3(rect1, rect2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
-#define AssertRectangleSame_6(rect1, rect2, message, p1, p2, p3) AssertRectangleSame_3(rect1, rect2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
-#define AssertRectangleSame_7(rect1, rect2, message, p1, p2, p3, p4) AssertRectangleSame_3(rect1, rect2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
+#define AssertRectangleSame_2(rect1, rect2) \
+    AssertRectangleSame_5(rect1, rect2, "AssertRectangleSame(%s, %s) - rectangles do not match", #rect1, #rect2)
+#define AssertRectangleSame_3(rect1, rect2, message)                                       \
+    do {                                                                                   \
+        Rectangle raylibAssertRect1 = (rect1);                                             \
+        Rectangle raylibAssertRect2 = (rect2);                                             \
+        if (!RAYLIB_ASSERT_FLOAT_EQ(raylibAssertRect1.x, raylibAssertRect2.x) ||           \
+            !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertRect1.y, raylibAssertRect2.y) ||           \
+            !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertRect1.width, raylibAssertRect2.width) ||   \
+            !RAYLIB_ASSERT_FLOAT_EQ(raylibAssertRect1.height, raylibAssertRect2.height)) { \
+            AssertFail_1(message);                                                         \
+        }                                                                                  \
+    }                                                                                      \
+    while (0)
+#define AssertRectangleSame_4(rect1, rect2, message, p1) \
+    AssertRectangleSame_3(rect1, rect2, RAYLIB_ASSERT_TEXTFORMAT(message, p1))
+#define AssertRectangleSame_5(rect1, rect2, message, p1, p2) \
+    AssertRectangleSame_3(rect1, rect2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2))
+#define AssertRectangleSame_6(rect1, rect2, message, p1, p2, p3) \
+    AssertRectangleSame_3(rect1, rect2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3))
+#define AssertRectangleSame_7(rect1, rect2, message, p1, p2, p3, p4) \
+    AssertRectangleSame_3(rect1, rect2, RAYLIB_ASSERT_TEXTFORMAT(message, p1, p2, p3, p4))
 #endif
 
 // AssertNull()
@@ -949,27 +1046,32 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 // AssertStringEqual()
 #define AssertStringEqual_0() AssertFail_1("No strings provided for AssertStringEqual()")
 #define AssertStringEqual_1(str) AssertFail_1("Expected two strings for AssertStringEqual()")
-#define AssertStringEqual_2(str1, str2) Assert_4(TextIsEqual(str1, str2), "AssertStringEqual(%s, %s) - Strings are not equal", #str1, #str2)
+#define AssertStringEqual_2(str1, str2) \
+    Assert_4(TextIsEqual(str1, str2), "AssertStringEqual(%s, %s) - Strings are not equal", #str1, #str2)
 #define AssertStringEqual_3(str1, str2, message) Assert_2(TextIsEqual(str1, str2), message)
 #define AssertStringEqual_4(str1, str2, message, p1) Assert_3(TextIsEqual(str1, str2), message, p1)
 #define AssertStringEqual_5(str1, str2, message, p1, p2) Assert_4(TextIsEqual(str1, str2), message, p1, p2)
 #define AssertStringEqual_6(str1, str2, message, p1, p2, p3) Assert_5(TextIsEqual(str1, str2), message, p1, p2, p3)
-#define AssertStringEqual_7(str1, str2, message, p1, p2, p3, p4) Assert_6(TextIsEqual(str1, str2), message, p1, p2, p3, p4)
+#define AssertStringEqual_7(str1, str2, message, p1, p2, p3, p4) \
+    Assert_6(TextIsEqual(str1, str2), message, p1, p2, p3, p4)
 
 // AssertGreater()
 #define AssertGreater_0() AssertFail_1("No values provided for AssertGreater()")
 #define AssertGreater_1(value) AssertFail_1("Expected two values for AssertGreater()")
-#define AssertGreater_2(actual, expected) Assert_4((actual) > (expected), "AssertGreater(%s, %s) - Value is not greater than expected", #actual, #expected)
+#define AssertGreater_2(actual, expected) \
+    Assert_4((actual) > (expected), "AssertGreater(%s, %s) - Value is not greater than expected", #actual, #expected)
 #define AssertGreater_3(actual, expected, message) Assert_2((actual) > (expected), message)
 #define AssertGreater_4(actual, expected, message, p1) Assert_3((actual) > (expected), message, p1)
 #define AssertGreater_5(actual, expected, message, p1, p2) Assert_4((actual) > (expected), message, p1, p2)
 #define AssertGreater_6(actual, expected, message, p1, p2, p3) Assert_5((actual) > (expected), message, p1, p2, p3)
-#define AssertGreater_7(actual, expected, message, p1, p2, p3, p4) Assert_6((actual) > (expected), message, p1, p2, p3, p4)
+#define AssertGreater_7(actual, expected, message, p1, p2, p3, p4) \
+    Assert_6((actual) > (expected), message, p1, p2, p3, p4)
 
 // AssertLess()
 #define AssertLess_0() AssertFail_1("No values provided for AssertLess()")
 #define AssertLess_1(value) AssertFail_1("Expected two values for AssertLess()")
-#define AssertLess_2(actual, expected) Assert_4((actual) < (expected), "AssertLess(%s, %s) - Value is not less than expected", #actual, #expected)
+#define AssertLess_2(actual, expected) \
+    Assert_4((actual) < (expected), "AssertLess(%s, %s) - Value is not less than expected", #actual, #expected)
 #define AssertLess_3(actual, expected, message) Assert_2((actual) < (expected), message)
 #define AssertLess_4(actual, expected, message, p1) Assert_3((actual) < (expected), message, p1)
 #define AssertLess_5(actual, expected, message, p1, p2) Assert_4((actual) < (expected), message, p1, p2)
@@ -979,62 +1081,97 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 // AssertGreaterEqual()
 #define AssertGreaterEqual_0() AssertFail_1("No values provided for AssertGreaterEqual()")
 #define AssertGreaterEqual_1(value) AssertFail_1("Expected two values for AssertGreaterEqual()")
-#define AssertGreaterEqual_2(actual, expected) Assert_4((actual) >= (expected), "AssertGreaterEqual(%s, %s) - Value is not greater than or equal to expected", #actual, #expected)
+#define AssertGreaterEqual_2(actual, expected)                                         \
+    Assert_4(                                                                          \
+        (actual) >= (expected),                                                        \
+        "AssertGreaterEqual(%s, %s) - Value is not greater than or equal to expected", \
+        #actual,                                                                       \
+        #expected)
 #define AssertGreaterEqual_3(actual, expected, message) Assert_2((actual) >= (expected), message)
 #define AssertGreaterEqual_4(actual, expected, message, p1) Assert_3((actual) >= (expected), message, p1)
 #define AssertGreaterEqual_5(actual, expected, message, p1, p2) Assert_4((actual) >= (expected), message, p1, p2)
-#define AssertGreaterEqual_6(actual, expected, message, p1, p2, p3) Assert_5((actual) >= (expected), message, p1, p2, p3)
-#define AssertGreaterEqual_7(actual, expected, message, p1, p2, p3, p4) Assert_6((actual) >= (expected), message, p1, p2, p3, p4)
+#define AssertGreaterEqual_6(actual, expected, message, p1, p2, p3) \
+    Assert_5((actual) >= (expected), message, p1, p2, p3)
+#define AssertGreaterEqual_7(actual, expected, message, p1, p2, p3, p4) \
+    Assert_6((actual) >= (expected), message, p1, p2, p3, p4)
 
 // AssertLessEqual()
 #define AssertLessEqual_0() AssertFail_1("No values provided for AssertLessEqual()")
 #define AssertLessEqual_1(value) AssertFail_1("Expected two values for AssertLessEqual()")
-#define AssertLessEqual_2(actual, expected) Assert_4((actual) <= (expected), "AssertLessEqual(%s, %s) - Value is not less than or equal to expected", #actual, #expected)
+#define AssertLessEqual_2(actual, expected)                                      \
+    Assert_4(                                                                    \
+        (actual) <= (expected),                                                  \
+        "AssertLessEqual(%s, %s) - Value is not less than or equal to expected", \
+        #actual,                                                                 \
+        #expected)
 #define AssertLessEqual_3(actual, expected, message) Assert_2((actual) <= (expected), message)
 #define AssertLessEqual_4(actual, expected, message, p1) Assert_3((actual) <= (expected), message, p1)
 #define AssertLessEqual_5(actual, expected, message, p1, p2) Assert_4((actual) <= (expected), message, p1, p2)
 #define AssertLessEqual_6(actual, expected, message, p1, p2, p3) Assert_5((actual) <= (expected), message, p1, p2, p3)
-#define AssertLessEqual_7(actual, expected, message, p1, p2, p3, p4) Assert_6((actual) <= (expected), message, p1, p2, p3, p4)
+#define AssertLessEqual_7(actual, expected, message, p1, p2, p3, p4) \
+    Assert_6((actual) <= (expected), message, p1, p2, p3, p4)
 
 // AssertFloatEqual()
 #define AssertFloatEqual_0() AssertFail_1("No values provided for AssertFloatEqual()")
 #define AssertFloatEqual_1(value) AssertFail_1("Expected two values for AssertFloatEqual()")
-#define AssertFloatEqual_2(actual, expected) Assert_4(RAYLIB_ASSERT_FLOAT_EQ(actual, expected), "AssertFloatEqual(%s, %s) - Floats are not equal within epsilon", #actual, #expected)
+#define AssertFloatEqual_2(actual, expected)                              \
+    Assert_4(                                                             \
+        RAYLIB_ASSERT_FLOAT_EQ(actual, expected),                         \
+        "AssertFloatEqual(%s, %s) - Floats are not equal within epsilon", \
+        #actual,                                                          \
+        #expected)
 #define AssertFloatEqual_3(actual, expected, message) Assert_2(RAYLIB_ASSERT_FLOAT_EQ(actual, expected), message)
-#define AssertFloatEqual_4(actual, expected, message, p1) Assert_3(RAYLIB_ASSERT_FLOAT_EQ(actual, expected), message, p1)
-#define AssertFloatEqual_5(actual, expected, message, p1, p2) Assert_4(RAYLIB_ASSERT_FLOAT_EQ(actual, expected), message, p1, p2)
-#define AssertFloatEqual_6(actual, expected, message, p1, p2, p3) Assert_5(RAYLIB_ASSERT_FLOAT_EQ(actual, expected), message, p1, p2, p3)
-#define AssertFloatEqual_7(actual, expected, message, p1, p2, p3, p4) Assert_6(RAYLIB_ASSERT_FLOAT_EQ(actual, expected), message, p1, p2, p3, p4)
+#define AssertFloatEqual_4(actual, expected, message, p1) \
+    Assert_3(RAYLIB_ASSERT_FLOAT_EQ(actual, expected), message, p1)
+#define AssertFloatEqual_5(actual, expected, message, p1, p2) \
+    Assert_4(RAYLIB_ASSERT_FLOAT_EQ(actual, expected), message, p1, p2)
+#define AssertFloatEqual_6(actual, expected, message, p1, p2, p3) \
+    Assert_5(RAYLIB_ASSERT_FLOAT_EQ(actual, expected), message, p1, p2, p3)
+#define AssertFloatEqual_7(actual, expected, message, p1, p2, p3, p4) \
+    Assert_6(RAYLIB_ASSERT_FLOAT_EQ(actual, expected), message, p1, p2, p3, p4)
 
 // AssertInRange()
 #define AssertInRange_0() AssertFail_1("No values provided for AssertInRange()")
 #define AssertInRange_1(value) AssertFail_1("Expected three values for AssertInRange()")
 #define AssertInRange_2(value, min) AssertFail_1("Expected three values for AssertInRange()")
-#define AssertInRange_3(value, min, max) Assert_5((value) >= (min) && (value) <= (max), "AssertInRange(%s, %s, %s) - Value is not within range", #value, #min, #max)
+#define AssertInRange_3(value, min, max)                         \
+    Assert_5(                                                    \
+        (value) >= (min) && (value) <= (max),                    \
+        "AssertInRange(%s, %s, %s) - Value is not within range", \
+        #value,                                                  \
+        #min,                                                    \
+        #max)
 #define AssertInRange_4(value, min, max, message) Assert_2((value) >= (min) && (value) <= (max), message)
 #define AssertInRange_5(value, min, max, message, p1) Assert_3((value) >= (min) && (value) <= (max), message, p1)
-#define AssertInRange_6(value, min, max, message, p1, p2) Assert_4((value) >= (min) && (value) <= (max), message, p1, p2)
-#define AssertInRange_7(value, min, max, message, p1, p2, p3) Assert_5((value) >= (min) && (value) <= (max), message, p1, p2, p3)
+#define AssertInRange_6(value, min, max, message, p1, p2) \
+    Assert_4((value) >= (min) && (value) <= (max), message, p1, p2)
+#define AssertInRange_7(value, min, max, message, p1, p2, p3) \
+    Assert_5((value) >= (min) && (value) <= (max), message, p1, p2, p3)
 
 // AssertStringNotEqual()
 #define AssertStringNotEqual_0() AssertFail_1("No strings provided for AssertStringNotEqual()")
 #define AssertStringNotEqual_1(str) AssertFail_1("Expected two strings for AssertStringNotEqual()")
-#define AssertStringNotEqual_2(str1, str2) Assert_4(!TextIsEqual(str1, str2), "AssertStringNotEqual(%s, %s) - Strings are equal", #str1, #str2)
+#define AssertStringNotEqual_2(str1, str2) \
+    Assert_4(!TextIsEqual(str1, str2), "AssertStringNotEqual(%s, %s) - Strings are equal", #str1, #str2)
 #define AssertStringNotEqual_3(str1, str2, message) Assert_2(!TextIsEqual(str1, str2), message)
 #define AssertStringNotEqual_4(str1, str2, message, p1) Assert_3(!TextIsEqual(str1, str2), message, p1)
 #define AssertStringNotEqual_5(str1, str2, message, p1, p2) Assert_4(!TextIsEqual(str1, str2), message, p1, p2)
 #define AssertStringNotEqual_6(str1, str2, message, p1, p2, p3) Assert_5(!TextIsEqual(str1, str2), message, p1, p2, p3)
-#define AssertStringNotEqual_7(str1, str2, message, p1, p2, p3, p4) Assert_6(!TextIsEqual(str1, str2), message, p1, p2, p3, p4)
+#define AssertStringNotEqual_7(str1, str2, message, p1, p2, p3, p4) \
+    Assert_6(!TextIsEqual(str1, str2), message, p1, p2, p3, p4)
 
 // AssertRenderTexture()
 #define AssertRenderTexture_0() AssertFail_1("No render texture provided for AssertRenderTexture()")
-#define AssertRenderTexture_1(target) Assert_3(IsRenderTextureValid(target), "AssertRenderTexture(%s) - Render texture not loaded", #target)
+#define AssertRenderTexture_1(target) \
+    Assert_3(IsRenderTextureValid(target), "AssertRenderTexture(%s) - Render texture not loaded", #target)
 #define AssertRenderTexture_2(target, message) Assert_2(IsRenderTextureValid(target), message)
 #define AssertRenderTexture_3(target, message, p1) Assert_3(IsRenderTextureValid(target), message, p1)
 #define AssertRenderTexture_4(target, message, p1, p2) Assert_4(IsRenderTextureValid(target), message, p1, p2)
 #define AssertRenderTexture_5(target, message, p1, p2, p3) Assert_5(IsRenderTextureValid(target), message, p1, p2, p3)
-#define AssertRenderTexture_6(target, message, p1, p2, p3, p4) Assert_6(IsRenderTextureValid(target), message, p1, p2, p3, p4)
-#define AssertRenderTexture_7(target, message, p1, p2, p3, p4, p5) Assert_7(IsRenderTextureValid(target), message, p1, p2, p3, p4, p5)
+#define AssertRenderTexture_6(target, message, p1, p2, p3, p4) \
+    Assert_6(IsRenderTextureValid(target), message, p1, p2, p3, p4)
+#define AssertRenderTexture_7(target, message, p1, p2, p3, p4, p5) \
+    Assert_7(IsRenderTextureValid(target), message, p1, p2, p3, p4, p5)
 
 // AssertFont()
 #define AssertFont_0() AssertFail_1("No font provided for AssertFont()")
@@ -1069,12 +1206,21 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 // AssertModelAnimation()
 #define AssertModelAnimation_0() AssertFail_1("No model or animation provided for AssertModelAnimation()")
 #define AssertModelAnimation_1(model) AssertFail_1("Expected model and animation for AssertModelAnimation()")
-#define AssertModelAnimation_2(model, animation) Assert_4(IsModelAnimationValid(model, animation), "AssertModelAnimation(%s, %s) - Animation is not valid for model", #model, #animation)
+#define AssertModelAnimation_2(model, animation)                           \
+    Assert_4(                                                              \
+        IsModelAnimationValid(model, animation),                           \
+        "AssertModelAnimation(%s, %s) - Animation is not valid for model", \
+        #model,                                                            \
+        #animation)
 #define AssertModelAnimation_3(model, animation, message) Assert_2(IsModelAnimationValid(model, animation), message)
-#define AssertModelAnimation_4(model, animation, message, p1) Assert_3(IsModelAnimationValid(model, animation), message, p1)
-#define AssertModelAnimation_5(model, animation, message, p1, p2) Assert_4(IsModelAnimationValid(model, animation), message, p1, p2)
-#define AssertModelAnimation_6(model, animation, message, p1, p2, p3) Assert_5(IsModelAnimationValid(model, animation), message, p1, p2, p3)
-#define AssertModelAnimation_7(model, animation, message, p1, p2, p3, p4) Assert_6(IsModelAnimationValid(model, animation), message, p1, p2, p3, p4)
+#define AssertModelAnimation_4(model, animation, message, p1) \
+    Assert_3(IsModelAnimationValid(model, animation), message, p1)
+#define AssertModelAnimation_5(model, animation, message, p1, p2) \
+    Assert_4(IsModelAnimationValid(model, animation), message, p1, p2)
+#define AssertModelAnimation_6(model, animation, message, p1, p2, p3) \
+    Assert_5(IsModelAnimationValid(model, animation), message, p1, p2, p3)
+#define AssertModelAnimation_7(model, animation, message, p1, p2, p3, p4) \
+    Assert_6(IsModelAnimationValid(model, animation), message, p1, p2, p3, p4)
 
 // AssertWave()
 #define AssertWave_0() AssertFail_1("No wave provided for AssertWave()")
@@ -1108,13 +1254,16 @@ static inline bool RaylibAssertMeshValid(Mesh mesh)
 
 // AssertAudioStream()
 #define AssertAudioStream_0() AssertFail_1("No audio stream provided for AssertAudioStream()")
-#define AssertAudioStream_1(stream) Assert_3(IsAudioStreamValid(stream), "AssertAudioStream(%s) - Audio stream not loaded", #stream)
+#define AssertAudioStream_1(stream) \
+    Assert_3(IsAudioStreamValid(stream), "AssertAudioStream(%s) - Audio stream not loaded", #stream)
 #define AssertAudioStream_2(stream, message) Assert_2(IsAudioStreamValid(stream), message)
 #define AssertAudioStream_3(stream, message, p1) Assert_3(IsAudioStreamValid(stream), message, p1)
 #define AssertAudioStream_4(stream, message, p1, p2) Assert_4(IsAudioStreamValid(stream), message, p1, p2)
 #define AssertAudioStream_5(stream, message, p1, p2, p3) Assert_5(IsAudioStreamValid(stream), message, p1, p2, p3)
-#define AssertAudioStream_6(stream, message, p1, p2, p3, p4) Assert_6(IsAudioStreamValid(stream), message, p1, p2, p3, p4)
-#define AssertAudioStream_7(stream, message, p1, p2, p3, p4, p5) Assert_7(IsAudioStreamValid(stream), message, p1, p2, p3, p4, p5)
+#define AssertAudioStream_6(stream, message, p1, p2, p3, p4) \
+    Assert_6(IsAudioStreamValid(stream), message, p1, p2, p3, p4)
+#define AssertAudioStream_7(stream, message, p1, p2, p3, p4, p5) \
+    Assert_7(IsAudioStreamValid(stream), message, p1, p2, p3, p4, p5)
 
 #ifdef __cplusplus
 }

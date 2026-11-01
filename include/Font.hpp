@@ -2,6 +2,7 @@
 #define RAYLIB_CPP_INCLUDE_FONT_HPP_
 
 #include <string>
+#include <vector>
 
 #include "./FontUnmanaged.hpp"
 

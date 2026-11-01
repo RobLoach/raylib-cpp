@@ -191,7 +191,7 @@ RLCPP_MAYBEUNUSED RLCPPAPI std::vector<std::string> LoadDroppedFiles() {
 /**
  * Get file modification time (last write time)
  */
-RLCPP_MAYBEUNUSED RLCPPAPI inline long GetFileModTime(const std::string& fileName) { // NOLINT
+RLCPP_MAYBEUNUSED RLCPPAPI inline long GetFileModTime(const std::string& fileName) {  // NOLINT
     return ::GetFileModTime(fileName.c_str());
 }
 

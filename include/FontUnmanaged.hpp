@@ -206,12 +206,8 @@ class FontUnmanaged : public ::Font {
     /**
      * Draw text using font and additional parameters.
      */
-    void DrawText(
-        const std::string& text,
-        ::Vector2 position,
-        float fontSize,
-        float spacing,
-        ::Color tint = WHITE) const {
+    void
+    DrawText(const std::string& text, ::Vector2 position, float fontSize, float spacing, ::Color tint = WHITE) const {
         ::DrawTextEx(*this, text.c_str(), position, fontSize, spacing, tint);
     }
 
@@ -225,13 +221,8 @@ class FontUnmanaged : public ::Font {
     /**
      * Draw text using font and additional parameters.
      */
-    void DrawText(
-        const std::string& text,
-        int posX,
-        int posY,
-        float fontSize,
-        float spacing,
-        ::Color tint = WHITE) const {
+    void
+    DrawText(const std::string& text, int posX, int posY, float fontSize, float spacing, ::Color tint = WHITE) const {
         ::DrawTextEx(
             *this,
             text.c_str(),

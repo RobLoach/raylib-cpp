@@ -1,33 +1,32 @@
 /*******************************************************************************************
-*
-*   raylib [shaders] example - Texture Waves
-*
-*   NOTE: This example requires raylib OpenGL 3.3 or ES2 versions for shaders support,
-*         OpenGL 1.1 does not support shaders, recompile raylib to OpenGL 3.3 version.
-*
-*   NOTE: Shaders used in this example are #version 330 (OpenGL 3.3), to test this example
-*         on OpenGL ES 2.0 platforms (Android, Raspberry Pi, HTML5), use #version 100 shaders
-*         raylib comes with shaders ready for both versions, check raylib/shaders install folder
-*
-*   This example has been created using raylib 2.5 (www.raylib.com)
-*   raylib is licensed under an unmodified zlib/libpng license (View raylib.h for details)
-*
-*   Example contributed by Anata (@anatagawa) and reviewed by Ramon Santamaria (@raysan5)
-*
-*   Copyright (c) 2019 Anata (@anatagawa) and Ramon Santamaria (@raysan5)
-*
-********************************************************************************************/
+ *
+ *   raylib [shaders] example - Texture Waves
+ *
+ *   NOTE: This example requires raylib OpenGL 3.3 or ES2 versions for shaders support,
+ *         OpenGL 1.1 does not support shaders, recompile raylib to OpenGL 3.3 version.
+ *
+ *   NOTE: Shaders used in this example are #version 330 (OpenGL 3.3), to test this example
+ *         on OpenGL ES 2.0 platforms (Android, Raspberry Pi, HTML5), use #version 100 shaders
+ *         raylib comes with shaders ready for both versions, check raylib/shaders install folder
+ *
+ *   This example has been created using raylib 2.5 (www.raylib.com)
+ *   raylib is licensed under an unmodified zlib/libpng license (View raylib.h for details)
+ *
+ *   Example contributed by Anata (@anatagawa) and reviewed by Ramon Santamaria (@raysan5)
+ *
+ *   Copyright (c) 2019 Anata (@anatagawa) and Ramon Santamaria (@raysan5)
+ *
+ ********************************************************************************************/
 
 #include "raylib-cpp.hpp"
 
 #if defined(PLATFORM_DESKTOP)
-    #define GLSL_VERSION            330
-#else   // PLATFORM_RPI, PLATFORM_ANDROID, PLATFORM_WEB
-    #define GLSL_VERSION            100
+#define GLSL_VERSION 330
+#else  // PLATFORM_RPI, PLATFORM_ANDROID, PLATFORM_WEB
+#define GLSL_VERSION 100
 #endif
 
-int main(void)
-{
+int main(void) {
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;
@@ -57,7 +56,7 @@ int main(void)
     float speedX = 8.0f;
     float speedY = 8.0f;
 
-    float screenSize[2] = { (float)window.GetWidth(), (float)window.GetHeight() };
+    float screenSize[2] = {(float)window.GetWidth(), (float)window.GetHeight()};
     shader.SetValue(shader.GetLocation("size"), &screenSize, SHADER_UNIFORM_VEC2);
     shader.SetValue(freqXLoc, &freqX, SHADER_UNIFORM_FLOAT);
     shader.SetValue(freqYLoc, &freqY, SHADER_UNIFORM_FLOAT);
@@ -68,11 +67,11 @@ int main(void)
 
     float seconds = 0.0f;
 
-    window.SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
+    window.SetTargetFPS(60);  // Set our game to run at 60 frames-per-second
     // -------------------------------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose())    // Detect window close button or ESC key
+    while (!window.ShouldClose())  // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------
@@ -85,14 +84,14 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-            ClearBackground(RAYWHITE);
+        ClearBackground(RAYWHITE);
 
-            shader.BeginMode();
+        shader.BeginMode();
 
-                texture.Draw(0, 0, WHITE);
-                texture.Draw(texture.GetWidth(), 0, WHITE);
+        texture.Draw(0, 0, WHITE);
+        texture.Draw(texture.GetWidth(), 0, WHITE);
 
-            EndShaderMode();
+        EndShaderMode();
 
         EndDrawing();
         //----------------------------------------------------------------------------------

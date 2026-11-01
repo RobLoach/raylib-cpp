@@ -12,7 +12,7 @@ namespace raylib {
  */
 class RayCollision : public ::RayCollision {
  public:
-    RayCollision(const ::RayCollision& ray) : ::RayCollision(ray) { }
+    RayCollision(const ::RayCollision& ray) : ::RayCollision(ray) {}
 
     constexpr RayCollision(bool hit, float distance, ::Vector3 point, ::Vector3 normal)
         : ::RayCollision{hit, distance, point, normal} {
@@ -22,8 +22,7 @@ class RayCollision : public ::RayCollision {
     /**
      * Get collision info between ray and bounding box
      */
-    RayCollision(const ::Ray& ray, const ::BoundingBox& box)
-        : ::RayCollision(::GetRayCollisionBox(ray, box)) {
+    RayCollision(const ::Ray& ray, const ::BoundingBox& box) : ::RayCollision(::GetRayCollisionBox(ray, box)) {
         // Nothing.
     }
 
@@ -69,8 +68,12 @@ class RayCollision : public ::RayCollision {
             "RayCollision(hit=%s, distance=%f, point=(%f, %f, %f), normal=(%f, %f, %f))",
             hit ? "true" : "false",
             distance,
-            point.x, point.y, point.z,
-            normal.x, normal.y, normal.z);
+            point.x,
+            point.y,
+            point.z,
+            normal.x,
+            normal.y,
+            normal.z);
     }
 
     operator std::string() const { return ToString(); }

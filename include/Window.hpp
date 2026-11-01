@@ -87,7 +87,7 @@ class Window {
     /**
      * Check if KEY_ESCAPE pressed or Close icon pressed
      */
-    static bool ShouldClose()  { return ::WindowShouldClose(); }
+    static bool ShouldClose() { return ::WindowShouldClose(); }
 
     /**
      * Set a custom key to exit program (default is ESC)
@@ -106,71 +106,67 @@ class Window {
     /**
      * Check if cursor is on the current screen
      */
-    static bool IsCursorOnScreen()  { return ::IsCursorOnScreen(); }
+    static bool IsCursorOnScreen() { return ::IsCursorOnScreen(); }
 
     /**
      * Check if cursor is not visible
      */
-    static bool IsCursorHidden()  { return ::IsCursorHidden(); }
+    static bool IsCursorHidden() { return ::IsCursorHidden(); }
 
     /**
      * Hides cursor
      */
-    static void HideCursor()  { ::HideCursor(); }
+    static void HideCursor() { ::HideCursor(); }
 
     /**
      * Shows cursor
      */
-    static void ShowCursor()  { ::ShowCursor(); }
+    static void ShowCursor() { ::ShowCursor(); }
 
     /**
      * Enables cursor (unlock cursor)
      */
-    RLCPP_MAYBEUNUSED RLCPPAPI inline void EnableCursor() {
-        ::EnableCursor();
-    }
+    RLCPP_MAYBEUNUSED RLCPPAPI inline void EnableCursor() { ::EnableCursor(); }
 
     /**
      * Disables cursor (lock cursor)
      */
-    RLCPP_MAYBEUNUSED RLCPPAPI inline void DisableCursor() {
-        ::DisableCursor();
-    }
+    RLCPP_MAYBEUNUSED RLCPPAPI inline void DisableCursor() { ::DisableCursor(); }
 
     /**
      * Check if window is currently fullscreen
      */
-    static bool IsFullscreen()  { return ::IsWindowFullscreen(); }
+    static bool IsFullscreen() { return ::IsWindowFullscreen(); }
 
     /**
      * Check if window is currently hidden
      */
-    static bool IsHidden()  { return ::IsWindowHidden(); }
+    static bool IsHidden() { return ::IsWindowHidden(); }
 
     /**
      * Check if window is currently minimized
      */
-    static bool IsMinimized()  { return ::IsWindowMinimized(); }
+    static bool IsMinimized() { return ::IsWindowMinimized(); }
 
     /**
      * Check if window is currently minimized
      */
-    static bool IsMaximized()  { return ::IsWindowMaximized(); }
+    static bool IsMaximized() { return ::IsWindowMaximized(); }
 
     /**
      * Check if window is currently focused
      */
-    static bool IsFocused()  { return ::IsWindowFocused(); }
+    static bool IsFocused() { return ::IsWindowFocused(); }
 
     /**
      * Check if window has been resized last frame
      */
-    static bool IsResized()  { return ::IsWindowResized(); }
+    static bool IsResized() { return ::IsWindowResized(); }
 
     /**
      * Check if one specific window flag is enabled
      */
-    static bool IsState(unsigned int flag)  { return ::IsWindowState(flag); }
+    static bool IsState(unsigned int flag) { return ::IsWindowState(flag); }
 
     /**
      * Set window configuration state using flags
@@ -212,7 +208,8 @@ class Window {
             if (!IsFullscreen()) {
                 ToggleFullscreen();
             }
-        } else {
+        }
+        else {
             if (IsFullscreen()) {
                 ToggleFullscreen();
             }
@@ -427,22 +424,22 @@ class Window {
     /**
      * Returns current FPS
      */
-    static int GetFPS()  { return ::GetFPS(); }
+    static int GetFPS() { return ::GetFPS(); }
 
     /**
      * Draw current FPS
      */
-    static void DrawFPS(int posX = 10, int posY = 10)  { ::DrawFPS(posX, posY); }
+    static void DrawFPS(int posX = 10, int posY = 10) { ::DrawFPS(posX, posY); }
 
     /**
      * Returns time in seconds for last frame drawn
      */
-    static float GetFrameTime()  { return ::GetFrameTime(); }
+    static float GetFrameTime() { return ::GetFrameTime(); }
 
     /**
      * Returns elapsed time in seconds since InitWindow()
      */
-    static double GetTime()  { return ::GetTime(); }
+    static double GetTime() { return ::GetTime(); }
 
     /**
      * Check if window has been initialized successfully
@@ -473,7 +470,8 @@ class Window {
         if (m_drawing) {
             EndDrawing();
             m_drawing = false;
-        } else {
+        }
+        else {
             BeginDrawing();
             m_drawing = true;
         }
@@ -482,12 +480,13 @@ class Window {
     }
 
  protected:
-        /**
-         * Handles the internal drawing state for calling either `BeginDrawing()` or `EndDrawing()` from the `Drawing()` function.
-         *
-         * @see Drawing()
-         */
-        bool m_drawing = false;
+    /**
+     * Handles the internal drawing state for calling either `BeginDrawing()` or `EndDrawing()` from the `Drawing()`
+     * function.
+     *
+     * @see Drawing()
+     */
+    bool m_drawing = false;
 };
 }  // namespace raylib
 

@@ -1,13 +1,13 @@
 /*******************************************************************************************
-*
-*   raylib [core] example - Generate random values
-*
-*   This example has been created using raylib 1.1 (www.raylib.com)
-*   raylib is licensed under an unmodified zlib/libpng license (View raylib.h for details)
-*
-*   Copyright (c) 2014 Ramon Santamaria (@raysan5)
-*
-********************************************************************************************/
+ *
+ *   raylib [core] example - Generate random values
+ *
+ *   This example has been created using raylib 1.1 (www.raylib.com)
+ *   raylib is licensed under an unmodified zlib/libpng license (View raylib.h for details)
+ *
+ *   Copyright (c) 2014 Ramon Santamaria (@raysan5)
+ *
+ ********************************************************************************************/
 
 #include "raylib-cpp.hpp"
 
@@ -19,15 +19,15 @@ int main() {
 
     raylib::Window window(screenWidth, screenHeight, "raylib [core] example - generate random values");
 
-    int framesCounter = 0;          // Variable used to count frames
+    int framesCounter = 0;  // Variable used to count frames
 
-    int randValue = GetRandomValue(-8, 5);   // Get a random integer number between -8 and 5 (both included)
+    int randValue = GetRandomValue(-8, 5);  // Get a random integer number between -8 and 5 (both included)
 
-    SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
+    SetTargetFPS(60);  // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose()) {    // Detect window close button or ESC key
+    while (!window.ShouldClose()) {  // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         framesCounter++;

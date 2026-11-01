@@ -108,9 +108,7 @@ class ModelAnimation : public ::ModelAnimation {
         }
     }
 
-    static void Unload(ModelAnimation *modelAnimation, int count) {
-        ::UnloadModelAnimations(modelAnimation, count);
-    }
+    static void Unload(ModelAnimation* modelAnimation, int count) { ::UnloadModelAnimations(modelAnimation, count); }
 
     /**
      * Update model animation pose
@@ -123,8 +121,8 @@ class ModelAnimation : public ::ModelAnimation {
     /**
      * Blend two animation poses
      */
-    ModelAnimation& Blend(
-        const ::Model& model, float frameA, const ::ModelAnimation& animB, float frameB, float blend) {
+    ModelAnimation&
+    Blend(const ::Model& model, float frameA, const ::ModelAnimation& animB, float frameB, float blend) {
         ::UpdateModelAnimationEx(model, *this, frameA, animB, frameB, blend);
         return *this;
     }

@@ -7,7 +7,8 @@ namespace raylib {
 /**
  * AudioStream management functions.
  *
- * The audio stream will be unloaded on object destruction. Use raylib::AudioStreamUnmanaged if you're looking to not unload.
+ * The audio stream will be unloaded on object destruction. Use raylib::AudioStreamUnmanaged if you're looking to not
+ * unload.
  *
  * @see raylib::AudioStreamUnmanaged
  */

@@ -1,13 +1,13 @@
 /*******************************************************************************************
-*
-*   raylib [textures] example - Bunnymark
-*
-*   This example has been created using raylib 1.6 (www.raylib.com)
-*   raylib is licensed under an unmodified zlib/libpng license (View raylib.h for details)
-*
-*   Copyright (c) 2014-2019 Ramon Santamaria (@raysan5)
-*
-********************************************************************************************/
+ *
+ *   raylib [textures] example - Bunnymark
+ *
+ *   This example has been created using raylib 1.6 (www.raylib.com)
+ *   raylib is licensed under an unmodified zlib/libpng license (View raylib.h for details)
+ *
+ *   Copyright (c) 2014-2019 Ramon Santamaria (@raysan5)
+ *
+ ********************************************************************************************/
 
 #include <list>
 
@@ -15,7 +15,7 @@
 
 // This is the maximum amount of elements (quads) per batch
 // NOTE: This value is defined in [rlgl] module and can be changed there
-#define MAX_BATCH_ELEMENTS  8192
+#define MAX_BATCH_ELEMENTS 8192
 
 class Bunny {
  public:
@@ -23,20 +23,17 @@ class Bunny {
         position = GetMousePosition();
         speed.x = static_cast<float>(GetRandomValue(-250, 250)) / 60.0f;
         speed.y = static_cast<float>(GetRandomValue(-250, 250)) / 60.0f;
-        color = raylib::Color(
-                GetRandomValue(50, 240),
-                GetRandomValue(80, 240),
-                GetRandomValue(100, 240));
+        color = raylib::Color(GetRandomValue(50, 240), GetRandomValue(80, 240), GetRandomValue(100, 240));
     }
 
     void Update(const raylib::Texture2D& texBunny) {
         position.x += speed.x;
         position.y += speed.y;
 
-        if (((position.x + texBunny.width/2) > GetScreenWidth()) ||
-            ((position.x + texBunny.width/2) < 0)) speed.x *= -1;
-        if (((position.y + texBunny.height/2) > GetScreenHeight()) ||
-            ((position.y + texBunny.height/2 - 40) < 0)) speed.y *= -1;
+        if (((position.x + texBunny.width / 2) > GetScreenWidth()) || ((position.x + texBunny.width / 2) < 0))
+            speed.x *= -1;
+        if (((position.y + texBunny.height / 2) > GetScreenHeight()) || ((position.y + texBunny.height / 2 - 40) < 0))
+            speed.y *= -1;
     }
 
     Vector2 position;
@@ -44,8 +41,7 @@ class Bunny {
     Color color;
 };
 
-int main(void)
-{
+int main(void) {
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;
@@ -58,11 +54,11 @@ int main(void)
 
     std::list<Bunny> bunnies;
 
-    SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
+    SetTargetFPS(60);  // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
     // Main game loop
-    while (!window.ShouldClose()) {    // Detect window close button or ESC key
+    while (!window.ShouldClose()) {  // Detect window close button or ESC key
         // Update
         //----------------------------------------------------------------------------------
         if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
@@ -74,7 +70,7 @@ int main(void)
 
         // Update bunnies
 
-        for (Bunny& bunny: bunnies) {
+        for (Bunny& bunny : bunnies) {
             bunny.Update(texBunny);
         }
         //----------------------------------------------------------------------------------
@@ -97,7 +93,12 @@ int main(void)
 
             DrawRectangle(0, 0, screenWidth, 40, BLACK);
             raylib::DrawText(TextFormat("bunnies: %i", bunnies.size()), 120, 10, 20, GREEN);
-            raylib::DrawText(TextFormat("batched draw calls: %i", 1 + bunnies.size()/MAX_BATCH_ELEMENTS), 320, 10, 20, MAROON);
+            raylib::DrawText(
+                TextFormat("batched draw calls: %i", 1 + bunnies.size() / MAX_BATCH_ELEMENTS),
+                320,
+                10,
+                20,
+                MAROON);
 
             DrawFPS(10, 10);
         }

@@ -45,9 +45,7 @@ class MusicUnmanaged : public ::Music {
      *
      * @throws raylib::RaylibException Throws if the music failed to load.
      */
-    MusicUnmanaged(const std::string& fileType, unsigned char* data, int dataSize) {
-        Load(fileType, data, dataSize);
-    }
+    MusicUnmanaged(const std::string& fileType, unsigned char* data, int dataSize) { Load(fileType, data, dataSize); }
 
     GETTER(::AudioStream, Stream, stream)
     GETTER(unsigned int, FrameCount, frameCount)

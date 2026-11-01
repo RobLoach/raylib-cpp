@@ -11,8 +11,7 @@ namespace raylib {
  */
 class AutomationEventList : public ::AutomationEventList {
  public:
-    AutomationEventList(const ::AutomationEventList& automationEventList)
-        : ::AutomationEventList(automationEventList) {
+    AutomationEventList(const ::AutomationEventList& automationEventList) : ::AutomationEventList(automationEventList) {
         // Nothing.
     }
 

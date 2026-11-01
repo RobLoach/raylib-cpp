@@ -42,8 +42,14 @@ class BoundingBox : public ::BoundingBox {
     }
 
     [[nodiscard]] std::string ToString() const {
-        return ::TextFormat("BoundingBox(min=(%f, %f, %f), max=(%f, %f, %f))",
-            min.x, min.y, min.z, max.x, max.y, max.z);
+        return ::TextFormat(
+            "BoundingBox(min=(%f, %f, %f), max=(%f, %f, %f))",
+            min.x,
+            min.y,
+            min.z,
+            max.x,
+            max.y,
+            max.z);
     }
 
     operator std::string() const { return ToString(); }

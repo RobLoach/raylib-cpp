@@ -126,7 +126,7 @@ class MeshUnmanaged : public ::Mesh {
     GETTERSETTER(float*, Normals, normals)
     GETTERSETTER(float*, Tangents, tangents)
     GETTERSETTER(unsigned char*, Colors, colors)
-    GETTERSETTER(unsigned short*, Indices, indices) // NOLINT
+    GETTERSETTER(unsigned short*, Indices, indices)  // NOLINT
     GETTERSETTER(float*, AnimVertices, animVertices)
     GETTERSETTER(float*, AnimNormals, animNormals)
     GETTERSETTER(unsigned char*, BoneIndices, boneIndices)
@@ -142,7 +142,10 @@ class MeshUnmanaged : public ::Mesh {
 
     [[nodiscard]] std::string ToString() const {
         return ::TextFormat(
-            "Mesh(vertexCount=%d, triangleCount=%d, boneCount=%d)", vertexCount, triangleCount, boneCount);
+            "Mesh(vertexCount=%d, triangleCount=%d, boneCount=%d)",
+            vertexCount,
+            triangleCount,
+            boneCount);
     }
 
     operator std::string() const { return ToString(); }

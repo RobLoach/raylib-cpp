@@ -37,7 +37,7 @@ class AudioDevice {
      *
      * @throws raylib::RaylibException Throws if the AudioDevice failed to initialize.
      */
-    static void Init()  {
+    static void Init() {
         ::InitAudioDevice();
         if (!IsReady()) {
             throw RaylibException("Failed to initialize AudioDevice");
@@ -52,7 +52,7 @@ class AudioDevice {
     /**
      * Check if audio device has been initialized successfully.
      */
-    static bool IsReady()  { return ::IsAudioDeviceReady(); }
+    static bool IsReady() { return ::IsAudioDeviceReady(); }
 
     /**
      * Set master volume (listener).
