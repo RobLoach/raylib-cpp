@@ -3,6 +3,7 @@
 #include "raylib-assert.h"
 // clang-format on
 #include <string>
+#include <utility>
 #include <vector>
 
 int main(int argc, char* argv[]) {
@@ -205,6 +206,47 @@ int main(int argc, char* argv[]) {
 
         boundingBox.SetMin({9, 8, 7});
         AssertEqual(boundingBox.GetMin(), (raylib::Vector3{9, 8, 7}));
+    }
+
+    // Model Unload resets all fields (CPU-only data, no meshes, so no GPU calls)
+    {
+        raylib::ModelUnmanaged model;
+        model.meshes = static_cast<::Mesh*>(MemAlloc(sizeof(::Mesh)));
+        model.meshMaterial = static_cast<int*>(MemAlloc(sizeof(int)));
+        model.skeleton.boneCount = 1;
+        model.skeleton.bones = static_cast<::BoneInfo*>(MemAlloc(sizeof(::BoneInfo)));
+        model.skeleton.bindPose = static_cast<::Transform*>(MemAlloc(sizeof(::Transform)));
+        model.currentPose = static_cast<::Transform*>(MemAlloc(sizeof(::Transform)));
+        model.boneMatrices = static_cast<::Matrix*>(MemAlloc(sizeof(::Matrix)));
+
+        model.Unload();
+        Assert(model.meshes == nullptr, "Expected meshes to be null after Unload");
+        Assert(model.materials == nullptr, "Expected materials to be null after Unload");
+        Assert(model.meshMaterial == nullptr, "Expected meshMaterial to be null after Unload");
+        Assert(model.skeleton.bones == nullptr, "Expected bones to be null after Unload");
+        Assert(model.skeleton.bindPose == nullptr, "Expected bindPose to be null after Unload");
+        Assert(model.currentPose == nullptr, "Expected currentPose to be null after Unload");
+        Assert(model.boneMatrices == nullptr, "Expected boneMatrices to be null after Unload");
+        AssertEqual(model.meshCount, 0);
+        AssertEqual(model.materialCount, 0);
+        AssertEqual(model.skeleton.boneCount, 0u);
+
+        // Unloading twice is a no-op.
+        model.Unload();
+    }
+
+    // Model move leaves the moved-from Model empty
+    {
+        raylib::Model source;
+        source.meshes = static_cast<::Mesh*>(MemAlloc(sizeof(::Mesh)));
+        source.meshMaterial = static_cast<int*>(MemAlloc(sizeof(int)));
+        source.boneMatrices = static_cast<::Matrix*>(MemAlloc(sizeof(::Matrix)));
+
+        raylib::Model target(std::move(source));
+        Assert(source.meshes == nullptr, "Expected moved-from meshes to be null");
+        Assert(source.meshMaterial == nullptr, "Expected moved-from meshMaterial to be null");
+        Assert(source.boneMatrices == nullptr, "Expected moved-from boneMatrices to be null");
+        Assert(target.meshes != nullptr, "Expected moved-to meshes to be set");
     }
 
     TraceLog(LOG_INFO, "TEST: raylib-cpp test");
