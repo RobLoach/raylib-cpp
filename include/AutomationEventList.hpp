@@ -25,7 +25,7 @@ class AutomationEventList : public ::AutomationEventList {
      *
      * @param fileName The file path to load the automation events list from.
      */
-    AutomationEventList(const char* fileName) { Load(fileName); }
+    AutomationEventList(const char* fileName) : ::AutomationEventList{} { Load(fileName); }
 
     AutomationEventList(const AutomationEventList&) = delete;
 
@@ -44,6 +44,7 @@ class AutomationEventList : public ::AutomationEventList {
     GETTER(AutomationEvent*, Events, events)
 
     AutomationEventList& operator=(const ::AutomationEventList& other) {
+        Unload();
         set(other);
         return *this;
     }
@@ -66,7 +67,7 @@ class AutomationEventList : public ::AutomationEventList {
     }
 
     /**
-     * Load audio stream (to stream raw audio pcm data)
+     * Load automation events list from file, unloading any existing events.
      *
      * @throws raylib::RaylibException Throws if the AutomationEventList failed to load.
      */
@@ -79,26 +80,23 @@ class AutomationEventList : public ::AutomationEventList {
     }
 
     /**
-     * Update audio stream buffers with data
+     * Unload automation events list from memory.
      */
     void Unload() {
         if (!IsValid()) {
             return;
         }
 
-// The function signature of UnloadAutomationEventList() changes from raylib 5.0.
-#if RAYLIB_VERSION_MAJOR == 5
-#if RAYLIB_VERSION_MINOR == 0
-        ::UnloadAutomationEventList(this);
-#elif RAYLIB_VERSION_MINOR >= 1
         ::UnloadAutomationEventList(*this);
-#endif
-#else
-        ::UnloadAutomationEventList(*this);
-#endif
+        capacity = 0;
+        count = 0;
+        events = nullptr;
     }
 
-    bool IsValid() { return events != nullptr; }
+    /**
+     * Check if the automation events list has been loaded.
+     */
+    bool IsValid() const { return events != nullptr; }
 
     bool Export(const char* fileName) { return ::ExportAutomationEventList(*this, fileName); }
 
