@@ -3,6 +3,7 @@
 #include "raylib-assert.h"
 // clang-format on
 #include <string>
+#include <utility>
 #include <vector>
 
 int main(int argc, char* argv[]) {
@@ -172,6 +173,34 @@ int main(int argc, char* argv[]) {
             passed = true;
         }
         Assert(passed, "Expected to have a RaylibException to be thrown");
+    }
+
+    // AutomationEventList
+    {
+        raylib::AutomationEventList list;
+        Assert(list.IsValid(), "Expected empty automation event list to be valid");
+        AssertEqual(list.GetCount(), 0);
+        Assert(list.GetCapacity() > 0, "Expected automation event list to have capacity");
+
+        raylib::AutomationEventList moved;
+        moved = std::move(list);
+        Assert(moved.IsValid(), "Expected moved automation event list to be valid");
+        AssertNot(list.IsValid(), "Expected moved-from automation event list to be invalid");
+
+        // raylib returns an empty list when the file is missing.
+        bool threw = false;
+        try {
+            raylib::AutomationEventList missing("notfound.rae");
+            Assert(missing.IsValid(), "Expected missing file to give an empty list");
+            AssertEqual(missing.GetCount(), 0);
+        } catch (raylib::RaylibException& error) {
+            error.TraceLog(LOG_INFO);
+            threw = true;
+        }
+        AssertNot(threw, "Expected no RaylibException for a missing automation file");
+
+        moved.Unload();
+        AssertNot(moved.IsValid(), "Expected unloaded automation event list to be invalid");
     }
 
     // Load FileData
