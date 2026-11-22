@@ -3,6 +3,7 @@
 #include "raylib-assert.h"
 // clang-format on
 #include <string>
+#include <utility>
 #include <vector>
 
 int main(int argc, char* argv[]) {
@@ -185,6 +186,36 @@ int main(int argc, char* argv[]) {
         raylib::FileText text(path + "/resources/lorem.txt");
         Assert(text.GetLength() > 0, "Expected file to be loaded correctly");
         AssertEqual(text.ToString().substr(0, 5), "Lorem");
+    }
+
+    // ModelAnimation
+    {
+        std::string animFile = path + "/resources/guyanim.iqm";
+        int count = raylib::ModelAnimation::LoadCount(animFile);
+        AssertGreater(count, 0);
+
+        {
+            // The vector going out of scope must unload each animation without freeing the vector's storage.
+            std::vector<raylib::ModelAnimation> anims = raylib::ModelAnimation::Load(animFile);
+            AssertEqual(static_cast<int>(anims.size()), count);
+            AssertGreater(anims[0].GetKeyframeCount(), 0);
+            AssertNotNull(anims[0].GetKeyframePoses());
+
+            anims[0].Unload();
+            AssertNull(anims[0].GetKeyframePoses());
+            AssertEqual(anims[0].GetKeyframeCount(), 0);
+        }
+
+        {
+            raylib::ModelAnimation anim = raylib::ModelAnimation::Load(animFile, 0);
+            AssertGreater(anim.GetKeyframeCount(), 0);
+            AssertNotNull(anim.GetKeyframePoses());
+
+            raylib::ModelAnimation moved(std::move(anim));
+            AssertNull(anim.GetKeyframePoses());
+            AssertEqual(anim.GetKeyframeCount(), 0);
+            AssertNotNull(moved.GetKeyframePoses());
+        }
     }
 
     // BoundingBox

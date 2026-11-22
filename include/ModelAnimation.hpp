@@ -58,6 +58,7 @@ class ModelAnimation : public ::ModelAnimation {
         }
         ModelAnimation result(modelAnimations[index]);
         modelAnimations[index].keyframePoses = nullptr;
+        modelAnimations[index].keyframeCount = 0;
         ::UnloadModelAnimations(modelAnimations, count);
         return result;
     }
@@ -103,9 +104,14 @@ class ModelAnimation : public ::ModelAnimation {
      */
     void Unload() {
         if (keyframePoses != nullptr) {
-            ::UnloadModelAnimations(this, 1);
+            // Free the poses directly, as ::UnloadModelAnimations() would also free this object.
+            for (int i = 0; i < keyframeCount; i++) {
+                RL_FREE(keyframePoses[i]);
+            }
+            RL_FREE(keyframePoses);
             keyframePoses = nullptr;
         }
+        keyframeCount = 0;
     }
 
     static void Unload(ModelAnimation* modelAnimation, int count) { ::UnloadModelAnimations(modelAnimation, count); }
