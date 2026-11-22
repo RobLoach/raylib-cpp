@@ -237,7 +237,7 @@ int main(int argc, char* argv[]) {
 
     // Model move leaves the moved-from Model empty
     {
-        raylib::Model source;
+        raylib::Model source(::Model{});
         source.meshes = static_cast<::Mesh*>(MemAlloc(sizeof(::Mesh)));
         source.meshMaterial = static_cast<int*>(MemAlloc(sizeof(int)));
         source.boneMatrices = static_cast<::Matrix*>(MemAlloc(sizeof(::Matrix)));
