@@ -48,6 +48,7 @@ export namespace raylib {
 // Classes
 using raylib::AudioDevice;
 using raylib::AudioStream;
+using raylib::AudioStreamUnmanaged;
 using raylib::AutomationEventList;
 using raylib::BoundingBox;
 using raylib::Camera;  // Alias for Camera3D
@@ -57,14 +58,19 @@ using raylib::Color;
 using raylib::FileData;
 using raylib::FileText;
 using raylib::Font;
+using raylib::FontUnmanaged;
 using raylib::Gamepad;
 using raylib::Image;
 using raylib::Material;
+using raylib::MaterialUnmanaged;
 using raylib::Matrix;
 using raylib::Mesh;
+using raylib::MeshUnmanaged;
 using raylib::Model;
 using raylib::ModelAnimation;
+using raylib::ModelUnmanaged;
 using raylib::Music;
+using raylib::MusicUnmanaged;
 using raylib::Quaternion;  // Alias for Vector4
 using raylib::Ray;
 using raylib::RayCollision;
@@ -72,8 +78,12 @@ using raylib::RaylibException;
 using raylib::Rectangle;
 using raylib::RenderTexture;
 using raylib::RenderTexture2D;  // Alias for RenderTexture
+using raylib::RenderTexture2DUnmanaged;  // Alias for RenderTextureUnmanaged
+using raylib::RenderTextureUnmanaged;
 using raylib::Shader;
+using raylib::ShaderUnmanaged;
 using raylib::Sound;
+using raylib::SoundUnmanaged;
 using raylib::Text;
 using raylib::Texture;
 using raylib::Texture2D;  // Alias for Texture
@@ -86,6 +96,7 @@ using raylib::Vector3;
 using raylib::Vector4;
 using raylib::VrStereoConfig;
 using raylib::Wave;
+using raylib::WaveUnmanaged;
 using raylib::Window;
 
 // Enums
@@ -257,6 +268,7 @@ using raylib::Touch::GetY;
 export {
     using RAudioDevice = raylib::AudioDevice;
     using RAudioStream = raylib::AudioStream;
+    using RAudioStreamUnmanaged = raylib::AudioStreamUnmanaged;
     using RAutomationEventList = raylib::AutomationEventList;
     using RBoundingBox = raylib::BoundingBox;
     using RCamera = raylib::Camera;  // Alias for Camera3D
@@ -266,22 +278,31 @@ export {
     using RFileData = raylib::FileData;
     using RFileText = raylib::FileText;
     using RFont = raylib::Font;
+    using RFontUnmanaged = raylib::FontUnmanaged;
     using RGamepad = raylib::Gamepad;
     using RImage = raylib::Image;
     using RMaterial = raylib::Material;
+    using RMaterialUnmanaged = raylib::MaterialUnmanaged;
     using RMatrix = raylib::Matrix;
     using RMesh = raylib::Mesh;
+    using RMeshUnmanaged = raylib::MeshUnmanaged;
     using RModel = raylib::Model;
+    using RModelUnmanaged = raylib::ModelUnmanaged;
     using RModelAnimation = raylib::ModelAnimation;
     using RMusic = raylib::Music;
+    using RMusicUnmanaged = raylib::MusicUnmanaged;
     using RRay = raylib::Ray;
     using RRayCollision = raylib::RayCollision;
     using RRaylibException = raylib::RaylibException;
     using RRectangle = raylib::Rectangle;
     using RRenderTexture = raylib::RenderTexture;
     using RRenderTexture2D = raylib::RenderTexture2D;  // Alias for RenderTexture
+    using RRenderTextureUnmanaged = raylib::RenderTextureUnmanaged;
+    using RRenderTexture2DUnmanaged = raylib::RenderTexture2DUnmanaged;  // Alias for RenderTextureUnmanaged
     using RShader = raylib::Shader;
+    using RShaderUnmanaged = raylib::ShaderUnmanaged;
     using RSound = raylib::Sound;
+    using RSoundUnmanaged = raylib::SoundUnmanaged;
     using RText = raylib::Text;
     using RTexture = raylib::Texture;
     using RTexture2D = raylib::Texture2D;  // Alias for Texture
@@ -295,6 +316,7 @@ export {
     using RQuaternion = raylib::Quaternion;  // Alias for Vector4
     using RVrStereoConfig = raylib::VrStereoConfig;
     using RWave = raylib::Wave;
+    using RWaveUnmanaged = raylib::WaveUnmanaged;
     using RWindow = raylib::Window;
 }
 #endif
