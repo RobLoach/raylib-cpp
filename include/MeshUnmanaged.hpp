@@ -156,7 +156,7 @@ class MeshUnmanaged : public ::Mesh {
     void Unload() {
         if (vboId != nullptr) {
             ::UnloadMesh(*this);
-            vboId = nullptr;
+            set(::Mesh{});
         }
     }
 

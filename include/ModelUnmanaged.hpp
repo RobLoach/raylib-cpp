@@ -95,8 +95,7 @@ class ModelUnmanaged : public ::Model {
     void Unload() {
         if (meshes != nullptr || materials != nullptr) {
             ::UnloadModel(*this);
-            meshes = nullptr;
-            materials = nullptr;
+            set(::Model{});
         }
     }
 
